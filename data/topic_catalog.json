@@ -11,7 +11,11 @@
       "situation": "ルールを厳格にして注意しすぎた結果、クラスが静まり返り、生徒たちが先生の顔色を伺って自発的に動かなくなってしまった。",
       "solution_framework": "エドワード・デシ＆リチャード・ライアンの「自己決定理論（Self-Determination Theory）」と自律性支援（Autonomy Support）",
       "key_theories": ["自己決定理論", "自律性・有能感・関係性の3欲求", "統制型指導と自律支援型指導"],
-      "reference_hints": ["Deci, E. L., & Ryan, R. M. (2000). The 'what' and 'why' of goal pursuits: Human needs and the self-determination of behavior. Psychological Inquiry.", "Ryan, R. M., & Deci, E. L. (2017). Self-determination theory: Basic psychological needs in motivation, development, and wellness. Guilford Publications. https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807", "Reeve, J. (2009). Why teachers adopt a controlling motivating style toward students and how they can become more autonomy supportive. Educational Psychologist."]
+      "reference_hints": [
+        "Ryan, R. M., & Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. American Psychologist, 55(1), 68-78. https://pubmed.ncbi.nlm.nih.gov/11392867/",
+        "Ryan, R. M., & Deci, E. L. (2017). Self-determination theory: Basic psychological needs in motivation, development, and wellness. Guilford Publications. https://doi.org/10.1521/978.14625/28806",
+        "文部科学省 (2022). 生徒指導提要（改訂版）. https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm"
+      ]
     },
     {
       "id": "A02",
@@ -24,7 +28,10 @@
       "situation": "グループ学習を取り入れたが、得意な生徒が一人で作業を進めてしまい、苦手な生徒が取り残されて対立や不満が起きている。",
       "solution_framework": "レフ・ヴィゴツキーの「最近接発達領域（ZPD）」と足場かけ（Scaffolding）、およびロバート・スレイヴィンの「協同学習（Cooperative Learning）」",
       "key_theories": ["最近接発達領域（ZPD）", "認知的足場かけ（Scaffolding）", "ジグソー法と相互依存性"],
-      "reference_hints": ["Vygotsky, L. S. (1978). Mind in society: The development of higher psychological processes. Harvard University Press.", "Slavin, R. E. (1996). Research on cooperative learning and achievement: What we know, what we need to know. Contemporary Educational Psychology."]
+      "reference_hints": [
+        "Vygotsky, L. S. (1978). Mind in society: The development of higher psychological processes. Harvard University Press. https://www.hup.harvard.edu/books/9780674576292",
+        "Slavin, R. E. (1996). Research on cooperative learning and achievement: What we know, what we need to know. Contemporary Educational Psychology, 21(1), 43-69. https://doi.org/10.1006/ceps.1996.0004"
+      ]
     },
     {
       "id": "A03",
@@ -37,7 +44,10 @@
       "situation": "中間テストで赤点を取った生徒が、努力しても無駄だと心を閉ざし、宿題も出さなくなってしまった。",
       "solution_framework": "キャロル・ドゥエックの「マインドセット理論（Growth Mindset）」とマーティン・セリグマンの「学習性無力感（Learned Helplessness）」の克服",
       "key_theories": ["硬直マインドセット vs 成長マインドセット", "努力とプロセスの称賛（Process Praise）", "結果の帰属理論（ワイナー）"],
-      "reference_hints": ["Dweck, C. S. (2006). Mindset: The new psychology of success. Random House.", "Yeager, D. S., et al. (2019). A national experiment reveals where a growth mindset improves student achievement. Nature, 573(7774), 364-369."]
+      "reference_hints": [
+        "Yeager, D. S., et al. (2019). A national experiment reveals where a growth mindset improves student achievement. Nature, 573(7774), 364-369. https://doi.org/10.1038/s41586-019-1466-y",
+        "Weiner, B. (1985). An attributional theory of achievement motivation and emotion. Psychological Review, 92(4), 548-573. https://pubmed.ncbi.nlm.nih.gov/3901065/"
+      ]
     },
     {
       "id": "A04",
@@ -50,7 +60,10 @@
       "situation": "生徒に分かりやすく教えようと情報や図解をスライドに詰め込みすぎた結果、生徒がメモを取るだけで手一杯になり、授業後の確認テストの定着率が著しく低い。",
       "solution_framework": "ジョン・スウェラーの「認知的負荷理論（Cognitive Load Theory）」とリチャード・メイヤーの「マルチメディア学習の原理」",
       "key_theories": ["内在性・外因性・関連性負荷", "ワーキングメモリの制約", "冗長性の排除と分割効果"],
-      "reference_hints": ["Sweller, J., van Merrienboer, J. J., & Paas, F. G. (1998). Cognitive architecture and instructional design. Educational Psychology Review, 10(3), 251-296.", "Mayer, R. E. (2002). Multimedia learning. Psychology of Learning and Motivation, 41, 85-139."]
+      "reference_hints": [
+        "Sweller, J., van Merrienboer, J. J., & Paas, F. G. (1998). Cognitive architecture and instructional design. Educational Psychology Review, 10(3), 251-296. https://doi.org/10.1023/A:1022193728205",
+        "Mayer, R. E. (2002). Multimedia learning. Psychology of Learning and Motivation, 41, 85-139. https://doi.org/10.1016/S0079-7421%2802%2980005-6"
+      ]
     },
     {
       "id": "A05",
@@ -63,7 +76,10 @@
       "situation": "落ち着きがなく衝動的に席を立ってしまう児童に対して強く叱責してしまい、クラス全体の空気が張り詰めて悪循環に陥っている。",
       "solution_framework": "応用行動分析（ABA）の機能的行動アセスメント（FBA）とポジティブ行動支援（PBS/PBIS）",
       "key_theories": ["先行条件・行動・結果（ABC分析）", "代替行動の強化（DRA）", "視覚的構造化とポジティブな行動介入"],
-      "reference_hints": ["Sugai, G., & Horner, R. H. (2006). A promising approach for expanding and sustaining school-wide positive behavior support. School Psychology Review, 35(2), 245-259.", "Cooper, J. O., Heron, T. E., & Heward, W. L. (2020). Applied Behavior Analysis (3rd ed.). Pearson."]
+      "reference_hints": [
+        "Horner, R. H., et al. (2009). A randomized, wait-list controlled effectiveness trial assessing school-wide positive behavior support in elementary schools. Journal of Positive Behavior Interventions, 11(3), 133-144. https://pmc.ncbi.nlm.nih.gov/articles/PMC2647908/",
+        "文部科学省. 特別支援教育について（発達障害を含む障害のある幼児児童生徒への支援）: https://www.mext.go.jp/a_menu/shotou/tokubetu/main.htm"
+      ]
     },
     {
       "id": "A06",
@@ -74,9 +90,12 @@
         "senior": "養護教諭・真壁先生（教職19年目）"
       },
       "situation": "仲良しだったグループ内で突然ある生徒がハブられ、保健室登校になりかけている。直接問い詰めても『何もしてない』と否定される。",
-      "solution_framework": "キャロル・ギリガンやネル・ノディングスの「ケアの倫理（Ethics of Care）」とエドガー・シャインの「プロセス・コンサルテーション」",
+      "solution_framework": "キャロル・ギリガンやネル・ノディングスの「ケアの倫理（Ethics of Care）」と修復的対話（Restorative Practices）",
       "key_theories": ["関係性の回復と共感の場の設計", "関係的攻撃性（Relational Aggression）の理解", "修復的対話（Restorative Practices）"],
-      "reference_hints": ["Noddings, N. (2013). Caring: A relational approach to ethics and moral education. Univ of California Press.", "Morrison, B. (2007). Restoring safe school communities: A whole school response to bullying, violence and alienation. Federation Press."]
+      "reference_hints": [
+        "文部科学省 (2022). 生徒指導提要（改訂版）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm",
+        "文部科学省. 生徒指導（いじめ・不登校・人間関係支援等の施策）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/index.htm"
+      ]
     },
     {
       "id": "A07",
@@ -87,9 +106,12 @@
         "senior": "教頭・寺田先生（教職25年目）"
       },
       "situation": "宿題の量や席替えの決定について保護者から夜遅くに長時間の抗議電話が入り、教員自身が精神的に追い詰められている。",
-      "solution_framework": "ユルゲン・ハーバーマスの「コミュニケーション的行為の理論（Theory of Communicative Action）」とジョン・デューイの「対話的民主主義」",
+      "solution_framework": "ユルゲン・ハーバーマスの「コミュニケーション的行為の理論（Theory of Communicative Action）」と家庭・学校のパートナーシップ理論",
       "key_theories": ["戦略的行為から対話的合意形成への転換", "妥当性要求（真理性・正当性・誠実性）", "親と学校のパートナーシップ構築"],
-      "reference_hints": ["Habermas, J. (1984). The Theory of Communicative Action. Beacon Press.", "Epstein, J. L. (2018). School, family, and community partnerships: Preparing educators and improving schools. Routledge."]
+      "reference_hints": [
+        "文部科学省 (2022). 生徒指導提要（改訂版・家庭や地域との連携）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm",
+        "文部科学省. 学校と保護者等間における連絡手段のデジタル化の推進について: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html"
+      ]
     },
     {
       "id": "A08",
@@ -102,7 +124,10 @@
       "situation": "当初は注意すれば収まっていた私語が、一部の生徒を中心に教室全体へと波及し、授業規律が保てなくなりつつある。",
       "solution_framework": "フィリップ・ジャクソンの「潜在的カリキュラム（Hidden Curriculum）」論とジェイコブ・クーニンの「教室規律技術（Withitness & Momentum）」",
       "key_theories": ["ウィズィットネス（Withitness: 状況把握の目配り）", "スムーズネス＆モメンタム（授業のテンポと途切れなさ）", "集団力学（グループ・ダイナミクス）"],
-      "reference_hints": ["Kounin, J. S. (1970). Discipline and group management in classrooms. Holt, Rinehart & Winston.", "Jackson, P. W. (1968). Life in classrooms. Teachers College Press."]
+      "reference_hints": [
+        "文部科学省 (2022). 生徒指導提要（改訂版・学級経営と集団指導）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm",
+        "文部科学省. 生徒指導に関する各種調査・ガイドライン: https://www.mext.go.jp/a_menu/shotou/seitoshidou/index.htm"
+      ]
     }
   ],
   "pattern_B_topics": [

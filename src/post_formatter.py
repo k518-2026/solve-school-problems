@@ -50,12 +50,14 @@ def _fallback_yaml_parser(text: str) -> Dict[str, Any]:
     return data
 
 def _sanitize_url(url: str) -> str:
-    """Safely percent-encodes non-ASCII characters in URLs while preserving URL structure."""
+    """Safely percent-encodes non-ASCII characters and parentheses in URLs while preserving URL structure."""
+    url = url.replace("\\(", "(").replace("\\)", ")")
     try:
         parts = urllib.parse.urlsplit(url)
-        path = urllib.parse.quote(parts.path, safe="/:@&=+$,-_.!~*'()")
-        query = urllib.parse.quote(parts.query, safe="/:@&=+$,-_.!~*'()?")
-        fragment = urllib.parse.quote(parts.fragment, safe="/:@&=+$,-_.!~*'()")
+        # Omit '(' and ')' from safe so they become %28 and %29, preventing Markdown/WP breakage on DOIs like 10.1016/S0079-7421(02)80005-6
+        path = urllib.parse.quote(urllib.parse.unquote(parts.path), safe="/:@&=+$,-_.!~*'")
+        query = urllib.parse.quote(urllib.parse.unquote(parts.query), safe="/:@&=+$,-_.!~*'*?")
+        fragment = urllib.parse.quote(urllib.parse.unquote(parts.fragment), safe="/:@&=+$,-_.!~*'")
         return urllib.parse.urlunsplit((parts.scheme, parts.netloc, path, query, fragment))
     except Exception:
         return url
@@ -67,31 +69,35 @@ def _format_inline_markdown(text: str) -> str:
     text = re.sub(r"`(.*?)`", r'<code style="background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9em; color: #0f172a;">\1</code>', text)
     
     # 1. Convert standard Markdown links: [text](url) -> <a ... target="_blank">
+    # Supports balanced parentheses and escaped parentheses inside URLs (e.g., Elsevier DOIs)
     def _md_link_replacer(match):
-        label = match.group(1)
+        label = match.group(1).replace("\\(", "(").replace("\\)", ")")
         raw_url = match.group(2)
         safe_url = _sanitize_url(raw_url)
         return f'<a href="{safe_url}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">{label}</a>'
 
     text = re.sub(
-        r"\[(.*?)\]\((https?://[^\s\)]+)\)",
+        r"\[([^\]]+)\]\((https?://(?:[^\s\(\)]|\\?\([^\s\(\)]*\\?\))+)\)",
         _md_link_replacer,
         text
     )
     
-    # 2. Convert remaining raw URLs that are not already inside an href attribute
-    # Match URLs preceded by start-of-string, whitespace, or punctuation
+    # 2. Convert remaining raw URLs that are not already inside an <a>...</a> element
+    parts = re.split(r'(<a\s+[^>]*>.*?</a>)', text, flags=re.DOTALL)
     def _url_replacer(match):
         prefix = match.group(1)
-        url = match.group(2)
-        # Avoid double-wrapping if already in href="..." or >url<
-        return f'{prefix}<a href="{url}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">{url}</a>'
+        raw_url = match.group(2)
+        safe_url = _sanitize_url(raw_url)
+        display_url = raw_url.replace("\\(", "(").replace("\\)", ")")
+        return f'{prefix}<a href="{safe_url}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">{display_url}</a>'
 
-    text = re.sub(
-        r'(^|[\s（\(「『：:])(https?://[^\s\)<>\"\'\]]+)',
-        _url_replacer,
-        text
-    )
+    for idx in range(0, len(parts), 2):
+        parts[idx] = re.sub(
+            r'(^|[\s（\(「『：:])(https?://(?:[^\s\(\)<>\"\'\]]|\\?\([^\s\(\)]*\\?\))+)',
+            _url_replacer,
+            parts[idx]
+        )
+    text = "".join(parts)
 
     # 3. Ensure any existing <a> tags have target="_blank" and rel="noopener noreferrer"
     def _ensure_target_blank(match):
@@ -358,7 +364,12 @@ def format_post_content(
         plain_parts.append(f"[status {status}]")
         plain_parts.append("")
 
-    plain_parts.append(body)
+    plain_body = re.sub(
+        r"\[([^\]]+)\]\((https?://(?:[^\s\(\)]|\\?\([^\s\(\)]*\\?\))+)\)",
+        lambda m: f"[{m.group(1).replace('\\(', '(').replace('\\)', ')')}]({_sanitize_url(m.group(2))})",
+        body
+    )
+    plain_parts.append(plain_body)
     final_plain = "\n".join(plain_parts)
 
     return FormattedPost(

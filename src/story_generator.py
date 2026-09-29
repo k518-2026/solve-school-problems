@@ -6,6 +6,7 @@ import random
 import logging
 import urllib.request
 import urllib.error
+import urllib.parse
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, Any, Tuple, List, Optional
@@ -32,7 +33,7 @@ SYSTEM_PROMPT_A = """あなたは学校教育・学級経営に精通した実�
    - **第二部：【作中理論・教育学のやさしい解説（Theoretical Commentary）】**
      （作中に登場した教育学・教育心理学・教育哲学の理論について、一般読者や教員志望者にもわかりやすく要点と実践のポイントを解説してください）
    - **第三部：【引用・参考文献（Academic References）】**
-     （実在する学術論文、著者名、論文タイトル、ジャーナル名/書籍名、発表年、およびクリック可能な正規DOIリンク `[https://doi.org/...](https://doi.org/...)` または公的URLを明記してください。海外論文・洋書については架空のDOIや推測の個別URLは絶対に避け、「参考文献の手がかり」に提示された実在論文・検証済みDOIを最優先してください）
+     （実在する学術論文、著者名、論文タイトル、ジャーナル名/書籍名、発表年、およびクリック可能な正規URLを明記してください。**URLリンクは必ず「参考文献の手がかり」に提示された検証済みURLをそのまま使用し、それ以外の文献には独自の推測URLや括弧付きの古いDOIを絶対に付与しないでください（書誌情報のみ記載）**）
 """
 
 SYSTEM_PROMPT_B = """あなたは学校教育と最新のコンピュータ技術・ネットワーク工学に精通したIT教育作家であり、校務DXコンサルタントです。
@@ -249,12 +250,13 @@ topic_id: "{topic.get('id', 'C01')}"
                         )
                         text = response.text
                         if text and len(text.strip()) > 500:
+                            text = self._verify_and_sanitize_links(text)
                             # Extract Title
                             title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
                             title = title_match.group(1).strip() if title_match else topic.get("problem_title", "学校の課題を解決する物語")
 
                             # Extract references
-                            refs = re.findall(r'\[(https?://[^\s\]]+)\]', text)
+                            refs = re.findall(r'\((https?://[^\s\)]+)\)', text)
                             return text, title, refs
                     except Exception as e:
                         logger.warning(f"Model '{current_model}' failed: {e}")
@@ -268,6 +270,67 @@ topic_id: "{topic.get('id', 'C01')}"
 
         logger.error(f"All model attempts exhausted. Falling back to template: {last_error}")
         return self._generate_fallback(pattern, topic)
+
+    def _sanitize_url(self, url: str) -> str:
+        """Removes stray backslashes and percent-encodes parentheses and non-ASCII chars in URLs."""
+        url = url.replace("\\", "").strip()
+        try:
+            parts = urllib.parse.urlsplit(url)
+            path = urllib.parse.quote(urllib.parse.unquote(parts.path), safe="/:@&=+$,-_.!~*'")
+            query = urllib.parse.quote(urllib.parse.unquote(parts.query), safe="/:@&=+$,-_.!~*'*?")
+            fragment = urllib.parse.quote(urllib.parse.unquote(parts.fragment), safe="/:@&=+$,-_.!~*'")
+            return urllib.parse.urlunsplit((parts.scheme, parts.netloc, path, query, fragment))
+        except Exception:
+            return url
+
+    def _is_url_alive(self, url: str) -> bool:
+        """Verifies DOIs via official Handle API and regular URLs via HTTP request to prevent 404 links."""
+        try:
+            # 1. If DOI link, check official Handle API (fast, immune to publisher anti-bot 403)
+            doi_match = re.match(r'^https?://(?:dx\.)?doi\.org/(10\.\d{4,9}/.+)$', url, re.I)
+            if doi_match:
+                doi_raw = urllib.parse.unquote(doi_match.group(1))
+                api_url = f"https://doi.org/api/handles/{urllib.parse.quote(doi_raw, safe='/')}"
+                req = urllib.request.Request(api_url, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req, timeout=8) as res:
+                    data = json.loads(res.read().decode("utf-8", errors="ignore"))
+                    return data.get("responseCode") == 1
+
+            # 2. Regular web URL: check HTTP status
+            req = urllib.request.Request(
+                url,
+                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+            )
+            with urllib.request.urlopen(req, timeout=8) as res:
+                return 200 <= res.getcode() < 400
+        except urllib.error.HTTPError as e:
+            if e.code in (404, 410, 500):
+                return False
+            # 403/429 on non-DOI academic portals may be bot protection, keep if not 404
+            return e.code not in (404, 410)
+        except urllib.error.URLError:
+            return False
+        except Exception:
+            return True
+
+    def _verify_and_sanitize_links(self, text: str) -> str:
+        """Sanitizes parentheses in all markdown links and strips any dead/404 links."""
+        def _replacer(match):
+            label = match.group(1).replace("\\(", "(").replace("\\)", ")")
+            raw_url = match.group(2)
+            safe_url = self._sanitize_url(raw_url)
+            if self._is_url_alive(safe_url):
+                return f"[{label}]({safe_url})"
+            logger.warning(f"Stripping dead/unreachable URL from generated story: {raw_url}")
+            if label.startswith("http://") or label.startswith("https://"):
+                return ""
+            return label
+
+        return re.sub(
+            r"\[([^\]]+)\]\((https?://(?:[^\s\(\)]|\\?\([^\s\(\)]*\\?\))+)\)",
+            _replacer,
+            text
+        )
 
     def _generate_fallback(self, pattern: str, topic: Dict[str, Any]) -> Tuple[str, str, List[str]]:
         """Provides a high-quality pre-written story template if offline or API key is absent."""
@@ -339,12 +402,12 @@ topic_id: "{topic.get('id', 'A01')}"
    DOI: [https://doi.org/10.1080/00461520903028990](https://doi.org/10.1080/00461520903028990)
 
 3. Ryan, R. M., & Deci, E. L. (2017). *Self-determination theory: Basic psychological needs in motivation, development, and wellness*. Guilford Publications.
-   URL: [https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807](https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807)
+   DOI: [https://doi.org/10.1521/978.14625/28806](https://doi.org/10.1521/978.14625/28806)
 """
             return content, title, [
                 "https://doi.org/10.1207/S15327965PLI1104_01",
                 "https://doi.org/10.1080/00461520903028990",
-                "https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807"
+                "https://doi.org/10.1521/978.14625/28806"
             ]
         elif pattern == "B":
             title = "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと配列数式"

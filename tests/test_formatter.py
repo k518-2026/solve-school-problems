@@ -80,5 +80,18 @@ pattern: "C"
         self.assertIn('target="_blank"', post.content_html)
         self.assertIn("https://laws.e-gov.go.jp/document?lawid=425AC1000000071", post.content_html)
 
+    def test_parentheses_in_doi_url(self):
+        sample = """---
+title: "マルチメディア学習の原理"
+pattern: "A"
+---
+- Mayer, R. E. (2002). Multimedia learning.
+  [https://doi.org/10.1016/S0079-7421(02)80005-6](https://doi.org/10.1016/S0079-7421(02)80005-6)
+"""
+        post = format_post_content(sample, default_status="publish", use_jetpack_shortcodes=True)
+        self.assertIn('href="https://doi.org/10.1016/S0079-7421%2802%2980005-6"', post.content_html)
+        self.assertNotIn("</a>80005-6)", post.content_html)
+        self.assertIn("(https://doi.org/10.1016/S0079-7421%2802%2980005-6)", post.content_plain)
+
 if __name__ == "__main__":
     unittest.main()
