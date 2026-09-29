@@ -33,7 +33,8 @@ pattern: "A"
         self.assertEqual(post.pattern, "A")
         self.assertIn("[category 教育相談・学級経営, 教育心理学・教育哲学]", post.content_plain)
         self.assertIn("[status publish]", post.content_plain)
-        self.assertIn("パターンA：新米教員 × 先輩教員", post.content_html)
+        self.assertNotIn("パターンA：新米教員 × 先輩教員", post.content_html)
+        self.assertIn('target="_blank"', post.content_html)
         self.assertIn("https://doi.org/10.1000/182", post.content_html)
 
     def test_format_post_pattern_b(self):
@@ -48,11 +49,15 @@ function calculateGrades() {
     Logger.log("Done");
 }
 ```
+
+参考リンク: https://developers.google.com/apps-script
 """
         post = format_post_content(sample, default_status="publish", use_jetpack_shortcodes=True)
         self.assertEqual(post.pattern, "B")
-        self.assertIn("パターンB：年配教員 × 若手教員", post.content_html)
+        self.assertNotIn("パターンB：年配教員 × 若手教員", post.content_html)
+        self.assertIn('target="_blank"', post.content_html)
         self.assertIn("<code>function calculateGrades()", post.content_html)
+        self.assertIn('<a href="https://developers.google.com/apps-script" target="_blank"', post.content_html)
 
 if __name__ == "__main__":
     unittest.main()

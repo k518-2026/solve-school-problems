@@ -63,5 +63,5 @@ topic_id: "A01"
 2. Reeve, J. (2009). Why teachers adopt a controlling motivating style toward students and how they can become more autonomy supportive. *Educational Psychologist*, 44(3), 159-175.
    DOI: [https://doi.org/10.1080/00461520903028990](https://doi.org/10.1080/00461520903028990)
 
-3. Ryan, R. M., & Deci, E. L. (2020). Intrinsic and extrinsic motivation from a self-determination theory perspective: Definitions, theory, practices, and future directions. *Contemporary Educational Psychology*, 61, 101860.
-   DOI: [https://doi.org/10.1016/j.cedpsych.2020.101860](https://doi.org/10.1016/j.cedpsych.2020.101860)
+3. Ryan, R. M., & Deci, E. L. (2017). *Self-determination theory: Basic psychological needs in motivation, development, and wellness*. Guilford Publications.
+   URL: [https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807](https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807)

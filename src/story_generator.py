@@ -21,8 +21,8 @@ SYSTEM_PROMPT_A = """あなたは学校教育・学級経営に精通した実�
    - 新米教員（若手・初任者〜数年目）と、経験豊富で学識ある先輩教員（指導教諭、主幹教諭、ベテラン教員など）の生き生きとした対話劇を中心に描いてください。
    - 教室での子どもたちの生々しい反応や職員室の空気感、新米教員の焦りや戸惑い、先輩教員の受容と的確な洞察をドラマチックに描写してください。
    - 発言者が誰かわかるよう、ト書き（「〜と若葉先生はうなだれた」「〜と神崎先生は穏やかにカップを置いた」等）を自然に添えてください。
-2. **【起】【承】【転】【結】などの記号・見出しは本文中に入れないこと**:
-   - 物語の途中に「【起】」「【承】」といった記号や見出しを絶対に入れないでください。
+2. **【起】【承】【転】【結】などの記号・見出しや「パターンA：〜」等のラベルは本文中に入れないこと**:
+   - 物語の冒頭や途中に「パターンA：新米教員 × 先輩教員」「【起】」「【承】」といったラベルや見出しを絶対に入れないでください。自然な小説本文から直接開始してください。
    - シーン転換には、空行または「* * *」を用いてください。
 3. **学術的エビデンス・理論の自然な導入**:
    - 先輩教員のアドバイスには、教育学、教育心理学、教育哲学における実在の学術論文、古典的名著、認知・行動科学の理論（自己決定理論、足場かけ、認知的負荷理論、成長マインドセット、ケアの倫理、対話主義等）を具体的に織り込んでください。
@@ -43,8 +43,8 @@ SYSTEM_PROMPT_B = """あなたは学校教育と最新のコンピュータ技�
    - 長年学校を支えてきたがデジタル化や煩雑な手作業に悩む年配教員（教務主任、学年主任、副校長など）と、IT技術やプログラミング、ネットワークに明るい若手教員の対話劇を描いてください。
    - 若手教員は年配教員の教育的知恵や生徒への熱意を敬い、年配教員は若手の技術とスピード感に感銘を受けるという、世代間のリスペクトと温かい協働を描いてください。
    - 発言者が誰かわかるよう、ト書き（「〜と大山先生は老眼鏡を押し上げた」「〜と水野先生は画面を指さした」等）を自然に添えてください。
-2. **【起】【承】【転】【結】などの記号・見出しは本文中に入れないこと**:
-   - 物語の途中に「【起】」「【承】」といった記号や見出しを絶対に入れないでください。
+2. **【起】【承】【転】【結】などの記号・見出しや「パターンB：〜」等のラベルは本文中に入れないこと**:
+   - 物語の冒頭や途中に「パターンB：年配教員 × 若手教員」「【起】」「【承】」といったラベルや見出しを絶対に入れないでください。自然な小説本文から直接開始してください。
    - シーン転換には、空行または「* * *」を用いてください。
 3. **具体的で実用的なテクノロジー・ネットワーク知見**:
    - Google Apps Script (GAS)、Google Workspace、Excel/VBA、Python、正規表現、Wi-Fi周波数帯（2.4GHz/5GHz/Wi-Fi 6E/DFS）、ネットワークACL、バージョン管理、クラウド連携、QRコードなど、現場で実際に使える最新のコンピュータ・ネットワーク技術を論理的に解説・適用してください。
@@ -284,13 +284,13 @@ topic_id: "{topic.get('id', 'A01')}"
 2. Reeve, J. (2009). Why teachers adopt a controlling motivating style toward students and how they can become more autonomy supportive. *Educational Psychologist*, 44(3), 159-175.
    DOI: [https://doi.org/10.1080/00461520903028990](https://doi.org/10.1080/00461520903028990)
 
-3. Ryan, R. M., & Deci, E. L. (2020). Intrinsic and extrinsic motivation from a self-determination theory perspective: Definitions, theory, practices, and future directions. *Contemporary Educational Psychology*, 61, 101860.
-   DOI: [https://doi.org/10.1016/j.cedpsych.2020.101860](https://doi.org/10.1016/j.cedpsych.2020.101860)
+3. Ryan, R. M., & Deci, E. L. (2017). *Self-determination theory: Basic psychological needs in motivation, development, and wellness*. Guilford Publications.
+   URL: [https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807](https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807)
 """
             return content, title, [
                 "https://doi.org/10.1207/S15327965PLI1104_01",
                 "https://doi.org/10.1080/00461520903028990",
-                "https://doi.org/10.1016/j.cedpsych.2020.101860"
+                "https://www.guilford.com/books/Self-Determination-Theory/Ryan-Deci/9781462528807"
             ]
         else:
             title = "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと配列数式"

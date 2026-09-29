@@ -49,11 +49,42 @@ def _fallback_yaml_parser(text: str) -> Dict[str, Any]:
     return data
 
 def _format_inline_markdown(text: str) -> str:
-    """Formats inline bold, italic, code, and links."""
+    """Formats inline bold, italic, code, and links ensuring target='_blank'."""
     text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"\*(.*?)\*", r"<em>\1</em>", text)
     text = re.sub(r"`(.*?)`", r'<code style="background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9em; color: #0f172a;">\1</code>', text)
-    text = re.sub(r"\[(.*?)\]\((.*?)\)", r'<a href="\2" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">\1</a>', text)
+    
+    # 1. Convert standard Markdown links: [text](url) -> <a ... target="_blank">
+    text = re.sub(
+        r"\[(.*?)\]\((https?://[^\s\)]+)\)",
+        r'<a href="\2" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">\1</a>',
+        text
+    )
+    
+    # 2. Convert remaining raw URLs that are not already inside an href attribute
+    # Match URLs preceded by start-of-string, whitespace, or punctuation
+    def _url_replacer(match):
+        prefix = match.group(1)
+        url = match.group(2)
+        # Avoid double-wrapping if already in href="..." or >url<
+        return f'{prefix}<a href="{url}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">{url}</a>'
+
+    text = re.sub(
+        r'(^|[\s（\(「『：:])(https?://[^\s\)<>\"\'\]]+)',
+        _url_replacer,
+        text
+    )
+
+    # 3. Ensure any existing <a> tags have target="_blank" and rel="noopener noreferrer"
+    def _ensure_target_blank(match):
+        a_tag = match.group(0)
+        if 'target=' not in a_tag:
+            a_tag = a_tag[:-1] + ' target="_blank">'
+        if 'rel=' not in a_tag:
+            a_tag = a_tag[:-1] + ' rel="noopener noreferrer">'
+        return a_tag
+
+    text = re.sub(r'<a\s+[^>]+>', _ensure_target_blank, text)
     return text
 
 def _fallback_markdown_to_html(md_text: str) -> str:
@@ -269,32 +300,12 @@ def format_post_content(
 
     status = meta.get("status", default_status)
 
+    # Clean any accidental pattern labels from the beginning of body
+    body = re.sub(r'^(?:#+\s*)?(?:[📘💻]?\s*パターン[AB][:：][^\n]*\n+)+', '', body, flags=re.MULTILINE).strip()
+    body = re.sub(r'^(?:#+\s*)?(?:新米教員\s*[×x]\s*先輩教員|年配教員\s*[×x]\s*若手教員)[^\n]*\n+', '', body, flags=re.MULTILINE).strip()
+
     # Convert Markdown to HTML
     body_html = _fallback_markdown_to_html(body)
-
-    # Badge styling depending on Pattern A or Pattern B
-    if pattern == "A":
-        badge_html = (
-            '<div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); '
-            'border: 1px solid #bfdbfe; border-left: 6px solid #2563eb; padding: 12px 18px; '
-            'margin-bottom: 2em; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">'
-            '<div style="font-weight: bold; color: #1e40af; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase;">'
-            '📘 パターンA：新米教員 × 先輩教員 【教育相談・学術理論アプローチ】</div>'
-            '<div style="font-size: 13px; color: #3b82f6; margin-top: 4px;">'
-            '教室のリアルな問題に対し、教育学・教育心理学・教育哲学の学術知見から実践的なアドバイスを導きます。</div>'
-            '</div>'
-        )
-    else:
-        badge_html = (
-            '<div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); '
-            'border: 1px solid #bbf7d0; border-left: 6px solid #16a34a; padding: 12px 18px; '
-            'margin-bottom: 2em; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">'
-            '<div style="font-weight: bold; color: #166534; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase;">'
-            '💻 パターンB：年配教員 × 若手教員 【校務DX・ICTネットワーク解決】</div>'
-            '<div style="font-size: 13px; color: #15803d; margin-top: 4px;">'
-            '学校の煩雑な作業やITトラブルを、若手教員がコンピュータ技術とネットワークの力でスマートに解決します。</div>'
-            '</div>'
-        )
 
     # Footer note styling
     footer_html = (
@@ -304,11 +315,10 @@ def format_post_content(
         '</div>'
     )
 
-    # Wrap in responsive, clean container
+    # Wrap in responsive, clean container without top pattern badge
     final_html = (
         f'<div style="font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, \'Hiragino Sans\', \'BIZ UDPGothic\', Meiryo, sans-serif; '
         f'color: #1e293b; max-width: 820px; margin: 0 auto; line-height: 1.85; font-size: 16px;">\n'
-        f'{badge_html}\n'
         f'{body_html}\n'
         f'{footer_html}\n'
         f'</div>'
