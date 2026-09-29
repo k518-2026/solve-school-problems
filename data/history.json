@@ -1,6 +1,17 @@
 {
-  "last_pattern": null,
-  "last_run_at": null,
-  "total_posted": 0,
-  "posts": []
+  "last_pattern": "A",
+  "last_run_at": "2026-09-29T21:56:52.529406+09:00",
+  "total_posted": 1,
+  "posts": [
+    {
+      "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
+      "pattern": "A",
+      "topic_id": "A01",
+      "category": "学級経営・内発的動機づけ",
+      "file_path": "content/2026-09-29_pattern_a_教室の沈黙と自己決定_新米教員が学ぶ内発的動機づけの理論.md",
+      "timestamp": "2026-09-29T21:56:52.529406+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    }
+  ]
 }
