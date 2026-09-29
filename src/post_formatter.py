@@ -1,5 +1,6 @@
 import re
 import html
+import urllib.parse
 from dataclasses import dataclass, field
 from typing import List, Optional, Tuple, Dict, Any
 
@@ -48,6 +49,17 @@ def _fallback_yaml_parser(text: str) -> Dict[str, Any]:
                 data[key] = val
     return data
 
+def _sanitize_url(url: str) -> str:
+    """Safely percent-encodes non-ASCII characters in URLs while preserving URL structure."""
+    try:
+        parts = urllib.parse.urlsplit(url)
+        path = urllib.parse.quote(parts.path, safe="/:@&=+$,-_.!~*'()")
+        query = urllib.parse.quote(parts.query, safe="/:@&=+$,-_.!~*'()?")
+        fragment = urllib.parse.quote(parts.fragment, safe="/:@&=+$,-_.!~*'()")
+        return urllib.parse.urlunsplit((parts.scheme, parts.netloc, path, query, fragment))
+    except Exception:
+        return url
+
 def _format_inline_markdown(text: str) -> str:
     """Formats inline bold, italic, code, and links ensuring target='_blank'."""
     text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", text)
@@ -55,9 +67,15 @@ def _format_inline_markdown(text: str) -> str:
     text = re.sub(r"`(.*?)`", r'<code style="background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9em; color: #0f172a;">\1</code>', text)
     
     # 1. Convert standard Markdown links: [text](url) -> <a ... target="_blank">
+    def _md_link_replacer(match):
+        label = match.group(1)
+        raw_url = match.group(2)
+        safe_url = _sanitize_url(raw_url)
+        return f'<a href="{safe_url}" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">{label}</a>'
+
     text = re.sub(
         r"\[(.*?)\]\((https?://[^\s\)]+)\)",
-        r'<a href="\2" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">\1</a>',
+        _md_link_replacer,
         text
     )
     
