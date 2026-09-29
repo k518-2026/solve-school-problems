@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-09-29T21:56:52.529406+09:00",
-  "total_posted": 1,
+  "last_pattern": "B",
+  "last_run_at": "2026-09-29T22:32:50.812550+09:00",
+  "total_posted": 2,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -10,6 +10,16 @@
       "category": "学級経営・内発的動機づけ",
       "file_path": "content/2026-09-29_pattern_a_教室の沈黙と自己決定_新米教員が学ぶ内発的動機づけの理論.md",
       "timestamp": "2026-09-29T21:56:52.529406+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現",
+      "pattern": "B",
+      "topic_id": "B01",
+      "category": "校務自動化・スプレッドシート/GAS",
+      "file_path": "content/2026-09-29_pattern_b_深夜の成績集計とスプレッドシートの奇跡_年配教員を救うGASと正規表現.md",
+      "timestamp": "2026-09-29T22:32:50.812550+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
