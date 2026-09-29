@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-09-29T22:32:50.812550+09:00",
-  "total_posted": 2,
+  "last_pattern": "A",
+  "last_run_at": "2026-09-29T22:52:34.616637+09:00",
+  "total_posted": 3,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -20,6 +20,16 @@
       "category": "校務自動化・スプレッドシート/GAS",
       "file_path": "content/2026-09-29_pattern_b_深夜の成績集計とスプレッドシートの奇跡_年配教員を救うGASと正規表現.md",
       "timestamp": "2026-09-29T22:32:50.812550+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "ポリフォニーが響く教室へ――ジグソー法と足場かけが紡ぎ直す協働の絆",
+      "pattern": "A",
+      "topic_id": "A02",
+      "category": "授業改善・協調学習",
+      "file_path": "content/2026-09-29_pattern_a_ポリフォニーが響く教室へ_ジグソー法と足場かけが紡ぎ直す協働の絆.md",
+      "timestamp": "2026-09-29T22:52:34.616637+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
