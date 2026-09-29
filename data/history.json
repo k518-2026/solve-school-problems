@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-09-29T23:19:46.671962+09:00",
-  "total_posted": 6,
+  "last_pattern": "C",
+  "last_run_at": "2026-09-30T06:44:20.075471+09:00",
+  "total_posted": 7,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -60,6 +60,16 @@
       "category": "ネットワーク・インフラ改善",
       "file_path": "content/2026-09-29_pattern_b_公開授業のWi-Fi迷宮_DFSとチャネル設計が救った教室の未来.md",
       "timestamp": "2026-09-29T23:19:46.671962+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "腕の温もりと法の冷厳――校長が決断する懲戒の境界線",
+      "pattern": "C",
+      "topic_id": "C02",
+      "category": "学校法制・教員懲戒・指導",
+      "file_path": "content/2026-09-30_pattern_c_腕の温もりと法の冷厳_校長が決断する懲戒の境界線.md",
+      "timestamp": "2026-09-30T06:44:20.075471+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
