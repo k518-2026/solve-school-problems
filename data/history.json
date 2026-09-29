@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-09-29T23:04:59.042116+09:00",
-  "total_posted": 4,
+  "last_pattern": "A",
+  "last_run_at": "2026-09-29T23:12:36.842003+09:00",
+  "total_posted": 5,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -40,6 +40,16 @@
       "category": "学校法制・いじめ防止",
       "file_path": "content/2026-09-29_pattern_c_疑いと報告のあいだ_校長が学ぶいじめ防止対策推進法と重大事態の判断.md",
       "timestamp": "2026-09-29T23:04:59.042116+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "グレーのノートと開かれた扉――マインドセット理論がもたらす教室の再生",
+      "pattern": "A",
+      "topic_id": "A03",
+      "category": "生徒指導・学習観の変革",
+      "file_path": "content/2026-09-29_pattern_a_グレーのノートと開かれた扉_マインドセット理論がもたらす教室の再生.md",
+      "timestamp": "2026-09-29T23:12:36.842003+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
