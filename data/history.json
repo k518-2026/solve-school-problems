@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-09-29T23:12:36.842003+09:00",
-  "total_posted": 5,
+  "last_pattern": "B",
+  "last_run_at": "2026-09-29T23:19:46.671962+09:00",
+  "total_posted": 6,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -50,6 +50,16 @@
       "category": "生徒指導・学習観の変革",
       "file_path": "content/2026-09-29_pattern_a_グレーのノートと開かれた扉_マインドセット理論がもたらす教室の再生.md",
       "timestamp": "2026-09-29T23:12:36.842003+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "公開授業のWi-Fi迷宮――DFSとチャネル設計が救った教室の未来",
+      "pattern": "B",
+      "topic_id": "B02",
+      "category": "ネットワーク・インフラ改善",
+      "file_path": "content/2026-09-29_pattern_b_公開授業のWi-Fi迷宮_DFSとチャネル設計が救った教室の未来.md",
+      "timestamp": "2026-09-29T23:19:46.671962+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
