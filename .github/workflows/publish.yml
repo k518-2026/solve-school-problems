@@ -12,13 +12,14 @@ on:
   workflow_dispatch:
     inputs:
       pattern:
-        description: 'Story Pattern (auto: alternates A/B, A: Pedagogy/Psychology, B: School ICT DX)'
+        description: 'Story Pattern (auto: alternates A/B/C, A: Pedagogy, B: School ICT DX, C: School Law)'
         required: true
         type: choice
         options:
           - auto
           - A
           - B
+          - C
         default: 'auto'
       dry_run:
         description: 'Dry run mode (Simulate without sending actual email)'

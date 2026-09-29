@@ -21,6 +21,10 @@ class TestHistoryManager(unittest.TestCase):
             "pattern_B_topics": [
                 {"id": "B01", "category": "校務自動化", "problem_title": "成績手計算"},
                 {"id": "B02", "category": "ネットワーク", "problem_title": "Wi-Fi切断"}
+            ],
+            "pattern_C_topics": [
+                {"id": "C01", "category": "いじめ重大事態", "problem_title": "いじめ被害の訴え"},
+                {"id": "C02", "category": "懲戒と体罰の境界", "problem_title": "授業妨害生徒への対応"}
             ]
         }
         with open(self.catalog_path, "w", encoding="utf-8") as f:
@@ -40,24 +44,33 @@ class TestHistoryManager(unittest.TestCase):
         self.assertEqual(self.manager.get_next_pattern(), "A")
 
     def test_pattern_alternation(self):
-        # Start at A
+        # 1. Start at A
         p1 = self.manager.get_next_pattern()
         self.assertEqual(p1, "A")
         self.manager.record_post({"title": "Test Story 1", "pattern": "A", "topic_id": "A01"})
 
-        # Next should be B
+        # 2. Next should be B
         p2 = self.manager.get_next_pattern()
         self.assertEqual(p2, "B")
         self.manager.record_post({"title": "Test Story 2", "pattern": "B", "topic_id": "B01"})
 
-        # Next should be A again
+        # 3. Next should be C
         p3 = self.manager.get_next_pattern()
-        self.assertEqual(p3, "A")
+        self.assertEqual(p3, "C")
+        self.manager.record_post({"title": "Test Story 3", "pattern": "C", "topic_id": "C01"})
+
+        # 4. Next should cycle back to A
+        p4 = self.manager.get_next_pattern()
+        self.assertEqual(p4, "A")
 
     def test_forced_pattern(self):
         # Force B even when initial
         p = self.manager.get_next_pattern(forced_pattern="B")
         self.assertEqual(p, "B")
+
+        # Force C
+        pc = self.manager.get_next_pattern(forced_pattern="C")
+        self.assertEqual(pc, "C")
 
         # Force A
         p2 = self.manager.get_next_pattern(forced_pattern="a")
@@ -67,9 +80,13 @@ class TestHistoryManager(unittest.TestCase):
         topic = self.manager.get_topic("A")
         self.assertEqual(topic["id"], "A01")
 
-        # Specific topic ID
+        # Specific topic ID for B
         topic2 = self.manager.get_topic("B", topic_id="B02")
         self.assertEqual(topic2["id"], "B02")
+
+        # Topic for C
+        topic3 = self.manager.get_topic("C")
+        self.assertEqual(topic3["id"], "C01")
 
     def test_markdown_log_creation(self):
         self.manager.record_post({
@@ -80,12 +97,22 @@ class TestHistoryManager(unittest.TestCase):
             "file_path": "content/test.md",
             "sent_to_wp": True
         })
+        self.manager.record_post({
+            "title": "学校法規の適用判断",
+            "pattern": "C",
+            "topic_id": "C01",
+            "category": "いじめ重大事態",
+            "file_path": "content/test_c.md",
+            "sent_to_wp": True
+        })
         self.assertTrue(self.log_path.exists())
         with open(self.log_path, "r", encoding="utf-8") as f:
             content = f.read()
             self.assertIn("Solve School Problems", content)
             self.assertIn("A (教育学)", content)
+            self.assertIn("C (学校法制)", content)
             self.assertIn("学級の課題解決", content)
+            self.assertIn("学校法規の適用判断", content)
 
 if __name__ == "__main__":
     unittest.main()

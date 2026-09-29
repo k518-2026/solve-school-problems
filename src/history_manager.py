@@ -48,7 +48,7 @@ class HistoryManager:
                     return json.load(f)
             except Exception as e:
                 logger.error(f"Failed to load catalog from {self.catalog_path}: {e}")
-        return {"pattern_A_topics": [], "pattern_B_topics": []}
+        return {"pattern_A_topics": [], "pattern_B_topics": [], "pattern_C_topics": []}
 
     def save_history(self) -> None:
         """Saves history data to history.json."""
@@ -58,38 +58,48 @@ class HistoryManager:
 
     def get_next_pattern(self, forced_pattern: Optional[str] = None) -> str:
         """
-        Determines the next pattern to generate ('A' or 'B').
-        If forced_pattern is provided ('A' or 'B'), uses it.
-        Otherwise alternates: if last was 'A' -> 'B', if last was 'B' -> 'A', default: 'A'.
+        Determines the next pattern to generate in cyclic order: A -> B -> C -> A.
+        If forced_pattern is provided ('A', 'B', or 'C'), uses it.
+        Otherwise alternates: A -> B, B -> C, C -> A, default initial: A.
         """
         if forced_pattern:
             clean = forced_pattern.strip().upper()
-            if clean in ("A", "B"):
+            if clean in ("A", "B", "C"):
                 logger.info(f"Pattern manually specified: Pattern {clean}")
                 return clean
             elif clean in ("PATTERN_A", "PATTERNA"):
                 return "A"
             elif clean in ("PATTERN_B", "PATTERNB"):
                 return "B"
+            elif clean in ("PATTERN_C", "PATTERNC"):
+                return "C"
 
         last_pattern = self.history_data.get("last_pattern")
         if last_pattern == "A":
             next_pattern = "B"
         elif last_pattern == "B":
+            next_pattern = "C"
+        elif last_pattern == "C":
             next_pattern = "A"
         else:
             # First time default
             next_pattern = "A"
 
-        logger.info(f"Alternating pattern: Last was '{last_pattern}', Next is Pattern {next_pattern}")
+        logger.info(f"Cyclic pattern alternation (A->B->C): Last was '{last_pattern}', Next is Pattern {next_pattern}")
         return next_pattern
 
     def get_topic(self, pattern: str, topic_id: Optional[str] = None) -> Dict[str, Any]:
         """
-        Retrieves a topic definition for the given pattern ('A' or 'B').
+        Retrieves a topic definition for the given pattern ('A', 'B', or 'C').
         Prioritizes unused topics from catalog.
         """
-        key = "pattern_A_topics" if pattern == "A" else "pattern_B_topics"
+        if pattern == "A":
+            key = "pattern_A_topics"
+        elif pattern == "B":
+            key = "pattern_B_topics"
+        else:
+            key = "pattern_C_topics"
+
         topics = self.catalog_data.get(key, [])
 
         if not topics:
@@ -154,7 +164,7 @@ class HistoryManager:
             "# 🏫 Solve School Problems - 投稿履歴一覧 (Posted Stories)",
             "",
             "本システムが自動生成およびWordPressへメール投稿したストーリーの履歴ログです。",
-            "**Aパターン（新米教員×先輩教員の教育相談・学術論文知見）** と **Bパターン（年配教員×若手教員の校務ICT・ネットワーク技術解決）** を交代で配信しています。",
+            "**Aパターン（新米教員×先輩教員・教育学）**、**Bパターン（年配教員×若手教員・校務DX）**、**Cパターン（校長先生×教育委員会/指導主事・教育法制）** を交代（A→B→C）で配信しています。",
             "",
             f"- **総投稿数**: {len(posts)} 件",
             f"- **最終更新**: {datetime.now(JST).strftime('%Y-%m-%d %H:%M:%S JST')}",
@@ -167,7 +177,12 @@ class HistoryManager:
         for i, p in enumerate(posts, 1):
             ts = p.get("timestamp", "")[:16].replace("T", " ")
             pat = p.get("pattern", "A")
-            pat_badge = "📘 **A (教育学)**" if pat == "A" else "💻 **B (校務DX)**"
+            if pat == "A":
+                pat_badge = "📘 **A (教育学)**"
+            elif pat == "B":
+                pat_badge = "💻 **B (校務DX)**"
+            else:
+                pat_badge = "⚖️ **C (学校法制)**"
             tid = p.get("topic_id", "-")
             title = p.get("title", "-")
             cat = p.get("category", "-")

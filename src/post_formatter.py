@@ -303,6 +303,8 @@ def format_post_content(
     if not categories:
         if pattern == "A":
             categories = ["教育相談・学級経営", "教育心理学・教育哲学"]
+        elif pattern == "C":
+            categories = ["学校法制・教育法規", "学校管理・教育委員会"]
         else:
             categories = ["校務DX・学校ICT", "ネットワーク・業務効率化"]
 
@@ -313,14 +315,16 @@ def format_post_content(
     if not tags:
         if pattern == "A":
             tags = ["教育学", "教育心理学", "学級経営", "生徒指導", "若手教員育成", "Aパターン"]
+        elif pattern == "C":
+            tags = ["学校法制", "教育法規", "学校管理職", "校長", "教育委員会", "Cパターン"]
         else:
             tags = ["校務DX", "学校ICT", "業務効率化", "プログラミング", "ネットワーク", "Bパターン"]
 
     status = meta.get("status", default_status)
 
     # Clean any accidental pattern labels from the beginning of body
-    body = re.sub(r'^(?:#+\s*)?(?:[📘💻]?\s*パターン[AB][:：][^\n]*\n+)+', '', body, flags=re.MULTILINE).strip()
-    body = re.sub(r'^(?:#+\s*)?(?:新米教員\s*[×x]\s*先輩教員|年配教員\s*[×x]\s*若手教員)[^\n]*\n+', '', body, flags=re.MULTILINE).strip()
+    body = re.sub(r'^(?:#+\s*)?(?:[📘💻⚖️]?\s*パターン[ABC][:：][^\n]*\n+)+', '', body, flags=re.MULTILINE).strip()
+    body = re.sub(r'^(?:#+\s*)?(?:新米教員\s*[×x]\s*先輩教員|年配教員\s*[×x]\s*若手教員|校長先生?\s*[×x]\s*(?:指導主事|教育委員会))[^\n]*\n+', '', body, flags=re.MULTILINE).strip()
 
     # Convert Markdown to HTML
     body_html = _fallback_markdown_to_html(body)
@@ -329,7 +333,7 @@ def format_post_content(
     footer_html = (
         '<div style="margin-top: 2.5em; padding: 16px 20px; background-color: #f8fafc; '
         'border-top: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #64748b; line-height: 1.7;">'
-        '<p style="margin: 0;"><strong>🏫 Solve School Problems</strong> は、学校現場の教育課題と校務の負担を、学術的英知と最新テクノロジーの両輪で解決する知見を定期配信しています。</p>'
+        '<p style="margin: 0;"><strong>🏫 Solve School Problems</strong> は、学校現場の教育課題と校務の負担を、学術的英知・最新テクノロジー・学校法制の知見で解決する情報を定期配信しています。</p>'
         '</div>'
     )
 

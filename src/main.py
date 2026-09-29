@@ -33,9 +33,9 @@ def main():
     )
     parser.add_argument(
         "--pattern", "-p",
-        choices=["auto", "A", "B", "a", "b"],
+        choices=["auto", "A", "B", "C", "a", "b", "c"],
         default="auto",
-        help="Story pattern: 'auto' (alternates A/B based on history), 'A' (Novice x Senior / Pedagogy), 'B' (Veteran x Young / ICT DX)"
+        help="Story pattern: 'auto' (alternates A/B/C based on history), 'A' (Novice x Senior / Pedagogy), 'B' (Veteran x Young / ICT DX), 'C' (Principal x Board of Ed / School Law)"
     )
     parser.add_argument(
         "--topic-id",

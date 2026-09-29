@@ -32,5 +32,20 @@ class TestStoryGenerator(unittest.TestCase):
         self.assertTrue(len(refs) > 0)
         self.assertTrue(len(title) > 0)
 
+    def test_fallback_pattern_c(self):
+        generator = StoryGenerator(api_key=None)
+        topic = {
+            "id": "C01",
+            "category": "いじめ重大事態",
+            "problem_title": "いじめ重大事態の初動と学校の法的責務"
+        }
+        content, title, refs = generator.generate_story("C", topic)
+        self.assertIn("pattern: \"C\"", content)
+        self.assertIn("いじめ防止対策推進法", content)
+        self.assertIn("【作中法規・教育法制のやさしい解説", content)
+        self.assertIn("【引用・参考文献", content)
+        self.assertTrue(len(refs) > 0)
+        self.assertTrue(len(title) > 0)
+
 if __name__ == "__main__":
     unittest.main()
