@@ -132,9 +132,13 @@
         "young": "若手教諭・藤堂先生（教職4年目・理科・ネットワーク愛好家）"
       },
       "situation": "1人1台端末を使った公開研究授業で、生徒40人が一斉に動画教材を開いた瞬間にWi-Fiが全滅し、佐々木副校長がルーターのコンセントを抜き差しして焦っている。",
-      "solution_framework": "Wi-Fi周波数帯（2.4GHz帯の混雑 vs 5GHz DFS帯・6GHz Wi-Fi 6E）のトラフィック分離とAPチャネル設計・バンドステアリング",
-      "key_technologies": ["IEEE 802.11ax (Wi-Fi 6)", "DFS (動的周波数選択) 回避", "チャネルボンディングと干渉対策", "DHCPリース時間とIPアドレス枯渇対策"],
-      "reference_hints": ["IEEE Standard 802.11ax-2021: https://standards.ieee.org/ieee/802.11ax/6829/", "Cisco Enterprise Mobility 8.5 Design Guide: https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/Enterprise-Mobility-8-5-Design-Guide.html"]
+      "solution_framework": "Wi-Fi周波数帯（2.4GHz帯の混雑 vs 5GHz DFS帯・6GHz帯）のトラフィック分離とAPチャネル設計・バンドステアリング",
+      "key_technologies": ["Wi-Fi 6 (802.11ax)", "DFS (動的周波数選択) 回避", "チャネルボンディングと電波干渉対策", "DHCPリース時間とIPアドレス管理"],
+      "reference_hints": [
+        "文部科学省. 教育の情報化の推進（GIGAスクール構想・校内通信環境整備）: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm",
+        "総務省. 教育分野における情報通信技術の利活用: https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/",
+        "文部科学省. 教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm"
+      ]
     },
     {
       "id": "B03",
@@ -145,9 +149,13 @@
         "young": "若手教諭・小林先生（教職2年目・数学担当）"
       },
       "situation": "PTAアンケートの自由記述回答が何百枚も紙で提出され、吉岡先生がマーカーを引いてハサミで切り分け、模造紙に貼るという果てしない手作業を行っている。",
-      "solution_framework": "Google Forms / OCR ＋ Python（Pandas, MeCab / SpaCy）による形態素解析とキーワード抽出・ポジネガ分類",
-      "key_technologies": ["Python (Pandas, OpenPyXL)", "形態素解析 (MeCab / Sudachi)", "Google Cloud Vision API (手書きOCR)", "ワードクラウド可視化"],
-      "reference_hints": ["Pandas Documentation: https://pandas.pydata.org/docs/", "MeCab: Yet Another Part-of-Speech and Morphological Analyzer: https://taku910.github.io/mecab/"]
+      "solution_framework": "Google Forms ＋ Python（Pandas, 形態素解析）によるキーワード抽出と意見分類の自動化",
+      "key_technologies": ["Google フォーム集計", "Python (Pandas, OpenPyXL)", "日本語形態素解析", "キーワード出現頻度・可視化"],
+      "reference_hints": [
+        "Google ドキュメント エディタ ヘルプ. Google フォームの回答を表示、管理する: https://support.google.com/docs/answer/2839588?hl=ja",
+        "デジタル庁. 教育（教育DX・データ標準の推進）: https://www.digital.go.jp/policies/education",
+        "文部科学省. 高等学校情報科「情報Ⅰ」教員研修用教材（データ活用・テキスト分析）: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html"
+      ]
     },
     {
       "id": "B04",
@@ -159,8 +167,12 @@
       },
       "situation": "行事計画のマスターExcelファイルが誰かに白紙で上書き保存されてしまい、バックアップもなく高橋先生が頭を抱えて全員に聞き回っている。",
       "solution_framework": "クラウドストレージ（Google Drive / OneDrive）の版管理（バージョン履歴復元）と共有権限（閲覧のみ・編集者）のロール分離（RBAC）",
-      "key_technologies": ["Google Drive Version History", "ロールベースアクセス制御 (RBAC)", "スプレッドシートの保護されたシート/範囲", "3-2-1バックアップルール"],
-      "reference_hints": ["NIST Special Publication 800-162 (Guide to Attribute Based Access Control): https://csrc.nist.gov/publications/detail/sp/800-162/final", "Google Workspace Admin Help: Manage file versions: https://support.google.com/a/answer/172541"]
+      "key_technologies": ["Google Drive 版管理（バージョン履歴）", "共有権限とアクセス制御 (RBAC)", "スプレッドシートの保護されたシート/範囲", "3-2-1バックアップ原則"],
+      "reference_hints": [
+        "Google ドライブ ヘルプ. ファイルやフォルダの以前のバージョンを確認する（版管理）: https://support.google.com/drive/answer/2409045?hl=ja",
+        "文部科学省. 教育情報セキュリティポリシーに関するガイドライン: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm",
+        "IPA（独立行政法人情報処理推進機構）. 中小企業・組織向け情報セキュリティ対策ガイドライン: https://www.ipa.go.jp/security/keihatsu/sme/guideline/index.html"
+      ]
     },
     {
       "id": "B05",
@@ -171,9 +183,13 @@
         "young": "若手教諭・西村先生（教職4年目・国語科）"
       },
       "situation": "各担任から上がってきた通知表の所見数百人分を、川上先生が赤ペンと定規を持って一字一字数え、固有名詞の間違いを探す作業で夜明けを迎えている。",
-      "solution_framework": "正規表現（Regular Expressions）とGoogleスプレッドシートのカスタム関数、校正APIによる自動チェック",
-      "key_technologies": ["正規表現 (RegEx: \\b, \\d, [^...])", "LENB / REGEXEXTRACT 関数", "形態素校正ツール", "条件付き書式アラート"],
-      "reference_hints": ["PCRE (Perl Compatible Regular Expressions) Documentation: https://www.pcre.org/current/doc/html/", "Google Workspace RegExp in Spreadsheet: https://support.google.com/docs/answer/3098244"]
+      "solution_framework": "正規表現（Regular Expressions）とGoogleスプレッドシートのテキスト関数による自動文字数カウント・校正チェック",
+      "key_technologies": ["正規表現 (RegEx)", "LEN / LENB 関数", "REGEXEXTRACT / REGEXREPLACE 関数", "条件付き書式アラート"],
+      "reference_hints": [
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの正規表現関数（REGEXEXTRACT / REGEXREPLACE）: https://support.google.com/docs/answer/3098244?hl=ja",
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの関数リスト: https://support.google.com/docs/table/25273?hl=ja",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
+      ]
     },
     {
       "id": "B06",
@@ -184,9 +200,13 @@
         "young": "若手教諭・坂本先生（教職2年目・理科）"
       },
       "situation": "雨天順延やプログラム変更のたびに紙の進行表を何回も印刷し直して全職員に配るが、誰がどの版を持っているかわからなくなり当日本部が大混乱する。",
-      "solution_framework": "クラウドカレンダー＋リアルタイム同期ホワイトボード（Google Calendar API, Slack/Teams Webhook通知）",
-      "key_technologies": ["iCalendar (RFC 5545) プロトコル", "Google Calendar 共有カレンダー", "Webhook 通知自動化", "QRコードによる保護者向けライブ進行表"],
-      "reference_hints": ["RFC 5545: Internet Calendaring and Scheduling Core Object Specification (iCalendar): https://datatracker.ietf.org/doc/html/rfc5545", "Google Calendar API: https://developers.google.com/calendar/api"]
+      "solution_framework": "クラウドカレンダー（Google Calendar）＋リアルタイム共有タイムテーブルによる変更即時反映と通知自動化",
+      "key_technologies": ["Google カレンダー 共有カレンダー", "リアルタイム更新ホワイトボード", "クラウド通知自動化", "QRコードによる保護者・職員向けライブタイムテーブル"],
+      "reference_hints": [
+        "Google カレンダー ヘルプ. 新しいカレンダーを作成する（学校行事・学年共有カレンダー）: https://support.google.com/calendar/answer/37082?hl=ja",
+        "デジタル庁. 教育（教育DX・校務の負担軽減）: https://www.digital.go.jp/policies/education",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
+      ]
     },
     {
       "id": "B07",
@@ -197,9 +217,13 @@
         "young": "若手副顧問・神田先生（教職2年目・英語）"
       },
       "situation": "朝6時にグラウンド不良で練習試合の中止が決まるが、連絡網が途中で途切れ、学校に問い合わせの電話が鳴り響いて松井先生が対応に追われる。",
-      "solution_framework": "連絡アプリ / LINE Messaging API / Google Forms を組み合わせたワンクリック一斉配信と既読確認システム",
-      "key_technologies": ["REST API / Webhook", "LINE Messaging API / マチコミ等連携", "Google Forms + 自動メール返信", "リアルタイム出席・回答ダッシュボード"],
-      "reference_hints": ["LINE Developers Messaging API: https://developers.line.biz/en/docs/messaging-api/", "IETF RFC 7231 (HTTP/1.1 Semantics and Content): https://datatracker.ietf.org/doc/html/rfc7231"]
+      "solution_framework": "学校連絡アプリおよびGoogleフォームによるワンクリック一斉配信と既読・出欠確認システム",
+      "key_technologies": ["学校・保護者間連絡システム", "Google フォーム出欠確認", "メール一斉配信自動化", "リアルタイム回答確認ダッシュボード"],
+      "reference_hints": [
+        "文部科学省. 学校と保護者等間における連絡手段のデジタル化の推進について（通知）: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html",
+        "デジタル庁. 教育（教育DX・学校連絡のデジタル化）: https://www.digital.go.jp/policies/education",
+        "Google ドキュメント エディタ ヘルプ. Google フォームの回答を表示、管理する: https://support.google.com/docs/answer/2839588?hl=ja"
+      ]
     },
     {
       "id": "B08",
@@ -210,9 +234,13 @@
         "young": "若手教諭・竹内先生（教職3年目・技術科）"
       },
       "situation": "全校800人分のテスト問題や学年通信を、クラスごとの在籍人数に合わせて印刷機のテンキーを手で押し、仕分け用の紙を挟みながら半日印刷室にこもっている。",
-      "solution_framework": "複合機（MFP）のIPP / プリンタドライバー機能（部門別・部数別ジョブ設定）とPythonスクリプトによるPDF自動面付け・部数分割",
-      "key_technologies": ["IPP (Internet Printing Protocol - RFC 8010)", "PyPDF / pdfplumber によるページ分割", "複合機ソーター・ステープル機能のプログラマブル制御", "両面・小冊子自動面付け"],
-      "reference_hints": ["RFC 8010: Internet Printing Protocol/1.1: https://datatracker.ietf.org/doc/html/rfc8010", "PyPDF Documentation: https://pypdf.readthedocs.io/"]
+      "solution_framework": "複合機（MFP）の部数別・クラス別ジョブ設定とクラウドペーパーレス化による印刷業務の削減",
+      "key_technologies": ["複合機ソーター・部数管理機能", "両面・小冊子自動面付け", "PDFデジタル配布", "学年通信のペーパーレス化"],
+      "reference_hints": [
+        "文部科学省. 教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm",
+        "デジタル庁. 教育（校務DXと業務効率化）: https://www.digital.go.jp/policies/education",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
+      ]
     }
   ],
   "pattern_C_topics": [
