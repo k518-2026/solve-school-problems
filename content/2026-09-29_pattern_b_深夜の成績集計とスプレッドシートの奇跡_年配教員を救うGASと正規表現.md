@@ -145,10 +145,10 @@ function calculateRating(score) {
 ### 【引用・参考文献（Technical References & Documentation）】
 
 - Microsoft Support (2024). *XLOOKUP 関数 – Microsoft サポート*.
-  [https://support.microsoft.com/ja-jp/office/xlookup-%E9%96%A2%E6%95%B0-b7fd680e-6d10-43e3-8419-53d825830967](https://support.microsoft.com/ja-jp/office/xlookup-%E9%96%A2%E6%95%B0-b7fd680e-6d10-43e3-8419-53d825830967)
+  [https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929](https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929)
 
-- 文部科学省 (2021). *教育情報セキュリティポリシーに関するガイドライン（令和3年1月改訂）*.
-  [https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1416060.htm](https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1416060.htm)
+- 文部科学省 (2021). *教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）*.
+  [https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm](https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm)
 
-- Google Workspace Learning Center. *スプレッドシートの関数リスト*.
-  [https://support.google.com/a/users/answer/9300316](https://support.google.com/a/users/answer/9300316)
+- Google ドキュメント エディタ ヘルプ. *Google スプレッドシートの関数リスト*.
+  [https://support.google.com/docs/table/25273?hl=ja](https://support.google.com/docs/table/25273?hl=ja)

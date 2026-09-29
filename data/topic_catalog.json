@@ -118,9 +118,9 @@
       "solution_framework": "Google Apps Script (GAS) と ARRAYFORMULA / VLOOKUP / XLOOKUP による自動集計とバリデーションマクロ",
       "key_technologies": ["Google Apps Script (GAS)", "XLOOKUP / FILTER 関数", "条件付き書式による異常値ハイライト", "データ入力規則"],
       "reference_hints": [
-        "Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート. https://support.microsoft.com/ja-jp/office/xlookup-関数-b7fd680e-6d10-43e3-8419-53d825830967",
-        "文部科学省 (2021). 教育情報セキュリティポリシーに関するガイドライン（令和3年1月改訂）. https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1416060.htm",
-        "Google Workspace Learning Center. スプレッドシートの関数リスト. https://support.google.com/a/users/answer/9300316"
+        "Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート. https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+        "文部科学省 (2021). 教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）. https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm",
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの関数リスト. https://support.google.com/docs/table/25273?hl=ja"
       ]
     },
     {
