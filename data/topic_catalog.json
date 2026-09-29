@@ -117,7 +117,11 @@
       "situation": "大山先生が連日夜遅くまで電卓を叩いて学年300人の評定計算や欠席日数の照合を手書きと手動Excel入力で行っており、目の充血と肩こりで倒れそうになっている。",
       "solution_framework": "Google Apps Script (GAS) と ARRAYFORMULA / VLOOKUP / XLOOKUP による自動集計とバリデーションマクロ",
       "key_technologies": ["Google Apps Script (GAS)", "XLOOKUP / FILTER 関数", "条件付き書式による異常値ハイライト", "データ入力規則"],
-      "reference_hints": ["Google Apps Script Documentation: https://developers.google.com/apps-script", "Microsoft Excel Function Reference: https://support.microsoft.com/excel"]
+      "reference_hints": [
+        "Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート. https://support.microsoft.com/ja-jp/office/xlookup-関数-b7fd680e-6d10-43e3-8419-53d825830967",
+        "文部科学省 (2021). 教育情報セキュリティポリシーに関するガイドライン（令和3年1月改訂）. https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1416060.htm",
+        "Google Workspace Learning Center. スプレッドシートの関数リスト. https://support.google.com/a/users/answer/9300316"
+      ]
     },
     {
       "id": "B02",

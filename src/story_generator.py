@@ -356,17 +356,17 @@ topic_id: "{topic.get('id', 'B01')}"
 
 ### 【引用・参考文献（Technical References & Documentation）】
 
-1. Google Workspace Developers. "Google Apps Script Overview and Guides." 
-   URL: [https://developers.google.com/apps-script/overview](https://developers.google.com/apps-script/overview)
+1. Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート.
+   URL: [https://support.microsoft.com/ja-jp/office/xlookup-関数-b7fd680e-6d10-43e3-8419-53d825830967](https://support.microsoft.com/ja-jp/office/xlookup-%E9%96%A2%E6%95%B0-b7fd680e-6d10-43e3-8419-53d825830967)
 
-2. Google Support. "LAMBDA function and array manipulation in Google Sheets."
-   URL: [https://support.google.com/docs/answer/12508718](https://support.google.com/docs/answer/12508718)
+2. 文部科学省 (2021). 教育情報セキュリティポリシーに関するガイドライン（令和3年1月改訂）.
+   URL: [https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1416060.htm](https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1416060.htm)
 
-3. Microsoft Learn. "XLOOKUP function and dynamic array formulas."
-   URL: [https://learn.microsoft.com/en-us/office/troubleshoot/excel/xlookup-function](https://learn.microsoft.com/en-us/office/troubleshoot/excel/xlookup-function)
+3. Google Workspace Learning Center. スプレッドシートの関数リスト.
+   URL: [https://support.google.com/a/users/answer/9300316](https://support.google.com/a/users/answer/9300316)
 """
             return content, title, [
-                "https://developers.google.com/apps-script/overview",
-                "https://support.google.com/docs/answer/12508718",
-                "https://learn.microsoft.com/en-us/office/troubleshoot/excel/xlookup-function"
+                "https://support.microsoft.com/ja-jp/office/xlookup-%E9%96%A2%E6%95%B0-b7fd680e-6d10-43e3-8419-53d825830967",
+                "https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1416060.htm",
+                "https://support.google.com/a/users/answer/9300316"
             ]
