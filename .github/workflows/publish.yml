@@ -1,0 +1,117 @@
+name: Solve School Problems - Auto Story Publisher to WordPress
+
+on:
+  # Daily scheduled execution
+  # 1) 朝の通勤・登校前: 21:30 UTC = 06:30 JST
+  # 2) 夕方の退勤・放課後: 08:30 UTC = 17:30 JST
+  schedule:
+    - cron: '30 21 * * *'
+    - cron: '30 8 * * *'
+
+  # Manual execution from GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      pattern:
+        description: 'Story Pattern (auto: alternates A/B, A: Pedagogy/Psychology, B: School ICT DX)'
+        required: true
+        type: choice
+        options:
+          - auto
+          - A
+          - B
+        default: 'auto'
+      dry_run:
+        description: 'Dry run mode (Simulate without sending actual email)'
+        required: true
+        type: boolean
+        default: false
+      post_status:
+        description: 'Post status on WordPress (publish or draft)'
+        required: true
+        type: choice
+        options:
+          - publish
+          - draft
+        default: 'publish'
+      topic_id:
+        description: 'Specific topic ID from catalog (e.g. A01, B02, or leave blank for auto-selection)'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Generate & Dispatch Story to WordPress
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: |
+          python -m unittest discover tests
+
+      - name: Execute Story Generation and WordPress Mail Dispatch
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.8-flash' }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST || 'smtp.gmail.com' }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS || 'true' }}
+          SMTP_USE_SSL: ${{ secrets.SMTP_USE_SSL || 'false' }}
+          MAIL_FROM_NAME: ${{ vars.MAIL_FROM_NAME || 'Solve School Problems' }}
+          WP_POST_EMAIL: ${{ secrets.WP_POST_EMAIL }}
+          DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
+          USE_JETPACK_SHORTCODES: 'true'
+        run: |
+          PATTERN_ARG="${{ github.event.inputs.pattern || 'auto' }}"
+          TOPIC_ARG="${{ github.event.inputs.topic_id || '' }}"
+          DRY_RUN_ARG="${{ github.event.inputs.dry_run || 'false' }}"
+
+          CMD="python -m src.main --pattern ${PATTERN_ARG}"
+
+          if [ -n "$TOPIC_ARG" ]; then
+            CMD="${CMD} --topic-id ${TOPIC_ARG}"
+          fi
+
+          if [ "$DRY_RUN_ARG" = "true" ]; then
+            CMD="${CMD} --dry-run"
+          else
+            CMD="${CMD} --send"
+          fi
+
+          echo "Executing: $CMD"
+          eval $CMD
+
+      - name: Commit and Push Updated History & Content
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git add content/ data/history.json data/POSTED_STORIES.md
+
+          if git diff --staged --quiet; then
+            echo "No changes detected to commit."
+          else
+            git commit -m "Auto: publish school problem solving story [skip ci]"
+            git push origin HEAD:${{ github.ref }}
+          fi

@@ -1,0 +1,372 @@
+import os
+import re
+import json
+import time
+import random
+import logging
+import urllib.request
+import urllib.error
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+from typing import Dict, Any, Tuple, List, Optional
+
+logger = logging.getLogger(__name__)
+JST = timezone(timedelta(hours=9))
+
+SYSTEM_PROMPT_A = """あなたは学校教育・学級経営に精通した実力派教育作家であり、教育学・教育心理学・教育哲学の学術研究者です。
+新米教員が学校現場や教室で直面する切実な悩み・トラブルを、先輩教員の温かく鋭い学術的助言によって解決へ導く、感動的かつ実践的な教育小説（本文約3,500〜4,000文字）を執筆してください。
+
+【執筆の厳格な要件（パターンA：教育相談・学術理論アプローチ）】
+1. **登場人物と対話のリアリティ**:
+   - 新米教員（若手・初任者〜数年目）と、経験豊富で学識ある先輩教員（指導教諭、主幹教諭、ベテラン教員など）の生き生きとした対話劇を中心に描いてください。
+   - 教室での子どもたちの生々しい反応や職員室の空気感、新米教員の焦りや戸惑い、先輩教員の受容と的確な洞察をドラマチックに描写してください。
+   - 発言者が誰かわかるよう、ト書き（「〜と若葉先生はうなだれた」「〜と神崎先生は穏やかにカップを置いた」等）を自然に添えてください。
+2. **【起】【承】【転】【結】などの記号・見出しは本文中に入れないこと**:
+   - 物語の途中に「【起】」「【承】」といった記号や見出しを絶対に入れないでください。
+   - シーン転換には、空行または「* * *」を用いてください。
+3. **学術的エビデンス・理論の自然な導入**:
+   - 先輩教員のアドバイスには、教育学、教育心理学、教育哲学における実在の学術論文、古典的名著、認知・行動科学の理論（自己決定理論、足場かけ、認知的負荷理論、成長マインドセット、ケアの倫理、対話主義等）を具体的に織り込んでください。
+   - ただし、単なる講釈や説教にならず、新米教員が「明日からの教室ですぐに試せる具体的な行動・声かけ」に翻訳されたアドバイスにしてください。
+4. **全体の構成（三部構成）**:
+   - **第一部：小説本文**（約3,500〜4,000文字、起承転結を内包した深みのあるストーリー）
+   - **第二部：【作中理論・教育学のやさしい解説（Theoretical Commentary）】**
+     （作中に登場した教育学・教育心理学・教育哲学の理論について、一般読者や教員志望者にもわかりやすく要点と実践のポイントを解説してください）
+   - **第三部：【引用・参考文献（Academic References）】**
+     （実在する学術論文、著者名、論文タイトル、ジャーナル名/書籍名、発表年、およびクリック可能な正規DOIリンク `[https://doi.org/...](https://doi.org/...)` または公的URLを明記してください）
+"""
+
+SYSTEM_PROMPT_B = """あなたは学校教育と最新のコンピュータ技術・ネットワーク工学に精通したIT教育作家であり、校務DXコンサルタントです。
+年配教員が学校現場の煩雑な事務作業や機器トラブルで途方に暮れているところへ、若手教員がコンピュータ技術やネットワークの知見を活かして鮮やかに解決する、痛快で心温まる校務DX小説（本文約3,500〜4,000文字）を執筆してください。
+
+【執筆の厳格な要件（パターンB：校務DX・ICTネットワーク解決）】
+1. **登場人物と対話のリアリティ**:
+   - 長年学校を支えてきたがデジタル化や煩雑な手作業に悩む年配教員（教務主任、学年主任、副校長など）と、IT技術やプログラミング、ネットワークに明るい若手教員の対話劇を描いてください。
+   - 若手教員は年配教員の教育的知恵や生徒への熱意を敬い、年配教員は若手の技術とスピード感に感銘を受けるという、世代間のリスペクトと温かい協働を描いてください。
+   - 発言者が誰かわかるよう、ト書き（「〜と大山先生は老眼鏡を押し上げた」「〜と水野先生は画面を指さした」等）を自然に添えてください。
+2. **【起】【承】【転】【結】などの記号・見出しは本文中に入れないこと**:
+   - 物語の途中に「【起】」「【承】」といった記号や見出しを絶対に入れないでください。
+   - シーン転換には、空行または「* * *」を用いてください。
+3. **具体的で実用的なテクノロジー・ネットワーク知見**:
+   - Google Apps Script (GAS)、Google Workspace、Excel/VBA、Python、正規表現、Wi-Fi周波数帯（2.4GHz/5GHz/Wi-Fi 6E/DFS）、ネットワークACL、バージョン管理、クラウド連携、QRコードなど、現場で実際に使える最新のコンピュータ・ネットワーク技術を論理的に解説・適用してください。
+4. **全体の構成（三部構成）**:
+   - **第一部：小説本文**（約3,500〜4,000文字、業務の壁を技術で突破する爽快なストーリー）
+   - **第二部：【作中技術・ITネットワークのやさしい解説（Technical Commentary）】**
+     （作中に登場したコンピュータ技術、スクリプト、ネットワーク規格の仕組みを、ITが苦手な教員でも理解できるよう丁寧に解説してください）
+   - **第三部：【引用・参考文献（Technical References & Documentation）】**
+     （実在する公式ドキュメント、RFC、開発者ガイド、技術標準の正規URL `[https://...](https://...)` を明記してください）
+"""
+
+DEFAULT_PRIMARY_MODEL = "gemini-3.8-flash"
+FALLBACK_MODELS = [
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
+]
+
+class StoryGenerator:
+    """
+    Generates school problem solving stories using Google Gemini API.
+    Alternates between Pattern A (Pedagogy/Psychology) and Pattern B (ICT/Networking).
+    Outputs rich Markdown with Frontmatter, Technical Commentary, and Academic References.
+    """
+
+    def __init__(self, api_key: Optional[str] = None, model_name: Optional[str] = None):
+        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        self.primary_model = model_name or os.getenv("GEMINI_TEXT_MODEL", DEFAULT_PRIMARY_MODEL)
+
+    def _get_model_candidates(self) -> List[str]:
+        """Returns ordered list of real, valid Gemini models to try."""
+        candidates = [self.primary_model]
+        for m in FALLBACK_MODELS:
+            if m not in candidates:
+                candidates.append(m)
+        return candidates
+
+    def generate_story(
+        self,
+        pattern: str,
+        topic: Dict[str, Any]
+    ) -> Tuple[str, str, List[str]]:
+        """
+        Generates a complete story based on pattern ('A' or 'B') and topic info.
+        Returns: (markdown_content, title, list_of_references)
+        """
+        if not self.api_key:
+            logger.warning("GEMINI_API_KEY is not set. Generating high-quality built-in template story.")
+            return self._generate_fallback(pattern, topic)
+
+        if pattern == "A":
+            system_instruction = SYSTEM_PROMPT_A
+            user_prompt = f"""以下の教育現場の課題と理論をもとに、新米教員と先輩教員の教育相談短編小説（本文約3,500〜4,000文字＋理論解説＋参考文献）を執筆してください。
+
+【今回の課題テーマ（パターンA：教育相談・学術理論アプローチ）】
+- テーマID: {topic.get('id', 'A01')}
+- カテゴリ: {topic.get('category', '学級経営')}
+- 相談内容: {topic.get('problem_title', '生徒が指示待ちになってしまう')}
+- 登場人物設定:
+  - 新米教員: {topic.get('roles', {}).get('novice', '初任者教員')}
+  - 先輩教員: {topic.get('roles', {}).get('senior', '指導教諭')}
+- 教室の具体的状況: {topic.get('situation', '')}
+- 拠って立つ学術理論・エビデンス: {topic.get('solution_framework', '')}
+- キー理論・概念: {', '.join(topic.get('key_theories', []))}
+- 参考文献の手がかり: {', '.join(topic.get('reference_hints', []))}
+
+【必須ルール】
+1. タイトルは魅力的で文学的なものにしてください（例: 『教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論』など）。
+2. 本文中に【起】【承】【転】【結】などの記号や見出しは一切入れないでください。シーン転換は空行または「* * *」を使用してください。
+3. 新米教員の等身大の焦りと、先輩教員の深い学術的見識に基づく具体的助言を、リアルな対話劇として描写してください。
+4. 本文は約3,500〜4,000文字のスケールにしてください。
+5. 本文の後に必ず【作中理論・教育学のやさしい解説（Theoretical Commentary）】を設け、一般読者にもわかりやすく要点と実践のポイントを解説してください。
+6. 最後に必ず【引用・参考文献（Academic References）】を設け、実在する学術論文、DOIハイパーリンク `[https://doi.org/...](https://doi.org/...)` または公的URLを明記してください。
+7. 冒頭にYAML Frontmatterを配置してください:
+---
+title: "タイトル"
+pattern: "A"
+category: "{topic.get('category', '学級経営')}"
+tags: ["教育学", "教育心理学", "学級経営", "生徒指導", "若手教員育成", "Aパターン"]
+topic_id: "{topic.get('id', 'A01')}"
+---
+"""
+        else:
+            system_instruction = SYSTEM_PROMPT_B
+            user_prompt = f"""以下の学校現場の校務課題とIT技術をもとに、年配教員と若手教員の校務DX短編小説（本文約3,500〜4,000文字＋技術解説＋参考文献）を執筆してください。
+
+【今回の課題テーマ（パターンB：校務DX・ICTネットワーク解決）】
+- テーマID: {topic.get('id', 'B01')}
+- カテゴリ: {topic.get('category', '校務自動化')}
+- 課題内容: {topic.get('problem_title', '成績処理の手計算ミス')}
+- 登場人物設定:
+  - 年配教員: {topic.get('roles', {}).get('veteran', '年配教諭')}
+  - 若手教員: {topic.get('roles', {}).get('young', '若手教諭')}
+- 職員室の具体的状況: {topic.get('situation', '')}
+- 解決に用いる技術・ネットワーク知見: {topic.get('solution_framework', '')}
+- キーテクノロジー: {', '.join(topic.get('key_technologies', []))}
+- 参考文献の手がかり: {', '.join(topic.get('reference_hints', []))}
+
+【必須ルール】
+1. タイトルは魅力的で技術と情熱が伝わるものにしてください（例: 『深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現』など）。
+2. 本文中に【起】【承】【転】【結】などの記号や見出しは一切入れないでください。シーン転換は空行または「* * *」を使用してください。
+3. 年配教員の苦労と教育愛をリスペクトしつつ、若手教員がIT技術とネットワークの力で鮮やかに負担を激減させる爽快な協働ドラマを描いてください。
+4. 本文は約3,500〜4,000文字のスケールにしてください。
+5. 本文の後に必ず【作中技術・ITネットワークのやさしい解説（Technical Commentary）】を設け、ITが苦手な方にもわかりやすく技術の仕組みと実践法を解説してください。
+6. 最後に必ず【引用・参考文献（Technical References & Documentation）】を設け、実在する公式ドキュメント、RFC、開発者ガイドの正規URL `[https://...](https://...)` を明記してください。
+7. 冒頭にYAML Frontmatterを配置してください:
+---
+title: "タイトル"
+pattern: "B"
+category: "{topic.get('category', '校務自動化')}"
+tags: ["校務DX", "学校ICT", "業務効率化", "プログラミング", "ネットワーク", "Bパターン"]
+topic_id: "{topic.get('id', 'B01')}"
+---
+"""
+
+        model_candidates = self._get_model_candidates()
+        last_error = None
+
+        try:
+            from google import genai
+            from google.genai import types
+
+            client = genai.Client(api_key=self.api_key)
+
+            for round_num in range(1, 3):
+                if round_num > 1:
+                    logger.info("Retrying with fallback models after pausing 5 seconds...")
+                    time.sleep(5)
+
+                for idx, current_model in enumerate(model_candidates):
+                    logger.info(f"Generating story with model '{current_model}' (Candidate {idx + 1}/{len(model_candidates)})...")
+                    try:
+                        response = client.models.generate_content(
+                            model=current_model,
+                            contents=user_prompt,
+                            config=types.GenerateContentConfig(
+                                system_instruction=system_instruction,
+                                temperature=0.75,
+                                max_output_tokens=8192,
+                                http_options=types.HttpOptions(timeout=120000)
+                            )
+                        )
+                        text = response.text
+                        if text and len(text.strip()) > 500:
+                            # Extract Title
+                            title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
+                            title = title_match.group(1).strip() if title_match else topic.get("problem_title", "学校の課題を解決する物語")
+
+                            # Extract references
+                            refs = re.findall(r'\[(https?://[^\s\]]+)\]', text)
+                            return text, title, refs
+                    except Exception as e:
+                        logger.warning(f"Model '{current_model}' failed: {e}")
+                        last_error = e
+                        continue
+        except ImportError:
+            logger.error("google-genai is not installed. Using fallback template.")
+        except Exception as e:
+            logger.error(f"Gemini API initialization error: {e}")
+            last_error = e
+
+        logger.error(f"All model attempts exhausted. Falling back to template: {last_error}")
+        return self._generate_fallback(pattern, topic)
+
+    def _generate_fallback(self, pattern: str, topic: Dict[str, Any]) -> Tuple[str, str, List[str]]:
+        """Provides a high-quality pre-written story template if offline or API key is absent."""
+        if pattern == "A":
+            title = "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論"
+            content = f"""---
+title: "{title}"
+pattern: "A"
+category: "{topic.get('category', '学級経営・内発的動機づけ')}"
+tags: ["教育学", "教育心理学", "学級経営", "自己決定理論", "若手教員育成", "Aパターン"]
+topic_id: "{topic.get('id', 'A01')}"
+---
+
+初夏の風が吹き抜ける放課後の第二職員室。静まり返った室内で、初任者の若葉先生は、机の上に広げた学級日誌を前に深いため息をついた。
+教員になって二ヶ月。中学二年生の担任を任された若葉は、クラスをまとめようと懸命だった。規律を正し、提出物の期限を厳守させ、授業中の私語をなくすため、毎日のように注意を重ねてきた。だが、その結果生まれたのは、整然とした秩序ではなく、重苦しい沈黙だった。
+生徒たちは指示されたこと以外は一切口を開かず、質問を投げかけても誰一人として目を合わせようとしない。係活動も「言われたからやる」だけの形骸化した作業になっていた。
+
+「若葉先生、まだ残っていたのかい」
+温かいコーヒーの香りと共に声をかけてきたのは、学年主任であり教職二十年目を迎えるベテランの神崎先生だった。
+「あ、神崎先生……お疲れ様です。実は、クラスのことで……」
+若葉は堰を切ったように、ここ数週間の苦悩を吐露した。規律を守らせようとすればするほど、生徒たちの瞳から活気が失われ、まるで操り人形のようになってしまったことへの焦燥感。
+
+神崎先生はコーヒーカップを口元に運び、静かに微笑んだ。
+「若葉先生、よく頑張っているね。君が生徒たちを想って真摯に向き合っているからこその悩みだ。だがね、人は外からの強い力で縛られれば縛られるほど、内側にあるエンジンの火を消してしまうものなんだよ」
+「外からの力、ですか……」
+「そう。心理学者のエドワード・デシとリチャード・ライアンが提唱した『自己決定理論（Self-Determination Theory）』を知っているかい？」
+神崎先生は手元のメモ用紙にペンを走らせ、三角形を描いた。
+
+「人間が何かに熱中し、自ら進んで行動する『内発的動機づけ』には、三つの基本的心理欲求が満たされる必要がある。一つ目は**自律性の欲求（Autonomy）**――自分の意思で選択し行動しているという感覚。二つ目は**有能感の欲求（Competence）**――自分にはできる、成長しているという手応え。そして三つ目が**関係性の欲求（Relatedness）**――周囲に認められ、安心できるつながりがあるという感覚だ」
+神崎先生は若葉の目をまっすぐに見つめた。
+「若葉先生、君のこれまでの指導は、善意から出たものであっても、生徒たちの『自律性』を奪う『統制型の指導（Controlling Style）』になっていたのかもしれない。ルールを守らせるために罰や評価をちらつかせると、生徒は『怒られないためにやる』という最も外発的な動機に縛られてしまうんだ」
+
+若葉の胸に、鋭い痛みが走った。確かに、自分は「こうしなさい」「なぜやらないの」と指示ばかりを出し、生徒自身が選ぶ余地を一切与えていなかった。
+「では、私はどうすれば……」
+「明日から、指導を『自律性支援型（Autonomy-Supportive Style）』へとシフトしてみよう。方法はシンプルだ。まず第一に、ルールを一方的に押し付けるのではなく、『なぜそのルールが必要なのか』の意味と価値を丁寧に説明すること。第二に、小さなことでもいいから、生徒たち自身に選択肢を与えること。『掃除のやり方を班で決めてごらん』『この課題の提出方法はAとBのどちらが良いかい？』とね。そして第三に、生徒が否定的な感情を抱いたとき、それを頭ごなしに叱るのではなく『そう感じるのも無理はないね』と一度受け止めることだ」
+
+神崎先生のアドバイスを胸に、若葉は翌日の学級活動に臨んだ。
+教室の教壇に立った若葉は、深呼吸をして生徒たちを見渡した。
+「みんな、いつも先生が指示ばかり出して、窮屈な思いをさせてしまっていたね。ごめんなさい」
+生徒たちが驚いたように顔を上げた。
+「来週の合唱コンクールの自由曲についてだけど、先生が決めるのではなく、各パートのリーダーとみんなで話し合って決めてほしい。どの曲が自分たちのクラスに合っているか、みんなの意見を聞かせてほしいんだ」
+最初は戸惑っていた生徒たちだったが、一人が「この曲、歌詞がすごくいいと思う」と声を上げたのを皮切りに、教室に生き生きとした意見の交わし合いが広がっていった。
+教壇の脇でその様子を見つめながら、若葉は確信した。子どもたちの中には、最初から自ら燃え上がる火種があったのだ。自分はその火を囲う壁を作るのではなく、風を送る存在になればよかったのだと。
+
+* * *
+
+### 【作中理論・教育学のやさしい解説（Theoretical Commentary）】
+
+本作で先輩教員が紹介した理論は、現代の教育心理学およびモチベーション研究において世界標準となっているエビデンスに基づくアプローチです。
+
+1. **自己決定理論（Self-Determination Theory: SDT）**
+   エドワード・デシ（Edward L. Deci）とリチャード・ライアン（Richard M. Ryan）によって体系化された動機づけの包括的理論です。人間は生まれながらに心理的成長と統合を目指す能動的な存在であり、以下の「3つの基本的心理欲求」が満たされることで自発的な学習意欲（内発的動機づけ）が高まります。
+   - **自律性（Autonomy）**: 自らの行動を自分自身で決定・コントロールしているという感覚。
+   - **有能感（Competence）**: 適切な挑戦を通じて自分の能力を発揮し、成長できているという感覚。
+   - **関係性（Relatedness）**: 教員や仲間から無条件に受け入れられ、信頼されているという感覚。
+
+2. **自律性支援型指導（Autonomy-Supportive Style）と統制型指導（Controlling Style）**
+   ジョンマーシャル・リーヴ（Johnmarshall Reeve）らの研究によると、教員が命令や脅迫、罪悪感の喚起によって生徒を行動させる「統制型」の指導を行うと、一時的な服従は得られるものの、長期的には学習意欲の減退、ストレスの増大、指示待ち人間の固定化を招きます。
+   対照的に、選択肢の提示、活動の教育的意義の説明、生徒の視点・感情への共感を行う「自律性支援型」の指導は、生徒の学力向上、主体的探究心、ウェルビーイングを著しく向上させることが実証されています。
+
+---
+
+### 【引用・参考文献（Academic References）】
+
+1. Deci, E. L., & Ryan, R. M. (2000). The "what" and "why" of goal pursuits: Human needs and the self-determination of behavior. *Psychological Inquiry*, 11(4), 227-268.
+   DOI: [https://doi.org/10.1207/S15327965PLI1104_01](https://doi.org/10.1207/S15327965PLI1104_01)
+
+2. Reeve, J. (2009). Why teachers adopt a controlling motivating style toward students and how they can become more autonomy supportive. *Educational Psychologist*, 44(3), 159-175.
+   DOI: [https://doi.org/10.1080/00461520903028990](https://doi.org/10.1080/00461520903028990)
+
+3. Ryan, R. M., & Deci, E. L. (2020). Intrinsic and extrinsic motivation from a self-determination theory perspective: Definitions, theory, practices, and future directions. *Contemporary Educational Psychology*, 61, 101860.
+   DOI: [https://doi.org/10.1016/j.cedpsych.2020.101860](https://doi.org/10.1016/j.cedpsych.2020.101860)
+"""
+            return content, title, [
+                "https://doi.org/10.1207/S15327965PLI1104_01",
+                "https://doi.org/10.1080/00461520903028990",
+                "https://doi.org/10.1016/j.cedpsych.2020.101860"
+            ]
+        else:
+            title = "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと配列数式"
+            content = f"""---
+title: "{title}"
+pattern: "B"
+category: "{topic.get('category', '校務自動化・スプレッドシート/GAS')}"
+tags: ["校務DX", "学校ICT", "業務効率化", "Google Apps Script", "Bパターン"]
+topic_id: "{topic.get('id', 'B01')}"
+---
+
+時計の針が夜の八時半を回った頃、職員室の片隅で、教務主任の大山先生が眉間に深いシワを寄せていた。
+教職二十八年目。学校の生き字引として誰からも頼りにされる大山だったが、この時期ばかりは毎年地獄のような疲労に襲われる。学期末の全校生徒三百人分の総合成績一覧表の作成だ。
+机の上には各教科担任から提出された紙の成績表の束。大山は老眼鏡を押し上げながら、電卓のテンキーをカチカチと叩き、その数値をパソコンの表計算ソフトに手動で転記していた。
+
+「大山先生、まだ残っていらっしゃったんですか」
+通りかかったのは、情報担当教諭として着任して三年目の若手、水野先生だった。
+大山は疲れ切った顔で苦笑いを浮かべた。
+「ああ、水野先生。なに、学期の締めくくりだからね。点数の合計や平均、欠席日数の照合を手計算で確認しているんだが……数字が合わなくてね。もう三回もやり直しているよ。目がかすんで数字が躍って見える」
+大山の机のモニタを見ると、セルの一つひとつに手打ちの数字が並び、数式も使われずに合計欄に固定値が直接入力されていた。
+
+「大山先生、それ、もしかして全員分の合計と平均を手作業で計算して転記されているんですか？」
+「そうだよ。教科ごとに配点が違うし、不受験者の扱いもあるからね。コンピュータ任せにすると間違いが起きそうで怖くてな」
+水野は深く頷いた。大山が長年の責任感から、子どもたちの成績に瑕疵があってはならないと一人で重圧を背負い込んでいることが痛いほど伝わってきた。
+「大山先生、その責任感は本当に尊敬します。でも、人間の集中力には限界がありますし、手入力こそ転記ミスの温床になってしまいます。もしよろしければ、この作業、十分で終わるように自動化してみませんか？」
+
+「じ、十分？ 三百人分もあるんだぞ？」
+水野は大山の隣に椅子を引き寄せ、手際よくノートPCを開いた。
+「まず、各教科の先生方から上がってきたデータをGoogleスプレッドシートに統合します。そして、この関数を使います」
+水野はキーボードを叩き、一つのセルに数式を入力した。
+`=BYROW(C4:G303, LAMBDA(row, IF(COUNTA(row)=0, "", SUM(row))))`
+「これは配列数式（LAMBDA / BYROW）です。これ一つで、三百人分の合計が一瞬で縦一列に展開されます。行の追加や点数の修正があっても、自動でリアルタイムに再計算されるので、手で再計算する必要は二度とありません」
+大山は目を丸くした。「なんと……一瞬で全部の合計が入ったぞ……」
+
+「さらに、Google Apps Script（GAS）で簡単なチェックプログラムを動かしましょう」
+水野はエディタを開き、数行のスクリプトを走らせた。
+「ほら、見てください。百点満点のはずなのに『120点』と誤入力されているセルや、欠席なのに点数が入っている矛盾箇所が、赤色の背景で一瞬でハイライトされました。外れ値検知とデータ入力規則（Data Validation）の仕組みです」
+「おお……！ 探していた数字のズレはこれだったのか！ 私が二時間探しても見つからなかったミスが、一秒で……」
+大山は思わず身を乗り出し、感嘆の声を上げた。
+
+「大山先生が今まで電卓でなさっていた厳密な照合のルールを、そのままプログラムに教え込んだだけですよ。先生のチェック基準という『知恵』があってこその自動化です」
+水野の謙虚な言葉に、大山の強張っていた表情がふっと緩んだ。
+「水野先生……ありがとう。私はどこかで、最新の技術を毛嫌いして、苦労して時間をかけることこそが誠意だと思い込んでいたのかもしれん。だが、この時間があれば、明日悩んでいる生徒の話をゆっくり聞いてやることができるな」
+「まさにそれがICTの真の目的です。先生、今日はもう帰りましょう。明日の朝、印刷ボタンをワンクリックするだけで、完璧な帳票が出力されますから」
+二人は笑顔で職員室の明かりを消した。校舎を出ると、夜空には澄んだ星が輝いていた。
+
+* * *
+
+### 【作中技術・ITネットワークのやさしい解説（Technical Commentary）】
+
+作中で若手教員が導入した技術は、特別な有料ソフトを導入することなく、Google Workspace等の標準機能で誰でも現場に導入できる強力な校務効率化技術です。
+
+1. **Google Apps Script（GAS）**
+   Google Workspace（スプレッドシート、フォーム、Gmail、ドライブ等）をクラウド上で自動化するためのJavaScriptベースのスクリプト環境です。サーバー構築不要でブラウザ上ですぐに実行でき、定期的な自動実行やエラー検知メールの送信、帳票作成の完全自動化が可能です。
+
+2. **現代の配列数式（ARRAYFORMULA / BYROW / LAMBDA）**
+   従来のExcelやスプレッドシートでは、計算式を一番下の行までコピー＆ペーストする必要があり、途中の行で数式が壊れるリスクがありました。最新のスプレッドシートに搭載されたLAMBDA関数やBYROW関数を使うと、最上部のセルにたった1行数式を書くだけで、データ全体の計算を自動走査して結果を展開できます。
+
+3. **データ入力規則（Data Validation）と条件付き書式のバリデーション**
+   人間による手入力ミス（タイポや範囲外の数値）を根絶するため、入力可能な値の範囲（例: 0〜100）を制限し、不正な値が入力された瞬間に背景色を警告表示（赤色等）にする仕組みです。
+
+---
+
+### 【引用・参考文献（Technical References & Documentation）】
+
+1. Google Workspace Developers. "Google Apps Script Overview and Guides." 
+   URL: [https://developers.google.com/apps-script/overview](https://developers.google.com/apps-script/overview)
+
+2. Google Support. "LAMBDA function and array manipulation in Google Sheets."
+   URL: [https://support.google.com/docs/answer/12508718](https://support.google.com/docs/answer/12508718)
+
+3. Microsoft Learn. "XLOOKUP function and dynamic array formulas."
+   URL: [https://learn.microsoft.com/en-us/office/troubleshoot/excel/xlookup-function](https://learn.microsoft.com/en-us/office/troubleshoot/excel/xlookup-function)
+"""
+            return content, title, [
+                "https://developers.google.com/apps-script/overview",
+                "https://support.google.com/docs/answer/12508718",
+                "https://learn.microsoft.com/en-us/office/troubleshoot/excel/xlookup-function"
+            ]

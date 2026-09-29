@@ -1,0 +1,214 @@
+{
+  "pattern_A_topics": [
+    {
+      "id": "A01",
+      "category": "学級経営・内発的動機づけ",
+      "problem_title": "生徒たちが指示待ちになり、自発的に動けない",
+      "roles": {
+        "novice": "初任者・若葉先生（2年目、中学2年担任）",
+        "senior": "指導教諭・神崎先生（教職20年目のベテラン）"
+      },
+      "situation": "ルールを厳格にして注意しすぎた結果、クラスが静まり返り、生徒たちが先生の顔色を伺って自発的に動かなくなってしまった。",
+      "solution_framework": "エドワード・デシ＆リチャード・ライアンの「自己決定理論（Self-Determination Theory）」と自律性支援（Autonomy Support）",
+      "key_theories": ["自己決定理論", "自律性・有能感・関係性の3欲求", "統制型指導と自律支援型指導"],
+      "reference_hints": ["Deci, E. L., & Ryan, R. M. (2000). The 'what' and 'why' of goal pursuits: Human needs and the self-determination of behavior. Psychological Inquiry.", "Reeve, J. (2009). Why teachers adopt a controlling motivating style toward students and how they can become more autonomy supportive. Educational Psychologist."]
+    },
+    {
+      "id": "A02",
+      "category": "授業改善・協調学習",
+      "problem_title": "授業でのグループワークが形骸化し、一部の子だけが喋っている",
+      "roles": {
+        "novice": "新任・桜木先生（小学校5年担任）",
+        "senior": "主幹教諭・柳先生（教職18年目）"
+      },
+      "situation": "グループ学習を取り入れたが、得意な生徒が一人で作業を進めてしまい、苦手な生徒が取り残されて対立や不満が起きている。",
+      "solution_framework": "レフ・ヴィゴツキーの「最近接発達領域（ZPD）」と足場かけ（Scaffolding）、およびロバート・スレイヴィンの「協同学習（Cooperative Learning）」",
+      "key_theories": ["最近接発達領域（ZPD）", "認知的足場かけ（Scaffolding）", "ジグソー法と相互依存性"],
+      "reference_hints": ["Vygotsky, L. S. (1978). Mind in society: The development of higher psychological processes. Harvard University Press.", "Slavin, R. E. (1996). Research on cooperative learning and achievement: What we know, what we need to know. Contemporary Educational Psychology."]
+    },
+    {
+      "id": "A03",
+      "category": "生徒指導・学習観の変革",
+      "problem_title": "テストの失敗で完全に自信を失い、『どうせ自分はバカだから』と諦める生徒",
+      "roles": {
+        "novice": "初任・佐藤先生（高校1年担任・数学担当）",
+        "senior": "学年主任・橘先生（教職22年目）"
+      },
+      "situation": "中間テストで赤点を取った生徒が、努力しても無駄だと心を閉ざし、宿題も出さなくなってしまった。",
+      "solution_framework": "キャロル・ドゥエックの「マインドセット理論（Growth Mindset）」とマーティン・セリグマンの「学習性無力感（Learned Helplessness）」の克服",
+      "key_theories": ["硬直マインドセット vs 成長マインドセット", "努力とプロセスの称賛（Process Praise）", "結果の帰属理論（ワイナー）"],
+      "reference_hints": ["Dweck, C. S. (2006). Mindset: The new psychology of success. Random House.", "Yeager, D. S., et al. (2019). A national experiment reveals where a growth mindset improves student achievement. Nature, 573(7774), 364-369."]
+    },
+    {
+      "id": "A04",
+      "category": "授業設計・認知心理学",
+      "problem_title": "一生懸命スライドや板書を用意しても、生徒の理解が追いつかずパンクする",
+      "roles": {
+        "novice": "新任・高橋先生（中学校理科担当）",
+        "senior": "教科主任・工藤先生（教職15年目）"
+      },
+      "situation": "生徒に分かりやすく教えようと情報や図解をスライドに詰め込みすぎた結果、生徒がメモを取るだけで手一杯になり、授業後の確認テストの定着率が著しく低い。",
+      "solution_framework": "ジョン・スウェラーの「認知的負荷理論（Cognitive Load Theory）」とリチャード・メイヤーの「マルチメディア学習の原理」",
+      "key_theories": ["内在性・外因性・関連性負荷", "ワーキングメモリの制約", "冗長性の排除と分割効果"],
+      "reference_hints": ["Sweller, J., van Merrienboer, J. J., & Paas, F. G. (1998). Cognitive architecture and instructional design. Educational Psychology Review, 10(3), 251-296.", "Mayer, R. E. (2002). Multimedia learning. Psychology of Learning and Motivation, 41, 85-139."]
+    },
+    {
+      "id": "A05",
+      "category": "特別支援・インクルーシブ教育",
+      "problem_title": "授業中に立ち歩きや衝動的な発言が目立ち、周囲と摩擦が起きる児童",
+      "roles": {
+        "novice": "新任・木村先生（小学校3年担任）",
+        "senior": "特別支援コーディネーター・藤崎先生（教職17年目）"
+      },
+      "situation": "落ち着きがなく衝動的に席を立ってしまう児童に対して強く叱責してしまい、クラス全体の空気が張り詰めて悪循環に陥っている。",
+      "solution_framework": "応用行動分析（ABA）の機能的行動アセスメント（FBA）とポジティブ行動支援（PBS/PBIS）",
+      "key_theories": ["先行条件・行動・結果（ABC分析）", "代替行動の強化（DRA）", "視覚的構造化とポジティブな行動介入"],
+      "reference_hints": ["Sugai, G., & Horner, R. H. (2006). A promising approach for expanding and sustaining school-wide positive behavior support. School Psychology Review, 35(2), 245-259.", "Cooper, J. O., Heron, T. E., & Heward, W. L. (2020). Applied Behavior Analysis (3rd ed.). Pearson."]
+    },
+    {
+      "id": "A06",
+      "category": "人間関係・生徒指導",
+      "problem_title": "女子グループ内の微妙な孤立化と『無視』『陰口』のトラブル",
+      "roles": {
+        "novice": "新任・伊藤先生（中学校1年担任）",
+        "senior": "養護教諭・真壁先生（教職19年目）"
+      },
+      "situation": "仲良しだったグループ内で突然ある生徒がハブられ、保健室登校になりかけている。直接問い詰めても『何もしてない』と否定される。",
+      "solution_framework": "キャロル・ギリガンやネル・ノディングスの「ケアの倫理（Ethics of Care）」とエドガー・シャインの「プロセス・コンサルテーション」",
+      "key_theories": ["関係性の回復と共感の場の設計", "関係的攻撃性（Relational Aggression）の理解", "修復的対話（Restorative Practices）"],
+      "reference_hints": ["Noddings, N. (2013). Caring: A relational approach to ethics and moral education. Univ of California Press.", "Morrison, B. (2007). Restoring safe school communities: A whole school response to bullying, violence and alienation. Federation Press."]
+    },
+    {
+      "id": "A07",
+      "category": "保護者対応・教育哲学",
+      "problem_title": "学校の指導方針への強い不信感と度重なるクレームを寄せる保護者",
+      "roles": {
+        "novice": "初任・松本先生（小学校6年担任）",
+        "senior": "教頭・寺田先生（教職25年目）"
+      },
+      "situation": "宿題の量や席替えの決定について保護者から夜遅くに長時間の抗議電話が入り、教員自身が精神的に追い詰められている。",
+      "solution_framework": "ユルゲン・ハーバーマスの「コミュニケーション的行為の理論（Theory of Communicative Action）」とジョン・デューイの「対話的民主主義」",
+      "key_theories": ["戦略的行為から対話的合意形成への転換", "妥当性要求（真理性・正当性・誠実性）", "親と学校のパートナーシップ構築"],
+      "reference_hints": ["Habermas, J. (1984). The Theory of Communicative Action. Beacon Press.", "Epstein, J. L. (2018). School, family, and community partnerships: Preparing educators and improving schools. Routledge."]
+    },
+    {
+      "id": "A08",
+      "category": "学級崩壊予防・教育社会学",
+      "problem_title": "授業中の私語が徐々に広がり、クラスのルールが形骸化していく兆候",
+      "roles": {
+        "novice": "初任・小林先生（高校1年担任）",
+        "senior": "生徒指導主事・武田先生（教職23年目）"
+      },
+      "situation": "当初は注意すれば収まっていた私語が、一部の生徒を中心に教室全体へと波及し、授業規律が保てなくなりつつある。",
+      "solution_framework": "フィリップ・ジャクソンの「潜在的カリキュラム（Hidden Curriculum）」論とジェイコブ・クーニンの「教室規律技術（Withitness & Momentum）」",
+      "key_theories": ["ウィズィットネス（Withitness: 状況把握の目配り）", "スムーズネス＆モメンタム（授業のテンポと途切れなさ）", "集団力学（グループ・ダイナミクス）"],
+      "reference_hints": ["Kounin, J. S. (1970). Discipline and group management in classrooms. Holt, Rinehart & Winston.", "Jackson, P. W. (1968). Life in classrooms. Teachers College Press."]
+    }
+  ],
+  "pattern_B_topics": [
+    {
+      "id": "B01",
+      "category": "校務自動化・スプレッドシート/GAS",
+      "problem_title": "学期末の成績一覧表の電卓手計算と手作業での転記ミス地獄",
+      "roles": {
+        "veteran": "年配教諭・大山先生（教職28年目・教務主任）",
+        "young": "若手教諭・水野先生（教職3年目・情報担当）"
+      },
+      "situation": "大山先生が連日夜遅くまで電卓を叩いて学年300人の評定計算や欠席日数の照合を手書きと手動Excel入力で行っており、目の充血と肩こりで倒れそうになっている。",
+      "solution_framework": "Google Apps Script (GAS) と ARRAYFORMULA / VLOOKUP / XLOOKUP による自動集計とバリデーションマクロ",
+      "key_technologies": ["Google Apps Script (GAS)", "XLOOKUP / FILTER 関数", "条件付き書式による異常値ハイライト", "データ入力規則"],
+      "reference_hints": ["Google Apps Script Documentation: https://developers.google.com/apps-script", "Microsoft Excel Function Reference: https://support.microsoft.com/excel"]
+    },
+    {
+      "id": "B02",
+      "category": "ネットワーク・インフラ改善",
+      "problem_title": "特定の教室でタブレットが一斉にWi-Fiから切断され、公開授業が止まる",
+      "roles": {
+        "veteran": "副校長・佐々木先生（教職30年目）",
+        "young": "若手教諭・藤堂先生（教職4年目・理科・ネットワーク愛好家）"
+      },
+      "situation": "1人1台端末を使った公開研究授業で、生徒40人が一斉に動画教材を開いた瞬間にWi-Fiが全滅し、佐々木副校長がルーターのコンセントを抜き差しして焦っている。",
+      "solution_framework": "Wi-Fi周波数帯（2.4GHz帯の混雑 vs 5GHz DFS帯・6GHz Wi-Fi 6E）のトラフィック分離とAPチャネル設計・バンドステアリング",
+      "key_technologies": ["IEEE 802.11ax (Wi-Fi 6)", "DFS (動的周波数選択) 回避", "チャネルボンディングと干渉対策", "DHCPリース時間とIPアドレス枯渇対策"],
+      "reference_hints": ["IEEE Standard 802.11ax-2021: https://standards.ieee.org/ieee/802.11ax/6829/", "Cisco Enterprise Mobility 8.5 Design Guide: https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/Enterprise-Mobility-8-5-Design-Guide.html"]
+    },
+    {
+      "id": "B03",
+      "category": "データ処理・Python/テキスト処理",
+      "problem_title": "全校保護者アンケート500通の自由記述コメントの仕分けと集計に追われる",
+      "roles": {
+        "veteran": "年配教諭・吉岡先生（教職26年目・PTA担当）",
+        "young": "若手教諭・小林先生（教職2年目・数学担当）"
+      },
+      "situation": "PTAアンケートの自由記述回答が何百枚も紙で提出され、吉岡先生がマーカーを引いてハサミで切り分け、模造紙に貼るという果てしない手作業を行っている。",
+      "solution_framework": "Google Forms / OCR ＋ Python（Pandas, MeCab / SpaCy）による形態素解析とキーワード抽出・ポジネガ分類",
+      "key_technologies": ["Python (Pandas, OpenPyXL)", "形態素解析 (MeCab / Sudachi)", "Google Cloud Vision API (手書きOCR)", "ワードクラウド可視化"],
+      "reference_hints": ["Pandas Documentation: https://pandas.pydata.org/docs/", "MeCab: Yet Another Part-of-Speech and Morphological Analyzer: https://taku910.github.io/mecab/"]
+    },
+    {
+      "id": "B04",
+      "category": "セキュリティ・ファイル共有",
+      "problem_title": "職員室共有フォルダのファイルが誰かに上書き・削除されて大パニック",
+      "roles": {
+        "veteran": "年配教諭・高橋先生（教職25年目・生徒指導主任）",
+        "young": "若手教諭・森田先生（教職3年目・情報推進委員）"
+      },
+      "situation": "行事計画のマスターExcelファイルが誰かに白紙で上書き保存されてしまい、バックアップもなく高橋先生が頭を抱えて全員に聞き回っている。",
+      "solution_framework": "クラウドストレージ（Google Drive / OneDrive）の版管理（バージョン履歴復元）と共有権限（閲覧のみ・編集者）のロール分離（RBAC）",
+      "key_technologies": ["Google Drive Version History", "ロールベースアクセス制御 (RBAC)", "スプレッドシートの保護されたシート/範囲", "3-2-1バックアップルール"],
+      "reference_hints": ["NIST Special Publication 800-162 (Guide to Attribute Based Access Control): https://csrc.nist.gov/publications/detail/sp/800-162/final", "Google Workspace Admin Help: Manage file versions: https://support.google.com/a/answer/172541"]
+    },
+    {
+      "id": "B05",
+      "category": "校務効率化・正規表現/マクロ",
+      "problem_title": "通知表所見欄の字数オーバーや表記ゆれ（生徒名の誤字等）の手作業校正",
+      "roles": {
+        "veteran": "学年主任・川上先生（教職27年目）",
+        "young": "若手教諭・西村先生（教職4年目・国語科）"
+      },
+      "situation": "各担任から上がってきた通知表の所見数百人分を、川上先生が赤ペンと定規を持って一字一字数え、固有名詞の間違いを探す作業で夜明けを迎えている。",
+      "solution_framework": "正規表現（Regular Expressions）とGoogleスプレッドシートのカスタム関数、校正APIによる自動チェック",
+      "key_technologies": ["正規表現 (RegEx: \\b, \\d, [^...])", "LENB / REGEXEXTRACT 関数", "形態素校正ツール", "条件付き書式アラート"],
+      "reference_hints": ["PCRE (Perl Compatible Regular Expressions) Documentation: https://www.pcre.org/current/doc/html/", "Google Workspace RegExp in Spreadsheet: https://support.google.com/docs/answer/3098244"]
+    },
+    {
+      "id": "B06",
+      "category": "イベント運営・クラウド連携",
+      "problem_title": "運動会や文化祭の係分担・進行タイムテーブルの度重なる変更連絡ミス",
+      "roles": {
+        "veteran": "体育主任・石井先生（教職24年目）",
+        "young": "若手教諭・坂本先生（教職2年目・理科）"
+      },
+      "situation": "雨天順延やプログラム変更のたびに紙の進行表を何回も印刷し直して全職員に配るが、誰がどの版を持っているかわからなくなり当日本部が大混乱する。",
+      "solution_framework": "クラウドカレンダー＋リアルタイム同期ホワイトボード（Google Calendar API, Slack/Teams Webhook通知）",
+      "key_technologies": ["iCalendar (RFC 5545) プロトコル", "Google Calendar 共有カレンダー", "Webhook 通知自動化", "QRコードによる保護者向けライブ進行表"],
+      "reference_hints": ["RFC 5545: Internet Calendaring and Scheduling Core Object Specification (iCalendar): https://datatracker.ietf.org/doc/html/rfc5545", "Google Calendar API: https://developers.google.com/calendar/api"]
+    },
+    {
+      "id": "B07",
+      "category": "部活動・コミュニケーション自動化",
+      "problem_title": "休日の部活動の急な雨天中止連絡と、保護者からの電話ラッシュ",
+      "roles": {
+        "veteran": "野球部顧問・松井先生（教職29年目）",
+        "young": "若手副顧問・神田先生（教職2年目・英語）"
+      },
+      "situation": "朝6時にグラウンド不良で練習試合の中止が決まるが、連絡網が途中で途切れ、学校に問い合わせの電話が鳴り響いて松井先生が対応に追われる。",
+      "solution_framework": "連絡アプリ / LINE Messaging API / Google Forms を組み合わせたワンクリック一斉配信と既読確認システム",
+      "key_technologies": ["REST API / Webhook", "LINE Messaging API / マチコミ等連携", "Google Forms + 自動メール返信", "リアルタイム出席・回答ダッシュボード"],
+      "reference_hints": ["LINE Developers Messaging API: https://developers.line.biz/en/docs/messaging-api/", "IETF RFC 7231 (HTTP/1.1 Semantics and Content): https://datatracker.ietf.org/doc/html/rfc7231"]
+    },
+    {
+      "id": "B08",
+      "category": "ペーパーレス・バッチ印刷自動化",
+      "problem_title": "学力テストや配布プリントのクラス別人数の数え分けと印刷仕分けの苦行",
+      "roles": {
+        "veteran": "年配教諭・遠藤先生（教職26年目・事務分掌）",
+        "young": "若手教諭・竹内先生（教職3年目・技術科）"
+      },
+      "situation": "全校800人分のテスト問題や学年通信を、クラスごとの在籍人数に合わせて印刷機のテンキーを手で押し、仕分け用の紙を挟みながら半日印刷室にこもっている。",
+      "solution_framework": "複合機（MFP）のIPP / プリンタドライバー機能（部門別・部数別ジョブ設定）とPythonスクリプトによるPDF自動面付け・部数分割",
+      "key_technologies": ["IPP (Internet Printing Protocol - RFC 8010)", "PyPDF / pdfplumber によるページ分割", "複合機ソーター・ステープル機能のプログラマブル制御", "両面・小冊子自動面付け"],
+      "reference_hints": ["RFC 8010: Internet Printing Protocol/1.1: https://datatracker.ietf.org/doc/html/rfc8010", "PyPDF Documentation: https://pypdf.readthedocs.io/"]
+    }
+  ]
+}
