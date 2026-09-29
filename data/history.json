@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-09-30T06:44:20.075471+09:00",
-  "total_posted": 7,
+  "last_pattern": "A",
+  "last_run_at": "2026-09-30T07:49:39.771676+09:00",
+  "total_posted": 8,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -70,6 +70,16 @@
       "category": "学校法制・教員懲戒・指導",
       "file_path": "content/2026-09-30_pattern_c_腕の温もりと法の冷厳_校長が決断する懲戒の境界線.md",
       "timestamp": "2026-09-30T06:44:20.075471+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計",
+      "pattern": "A",
+      "topic_id": "A04",
+      "category": "授業設計・認知心理学",
+      "file_path": "content/2026-09-30_pattern_a_溢れるスライドと光らない電球_ワーキングメモリをひらく「引き算」の授業設計.md",
+      "timestamp": "2026-09-30T07:49:39.771676+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
