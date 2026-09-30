@@ -364,9 +364,14 @@ def format_post_content(
         plain_parts.append(f"[status {status}]")
         plain_parts.append("")
 
+    def _format_plain_link(m) -> str:
+        clean_label = m.group(1).replace("\\(", "(").replace("\\)", ")")
+        clean_url = _sanitize_url(m.group(2))
+        return f"[{clean_label}]({clean_url})"
+
     plain_body = re.sub(
         r"\[([^\]]+)\]\((https?://(?:[^\s\(\)]|\\?\([^\s\(\)]*\\?\))+)\)",
-        lambda m: f"[{m.group(1).replace('\\(', '(').replace('\\)', ')')}]({_sanitize_url(m.group(2))})",
+        _format_plain_link,
         body
     )
     plain_parts.append(plain_body)
