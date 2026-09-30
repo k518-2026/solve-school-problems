@@ -325,10 +325,57 @@ topic_id: "{topic.get('id', 'C01')}"
         except Exception:
             return url
 
-    def _is_url_alive(self, url: str) -> bool:
-        """Verifies DOIs via official Handle API and regular URLs via HTTP request to prevent 404 links."""
+    def _check_egov_lawid(self, lawid: str) -> bool:
+        """Checks if an e-Gov lawid actually exists via the official e-Gov Law API."""
+        api_url = f"https://laws.e-gov.go.jp/api/1/lawdata/{urllib.parse.quote(lawid)}"
         try:
-            # 1. If DOI link, check official Handle API (fast, immune to publisher anti-bot 403)
+            req = urllib.request.Request(api_url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=8) as res:
+                if res.getcode() == 200:
+                    body = res.read().decode("utf-8", errors="ignore")
+                    return "<Code>0</Code>" in body
+        except urllib.error.HTTPError as e:
+            if e.code in (400, 404, 410, 500):
+                return False
+            return True
+        except Exception:
+            return True
+        return False
+
+    def _resolve_egov_lawid(self, lawid: str) -> Optional[str]:
+        """
+        Verifies an e-Gov lawid and, if invalid, automatically attempts common
+        Cabinet-bill vs Member-bill (AC0000000 <-> AC1000000) or ministerial code corrections.
+        """
+        if self._check_egov_lawid(lawid):
+            return lawid
+
+        candidates = []
+        if "AC0000000" in lawid:
+            candidates.append(lawid.replace("AC0000000", "AC1000000"))
+        elif "AC1000000" in lawid:
+            candidates.append(lawid.replace("AC1000000", "AC0000000"))
+
+        for m_from, m_to in [("M50000", "M40000"), ("M40000", "M50000"), ("M60000", "M50000")]:
+            if m_from in lawid:
+                candidates.append(lawid.replace(m_from, m_to))
+
+        for cand in candidates:
+            if self._check_egov_lawid(cand):
+                logger.info(f"Auto-corrected e-Gov lawid '{lawid}' -> '{cand}' via e-Gov API.")
+                return cand
+
+        return None
+
+    def _is_url_alive(self, url: str) -> bool:
+        """Verifies DOIs via official Handle API, e-Gov laws via e-Gov API, and regular URLs via HTTP request."""
+        try:
+            # 1. If e-Gov link, verify via official e-Gov API (since SPA shell always returns 200)
+            egov_match = re.search(r'laws\.e-gov\.go\.jp/(?:document\?lawid=|law/)([A-Za-z0-9_]+)', url, re.I)
+            if egov_match:
+                return self._resolve_egov_lawid(egov_match.group(1)) is not None
+
+            # 2. If DOI link, check official Handle API (fast, immune to publisher anti-bot 403)
             doi_match = re.match(r'^https?://(?:dx\.)?doi\.org/(10\.\d{4,9}/.+)$', url, re.I)
             if doi_match:
                 doi_raw = urllib.parse.unquote(doi_match.group(1))
@@ -338,7 +385,7 @@ topic_id: "{topic.get('id', 'C01')}"
                     data = json.loads(res.read().decode("utf-8", errors="ignore"))
                     return data.get("responseCode") == 1
 
-            # 2. Regular web URL: check HTTP status
+            # 3. Regular web URL: check HTTP status
             req = urllib.request.Request(
                 url,
                 headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
@@ -356,11 +403,26 @@ topic_id: "{topic.get('id', 'C01')}"
             return True
 
     def _verify_and_sanitize_links(self, text: str) -> str:
-        """Sanitizes parentheses in all markdown links and strips any dead/404 links."""
+        """Sanitizes parentheses in all markdown links, auto-corrects e-Gov lawids, and strips dead/404 links."""
         def _replacer(match):
             label = match.group(1).replace("\\(", "(").replace("\\)", ")")
             raw_url = match.group(2)
             safe_url = self._sanitize_url(raw_url)
+
+            # Auto-correct e-Gov lawid if Cabinet vs Member bill code was swapped
+            egov_match = re.search(r'laws\.e-gov\.go\.jp/(?:document\?lawid=|law/)([A-Za-z0-9_]+)', safe_url, re.I)
+            if egov_match:
+                orig_id = egov_match.group(1)
+                resolved_id = self._resolve_egov_lawid(orig_id)
+                if resolved_id:
+                    safe_url = safe_url.replace(orig_id, resolved_id)
+                    label = label.replace(orig_id, resolved_id)
+                    return f"[{label}]({safe_url})"
+                logger.warning(f"Stripping invalid e-Gov law URL from generated story: {raw_url}")
+                if label.startswith("http://") or label.startswith("https://"):
+                    return ""
+                return label
+
             if self._is_url_alive(safe_url):
                 return f"[{label}]({safe_url})"
             logger.warning(f"Stripping dead/unreachable URL from generated story: {raw_url}")
