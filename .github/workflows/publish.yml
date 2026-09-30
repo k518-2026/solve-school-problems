@@ -1,12 +1,17 @@
 name: Solve School Problems - Auto Story Publisher to WordPress
 
 on:
-  # Daily scheduled execution
-  # 1) 朝の通勤・登校前: 21:30 UTC = 06:30 JST
-  # 2) 夕方の退勤・放課後: 08:30 UTC = 17:30 JST
+  # Daily scheduled execution (3 times a day: Morning, Evening, Night)
+  # Note: GitHub Actions experiences heavy queue delays at :00 and :30 of every hour,
+  # and Gemini API also sees traffic spikes on the hour/half-hour.
+  # Triggering at :15 avoids peak congestion and completes delivery around 06:30, 17:30, and 22:30 JST.
+  # 1) 朝の通勤・出勤前: 21:15 UTC = 06:15 JST (06:30頃配信完了)
+  # 2) 夕方の退勤・放課後: 08:15 UTC = 17:15 JST (17:30頃配信完了)
+  # 3) 夜のリラックスタイム: 13:15 UTC = 22:15 JST (22:30頃配信完了)
   schedule:
-    - cron: '30 21 * * *'
-    - cron: '30 8 * * *'
+    - cron: '15 21 * * *'
+    - cron: '15 8 * * *'
+    - cron: '15 13 * * *'
 
   # Manual execution from GitHub Actions UI
   workflow_dispatch:
@@ -35,13 +40,18 @@ on:
           - draft
         default: 'publish'
       topic_id:
-        description: 'Specific topic ID from catalog (e.g. A01, B02, or leave blank for auto-selection)'
+        description: 'Specific topic ID from catalog (e.g. A01, B02, C01, or leave blank for auto-selection)'
         required: false
         type: string
         default: ''
 
 permissions:
   contents: write
+
+# Prevent overlapping runs if a scheduled trigger is delayed by GitHub Actions
+concurrency:
+  group: solve-school-problems-publish
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -71,6 +81,7 @@ jobs:
 
       - name: Execute Story Generation and WordPress Mail Dispatch
         env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.8-flash' }}
           SMTP_HOST: ${{ secrets.SMTP_HOST || 'smtp.gmail.com' }}
@@ -84,6 +95,9 @@ jobs:
           DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
           USE_JETPACK_SHORTCODES: 'true'
         run: |
+          # Ensure latest history.json is pulled before selecting the next pattern/topic
+          git pull --rebase origin main || true
+
           PATTERN_ARG="${{ github.event.inputs.pattern || 'auto' }}"
           TOPIC_ARG="${{ github.event.inputs.topic_id || '' }}"
           DRY_RUN_ARG="${{ github.event.inputs.dry_run || 'false' }}"
@@ -104,6 +118,7 @@ jobs:
           eval $CMD
 
       - name: Commit and Push Updated History & Content
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -114,5 +129,6 @@ jobs:
             echo "No changes detected to commit."
           else
             git commit -m "Auto: publish school problem solving story [skip ci]"
+            git pull --rebase origin main
             git push origin HEAD:${{ github.ref }}
           fi

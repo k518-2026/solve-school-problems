@@ -230,26 +230,46 @@ topic_id: "{topic.get('id', 'C01')}"
 
             client = genai.Client(api_key=self.api_key)
 
-            for round_num in range(1, 3):
+            # Attempt generation across models with backoff retry for peak-hour congestion
+            max_rounds = 2
+            for round_num in range(1, max_rounds + 1):
                 if round_num > 1:
-                    logger.info("Retrying with fallback models after pausing 5 seconds...")
-                    time.sleep(5)
+                    logger.info(f"Round {round_num - 1} hit temporary server demand spikes. Pausing 10s before Round {round_num}...")
+                    time.sleep(10)
 
                 for idx, current_model in enumerate(model_candidates):
-                    logger.info(f"Generating story with model '{current_model}' (Candidate {idx + 1}/{len(model_candidates)})...")
-                    try:
-                        response = client.models.generate_content(
-                            model=current_model,
-                            contents=user_prompt,
-                            config=types.GenerateContentConfig(
-                                system_instruction=system_instruction,
-                                temperature=0.75,
-                                max_output_tokens=8192,
-                                http_options=types.HttpOptions(timeout=120000)
-                            )
+                    # For each candidate, try up to 2 attempts if 503/high demand occurs
+                    for attempt in range(1, 3):
+                        logger.info(
+                            f"Generating story with model '{current_model}' "
+                            f"(Round {round_num}, Candidate {idx + 1}/{len(model_candidates)}, Try {attempt}/2)..."
                         )
-                        text = response.text
-                        if text and len(text.strip()) > 500:
+                        try:
+                            response = client.models.generate_content(
+                                model=current_model,
+                                contents=user_prompt,
+                                config=types.GenerateContentConfig(
+                                    system_instruction=system_instruction,
+                                    temperature=0.75,
+                                    max_output_tokens=8192,
+                                    http_options=types.HttpOptions(timeout=120000)
+                                )
+                            )
+                            text = (response.text or "").strip()
+                            if text.startswith("```markdown"):
+                                text = text[len("```markdown"):].strip()
+                            if text.startswith("```"):
+                                text = text[3:].strip()
+                            if text.endswith("```"):
+                                text = text[:-3].strip()
+
+                            if len(text) < 2000:
+                                logger.warning(
+                                    f"Model '{current_model}' output too short ({len(text)} chars < 2000 target). "
+                                    f"Trying next candidate for a full-length story..."
+                                )
+                                break
+
                             text = self._verify_and_sanitize_links(text)
                             # Extract Title
                             title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
@@ -257,11 +277,33 @@ topic_id: "{topic.get('id', 'C01')}"
 
                             # Extract references
                             refs = re.findall(r'\((https?://[^\s\)]+)\)', text)
+                            logger.info(f"Successfully generated story using '{current_model}'! Title: {title}, Length: {len(text)} chars")
                             return text, title, refs
-                    except Exception as e:
-                        logger.warning(f"Model '{current_model}' failed: {e}")
-                        last_error = e
-                        continue
+
+                        except Exception as e:
+                            last_error = e
+                            err_msg = str(e)
+                            is_503_or_overload = any(term in err_msg.lower() for term in [
+                                "503", "429", "unavailable", "overloaded", "resource_exhausted", "rate_limit", "high demand", "temporary"
+                            ])
+                            is_not_found = "404" in err_msg or "not found" in err_msg.lower()
+
+                            if is_not_found:
+                                logger.warning(f"Model '{current_model}' is not available (404/Retired). Skipping immediately.")
+                                break
+
+                            if is_503_or_overload and attempt == 1:
+                                backoff_sec = 6 * round_num
+                                logger.warning(
+                                    f"Model '{current_model}' encountered temporary capacity/congestion error ({err_msg}). "
+                                    f"Backing off for {backoff_sec}s before retry..."
+                                )
+                                time.sleep(backoff_sec)
+                                continue
+                            else:
+                                logger.warning(f"Model '{current_model}' failed: {err_msg}. Moving to next candidate.")
+                                time.sleep(2)
+                                break
         except ImportError:
             logger.error("google-genai is not installed. Using fallback template.")
         except Exception as e:

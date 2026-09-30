@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 import logging
 import re
@@ -74,6 +75,11 @@ def main():
         help="Override WordPress post status (publish or draft)"
     )
     parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Bypass schedule cooldown check and force story generation"
+    )
+    parser.add_argument(
         "--verbose", "-v",
         action="store_true",
         help="Enable detailed debug logging"
@@ -90,6 +96,25 @@ def main():
         history_mgr.reset_history()
         logger.info("History reset complete.")
         return 0
+
+    # Cooldown check for scheduled GitHub Actions runs to prevent duplicate consecutive posts
+    # when a manual run and a delayed cron schedule overlap.
+    event_name = os.getenv("GITHUB_EVENT_NAME", "")
+    if event_name == "schedule" and not args.force:
+        last_run_str = history_mgr.history_data.get("last_run_at")
+        if last_run_str:
+            try:
+                last_dt = datetime.fromisoformat(last_run_str)
+                now_dt = datetime.now(JST)
+                elapsed_minutes = (now_dt - last_dt).total_seconds() / 60.0
+                if 0 <= elapsed_minutes < 120:
+                    logger.info(
+                        f"Skipping scheduled run: A story was already published {elapsed_minutes:.1f} minutes ago "
+                        f"({last_run_str}). Preventing duplicate consecutive posts."
+                    )
+                    return 0
+            except Exception as e:
+                logger.warning(f"Could not parse last_run_at timestamp '{last_run_str}': {e}")
 
     post_status = args.status or config.default_status
     dry_run = args.dry_run or (not args.send)
