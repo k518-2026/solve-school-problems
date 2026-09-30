@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-09-30T22:35:34.013467+09:00",
-  "total_posted": 10,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-01T06:28:05.607405+09:00",
+  "total_posted": 11,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -100,6 +100,16 @@
       "category": "学校法制・就学義務・不登校",
       "file_path": "content/2026-09-30_pattern_c_出席と承認の境界_校長裁量が拓く学びの機会確保.md",
       "timestamp": "2026-09-30T22:35:34.013467+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "夕暮れのチョークと、静かなる星座――衝動的な行動を読み解く機能的アセスメント",
+      "pattern": "A",
+      "topic_id": "A05",
+      "category": "特別支援・インクルーシブ教育",
+      "file_path": "content/2026-10-01_pattern_a_夕暮れのチョークと、静かなる星座_衝動的な行動を読み解く機能的アセスメント.md",
+      "timestamp": "2026-10-01T06:28:05.607405+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
