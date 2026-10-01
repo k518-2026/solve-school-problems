@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-01T22:37:00.407379+09:00",
-  "total_posted": 13,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-02T06:28:13.856425+09:00",
+  "total_posted": 14,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -130,6 +130,16 @@
       "category": "学校法制・公務員倫理・情報管理",
       "file_path": "content/2026-10-01_pattern_c_クラウドに揺れる規範_校長が問う情報管理と公務員倫理の分水嶺.md",
       "timestamp": "2026-10-01T22:37:00.407379+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "保健室のソファと編みかけの糸――関係性の傷口を癒やすケアの倫理",
+      "pattern": "A",
+      "topic_id": "A06",
+      "category": "人間関係・生徒指導",
+      "file_path": "content/2026-10-02_pattern_a_保健室のソファと編みかけの糸_関係性の傷口を癒やすケアの倫理.md",
+      "timestamp": "2026-10-02T06:28:13.856425+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
