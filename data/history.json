@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-03T06:31:28.020952+09:00",
-  "total_posted": 19,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-03T06:33:50.890731+09:00",
+  "total_posted": 20,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -190,6 +190,17 @@
       "category": "学校法制・学校安全・国家賠償",
       "file_path": "content/2026-10-03_pattern_c_熱砂のグラウンドと校長の天秤_安全配慮義務と国家賠償責任の狭間で.md",
       "timestamp": "2026-10-03T06:31:28.020952+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "背中の目と淀みない川――教室のざわめきを鎮めるモメンタムの技術",
+      "pattern": "A",
+      "topic_id": "A08",
+      "category": "学級崩壊予防・教育社会学",
+      "file_path": "content/2026-10-03_pattern_a_背中の目と淀みない川_教室のざわめきを鎮めるモメンタムの技術.md",
+      "timestamp": "2026-10-03T06:33:50.890731+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
