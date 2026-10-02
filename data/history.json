@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-02T06:28:13.856425+09:00",
-  "total_posted": 14,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-02T17:31:54.019107+09:00",
+  "total_posted": 15,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -140,6 +140,16 @@
       "category": "人間関係・生徒指導",
       "file_path": "content/2026-10-02_pattern_a_保健室のソファと編みかけの糸_関係性の傷口を癒やすケアの倫理.md",
       "timestamp": "2026-10-02T06:28:13.856425+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "深夜の文字数カウンターと正規表現の魔法――通知表所見の嵐を越えて",
+      "pattern": "B",
+      "topic_id": "B05",
+      "category": "校務効率化・正規表現/マクロ",
+      "file_path": "content/2026-10-02_pattern_b_深夜の文字数カウンターと正規表現の魔法_通知表所見の嵐を越えて.md",
+      "timestamp": "2026-10-02T17:31:54.019107+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
