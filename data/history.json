@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-02T22:58:33.219274+09:00",
-  "total_posted": 17,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-03T06:24:46.301973+09:00",
+  "total_posted": 18,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -170,6 +170,16 @@
       "category": "保護者対応・教育哲学",
       "file_path": "content/2026-10-02_pattern_a_夜の電話と対話の地平_保護者クレームを超える教育哲学.md",
       "timestamp": "2026-10-02T22:58:33.219274+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "雨雲を突き抜けるライブ・タイムテーブル――体育主任の祈りとクラウド連携の奇跡",
+      "pattern": "B",
+      "topic_id": "B06",
+      "category": "イベント運営・クラウド連携",
+      "file_path": "content/2026-10-03_pattern_b_雨雲を突き抜けるライブ・タイムテーブル_体育主任の祈りとクラウド連携の奇跡.md",
+      "timestamp": "2026-10-03T06:24:46.301973+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
