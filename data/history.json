@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-03T06:24:46.301973+09:00",
-  "total_posted": 18,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-03T06:31:28.020952+09:00",
+  "total_posted": 19,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -181,6 +181,17 @@
       "file_path": "content/2026-10-03_pattern_b_雨雲を突き抜けるライブ・タイムテーブル_体育主任の祈りとクラウド連携の奇跡.md",
       "timestamp": "2026-10-03T06:24:46.301973+09:00",
       "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "熱砂のグラウンドと校長の天秤――安全配慮義務と国家賠償責任の狭間で",
+      "pattern": "C",
+      "topic_id": "C06",
+      "category": "学校法制・学校安全・国家賠償",
+      "file_path": "content/2026-10-03_pattern_c_熱砂のグラウンドと校長の天秤_安全配慮義務と国家賠償責任の狭間で.md",
+      "timestamp": "2026-10-03T06:31:28.020952+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
       "status": "publish"
     }
   ]
