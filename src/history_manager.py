@@ -144,6 +144,7 @@ class HistoryManager:
             "file_path": str(post_info.get("file_path", "")),
             "timestamp": now_iso,
             "sent_to_wp": post_info.get("sent_to_wp", False),
+            "sent_to_blogger": post_info.get("sent_to_blogger", False),
             "status": post_info.get("status", "publish")
         }
 
@@ -163,14 +164,14 @@ class HistoryManager:
         lines = [
             "# 🏫 Solve School Problems - 投稿履歴一覧 (Posted Stories)",
             "",
-            "本システムが自動生成およびWordPressへメール投稿したストーリーの履歴ログです。",
+            "本システムが自動生成およびWordPress・Bloggerへメール投稿したストーリーの履歴ログです。",
             "**Aパターン（新米教員×先輩教員・教育学）**、**Bパターン（年配教員×若手教員・校務DX）**、**Cパターン（校長先生×教育委員会/指導主事・教育法制）** を交代（A→B→C）で配信しています。",
             "",
             f"- **総投稿数**: {len(posts)} 件",
             f"- **最終更新**: {datetime.now(JST).strftime('%Y-%m-%d %H:%M:%S JST')}",
             f"- **前回のパターン**: パターン {self.history_data.get('last_pattern', 'なし')}",
             "",
-            "| No. | 配信日時 | パターン | ID | タイトル | カテゴリ | WP送信 | ファイル |",
+            "| No. | 配信日時 | パターン | ID | タイトル | カテゴリ | WP / Blogger送信 | ファイル |",
             "|:---:|:---|:---:|:---:|:---|:---|:---:|:---|"
         ]
 
@@ -186,7 +187,16 @@ class HistoryManager:
             tid = p.get("topic_id", "-")
             title = p.get("title", "-")
             cat = p.get("category", "-")
-            sent = "✅ 済" if p.get("sent_to_wp") else "📝 下書き/DryRun"
+            wp_ok = p.get("sent_to_wp", False)
+            bg_ok = p.get("sent_to_blogger", False)
+            if wp_ok and bg_ok:
+                sent = "✅ WP & Blogger済"
+            elif wp_ok:
+                sent = "✅ WP済"
+            elif bg_ok:
+                sent = "✅ Blogger済"
+            else:
+                sent = "📝 下書き/DryRun"
             fp = Path(p.get("file_path", "")).name
             lines.append(f"| {i} | {ts} | {pat_badge} | `{tid}` | {title} | {cat} | {sent} | `{fp}` |")
 

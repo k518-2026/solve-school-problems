@@ -123,8 +123,9 @@ cp .env.example .env
 GEMINI_API_KEY=AIzaSy...
 GEMINI_TEXT_MODEL=gemini-3.8-flash
 
-# WordPress メール投稿設定
+# WordPress & Blogger メール投稿設定
 WP_POST_EMAIL=your-secret-email@post.wordpress.com
+BLOGGER_POST_EMAIL=your-username.secret@blogger.com
 DEFAULT_POST_STATUS=publish
 USE_JETPACK_SHORTCODES=true
 
@@ -160,7 +161,7 @@ python -m src.main --pattern C --dry-run   # Cパターン（学校法制・教�
 # 4. 特定のトピックIDを指定して実行
 python -m src.main --topic-id A03 --dry-run
 
-# 5. 実際に WordPress にメール投稿する（本番送信）
+# 5. 実際に WordPress / Blogger にメール投稿する（本番送信）
 python -m src.main --send
 
 # 6. ユニットテストの実行
@@ -177,6 +178,7 @@ GitHubリポジトリの **[Settings] -> [Secrets and variables] -> [Actions]** 
 |:---|:---|:---|
 | `GEMINI_API_KEY` | Google AI Studio の Gemini APIキー | `AIzaSy...` |
 | `WP_POST_EMAIL` | WordPressメール投稿用の秘密メールアドレス | `xxxx@post.wordpress.com` |
+| `BLOGGER_POST_EMAIL` | Bloggerメール投稿用の秘密メールアドレス | `username.secret@blogger.com` |
 | `SMTP_USER` | 送信用メールアドレス | `your_account@gmail.com` |
 | `SMTP_PASSWORD` | 送信用SMTPパスワード / アプリパスワード | `abcd efgh ijkl mnop` |
 | `SMTP_HOST` (任意) | SMTPホスト（デフォルト: `smtp.gmail.com`） | `smtp.gmail.com` |

@@ -79,7 +79,7 @@ jobs:
         run: |
           python -m unittest discover tests
 
-      - name: Execute Story Generation and WordPress Mail Dispatch
+      - name: Execute Story Generation and WordPress / Blogger Mail Dispatch
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -92,6 +92,7 @@ jobs:
           SMTP_USE_SSL: ${{ secrets.SMTP_USE_SSL || 'false' }}
           MAIL_FROM_NAME: ${{ vars.MAIL_FROM_NAME || 'Solve School Problems' }}
           WP_POST_EMAIL: ${{ secrets.WP_POST_EMAIL }}
+          BLOGGER_POST_EMAIL: ${{ secrets.BLOGGER_POST_EMAIL }}
           DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
           USE_JETPACK_SHORTCODES: 'true'
         run: |

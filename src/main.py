@@ -192,7 +192,8 @@ def main():
         "topic_id": topic_id,
         "category": topic_category,
         "file_path": str(file_path),
-        "sent_to_wp": (not dry_run) and result.get("success", False),
+        "sent_to_wp": (not dry_run) and result.get("sent_to_wp", result.get("success", False)),
+        "sent_to_blogger": (not dry_run) and result.get("sent_to_blogger", False),
         "status": post_status
     })
 

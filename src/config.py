@@ -32,6 +32,7 @@ class SMTPConfig:
     wp_post_email: str
     default_status: str
     use_jetpack_shortcodes: bool
+    blogger_post_email: str = ""
 
 def get_config() -> SMTPConfig:
     """Retrieve and parse configuration from environment variables."""
@@ -43,6 +44,7 @@ def get_config() -> SMTPConfig:
     use_ssl = os.getenv("SMTP_USE_SSL", "false").lower() in ("true", "1", "yes")
     from_name = os.getenv("MAIL_FROM_NAME", "Solve School Problems")
     wp_post_email = os.getenv("WP_POST_EMAIL", "")
+    blogger_post_email = os.getenv("BLOGGER_POST_EMAIL", "")
     default_status = os.getenv("DEFAULT_POST_STATUS", "publish")
     use_jetpack_shortcodes = os.getenv("USE_JETPACK_SHORTCODES", "true").lower() in ("true", "1", "yes")
 
@@ -57,4 +59,5 @@ def get_config() -> SMTPConfig:
         wp_post_email=wp_post_email,
         default_status=default_status,
         use_jetpack_shortcodes=use_jetpack_shortcodes,
+        blogger_post_email=blogger_post_email,
     )
