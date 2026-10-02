@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-02T17:31:54.019107+09:00",
-  "total_posted": 15,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-02T22:39:08.690422+09:00",
+  "total_posted": 16,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -150,6 +150,16 @@
       "category": "校務効率化・正規表現/マクロ",
       "file_path": "content/2026-10-02_pattern_b_深夜の文字数カウンターと正規表現の魔法_通知表所見の嵐を越えて.md",
       "timestamp": "2026-10-02T17:31:54.019107+09:00",
+      "sent_to_wp": true,
+      "status": "publish"
+    },
+    {
+      "title": "法の下の盾――児童虐待の疑いと通告義務の法的決断",
+      "pattern": "C",
+      "topic_id": "C05",
+      "category": "学校法制・児童虐待防止",
+      "file_path": "content/2026-10-02_pattern_c_法の下の盾_児童虐待の疑いと通告義務の法的決断.md",
+      "timestamp": "2026-10-02T22:39:08.690422+09:00",
       "sent_to_wp": true,
       "status": "publish"
     }
