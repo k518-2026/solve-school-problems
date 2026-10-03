@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-03T06:33:50.890731+09:00",
-  "total_posted": 20,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-03T13:30:43.169825+09:00",
+  "total_posted": 21,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -201,6 +201,17 @@
       "category": "学級崩壊予防・教育社会学",
       "file_path": "content/2026-10-03_pattern_a_背中の目と淀みない川_教室のざわめきを鎮めるモメンタムの技術.md",
       "timestamp": "2026-10-03T06:33:50.890731+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "朝の豪雨とダッシュボードの緑の光――野球部顧問を救うワンクリック緊急連絡システム",
+      "pattern": "B",
+      "topic_id": "B07",
+      "category": "部活動・コミュニケーション自動化",
+      "file_path": "content/2026-10-03_pattern_b_朝の豪雨とダッシュボードの緑の光_野球部顧問を救うワンクリック緊急連絡システム.md",
+      "timestamp": "2026-10-03T13:30:43.169825+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
