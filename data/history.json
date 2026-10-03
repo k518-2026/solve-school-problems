@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-03T23:59:01.037614+09:00",
-  "total_posted": 23,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-04T03:23:30.402661+09:00",
+  "total_posted": 24,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -234,6 +234,17 @@
       "category": "保護者対応・教育哲学",
       "file_path": "content/2026-10-03_pattern_a_夜の電話と対話の地平_保護者の不信を解くコミュニケーション理論.md",
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
+      "pattern": "B",
+      "topic_id": "B08",
+      "category": "ペーパーレス・バッチ印刷自動化",
+      "file_path": "content/2026-10-04_pattern_b_紙煙る印刷室の脱出劇_複合機ジョブ制御とクラウド配信が拓く放課後の青空.md",
+      "timestamp": "2026-10-04T03:23:30.402661+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
