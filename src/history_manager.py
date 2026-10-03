@@ -91,7 +91,10 @@ class HistoryManager:
     def get_topic(self, pattern: str, topic_id: Optional[str] = None) -> Dict[str, Any]:
         """
         Retrieves a topic definition for the given pattern ('A', 'B', or 'C').
-        Prioritizes unused topics from catalog.
+        1) Prioritizes completely unused topics from catalog.
+        2) Once all catalog topics for the pattern have been used, selects the topic
+           with the lowest usage count and oldest last-used timestamp (True LRU),
+           and attaches past post titles so StoryGenerator creates a fresh, non-overlapping story.
         """
         if pattern == "A":
             key = "pattern_A_topics"
@@ -105,27 +108,57 @@ class HistoryManager:
         if not topics:
             raise ValueError(f"No topics found for pattern {pattern} in catalog.")
 
+        posts = self.history_data.get("posts", [])
+
+        # Track usage count and last used index for each topic_id in this pattern
+        usage_count: Dict[str, int] = {}
+        last_used_idx: Dict[str, int] = {}
+        same_topic_titles: Dict[str, List[str]] = {}
+        pattern_titles: List[str] = []
+
+        for idx, p in enumerate(posts):
+            if p.get("pattern") == pattern:
+                t_title = p.get("title", "")
+                if t_title:
+                    pattern_titles.append(t_title)
+                tid = p.get("topic_id")
+                if tid:
+                    usage_count[tid] = usage_count.get(tid, 0) + 1
+                    last_used_idx[tid] = idx
+                    if t_title:
+                        same_topic_titles.setdefault(tid, []).append(t_title)
+
+        selected = None
+
         # If specific topic ID requested
         if topic_id:
             for t in topics:
                 if t.get("id", "").lower() == topic_id.lower():
-                    return t
-            logger.warning(f"Topic ID '{topic_id}' not found. Selecting an unused topic instead.")
+                    selected = dict(t)
+                    break
+            if not selected:
+                logger.warning(f"Topic ID '{topic_id}' not found. Selecting an unused/LRU topic instead.")
 
-        # Find used topic IDs in history
-        used_ids = set()
-        for p in self.history_data.get("posts", []):
-            if p.get("pattern") == pattern and "topic_id" in p:
-                used_ids.add(p["topic_id"])
+        if not selected:
+            # Filter unused topics first
+            unused_topics = [t for t in topics if usage_count.get(t.get("id", ""), 0) == 0]
+            if unused_topics:
+                selected = dict(unused_topics[0])
+            else:
+                # All topics used at least once: sort by (usage_count ASC, last_used_idx ASC)
+                sorted_topics = sorted(
+                    topics,
+                    key=lambda t: (
+                        usage_count.get(t.get("id", ""), 0),
+                        last_used_idx.get(t.get("id", ""), -1)
+                    )
+                )
+                selected = dict(sorted_topics[0])
 
-        # Filter unused topics
-        unused_topics = [t for t in topics if t.get("id") not in used_ids]
-        if unused_topics:
-            selected = unused_topics[0]
-        else:
-            # All topics were used at least once, rotate back or select round-robin
-            # Pick the one least recently used
-            selected = topics[len(self.history_data.get("posts", [])) % len(topics)]
+        sel_id = selected.get("id", "")
+        selected["_repeat_count"] = usage_count.get(sel_id, 0)
+        selected["_same_topic_past_titles"] = same_topic_titles.get(sel_id, [])
+        selected["_recent_pattern_titles"] = pattern_titles[-15:]
 
         return selected
 

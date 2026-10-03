@@ -110,18 +110,46 @@ class StoryGenerator:
                 candidates.append(m)
         return candidates
 
+    def _build_anti_duplication_prompt(self, topic: Dict[str, Any]) -> str:
+        """Builds explicit instructions to prevent overlapping with previously published stories."""
+        repeat_count = topic.get("_repeat_count", 0)
+        same_topic_titles = topic.get("_same_topic_past_titles", [])
+        recent_titles = topic.get("_recent_pattern_titles", [])
+
+        parts = []
+        if recent_titles:
+            joined_recent = "\n".join(f"  - 『{t}』" for t in recent_titles)
+            parts.append(
+                f"\n【過去の配信済み記事タイトル一覧（重複・類似表現の厳禁）】\n"
+                f"これまでに同パターンで以下の記事が配信されています。タイトル、比喩表現、導入シーン、結末の演出がこれら過去の記事と重ならないよう、完全に独自の新しい切り口・タイトルで執筆してください:\n"
+                f"{joined_recent}\n"
+            )
+
+        if repeat_count > 0 or same_topic_titles:
+            joined_same = ", ".join(f"『{t}』" for t in same_topic_titles) if same_topic_titles else "過去記事"
+            parts.append(
+                f"\n【最重要：新シチュエーション・新キャラクター創出指示（第{repeat_count + 1}巡目）】\n"
+                f"- このテーマ領域（{topic.get('id')}）では、過去に {joined_same} が執筆されています。\n"
+                f"- 過去の記事と内容が絶対に重ならないよう、上記の基本設定にある「登場人物の名前」「学年・校種（小学校・中学校・高校・特別支援学級）」「教科・行事・部活動」「トラブルの具体的なきっかけ」を**すべて新しく作り変えて（刷新して）**執筆してください。\n"
+                f"- 拠って立つ理論・技術・法令の核心（{topic.get('solution_framework', '')}）は活かしつつ、まったく別の学校・別の先生・別の具体的なエピソードとして、読者が『全く新しい物語だ』と新鮮に感動できるオリジナルストーリーを構築してください。\n"
+            )
+
+        return "".join(parts)
+
     def generate_story(
         self,
         pattern: str,
         topic: Dict[str, Any]
     ) -> Tuple[str, str, List[str]]:
         """
-        Generates a complete story based on pattern ('A' or 'B') and topic info.
+        Generates a complete story based on pattern ('A', 'B', or 'C') and topic info.
         Returns: (markdown_content, title, list_of_references)
         """
         if not self.api_key:
             logger.warning("GEMINI_API_KEY is not set. Generating high-quality built-in template story.")
             return self._generate_fallback(pattern, topic)
+
+        anti_dup_block = self._build_anti_duplication_prompt(topic)
 
         if pattern == "A":
             system_instruction = SYSTEM_PROMPT_A
@@ -138,9 +166,9 @@ class StoryGenerator:
 - 拠って立つ学術理論・エビデンス: {topic.get('solution_framework', '')}
 - キー理論・概念: {', '.join(topic.get('key_theories', []))}
 - 参考文献の手がかり: {', '.join(topic.get('reference_hints', []))}
-
+{anti_dup_block}
 【必須ルール】
-1. タイトルは魅力的で文学的なものにしてください（例: 『教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論』など）。
+1. タイトルは過去の記事と絶対に重ならない、魅力的で文学的なものにしてください。
 2. 本文中に【起】【承】【転】【結】などの記号や見出しは一切入れないでください。シーン転換は空行または「* * *」を使用してください。
 3. 新米教員の等身大の焦りと、先輩教員の深い学術的見識に基づく具体的助言を、リアルな対話劇として描写してください。
 4. 本文は約3,500〜4,000文字のスケールにしてください。
@@ -170,9 +198,9 @@ topic_id: "{topic.get('id', 'A01')}"
 - 解決に用いる技術・ネットワーク知見: {topic.get('solution_framework', '')}
 - キーテクノロジー: {', '.join(topic.get('key_technologies', []))}
 - 参考文献の手がかり: {', '.join(topic.get('reference_hints', []))}
-
+{anti_dup_block}
 【必須ルール】
-1. タイトルは魅力的で技術と情熱が伝わるものにしてください（例: 『深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現』など）。
+1. タイトルは過去の記事と絶対に重ならない、魅力的で技術と情熱が伝わるものにしてください。
 2. 本文中に【起】【承】【転】【結】などの記号や見出し、および「パターンB：〜」等のラベルは一切入れないでください。シーン転換は空行または「* * *」を使用してください。
 3. 年配教員の苦労と教育愛をリスペクトしつつ、若手教員がIT技術とネットワークの力で鮮やかに負担を激減させる爽快な協働ドラマを描いてください。
 4. 本文は約3,500〜4,000文字のスケールにしてください。
@@ -203,9 +231,9 @@ topic_id: "{topic.get('id', 'B01')}"
 - 拠って立つ教育法規・判例・指針: {topic.get('solution_framework', '')}
 - キー法令・条文: {', '.join(topic.get('key_laws', []))}
 - 参考文献の手がかり: {', '.join(topic.get('reference_hints', []))}
-
+{anti_dup_block}
 【必須ルール】
-1. タイトルは重厚で法と教育の葛藤と決断が伝わるものにしてください（例: 『疑いと報告のあいだ――校長が学ぶいじめ防止対策推進法と重大事態の判断』など）。
+1. タイトルは過去の記事と絶対に重ならない、重厚で法と教育の葛藤と決断が伝わるものにしてください。
 2. 本文中に【起】【承】【転】【結】などの記号や見出し、および「パターンC：〜」等のラベルは一切入れないでください。シーン転換は空行または「* * *」を使用してください。
 3. 学校の最終責任者である校長の責任と苦悩、そして指導主事による法規に基づいた客観的かつ心強い法的助言を、緊迫感ある対話劇として描写してください。
 4. 本文は約3,500〜4,000文字のスケールにしてください。

@@ -114,5 +114,19 @@ class TestHistoryManager(unittest.TestCase):
             self.assertIn("学級の課題解決", content)
             self.assertIn("学校法規の適用判断", content)
 
+    def test_lru_and_anti_duplication_when_all_topics_used(self):
+        # Record A01, B01, C01, A02 so all A topics (A01, A02) are used once
+        self.manager.record_post({"title": "A01の1回目", "pattern": "A", "topic_id": "A01"})
+        self.manager.record_post({"title": "B01の1回目", "pattern": "B", "topic_id": "B01"})
+        self.manager.record_post({"title": "C01の1回目", "pattern": "C", "topic_id": "C01"})
+        self.manager.record_post({"title": "A02の1回目", "pattern": "A", "topic_id": "A02"})
+
+        # Now when requesting next A topic, it MUST select A01 (least recently used), NOT A02!
+        next_a = self.manager.get_topic("A")
+        self.assertEqual(next_a["id"], "A01")
+        self.assertEqual(next_a["_repeat_count"], 1)
+        self.assertIn("A01の1回目", next_a["_same_topic_past_titles"])
+        self.assertIn("A02の1回目", next_a["_recent_pattern_titles"])
+
 if __name__ == "__main__":
     unittest.main()

@@ -128,6 +128,198 @@
         "文部科学省 (2022). 生徒指導提要（改訂版・学級経営と集団指導）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm",
         "文部科学省. 生徒指導に関する各種調査・ガイドライン: https://www.mext.go.jp/a_menu/shotou/seitoshidou/index.htm"
       ]
+    },
+    {
+      "id": "A09",
+      "category": "教育評価・形成的アセスメント",
+      "problem_title": "期末テストの一発勝負でしか生徒を評価できず、授業中のつまずきに気づけない",
+      "roles": {
+        "novice": "初任・結城先生（中学校2年英語担当）",
+        "senior": "研究主任・白石先生（教職19年目）"
+      },
+      "situation": "単元末テストを採点して初めて半数以上の生徒が基本文法を理解していなかったことに気づき、手遅れ感に苛まれている。",
+      "solution_framework": "ベンジャミン・ブルームとポール・ブラック＆ディラン・ウィリアムの「形成的評価（Formative Assessment）」とルーブリック評価",
+      "key_theories": ["診断的・形成的・総括的評価", "学習のための評価（Assessment for Learning）", "出口調査票（Exit Ticket）と即時フィードバック"],
+      "reference_hints": [
+        "文部科学省 (2022). 生徒指導提要（改訂版）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm",
+        "Ryan, R. M., & Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. American Psychologist, 55(1), 68-78. https://pubmed.ncbi.nlm.nih.gov/11392867/"
+      ]
+    },
+    {
+      "id": "A10",
+      "category": "学習科学・メタ認知",
+      "problem_title": "『何時間勉強しても成績が上がらない』とノートまとめばかりに固執する生徒",
+      "roles": {
+        "novice": "新任・早川先生（高校2年日本史担当）",
+        "senior": "進路指導主事・黒沢先生（教職21年目）"
+      },
+      "situation": "カラフルで綺麗なまとめノートを毎晩遅くまで作っているのに模試の点数が伸びず、涙ぐむ生徒にどう勉強法を指導すべきか迷っている。",
+      "solution_framework": "バリー・ジマーマンの「自己調整学習（Self-Regulated Learning）」とロディガー＆カーピックの「検索練習（Retrieval Practice / テスト効果）」",
+      "key_theories": ["自己調整学習の3段階（予見・遂行・省察）", "メタ認知的モニタリング", "再読・蛍光ペン引きの錯覚 vs 想起練習"],
+      "reference_hints": [
+        "Yeager, D. S., et al. (2019). A national experiment reveals where a growth mindset improves student achievement. Nature, 573(7774), 364-369. https://doi.org/10.1038/s41586-019-1466-y",
+        "Sweller, J., van Merrienboer, J. J., & Paas, F. G. (1998). Cognitive architecture and instructional design. Educational Psychology Review, 10(3), 251-296. https://doi.org/10.1023/A:1022193728205"
+      ]
+    },
+    {
+      "id": "A11",
+      "category": "教育心理学・自己効力感",
+      "problem_title": "発表会や実技の前になると極度の緊張でお腹が痛くなり、挑戦を避ける児童",
+      "roles": {
+        "novice": "初任・望月先生（小学校4年担任）",
+        "senior": "学年主任・桂木先生（教職20年目）"
+      },
+      "situation": "音楽会やスピーチ発表が近づくと『絶対無理、失敗する』とパニックになり保健室へ行ってしまう児童に対し、『大丈夫だよ』と励ますだけで効果が出ない。",
+      "solution_framework": "アルバート・バンデューラの「自己効力感（Self-Efficacy）」理論と4つの情報源（遂行行動の達成・代理的経験・言語的説得・情動的喚起）",
+      "key_theories": ["自己効力感の4源泉", "スモールステップによる達成体験（Mastery Experiences）", "身近なロールモデルの代理体験"],
+      "reference_hints": [
+        "Weiner, B. (1985). An attributional theory of achievement motivation and emotion. Psychological Review, 92(4), 548-573. https://pubmed.ncbi.nlm.nih.gov/3901065/",
+        "文部科学省 (2022). 生徒指導提要（改訂版）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm"
+      ]
+    },
+    {
+      "id": "A12",
+      "category": "探究学習・教育哲学",
+      "problem_title": "総合的な探究の時間で生徒のテーマが『ネットのコピペ調べ学習』で終わってしまう",
+      "roles": {
+        "novice": "新任・朝倉先生（高校1年探究担当）",
+        "senior": "指導教諭・佐伯先生（教職24年目）"
+      },
+      "situation": "探究活動のテーマ設定を生徒に任せたところ、Wikipediaや上位検索サイトを要約しただけのスライド発表ばかりになり、本当の問いが生まれない。",
+      "solution_framework": "ジョン・デューイの「反省的思考（Reflective Thinking）・経験主義教育」と真正の学習（Authentic Learning）",
+      "key_theories": ["問題解決学習と五段階思考", "Doing by Learning（なすことによって学ぶ）", "本質的な問い（Essential Questions）の設計"],
+      "reference_hints": [
+        "Vygotsky, L. S. (1978). Mind in society: The development of higher psychological processes. Harvard University Press. https://www.hup.harvard.edu/books/9780674576292",
+        "文部科学省. 生徒指導（生徒指導提要・探究的学びと自己指導能力）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm"
+      ]
+    },
+    {
+      "id": "A13",
+      "category": "学級経営・心理的安全性",
+      "problem_title": "間違った発言をするとクスクス笑いが起き、誰も挙手しなくなった教室",
+      "roles": {
+        "novice": "初任・三上先生（中学校1年担任・国語科）",
+        "senior": "ベテラン教諭・槙原先生（教職22年目）"
+      },
+      "situation": "4月は活発に手が挙がっていたのに、ある生徒の言い間違いを周囲が笑ったことをきっかけに、指名されても『わかりません』としか言わない教室になってしまった。",
+      "solution_framework": "エイミー・エドモンドソンの「心理的安全性（Psychological Safety）」とエラー・マネジメント・カルチャー",
+      "key_theories": ["心理的安全性と学習行動", "間違いを歓迎する教室文化（Error Framing）", "対人リスクの低減と傾聴ルール"],
+      "reference_hints": [
+        "Ryan, R. M., & Deci, E. L. (2017). Self-determination theory: Basic psychological needs in motivation, development, and wellness. Guilford Publications. https://doi.org/10.1521/978.14625/28806",
+        "文部科学省 (2022). 生徒指導提要（改訂版）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm"
+      ]
+    },
+    {
+      "id": "A14",
+      "category": "道徳教育・発達心理学",
+      "problem_title": "道徳の授業で生徒が『先生が喜びそうな綺麗事』ばかりを書いて本音が出ない",
+      "roles": {
+        "novice": "新任・大久保先生（小学校6年担任）",
+        "senior": "道徳教育推進教師・加賀美先生（教職18年目）"
+      },
+      "situation": "道徳のワークシートを見ると全員が模範解答のような感想を書くだけで、休み時間には平気でルール破りや仲間外れが起きているギャップに悩んでいる。",
+      "solution_framework": "ローレンス・コールバーグの「道徳性発達理論（モラル・ジレンマ討論）」と多面的・多角的思考",
+      "key_theories": ["道徳性発達の6段階（前慣習的・慣習的・後慣習的）", "モラル・ジレンマ（価値葛藤）の提示", "役割取得（Role-Taking）と対話的省察"],
+      "reference_hints": [
+        "Slavin, R. E. (1996). Research on cooperative learning and achievement: What we know, what we need to know. Contemporary Educational Psychology, 21(1), 43-69. https://doi.org/10.1006/ceps.1996.0004",
+        "文部科学省 (2022). 生徒指導提要（改訂版）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm"
+      ]
+    },
+    {
+      "id": "A15",
+      "category": "インクルーシブ教育・UDL",
+      "problem_title": "学力差・特性差が大きいクラスで、一斉授業のペースをどこに合わせればいいか分からない",
+      "roles": {
+        "novice": "初任・小泉先生（小学校2年担任）",
+        "senior": "通級指導教室担当・永井先生（教職16年目）"
+      },
+      "situation": "早く終わって退屈して騒ぎ出す子と、板書を写すだけで精一杯の子が混在し、補習プリントを配っても混乱が深まるばかりで途方に暮れている。",
+      "solution_framework": "CAST（デビッド・ローズら）の「学びのユニバーサルデザイン（UDL: Universal Design for Learning）」",
+      "key_theories": ["提示（理解）の複数の手段", "行動と表出の複数の手段", "取り組み（動機づけ）の複数の手段"],
+      "reference_hints": [
+        "Horner, R. H., et al. (2009). A randomized, wait-list controlled effectiveness trial assessing school-wide positive behavior support in elementary schools. Journal of Positive Behavior Interventions, 11(3), 133-144. https://pmc.ncbi.nlm.nih.gov/articles/PMC2647908/",
+        "文部科学省. 特別支援教育について（通常の学級におけるユニバーサルデザインと合理的配慮）: https://www.mext.go.jp/a_menu/shotou/tokubetu/main.htm"
+      ]
+    },
+    {
+      "id": "A16",
+      "category": "生徒指導・アンガーマネジメント",
+      "problem_title": "些細なきっかけでキレて机を蹴ったり友達と掴み合いになったりする生徒への支援",
+      "roles": {
+        "novice": "新任・浜田先生（中学校3年担任・体育科）",
+        "senior": "教育相談コーディネーター・沢渡先生（教職21年目）"
+      },
+      "situation": "休み時間のちょっとしたからかいやゲームの勝敗で瞬時に怒りを爆発させる生徒に対し、力ずくで抑え込もうとして信頼関係が崩れかけている。",
+      "solution_framework": "アルバート・エリスの「論理情動行動療法（REBT / ABC理論）」と社会性と情動の学習（SEL: Social and Emotional Learning）",
+      "key_theories": ["自動思考とイラショナル・ビリーフの気づき", "6秒ルールとコーピング（感情調整スキル）", "アサーティブ・コミュニケーション（Iメッセージ）"],
+      "reference_hints": [
+        "文部科学省 (2022). 生徒指導提要（改訂版・教育相談と感情コントロール支援）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm",
+        "文部科学省. 生徒指導に関する各種調査・ガイドライン: https://www.mext.go.jp/a_menu/shotou/seitoshidou/index.htm"
+      ]
+    },
+    {
+      "id": "A17",
+      "category": "キャリア教育・青年心理学",
+      "problem_title": "進路希望調査が白紙のまま『将来やりたいことなんて何もない』と投げやりな高校生",
+      "roles": {
+        "novice": "初任・野々村先生（高校2年担任）",
+        "senior": "キャリア教育主任・氷室先生（教職23年目）"
+      },
+      "situation": "三者面談を前に進路調査票が真っ白な生徒に『早く目標を決めなさい』と迫ってしまい、生徒が面談をボイコットしそうになっている。",
+      "solution_framework": "ジョン・クランボルツの「計画された偶発性理論（Planned Happenstance Theory）」とマーク・サビカスの「キャリア構築理論」",
+      "key_theories": ["好奇心・持続性・柔軟性・楽観性・冒険心の5行動特性", "夢の固定化からの解放とプランド・ハップンスタンス", "ライフキャリア・レインボー（ドナルド・スーパー）"],
+      "reference_hints": [
+        "Ryan, R. M., & Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. American Psychologist, 55(1), 68-78. https://pubmed.ncbi.nlm.nih.gov/11392867/",
+        "文部科学省 (2022). 生徒指導提要（改訂版・キャリア教育と生徒指導）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm"
+      ]
+    },
+    {
+      "id": "A18",
+      "category": "授業改善・概念変化理論",
+      "problem_title": "生徒が日常の思い込み（素朴概念）から抜け出せず、科学・数学の原理を誤解し続ける",
+      "roles": {
+        "novice": "新任・楠木先生（小学校5年理科専科）",
+        "senior": "指導教諭・有馬先生（教職20年目）"
+      },
+      "situation": "『重い物ほど速く落ちる』『電流は豆電球で消費されて減る』といった子どもの思い込みが、いくら公式や定義を説明してもテストで元に戻ってしまう。",
+      "solution_framework": "ポスナーらの「概念変化理論（Conceptual Change Theory）」と認知的葛藤（Cognitive Conflict）・予測-観察-説明（POE）法",
+      "key_theories": ["素朴概念（誤概念）の顕在化", "予測・観察・説明（POE: Predict-Observe-Explain）", "既存スキーマの再構成と納得可能性"],
+      "reference_hints": [
+        "Mayer, R. E. (2002). Multimedia learning. Psychology of Learning and Motivation, 41, 85-139. https://doi.org/10.1016/S0079-7421%2802%2980005-6",
+        "Sweller, J., van Merrienboer, J. J., & Paas, F. G. (1998). Cognitive architecture and instructional design. Educational Psychology Review, 10(3), 251-296. https://doi.org/10.1023/A:1022193728205"
+      ]
+    },
+    {
+      "id": "A19",
+      "category": "不登校支援・システムズアプローチ",
+      "problem_title": "五月雨登校を始めた生徒に『毎日来ようね』と声をかけたら再び来なくなってしまった",
+      "roles": {
+        "novice": "初任・芹沢先生（中学校2年担任）",
+        "senior": "スクールカウンセラー連携担当・津田先生（教職19年目）"
+      },
+      "situation": "やっと週に1〜2回午後から登校できるようになった生徒に、良かれと思って『来週は朝から来られるといいね！』と励ました途端、翌週から完全欠席に戻ってしまった。",
+      "solution_framework": "ブリーフセラピー（短期療法・解決志向アプローチ SFA）とブロンフェンブレンナーの「生態学的システム理論」",
+      "key_theories": ["例外探し（Exception Finding）とスケーリング・クエスチョン", "悪循環の切断（Do Something Different）", "小さな変化の承認と安心基地（Secure Base）"],
+      "reference_hints": [
+        "文部科学省 (2022). 生徒指導提要（改訂版・不登校に関する支援）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm",
+        "文部科学省. 不登校児童生徒への支援のあり方について（通知）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1422155.htm"
+      ]
+    },
+    {
+      "id": "A20",
+      "category": "部活動・リーダーシップ理論",
+      "problem_title": "部活動の部長と部員たちが対立し、大会前にチームの雰囲気が最悪になっている",
+      "roles": {
+        "novice": "新任顧問・桐谷先生（高校吹奏楽部副顧問・2年目）",
+        "senior": "ベテラン顧問・鳴海先生（教職25年目）"
+      },
+      "situation": "意識の高い部長が他の部員のミスを厳しく責め立て、1・2年生が萎縮して退部希望者まで出る事態になり、顧問としてどう仲裁すべきか苦慮している。",
+      "solution_framework": "クルト・レヴィンの「リーダーシップ類型論」、ロバート・グリーンリーフの「サーバントリーダーシップ」、およびタックマン・モデル（集団発達4段階）",
+      "key_theories": ["形成期・混乱期・統一期・機能期（タックマンモデル）", "支配型リーダーから支援型（サーバント）リーダーへの転換", "心理的安全性と目標共有"],
+      "reference_hints": [
+        "Slavin, R. E. (1996). Research on cooperative learning and achievement: What we know, what we need to know. Contemporary Educational Psychology, 21(1), 43-69. https://doi.org/10.1006/ceps.1996.0004",
+        "文部科学省 (2022). 生徒指導提要（改訂版・集団指導とリーダーシップ育成）: https://www.mext.go.jp/a_menu/shotou/seitoshidou/1404008.htm"
+      ]
     }
   ],
   "pattern_B_topics": [
@@ -266,6 +458,210 @@
         "デジタル庁. 教育（校務DXと業務効率化）: https://www.digital.go.jp/policies/education",
         "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
       ]
+    },
+    {
+      "id": "B09",
+      "category": "三者面談・日程調整自動化",
+      "problem_title": "全校三者面談の希望日時パズルと、兄弟姉妹クラスの重複調整で何日も徹夜する",
+      "roles": {
+        "veteran": "教務主任・田辺先生（教職27年目）",
+        "young": "若手教諭・三浦先生（教職3年目・数学科）"
+      },
+      "situation": "紙の希望調査票を集め、兄弟がいる家庭の面談時間が重ならないよう全クラスの担任が職員室の机に紙を並べてパズルのように組み替えている。",
+      "solution_framework": "Google フォーム ＋ スプレッドシート（QUERY / FILTER / XLOOKUP関数）とGASによる兄弟枠自動照合・日程割当アルゴリズム",
+      "key_technologies": ["Google フォーム希望収集", "QUERY / FILTER / XLOOKUP 関数", "Google Apps Script 自動重複検知", "カレンダー自動登録"],
+      "reference_hints": [
+        "Google ドキュメント エディタ ヘルプ. Google フォームの回答を表示、管理する: https://support.google.com/docs/answer/2839588?hl=ja",
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの関数リスト: https://support.google.com/docs/table/25273?hl=ja",
+        "デジタル庁. 教育（校務DXと業務効率化）: https://www.digital.go.jp/policies/education"
+      ]
+    },
+    {
+      "id": "B10",
+      "category": "保健室DX・健康観察集計",
+      "problem_title": "毎朝の紙の健康観察板の回収・集計と、感染症欠席マップの手書き作成",
+      "roles": {
+        "veteran": "養護教諭・小山内先生（教職25年目）",
+        "young": "若手教諭・五十嵐先生（教職2年目・情報担当）"
+      },
+      "situation": "インフルエンザ流行期に全クラスから紙の欠席・早退連絡カードが集まるのを待ち、養護教諭が電卓で集計して教育委員会への報告用グラフを手書きしている。",
+      "solution_framework": "クラウド出欠・健康観察ダッシュボード（ピボットテーブル・COUNTIFS関数）と学級閉鎖基準アラートのリアルタイム可視化",
+      "key_technologies": ["スプレッドシート COUNTIFS / ピボットテーブル", "条件付き書式による感染拡大ヒートマップ", "リアルタイム集計グラフ", "教育委員会報告様式の自動生成"],
+      "reference_hints": [
+        "文部科学省. 学校と保護者等間における連絡手段のデジタル化の推進について: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html",
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの関数リスト: https://support.google.com/docs/table/25273?hl=ja",
+        "デジタル庁. 教育（教育DX・データ利活用）: https://www.digital.go.jp/policies/education"
+      ]
+    },
+    {
+      "id": "B11",
+      "category": "特別教室予約・備品貸出DX",
+      "problem_title": "理科室・体育館・プロジェクターの二重予約（ダブルブッキング）と紙台帳の混乱",
+      "roles": {
+        "veteran": "庶務主任・浜口先生（教職29年目）",
+        "young": "若手教諭・篠原先生（教職3年目・理科）"
+      },
+      "situation": "職員室の壁に貼られた紙の特別教室予約表に鉛筆で書き込む運用のため、消し忘れや二重予約が頻発し、授業直前に教室の取り合いが起きている。",
+      "solution_framework": "Google カレンダーの「リソース（会議室・備品）予約機能」とQRコード台帳による重複予約の完全自動ブロック",
+      "key_technologies": ["Google カレンダー リソース管理", "重複予約の自動拒否ロジック", "1人1台端末からの即時予約確認", "備品貸出ステータス管理"],
+      "reference_hints": [
+        "Google カレンダー ヘルプ. 新しいカレンダーを作成する（学校行事・共有カレンダー）: https://support.google.com/calendar/answer/37082?hl=ja",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm",
+        "デジタル庁. 教育（校務DXの推進）: https://www.digital.go.jp/policies/education"
+      ]
+    },
+    {
+      "id": "B12",
+      "category": "情報セキュリティ・誤送信防止",
+      "problem_title": "保護者一斉メールの『TO（宛先）』に全員のアドレスを入れてしまいそうになるヒヤリハット",
+      "roles": {
+        "veteran": "学年主任・谷口先生（教職28年目）",
+        "young": "若手教諭・松永先生（教職4年目・情報セキュリティ委員）"
+      },
+      "situation": "修学旅行の緊急連絡メールを送ろうとした年配教員が、BCCではなくTOに保護者全員のメールアドレスを貼り付けているのを若手教員が送信直前に発見して肝を冷やす。",
+      "solution_framework": "メーリングリスト（Google グループ）配信・学校連絡システムの権限分離と、添付ファイル暗号化（PPAP）廃止に代わるクラウド安全共有リンク設計",
+      "key_technologies": ["TO/CC/BCCの事故防止アーキテクチャ", "脱PPAPとアクセス制限付きクラウド共有", "2段階認証と送信前ディレイ（送信取り消し）設定", "教育情報セキュリティポリシー準拠"],
+      "reference_hints": [
+        "文部科学省. 教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm",
+        "IPA（独立行政法人情報処理推進機構）. 中小企業・組織向け情報セキュリティ対策ガイドライン: https://www.ipa.go.jp/security/keihatsu/sme/guideline/index.html",
+        "Google ドライブ ヘルプ. ファイルやフォルダの以前のバージョンを確認する: https://support.google.com/drive/answer/2409045?hl=ja"
+      ]
+    },
+    {
+      "id": "B13",
+      "category": "進路指導・調査書データ統合",
+      "problem_title": "受験期の調査書・推薦書作成で、過年度からの評定・部活・委員会記録を別々の紙ファイルから探す苦行",
+      "roles": {
+        "veteran": "進路指導主事・岩本先生（教職30年目）",
+        "young": "若手教諭・高梨先生（教職3年目・商業/情報科）"
+      },
+      "situation": "3年生の受験出願を前に、1・2年時の紙の指導要録補助簿や委員会名簿を倉庫から引っ張り出し、一文字ずつ目視で照合して腱鞘炎になっている。",
+      "solution_framework": "生徒IDを主キー（Primary Key）としたリレーショナルデータ設計と、XLOOKUP / INDEX-MATCH によるワンシート生徒カルテ自動統合",
+      "key_technologies": ["主キー（生徒ID）によるテーブル結合", "XLOOKUP 関数による複数年度データ統合", "データの入力規則と表記ゆれ防止", "チェックサム・整合性検証"],
+      "reference_hints": [
+        "Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート: https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+        "文部科学省. 高等学校情報科「情報Ⅰ」教員研修用教材（データベースとデータ活用）: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html",
+        "文部科学省. 教育情報セキュリティの確保: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm"
+      ]
+    },
+    {
+      "id": "B14",
+      "category": "授業ICT・リアルタイム小テスト",
+      "problem_title": "毎時間の小テスト40人×5クラスの丸付けと得点記録で放課後がすべて潰れる",
+      "roles": {
+        "veteran": "ベテラン教諭・古川先生（教職26年目・社会科）",
+        "young": "若手教諭・相沢先生（教職2年目・英語科）"
+      },
+      "situation": "生徒の定着度を見ようと毎時間紙の小テストを実施しているが、毎日200枚の採点と名簿への転記で夜9時まで職員室から帰れなくなっている。",
+      "solution_framework": "Google フォームの「テスト機能（自動採点・解説フィードバック）」とスプレッドシート連携による誤答率ヒートマップ即時生成",
+      "key_technologies": ["Google フォーム自動採点モード", "正答率・誤答パターンのリアルタイム可視化", "正規表現による記述解答の表記ゆれ許容判定", "成績一覧への自動転記"],
+      "reference_hints": [
+        "Google ドキュメント エディタ ヘルプ. Google フォームの回答を表示、管理する: https://support.google.com/docs/answer/2839588?hl=ja",
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの正規表現関数: https://support.google.com/docs/answer/3098244?hl=ja",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
+      ]
+    },
+    {
+      "id": "B15",
+      "category": "職員会議・ペーパーレス議事録",
+      "problem_title": "職員会議の膨大な紙資料の印刷・ホチキス留めと、手書きメモからの議事録起こし",
+      "roles": {
+        "veteran": "教頭・前田先生（教職29年目）",
+        "young": "若手教諭・黒木先生（教職3年目・国語科）"
+      },
+      "situation": "毎週の職員会議のたびに50人×20ページの紙資料を印刷して丁合いし、会議後は記録係が録音とメモを聞き返して数時間かけて議事録を作っている。",
+      "solution_framework": "クラウド共同編集ドキュメントによる事前資料回覧（非同期確認）と、リアルタイム共同議事録・決定事項タスク管理",
+      "key_technologies": ["クラウド共同編集（Google ドキュメント）", "事前コメント機能による会議時間短縮", "見出しアウトライン構造化", "閲覧権限とアーカイブ検索"],
+      "reference_hints": [
+        "デジタル庁. 教育（校務DXとペーパーレス化）: https://www.digital.go.jp/policies/education",
+        "Google ドライブ ヘルプ. ファイルやフォルダの以前のバージョンを確認する: https://support.google.com/drive/answer/2409045?hl=ja",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
+      ]
+    },
+    {
+      "id": "B16",
+      "category": "校内ネットワーク・DNS/プロキシ診断",
+      "problem_title": "『インターネットが繋がらない！』と大騒ぎになるが、特定の学習サイトだけが開けない謎の障害",
+      "roles": {
+        "veteran": "年配教諭・大塚先生（教職27年目・視聴覚主任）",
+        "young": "若手教諭・日向先生（教職4年目・情報科）"
+      },
+      "situation": "総合学習の授業中に調べ学習サイトが突然表示されなくなり、大塚先生がLANケーブルを全部抜き差ししようとするが、他のサイトは開けるため原因が分からずパニックになる。",
+      "solution_framework": "ネットワーク層ごとの切り分け診断（Ping / DNS名前解決 / Webフィルタリング・プロキシのホワイトリスト制御 / CDNキャッシュ）",
+      "key_technologies": ["OSI参照モデルに基づく障害切り分け", "DNS名前解決とキャッシュ確認", "教育委員会プロキシ・フィルタリング設定", "同時接続セッション数の制御"],
+      "reference_hints": [
+        "総務省. 教育分野における情報通信技術の利活用: https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/",
+        "文部科学省. 高等学校情報科「情報Ⅰ」教員研修用教材（情報通信ネットワーク）: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html",
+        "文部科学省. 教育情報セキュリティの確保: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm"
+      ]
+    },
+    {
+      "id": "B17",
+      "category": "図書室・教材在庫管理DX",
+      "problem_title": "学級文庫や理科実験器具の貸出・返却が紙のノート管理で行方不明が続出する",
+      "roles": {
+        "veteran": "図書主任・秋山先生（教職25年目）",
+        "young": "若手教諭・瀬戸先生（教職2年目・技術科）"
+      },
+      "situation": "どのクラスにどの備品や図書セットが貸し出されているか誰も把握できず、毎年年度末の棚卸しで数日かけて全教室を探し回っている。",
+      "solution_framework": "バーコード/QRコード読み取り ＋ スプレッドシート在庫台帳による3秒貸出・未返却リマインド自動化",
+      "key_technologies": ["QRコード自動生成（IMAGE関数）", "タブレットカメラによる高速チェックイン", "貸出ステータス自動更新（GAS）", "棚卸し集計自動化"],
+      "reference_hints": [
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの関数リスト: https://support.google.com/docs/table/25273?hl=ja",
+        "デジタル庁. 教育（校務DXの推進）: https://www.digital.go.jp/policies/education",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
+      ]
+    },
+    {
+      "id": "B18",
+      "category": "校外学習・しおり＆緊急連絡DX",
+      "problem_title": "修学旅行の班別行動計画書のチェックと、当日の遅延・迷子連絡の混乱",
+      "roles": {
+        "veteran": "学年主任・横山先生（教職28年目）",
+        "young": "若手教諭・鳴瀬先生（教職3年目・社会科）"
+      },
+      "situation": "生徒が手書きした班別行動計画の乗り換え時間や拝観料の計算ミスを担任が電卓で全部検算し、当日は公衆電話からの定時連絡を本部で待ち続けている。",
+      "solution_framework": "スプレッドシート共同作成による予算・時間自動計算テンプレートと、1人1台端末を活用したチェックポイント到着報告システム",
+      "key_technologies": ["時間計算・予算自動集計シート", "プルダウン入力規則による駅名・見学先選択", "フォームによる班別現在地・健康報告", "本部リアルタイム進捗一覧"],
+      "reference_hints": [
+        "Google ドキュメント エディタ ヘルプ. Google フォームの回答を表示、管理する: https://support.google.com/docs/answer/2839588?hl=ja",
+        "文部科学省. 教育情報セキュリティの確保: https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm",
+        "文部科学省. 教育の情報化の推進: https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm"
+      ]
+    },
+    {
+      "id": "B19",
+      "category": "賞状・通知文の差し込み印刷DX",
+      "problem_title": "卒業証書や表彰状、保護者宛て個別通知の氏名・漢数字を1枚ずつ手入力して印刷ミス連発",
+      "roles": {
+        "veteran": "総務主任・平田先生（教職29年目）",
+        "young": "若手教諭・望月先生（教職3年目・情報担当）"
+      },
+      "situation": "何百枚もの表彰状や個別通知文のワードファイルを1人につき1ファイルずつコピーして名前を書き換え、旧字体や生年月日の入力ミスで何度も刷り直している。",
+      "solution_framework": "名簿マスターデータ（単一情報源：Single Source of Truth）からの差し込み印刷（Mail Merge）およびGASドキュメント自動生成",
+      "key_technologies": ["Single Source of Truth（単一マスター名簿）", "差し込み印刷・テンプレート置換スクリプト", "外字・異体字のUnicode管理", "PDF一括出力とプレビュー検証"],
+      "reference_hints": [
+        "Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート: https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929",
+        "Google ドキュメント エディタ ヘルプ. Google スプレッドシートの関数リスト: https://support.google.com/docs/table/25273?hl=ja",
+        "デジタル庁. 教育（教育DX・データ標準化）: https://www.digital.go.jp/policies/education"
+      ]
+    },
+    {
+      "id": "B20",
+      "category": "年度末引き継ぎ・ナレッジ管理DX",
+      "problem_title": "前任者の転勤で年中行事の手順や引継ぎデータが見つからず、毎年ゼロから作り直す悲劇",
+      "roles": {
+        "veteran": "教務主任・柴田先生（教職27年目）",
+        "young": "若手教諭・速水先生（教職4年目・情報推進担当）"
+      },
+      "situation": "担当者が異動するたびに個人のUSBメモリやデスクトップにしか最新ファイルが残っておらず、残された教員が紙の古い綴りを見ながら一から案内文を打ち直している。",
+      "solution_framework": "校務ポータルサイト（Google サイト / 共有ドライブ構造化）による年度横断ナレッジベース構築と標準命名規則",
+      "key_technologies": ["共有ドライブ（組織所有ファイル）への移行", "ファイル命名規則（ISO 8601日付＋案件名）", "校内ポータルサイトによるマニュアル一元化", "アクセス権限の年度更新設計"],
+      "reference_hints": [
+        "Google ドライブ ヘルプ. ファイルやフォルダの以前のバージョンを確認する: https://support.google.com/drive/answer/2409045?hl=ja",
+        "IPA（独立行政法人情報処理推進機構）. 中小企業・組織向け情報セキュリティ対策ガイドライン: https://www.ipa.go.jp/security/keihatsu/sme/guideline/index.html",
+        "デジタル庁. 教育（校務DXの推進）: https://www.digital.go.jp/policies/education"
+      ]
     }
   ],
   "pattern_C_topics": [
@@ -364,6 +760,230 @@
       "reference_hints": [
         "学校保健安全法 (昭和三十三年法律第五十六号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=333AC0000000056",
         "国家賠償法 (昭和二十二年法律第百二十五号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=322AC0000000125"
+      ]
+    },
+    {
+      "id": "C07",
+      "category": "学校法制・著作権法・教材利用",
+      "problem_title": "市販ドリルや新聞記事・動画のクラウド配信と著作権法第35条の適法範囲",
+      "roles": {
+        "principal": "校長・高階先生（校長就任2年目）",
+        "supervisor": "教育委員会・教育情報化担当指導主事・佐久間先生"
+      },
+      "situation": "教員が市販問題集をスキャンして全員の端末に常時ダウンロード可能にしたり、学校行事のBGM付き動画をYouTubeで一般公開しようとしたりしており、著作権侵害リスクに校長が気づいて緊急確認する。",
+      "solution_framework": "著作権法第35条（学校その他の教育機関における複製等・授業目的公衆送信補償金制度 SARTRAS）の適用要件と『著作権者の利益を不当に害することとなる場合（ただし書）』の厳格な線引き",
+      "key_laws": ["著作権法第35条第1項・第2項", "授業目的公衆送信補償金制度（SARTRAS）", "教育基本法第2条"],
+      "reference_hints": [
+        "著作権法 (昭和四十五年法律第四十八号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=345AC0000000048",
+        "教育基本法 (平成十八年法律第百二十号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=418AC0000000120"
+      ]
+    },
+    {
+      "id": "C08",
+      "category": "学校法制・合理的配慮・障害者差別解消法",
+      "problem_title": "発達障害や書字困難のある生徒への定期テスト配慮と『不公平だ』という周囲への法的説明",
+      "roles": {
+        "principal": "校長・榊原先生（校長就任3年目）",
+        "supervisor": "教育委員会・特別支援教育課指導主事・深沢先生"
+      },
+      "situation": "読み書き障害（ディスレクシア）のある生徒にタブレット読み上げや別室受験を認めることに対し、一部の教員や保護者から『特別扱いは不公平ではないか』と異論が出され、校長が法的根拠をもって説得に臨む。",
+      "solution_framework": "障害を理由とする差別の解消の推進に関する法律（障害者差別解消法 第7条・第8条 合理的配慮の提供義務）および教育基本法第4条（教育の機会均等）に基づく実質的平等の保障",
+      "key_laws": ["障害を理由とする差別の解消の推進に関する法律第7条・第8条", "教育基本法第4条", "発達障害者支援法第8条"],
+      "reference_hints": [
+        "障害を理由とする差別の解消の推進に関する法律 (平成二十五年法律第六十五号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=425AC0000000065",
+        "発達障害者支援法 (平成十六年法律第百六十七号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=416AC1000000167"
+      ]
+    },
+    {
+      "id": "C09",
+      "category": "学校法制・働き方改革・給特法",
+      "problem_title": "休日部活動や時間外業務の強制と『超勤4項目』・校長の在校等時間管理義務",
+      "roles": {
+        "principal": "校長・結城先生（校長就任1年目）",
+        "supervisor": "教育委員会・教職員労務管理担当主事・篠田先生"
+      },
+      "situation": "ベテラン顧問が若手教員に休日の部活動引率や夜遅くまでの会議を事実上強制しており、疲弊した若手から訴えが出た。校長として給特法上の限界と労務管理責任に基づく業務削減を決断する。",
+      "solution_framework": "公立の義務教育諸学校等の教育職員の給与等に関する特別措置法（給特法第6条 超勤4項目以外の時間外勤務命令の禁止、第7条 指針・在校等時間の上限ガイドライン）および労働安全衛生法に基づく校長の健康確保義務",
+      "key_laws": ["公立の義務教育諸学校等の教育職員の給与等に関する特別措置法第6条・第7条", "労働安全衛生法第66条", "地方公務員法第42条"],
+      "reference_hints": [
+        "公立の義務教育諸学校等の教育職員の給与等に関する特別措置法 (昭和四十六年法律第七十七号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=346AC0000000077",
+        "労働安全衛生法 (昭和四十七年法律第五十七号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=347AC0000000057"
+      ]
+    },
+    {
+      "id": "C10",
+      "category": "学校法制・学校給食・アレルギー事故防止",
+      "problem_title": "食物アレルギーを持つ児童への給食提供体制と緊急時エピペン投与の法的責任",
+      "roles": {
+        "principal": "校長・仁科先生（校長就任2年目）",
+        "supervisor": "教育委員会・学校保健給食課指導主事・水谷先生"
+      },
+      "situation": "重度の食物アレルギーを持つ児童のおかわりのルールが曖昧なまま運用されヒヤリハットが発生。さらに緊急時に教員がエピペン（アドレナリン自己注射薬）を打つことへの法的不安が職員室に広がっている。",
+      "solution_framework": "学校給食法（第9条 学校給食衛生管理基準）、学校保健安全法、および医師法第17条における『緊急やむを得ない場合の教職員によるエピペン注射の違法性阻却（正当業務行為・緊急避難）』の法的整理",
+      "key_laws": ["学校給食法第9条", "学校保健安全法第27条・第29条", "国家賠償法第1条（安全配慮義務）"],
+      "reference_hints": [
+        "学校給食法 (昭和二十九年法律第百六十号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=329AC0000000160",
+        "学校保健安全法 (昭和三十三年法律第五十六号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=333AC0000000056"
+      ]
+    },
+    {
+      "id": "C11",
+      "category": "学校法制・感染症と出席停止・臨時休業",
+      "problem_title": "感染症拡大時の『出席停止』『学級閉鎖』の法的権限と保護者からの抗議対応",
+      "roles": {
+        "principal": "校長・長谷川先生（校長就任3年目）",
+        "supervisor": "教育委員会・保健体育課指導主事・窪田先生"
+      },
+      "situation": "インフルエンザが急拡大する中、共働きの保護者から『熱が下がったから登校させる、休ませるなら学校が補償しろ』と強い抗議が入り、さらに学級閉鎖（臨時休業）の権限が校長と教育委員会のどちらにあるか混乱が生じる。",
+      "solution_framework": "学校保健安全法第19条（校長による出席停止命令の権限）と第20条（学校設置者＝教育委員会による臨時休業の決定権限）の明確な法的区分と公衆衛生上の義務",
+      "key_laws": ["学校保健安全法第19条（出席停止）", "学校保健安全法第20条（臨時休業）", "学校保健安全法施行規則第18条"],
+      "reference_hints": [
+        "学校保健安全法 (昭和三十三年法律第五十六号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=333AC0000000056",
+        "地方教育行政の組織及び運営に関する法律 (昭和三十一年法律第百六十二号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=331AC0000000162"
+      ]
+    },
+    {
+      "id": "C12",
+      "category": "学校法制・個人情報保護・肖像権",
+      "problem_title": "学校だよりやホームページへの児童生徒の写真掲載と個人情報保護法・肖像権の同意手続",
+      "roles": {
+        "principal": "校長・内田先生（校長就任2年目）",
+        "supervisor": "教育委員会・総務法規担当主事・五十嵐先生"
+      },
+      "situation": "運動会の写真を学校ホームページに掲載したところ、DV避難中の家庭やプライバシーを重視する保護者から即時削除と厳重抗議が寄せられ、学校全体の同意取得ルールを抜本的に見直す必要に迫られる。",
+      "solution_framework": "個人情報の保護に関する法律（第61条・第69条 保有個人情報の利用目的の特定と第三者提供の制限）および判例上の肖像権・プライバシー権保護、オプトアウト方式の限界と事前個別同意の原則",
+      "key_laws": ["個人情報の保護に関する法律", "地方公務員法第34条（守秘義務）", "肖像権・プライバシー権（判例法理）"],
+      "reference_hints": [
+        "個人情報の保護に関する法律 (平成十五年法律第五十七号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=415AC0000000057",
+        "地方公務員法 (昭和二十五年法律第二百六十一号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=325AC0000000261"
+      ]
+    },
+    {
+      "id": "C13",
+      "category": "学校法制・日本国憲法・無償原則と私費負担",
+      "problem_title": "補助教材やICTアプリの購入費徴収と憲法第26条『義務教育の無償』・学校徴収金の法的限界",
+      "roles": {
+        "principal": "校長・片桐先生（校長就任4年目）",
+        "supervisor": "教育委員会・学校財務課指導主事・神谷先生"
+      },
+      "situation": "学年主任が独自に高額な副教材や有料アプリの全生徒購入を進めようとしたところ、保護者から『義務教育は無償のはずだ』と異議が出され、経済的に困窮する家庭への配慮も含めて校長が精査する。",
+      "solution_framework": "日本国憲法第26条第2項（義務教育の無償）・教育基本法第5条第4項（授業料不徴収の原則・最高裁判例）、学校教育法第19条（就学援助制度）、および子どもの貧困対策推進法に基づく適正な教材選定",
+      "key_laws": ["日本国憲法第26条", "教育基本法第5条", "学校教育法第19条（経済的理由による就学困難者への援助）", "子どもの貧困対策の推進に関する法律"],
+      "reference_hints": [
+        "日本国憲法 (昭和二十一年憲法) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=321CONSTITUTION",
+        "子どもの貧困対策の推進に関する法律 (平成二十五年法律第六十四号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=425AC1000000064"
+      ]
+    },
+    {
+      "id": "C14",
+      "category": "学校法制・学校事故・生徒間トラブルと民法責任",
+      "problem_title": "休み時間の生徒同士の衝突事故と学校の監督義務（国家賠償法・民法第714条）の範囲",
+      "roles": {
+        "principal": "校長・真田先生（校長就任3年目）",
+        "supervisor": "教育委員会・法務支援室指導主事・朝比奈先生"
+      },
+      "situation": "昼休みに廊下で走っていた生徒と角から出てきた生徒が衝突して前歯を折る怪我が発生。双方の保護者が感情的に対立し、『学校の監督不行き届きだ』と学校にも賠償を求める事態となる。",
+      "solution_framework": "民法第709条（不法行為）・第714条（責任無能力者の監督義務者等の責任）および公立学校における国家賠償法第1条の適用関係（学校生活における教育的活動との密接関連性と予見可能性の判例基準）",
+      "key_laws": ["民法第709条・第714条", "国家賠償法第1条", "学校保健安全法第27条"],
+      "reference_hints": [
+        "民法 (明治二十九年法律第八十九号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=129AC0000000089",
+        "国家賠償法 (昭和二十二年法律第百二十五号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=322AC0000000125"
+      ]
+    },
+    {
+      "id": "C15",
+      "category": "学校法制・教育課程編成権と学習指導要領",
+      "problem_title": "特定の教科の時数不足の発覚と、学校教育法に基づく教育課程管理・補習措置の法的判断",
+      "roles": {
+        "principal": "校長・大門先生（校長就任1年目）",
+        "supervisor": "教育委員会・教育指導課指導主事・椎名先生"
+      },
+      "situation": "行事や台風休校が重なった結果、2学期末の時点で特定の学年・教科の標準授業時数が下回る恐れがあることが発覚。現場は『そのままでも卒業できるだろう』と楽観視するが、校長が法令基準を確認する。",
+      "solution_framework": "学校教育法第33条・第43条および学校教育法施行規則（別表・標準授業時数、教育課程の編成）、学習指導要領の法的拘束力（旭川学テ最高裁判決法理）に基づく校長の教育課程管理責任",
+      "key_laws": ["学校教育法施行規則第50条・第72条（標準授業時数）", "学校教育法第30条・第33条", "地方教育行政の組織及び運営に関する法律第21条"],
+      "reference_hints": [
+        "学校教育法 (昭和二十二年法律第二十六号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=322AC0000000026",
+        "学校教育法施行規則 (昭和二十二年文部省令第十一号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=322M40000080011"
+      ]
+    },
+    {
+      "id": "C16",
+      "category": "学校法制・免許法・無免許授業の防止",
+      "problem_title": "免許外教科担任の許可手続漏れリスクと教育職員免許法の厳格な遵守",
+      "roles": {
+        "principal": "校長・梶原先生（校長就任2年目）",
+        "supervisor": "教育委員会・教職員人事課管理主事・設楽先生"
+      },
+      "situation": "小規模校で産休代替教員が見つからない中、教務主任が『技術・家庭科の空き時間を他教科の先生に埋めてもらえばいい』と提案。校長は教育職員免許法違反（無免許授業）になる危険を察知し教育委員会へ照会する。",
+      "solution_framework": "教育職員免許法第3条（免許状主義の原則）および附則第2項（免許外教科担任の都道府県教育委員会による事前許可要件）、単位履修の有効性に関する厳格な人事・法務手続",
+      "key_laws": ["教育職員免許法第3条（免許）", "教育職員免許法附則第2項（免許外教科担任の許可）", "学校教育法第9条"],
+      "reference_hints": [
+        "教育職員免許法 (昭和二十四年法律第百四十七号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=324AC0000000147",
+        "学校教育法 (昭和二十二年法律第二十六号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=322AC0000000026"
+      ]
+    },
+    {
+      "id": "C17",
+      "category": "学校法制・防災と指定避難所運営",
+      "problem_title": "大規模地震発生時の児童引き渡し基準と、学校体育館の指定避難所開設における校長の権限",
+      "roles": {
+        "principal": "校長・黒澤先生（校長就任3年目）",
+        "supervisor": "教育委員会・学校安全防災担当指導主事・鳴海先生"
+      },
+      "situation": "震度5強の地震が発生し、地域住民が避難所として体育館へ殺到する一方、保護者以外の親族や知人が児童の引き取りを求めて来校。混乱の中で校長が子どもの安全確保と避難所協力の優先順位を決断する。",
+      "solution_framework": "災害対策基本法第49条の4（指定緊急避難場所）・第49条の7（指定避難所）と学校保健安全法第29条（危険等発生時対処要領）に基づく、児童生徒の生命安全最優先の引き渡し原則と自治体防災部局との指揮系統分離",
+      "key_laws": ["災害対策基本法第49条の4・第49条の7", "学校保健安全法第27条・第29条", "地方教育行政の組織及び運営に関する法律"],
+      "reference_hints": [
+        "災害対策基本法 (昭和三十六年法律第二百二十三号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=336AC0000000223",
+        "学校保健安全法 (昭和三十三年法律第五十六号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=333AC0000000056"
+      ]
+    },
+    {
+      "id": "C18",
+      "category": "学校法制・非行問題と警察・児童相談所連携",
+      "problem_title": "SNSを通じた生徒間の金銭トラブル・恐喝事案と少年法・警察連携の判断基準",
+      "roles": {
+        "principal": "校長・佐伯先生（校長就任4年目）",
+        "supervisor": "教育委員会・生徒指導課指導主事・加賀先生"
+      },
+      "situation": "生徒間でオンラインゲームの課金アイテムを巡る高額な金銭要求（恐喝の疑い）が発覚。担任らは『警察沙汰にすると生徒の将来に傷がつく』と校内指導のみで済ませようとするが、校長は法的限界を見極める。",
+      "solution_framework": "少年法第1条（少年の健全育成・保護処分）、いじめ防止対策推進法第23条第6項（犯罪行為として取り扱われるべきいじめ等の警察への相談・通報義務）に基づく関係機関との適時・適切な連携",
+      "key_laws": ["少年法第1条", "いじめ防止対策推進法第23条第6項（警察への通報・連携）", "児童福祉法第25条"],
+      "reference_hints": [
+        "少年法 (昭和二十三年法律第百六十八号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=323AC0000000168",
+        "いじめ防止対策推進法 (平成二十五年法律第七十一号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=425AC1000000071"
+      ]
+    },
+    {
+      "id": "C19",
+      "category": "学校法制・政治的中立性と宗教的配慮",
+      "problem_title": "選挙権年齢18歳下の主権者教育における政治的中立性と、信仰上の理由による実技配慮",
+      "roles": {
+        "principal": "校長・一条先生（校長就任2年目）",
+        "supervisor": "教育委員会・高校教育課指導主事・水城先生"
+      },
+      "situation": "公民科の模擬選挙授業で教員が特定の政党の政策を強く批判したとの指摘が入ったほか、別のクラスでは宗教上の理由から武道実技の見学を求める生徒への成績評価について判断を迫られる。",
+      "solution_framework": "教育基本法第14条第2項（特定の政党を支持・反対するための政治教育の禁止）および第15条（宗教教育・信教の自由の尊重、神戸高専剣道実技拒否事件最高裁判決の代替措置法理）に基づく公正な判断",
+      "key_laws": ["教育基本法第14条（政治教育）・第15条（宗教教育）", "日本国憲法第20条（信教の自由）", "学校教育法"],
+      "reference_hints": [
+        "教育基本法 (平成十八年法律第百二十号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=418AC0000000120",
+        "日本国憲法 (昭和二十一年憲法) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=321CONSTITUTION"
+      ]
+    },
+    {
+      "id": "C20",
+      "category": "学校法制・学校運営協議会（コミュニティ・スクール）と校長の権限",
+      "problem_title": "地域住民・学校運営協議会からの過度な要求と、地教行法に基づく校長の学校管理・経営権",
+      "roles": {
+        "principal": "校長・久我山先生（校長就任2年目）",
+        "supervisor": "教育委員会・学校経営支援課指導主事・橘先生"
+      },
+      "situation": "コミュニティ・スクールの委員の一部が、学校の具体的なクラス編成や個別の教員の授業方法にまで直接介入しようとして教職員が混乱。地域連携の理念と校長の専権事項の法的境界を整理する必要が生じる。",
+      "solution_framework": "地方教育行政の組織及び運営に関する法律第47条の5（学校運営協議会の権限：学校運営の基本方針の承認・意見具申）と学校教育法第37条第4項（校長の校務掌理権・所属職員監督権）の調和と明確な役割分担",
+      "key_laws": ["地方教育行政の組織及び運営に関する法律第47条の5", "学校教育法第37条第4項（校長の職務）", "教育基本法第13条（学校、家庭及び地域住民等の連携協力）"],
+      "reference_hints": [
+        "地方教育行政の組織及び運営に関する法律 (昭和三十一年法律第百六十二号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=331AC0000000162",
+        "学校教育法 (昭和二十二年法律第二十六号) - e-Gov法令検索: https://laws.e-gov.go.jp/document?lawid=322AC0000000026"
       ]
     }
   ]
