@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-03T17:28:41.905639+09:00",
-  "total_posted": 22,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-03T23:59:01.037614+09:00",
+  "total_posted": 23,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -223,6 +223,17 @@
       "category": "学校法制・公務員倫理・情報管理",
       "file_path": "content/2026-10-03_pattern_c_善意の殻に隠れた盾_教員の私用端末利用と服務規律の限界.md",
       "timestamp": "2026-10-03T17:28:41.905639+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論",
+      "pattern": "A",
+      "topic_id": "A07",
+      "category": "保護者対応・教育哲学",
+      "file_path": "content/2026-10-03_pattern_a_夜の電話と対話の地平_保護者の不信を解くコミュニケーション理論.md",
+      "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
