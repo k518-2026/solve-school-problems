@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-03T13:30:43.169825+09:00",
-  "total_posted": 21,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-03T17:28:41.905639+09:00",
+  "total_posted": 22,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -212,6 +212,17 @@
       "category": "部活動・コミュニケーション自動化",
       "file_path": "content/2026-10-03_pattern_b_朝の豪雨とダッシュボードの緑の光_野球部顧問を救うワンクリック緊急連絡システム.md",
       "timestamp": "2026-10-03T13:30:43.169825+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "善意の殻に隠れた盾――教員の私用端末利用と服務規律の限界",
+      "pattern": "C",
+      "topic_id": "C04",
+      "category": "学校法制・公務員倫理・情報管理",
+      "file_path": "content/2026-10-03_pattern_c_善意の殻に隠れた盾_教員の私用端末利用と服務規律の限界.md",
+      "timestamp": "2026-10-03T17:28:41.905639+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
