@@ -35,22 +35,41 @@ class TestWordPressMailSender(unittest.TestCase):
         self.assertIn("sender@example.com", msg["From"])
         self.assertEqual(msg["To"], "secret-wp@post.wordpress.com")
 
-    def test_create_blogger_mime_message_strips_shortcodes(self):
+    def test_create_blogger_mime_message_strips_shortcodes_links_and_styles(self):
         post = FormattedPost(
             title="Bloggerテスト記事",
             pattern="B",
             categories=["校務DX"],
             tags=["GAS"],
             status="publish",
-            content_html="<p>Blogger HTML本文</p>",
-            content_plain="[category 校務DX]\n[tags GAS]\n[status publish]\n\nBloggerプレーンテキスト本文"
+            content_html=(
+                '<div class="ssp-post-wrapper" style="font-family: sans-serif;">'
+                '<p style="margin: 0;">Blogger HTML本文 <a href="https://doi.org/10.1037/0003-066X.55.1.68" style="color: blue;">https://doi.org/10.1037/0003-066X.55.1.68</a></p>'
+                '<div style="text-align: center;">◆　◆　◆</div>'
+                '</div>'
+            ),
+            content_plain="[category 校務DX]\n[tags GAS]\n[status publish]\n\nBloggerプレーンテキスト本文 https://example.com/test"
         )
         msg = self.sender.create_mime_message(post, recipient="user.secret@blogger.com", is_blogger=True)
         self.assertEqual(msg["To"], "user.secret@blogger.com")
+        self.assertIsNotNone(msg["Date"])
+        self.assertIsNotNone(msg["Message-ID"])
+
         plain_payload = msg.get_payload()[0].get_payload(decode=True).decode("utf-8")
+        html_payload = msg.get_payload()[1].get_payload(decode=True).decode("utf-8")
+
         self.assertNotIn("[category", plain_payload)
         self.assertNotIn("[status", plain_payload)
+        self.assertNotIn("https://example.com/test", plain_payload)
         self.assertIn("Bloggerプレーンテキスト本文", plain_payload)
+
+        # Blogger HTML must strip <a> tags, raw https:// URLs, style attributes, and <div> wrappers
+        self.assertNotIn("<a ", html_payload)
+        self.assertNotIn("https://", html_payload)
+        self.assertNotIn("style=", html_payload)
+        self.assertNotIn("<div", html_payload)
+        self.assertIn("DOI: 10.1037/0003-066X.55.1.68", html_payload)
+        self.assertIn("Blogger HTML本文", html_payload)
 
     def test_dry_run_mode(self):
         post = FormattedPost(

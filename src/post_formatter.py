@@ -28,6 +28,8 @@ class FormattedPost:
     content_raw: str = ""
     content_html: str = ""
     content_plain: str = ""
+    content_html_clean: str = ""
+    content_plain_clean: str = ""
 
 def _fallback_yaml_parser(text: str) -> Dict[str, Any]:
     """Lightweight fallback YAML parser for simple frontmatter dictionaries."""
@@ -385,5 +387,7 @@ def format_post_content(
         status=status,
         content_raw=raw_markdown,
         content_html=final_html,
-        content_plain=final_plain
+        content_plain=final_plain,
+        content_html_clean=body_html,
+        content_plain_clean=plain_body
     )

@@ -80,6 +80,11 @@ def main():
         help="Bypass schedule cooldown check and force story generation"
     )
     parser.add_argument(
+        "--blogger-only",
+        action="store_true",
+        help="Send only to Blogger using the latest published story (or --file) without sending to WordPress"
+    )
+    parser.add_argument(
         "--verbose", "-v",
         action="store_true",
         help="Enable detailed debug logging"
@@ -100,7 +105,7 @@ def main():
     # Cooldown check for scheduled GitHub Actions runs to prevent duplicate consecutive posts
     # when a manual run and a delayed cron schedule overlap.
     event_name = os.getenv("GITHUB_EVENT_NAME", "")
-    if event_name == "schedule" and not args.force:
+    if event_name == "schedule" and not args.force and not args.blogger_only:
         last_run_str = history_mgr.history_data.get("last_run_at")
         if last_run_str:
             try:
@@ -119,9 +124,23 @@ def main():
     post_status = args.status or config.default_status
     dry_run = args.dry_run or (not args.send)
 
-    # Branch 1: Publish from existing markdown file
-    if args.file:
-        file_path = Path(args.file)
+    # If --blogger-only is set without --file, automatically pick the latest published markdown file
+    target_file = args.file
+    if args.blogger_only and not target_file:
+        posts = history_mgr.history_data.get("posts", [])
+        for entry in reversed(posts):
+            candidate = entry.get("file_path")
+            if candidate and Path(candidate).exists():
+                target_file = candidate
+                break
+        if not target_file:
+            content_files = sorted(Path("content").glob("*.md"))
+            if content_files:
+                target_file = str(content_files[-1])
+
+    # Branch 1: Publish from existing markdown file (or --blogger-only)
+    if target_file:
+        file_path = Path(target_file)
         if not file_path.exists():
             logger.error(f"Specified markdown file not found: {file_path}")
             return 1
@@ -183,7 +202,11 @@ def main():
 
     # Dispatch via Mail Sender
     sender = WordPressMailSender(config)
-    result = sender.send_post(formatted_post, dry_run=dry_run)
+    result = sender.send_post(formatted_post, dry_run=dry_run, blogger_only=args.blogger_only)
+
+    if args.blogger_only:
+        logger.info(f"Done. Blogger-only dispatch processed (success={result.get('success')}).")
+        return 0 if result.get("success") else 1
 
     # Update history
     history_mgr.record_post({

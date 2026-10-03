@@ -44,6 +44,11 @@ on:
         required: false
         type: string
         default: ''
+      blogger_only:
+        description: 'Blogger test/repost only (send latest published story to Blogger without sending to WordPress)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -102,11 +107,16 @@ jobs:
           PATTERN_ARG="${{ github.event.inputs.pattern || 'auto' }}"
           TOPIC_ARG="${{ github.event.inputs.topic_id || '' }}"
           DRY_RUN_ARG="${{ github.event.inputs.dry_run || 'false' }}"
+          BLOGGER_ONLY_ARG="${{ github.event.inputs.blogger_only || 'false' }}"
 
           CMD="python -m src.main --pattern ${PATTERN_ARG}"
 
           if [ -n "$TOPIC_ARG" ]; then
             CMD="${CMD} --topic-id ${TOPIC_ARG}"
+          fi
+
+          if [ "$BLOGGER_ONLY_ARG" = "true" ]; then
+            CMD="${CMD} --blogger-only"
           fi
 
           if [ "$DRY_RUN_ARG" = "true" ]; then
