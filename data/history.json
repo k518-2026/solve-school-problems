@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-04T11:49:25.812912+09:00",
-  "total_posted": 25,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-04T22:58:57.575426+09:00",
+  "total_posted": 26,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -256,6 +256,17 @@
       "category": "学校法制・著作権法・教材利用",
       "file_path": "content/2026-10-04_pattern_c_c07_デジタルに灯る法の光_校長が挑む著作権法三十五条の防波堤.md",
       "timestamp": "2026-10-04T11:49:25.812912+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路",
+      "pattern": "A",
+      "topic_id": "A09",
+      "category": "教育評価・形成的アセスメント",
+      "file_path": "content/2026-10-04_pattern_a_a09_赤いインクの沈黙と小さな舵_形成的評価が拓く学びの航路.md",
+      "timestamp": "2026-10-04T22:58:57.575426+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
