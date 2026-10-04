@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-04T03:23:30.402661+09:00",
-  "total_posted": 24,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-04T11:49:25.812912+09:00",
+  "total_posted": 25,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -245,6 +245,17 @@
       "category": "ペーパーレス・バッチ印刷自動化",
       "file_path": "content/2026-10-04_pattern_b_紙煙る印刷室の脱出劇_複合機ジョブ制御とクラウド配信が拓く放課後の青空.md",
       "timestamp": "2026-10-04T03:23:30.402661+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤",
+      "pattern": "C",
+      "topic_id": "C07",
+      "category": "学校法制・著作権法・教材利用",
+      "file_path": "content/2026-10-04_pattern_c_c07_デジタルに灯る法の光_校長が挑む著作権法三十五条の防波堤.md",
+      "timestamp": "2026-10-04T11:49:25.812912+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
