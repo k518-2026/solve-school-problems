@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-05T02:39:00.064370+09:00",
-  "total_posted": 27,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-05T08:56:28.397630+09:00",
+  "total_posted": 28,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -278,6 +278,17 @@
       "category": "三者面談・日程調整自動化",
       "file_path": "content/2026-10-05_pattern_b_b09_紙吹雪のパズルにサヨナラを_三者面談の重複を解き明かす「数式とGAS」の最適解.md",
       "timestamp": "2026-10-05T02:39:00.064370+09:00",
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish"
+    },
+    {
+      "title": "平等という名の障壁を越えて：実質的平等のための合理的配慮",
+      "pattern": "C",
+      "topic_id": "C08",
+      "category": "学校法制・合理的配慮・障害者差別解消法",
+      "file_path": "content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.md",
+      "timestamp": "2026-10-05T08:56:28.397630+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
