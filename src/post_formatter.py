@@ -2,6 +2,7 @@ import re
 import html
 import urllib.parse
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import List, Optional, Tuple, Dict, Any
 
 # Try importing yaml, with fallback to built-in parser
@@ -30,6 +31,7 @@ class FormattedPost:
     content_plain: str = ""
     content_html_clean: str = ""
     content_plain_clean: str = ""
+    image_path: Optional[str] = None
 
 def _fallback_yaml_parser(text: str) -> Dict[str, Any]:
     """Lightweight fallback YAML parser for simple frontmatter dictionaries."""
@@ -293,13 +295,22 @@ def parse_frontmatter(content: str) -> Tuple[Dict[str, Any], str]:
 def format_post_content(
     raw_markdown: str,
     default_status: str = "publish",
-    use_jetpack_shortcodes: bool = True
+    use_jetpack_shortcodes: bool = True,
+    file_path: Optional[str] = None,
+    image_path: Optional[str] = None
 ) -> FormattedPost:
     """
     Parses Markdown, extracts frontmatter, and formats into both rich HTML and Plain Text.
-    Adds Jetpack / Postie shortcodes to ensure correct category, tags, and publishing status.
+    Adds Jetpack / Postie shortcodes to ensure correct category, tags, and publishing status,
+    and resolves any sidecar .png illustration image.
     """
     meta, body = parse_frontmatter(raw_markdown)
+
+    resolved_image_path = image_path
+    if not resolved_image_path and file_path:
+        sidecar_png = Path(file_path).with_suffix(".png")
+        if sidecar_png.exists():
+            resolved_image_path = str(sidecar_png)
 
     title = meta.get("title", "学校の課題を解決する物語")
     pattern = meta.get("pattern", "A")
@@ -389,5 +400,6 @@ def format_post_content(
         content_html=final_html,
         content_plain=final_plain,
         content_html_clean=body_html,
-        content_plain_clean=plain_body
+        content_plain_clean=plain_body,
+        image_path=resolved_image_path
     )

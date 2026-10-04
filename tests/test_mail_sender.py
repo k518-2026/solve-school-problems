@@ -71,6 +71,35 @@ class TestWordPressMailSender(unittest.TestCase):
         self.assertIn("DOI: 10.1037/0003-066X.55.1.68", html_payload)
         self.assertIn("Blogger HTML本文", html_payload)
 
+    def test_create_mime_message_with_image_attachment(self):
+        import tempfile
+        import base64
+        from pathlib import Path
+
+        # Minimal valid 1x1 PNG
+        png_b64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+        with tempfile.TemporaryDirectory() as tmpdir:
+            img_path = Path(tmpdir) / "test_illustration.png"
+            img_path.write_bytes(base64.b64decode(png_b64))
+
+            post = FormattedPost(
+                title="挿絵付き記事テスト",
+                pattern="A",
+                categories=["教育相談"],
+                tags=["教育学"],
+                status="publish",
+                content_html="<p>挿絵付きHTML本文</p>",
+                content_plain="挿絵付きプレーン本文",
+                image_path=str(img_path)
+            )
+            msg = self.sender.create_mime_message(post)
+            self.assertEqual(msg.get_content_type(), "multipart/mixed")
+            payloads = msg.get_payload()
+            self.assertEqual(len(payloads), 2)
+            self.assertEqual(payloads[0].get_content_type(), "multipart/alternative")
+            self.assertEqual(payloads[1].get_content_type(), "image/png")
+            self.assertIn("attachment", payloads[1].get("Content-Disposition", ""))
+
     def test_dry_run_mode(self):
         post = FormattedPost(
             title="ドライランテスト",

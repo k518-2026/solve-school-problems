@@ -33,20 +33,32 @@ class SMTPConfig:
     default_status: str
     use_jetpack_shortcodes: bool
     blogger_post_email: str = ""
+    ollama_host: str = "http://192.168.128.59:11434"
+    writer_model: str = "gemma4:12b"
+    draw_things_host: str = "http://192.168.128.59:7860"
 
 def get_config() -> SMTPConfig:
     """Retrieve and parse configuration from environment variables."""
-    host = os.getenv("SMTP_HOST", "smtp.gmail.com")
+    user = os.getenv("SMTP_USER", "").strip()
+    raw_host = os.getenv("SMTP_HOST", "").strip()
+    if raw_host:
+        host = raw_host
+    elif any(user.lower().endswith(d) for d in ("@outlook.com", "@hotmail.com", "@live.com", "@outlook.jp")):
+        host = "smtp-mail.outlook.com"
+    else:
+        host = "smtp.gmail.com"
     port = int(os.getenv("SMTP_PORT", "587"))
-    user = os.getenv("SMTP_USER", "")
-    password = os.getenv("SMTP_PASSWORD", "")
+    password = os.getenv("SMTP_PASSWORD", "").strip()
     use_tls = os.getenv("SMTP_USE_TLS", "true").lower() in ("true", "1", "yes")
     use_ssl = os.getenv("SMTP_USE_SSL", "false").lower() in ("true", "1", "yes")
-    from_name = os.getenv("MAIL_FROM_NAME", "Solve School Problems")
-    wp_post_email = os.getenv("WP_POST_EMAIL", "")
-    blogger_post_email = os.getenv("BLOGGER_POST_EMAIL", "")
-    default_status = os.getenv("DEFAULT_POST_STATUS", "publish")
+    from_name = os.getenv("MAIL_FROM_NAME", "Solve School Problems").strip()
+    wp_post_email = os.getenv("WP_POST_EMAIL", "").strip()
+    blogger_post_email = os.getenv("BLOGGER_POST_EMAIL", "").strip()
+    default_status = os.getenv("DEFAULT_POST_STATUS", "publish").strip()
     use_jetpack_shortcodes = os.getenv("USE_JETPACK_SHORTCODES", "true").lower() in ("true", "1", "yes")
+    ollama_host = os.getenv("OLLAMA_HOST", "http://192.168.128.59:11434").strip()
+    writer_model = os.getenv("OLLAMA_WRITER_MODEL", "gemma4:12b").strip()
+    draw_things_host = os.getenv("DRAW_THINGS_HOST", "http://192.168.128.59:7860").strip()
 
     return SMTPConfig(
         host=host,
@@ -60,4 +72,7 @@ def get_config() -> SMTPConfig:
         default_status=default_status,
         use_jetpack_shortcodes=use_jetpack_shortcodes,
         blogger_post_email=blogger_post_email,
+        ollama_host=ollama_host,
+        writer_model=writer_model,
+        draw_things_host=draw_things_host,
     )

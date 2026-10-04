@@ -238,6 +238,36 @@ class HistoryManager:
         with open(self.markdown_log_path, "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
 
+    def get_posted_files(self) -> set:
+        """Returns a set of normalized file names (stems) that have already been recorded as posted."""
+        posted = set()
+        for p in self.history_data.get("posts", []):
+            fp = p.get("file_path", "")
+            if fp:
+                posted.add(Path(fp).name)
+        return posted
+
+    def find_stock_file_for_topic(self, topic_id: str, content_dir: Path = Path("content")) -> Optional[Path]:
+        """
+        Finds an unposted pre-stocked markdown file in content/ matching topic_id.
+        """
+        if not topic_id or not content_dir.exists():
+            return None
+        posted_names = self.get_posted_files()
+        tid_lower = topic_id.strip().lower()
+        for md_file in sorted(content_dir.glob("*.md")):
+            if md_file.name in posted_names:
+                continue
+            if f"_{tid_lower}_" in md_file.name.lower() or md_file.stem.lower().endswith(f"_{tid_lower}"):
+                return md_file
+            try:
+                head = md_file.read_text(encoding="utf-8", errors="ignore")[:800]
+                if f'topic_id: "{topic_id}"' in head or f"topic_id: '{topic_id}'" in head or f"topic_id: {topic_id}" in head:
+                    return md_file
+            except Exception:
+                continue
+        return None
+
     def reset_history(self) -> None:
         """Resets the history file and log."""
         self.history_data = {

@@ -3,13 +3,14 @@ import re
 import json
 import time
 import random
+import base64
 import logging
 import urllib.request
 import urllib.error
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Dict, Any, Tuple, List, Optional
+from typing import Dict, Any, Tuple, List, Optional, Callable
 
 logger = logging.getLogger(__name__)
 JST = timezone(timedelta(hours=9))
@@ -79,6 +80,10 @@ SYSTEM_PROMPT_C = """あなたは学校法務および教育行政に精通し�
 """
 
 DEFAULT_PRIMARY_MODEL = "gemini-3.8-flash"
+DEFAULT_OLLAMA_HOST = "http://192.168.128.59:11434"
+DEFAULT_WRITER_MODEL = "gemma4:12b"
+DEFAULT_DRAW_THINGS_HOST = "http://192.168.128.59:7860"
+
 FALLBACK_MODELS = [
     "gemini-3.8-flash",
     "gemini-3.7-flash",
@@ -93,14 +98,25 @@ FALLBACK_MODELS = [
 
 class StoryGenerator:
     """
-    Generates school problem solving stories using Google Gemini API.
-    Alternates between Pattern A (Pedagogy/Psychology) and Pattern B (ICT/Networking).
-    Outputs rich Markdown with Frontmatter, Technical Commentary, and Academic References.
+    Generates school problem solving stories using Google Gemini API (or local LLM),
+    and generates 512x512 illustrations via Mac mini Ollama (gemma4:12b) + Draw Things HTTP API (FLUX.2 [klein] 4B).
+    Alternates between Pattern A (Pedagogy/Psychology), Pattern B (ICT/Networking), and Pattern C (School Law).
+    Outputs rich Markdown with Frontmatter, Technical/Legal Commentary, and Verified References.
     """
 
-    def __init__(self, api_key: Optional[str] = None, model_name: Optional[str] = None):
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        model_name: Optional[str] = None,
+        ollama_host: Optional[str] = None,
+        writer_model: Optional[str] = None,
+        draw_things_host: Optional[str] = None,
+    ):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY")
         self.primary_model = model_name or os.getenv("GEMINI_TEXT_MODEL", DEFAULT_PRIMARY_MODEL)
+        self.ollama_host = (ollama_host or os.getenv("OLLAMA_HOST", DEFAULT_OLLAMA_HOST)).rstrip("/")
+        self.writer_model = writer_model or os.getenv("OLLAMA_WRITER_MODEL", DEFAULT_WRITER_MODEL)
+        self.draw_things_host = (draw_things_host or os.getenv("DRAW_THINGS_HOST", DEFAULT_DRAW_THINGS_HOST)).rstrip("/")
 
     def _get_model_candidates(self) -> List[str]:
         """Returns ordered list of real, valid Gemini models to try."""
@@ -139,13 +155,14 @@ class StoryGenerator:
     def generate_story(
         self,
         pattern: str,
-        topic: Dict[str, Any]
+        topic: Dict[str, Any],
+        use_local_llm: bool = False,
     ) -> Tuple[str, str, List[str]]:
         """
         Generates a complete story based on pattern ('A', 'B', or 'C') and topic info.
         Returns: (markdown_content, title, list_of_references)
         """
-        if not self.api_key:
+        if not self.api_key and not use_local_llm:
             logger.warning("GEMINI_API_KEY is not set. Generating high-quality built-in template story.")
             return self._generate_fallback(pattern, topic)
 
@@ -252,91 +269,126 @@ topic_id: "{topic.get('id', 'C01')}"
         model_candidates = self._get_model_candidates()
         last_error = None
 
-        try:
-            from google import genai
-            from google.genai import types
+        if self.api_key:
+            try:
+                from google import genai
+                from google.genai import types
 
-            client = genai.Client(api_key=self.api_key)
+                client = genai.Client(api_key=self.api_key)
 
-            # Attempt generation across models with backoff retry for peak-hour congestion
-            max_rounds = 2
-            for round_num in range(1, max_rounds + 1):
-                if round_num > 1:
-                    logger.info(f"Round {round_num - 1} hit temporary server demand spikes. Pausing 10s before Round {round_num}...")
-                    time.sleep(10)
+                # Attempt generation across models with backoff retry for peak-hour congestion
+                max_rounds = 2
+                for round_num in range(1, max_rounds + 1):
+                    if round_num > 1:
+                        logger.info(f"Round {round_num - 1} hit temporary server demand spikes. Pausing 10s before Round {round_num}...")
+                        time.sleep(10)
 
-                for idx, current_model in enumerate(model_candidates):
-                    # For each candidate, try up to 2 attempts if 503/high demand occurs
-                    for attempt in range(1, 3):
-                        logger.info(
-                            f"Generating story with model '{current_model}' "
-                            f"(Round {round_num}, Candidate {idx + 1}/{len(model_candidates)}, Try {attempt}/2)..."
-                        )
-                        try:
-                            response = client.models.generate_content(
-                                model=current_model,
-                                contents=user_prompt,
-                                config=types.GenerateContentConfig(
-                                    system_instruction=system_instruction,
-                                    temperature=0.75,
-                                    max_output_tokens=8192,
-                                    http_options=types.HttpOptions(timeout=120000)
-                                )
+                    for idx, current_model in enumerate(model_candidates):
+                        # For each candidate, try up to 2 attempts if 503/high demand occurs
+                        for attempt in range(1, 3):
+                            logger.info(
+                                f"Generating story with model '{current_model}' "
+                                f"(Round {round_num}, Candidate {idx + 1}/{len(model_candidates)}, Try {attempt}/2)..."
                             )
-                            text = (response.text or "").strip()
-                            if text.startswith("```markdown"):
-                                text = text[len("```markdown"):].strip()
-                            if text.startswith("```"):
-                                text = text[3:].strip()
-                            if text.endswith("```"):
-                                text = text[:-3].strip()
-
-                            if len(text) < 2000:
-                                logger.warning(
-                                    f"Model '{current_model}' output too short ({len(text)} chars < 2000 target). "
-                                    f"Trying next candidate for a full-length story..."
+                            try:
+                                response = client.models.generate_content(
+                                    model=current_model,
+                                    contents=user_prompt,
+                                    config=types.GenerateContentConfig(
+                                        system_instruction=system_instruction,
+                                        temperature=0.75,
+                                        max_output_tokens=8192,
+                                        http_options=types.HttpOptions(timeout=120000)
+                                    )
                                 )
-                                break
+                                text = (response.text or "").strip()
+                                if text.startswith("```markdown"):
+                                    text = text[len("```markdown"):].strip()
+                                if text.startswith("```"):
+                                    text = text[3:].strip()
+                                if text.endswith("```"):
+                                    text = text[:-3].strip()
 
-                            text = self._verify_and_sanitize_links(text)
-                            # Extract Title
-                            title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
-                            title = title_match.group(1).strip() if title_match else topic.get("problem_title", "学校の課題を解決する物語")
+                                if len(text) < 2000:
+                                    logger.warning(
+                                        f"Model '{current_model}' output too short ({len(text)} chars < 2000 target). "
+                                        f"Trying next candidate for a full-length story..."
+                                    )
+                                    break
 
-                            # Extract references
-                            refs = re.findall(r'\((https?://[^\s\)]+)\)', text)
-                            logger.info(f"Successfully generated story using '{current_model}'! Title: {title}, Length: {len(text)} chars")
-                            return text, title, refs
+                                text = self._verify_and_sanitize_links(text)
+                                # Extract Title
+                                title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
+                                title = title_match.group(1).strip() if title_match else topic.get("problem_title", "学校の課題を解決する物語")
 
-                        except Exception as e:
-                            last_error = e
-                            err_msg = str(e)
-                            is_503_or_overload = any(term in err_msg.lower() for term in [
-                                "503", "429", "unavailable", "overloaded", "resource_exhausted", "rate_limit", "high demand", "temporary"
-                            ])
-                            is_not_found = "404" in err_msg or "not found" in err_msg.lower()
+                                # Extract references
+                                refs = re.findall(r'\((https?://[^\s\)]+)\)', text)
+                                logger.info(f"Successfully generated story using '{current_model}'! Title: {title}, Length: {len(text)} chars")
+                                return text, title, refs
 
-                            if is_not_found:
-                                logger.warning(f"Model '{current_model}' is not available (404/Retired). Skipping immediately.")
-                                break
+                            except Exception as e:
+                                last_error = e
+                                err_msg = str(e)
+                                is_503_or_overload = any(term in err_msg.lower() for term in [
+                                    "503", "429", "unavailable", "overloaded", "resource_exhausted", "rate_limit", "high demand", "temporary"
+                                ])
+                                is_not_found = "404" in err_msg or "not found" in err_msg.lower()
 
-                            if is_503_or_overload and attempt == 1:
-                                backoff_sec = 6 * round_num
-                                logger.warning(
-                                    f"Model '{current_model}' encountered temporary capacity/congestion error ({err_msg}). "
-                                    f"Backing off for {backoff_sec}s before retry..."
-                                )
-                                time.sleep(backoff_sec)
-                                continue
-                            else:
-                                logger.warning(f"Model '{current_model}' failed: {err_msg}. Moving to next candidate.")
-                                time.sleep(2)
-                                break
-        except ImportError:
-            logger.error("google-genai is not installed. Using fallback template.")
-        except Exception as e:
-            logger.error(f"Gemini API initialization error: {e}")
-            last_error = e
+                                if is_not_found:
+                                    logger.warning(f"Model '{current_model}' is not available (404/Retired). Skipping immediately.")
+                                    break
+
+                                if is_503_or_overload and attempt == 1:
+                                    backoff_sec = 6 * round_num
+                                    logger.warning(
+                                        f"Model '{current_model}' encountered temporary capacity/congestion error ({err_msg}). "
+                                        f"Backing off for {backoff_sec}s before retry..."
+                                    )
+                                    time.sleep(backoff_sec)
+                                    continue
+                                else:
+                                    logger.warning(f"Model '{current_model}' failed: {err_msg}. Moving to next candidate.")
+                                    time.sleep(2)
+                                    break
+            except ImportError:
+                logger.error("google-genai is not installed. Using fallback.")
+            except Exception as e:
+                logger.error(f"Gemini API initialization error: {e}")
+                last_error = e
+
+        if use_local_llm:
+            ollama_status = self.check_ollama_connection()
+            if ollama_status.get("online"):
+                try:
+                    logger.info(f"[Ollama: {self.writer_model}] Generating story via Mac mini Local LLM...")
+                    raw_text = self.call_ollama_chat(
+                        model=self.writer_model,
+                        messages=[
+                            {"role": "system", "content": system_instruction},
+                            {"role": "user", "content": user_prompt},
+                        ],
+                        temperature=0.72,
+                        num_predict=6000,
+                        num_ctx=8192,
+                        timeout=600,
+                    )
+                    text = raw_text.strip()
+                    if text.startswith("```markdown"):
+                        text = text[len("```markdown"):].strip()
+                    if text.startswith("```"):
+                        text = text[3:].strip()
+                    if text.endswith("```"):
+                        text = text[:-3].strip()
+                    if len(text) >= 1500:
+                        text = self._verify_and_sanitize_links(text)
+                        title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
+                        title = title_match.group(1).strip() if title_match else topic.get("problem_title", "学校の課題を解決する物語")
+                        refs = re.findall(r'\((https?://[^\s\)]+)\)', text)
+                        logger.info(f"Successfully generated story using Ollama '{self.writer_model}'! Title: {title}, Length: {len(text)} chars")
+                        return text, title, refs
+                except Exception as e:
+                    last_error = e
+                    logger.warning(f"Ollama story generation failed: {e}")
 
         logger.error(f"All model attempts exhausted. Falling back to template: {last_error}")
         return self._generate_fallback(pattern, topic)
@@ -698,3 +750,232 @@ topic_id: "{topic.get('id', 'C01')}"
                 "https://laws.e-gov.go.jp/document?lawid=322AC0000000026",
                 "https://laws.e-gov.go.jp/document?lawid=418AC0000000120"
             ]
+
+    def check_draw_things_connection(self) -> Dict[str, Any]:
+        """Checks connection to Mac mini Draw Things HTTP API server (/sdapi/v1/options)."""
+        try:
+            req = urllib.request.Request(f"{self.draw_things_host}/sdapi/v1/options")
+            with urllib.request.urlopen(req, timeout=5) as res:
+                if res.getcode() == 200:
+                    data = json.loads(res.read().decode("utf-8", errors="ignore"))
+                    return {
+                        "online": True,
+                        "host": self.draw_things_host,
+                        "model": data.get("model", "flux_2_klein_base_4b_i8x.ckpt"),
+                    }
+        except Exception as e:
+            return {
+                "online": False,
+                "host": self.draw_things_host,
+                "error": str(e),
+            }
+        return {"online": False, "host": self.draw_things_host}
+
+    def check_ollama_connection(self) -> Dict[str, Any]:
+        """Checks connection to Mac mini Ollama server (/api/tags)."""
+        try:
+            req = urllib.request.Request(f"{self.ollama_host}/api/tags")
+            with urllib.request.urlopen(req, timeout=5) as res:
+                if res.getcode() == 200:
+                    data = json.loads(res.read().decode("utf-8", errors="ignore"))
+                    models = [m.get("name", "") for m in data.get("models", [])]
+                    return {
+                        "online": True,
+                        "host": self.ollama_host,
+                        "models": models,
+                    }
+        except Exception as e:
+            return {
+                "online": False,
+                "host": self.ollama_host,
+                "error": str(e),
+            }
+        return {"online": False, "host": self.ollama_host}
+
+    def call_ollama_chat(
+        self,
+        model: str,
+        messages: List[Dict[str, str]],
+        temperature: float = 0.65,
+        num_predict: int = 250,
+        num_ctx: int = 4096,
+        timeout: int = 120,
+    ) -> str:
+        """Calls Mac mini Ollama /api/chat endpoint."""
+        url = f"{self.ollama_host}/api/chat"
+        payload = {
+            "model": model,
+            "messages": messages,
+            "stream": False,
+            "options": {
+                "temperature": temperature,
+                "num_predict": num_predict,
+                "num_ctx": num_ctx,
+            },
+        }
+        data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(
+            url,
+            data=data,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as res:
+            body = json.loads(res.read().decode("utf-8", errors="ignore"))
+            msg = body.get("message", {})
+            content = msg.get("content", "")
+            content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+            return content
+
+    def generate_english_image_prompt(
+        self,
+        pattern: str,
+        topic: Dict[str, Any],
+        story_body: str = "",
+        title: str = "",
+    ) -> str:
+        """
+        Uses `gemma4:12b` on Mac mini Ollama to translate the story's most visually iconic school scene
+        into a concise, descriptive English image generation prompt for FLUX.2 [klein] 4B.
+        """
+        clean_pattern = (pattern or "A").strip().upper()
+        story_excerpt = story_body[:1600] if story_body else topic.get("situation", "")
+
+        if clean_pattern == "A":
+            setting_hint = "a warm Japanese school classroom or staffroom at sunset, a young novice teacher and a gentle veteran mentor teacher discussing a classroom pedagogy notebook by the window"
+        elif clean_pattern == "B":
+            setting_hint = "a modern Japanese school staffroom, an experienced older teacher and a bright young ICT teacher smiling together in front of a laptop screen with glowing clean data charts and school network diagrams"
+        else:
+            setting_hint = "a dignified Japanese school principal's office with warm sunlight, a thoughtful school principal and an education board supervisor reviewing a law statute book with determination and hope"
+
+        prompt = f"""You are an expert anime light novel art director.
+Based on the following Japanese school drama story (Pattern {clean_pattern}), write a single, vivid, highly descriptive **English image generation prompt** (60-95 words) for the FLUX.2 image model to depict the most iconic, heartwarming scene of the story.
+
+[Story Info]
+- Title: {title or topic.get('problem_title', '')}
+- Pattern: Pattern {clean_pattern}
+- Category: {topic.get('category', '')}
+- Core Theme: {topic.get('problem_title', '')} / {topic.get('solution_framework', '')}
+- Visual Setting Hint: {setting_hint}
+
+[Story Excerpt]
+{story_excerpt}
+
+[Rules for Output]
+1. Output ONLY the raw English prompt paragraph. Do NOT include explanations, markdown formatting, quotes, or Japanese text.
+2. Start with: "Anime light novel illustration of Japanese school teachers in ..."
+3. Visually describe the characters' warm expressions, the authentic Japanese school atmosphere (blackboard, windows, sunlight, notebooks, or laptop screen), and the emotional moment of insight and collaboration.
+4. End with: "masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired cinematic lighting, warm atmosphere, soft bokeh, vibrant colors, highly detailed."
+"""
+        try:
+            logger.info(f"[Ollama: {self.writer_model}] Generating English illustration prompt for FLUX.2...")
+            raw_en = self.call_ollama_chat(
+                model=self.writer_model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a professional prompt engineer for FLUX.2 anime light novel illustrations. Output ONLY the English prompt text.",
+                    },
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=0.65,
+                num_predict=250,
+                num_ctx=4096,
+                timeout=120,
+            )
+            cleaned_en = raw_en.strip(" \"'`\n")
+            cleaned_en = re.sub(r"^(?:Prompt|English Prompt)\s*[:：]\s*", "", cleaned_en, flags=re.IGNORECASE).strip()
+            cleaned_en = " ".join(cleaned_en.splitlines()).strip()
+            if len(cleaned_en) >= 30 and re.search(r"[a-zA-Z]{4,}", cleaned_en):
+                logger.info(f"  -> Generated English prompt: {cleaned_en[:120]}...")
+                return cleaned_en
+        except Exception as e:
+            logger.warning(f"Failed to generate English prompt via Ollama ({e}), using fallback English prompt.")
+
+        return (
+            f"Anime light novel illustration of Japanese school teachers in {setting_hint}, "
+            f"warm golden hour sunlight streaming through school windows, expressive eyes filled with hope and insight, "
+            f"masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired cinematic lighting, warm atmosphere, soft bokeh, vibrant colors, highly detailed."
+        )
+
+    def generate_illustration(
+        self,
+        pattern: str,
+        topic: Dict[str, Any],
+        output_image_path: Path,
+        story_body: str = "",
+        title: str = "",
+        custom_english_prompt: Optional[str] = None,
+        progress_callback: Optional[Callable[[str], None]] = None,
+    ) -> Tuple[Optional[Path], str]:
+        """
+        Generates a 512x512 light novel illustration using Draw Things HTTP API
+        (`http://192.168.128.59:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_4b_i8x.ckpt`)
+        with an English prompt created by `gemma4:12b`.
+        Returns (saved_image_path_or_None, english_prompt_used).
+        """
+        dt_conn = self.check_draw_things_connection()
+        if not dt_conn.get("online"):
+            logger.warning(
+                f"Draw Things HTTP API server ({self.draw_things_host}) is not reachable: {dt_conn.get('error')}. Skipping image generation."
+            )
+            return None, ""
+
+        if custom_english_prompt and custom_english_prompt.strip():
+            en_prompt = custom_english_prompt.strip()
+        else:
+            if progress_callback:
+                progress_callback(f"Ollama ({self.writer_model}) が小説本文から英語の挿絵プロンプトを作成中...")
+            en_prompt = self.generate_english_image_prompt(
+                pattern=pattern,
+                topic=topic,
+                story_body=story_body,
+                title=title,
+            )
+
+        if progress_callback:
+            progress_callback(f"Draw Things ({self.draw_things_host}) で挿絵画像を生成中 (FLUX.2 [klein] 4B)...")
+        logger.info(
+            f"[Draw Things: {self.draw_things_host}] Generating 512x512 illustration "
+            f"(steps=12, guidance=4.0, sampler='Euler A Trailing')..."
+        )
+
+        url = f"{self.draw_things_host}/sdapi/v1/txt2img"
+        payload = {
+            "prompt": en_prompt,
+            "negative_prompt": "",
+            "width": 512,
+            "height": 512,
+            "steps": 12,
+            "guidance_scale": 4.0,
+            "sampler": "Euler A Trailing",
+        }
+        try:
+            data = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(
+                url,
+                data=data,
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+            start_t = time.time()
+            with urllib.request.urlopen(req, timeout=600) as res:
+                body = json.loads(res.read().decode("utf-8", errors="ignore"))
+                images = body.get("images", [])
+                if images and images[0]:
+                    b64_str = re.sub(r"^data:image/[^;]+;base64,", "", images[0])
+                    img_bytes = base64.b64decode(b64_str)
+                    output_image_path.parent.mkdir(parents=True, exist_ok=True)
+                    output_image_path.write_bytes(img_bytes)
+                    elapsed = time.time() - start_t
+                    logger.info(
+                        f"[Draw Things Complete] Saved illustration to {output_image_path} "
+                        f"({len(img_bytes)} bytes in {elapsed:.1f}s)"
+                    )
+                    return output_image_path, en_prompt
+                else:
+                    logger.warning("Draw Things returned empty images list.")
+        except Exception as e:
+            logger.error(f"Draw Things image generation failed: {e}")
+
+        return None, en_prompt
