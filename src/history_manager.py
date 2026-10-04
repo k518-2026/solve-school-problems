@@ -239,8 +239,11 @@ class HistoryManager:
             f.write("\n".join(lines))
 
     def get_posted_files(self) -> set:
-        """Returns a set of normalized file names (stems) that have already been recorded as posted."""
-        posted = set()
+        """Returns a set of normalized file names that have already been recorded as posted (plus initial sample files)."""
+        posted = {
+            "2026-09-29_pattern_a_classroom_silence.md",
+            "2026-09-29_pattern_b_spreadsheet_grade_calculation.md",
+        }
         for p in self.history_data.get("posts", []):
             fp = p.get("file_path", "")
             if fp:

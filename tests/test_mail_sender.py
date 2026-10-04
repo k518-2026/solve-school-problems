@@ -63,13 +63,26 @@ class TestWordPressMailSender(unittest.TestCase):
         self.assertNotIn("https://example.com/test", plain_payload)
         self.assertIn("Bloggerプレーンテキスト本文", plain_payload)
 
-        # Blogger HTML must strip <a> tags, raw https:// URLs, style attributes, and <div> wrappers
+        # Blogger HTML must strip <a> tags, raw https:// URLs, style attributes, and <div> wrappers without eating closing tags
         self.assertNotIn("<a ", html_payload)
         self.assertNotIn("https://", html_payload)
         self.assertNotIn("style=", html_payload)
         self.assertNotIn("<div", html_payload)
         self.assertIn("DOI: 10.1037/0003-066X.55.1.68", html_payload)
         self.assertIn("Blogger HTML本文", html_payload)
+
+    def test_sanitize_html_for_blogger_preserves_closing_tags_on_urls(self):
+        raw_html = (
+            '<ul>\n'
+            '  <li style="margin-bottom: 0.3em;"><strong>著作権法</strong></li>\n'
+            '  <li style="margin-bottom: 0.3em;">e-Gov法令検索: <a href="https://laws.e-gov.go.jp/document?lawid=345AC0000000048">https://laws.e-gov.go.jp/document?lawid=345AC0000000048</a></li>\n'
+            '</ul>'
+        )
+        sanitized = WordPressMailSender._sanitize_html_for_blogger(raw_html)
+        self.assertIn("<li><strong>著作権法</strong></li>", sanitized)
+        self.assertNotIn("<li>e-Gov法令検索:", sanitized)
+        self.assertEqual(sanitized.count("<li>"), sanitized.count("</li>"))
+        self.assertEqual(sanitized.count("<ul>"), sanitized.count("</ul>"))
 
     def test_create_mime_message_with_image_attachment(self):
         import tempfile
@@ -97,7 +110,7 @@ class TestWordPressMailSender(unittest.TestCase):
             payloads = msg.get_payload()
             self.assertEqual(len(payloads), 2)
             self.assertEqual(payloads[0].get_content_type(), "multipart/alternative")
-            self.assertEqual(payloads[1].get_content_type(), "image/png")
+            self.assertIn(payloads[1].get_content_type(), ("image/jpeg", "image/png"))
             self.assertIn("attachment", payloads[1].get("Content-Disposition", ""))
 
     def test_dry_run_mode(self):

@@ -214,7 +214,14 @@ def _fallback_markdown_to_html(md_text: str) -> str:
             continue
 
         # Handle Headings
-        if stripped.startswith("### "):
+        if stripped.startswith("#### "):
+            flush_list()
+            title_text = _format_inline_markdown(stripped[5:].strip())
+            html_lines.append(
+                f'<h4 style="color: #1e293b; margin-top: 1.4em; margin-bottom: 0.6em; font-size: 1.1em; font-weight: bold;">{title_text}</h4>'
+            )
+            continue
+        elif stripped.startswith("### "):
             flush_list()
             title_text = _format_inline_markdown(stripped[4:].strip())
             html_lines.append(

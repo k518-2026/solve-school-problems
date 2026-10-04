@@ -863,9 +863,9 @@ Based on the following Japanese school drama story (Pattern {clean_pattern}), wr
 
 [Rules for Output]
 1. Output ONLY the raw English prompt paragraph. Do NOT include explanations, markdown formatting, quotes, or Japanese text.
-2. Start with: "Anime light novel illustration of Japanese school teachers in ..."
-3. Visually describe the characters' warm expressions, the authentic Japanese school atmosphere (blackboard, windows, sunlight, notebooks, or laptop screen), and the emotional moment of insight and collaboration.
-4. End with: "masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired cinematic lighting, warm atmosphere, soft bokeh, vibrant colors, highly detailed."
+2. Start with: "Bright, vibrant anime light novel illustration of Japanese school teachers in ..."
+3. Visually describe the characters' warm expressions, the authentic Japanese school atmosphere bathed in clear natural daylight (blackboard, windows, blue sky, notebooks, or laptop screen), and the emotional moment of insight and collaboration. Avoid dark night or gloomy scenes.
+4. End with: "masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired luminous daylight, crisp details, rich vivid colors, clear contrast, cheerful uplifting atmosphere."
 """
         try:
             logger.info(f"[Ollama: {self.writer_model}] Generating English illustration prompt for FLUX.2...")
@@ -893,9 +893,9 @@ Based on the following Japanese school drama story (Pattern {clean_pattern}), wr
             logger.warning(f"Failed to generate English prompt via Ollama ({e}), using fallback English prompt.")
 
         return (
-            f"Anime light novel illustration of Japanese school teachers in {setting_hint}, "
-            f"warm golden hour sunlight streaming through school windows, expressive eyes filled with hope and insight, "
-            f"masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired cinematic lighting, warm atmosphere, soft bokeh, vibrant colors, highly detailed."
+            f"Bright, vibrant anime light novel illustration of Japanese school teachers in {setting_hint}, "
+            f"clear natural sunlight streaming through school windows, blue sky outside, expressive eyes filled with hope and insight, "
+            f"masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired luminous daylight, crisp details, rich vivid colors, clear contrast, cheerful uplifting atmosphere."
         )
 
     def generate_illustration(
@@ -943,7 +943,7 @@ Based on the following Japanese school drama story (Pattern {clean_pattern}), wr
         url = f"{self.draw_things_host}/sdapi/v1/txt2img"
         payload = {
             "prompt": en_prompt,
-            "negative_prompt": "",
+            "negative_prompt": "dark, gloomy, night, dim lighting, heavy shadows, lowkey, monochrome, horror, washed out, overexposed, whiteout, faded, desaturated, low contrast",
             "width": 512,
             "height": 512,
             "steps": 12,

@@ -386,7 +386,7 @@ def main():
             used_topic_ids.add(tid)
 
             logger.info(f"\n=== [{idx}/{args.stock_count}] Stocking Pattern {next_pat} | [{tid}] {chosen_topic.get('problem_title')} ===")
-            raw_md, title, _ = generator.generate_story(next_pat, chosen_topic)
+            raw_md, title, _ = generator.generate_story(next_pat, chosen_topic, use_local_llm=True)
             today_str = datetime.now(JST).strftime("%Y-%m-%d")
             safe_title = sanitize_filename(title)
             out_path = Path("content") / f"{today_str}_pattern_{next_pat.lower()}_{tid.lower()}_{safe_title}.md"
