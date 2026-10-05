@@ -20,9 +20,9 @@
     "title": "紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解",
     "category": "三者面談・日程調整自動化",
     "keywords": "Google フォーム希望収集 / QUERY / FILTER / XLOOKUP 関数 / Google Apps Script 自動重複検知 / カレンダー自動登録",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep27-b09.html",
-    "image": "",
+    "image": "assets/images/ep27-b09.png",
     "char_count": 6761
   },
   {
