@@ -358,9 +358,9 @@
     "title": "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現",
     "category": "校務自動化・スプレッドシート/GAS",
     "keywords": "Google Apps Script (GAS) / XLOOKUP / FILTER 関数 / 条件付き書式による異常値ハイライト / データ入力規則",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep02-b01.html",
-    "image": "",
+    "image": "assets/images/ep02-b01.png",
     "char_count": 5958
   },
   {
