@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `gemma4:12b` / `qwen3.5:9b` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用**: 外部の有料・商用生成AI APIは一切使用せず、毎週土曜日（5本ずつ）Mac mini M4 上で文章と挿絵を作成して GitHub Pages に蓄積・公開しています（ブログへのメール自動投稿は休止中）。
-- **収録作品数**: 全 **29** 話（うち挿絵付き **21** 話 / 最終更新: 2026-10-06 07:25 JST）
+- **収録作品数**: 全 **29** 話（うち挿絵付き **22** 話 / 最終更新: 2026-10-06 07:27 JST）
 
 ---
 
@@ -39,7 +39,7 @@
 | 11 | 📘 A: 教育学・心理学 | `A05` | **[夕暮れのチョークと、静かなる星座――衝動的な行動を読み解く機能的アセスメント](https://k518-2026.github.io/solve-school-problems/stories/ep11-a05.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep11-a05.html) | [📄原稿](<content/2026-10-01_pattern_a_夕暮れのチョークと、静かなる星座_衝動的な行動を読み解く機能的アセスメント.md>) | [🎨挿絵](<content/2026-10-01_pattern_a_夕暮れのチョークと、静かなる星座_衝動的な行動を読み解く機能的アセスメント.png>) | 特別支援・インクルーシブ教育 | 6,797字 |
 | 10 | ⚖️ C: 学校法制・法務 | `C03` | **[出席と承認の境界――校長裁量が拓く学びの機会確保](https://k518-2026.github.io/solve-school-problems/stories/ep10-c03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep10-c03.html) | [📄原稿](<content/2026-09-30_pattern_c_出席と承認の境界_校長裁量が拓く学びの機会確保.md>) | [🎨挿絵](<content/2026-09-30_pattern_c_出席と承認の境界_校長裁量が拓く学びの機会確保.png>) | 学校法制・就学義務・不登校 | 6,955字 |
 | 09 | 💻 B: 校務DX・ICT | `B03` | **[ハサミと模造紙を捨てた夜――500通の声を読み解くPythonテキストマイニング](https://k518-2026.github.io/solve-school-problems/stories/ep09-b03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep09-b03.html) | [📄原稿](<content/2026-09-30_pattern_b_ハサミと模造紙を捨てた夜_500通の声を読み解くPythonテキストマイニング.md>) | [🎨挿絵](<content/2026-09-30_pattern_b_ハサミと模造紙を捨てた夜_500通の声を読み解くPythonテキストマイニング.png>) | データ処理・Python/テキスト処理 | 7,238字 |
-| 08 | 📘 A: 教育学・心理学 | `A04` | **[溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計](https://k518-2026.github.io/solve-school-problems/stories/ep08-a04.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep08-a04.html) | [📄原稿](<content/2026-09-30_pattern_a_溢れるスライドと光らない電球_ワーキングメモリをひらく「引き算」の授業設計.md>) | — | 授業設計・認知心理学 | 7,133字 |
+| 08 | 📘 A: 教育学・心理学 | `A04` | **[溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計](https://k518-2026.github.io/solve-school-problems/stories/ep08-a04.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep08-a04.html) | [📄原稿](<content/2026-09-30_pattern_a_溢れるスライドと光らない電球_ワーキングメモリをひらく「引き算」の授業設計.md>) | [🎨挿絵](<content/2026-09-30_pattern_a_溢れるスライドと光らない電球_ワーキングメモリをひらく「引き算」の授業設計.png>) | 授業設計・認知心理学 | 7,133字 |
 | 07 | ⚖️ C: 学校法制・法務 | `C02` | **[腕の温もりと法の冷厳――校長が決断する懲戒の境界線](https://k518-2026.github.io/solve-school-problems/stories/ep07-c02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep07-c02.html) | [📄原稿](<content/2026-09-30_pattern_c_腕の温もりと法の冷厳_校長が決断する懲戒の境界線.md>) | — | 学校法制・教員懲戒・指導 | 4,655字 |
 | 06 | 💻 B: 校務DX・ICT | `B02` | **[公開授業のWi-Fi迷宮――DFSとチャネル設計が救った教室の未来](https://k518-2026.github.io/solve-school-problems/stories/ep06-b02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep06-b02.html) | [📄原稿](<content/2026-09-29_pattern_b_公開授業のWi-Fi迷宮_DFSとチャネル設計が救った教室の未来.md>) | — | ネットワーク・インフラ改善 | 5,845字 |
 | 05 | 📘 A: 教育学・心理学 | `A03` | **[グレーのノートと開かれた扉――マインドセット理論がもたらす教室の再生](https://k518-2026.github.io/solve-school-problems/stories/ep05-a03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep05-a03.html) | [📄原稿](<content/2026-09-29_pattern_a_グレーのノートと開かれた扉_マインドセット理論がもたらす教室の再生.md>) | — | 生徒指導・学習観の変革 | 5,569字 |
