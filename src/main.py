@@ -393,8 +393,9 @@ def main():
 
         all_stories = collect_all_stories(history_mgr)
         targets = [s for s in reversed(all_stories) if not s["has_image"] or args.force]
-        if args.min_stock and args.min_stock > 0 and not args.force:
-            targets = targets[:args.min_stock]
+        if args.stock_count and args.stock_count > 0 and not args.force:
+            targets = targets[:args.stock_count]
+        logger.info(f"[Generate-Images] Found {len(targets)} story/stories needing illustrations.")
 
         generated_imgs: List[Path] = []
         for s in targets:
