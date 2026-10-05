@@ -1,5 +1,18 @@
 [
   {
+    "no": 29,
+    "story_id": "ep29-a10",
+    "topic_id": "A10",
+    "pattern": "A",
+    "title": "色彩の迷宮と、記憶の深淵へ",
+    "category": "学習科学・メタ認知",
+    "keywords": "自己調整学習の3段階（予見・遂行・省察） / メタ認知的モニタリング / 再読・蛍光ペン引きの錯覚 vs 想起練習",
+    "has_image": true,
+    "url": "stories/ep29-a10.html",
+    "image": "assets/images/ep29-a10.png",
+    "char_count": 3892
+  },
+  {
     "no": 28,
     "story_id": "ep28-c08",
     "topic_id": "C08",

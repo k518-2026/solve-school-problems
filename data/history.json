@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-05T08:56:28.397630+09:00",
-  "total_posted": 28,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-06T01:21:20.666853+09:00",
+  "total_posted": 29,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -292,6 +292,17 @@
       "sent_to_wp": true,
       "sent_to_blogger": true,
       "status": "publish"
+    },
+    {
+      "title": "色彩の迷宮と、記憶の深淵へ",
+      "pattern": "A",
+      "topic_id": "A10",
+      "category": "学習科学・メタ認知",
+      "file_path": "content/2026-10-06_pattern_a_a10_色彩の迷宮と、記憶の深淵へ.md",
+      "timestamp": "2026-10-06T01:21:20.666853+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
     }
   ]
 }
