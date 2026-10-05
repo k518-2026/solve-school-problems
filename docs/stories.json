@@ -189,9 +189,9 @@
     "title": "深夜の文字数カウンターと正規表現の魔法――通知表所見の嵐を越えて",
     "category": "校務効率化・正規表現/マクロ",
     "keywords": "正規表現 (RegEx) / LEN / LENB 関数 / REGEXEXTRACT / REGEXREPLACE 関数 / 条件付き書式アラート",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep15-b05.html",
-    "image": "",
+    "image": "assets/images/ep15-b05.png",
     "char_count": 5619
   },
   {
