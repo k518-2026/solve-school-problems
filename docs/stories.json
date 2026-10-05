@@ -267,9 +267,9 @@
     "title": "ハサミと模造紙を捨てた夜――500通の声を読み解くPythonテキストマイニング",
     "category": "データ処理・Python/テキスト処理",
     "keywords": "Google フォーム集計 / Python (Pandas, OpenPyXL) / 日本語形態素解析 / キーワード出現頻度・可視化",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep09-b03.html",
-    "image": "",
+    "image": "assets/images/ep09-b03.png",
     "char_count": 7238
   },
   {
