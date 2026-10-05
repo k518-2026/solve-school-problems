@@ -59,9 +59,14 @@ def _render_web_markdown(md_text: str) -> str:
     cleaned = re.sub(r"^[ \t]*[-*_]{3,}[ \t]*$", "✦ ✦ ✦", cleaned, flags=re.MULTILINE)
 
     # Sanitize parentheses inside Markdown link URLs before conversion
+    def _format_web_link(m) -> str:
+        clean_label = m.group(1).replace("\\(", "(").replace("\\)", ")")
+        clean_url = _sanitize_url(m.group(2))
+        return f"[{clean_label}]({clean_url})"
+
     cleaned = re.sub(
         r"\[([^\]]+)\]\((https?://(?:[^\s\(\)]|\\?\([^\s\(\)]*\\?\))+)\)",
-        lambda m: f"[{m.group(1).replace('\\(', '(').replace('\\)', ')')}]({_sanitize_url(m.group(2))})",
+        _format_web_link,
         cleaned,
     )
 
