@@ -228,9 +228,9 @@
     "title": "上書きされた春の計画――クラウドの版管理が救う学校の絆",
     "category": "セキュリティ・ファイル共有",
     "keywords": "Google Drive 版管理（バージョン履歴） / 共有権限とアクセス制御 (RBAC) / スプレッドシートの保護されたシート/範囲 / 3-2-1バックアップ原則",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep12-b04.html",
-    "image": "",
+    "image": "assets/images/ep12-b04.png",
     "char_count": 5820
   },
   {
