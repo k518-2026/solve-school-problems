@@ -306,9 +306,9 @@
     "title": "公開授業のWi-Fi迷宮――DFSとチャネル設計が救った教室の未来",
     "category": "ネットワーク・インフラ改善",
     "keywords": "Wi-Fi 6 (802.11ax) / DFS (動的周波数選択) 回避 / チャネルボンディングと電波干渉対策 / DHCPリース時間とIPアドレス管理",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep06-b02.html",
-    "image": "",
+    "image": "assets/images/ep06-b02.png",
     "char_count": 5845
   },
   {
