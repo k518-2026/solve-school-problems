@@ -778,85 +778,86 @@ topic_id: "{topic.get('id', 'C01')}"
         title: str = "",
     ) -> str:
         """
-        Builds a grounded, mature Japanese adult workplace animation prompt matching the reference art style
-        (clean cel-shaded adult slice-of-life illustration in a Japanese school staffroom, natural adult facial
-        proportions, subtle wrinkles on senior teachers, blue neck ID lanyards, coffee mugs, file binders on shelves).
+        Builds a grounded, mature Japanese adult workplace anime prompt matching the reference art style
+        (clean cel-shaded adult slice-of-life anime in a Japanese school staffroom, natural adult anime facial
+        proportions, subtle smile lines on senior teachers, blue neck ID lanyards, coffee mugs, file binders on shelves).
+        Avoids calling Ollama right before Draw Things so FLUX.2 stays resident in Mac mini M4 unified memory.
         """
         clean_pattern = (pattern or "A").strip().upper()
-        story_excerpt = story_body[:1200] if story_body else topic.get("situation", "")
+        tid = str(topic.get("id", "A01")).strip().upper()
+        num_Match = re.search(r"\d+", tid)
+        variant_idx = int(num_Match.group(0)) if num_Match else 1
 
         style_prefix = (
-            "Clean modern Japanese adult workplace anime illustration, grounded slice-of-life TV animation style, "
-            "natural adult human facial proportions with small realistic eyes, clean thin linework, soft flat cel-shading, "
-            "warm natural indoor daylight, NOT cute moe style. "
+            "Modern Japanese adult workplace anime illustration, clean anime cel-shading with crisp linework and rich natural colors, "
+            "well-proportioned adult anime characters (NOT cute moe or chibi), warm expressive anime eyes, clear contrast. "
         )
         style_suffix = (
-            "Both wearing blue neck strap ID lanyards, holding ceramic coffee mugs at a wooden table in a realistic "
-            "Japanese school staffroom, background filled with bookshelves of blue and white office file binders, "
-            "desks, and bright daytime windows, calm warm collegial atmosphere."
+            "Both wearing blue neck strap ID lanyards and holding ceramic coffee mugs at a wooden table in a detailed Japanese "
+            "school staffroom, bookshelves packed with blue and white file binders, office desks and sunlit windows in background, "
+            "warm collegial atmosphere."
         )
 
+        scenes_a = [
+            (
+                "Medium two-shot of two Japanese female teachers talking warmly in the staffroom: "
+                "on the left, a young teacher in her mid-20s with a brown ponytail wearing a cream cardigan over a white blouse, smiling brightly; "
+                "on the right, a kind veteran female teacher in her 50s with short wavy dark hair and gentle laugh lines, wearing a navy cardigan."
+            ),
+            (
+                "Medium two-shot of two Japanese teachers conversing in the staffroom: "
+                "on the left, a young male novice teacher in his mid-20s with neat black hair wearing a dark navy suit and blue tie, smiling with relief; "
+                "on the right, a warm veteran male mentor teacher in his 50s with glasses and grey-streaked hair in a white dress shirt and tie."
+            ),
+            (
+                "Medium two-shot of two Japanese teachers discussing classroom notes over coffee in the staffroom: "
+                "on the left, a young female teacher in her 20s with shoulder-length dark hair in a light blue cardigan; "
+                "on the right, a veteran male guidance teacher in his 50s with glasses and a warm reassuring smile in a grey blazer."
+            ),
+        ]
+
+        scenes_b = [
+            (
+                "Medium two-shot of two Japanese male teachers smiling together in the staffroom: "
+                "on the left, a young ICT teacher in his late 20s with brown hair and glasses wearing a grey knit sweater over a collared shirt; "
+                "on the right, an experienced veteran teacher in his late 50s with grey-streaked hair and gentle smile wrinkles wearing a dark navy cardigan over a blue shirt."
+            ),
+            (
+                "Medium two-shot of two Japanese teachers collaborating over coffee and a laptop in the staffroom: "
+                "on the left, a veteran male teacher in his 50s with glasses and salt-and-pepper hair in a white shirt and tie, laughing warmly; "
+                "on the right, a young female ICT teacher in her late 20s with a neat ponytail and beige jacket explaining a clean chart."
+            ),
+            (
+                "Medium two-shot of two Japanese teachers talking cheerfully at a staffroom desk: "
+                "on the left, a young male teacher in his 20s in a navy suit and striped tie holding a white coffee mug; "
+                "on the right, a senior female head teacher in her 50s with short bob hair and glasses wearing a grey cardigan, smiling."
+            ),
+        ]
+
+        scenes_c = [
+            (
+                "Medium two-shot of a Japanese school principal and an education board supervisor talking warmly in the school office: "
+                "on the left, a sharp-looking male supervisor in his 30s with short black hair wearing a navy suit and blue tie holding a white mug; "
+                "on the right, a dignified male school principal in his late 50s with grey hair, glasses, and a warm smile wearing a white shirt and red-patterned tie holding a dark mug."
+            ),
+            (
+                "Medium two-shot of two senior Japanese educators in a calm, constructive meeting in the principal's office: "
+                "on the left, a female education board supervisor in her 40s with glasses and a tailored navy blazer; "
+                "on the right, a thoughtful male school principal in his late 50s with salt-and-pepper hair and a grey suit, nodding with confidence."
+            ),
+            (
+                "Medium two-shot of a female school principal and a male education board supervisor conversing over coffee in the school office: "
+                "on the left, a male supervisor in his late 30s with glasses in a charcoal suit and tie; "
+                "on the right, a dignified female principal in her 50s with short wavy hair and gentle smile lines wearing a navy jacket."
+            ),
+        ]
+
         if clean_pattern == "A":
-            default_scene = (
-                "Medium two-shot of two Japanese school teachers talking warmly in the staffroom: "
-                "on the left, a young novice teacher in her late 20s wearing a beige cardigan over a white blouse with a relieved smile; "
-                "on the right, a kind veteran female mentor teacher in her 50s with short wavy dark hair, gentle laugh lines around her eyes, "
-                "wearing a navy cardigan."
-            )
+            scene_desc = scenes_a[variant_idx % len(scenes_a)]
         elif clean_pattern == "B":
-            default_scene = (
-                "Medium two-shot of two Japanese school teachers having a friendly conversation in the staffroom: "
-                "on the left, a young male ICT teacher in his late 20s with glasses and a grey knit sweater over a collared shirt; "
-                "on the right, an experienced veteran male teacher in his late 50s with short grey-streaked hair, gentle facial wrinkles, "
-                "and a navy sweater vest over a blue shirt, smiling with appreciation."
-            )
+            scene_desc = scenes_b[variant_idx % len(scenes_b)]
         else:
-            default_scene = (
-                "Medium two-shot of a Japanese school principal and an education board supervisor conversing warmly in the school office: "
-                "on the left, a thoughtful supervisor in his 30s wearing a dark navy suit and tie; "
-                "on the right, a dignified male school principal in his late 50s with grey hair, rectangular glasses, gentle smile lines, "
-                "wearing a white dress shirt and patterned tie."
-            )
-
-        prompt = f"""You are an art director for a realistic, mature Japanese workplace drama animation set in a school staffroom.
-Write ONLY a concise English scene description (35-55 words) describing the two adult teachers in this story having a warm conversation in the staffroom.
-
-[Story Info]
-- Title: {title or topic.get('problem_title', '')}
-- Pattern: Pattern {clean_pattern}
-- Category: {topic.get('category', '')}
-- Roles: {json.dumps(topic.get('roles', {}), ensure_ascii=False)}
-- Excerpt: {story_excerpt[:600]}
-
-[Strict Style Rules]
-1. Depict TWO adult teachers (one younger in their late 20s/30s, one veteran in their 50s with realistic age lines/grey hair/glasses) sitting at a staffroom table with coffee mugs or a laptop/documents, wearing business casual/suits/cardigans and blue ID lanyards.
-2. NEVER use cute, moe, bishoujo, teenage, or exaggerated anime tropes.
-3. Output ONLY the raw English sentence(s) describing the two characters and their interaction.
-"""
-        scene_desc = default_scene
-        try:
-            logger.info(f"[Ollama: {self.writer_model}] Generating grounded workplace scene description for FLUX.2...")
-            raw_en = self.call_ollama_chat(
-                model=self.writer_model,
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "Output ONLY a 35-55 word English description of two adult Japanese teachers conversing in a school staffroom. No markdown, no quotes.",
-                    },
-                    {"role": "user", "content": prompt},
-                ],
-                temperature=0.5,
-                num_predict=120,
-                num_ctx=2048,
-                timeout=45,
-            )
-            cleaned_en = raw_en.strip(" \"'`\n")
-            cleaned_en = re.sub(r"^(?:Prompt|Scene|English Prompt)\s*[:：]\s*", "", cleaned_en, flags=re.IGNORECASE).strip()
-            cleaned_en = " ".join(cleaned_en.splitlines()).strip()
-            if len(cleaned_en) >= 25 and re.search(r"[a-zA-Z]{4,}", cleaned_en):
-                scene_desc = cleaned_en
-        except Exception as e:
-            logger.info(f"Using standard workplace scene description ({e}).")
+            scene_desc = scenes_c[variant_idx % len(scenes_c)]
 
         full_prompt = f"{style_prefix}{scene_desc} {style_suffix}"
         logger.info(f"  -> Final FLUX.2 prompt: {full_prompt[:140]}...")
@@ -887,8 +888,6 @@ Write ONLY a concise English scene description (35-55 words) describing the two 
         if custom_english_prompt and custom_english_prompt.strip():
             en_prompt = custom_english_prompt.strip()
         else:
-            if progress_callback:
-                progress_callback(f"Ollama ({self.writer_model}) が小説本文から英語の挿絵プロンプトを作成中...")
             en_prompt = self.generate_english_image_prompt(
                 pattern=pattern,
                 topic=topic,
@@ -907,9 +906,9 @@ Write ONLY a concise English scene description (35-55 words) describing the two 
         payload = {
             "prompt": en_prompt,
             "negative_prompt": (
-                "cute, moe, kawaii, bishoujo, big anime eyes, sparkling eyes, chibi, teenager, high school girl, "
-                "school uniform, sailor uniform, twin tails, fantasy, magical, overly saturated, neon, "
-                "dark, gloomy, night, horror, 3d render, photorealistic, text, watermark, signature"
+                "cute, moe, kawaii, bishoujo, big sparkling eyes, chibi, teenager, high school girl, "
+                "school uniform, sailor uniform, twin tails, washed out, overexposed, whiteout, faded, pale, "
+                "low contrast, dark, gloomy, night, horror, 3d render, photorealistic, text, watermark, signature"
             ),
             "width": 512,
             "height": 512,

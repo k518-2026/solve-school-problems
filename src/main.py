@@ -74,7 +74,6 @@ def git_sync_and_push(generated_files: List[Path], logger: logging.Logger) -> bo
     if not generated_files:
         return True
     try:
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
         subprocess.run(["git", "add", "README.md", "content/", "data/", "docs/"], check=True)
         diff_res = subprocess.run(["git", "diff", "--staged", "--quiet"])
         if diff_res.returncode == 0:
@@ -82,6 +81,7 @@ def git_sync_and_push(generated_files: List[Path], logger: logging.Logger) -> bo
             return True
         msg = f"feat(pages): Add {len(generated_files)} Solve School Problems asset(s) via Mac mini M4 & update GitHub Pages"
         subprocess.run(["git", "commit", "-m", msg], check=True)
+        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
         subprocess.run(["git", "push", "origin", "HEAD:main"], check=True)
         logger.info("Successfully pushed stories, illustrations & GitHub Pages to GitHub!")
         return True
