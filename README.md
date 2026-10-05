@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `gemma4:12b` / `qwen3.5:9b` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用**: 外部の有料・商用生成AI APIは一切使用せず、毎週土曜日（5本ずつ）Mac mini M4 上で文章と挿絵を作成して GitHub Pages に蓄積・公開しています（ブログへのメール自動投稿は休止中）。
-- **収録作品数**: 全 **29** 話（うち挿絵付き **9** 話 / 最終更新: 2026-10-06 06:55 JST）
+- **収録作品数**: 全 **29** 話（うち挿絵付き **10** 話 / 最終更新: 2026-10-06 06:56 JST）
 
 ---
 
@@ -27,7 +27,7 @@
 | 23 | 📘 A: 教育学・心理学 | `A07` | **[夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論](https://k518-2026.github.io/solve-school-problems/stories/ep23-a07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep23-a07.html) | [📄原稿](<content/2026-10-03_pattern_a_夜の電話と対話の地平_保護者の不信を解くコミュニケーション理論.md>) | [🎨挿絵](<content/2026-10-03_pattern_a_夜の電話と対話の地平_保護者の不信を解くコミュニケーション理論.png>) | 保護者対応・教育哲学 | 5,823字 |
 | 22 | ⚖️ C: 学校法制・法務 | `C04` | **[善意の殻に隠れた盾――教員の私用端末利用と服務規律の限界](https://k518-2026.github.io/solve-school-problems/stories/ep22-c04.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep22-c04.html) | [📄原稿](<content/2026-10-03_pattern_c_善意の殻に隠れた盾_教員の私用端末利用と服務規律の限界.md>) | [🎨挿絵](<content/2026-10-03_pattern_c_善意の殻に隠れた盾_教員の私用端末利用と服務規律の限界.png>) | 学校法制・公務員倫理・情報管理 | 6,619字 |
 | 21 | 💻 B: 校務DX・ICT | `B07` | **[朝の豪雨とダッシュボードの緑の光――野球部顧問を救うワンクリック緊急連絡システム](https://k518-2026.github.io/solve-school-problems/stories/ep21-b07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep21-b07.html) | [📄原稿](<content/2026-10-03_pattern_b_朝の豪雨とダッシュボードの緑の光_野球部顧問を救うワンクリック緊急連絡システム.md>) | [🎨挿絵](<content/2026-10-03_pattern_b_朝の豪雨とダッシュボードの緑の光_野球部顧問を救うワンクリック緊急連絡システム.png>) | 部活動・コミュニケーション自動化 | 6,087字 |
-| 20 | 📘 A: 教育学・心理学 | `A08` | **[背中の目と淀みない川――教室のざわめきを鎮めるモメンタムの技術](https://k518-2026.github.io/solve-school-problems/stories/ep20-a08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep20-a08.html) | [📄原稿](<content/2026-10-03_pattern_a_背中の目と淀みない川_教室のざわめきを鎮めるモメンタムの技術.md>) | — | 学級崩壊予防・教育社会学 | 7,788字 |
+| 20 | 📘 A: 教育学・心理学 | `A08` | **[背中の目と淀みない川――教室のざわめきを鎮めるモメンタムの技術](https://k518-2026.github.io/solve-school-problems/stories/ep20-a08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep20-a08.html) | [📄原稿](<content/2026-10-03_pattern_a_背中の目と淀みない川_教室のざわめきを鎮めるモメンタムの技術.md>) | [🎨挿絵](<content/2026-10-03_pattern_a_背中の目と淀みない川_教室のざわめきを鎮めるモメンタムの技術.png>) | 学級崩壊予防・教育社会学 | 7,788字 |
 | 19 | ⚖️ C: 学校法制・法務 | `C06` | **[熱砂のグラウンドと校長の天秤――安全配慮義務と国家賠償責任の狭間で](https://k518-2026.github.io/solve-school-problems/stories/ep19-c06.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep19-c06.html) | [📄原稿](<content/2026-10-03_pattern_c_熱砂のグラウンドと校長の天秤_安全配慮義務と国家賠償責任の狭間で.md>) | — | 学校法制・学校安全・国家賠償 | 7,451字 |
 | 18 | 💻 B: 校務DX・ICT | `B06` | **[雨雲を突き抜けるライブ・タイムテーブル――体育主任の祈りとクラウド連携の奇跡](https://k518-2026.github.io/solve-school-problems/stories/ep18-b06.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep18-b06.html) | [📄原稿](<content/2026-10-03_pattern_b_雨雲を突き抜けるライブ・タイムテーブル_体育主任の祈りとクラウド連携の奇跡.md>) | — | イベント運営・クラウド連携 | 8,240字 |
 | 17 | 📘 A: 教育学・心理学 | `A07` | **[夜の電話と対話の地平――保護者クレームを超える教育哲学](https://k518-2026.github.io/solve-school-problems/stories/ep17-a07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep17-a07.html) | [📄原稿](<content/2026-10-02_pattern_a_夜の電話と対話の地平_保護者クレームを超える教育哲学.md>) | — | 保護者対応・教育哲学 | 5,991字 |
