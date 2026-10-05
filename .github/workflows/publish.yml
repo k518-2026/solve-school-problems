@@ -8,10 +8,10 @@ on:
   # 1) 朝の通勤・出勤前: 21:15 UTC = 06:15 JST (06:30頃配信完了)
   # 2) 夕方の退勤・放課後: 08:15 UTC = 17:15 JST (17:30頃配信完了)
   # 3) 夜のリラックスタイム: 13:15 UTC = 22:15 JST (22:30頃配信完了)
-  schedule:
-    - cron: '15 21 * * *'
-    - cron: '15 8 * * *'
-    - cron: '15 13 * * *'
+  # schedule:  # 2026-10-05 WordPress 異議申し立ての結果待ちのため一時停止。再開は # を外す
+    # - cron: '15 21 * * *'
+    # - cron: '15 8 * * *'
+    # - cron: '15 13 * * *'
 
   # Manual execution from GitHub Actions UI
   workflow_dispatch:
