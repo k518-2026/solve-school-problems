@@ -269,14 +269,14 @@ def main():
     parser.add_argument(
         "--min-stock",
         type=int,
-        default=1,
-        help="Number of new stories per --auto-replenish run (default: 1)",
+        default=5,
+        help="Number of new stories per --auto-replenish run (default: 5)",
     )
     parser.add_argument(
         "--target-stock",
         type=int,
-        default=6,
-        help="Target number of stories on --auto-replenish (default: 6)",
+        default=5,
+        help="Target number of stories on --auto-replenish (default: 5)",
     )
     parser.add_argument(
         "--generate-images",

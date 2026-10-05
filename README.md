@@ -9,8 +9,8 @@
 3. **⚖️ パターンC（校長先生 × 指導主事・教育委員会）**: 教育基本法、学校教育法、いじめ防止対策推進法、教育機会確保法など教育法規に基づく学校法務小説
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `gemma4:12b` / `qwen3.5:9b` ＆ Draw Things `FLUX.2 [klein] 4B`）
-- **外部生成AI API不使用**: 外部の有料・商用生成AI APIは一切使用せず、Mac mini M4 上で文章と挿絵を作成して GitHub Pages に蓄積・公開しています（ブログへのメール自動投稿は休止中）。
-- **収録作品数**: 全 **28** 話（うち挿絵付き **3** 話 / 最終更新: 2026-10-06 00:59 JST）
+- **外部生成AI API不使用**: 外部の有料・商用生成AI APIは一切使用せず、毎週土曜日（5本ずつ）Mac mini M4 上で文章と挿絵を作成して GitHub Pages に蓄積・公開しています（ブログへのメール自動投稿は休止中）。
+- **収録作品数**: 全 **28** 話（うち挿絵付き **0** 話 / 最終更新: 2026-10-06 01:04 JST）
 
 ---
 
@@ -18,9 +18,9 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
-| 28 | ⚖️ C: 学校法制・法務 | `C08` | **[平等という名の障壁を越えて：実質的平等のための合理的配慮](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html) | [📄原稿](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.md>) | [🎨挿絵](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.png>) | 学校法制・合理的配慮・障害者差別解消法 | 4,153字 |
-| 27 | 💻 B: 校務DX・ICT | `B09` | **[紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解](https://k518-2026.github.io/solve-school-problems/stories/ep27-b09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep27-b09.html) | [📄原稿](<content/2026-10-05_pattern_b_b09_紙吹雪のパズルにサヨナラを_三者面談の重複を解き明かす「数式とGAS」の最適解.md>) | [🎨挿絵](<content/2026-10-05_pattern_b_b09_紙吹雪のパズルにサヨナラを_三者面談の重複を解き明かす「数式とGAS」の最適解.png>) | 三者面談・日程調整自動化 | 6,761字 |
-| 26 | 📘 A: 教育学・心理学 | `A09` | **[赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路](https://k518-2026.github.io/solve-school-problems/stories/ep26-a09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep26-a09.html) | [📄原稿](<content/2026-10-04_pattern_a_a09_赤いインクの沈黙と小さな舵_形成的評価が拓く学びの航路.md>) | [🎨挿絵](<content/2026-10-04_pattern_a_a09_赤いインクの沈黙と小さな舵_形成的評価が拓く学びの航路.png>) | 教育評価・形成的アセスメント | 6,785字 |
+| 28 | ⚖️ C: 学校法制・法務 | `C08` | **[平等という名の障壁を越えて：実質的平等のための合理的配慮](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html) | [📄原稿](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.md>) | — | 学校法制・合理的配慮・障害者差別解消法 | 4,153字 |
+| 27 | 💻 B: 校務DX・ICT | `B09` | **[紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解](https://k518-2026.github.io/solve-school-problems/stories/ep27-b09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep27-b09.html) | [📄原稿](<content/2026-10-05_pattern_b_b09_紙吹雪のパズルにサヨナラを_三者面談の重複を解き明かす「数式とGAS」の最適解.md>) | — | 三者面談・日程調整自動化 | 6,761字 |
+| 26 | 📘 A: 教育学・心理学 | `A09` | **[赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路](https://k518-2026.github.io/solve-school-problems/stories/ep26-a09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep26-a09.html) | [📄原稿](<content/2026-10-04_pattern_a_a09_赤いインクの沈黙と小さな舵_形成的評価が拓く学びの航路.md>) | — | 教育評価・形成的アセスメント | 6,785字 |
 | 25 | ⚖️ C: 学校法制・法務 | `C07` | **[デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤](https://k518-2026.github.io/solve-school-problems/stories/ep25-c07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep25-c07.html) | [📄原稿](<content/2026-10-04_pattern_c_c07_デジタルに灯る法の光_校長が挑む著作権法三十五条の防波堤.md>) | — | 学校法制・著作権法・教材利用 | 7,500字 |
 | 24 | 💻 B: 校務DX・ICT | `B08` | **[紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空](https://k518-2026.github.io/solve-school-problems/stories/ep24-b08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep24-b08.html) | [📄原稿](<content/2026-10-04_pattern_b_紙煙る印刷室の脱出劇_複合機ジョブ制御とクラウド配信が拓く放課後の青空.md>) | — | ペーパーレス・バッチ印刷自動化 | 7,562字 |
 | 23 | 📘 A: 教育学・心理学 | `A07` | **[夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論](https://k518-2026.github.io/solve-school-problems/stories/ep23-a07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep23-a07.html) | [📄原稿](<content/2026-10-03_pattern_a_夜の電話と対話の地平_保護者の不信を解くコミュニケーション理論.md>) | — | 保護者対応・教育哲学 | 5,823字 |
@@ -49,14 +49,14 @@
 
 ---
 
-## 🛠️ ローカル執筆＆GitHub Pages更新コマンド（Mac mini M4連携）
+## 🛠️ ローカル執筆＆GitHub Pages更新コマンド（Mac mini M4連携・毎週土曜5本自動蓄積）
 
 ```powershell
-# 未生成の小説と挿絵をMac mini M4 (Ollama + Draw Things) で自動生成し、GitHub Pages (docs/) へ公開
-python -m src.main --auto-replenish --push
+# 5本の小説と挿絵をMac mini M4 (Ollama + Draw Things) で一括生成し、GitHub Pages (docs/) へ公開
+python -m src.main --auto-replenish --min-stock 5 --target-stock 5 --push
 
 # 指定話数をバッチ生成してGitHub Pagesへ反映
-python -m src.main --stock-count 2 --push
+python -m src.main --stock-count 5 --push
 
 # 既存小説のうち未生成の挿絵 (.png) を生成してGitHub Pagesへ反映
 python -m src.main --generate-images --push

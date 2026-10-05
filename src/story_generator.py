@@ -778,68 +778,89 @@ topic_id: "{topic.get('id', 'C01')}"
         title: str = "",
     ) -> str:
         """
-        Uses `gemma4:12b` on Mac mini Ollama to translate the story's most visually iconic school scene
-        into a concise, descriptive English image generation prompt for FLUX.2 [klein] 4B.
+        Builds a grounded, mature Japanese adult workplace animation prompt matching the reference art style
+        (clean cel-shaded adult slice-of-life illustration in a Japanese school staffroom, natural adult facial
+        proportions, subtle wrinkles on senior teachers, blue neck ID lanyards, coffee mugs, file binders on shelves).
         """
         clean_pattern = (pattern or "A").strip().upper()
-        story_excerpt = story_body[:1600] if story_body else topic.get("situation", "")
+        story_excerpt = story_body[:1200] if story_body else topic.get("situation", "")
+
+        style_prefix = (
+            "Clean modern Japanese adult workplace anime illustration, grounded slice-of-life TV animation style, "
+            "natural adult human facial proportions with small realistic eyes, clean thin linework, soft flat cel-shading, "
+            "warm natural indoor daylight, NOT cute moe style. "
+        )
+        style_suffix = (
+            "Both wearing blue neck strap ID lanyards, holding ceramic coffee mugs at a wooden table in a realistic "
+            "Japanese school staffroom, background filled with bookshelves of blue and white office file binders, "
+            "desks, and bright daytime windows, calm warm collegial atmosphere."
+        )
 
         if clean_pattern == "A":
-            setting_hint = "a warm Japanese school classroom or staffroom at sunset, a young novice teacher and a gentle veteran mentor teacher discussing a classroom pedagogy notebook by the window"
+            default_scene = (
+                "Medium two-shot of two Japanese school teachers talking warmly in the staffroom: "
+                "on the left, a young novice teacher in her late 20s wearing a beige cardigan over a white blouse with a relieved smile; "
+                "on the right, a kind veteran female mentor teacher in her 50s with short wavy dark hair, gentle laugh lines around her eyes, "
+                "wearing a navy cardigan."
+            )
         elif clean_pattern == "B":
-            setting_hint = "a modern Japanese school staffroom, an experienced older teacher and a bright young ICT teacher smiling together in front of a laptop screen with glowing clean data charts and school network diagrams"
+            default_scene = (
+                "Medium two-shot of two Japanese school teachers having a friendly conversation in the staffroom: "
+                "on the left, a young male ICT teacher in his late 20s with glasses and a grey knit sweater over a collared shirt; "
+                "on the right, an experienced veteran male teacher in his late 50s with short grey-streaked hair, gentle facial wrinkles, "
+                "and a navy sweater vest over a blue shirt, smiling with appreciation."
+            )
         else:
-            setting_hint = "a dignified Japanese school principal's office with warm sunlight, a thoughtful school principal and an education board supervisor reviewing a law statute book with determination and hope"
+            default_scene = (
+                "Medium two-shot of a Japanese school principal and an education board supervisor conversing warmly in the school office: "
+                "on the left, a thoughtful supervisor in his 30s wearing a dark navy suit and tie; "
+                "on the right, a dignified male school principal in his late 50s with grey hair, rectangular glasses, gentle smile lines, "
+                "wearing a white dress shirt and patterned tie."
+            )
 
-        prompt = f"""You are an expert anime light novel art director.
-Based on the following Japanese school drama story (Pattern {clean_pattern}), write a single, vivid, highly descriptive **English image generation prompt** (60-95 words) for the FLUX.2 image model to depict the most iconic, heartwarming scene of the story.
+        prompt = f"""You are an art director for a realistic, mature Japanese workplace drama animation set in a school staffroom.
+Write ONLY a concise English scene description (35-55 words) describing the two adult teachers in this story having a warm conversation in the staffroom.
 
 [Story Info]
 - Title: {title or topic.get('problem_title', '')}
 - Pattern: Pattern {clean_pattern}
 - Category: {topic.get('category', '')}
-- Core Theme: {topic.get('problem_title', '')} / {topic.get('solution_framework', '')}
-- Visual Setting Hint: {setting_hint}
+- Roles: {json.dumps(topic.get('roles', {}), ensure_ascii=False)}
+- Excerpt: {story_excerpt[:600]}
 
-[Story Excerpt]
-{story_excerpt}
-
-[Rules for Output]
-1. Output ONLY the raw English prompt paragraph. Do NOT include explanations, markdown formatting, quotes, or Japanese text.
-2. Start with: "Bright, vibrant anime light novel illustration of Japanese school teachers in ..."
-3. Visually describe the characters' warm expressions, the authentic Japanese school atmosphere bathed in clear natural daylight (blackboard, windows, blue sky, notebooks, or laptop screen), and the emotional moment of insight and collaboration. Avoid dark night or gloomy scenes.
-4. End with: "masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired luminous daylight, crisp details, rich vivid colors, clear contrast, cheerful uplifting atmosphere."
+[Strict Style Rules]
+1. Depict TWO adult teachers (one younger in their late 20s/30s, one veteran in their 50s with realistic age lines/grey hair/glasses) sitting at a staffroom table with coffee mugs or a laptop/documents, wearing business casual/suits/cardigans and blue ID lanyards.
+2. NEVER use cute, moe, bishoujo, teenage, or exaggerated anime tropes.
+3. Output ONLY the raw English sentence(s) describing the two characters and their interaction.
 """
+        scene_desc = default_scene
         try:
-            logger.info(f"[Ollama: {self.writer_model}] Generating English illustration prompt for FLUX.2...")
+            logger.info(f"[Ollama: {self.writer_model}] Generating grounded workplace scene description for FLUX.2...")
             raw_en = self.call_ollama_chat(
                 model=self.writer_model,
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are a professional prompt engineer for FLUX.2 anime light novel illustrations. Output ONLY the English prompt text.",
+                        "content": "Output ONLY a 35-55 word English description of two adult Japanese teachers conversing in a school staffroom. No markdown, no quotes.",
                     },
                     {"role": "user", "content": prompt},
                 ],
-                temperature=0.65,
-                num_predict=250,
-                num_ctx=4096,
-                timeout=120,
+                temperature=0.5,
+                num_predict=120,
+                num_ctx=2048,
+                timeout=45,
             )
             cleaned_en = raw_en.strip(" \"'`\n")
-            cleaned_en = re.sub(r"^(?:Prompt|English Prompt)\s*[:：]\s*", "", cleaned_en, flags=re.IGNORECASE).strip()
+            cleaned_en = re.sub(r"^(?:Prompt|Scene|English Prompt)\s*[:：]\s*", "", cleaned_en, flags=re.IGNORECASE).strip()
             cleaned_en = " ".join(cleaned_en.splitlines()).strip()
-            if len(cleaned_en) >= 30 and re.search(r"[a-zA-Z]{4,}", cleaned_en):
-                logger.info(f"  -> Generated English prompt: {cleaned_en[:120]}...")
-                return cleaned_en
+            if len(cleaned_en) >= 25 and re.search(r"[a-zA-Z]{4,}", cleaned_en):
+                scene_desc = cleaned_en
         except Exception as e:
-            logger.warning(f"Failed to generate English prompt via Ollama ({e}), using fallback English prompt.")
+            logger.info(f"Using standard workplace scene description ({e}).")
 
-        return (
-            f"Bright, vibrant anime light novel illustration of Japanese school teachers in {setting_hint}, "
-            f"clear natural sunlight streaming through school windows, blue sky outside, expressive eyes filled with hope and insight, "
-            f"masterpiece anime art style, Makoto Shinkai and Kyoto Animation inspired luminous daylight, crisp details, rich vivid colors, clear contrast, cheerful uplifting atmosphere."
-        )
+        full_prompt = f"{style_prefix}{scene_desc} {style_suffix}"
+        logger.info(f"  -> Final FLUX.2 prompt: {full_prompt[:140]}...")
+        return full_prompt
 
     def generate_illustration(
         self,
@@ -852,9 +873,8 @@ Based on the following Japanese school drama story (Pattern {clean_pattern}), wr
         progress_callback: Optional[Callable[[str], None]] = None,
     ) -> Tuple[Optional[Path], str]:
         """
-        Generates a 512x512 light novel illustration using Draw Things HTTP API
-        (`http://192.168.128.59:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_4b_i8x.ckpt`)
-        with an English prompt created by `gemma4:12b`.
+        Generates a 512x512 workplace drama illustration using Draw Things HTTP API
+        (`http://192.168.128.59:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_4b_i8x.ckpt`).
         Returns (saved_image_path_or_None, english_prompt_used).
         """
         dt_conn = self.check_draw_things_connection()
@@ -886,7 +906,11 @@ Based on the following Japanese school drama story (Pattern {clean_pattern}), wr
         url = f"{self.draw_things_host}/sdapi/v1/txt2img"
         payload = {
             "prompt": en_prompt,
-            "negative_prompt": "dark, gloomy, night, dim lighting, heavy shadows, lowkey, monochrome, horror, washed out, overexposed, whiteout, faded, desaturated, low contrast",
+            "negative_prompt": (
+                "cute, moe, kawaii, bishoujo, big anime eyes, sparkling eyes, chibi, teenager, high school girl, "
+                "school uniform, sailor uniform, twin tails, fantasy, magical, overly saturated, neon, "
+                "dark, gloomy, night, horror, 3d render, photorealistic, text, watermark, signature"
+            ),
             "width": 512,
             "height": 512,
             "steps": 12,
