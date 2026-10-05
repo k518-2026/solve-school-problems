@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `gemma4:12b` / `qwen3.5:9b` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用**: 外部の有料・商用生成AI APIは一切使用せず、毎週土曜日（5本ずつ）Mac mini M4 上で文章と挿絵を作成して GitHub Pages に蓄積・公開しています（ブログへのメール自動投稿は休止中）。
-- **収録作品数**: 全 **29** 話（うち挿絵付き **1** 話 / 最終更新: 2026-10-06 01:39 JST）
+- **収録作品数**: 全 **29** 話（うち挿絵付き **2** 話 / 最終更新: 2026-10-06 01:41 JST）
 
 ---
 
@@ -19,7 +19,7 @@
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
 | 29 | 📘 A: 教育学・心理学 | `A10` | **[色彩の迷宮と、記憶の深淵へ](https://k518-2026.github.io/solve-school-problems/stories/ep29-a10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep29-a10.html) | [📄原稿](<content/2026-10-06_pattern_a_a10_色彩の迷宮と、記憶の深淵へ.md>) | [🎨挿絵](<content/2026-10-06_pattern_a_a10_色彩の迷宮と、記憶の深淵へ.png>) | 学習科学・メタ認知 | 3,892字 |
-| 28 | ⚖️ C: 学校法制・法務 | `C08` | **[平等という名の障壁を越えて：実質的平等のための合理的配慮](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html) | [📄原稿](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.md>) | — | 学校法制・合理的配慮・障害者差別解消法 | 4,153字 |
+| 28 | ⚖️ C: 学校法制・法務 | `C08` | **[平等という名の障壁を越えて：実質的平等のための合理的配慮](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html) | [📄原稿](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.md>) | [🎨挿絵](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.png>) | 学校法制・合理的配慮・障害者差別解消法 | 4,153字 |
 | 27 | 💻 B: 校務DX・ICT | `B09` | **[紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解](https://k518-2026.github.io/solve-school-problems/stories/ep27-b09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep27-b09.html) | [📄原稿](<content/2026-10-05_pattern_b_b09_紙吹雪のパズルにサヨナラを_三者面談の重複を解き明かす「数式とGAS」の最適解.md>) | — | 三者面談・日程調整自動化 | 6,761字 |
 | 26 | 📘 A: 教育学・心理学 | `A09` | **[赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路](https://k518-2026.github.io/solve-school-problems/stories/ep26-a09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep26-a09.html) | [📄原稿](<content/2026-10-04_pattern_a_a09_赤いインクの沈黙と小さな舵_形成的評価が拓く学びの航路.md>) | — | 教育評価・形成的アセスメント | 6,785字 |
 | 25 | ⚖️ C: 学校法制・法務 | `C07` | **[デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤](https://k518-2026.github.io/solve-school-problems/stories/ep25-c07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep25-c07.html) | [📄原稿](<content/2026-10-04_pattern_c_c07_デジタルに灯る法の光_校長が挑む著作権法三十五条の防波堤.md>) | — | 学校法制・著作権法・教材利用 | 7,500字 |
