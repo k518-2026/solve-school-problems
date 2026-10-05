@@ -1,0 +1,445 @@
+/* Solve School Problems Novel Library - GitHub Pages Stylesheet */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef2f6;
+  --bg-card: #ffffff;
+  --bg-reader: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent: #1d4ed8;
+  --accent-soft: rgba(29, 78, 216, 0.1);
+  --pat-a: #0284c7;
+  --pat-b: #059669;
+  --pat-c: #b45309;
+  --border: #dbe3ee;
+  --reader-font-size: 17.5px;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --bg-reader: #162032;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.15);
+  --pat-a: #38bdf8;
+  --pat-b: #34d399;
+  --pat-c: #fbbf24;
+  --border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.8;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header & Hero */
+.site-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #0f766e 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 2.8rem 1.5rem 2.2rem;
+  text-align: center;
+  color: #f8fafc;
+}
+.site-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  padding: 0.3rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.2);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  color: #bae6fd;
+  margin-bottom: 0.9rem;
+}
+.site-title {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.45rem);
+  font-weight: 700;
+  margin: 0 0 0.7rem;
+  letter-spacing: 0.04em;
+}
+.site-subtitle {
+  max-width: 840px;
+  margin: 0 auto 1.5rem;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.stat-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  color: #f8fafc;
+}
+.stat-pill strong {
+  color: #7dd3fc;
+  font-size: 1.05rem;
+  margin-right: 0.25rem;
+}
+
+/* Controls & Toolbar */
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.8rem 1.25rem 4rem;
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.8rem;
+}
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  flex: 1;
+}
+.search-input, .select-filter {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+}
+.search-input {
+  min-width: 220px;
+  flex: 1;
+}
+.btn-toggle {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.btn-toggle:hover {
+  border-color: var(--accent);
+}
+
+/* Story Cards Grid with Container Queries & Media Query Fallback */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.4rem;
+}
+.story-card-wrap {
+  container-type: inline-size;
+}
+.story-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.story-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+@media (min-width: 600px) {
+  .story-card {
+    flex-direction: row;
+  }
+  .card-thumb-wrap {
+    width: 210px;
+    flex-shrink: 0;
+  }
+}
+@supports (container-type: inline-size) {
+  @media (min-width: 600px) {
+    .story-card {
+      flex-direction: column;
+    }
+    .card-thumb-wrap {
+      width: 100%;
+    }
+  }
+  @container (min-width: 560px) {
+    .story-card {
+      flex-direction: row;
+    }
+    .card-thumb-wrap {
+      width: 210px;
+      flex-shrink: 0;
+    }
+  }
+}
+.card-thumb-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+  overflow: hidden;
+}
+.card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  text-align: center;
+  color: #f1f5f9;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.card-no-badge {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  background: rgba(15, 23, 42, 0.86);
+  color: #7dd3fc;
+  border: 1px solid rgba(125, 211, 252, 0.45);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+.card-body {
+  padding: 1.2rem 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card-pattern {
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.pat-A { color: var(--pat-a); }
+.pat-B { color: var(--pat-b); }
+.pat-C { color: var(--pat-c); }
+.card-title {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 1.14rem;
+  font-weight: 700;
+  margin: 0 0 0.55rem;
+  line-height: 1.45;
+}
+.card-title a {
+  color: var(--text-primary);
+}
+.card-title a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+.card-framework {
+  font-size: 0.78rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.28rem 0.65rem;
+  border-radius: 6px;
+  margin-bottom: 0.7rem;
+  line-height: 1.45;
+}
+.card-summary {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  margin: 0 0 1rem;
+  flex: 1;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.read-link {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Story Reader Page */
+.reader-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.reader-controls {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+.reader-container {
+  max-width: 820px;
+  margin: 2rem auto 4.5rem;
+  padding: 2.5rem 2.2rem;
+  background: var(--bg-reader);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+@media (max-width: 640px) {
+  .reader-container {
+    margin: 0.75rem;
+    padding: 1.4rem 1.15rem;
+  }
+}
+.story-meta-box {
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.8rem;
+  font-size: 0.9rem;
+}
+.story-meta-box div {
+  margin-bottom: 0.35rem;
+}
+.story-meta-box div:last-child {
+  margin-bottom: 0;
+}
+.story-hero-image {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+.story-header-title {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: clamp(1.45rem, 3vw, 2.05rem);
+  line-height: 1.45;
+  margin: 0 0 1.2rem;
+}
+.story-content {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: var(--reader-font-size);
+  line-height: 2.0;
+  color: var(--text-primary);
+}
+.story-content p {
+  margin: 0 0 1.45em;
+  text-align: justify;
+}
+.story-content h2, .story-content h3, .story-content h4 {
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  margin-top: 2.2em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.35em;
+  border-bottom: 2px solid var(--border);
+  color: var(--accent);
+}
+.story-content blockquote {
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--accent);
+  margin: 1.5em 0;
+  padding: 1em 1.3em;
+  border-radius: 8px;
+}
+.story-content ul, .story-content ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+.story-content li {
+  margin-bottom: 0.65em;
+  line-height: 1.8;
+}
+.story-content code {
+  background: var(--bg-secondary);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 0.9em;
+}
+.scene-divider {
+  text-align: center;
+  margin: 2.4em 0;
+  letter-spacing: 0.5em;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+.story-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.pager-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 1.1rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  max-width: 48%;
+}
+.pager-btn:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

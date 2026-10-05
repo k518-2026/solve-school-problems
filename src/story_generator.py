@@ -79,26 +79,21 @@ SYSTEM_PROMPT_C = """あなたは学校法務および教育行政に精通し�
      （実在する法律のe-Gov法令検索リンク `[https://laws.e-gov.go.jp/document?lawid=...](https://laws.e-gov.go.jp/document?lawid=...)` や文部科学省公式ガイドラインの正規URLを明記してください）
 """
 
-DEFAULT_PRIMARY_MODEL = "gemini-3.8-flash"
 DEFAULT_OLLAMA_HOST = "http://192.168.128.59:11434"
 DEFAULT_WRITER_MODEL = "gemma4:12b"
 DEFAULT_DRAW_THINGS_HOST = "http://192.168.128.59:7860"
 
-FALLBACK_MODELS = [
-    "gemini-3.8-flash",
-    "gemini-3.7-flash",
-    "gemini-3.6-flash",
-    "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
-    "gemini-2.5-pro",
-    "gemini-2.5-flash",
-    "gemini-2.0-flash",
-    "gemini-2.0-flash-lite",
+LOCAL_FALLBACK_MODELS = [
+    "gemma4:12b",
+    "qwen3.5:9b",
+    "qwen2.5:14b",
+    "gemma2:9b",
 ]
+
 
 class StoryGenerator:
     """
-    Generates school problem solving stories using Google Gemini API (or local LLM),
+    Generates school problem solving stories using Mac mini M4 Local LLM via Ollama (no external AI APIs),
     and generates 512x512 illustrations via Mac mini Ollama (gemma4:12b) + Draw Things HTTP API (FLUX.2 [klein] 4B).
     Alternates between Pattern A (Pedagogy/Psychology), Pattern B (ICT/Networking), and Pattern C (School Law).
     Outputs rich Markdown with Frontmatter, Technical/Legal Commentary, and Verified References.
@@ -112,19 +107,51 @@ class StoryGenerator:
         writer_model: Optional[str] = None,
         draw_things_host: Optional[str] = None,
     ):
-        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
-        self.primary_model = model_name or os.getenv("GEMINI_TEXT_MODEL", DEFAULT_PRIMARY_MODEL)
+        self.api_key = None  # External AI APIs are disabled
         self.ollama_host = (ollama_host or os.getenv("OLLAMA_HOST", DEFAULT_OLLAMA_HOST)).rstrip("/")
         self.writer_model = writer_model or os.getenv("OLLAMA_WRITER_MODEL", DEFAULT_WRITER_MODEL)
         self.draw_things_host = (draw_things_host or os.getenv("DRAW_THINGS_HOST", DEFAULT_DRAW_THINGS_HOST)).rstrip("/")
 
-    def _get_model_candidates(self) -> List[str]:
-        """Returns ordered list of real, valid Gemini models to try."""
-        candidates = [self.primary_model]
-        for m in FALLBACK_MODELS:
-            if m not in candidates:
+    def _get_local_model_candidates(self, available_models: List[str]) -> List[str]:
+        """Returns ordered list of local Ollama models to try."""
+        candidates = [self.writer_model]
+        for m in LOCAL_FALLBACK_MODELS:
+            if m not in candidates and (not available_models or m in available_models):
                 candidates.append(m)
         return candidates
+
+    def _ensure_frontmatter(self, text: str, pattern: str, topic: Dict[str, Any]) -> Tuple[str, str]:
+        """Ensures the generated Markdown starts with valid YAML frontmatter and extracts the clean title."""
+        default_title = topic.get("problem_title", "学校の課題を解決する物語")
+        tid = topic.get("id", f"{pattern}01")
+        cat = topic.get("category", "学校課題解決")
+        if pattern == "A":
+            tags_str = '["教育学", "教育心理学", "学級経営", "生徒指導", "若手教員育成", "Aパターン"]'
+        elif pattern == "B":
+            tags_str = '["校務DX", "学校ICT", "業務効率化", "プログラミング", "ネットワーク", "Bパターン"]'
+        else:
+            tags_str = '["学校法制", "教育法規", "教育委員会", "学校管理職", "校長", "Cパターン"]'
+
+        title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
+        if not title_match:
+            h1_match = re.search(r'^#\s+(.+)$', text, flags=re.MULTILINE)
+            title = h1_match.group(1).strip().strip("『』\"'") if h1_match else default_title
+        else:
+            title = title_match.group(1).strip().strip("『』\"'")
+
+        if not text.lstrip().startswith("---"):
+            safe_title = title.replace('"', '\\"')
+            fm = (
+                f"---\n"
+                f'title: "{safe_title}"\n'
+                f'pattern: "{pattern}"\n'
+                f'category: "{cat}"\n'
+                f"tags: {tags_str}\n"
+                f'topic_id: "{tid}"\n'
+                f"---\n\n"
+            )
+            text = fm + text.lstrip()
+        return text, title
 
     def _build_anti_duplication_prompt(self, topic: Dict[str, Any]) -> str:
         """Builds explicit instructions to prevent overlapping with previously published stories."""
@@ -159,11 +186,12 @@ class StoryGenerator:
         use_local_llm: bool = False,
     ) -> Tuple[str, str, List[str]]:
         """
-        Generates a complete story based on pattern ('A', 'B', or 'C') and topic info.
+        Generates a complete story based on pattern ('A', 'B', or 'C') and topic info
+        using Mac mini M4 Local LLM via Ollama (no external AI APIs).
         Returns: (markdown_content, title, list_of_references)
         """
-        if not self.api_key and not use_local_llm:
-            logger.warning("GEMINI_API_KEY is not set. Generating high-quality built-in template story.")
+        if not use_local_llm:
+            logger.info("Offline/unit-test mode (use_local_llm=False). Returning built-in template story.")
             return self._generate_fallback(pattern, topic)
 
         anti_dup_block = self._build_anti_duplication_prompt(topic)
@@ -233,7 +261,6 @@ topic_id: "{topic.get('id', 'B01')}"
 ---
 """
         else:
-            # Pattern C: Principal x Supervisor / Education Board (School Legal Framework)
             system_instruction = SYSTEM_PROMPT_C
             user_prompt = f"""以下の学校現場の重大課題と教育法制をもとに、校長先生と指導主事・教育委員会の教育法務短編小説（本文約3,500〜4,000文字＋法規解説＋法律リンク）を執筆してください。
 
@@ -266,103 +293,15 @@ topic_id: "{topic.get('id', 'C01')}"
 ---
 """
 
-        model_candidates = self._get_model_candidates()
         last_error = None
-
-        if self.api_key:
-            try:
-                from google import genai
-                from google.genai import types
-
-                client = genai.Client(api_key=self.api_key)
-
-                # Attempt generation across models with backoff retry for peak-hour congestion
-                max_rounds = 2
-                for round_num in range(1, max_rounds + 1):
-                    if round_num > 1:
-                        logger.info(f"Round {round_num - 1} hit temporary server demand spikes. Pausing 10s before Round {round_num}...")
-                        time.sleep(10)
-
-                    for idx, current_model in enumerate(model_candidates):
-                        # For each candidate, try up to 2 attempts if 503/high demand occurs
-                        for attempt in range(1, 3):
-                            logger.info(
-                                f"Generating story with model '{current_model}' "
-                                f"(Round {round_num}, Candidate {idx + 1}/{len(model_candidates)}, Try {attempt}/2)..."
-                            )
-                            try:
-                                response = client.models.generate_content(
-                                    model=current_model,
-                                    contents=user_prompt,
-                                    config=types.GenerateContentConfig(
-                                        system_instruction=system_instruction,
-                                        temperature=0.75,
-                                        max_output_tokens=8192,
-                                        http_options=types.HttpOptions(timeout=120000)
-                                    )
-                                )
-                                text = (response.text or "").strip()
-                                if text.startswith("```markdown"):
-                                    text = text[len("```markdown"):].strip()
-                                if text.startswith("```"):
-                                    text = text[3:].strip()
-                                if text.endswith("```"):
-                                    text = text[:-3].strip()
-
-                                if len(text) < 2000:
-                                    logger.warning(
-                                        f"Model '{current_model}' output too short ({len(text)} chars < 2000 target). "
-                                        f"Trying next candidate for a full-length story..."
-                                    )
-                                    break
-
-                                text = self._verify_and_sanitize_links(text)
-                                # Extract Title
-                                title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
-                                title = title_match.group(1).strip() if title_match else topic.get("problem_title", "学校の課題を解決する物語")
-
-                                # Extract references
-                                refs = re.findall(r'\((https?://[^\s\)]+)\)', text)
-                                logger.info(f"Successfully generated story using '{current_model}'! Title: {title}, Length: {len(text)} chars")
-                                return text, title, refs
-
-                            except Exception as e:
-                                last_error = e
-                                err_msg = str(e)
-                                is_503_or_overload = any(term in err_msg.lower() for term in [
-                                    "503", "429", "unavailable", "overloaded", "resource_exhausted", "rate_limit", "high demand", "temporary"
-                                ])
-                                is_not_found = "404" in err_msg or "not found" in err_msg.lower()
-
-                                if is_not_found:
-                                    logger.warning(f"Model '{current_model}' is not available (404/Retired). Skipping immediately.")
-                                    break
-
-                                if is_503_or_overload and attempt == 1:
-                                    backoff_sec = 6 * round_num
-                                    logger.warning(
-                                        f"Model '{current_model}' encountered temporary capacity/congestion error ({err_msg}). "
-                                        f"Backing off for {backoff_sec}s before retry..."
-                                    )
-                                    time.sleep(backoff_sec)
-                                    continue
-                                else:
-                                    logger.warning(f"Model '{current_model}' failed: {err_msg}. Moving to next candidate.")
-                                    time.sleep(2)
-                                    break
-            except ImportError:
-                logger.error("google-genai is not installed. Using fallback.")
-            except Exception as e:
-                logger.error(f"Gemini API initialization error: {e}")
-                last_error = e
-
-        if use_local_llm:
-            ollama_status = self.check_ollama_connection()
-            if ollama_status.get("online"):
+        ollama_status = self.check_ollama_connection()
+        if ollama_status.get("online"):
+            candidates = self._get_local_model_candidates(ollama_status.get("models", []))
+            for model_name in candidates:
                 try:
-                    logger.info(f"[Ollama: {self.writer_model}] Generating story via Mac mini Local LLM...")
+                    logger.info(f"[Ollama: {model_name}] Generating story via Mac mini M4 Local LLM...")
                     raw_text = self.call_ollama_chat(
-                        model=self.writer_model,
+                        model=model_name,
                         messages=[
                             {"role": "system", "content": system_instruction},
                             {"role": "user", "content": user_prompt},
@@ -379,18 +318,22 @@ topic_id: "{topic.get('id', 'C01')}"
                         text = text[3:].strip()
                     if text.endswith("```"):
                         text = text[:-3].strip()
-                    if len(text) >= 1500:
+                    if len(text) >= 1200:
                         text = self._verify_and_sanitize_links(text)
-                        title_match = re.search(r'title:\s*["\']?(.*?)["\']?\s*\n', text)
-                        title = title_match.group(1).strip() if title_match else topic.get("problem_title", "学校の課題を解決する物語")
+                        text, title = self._ensure_frontmatter(text, pattern, topic)
                         refs = re.findall(r'\((https?://[^\s\)]+)\)', text)
-                        logger.info(f"Successfully generated story using Ollama '{self.writer_model}'! Title: {title}, Length: {len(text)} chars")
+                        logger.info(
+                            f"Successfully generated story using Mac mini M4 Ollama '{model_name}'! "
+                            f"Title: {title}, Length: {len(text)} chars"
+                        )
                         return text, title, refs
+                    else:
+                        logger.warning(f"Ollama model '{model_name}' output too short ({len(text)} chars). Trying next...")
                 except Exception as e:
                     last_error = e
-                    logger.warning(f"Ollama story generation failed: {e}")
+                    logger.warning(f"Ollama story generation with '{model_name}' failed: {e}")
 
-        logger.error(f"All model attempts exhausted. Falling back to template: {last_error}")
+        logger.error(f"Local LLM attempts exhausted or offline ({last_error}). Falling back to template.")
         return self._generate_fallback(pattern, topic)
 
     def _sanitize_url(self, url: str) -> str:

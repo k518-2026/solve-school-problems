@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 | Solve School Problems</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-badge">SOLVE SCHOOL PROBLEMS NOVEL ARCHIVE</div>
+    <h1 class="site-title">学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館</h1>
+    <p class="site-subtitle">
+      学校現場のリアルな課題を、<strong>📘 パターンA（新米教員×先輩教員：教育学・心理学）</strong>・<strong>💻 パターンB（年配教員×若手教員：校務DX・ICT）</strong>・<strong>⚖️ パターンC（校長先生×指導主事：教育法規・学校法務）</strong>の3視点で解き明かす短編教育小説コレクション。<br/>
+      外部生成AI APIは一切使用せず、Mac mini M4 ローカルAI（Ollama &amp; Draw Things FLUX.2）で執筆・挿絵生成し、GitHub Pages上で公開しています。
+    </p>
+    <div class="stats-bar">
+      <div class="stat-pill"><strong>28</strong> 収録エピソード</div>
+      <div class="stat-pill"><strong>2</strong> 挿絵付き作品</div>
+      <div class="stat-pill">📘 A: <strong>10</strong> ／ 💻 B: <strong>9</strong> ／ ⚖️ C: <strong>9</strong></div>
+      <div class="stat-pill">最終更新: 2026-10-06 00:55 JST</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="toolbar">
+      <div class="filter-group">
+        <input type="search" id="searchInput" class="search-input" placeholder="タイトル・教育理論・GAS/ICT技術・教育法規・登場人物で検索..." oninput="filterCards()" />
+        <select id="patternFilter" class="select-filter" onchange="filterCards()">
+          <option value="">すべてのパターン（全28話）</option>
+          <option value="A">📘 パターンA：教育相談・教育学・心理学 (10)</option>
+          <option value="B">💻 パターンB：校務DX・ICT・ネットワーク (9)</option>
+          <option value="C">⚖️ パターンC：学校法制・教育委員会 (9)</option>
+        </select>
+        <select id="imageFilter" class="select-filter" onchange="filterCards()">
+          <option value="">すべて表示</option>
+          <option value="yes">🎨 挿絵ありのみ (2)</option>
+        </select>
+        <select id="sortOrder" class="select-filter" onchange="sortCards()">
+          <option value="desc">新しい順（#大 → #01）</option>
+          <option value="asc">作品番号順（#01 → #大）</option>
+        </select>
+      </div>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+
+    <div class="story-grid" id="storyGrid">
+      <div class="story-card-wrap" data-no="28" data-pattern="C" data-illustrated="yes" data-search="平等という名の障壁を越えて：実質的平等のための合理的配慮 c08 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・合理的配慮・障害者差別解消法 障害を理由とする差別の解消の推進に関する法律第7条・第8条 / 教育基本法第4条 / 発達障害者支援法第8条 障害を理由とする差別の解消の推進に関する法律（障害者差別解消法 第7条・第8条 合理的配慮の提供義務）および教育基本法第4条（教育の機会均等）に基づく実質的平等の保障 校長・榊原先生（校長就任3年目） × 教育委員会・特別支援教育課指導主事・深沢先生 読み書き障害（ディスレクシア）のある生徒にタブレット読み上げや別室受験を認めることに対し、一部の教員や保護者から『特別扱いは不公平ではないか』と異論が出され、校長が法的根拠をもって説得に臨む。">
+        <article class="story-card">
+          <a href="stories/ep28-c08.html" class="card-thumb-wrap">
+            <img class="card-thumb" src="assets/images/ep28-c08.png" alt="平等という名の障壁を越えて：実質的平等のための合理的配慮" loading="lazy" />
+            <span class="card-no-badge">#28 [C08]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep28-c08.html">平等という名の障壁を越えて：実質的平等のための合理的配慮</a></h2>
+            <div class="card-framework">🏷️ 学校法制・合理的配慮・障害者差別解消法 ／ 障害を理由とする差別の解消の推進に関する法律第7条・第8条 / 教育基本法第4条 / 発達障害者支援法第8条</div>
+            <p class="card-summary">読み書き障害（ディスレクシア）のある生徒にタブレット読み上げや別室受験を認めることに対し、一部の教員や保護者から『特別扱いは不公平ではないか』と異論が出され、校長が法的根拠をもって説得に臨む。</p>
+            <div class="card-footer">
+              <span>約 4,153 文字 🎨 挿絵あり</span>
+              <a class="read-link" href="stories/ep28-c08.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="27" data-pattern="B" data-illustrated="yes" data-search="紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とgas」の最適解 b09 💻 パターンb：校務dx・ict・ネットワーク 三者面談・日程調整自動化 google フォーム希望収集 / query / filter / xlookup 関数 / google apps script 自動重複検知 / カレンダー自動登録 google フォーム ＋ スプレッドシート（query / filter / xlookup関数）とgasによる兄弟枠自動照合・日程割当アルゴリズム 教務主任・田辺先生（教職27年目） × 若手教諭・三浦先生（教職3年目・数学科） 紙の希望調査票を集め、兄弟がいる家庭の面談時間が重ならないよう全クラスの担任が職員室の机に紙を並べてパズルのように組み替えている。">
+        <article class="story-card">
+          <a href="stories/ep27-b09.html" class="card-thumb-wrap">
+            <img class="card-thumb" src="assets/images/ep27-b09.png" alt="紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解" loading="lazy" />
+            <span class="card-no-badge">#27 [B09]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep27-b09.html">紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解</a></h2>
+            <div class="card-framework">🏷️ 三者面談・日程調整自動化 ／ Google フォーム希望収集 / QUERY / FILTER / XLOOKUP 関数 / Google Apps Script 自動重複検知 / カレンダー自動登録</div>
+            <p class="card-summary">紙の希望調査票を集め、兄弟がいる家庭の面談時間が重ならないよう全クラスの担任が職員室の机に紙を並べてパズルのように組み替えている。</p>
+            <div class="card-footer">
+              <span>約 6,761 文字 🎨 挿絵あり</span>
+              <a class="read-link" href="stories/ep27-b09.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="26" data-pattern="A" data-illustrated="no" data-search="赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路 a09 📘 パターンa：教育相談・教育学・心理学 教育評価・形成的アセスメント 診断的・形成的・総括的評価 / 学習のための評価（assessment for learning） / 出口調査票（exit ticket）と即時フィードバック ベンジャミン・ブルームとポール・ブラック＆ディラン・ウィリアムの「形成的評価（formative assessment）」とルーブリック評価 初任・結城先生（中学校2年英語担当） × 研究主任・白石先生（教職19年目） 単元末テストを採点して初めて半数以上の生徒が基本文法を理解していなかったことに気づき、手遅れ感に苛まれている。">
+        <article class="story-card">
+          <a href="stories/ep26-a09.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A09] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">赤いインクの沈黙と小さな舵</div><div style="font-size:0.76rem;color:#cbd5e1;">教育評価・形成的アセスメント</div></div>
+            <span class="card-no-badge">#26 [A09]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep26-a09.html">赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路</a></h2>
+            <div class="card-framework">🏷️ 教育評価・形成的アセスメント ／ 診断的・形成的・総括的評価 / 学習のための評価（Assessment for Learning） / 出口調査票（Exit Ticket）と即時フィードバック</div>
+            <p class="card-summary">単元末テストを採点して初めて半数以上の生徒が基本文法を理解していなかったことに気づき、手遅れ感に苛まれている。</p>
+            <div class="card-footer">
+              <span>約 6,785 文字 </span>
+              <a class="read-link" href="stories/ep26-a09.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="25" data-pattern="C" data-illustrated="no" data-search="デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤 c07 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・著作権法・教材利用 著作権法第35条第1項・第2項 / 授業目的公衆送信補償金制度（sartras） / 教育基本法第2条 著作権法第35条（学校その他の教育機関における複製等・授業目的公衆送信補償金制度 sartras）の適用要件と『著作権者の利益を不当に害することとなる場合（ただし書）』の厳格な線引き 校長・高階先生（校長就任2年目） × 教育委員会・教育情報化担当指導主事・佐久間先生 教員が市販問題集をスキャンして全員の端末に常時ダウンロード可能にしたり、学校行事のbgm付き動画をyoutubeで一般公開しようとしたりしており、著作権侵害リスクに校長が気づいて緊急確認する。">
+        <article class="story-card">
+          <a href="stories/ep25-c07.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C07] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">デジタルに灯る法の光</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・著作権法・教材利用</div></div>
+            <span class="card-no-badge">#25 [C07]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep25-c07.html">デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤</a></h2>
+            <div class="card-framework">🏷️ 学校法制・著作権法・教材利用 ／ 著作権法第35条第1項・第2項 / 授業目的公衆送信補償金制度（SARTRAS） / 教育基本法第2条</div>
+            <p class="card-summary">教員が市販問題集をスキャンして全員の端末に常時ダウンロード可能にしたり、学校行事のBGM付き動画をYouTubeで一般公開しようとしたりしており、著作権侵害リスクに校長が気づいて緊急確認する。</p>
+            <div class="card-footer">
+              <span>約 7,500 文字 </span>
+              <a class="read-link" href="stories/ep25-c07.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="24" data-pattern="B" data-illustrated="no" data-search="紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空 b08 💻 パターンb：校務dx・ict・ネットワーク ペーパーレス・バッチ印刷自動化 複合機ソーター・部数管理機能 / 両面・小冊子自動面付け / pdfデジタル配布 / 学年通信のペーパーレス化 複合機（mfp）の部数別・クラス別ジョブ設定とクラウドペーパーレス化による印刷業務の削減 年配教諭・遠藤先生（教職26年目・事務分掌） × 若手教諭・竹内先生（教職3年目・技術科） 全校800人分のテスト問題や学年通信を、クラスごとの在籍人数に合わせて印刷機のテンキーを手で押し、仕分け用の紙を挟みながら半日印刷室にこもっている。">
+        <article class="story-card">
+          <a href="stories/ep24-b08.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B08] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">紙煙る印刷室の脱出劇</div><div style="font-size:0.76rem;color:#cbd5e1;">ペーパーレス・バッチ印刷自動化</div></div>
+            <span class="card-no-badge">#24 [B08]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep24-b08.html">紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空</a></h2>
+            <div class="card-framework">🏷️ ペーパーレス・バッチ印刷自動化 ／ 複合機ソーター・部数管理機能 / 両面・小冊子自動面付け / PDFデジタル配布 / 学年通信のペーパーレス化</div>
+            <p class="card-summary">全校800人分のテスト問題や学年通信を、クラスごとの在籍人数に合わせて印刷機のテンキーを手で押し、仕分け用の紙を挟みながら半日印刷室にこもっている。</p>
+            <div class="card-footer">
+              <span>約 7,562 文字 </span>
+              <a class="read-link" href="stories/ep24-b08.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="23" data-pattern="A" data-illustrated="no" data-search="夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論 a07 📘 パターンa：教育相談・教育学・心理学 保護者対応・教育哲学 戦略的行為から対話的合意形成への転換 / 妥当性要求（真理性・正当性・誠実性） / 親と学校のパートナーシップ構築 ユルゲン・ハーバーマスの「コミュニケーション的行為の理論（theory of communicative action）」と家庭・学校のパートナーシップ理論 初任・松本先生（小学校6年担任） × 教頭・寺田先生（教職25年目） 宿題の量や席替えの決定について保護者から夜遅くに長時間の抗議電話が入り、教員自身が精神的に追い詰められている。">
+        <article class="story-card">
+          <a href="stories/ep23-a07.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A07] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">夜の電話と対話の地平</div><div style="font-size:0.76rem;color:#cbd5e1;">保護者対応・教育哲学</div></div>
+            <span class="card-no-badge">#23 [A07]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep23-a07.html">夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論</a></h2>
+            <div class="card-framework">🏷️ 保護者対応・教育哲学 ／ 戦略的行為から対話的合意形成への転換 / 妥当性要求（真理性・正当性・誠実性） / 親と学校のパートナーシップ構築</div>
+            <p class="card-summary">宿題の量や席替えの決定について保護者から夜遅くに長時間の抗議電話が入り、教員自身が精神的に追い詰められている。</p>
+            <div class="card-footer">
+              <span>約 5,823 文字 </span>
+              <a class="read-link" href="stories/ep23-a07.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="22" data-pattern="C" data-illustrated="no" data-search="善意の殻に隠れた盾――教員の私用端末利用と服務規律の限界 c04 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・公務員倫理・情報管理 地方公務員法第32条・第33条・第34条 / 教育公務員特例法 / 個人情報の保護に関する法律 / 教育情報セキュリティポリシーに関するガイドライン 地方公務員法（第32条 法令等及び上司の職務上の命令に従う義務、第33条 信用失墜行為の禁止、第34条 守秘義務）および教育公務員特例法、教育情報セキュリティポリシーの厳格な適用 校長・藤原先生（校長就任4年目） × 教育委員会・教職員課管理主事・野口先生 若手教員が児童の学習プリントや行事写真を私用スマホで撮影し、個人のクラウドストレージにバックアップしていたことが発覚。情報漏洩の危険と公務員法上の服務規律違反について、校長が適切な処分・再発防止の判断を求める。">
+        <article class="story-card">
+          <a href="stories/ep22-c04.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C04] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">善意の殻に隠れた盾</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・公務員倫理・情報管理</div></div>
+            <span class="card-no-badge">#22 [C04]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep22-c04.html">善意の殻に隠れた盾――教員の私用端末利用と服務規律の限界</a></h2>
+            <div class="card-framework">🏷️ 学校法制・公務員倫理・情報管理 ／ 地方公務員法第32条・第33条・第34条 / 教育公務員特例法 / 個人情報の保護に関する法律 / 教育情報セキュリティポリシーに関するガイドライン</div>
+            <p class="card-summary">若手教員が児童の学習プリントや行事写真を私用スマホで撮影し、個人のクラウドストレージにバックアップしていたことが発覚。情報漏洩の危険と公務員法上の服務規律違反について、校長が適切な処分・再発防止の判断を求める。</p>
+            <div class="card-footer">
+              <span>約 6,619 文字 </span>
+              <a class="read-link" href="stories/ep22-c04.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="21" data-pattern="B" data-illustrated="no" data-search="朝の豪雨とダッシュボードの緑の光――野球部顧問を救うワンクリック緊急連絡システム b07 💻 パターンb：校務dx・ict・ネットワーク 部活動・コミュニケーション自動化 学校・保護者間連絡システム / google フォーム出欠確認 / メール一斉配信自動化 / リアルタイム回答確認ダッシュボード 学校連絡アプリおよびgoogleフォームによるワンクリック一斉配信と既読・出欠確認システム 野球部顧問・松井先生（教職29年目） × 若手副顧問・神田先生（教職2年目・英語） 朝6時にグラウンド不良で練習試合の中止が決まるが、連絡網が途中で途切れ、学校に問い合わせの電話が鳴り響いて松井先生が対応に追われる。">
+        <article class="story-card">
+          <a href="stories/ep21-b07.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B07] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">朝の豪雨とダッシュボードの緑の光</div><div style="font-size:0.76rem;color:#cbd5e1;">部活動・コミュニケーション自動化</div></div>
+            <span class="card-no-badge">#21 [B07]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep21-b07.html">朝の豪雨とダッシュボードの緑の光――野球部顧問を救うワンクリック緊急連絡システム</a></h2>
+            <div class="card-framework">🏷️ 部活動・コミュニケーション自動化 ／ 学校・保護者間連絡システム / Google フォーム出欠確認 / メール一斉配信自動化 / リアルタイム回答確認ダッシュボード</div>
+            <p class="card-summary">朝6時にグラウンド不良で練習試合の中止が決まるが、連絡網が途中で途切れ、学校に問い合わせの電話が鳴り響いて松井先生が対応に追われる。</p>
+            <div class="card-footer">
+              <span>約 6,087 文字 </span>
+              <a class="read-link" href="stories/ep21-b07.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="20" data-pattern="A" data-illustrated="no" data-search="背中の目と淀みない川――教室のざわめきを鎮めるモメンタムの技術 a08 📘 パターンa：教育相談・教育学・心理学 学級崩壊予防・教育社会学 ウィズィットネス（withitness: 状況把握の目配り） / スムーズネス＆モメンタム（授業のテンポと途切れなさ） / 集団力学（グループ・ダイナミクス） フィリップ・ジャクソンの「潜在的カリキュラム（hidden curriculum）」論とジェイコブ・クーニンの「教室規律技術（withitness &amp; momentum）」 初任・小林先生（高校1年担任） × 生徒指導主事・武田先生（教職23年目） 当初は注意すれば収まっていた私語が、一部の生徒を中心に教室全体へと波及し、授業規律が保てなくなりつつある。">
+        <article class="story-card">
+          <a href="stories/ep20-a08.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A08] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">背中の目と淀みない川</div><div style="font-size:0.76rem;color:#cbd5e1;">学級崩壊予防・教育社会学</div></div>
+            <span class="card-no-badge">#20 [A08]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep20-a08.html">背中の目と淀みない川――教室のざわめきを鎮めるモメンタムの技術</a></h2>
+            <div class="card-framework">🏷️ 学級崩壊予防・教育社会学 ／ ウィズィットネス（Withitness: 状況把握の目配り） / スムーズネス＆モメンタム（授業のテンポと途切れなさ） / 集団力学（グループ・ダイナミクス）</div>
+            <p class="card-summary">当初は注意すれば収まっていた私語が、一部の生徒を中心に教室全体へと波及し、授業規律が保てなくなりつつある。</p>
+            <div class="card-footer">
+              <span>約 7,788 文字 </span>
+              <a class="read-link" href="stories/ep20-a08.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="19" data-pattern="C" data-illustrated="no" data-search="熱砂のグラウンドと校長の天秤――安全配慮義務と国家賠償責任の狭間で c06 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・学校安全・国家賠償 学校保健安全法第27条・第29条 / 国家賠償法第1条 / 安全配慮義務（民法第415条類推適用・判例法理） / 環境省熱中症予防指針（wbgt） 学校保健安全法（第27条 学校安全計画、第29条 危険等発生時対処要領）および判例法理における「学校設置者・校長の安全配慮義務（予見可能性と結果回避義務）」、国家賠償法第1条に基づく判断 校長・須藤先生（校長就任3年目） × 教育委員会・保健体育課指導主事・岩崎先生 熱中症警戒アラートが発令される猛暑の中、伝統の校内体育大会や部活動練習試合の開催について、保護者やobから『予定通りやれ』という声と『危険だから中止しろ』という声が対立。校長としての法的判断基準を問われる。">
+        <article class="story-card">
+          <a href="stories/ep19-c06.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C06] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">熱砂のグラウンドと校長の天秤</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・学校安全・国家賠償</div></div>
+            <span class="card-no-badge">#19 [C06]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep19-c06.html">熱砂のグラウンドと校長の天秤――安全配慮義務と国家賠償責任の狭間で</a></h2>
+            <div class="card-framework">🏷️ 学校法制・学校安全・国家賠償 ／ 学校保健安全法第27条・第29条 / 国家賠償法第1条 / 安全配慮義務（民法第415条類推適用・判例法理） / 環境省熱中症予防指針（WBGT）</div>
+            <p class="card-summary">熱中症警戒アラートが発令される猛暑の中、伝統の校内体育大会や部活動練習試合の開催について、保護者やOBから『予定通りやれ』という声と『危険だから中止しろ』という声が対立。校長としての法的判断基準を問われる。</p>
+            <div class="card-footer">
+              <span>約 7,451 文字 </span>
+              <a class="read-link" href="stories/ep19-c06.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="18" data-pattern="B" data-illustrated="no" data-search="雨雲を突き抜けるライブ・タイムテーブル――体育主任の祈りとクラウド連携の奇跡 b06 💻 パターンb：校務dx・ict・ネットワーク イベント運営・クラウド連携 google カレンダー 共有カレンダー / リアルタイム更新ホワイトボード / クラウド通知自動化 / qrコードによる保護者・職員向けライブタイムテーブル クラウドカレンダー（google calendar）＋リアルタイム共有タイムテーブルによる変更即時反映と通知自動化 体育主任・石井先生（教職24年目） × 若手教諭・坂本先生（教職2年目・理科） 雨天順延やプログラム変更のたびに紙の進行表を何回も印刷し直して全職員に配るが、誰がどの版を持っているかわからなくなり当日本部が大混乱する。">
+        <article class="story-card">
+          <a href="stories/ep18-b06.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B06] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">雨雲を突き抜けるライブ・タイムテーブル</div><div style="font-size:0.76rem;color:#cbd5e1;">イベント運営・クラウド連携</div></div>
+            <span class="card-no-badge">#18 [B06]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep18-b06.html">雨雲を突き抜けるライブ・タイムテーブル――体育主任の祈りとクラウド連携の奇跡</a></h2>
+            <div class="card-framework">🏷️ イベント運営・クラウド連携 ／ Google カレンダー 共有カレンダー / リアルタイム更新ホワイトボード / クラウド通知自動化 / QRコードによる保護者・職員向けライブタイムテーブル</div>
+            <p class="card-summary">雨天順延やプログラム変更のたびに紙の進行表を何回も印刷し直して全職員に配るが、誰がどの版を持っているかわからなくなり当日本部が大混乱する。</p>
+            <div class="card-footer">
+              <span>約 8,240 文字 </span>
+              <a class="read-link" href="stories/ep18-b06.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="17" data-pattern="A" data-illustrated="no" data-search="夜の電話と対話の地平――保護者クレームを超える教育哲学 a07 📘 パターンa：教育相談・教育学・心理学 保護者対応・教育哲学 戦略的行為から対話的合意形成への転換 / 妥当性要求（真理性・正当性・誠実性） / 親と学校のパートナーシップ構築 ユルゲン・ハーバーマスの「コミュニケーション的行為の理論（theory of communicative action）」と家庭・学校のパートナーシップ理論 初任・松本先生（小学校6年担任） × 教頭・寺田先生（教職25年目） 宿題の量や席替えの決定について保護者から夜遅くに長時間の抗議電話が入り、教員自身が精神的に追い詰められている。">
+        <article class="story-card">
+          <a href="stories/ep17-a07.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A07] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">夜の電話と対話の地平</div><div style="font-size:0.76rem;color:#cbd5e1;">保護者対応・教育哲学</div></div>
+            <span class="card-no-badge">#17 [A07]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep17-a07.html">夜の電話と対話の地平――保護者クレームを超える教育哲学</a></h2>
+            <div class="card-framework">🏷️ 保護者対応・教育哲学 ／ 戦略的行為から対話的合意形成への転換 / 妥当性要求（真理性・正当性・誠実性） / 親と学校のパートナーシップ構築</div>
+            <p class="card-summary">宿題の量や席替えの決定について保護者から夜遅くに長時間の抗議電話が入り、教員自身が精神的に追い詰められている。</p>
+            <div class="card-footer">
+              <span>約 5,991 文字 </span>
+              <a class="read-link" href="stories/ep17-a07.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="16" data-pattern="C" data-illustrated="no" data-search="法の下の盾――児童虐待の疑いと通告義務の法的決断 c05 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・児童虐待防止 児童虐待の防止等に関する法律第6条（通告義務） / 児童福祉法第25条 / 守秘義務の適用除外 児童虐待の防止等に関する法律第6条（通告義務）における『疑い』レベルでの即時通告義務と守秘義務の明示的解除規定（刑法・公務員法上の守秘義務に優先する原則）の徹底 校長・宮本先生（校長就任2年目） × 教育委員会・生徒指導担当指導主事・安田先生 児童の腕や背中に複数の不自然な痣があり、ネグレクトも疑われるが、保護者は『家庭内の問題に口を出すな、学校を訴える』と強硬に抗議。教職員が保護者の反発を恐れて躊躇する中、校長が法的義務を確認する。">
+        <article class="story-card">
+          <a href="stories/ep16-c05.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C05] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">法の下の盾</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・児童虐待防止</div></div>
+            <span class="card-no-badge">#16 [C05]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep16-c05.html">法の下の盾――児童虐待の疑いと通告義務の法的決断</a></h2>
+            <div class="card-framework">🏷️ 学校法制・児童虐待防止 ／ 児童虐待の防止等に関する法律第6条（通告義務） / 児童福祉法第25条 / 守秘義務の適用除外</div>
+            <p class="card-summary">児童の腕や背中に複数の不自然な痣があり、ネグレクトも疑われるが、保護者は『家庭内の問題に口を出すな、学校を訴える』と強硬に抗議。教職員が保護者の反発を恐れて躊躇する中、校長が法的義務を確認する。</p>
+            <div class="card-footer">
+              <span>約 4,512 文字 </span>
+              <a class="read-link" href="stories/ep16-c05.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="15" data-pattern="B" data-illustrated="no" data-search="深夜の文字数カウンターと正規表現の魔法――通知表所見の嵐を越えて b05 💻 パターンb：校務dx・ict・ネットワーク 校務効率化・正規表現/マクロ 正規表現 (regex) / len / lenb 関数 / regexextract / regexreplace 関数 / 条件付き書式アラート 正規表現（regular expressions）とgoogleスプレッドシートのテキスト関数による自動文字数カウント・校正チェック 学年主任・川上先生（教職27年目） × 若手教諭・西村先生（教職4年目・国語科） 各担任から上がってきた通知表の所見数百人分を、川上先生が赤ペンと定規を持って一字一字数え、固有名詞の間違いを探す作業で夜明けを迎えている。">
+        <article class="story-card">
+          <a href="stories/ep15-b05.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B05] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">深夜の文字数カウンターと正規表現の魔法</div><div style="font-size:0.76rem;color:#cbd5e1;">校務効率化・正規表現/マクロ</div></div>
+            <span class="card-no-badge">#15 [B05]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep15-b05.html">深夜の文字数カウンターと正規表現の魔法――通知表所見の嵐を越えて</a></h2>
+            <div class="card-framework">🏷️ 校務効率化・正規表現/マクロ ／ 正規表現 (RegEx) / LEN / LENB 関数 / REGEXEXTRACT / REGEXREPLACE 関数 / 条件付き書式アラート</div>
+            <p class="card-summary">各担任から上がってきた通知表の所見数百人分を、川上先生が赤ペンと定規を持って一字一字数え、固有名詞の間違いを探す作業で夜明けを迎えている。</p>
+            <div class="card-footer">
+              <span>約 5,619 文字 </span>
+              <a class="read-link" href="stories/ep15-b05.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="14" data-pattern="A" data-illustrated="no" data-search="保健室のソファと編みかけの糸――関係性の傷口を癒やすケアの倫理 a06 📘 パターンa：教育相談・教育学・心理学 人間関係・生徒指導 関係性の回復と共感の場の設計 / 関係的攻撃性（relational aggression）の理解 / 修復的対話（restorative practices） キャロル・ギリガンやネル・ノディングスの「ケアの倫理（ethics of care）」と修復的対話（restorative practices） 新任・伊藤先生（中学校1年担任） × 養護教諭・真壁先生（教職19年目） 仲良しだったグループ内で突然ある生徒がハブられ、保健室登校になりかけている。直接問い詰めても『何もしてない』と否定される。">
+        <article class="story-card">
+          <a href="stories/ep14-a06.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A06] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">保健室のソファと編みかけの糸</div><div style="font-size:0.76rem;color:#cbd5e1;">人間関係・生徒指導</div></div>
+            <span class="card-no-badge">#14 [A06]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep14-a06.html">保健室のソファと編みかけの糸――関係性の傷口を癒やすケアの倫理</a></h2>
+            <div class="card-framework">🏷️ 人間関係・生徒指導 ／ 関係性の回復と共感の場の設計 / 関係的攻撃性（Relational Aggression）の理解 / 修復的対話（Restorative Practices）</div>
+            <p class="card-summary">仲良しだったグループ内で突然ある生徒がハブられ、保健室登校になりかけている。直接問い詰めても『何もしてない』と否定される。</p>
+            <div class="card-footer">
+              <span>約 5,573 文字 </span>
+              <a class="read-link" href="stories/ep14-a06.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="13" data-pattern="C" data-illustrated="no" data-search="クラウドに揺れる規範――校長が問う情報管理と公務員倫理の分水嶺 c04 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・公務員倫理・情報管理 地方公務員法第32条・第33条・第34条 / 教育公務員特例法 / 個人情報の保護に関する法律 / 教育情報セキュリティポリシーに関するガイドライン 地方公務員法（第32条 法令等及び上司の職務上の命令に従う義務、第33条 信用失墜行為の禁止、第34条 守秘義務）および教育公務員特例法、教育情報セキュリティポリシーの厳格な適用 校長・藤原先生（校長就任4年目） × 教育委員会・教職員課管理主事・野口先生 若手教員が児童の学習プリントや行事写真を私用スマホで撮影し、個人のクラウドストレージにバックアップしていたことが発覚。情報漏洩の危険と公務員法上の服務規律違反について、校長が適切な処分・再発防止の判断を求める。">
+        <article class="story-card">
+          <a href="stories/ep13-c04.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C04] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">クラウドに揺れる規範</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・公務員倫理・情報管理</div></div>
+            <span class="card-no-badge">#13 [C04]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep13-c04.html">クラウドに揺れる規範――校長が問う情報管理と公務員倫理の分水嶺</a></h2>
+            <div class="card-framework">🏷️ 学校法制・公務員倫理・情報管理 ／ 地方公務員法第32条・第33条・第34条 / 教育公務員特例法 / 個人情報の保護に関する法律 / 教育情報セキュリティポリシーに関するガイドライン</div>
+            <p class="card-summary">若手教員が児童の学習プリントや行事写真を私用スマホで撮影し、個人のクラウドストレージにバックアップしていたことが発覚。情報漏洩の危険と公務員法上の服務規律違反について、校長が適切な処分・再発防止の判断を求める。</p>
+            <div class="card-footer">
+              <span>約 6,207 文字 </span>
+              <a class="read-link" href="stories/ep13-c04.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="12" data-pattern="B" data-illustrated="no" data-search="上書きされた春の計画――クラウドの版管理が救う学校の絆 b04 💻 パターンb：校務dx・ict・ネットワーク セキュリティ・ファイル共有 google drive 版管理（バージョン履歴） / 共有権限とアクセス制御 (rbac) / スプレッドシートの保護されたシート/範囲 / 3-2-1バックアップ原則 クラウドストレージ（google drive / onedrive）の版管理（バージョン履歴復元）と共有権限（閲覧のみ・編集者）のロール分離（rbac） 年配教諭・高橋先生（教職25年目・生徒指導主任） × 若手教諭・森田先生（教職3年目・情報推進委員） 行事計画のマスターexcelファイルが誰かに白紙で上書き保存されてしまい、バックアップもなく高橋先生が頭を抱えて全員に聞き回っている。">
+        <article class="story-card">
+          <a href="stories/ep12-b04.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B04] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">上書きされた春の計画</div><div style="font-size:0.76rem;color:#cbd5e1;">セキュリティ・ファイル共有</div></div>
+            <span class="card-no-badge">#12 [B04]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep12-b04.html">上書きされた春の計画――クラウドの版管理が救う学校の絆</a></h2>
+            <div class="card-framework">🏷️ セキュリティ・ファイル共有 ／ Google Drive 版管理（バージョン履歴） / 共有権限とアクセス制御 (RBAC) / スプレッドシートの保護されたシート/範囲 / 3-2-1バックアップ原則</div>
+            <p class="card-summary">行事計画のマスターExcelファイルが誰かに白紙で上書き保存されてしまい、バックアップもなく高橋先生が頭を抱えて全員に聞き回っている。</p>
+            <div class="card-footer">
+              <span>約 5,820 文字 </span>
+              <a class="read-link" href="stories/ep12-b04.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="11" data-pattern="A" data-illustrated="no" data-search="夕暮れのチョークと、静かなる星座――衝動的な行動を読み解く機能的アセスメント a05 📘 パターンa：教育相談・教育学・心理学 特別支援・インクルーシブ教育 先行条件・行動・結果（abc分析） / 代替行動の強化（dra） / 視覚的構造化とポジティブな行動介入 応用行動分析（aba）の機能的行動アセスメント（fba）とポジティブ行動支援（pbs/pbis） 新任・木村先生（小学校3年担任） × 特別支援コーディネーター・藤崎先生（教職17年目） 落ち着きがなく衝動的に席を立ってしまう児童に対して強く叱責してしまい、クラス全体の空気が張り詰めて悪循環に陥っている。">
+        <article class="story-card">
+          <a href="stories/ep11-a05.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A05] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">夕暮れのチョークと、静かなる星座</div><div style="font-size:0.76rem;color:#cbd5e1;">特別支援・インクルーシブ教育</div></div>
+            <span class="card-no-badge">#11 [A05]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep11-a05.html">夕暮れのチョークと、静かなる星座――衝動的な行動を読み解く機能的アセスメント</a></h2>
+            <div class="card-framework">🏷️ 特別支援・インクルーシブ教育 ／ 先行条件・行動・結果（ABC分析） / 代替行動の強化（DRA） / 視覚的構造化とポジティブな行動介入</div>
+            <p class="card-summary">落ち着きがなく衝動的に席を立ってしまう児童に対して強く叱責してしまい、クラス全体の空気が張り詰めて悪循環に陥っている。</p>
+            <div class="card-footer">
+              <span>約 6,797 文字 </span>
+              <a class="read-link" href="stories/ep11-a05.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="10" data-pattern="C" data-illustrated="no" data-search="出席と承認の境界――校長裁量が拓く学びの機会確保 c03 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・就学義務・不登校 教育基本法第4条・第5条 / 義務教育の段階における普通教育に相当する教育の機会の確保等に関する法律 / 学校教育法施行規則第24条・第33条 教育基本法（第4条 教育の機会均等、第5条 義務教育）および「義務教育の段階における普通教育に相当する教育の機会の確保等に関する法律（教育機会確保法）」に基づく柔軟な就学機会の保障と校長裁量 校長・中野先生（校長就任1年目） × 教育委員会・義務教育課指導主事・吉澤先生 長期間不登校の生徒が民間のフリースクールやメタバース空間での学習を熱心に行っており、保護者から指導要録上の『出席扱い』にしてほしいと強い要望が出された。就学義務との法的な整合性について校長が悩む。">
+        <article class="story-card">
+          <a href="stories/ep10-c03.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C03] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">出席と承認の境界</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・就学義務・不登校</div></div>
+            <span class="card-no-badge">#10 [C03]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep10-c03.html">出席と承認の境界――校長裁量が拓く学びの機会確保</a></h2>
+            <div class="card-framework">🏷️ 学校法制・就学義務・不登校 ／ 教育基本法第4条・第5条 / 義務教育の段階における普通教育に相当する教育の機会の確保等に関する法律 / 学校教育法施行規則第24条・第33条</div>
+            <p class="card-summary">長期間不登校の生徒が民間のフリースクールやメタバース空間での学習を熱心に行っており、保護者から指導要録上の『出席扱い』にしてほしいと強い要望が出された。就学義務との法的な整合性について校長が悩む。</p>
+            <div class="card-footer">
+              <span>約 6,955 文字 </span>
+              <a class="read-link" href="stories/ep10-c03.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="9" data-pattern="B" data-illustrated="no" data-search="ハサミと模造紙を捨てた夜――500通の声を読み解くpythonテキストマイニング b03 💻 パターンb：校務dx・ict・ネットワーク データ処理・python/テキスト処理 google フォーム集計 / python (pandas, openpyxl) / 日本語形態素解析 / キーワード出現頻度・可視化 google forms ＋ python（pandas, 形態素解析）によるキーワード抽出と意見分類の自動化 年配教諭・吉岡先生（教職26年目・pta担当） × 若手教諭・小林先生（教職2年目・数学担当） ptaアンケートの自由記述回答が何百枚も紙で提出され、吉岡先生がマーカーを引いてハサミで切り分け、模造紙に貼るという果てしない手作業を行っている。">
+        <article class="story-card">
+          <a href="stories/ep09-b03.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B03] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">ハサミと模造紙を捨てた夜</div><div style="font-size:0.76rem;color:#cbd5e1;">データ処理・Python/テキスト処理</div></div>
+            <span class="card-no-badge">#09 [B03]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep09-b03.html">ハサミと模造紙を捨てた夜――500通の声を読み解くPythonテキストマイニング</a></h2>
+            <div class="card-framework">🏷️ データ処理・Python/テキスト処理 ／ Google フォーム集計 / Python (Pandas, OpenPyXL) / 日本語形態素解析 / キーワード出現頻度・可視化</div>
+            <p class="card-summary">PTAアンケートの自由記述回答が何百枚も紙で提出され、吉岡先生がマーカーを引いてハサミで切り分け、模造紙に貼るという果てしない手作業を行っている。</p>
+            <div class="card-footer">
+              <span>約 7,238 文字 </span>
+              <a class="read-link" href="stories/ep09-b03.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="8" data-pattern="A" data-illustrated="no" data-search="溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計 a04 📘 パターンa：教育相談・教育学・心理学 授業設計・認知心理学 内在性・外因性・関連性負荷 / ワーキングメモリの制約 / 冗長性の排除と分割効果 ジョン・スウェラーの「認知的負荷理論（cognitive load theory）」とリチャード・メイヤーの「マルチメディア学習の原理」 新任・高橋先生（中学校理科担当） × 教科主任・工藤先生（教職15年目） 生徒に分かりやすく教えようと情報や図解をスライドに詰め込みすぎた結果、生徒がメモを取るだけで手一杯になり、授業後の確認テストの定着率が著しく低い。">
+        <article class="story-card">
+          <a href="stories/ep08-a04.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A04] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">溢れるスライドと光らない電球</div><div style="font-size:0.76rem;color:#cbd5e1;">授業設計・認知心理学</div></div>
+            <span class="card-no-badge">#08 [A04]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep08-a04.html">溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計</a></h2>
+            <div class="card-framework">🏷️ 授業設計・認知心理学 ／ 内在性・外因性・関連性負荷 / ワーキングメモリの制約 / 冗長性の排除と分割効果</div>
+            <p class="card-summary">生徒に分かりやすく教えようと情報や図解をスライドに詰め込みすぎた結果、生徒がメモを取るだけで手一杯になり、授業後の確認テストの定着率が著しく低い。</p>
+            <div class="card-footer">
+              <span>約 7,133 文字 </span>
+              <a class="read-link" href="stories/ep08-a04.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="7" data-pattern="C" data-illustrated="no" data-search="腕の温もりと法の冷厳――校長が決断する懲戒の境界線 c02 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・教員懲戒・指導 学校教育法第11条 / 学校教育法施行規則 / 有形力の行使と事理の明白性 / 児童生徒の安全確保義務 学校教育法第11条（懲戒と体罰の禁止）の厳格な法解釈、正当行為・緊急避難（違法性阻却事由）、および文部科学省「学校教育法第11条に規定する児童生徒の懲戒・体罰等に関する参考事例」に基づく整理 校長・松下先生（校長就任3年目） × 教育委員会・法務担当指導主事・村上先生 他生徒への危険行為や授業妨害を繰り返す児童に対し、担任教員が腕を掴んで別室へ連れて行ったことについて、保護者が『これは体罰だ、違法行為だ』と抗議。校長として事実確認と法的正当性の判断に直面する。">
+        <article class="story-card">
+          <a href="stories/ep07-c02.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C02] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">腕の温もりと法の冷厳</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・教員懲戒・指導</div></div>
+            <span class="card-no-badge">#07 [C02]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep07-c02.html">腕の温もりと法の冷厳――校長が決断する懲戒の境界線</a></h2>
+            <div class="card-framework">🏷️ 学校法制・教員懲戒・指導 ／ 学校教育法第11条 / 学校教育法施行規則 / 有形力の行使と事理の明白性 / 児童生徒の安全確保義務</div>
+            <p class="card-summary">他生徒への危険行為や授業妨害を繰り返す児童に対し、担任教員が腕を掴んで別室へ連れて行ったことについて、保護者が『これは体罰だ、違法行為だ』と抗議。校長として事実確認と法的正当性の判断に直面する。</p>
+            <div class="card-footer">
+              <span>約 4,655 文字 </span>
+              <a class="read-link" href="stories/ep07-c02.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="6" data-pattern="B" data-illustrated="no" data-search="公開授業のwi-fi迷宮――dfsとチャネル設計が救った教室の未来 b02 💻 パターンb：校務dx・ict・ネットワーク ネットワーク・インフラ改善 wi-fi 6 (802.11ax) / dfs (動的周波数選択) 回避 / チャネルボンディングと電波干渉対策 / dhcpリース時間とipアドレス管理 wi-fi周波数帯（2.4ghz帯の混雑 vs 5ghz dfs帯・6ghz帯）のトラフィック分離とapチャネル設計・バンドステアリング 副校長・佐々木先生（教職30年目） × 若手教諭・藤堂先生（教職4年目・理科・ネットワーク愛好家） 1人1台端末を使った公開研究授業で、生徒40人が一斉に動画教材を開いた瞬間にwi-fiが全滅し、佐々木副校長がルーターのコンセントを抜き差しして焦っている。">
+        <article class="story-card">
+          <a href="stories/ep06-b02.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B02] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">公開授業のWi-Fi迷宮</div><div style="font-size:0.76rem;color:#cbd5e1;">ネットワーク・インフラ改善</div></div>
+            <span class="card-no-badge">#06 [B02]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep06-b02.html">公開授業のWi-Fi迷宮――DFSとチャネル設計が救った教室の未来</a></h2>
+            <div class="card-framework">🏷️ ネットワーク・インフラ改善 ／ Wi-Fi 6 (802.11ax) / DFS (動的周波数選択) 回避 / チャネルボンディングと電波干渉対策 / DHCPリース時間とIPアドレス管理</div>
+            <p class="card-summary">1人1台端末を使った公開研究授業で、生徒40人が一斉に動画教材を開いた瞬間にWi-Fiが全滅し、佐々木副校長がルーターのコンセントを抜き差しして焦っている。</p>
+            <div class="card-footer">
+              <span>約 5,845 文字 </span>
+              <a class="read-link" href="stories/ep06-b02.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="5" data-pattern="A" data-illustrated="no" data-search="グレーのノートと開かれた扉――マインドセット理論がもたらす教室の再生 a03 📘 パターンa：教育相談・教育学・心理学 生徒指導・学習観の変革 硬直マインドセット vs 成長マインドセット / 努力とプロセスの称賛（process praise） / 結果の帰属理論（ワイナー） キャロル・ドゥエックの「マインドセット理論（growth mindset）」とマーティン・セリグマンの「学習性無力感（learned helplessness）」の克服 初任・佐藤先生（高校1年担任・数学担当） × 学年主任・橘先生（教職22年目） 中間テストで赤点を取った生徒が、努力しても無駄だと心を閉ざし、宿題も出さなくなってしまった。">
+        <article class="story-card">
+          <a href="stories/ep05-a03.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A03] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">グレーのノートと開かれた扉</div><div style="font-size:0.76rem;color:#cbd5e1;">生徒指導・学習観の変革</div></div>
+            <span class="card-no-badge">#05 [A03]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep05-a03.html">グレーのノートと開かれた扉――マインドセット理論がもたらす教室の再生</a></h2>
+            <div class="card-framework">🏷️ 生徒指導・学習観の変革 ／ 硬直マインドセット vs 成長マインドセット / 努力とプロセスの称賛（Process Praise） / 結果の帰属理論（ワイナー）</div>
+            <p class="card-summary">中間テストで赤点を取った生徒が、努力しても無駄だと心を閉ざし、宿題も出さなくなってしまった。</p>
+            <div class="card-footer">
+              <span>約 5,569 文字 </span>
+              <a class="read-link" href="stories/ep05-a03.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="4" data-pattern="C" data-illustrated="no" data-search="疑いと報告のあいだ――校長が学ぶいじめ防止対策推進法と重大事態の判断 c01 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・いじめ防止 いじめ防止対策推進法 / 第28条（重大事態の調査） / 第22条（学校いじめ対策組織の設置） / 学校教育法第11条 いじめ防止対策推進法（第28条 重大事態の調査義務、第22条 学校いじめ対策組織）および文部科学省「いじめの重大事態の調査に関するガイドライン」に基づく適法な初動対応 校長・青木先生（校長就任2年目） × 教育委員会・生徒指導担当指導主事・黒田先生 生徒が継続的な嫌がらせを苦に連続欠席しているが、学年主任らは『生徒間のプロレスごっこ』と判断し校内解決を図ろうとしている。保護者から重大事態の訴えが出され、青木校長が判断に迷い教育委員会へ相談する。">
+        <article class="story-card">
+          <a href="stories/ep04-c01.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[C01] ⚖️ C: 学校法制・法務</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">疑いと報告のあいだ</div><div style="font-size:0.76rem;color:#cbd5e1;">学校法制・いじめ防止</div></div>
+            <span class="card-no-badge">#04 [C01]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep04-c01.html">疑いと報告のあいだ――校長が学ぶいじめ防止対策推進法と重大事態の判断</a></h2>
+            <div class="card-framework">🏷️ 学校法制・いじめ防止 ／ いじめ防止対策推進法 / 第28条（重大事態の調査） / 第22条（学校いじめ対策組織の設置） / 学校教育法第11条</div>
+            <p class="card-summary">生徒が継続的な嫌がらせを苦に連続欠席しているが、学年主任らは『生徒間のプロレスごっこ』と判断し校内解決を図ろうとしている。保護者から重大事態の訴えが出され、青木校長が判断に迷い教育委員会へ相談する。</p>
+            <div class="card-footer">
+              <span>約 5,529 文字 </span>
+              <a class="read-link" href="stories/ep04-c01.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="3" data-pattern="A" data-illustrated="no" data-search="ポリフォニーが響く教室へ――ジグソー法と足場かけが紡ぎ直す協働の絆 a02 📘 パターンa：教育相談・教育学・心理学 授業改善・協調学習 最近接発達領域（zpd） / 認知的足場かけ（scaffolding） / ジグソー法と相互依存性 レフ・ヴィゴツキーの「最近接発達領域（zpd）」と足場かけ（scaffolding）、およびロバート・スレイヴィンの「協同学習（cooperative learning）」 新任・桜木先生（小学校5年担任） × 主幹教諭・柳先生（教職18年目） グループ学習を取り入れたが、得意な生徒が一人で作業を進めてしまい、苦手な生徒が取り残されて対立や不満が起きている。">
+        <article class="story-card">
+          <a href="stories/ep03-a02.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A02] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">ポリフォニーが響く教室へ</div><div style="font-size:0.76rem;color:#cbd5e1;">授業改善・協調学習</div></div>
+            <span class="card-no-badge">#03 [A02]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep03-a02.html">ポリフォニーが響く教室へ――ジグソー法と足場かけが紡ぎ直す協働の絆</a></h2>
+            <div class="card-framework">🏷️ 授業改善・協調学習 ／ 最近接発達領域（ZPD） / 認知的足場かけ（Scaffolding） / ジグソー法と相互依存性</div>
+            <p class="card-summary">グループ学習を取り入れたが、得意な生徒が一人で作業を進めてしまい、苦手な生徒が取り残されて対立や不満が起きている。</p>
+            <div class="card-footer">
+              <span>約 4,845 文字 </span>
+              <a class="read-link" href="stories/ep03-a02.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="2" data-pattern="B" data-illustrated="no" data-search="深夜の成績集計とスプレッドシートの奇跡――年配教員を救うgasと正規表現 b01 💻 パターンb：校務dx・ict・ネットワーク 校務自動化・スプレッドシート/gas google apps script (gas) / xlookup / filter 関数 / 条件付き書式による異常値ハイライト / データ入力規則 google apps script (gas) と arrayformula / vlookup / xlookup による自動集計とバリデーションマクロ 年配教諭・大山先生（教職28年目・教務主任） × 若手教諭・水野先生（教職3年目・情報担当） 大山先生が連日夜遅くまで電卓を叩いて学年300人の評定計算や欠席日数の照合を手書きと手動excel入力で行っており、目の充血と肩こりで倒れそうになっている。">
+        <article class="story-card">
+          <a href="stories/ep02-b01.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[B01] 💻 B: 校務DX・ICT</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">深夜の成績集計とスプレッドシートの奇跡</div><div style="font-size:0.76rem;color:#cbd5e1;">校務自動化・スプレッドシート/GAS</div></div>
+            <span class="card-no-badge">#02 [B01]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-B">💻 パターンB：校務DX・ICT・ネットワーク</div>
+            <h2 class="card-title"><a href="stories/ep02-b01.html">深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現</a></h2>
+            <div class="card-framework">🏷️ 校務自動化・スプレッドシート/GAS ／ Google Apps Script (GAS) / XLOOKUP / FILTER 関数 / 条件付き書式による異常値ハイライト / データ入力規則</div>
+            <p class="card-summary">大山先生が連日夜遅くまで電卓を叩いて学年300人の評定計算や欠席日数の照合を手書きと手動Excel入力で行っており、目の充血と肩こりで倒れそうになっている。</p>
+            <div class="card-footer">
+              <span>約 5,958 文字 </span>
+              <a class="read-link" href="stories/ep02-b01.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="story-card-wrap" data-no="1" data-pattern="A" data-illustrated="no" data-search="教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論 a01 📘 パターンa：教育相談・教育学・心理学 学級経営・内発的動機づけ 自己決定理論 / 自律性・有能感・関係性の3欲求 / 統制型指導と自律支援型指導 エドワード・デシ＆リチャード・ライアンの「自己決定理論（self-determination theory）」と自律性支援（autonomy support） 初任者・若葉先生（2年目、中学2年担任） × 指導教諭・神崎先生（教職20年目のベテラン） ルールを厳格にして注意しすぎた結果、クラスが静まり返り、生徒たちが先生の顔色を伺って自発的に動かなくなってしまった。">
+        <article class="story-card">
+          <a href="stories/ep01-a01.html" class="card-thumb-wrap">
+            <div class="card-placeholder"><div style="font-size:0.78rem;color:#93c5fd;margin-bottom:0.3rem;">[A01] 📘 A: 教育学・心理学</div><div style="font-size:1.0rem;color:#f8fafc;margin-bottom:0.35rem;font-weight:700;">教室の沈黙と自己決定</div><div style="font-size:0.76rem;color:#cbd5e1;">学級経営・内発的動機づけ</div></div>
+            <span class="card-no-badge">#01 [A01]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-A">📘 パターンA：教育相談・教育学・心理学</div>
+            <h2 class="card-title"><a href="stories/ep01-a01.html">教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論</a></h2>
+            <div class="card-framework">🏷️ 学級経営・内発的動機づけ ／ 自己決定理論 / 自律性・有能感・関係性の3欲求 / 統制型指導と自律支援型指導</div>
+            <p class="card-summary">ルールを厳格にして注意しすぎた結果、クラスが静まり返り、生徒たちが先生の顔色を伺って自発的に動かなくなってしまった。</p>
+            <div class="card-footer">
+              <span>約 5,199 文字 </span>
+              <a class="read-link" href="stories/ep01-a01.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Generated locally on Mac mini M4 &amp; Published on GitHub Pages</p>
+  </footer>
+
+  <script>
+    function filterCards() {
+      const q = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+      const pat = document.getElementById('patternFilter').value;
+      const imgOnly = document.getElementById('imageFilter').value;
+      const cards = document.querySelectorAll('.story-card-wrap');
+      cards.forEach(card => {
+        const matchQ = !q || (card.getAttribute('data-search') || '').includes(q);
+        const matchPat = !pat || card.getAttribute('data-pattern') === pat;
+        const matchImg = !imgOnly || card.getAttribute('data-illustrated') === imgOnly;
+        card.style.display = (matchQ && matchPat && matchImg) ? '' : 'none';
+      });
+    }
+    function sortCards() {
+      const order = document.getElementById('sortOrder').value;
+      const grid = document.getElementById('storyGrid');
+      const cards = Array.from(grid.querySelectorAll('.story-card-wrap'));
+      cards.sort((a, b) => {
+        const na = parseInt(a.getAttribute('data-no'), 10);
+        const nb = parseInt(b.getAttribute('data-no'), 10);
+        return order === 'asc' ? na - nb : nb - na;
+      });
+      cards.forEach(c => grid.appendChild(c));
+    }
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+    })();
+  </script>
+</body>
+</html>

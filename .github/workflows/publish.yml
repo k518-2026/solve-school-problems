@@ -1,14 +1,7 @@
-name: Solve School Problems - Auto Story Publisher to WordPress
+name: Solve School Problems - GitHub Pages & Blog Publisher
 
 on:
-  # Daily scheduled execution (3 times a day: Morning, Evening, Night)
-  # Note: GitHub Actions experiences heavy queue delays at :00 and :30 of every hour,
-  # and Gemini API also sees traffic spikes on the hour/half-hour.
-  # Triggering at :15 avoids peak congestion and completes delivery around 06:30, 17:30, and 22:30 JST.
-  # 1) 朝の通勤・出勤前: 21:15 UTC = 06:15 JST (06:30頃配信完了)
-  # 2) 夕方の退勤・放課後: 08:15 UTC = 17:15 JST (17:30頃配信完了)
-  # 3) 夜のリラックスタイム: 13:15 UTC = 22:15 JST (22:30頃配信完了)
-  # schedule:  # 2026-10-05 WordPress 異議申し立ての結果待ちのため一時停止。再開は # を外す
+  # schedule:  # 2026-10-06 ブログメール自動投稿お休み＆GitHub Pages蓄積モードのため一時停止。再開は # を外す
     # - cron: '15 21 * * *'
     # - cron: '15 8 * * *'
     # - cron: '15 13 * * *'
@@ -53,14 +46,13 @@ on:
 permissions:
   contents: write
 
-# Prevent overlapping runs if a scheduled trigger is delayed by GitHub Actions
 concurrency:
   group: solve-school-problems-publish
   cancel-in-progress: false
 
 jobs:
   publish:
-    name: Generate & Dispatch Story to WordPress
+    name: Build GitHub Pages Library (Blog Auto-Post Paused)
     runs-on: ubuntu-latest
 
     steps:
@@ -75,7 +67,7 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install dependencies
+      - name: Install dependencies (No external AI APIs)
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
@@ -84,11 +76,10 @@ jobs:
         run: |
           python -m unittest discover tests
 
-      - name: Execute Story Generation and WordPress / Blogger Mail Dispatch
+      - name: Update GitHub Pages Library (Blog Auto-Post Paused)
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_TEXT_MODEL: ${{ vars.GEMINI_TEXT_MODEL || 'gemini-3.8-flash' }}
+          PAUSE_BLOG_AUTO_POST: 'true'
           SMTP_HOST: ${{ secrets.SMTP_HOST || 'smtp.gmail.com' }}
           SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
@@ -96,51 +87,27 @@ jobs:
           SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS || 'true' }}
           SMTP_USE_SSL: ${{ secrets.SMTP_USE_SSL || 'false' }}
           MAIL_FROM_NAME: ${{ vars.MAIL_FROM_NAME || 'Solve School Problems' }}
-          ENABLE_WP_POST: ${{ vars.ENABLE_WP_POST || 'false' }}
+          ENABLE_WP_POST: 'false'
           WP_POST_EMAIL: ''
-          BLOGGER_POST_EMAIL: ${{ secrets.BLOGGER_POST_EMAIL }}
+          BLOGGER_POST_EMAIL: ''
           DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
           USE_JETPACK_SHORTCODES: 'true'
         run: |
-          # Ensure latest history.json is pulled before selecting the next pattern/topic
           git pull --rebase origin main || true
+          python -m src.main --build-pages
 
-          PATTERN_ARG="${{ github.event.inputs.pattern || 'auto' }}"
-          TOPIC_ARG="${{ github.event.inputs.topic_id || '' }}"
-          DRY_RUN_ARG="${{ github.event.inputs.dry_run || 'false' }}"
-          BLOGGER_ONLY_ARG="${{ github.event.inputs.blogger_only || 'false' }}"
-
-          CMD="python -m src.main --pattern ${PATTERN_ARG}"
-
-          if [ -n "$TOPIC_ARG" ]; then
-            CMD="${CMD} --topic-id ${TOPIC_ARG}"
-          fi
-
-          if [ "$BLOGGER_ONLY_ARG" = "true" ]; then
-            CMD="${CMD} --blogger-only"
-          fi
-
-          if [ "$DRY_RUN_ARG" = "true" ]; then
-            CMD="${CMD} --dry-run"
-          else
-            CMD="${CMD} --send"
-          fi
-
-          echo "Executing: $CMD"
-          eval $CMD
-
-      - name: Commit and Push Updated History & Content
+      - name: Commit and Push Updated GitHub Pages & History
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
 
-          git add content/ data/history.json data/POSTED_STORIES.md
+          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md
 
           if git diff --staged --quiet; then
             echo "No changes detected to commit."
           else
-            git commit -m "Auto: publish school problem solving story [skip ci]"
+            git commit -m "chore: Update Solve School Problems GitHub Pages [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:${{ github.ref }}
           fi
