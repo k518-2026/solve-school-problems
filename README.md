@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `gemma4:12b` / `qwen3.5:9b` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用**: 外部の有料・商用生成AI APIは一切使用せず、毎週土曜日（5本ずつ）Mac mini M4 上で文章と挿絵を作成して GitHub Pages に蓄積・公開しています（ブログへのメール自動投稿は休止中）。
-- **収録作品数**: 全 **29** 話（うち挿絵付き **24** 話 / 最終更新: 2026-10-06 07:29 JST）
+- **収録作品数**: 全 **29** 話（うち挿絵付き **25** 話 / 最終更新: 2026-10-06 07:30 JST）
 
 ---
 
@@ -42,7 +42,7 @@
 | 08 | 📘 A: 教育学・心理学 | `A04` | **[溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計](https://k518-2026.github.io/solve-school-problems/stories/ep08-a04.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep08-a04.html) | [📄原稿](<content/2026-09-30_pattern_a_溢れるスライドと光らない電球_ワーキングメモリをひらく「引き算」の授業設計.md>) | [🎨挿絵](<content/2026-09-30_pattern_a_溢れるスライドと光らない電球_ワーキングメモリをひらく「引き算」の授業設計.png>) | 授業設計・認知心理学 | 7,133字 |
 | 07 | ⚖️ C: 学校法制・法務 | `C02` | **[腕の温もりと法の冷厳――校長が決断する懲戒の境界線](https://k518-2026.github.io/solve-school-problems/stories/ep07-c02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep07-c02.html) | [📄原稿](<content/2026-09-30_pattern_c_腕の温もりと法の冷厳_校長が決断する懲戒の境界線.md>) | [🎨挿絵](<content/2026-09-30_pattern_c_腕の温もりと法の冷厳_校長が決断する懲戒の境界線.png>) | 学校法制・教員懲戒・指導 | 4,655字 |
 | 06 | 💻 B: 校務DX・ICT | `B02` | **[公開授業のWi-Fi迷宮――DFSとチャネル設計が救った教室の未来](https://k518-2026.github.io/solve-school-problems/stories/ep06-b02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep06-b02.html) | [📄原稿](<content/2026-09-29_pattern_b_公開授業のWi-Fi迷宮_DFSとチャネル設計が救った教室の未来.md>) | [🎨挿絵](<content/2026-09-29_pattern_b_公開授業のWi-Fi迷宮_DFSとチャネル設計が救った教室の未来.png>) | ネットワーク・インフラ改善 | 5,845字 |
-| 05 | 📘 A: 教育学・心理学 | `A03` | **[グレーのノートと開かれた扉――マインドセット理論がもたらす教室の再生](https://k518-2026.github.io/solve-school-problems/stories/ep05-a03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep05-a03.html) | [📄原稿](<content/2026-09-29_pattern_a_グレーのノートと開かれた扉_マインドセット理論がもたらす教室の再生.md>) | — | 生徒指導・学習観の変革 | 5,569字 |
+| 05 | 📘 A: 教育学・心理学 | `A03` | **[グレーのノートと開かれた扉――マインドセット理論がもたらす教室の再生](https://k518-2026.github.io/solve-school-problems/stories/ep05-a03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep05-a03.html) | [📄原稿](<content/2026-09-29_pattern_a_グレーのノートと開かれた扉_マインドセット理論がもたらす教室の再生.md>) | [🎨挿絵](<content/2026-09-29_pattern_a_グレーのノートと開かれた扉_マインドセット理論がもたらす教室の再生.png>) | 生徒指導・学習観の変革 | 5,569字 |
 | 04 | ⚖️ C: 学校法制・法務 | `C01` | **[疑いと報告のあいだ――校長が学ぶいじめ防止対策推進法と重大事態の判断](https://k518-2026.github.io/solve-school-problems/stories/ep04-c01.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep04-c01.html) | [📄原稿](<content/2026-09-29_pattern_c_疑いと報告のあいだ_校長が学ぶいじめ防止対策推進法と重大事態の判断.md>) | — | 学校法制・いじめ防止 | 5,529字 |
 | 03 | 📘 A: 教育学・心理学 | `A02` | **[ポリフォニーが響く教室へ――ジグソー法と足場かけが紡ぎ直す協働の絆](https://k518-2026.github.io/solve-school-problems/stories/ep03-a02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep03-a02.html) | [📄原稿](<content/2026-09-29_pattern_a_ポリフォニーが響く教室へ_ジグソー法と足場かけが紡ぎ直す協働の絆.md>) | — | 授業改善・協調学習 | 4,845字 |
 | 02 | 💻 B: 校務DX・ICT | `B01` | **[深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現](https://k518-2026.github.io/solve-school-problems/stories/ep02-b01.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep02-b01.html) | [📄原稿](<content/2026-09-29_pattern_b_深夜の成績集計とスプレッドシートの奇跡_年配教員を救うGASと正規表現.md>) | — | 校務自動化・スプレッドシート/GAS | 5,958字 |
