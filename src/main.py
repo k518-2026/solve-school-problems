@@ -138,12 +138,13 @@ def replenish_stock_if_needed(
             md_file = s["md_path"]
             img_p = md_file.with_suffix(".png")
             logger.info(f"[Auto-Replenish] Generating missing illustration for #{s['no']:02d} [{s['topic_id']}] '{s['full_title']}'...")
-            topic_info = {
+            topic_info = dict(s.get("catalog_item") or {})
+            topic_info.update({
                 "id": s["topic_id"],
                 "category": s["category"],
                 "problem_title": s["problem_title"] or s["full_title"],
                 "solution_framework": s["solution_framework"],
-            }
+            })
             saved_img, _ = generator.generate_illustration(
                 pattern=s["pattern"],
                 topic=topic_info,
@@ -401,12 +402,13 @@ def main():
             img_path = md_file.with_suffix(".png")
             if img_path.exists() and not args.force:
                 continue
-            topic_info = {
+            topic_info = dict(s.get("catalog_item") or {})
+            topic_info.update({
                 "id": s["topic_id"],
                 "category": s["category"],
                 "problem_title": s["problem_title"] or s["full_title"],
                 "solution_framework": s["solution_framework"],
-            }
+            })
             saved_img, _ = generator.generate_illustration(
                 pattern=s["pattern"],
                 topic=topic_info,

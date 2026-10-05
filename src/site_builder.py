@@ -235,6 +235,7 @@ def collect_all_stories(history_mgr: Optional[HistoryManager] = None) -> List[Di
             "page_rel": f"stories/{story_id}.html",
             "char_count": char_count,
             "body_md": body,
+            "catalog_item": cat_item,
         })
 
     return stories

@@ -779,88 +779,396 @@ topic_id: "{topic.get('id', 'C01')}"
     ) -> str:
         """
         Builds a grounded, mature Japanese adult workplace anime prompt matching the reference art style
-        (clean cel-shaded adult slice-of-life anime in a Japanese school staffroom, natural adult anime facial
-        proportions, subtle smile lines on senior teachers, blue neck ID lanyards, coffee mugs, file binders on shelves).
-        Avoids calling Ollama right before Draw Things so FLUX.2 stays resident in Mac mini M4 unified memory.
+        (clean cel-shaded adult slice-of-life anime, natural adult human facial proportions, subtle smile lines
+        on senior teachers, blue neck ID lanyards, rich natural colors, crisp contrast) while faithfully
+        reflecting the specific content, setting, characters, and key props of each novel.
         """
         clean_pattern = (pattern or "A").strip().upper()
         tid = str(topic.get("id", "A01")).strip().upper()
-        num_Match = re.search(r"\d+", tid)
-        variant_idx = int(num_Match.group(0)) if num_Match else 1
 
         style_prefix = (
-            "Modern Japanese adult workplace anime illustration, clean anime cel-shading with crisp linework and rich natural colors, "
-            "well-proportioned adult anime characters (NOT cute moe or chibi), warm expressive anime eyes, clear contrast. "
+            "Modern Japanese adult workplace anime illustration, clean anime cel-shading with crisp dark outlines "
+            "and rich natural colors, well-proportioned adult anime characters (natural adult eyes, NOT cute moe or chibi), "
+            "clear contrast, warm cinematic lighting. "
         )
+
+        # 60 topic-specific scene descriptions reflecting each story's characters, setting, and key props
+        topic_scenes: Dict[str, str] = {
+            # Pattern A: Pedagogy & Educational Psychology (Novice teacher x Senior mentor teacher)
+            "A01": (
+                "Medium two-shot in a quiet Japanese school staffroom after school: on the left, a young female novice teacher "
+                "in her mid-20s in a cream cardigan looking at an open class journal (학級日誌) on a wooden desk; on the right, "
+                "a kind veteran male mentor teacher in his 50s in a navy blazer holding a ceramic coffee mug and drawing a "
+                "Self-Determination Theory triangle diagram with a pen on a notepad, bookshelves with blue binders behind them."
+            ),
+            "A02": (
+                "Medium two-shot in a sunlit Japanese elementary school classroom after school: on the left, a young male teacher "
+                "in his 20s in a collared shirt and navy vest; on the right, a warm senior female mentor teacher in her 40s with glasses "
+                "in a beige jacket, both arranging colorful Jigsaw-method cooperative learning cards and worksheets on grouped student desks, "
+                "green blackboard in background."
+            ),
+            "A03": (
+                "Medium two-shot at a Japanese high school staffroom desk: on the left, a young male math teacher in his mid-20s "
+                "in a navy suit holding a student's grey math notebook and a graded math test paper; on the right, a veteran male "
+                "grade-head teacher in his 50s with glasses in a grey vest writing encouraging growth-mindset feedback notes with a pen, "
+                "warm coffee mugs on desk."
+            ),
+            "A04": (
+                "Medium two-shot in a Japanese junior high school science lab room (理科室): on the left, a young male science teacher "
+                "in his 20s in a white shirt; on the right, a veteran science department head in his 40s with glasses, both looking at "
+                "a laptop screen showing a clean, simplified science slide diagram beside a small miniature lightbulb circuit experiment kit "
+                "on the wooden lab table."
+            ),
+            "A05": (
+                "Medium two-shot in a Japanese elementary school classroom bathed in warm golden sunset light in front of a green blackboard: "
+                "on the left, a young male teacher in his 20s holding white chalk; on the right, a veteran special-needs coordinator teacher "
+                "in his 40s with glasses pointing warmly to a functional behavior assessment chart and visual schedule picture cards on a desk."
+            ),
+            "A06": (
+                "Medium two-shot by a sofa and wooden table in a bright, welcoming Japanese school infirmary (保健室): on the left, "
+                "a young female junior high teacher in her 20s in a soft blue cardigan; on the right, a gentle veteran female school nurse "
+                "in her 40s wearing a white medical coat over navy attire, both holding warm tea mugs with a small basket of colorful knitting yarn on the table."
+            ),
+            "A07": (
+                "Medium two-shot in a Japanese school staffroom in the evening under warm desk lighting: on the left, a young male elementary "
+                "teacher in his 20s in a suit sitting beside an office telephone and a parent-dialogue memo pad; on the right, a supportive "
+                "veteran vice-principal in his 50s with glasses and grey-streaked hair offering a warm ceramic cup of green tea with a reassuring smile."
+            ),
+            "A08": (
+                "Medium two-shot in an empty Japanese high school classroom after school: on the left, a young male teacher in his 20s "
+                "standing near the wooden teacher's podium holding a lesson plan notebook and red pen; on the right, a seasoned male student-guidance "
+                "director in his 50s in a grey blazer gesturing calmly across the rows of student desks and green blackboard."
+            ),
+            "A09": (
+                "Medium two-shot at a wooden table in a Japanese junior high school staffroom: on the left, a young female English teacher "
+                "in her 20s looking at a stack of English test papers marked with red ink; on the right, a veteran research director teacher "
+                "in his 40s with glasses showing her small colorful Exit Ticket assessment cards and a printed rubric chart."
+            ),
+            "A10": (
+                "Medium two-shot in a Japanese high school career guidance room (進路指導室) bathed in warm golden sunset light: "
+                "on the left, a young male Japanese history teacher in his mid-20s in a navy blazer and tie; on the right, a veteran male "
+                "career guidance director in his late 40s with glasses in a white shirt and vest, holding a pen over a student's open notebook "
+                "filled with colorful highlighter diagrams alongside a clean study-plan worksheet on the wooden table."
+            ),
+            "A11": (
+                "Medium two-shot in a Japanese elementary school classroom with music and speech posters on the back wall: on the left, "
+                "a young female teacher in her 20s in a cream cardigan; on the right, a veteran male grade-head teacher in his 50s with glasses, "
+                "both smiling over a small-step self-efficacy achievement card on a wooden desk."
+            ),
+            "A12": (
+                "Medium two-shot in a Japanese high school staffroom: on the left, a young male inquiry-learning teacher in his 20s; "
+                "on the right, a veteran mentor teacher in his 50s with grey-streaked hair, looking at student presentation slides on a laptop "
+                "and sketching an Essential Questions inquiry mind-map on paper."
+            ),
+            "A13": (
+                "Medium two-shot in a sunlit Japanese junior high school classroom: on the left, a young female Japanese-language teacher "
+                "in her 20s holding a textbook; on the right, a warm veteran male teacher in his 50s standing beside the green blackboard "
+                "where welcoming psychological-safety discussion rules are written in white chalk."
+            ),
+            "A14": (
+                "Medium two-shot at a Japanese elementary school staffroom table: on the left, a young teacher in his 20s; on the right, "
+                "a senior moral-education teacher in her 40s with glasses, examining student moral-dilemma worksheets and two-sided discussion "
+                "cards over ceramic coffee mugs."
+            ),
+            "A15": (
+                "Medium two-shot in a Japanese elementary school classroom: on the left, a young female teacher in her 20s; on the right, "
+                "a veteran resource-room mentor teacher in his 40s, laying out Universal Design for Learning (UDL) visual aids, picture cards, "
+                "and a tablet alongside printed worksheets on a desk."
+            ),
+            "A16": (
+                "Medium two-shot in a Japanese junior high counseling room: on the left, a young male PE teacher in his 20s wearing a neat "
+                "navy sports jacket over a collared polo shirt; on the right, a veteran educational counseling coordinator in her 40s with glasses, "
+                "reviewing an anger-management emotion thermometer card and SEL guide at a wooden table."
+            ),
+            "A17": (
+                "Medium two-shot in a Japanese high school career guidance room with university bookshelves in the background: on the left, "
+                "a young teacher in his 20s holding a blank career survey form; on the right, a veteran career director in his 50s pointing "
+                "warmly to a colorful Life Career Rainbow chart and exploratory interview guide."
+            ),
+            "A18": (
+                "Medium two-shot in a Japanese elementary school science lab (理科室): on the left, a young science teacher in her 20s; "
+                "on the right, a veteran mentor teacher in his 50s, standing at a lab table with miniature lightbulbs, dry-cell batteries, "
+                "wires, and a Predict-Observe-Explain (POE) experiment worksheet."
+            ),
+            "A19": (
+                "Medium two-shot in a calm Japanese school counseling room (教育相談室): on the left, a young junior high teacher in his 20s; "
+                "on the right, a senior school-counselor liaison teacher in her 40s, looking at a weekly attendance calendar notebook and "
+                "solution-focused scaling memo over warm mugs of tea."
+            ),
+            "A20": (
+                "Medium two-shot in a Japanese high school music room (音楽室) with sheet-music stands and brass wind instruments in the background: "
+                "on the left, a young band club co-advisor teacher in her 20s; on the right, a veteran club advisor in his 50s, discussing "
+                "a servant-leadership team harmony chart at a wooden table."
+            ),
+
+            # Pattern B: School DX & ICT (Veteran teacher x Young ICT/DX teacher)
+            "B01": (
+                "Medium two-shot at a Japanese school staffroom desk in the evening: on the left, a relieved veteran academic-affairs teacher "
+                "in his 50s with glasses setting aside a desktop calculator and paper grade sheets while holding a canned coffee; on the right, "
+                "a young male ICT teacher in his late 20s pointing at a laptop screen displaying a clean automated Google Spreadsheet grade table "
+                "with green validation highlights."
+            ),
+            "B02": (
+                "Medium two-shot in a Japanese school classroom: on the left, a veteran male vice-principal in his late 50s in a suit smiling "
+                "with relief; on the right, a young male science and ICT teacher in his late 20s holding a wireless Wi-Fi access-point router "
+                "and a tablet displaying a clean 5GHz Wi-Fi channel spectrum chart."
+            ),
+            "B03": (
+                "Medium two-shot at a Japanese school staffroom table: on the left, a veteran male PTA-affairs teacher in his 50s setting down "
+                "scissors, highlighter pens, and large poster-paper sheets (模造紙); on the right, a young math teacher in his 20s showing a "
+                "laptop screen with a colorful Python keyword bar chart and word-frequency visual from 500 parent surveys."
+            ),
+            "B04": (
+                "Medium two-shot at a Japanese school staffroom desk: on the left, a veteran male student-guidance teacher in his 50s smiling "
+                "with huge relief; on the right, a young ICT teacher in his late 20s pointing at a laptop screen showing Google Drive's version "
+                "history panel restoring an overwritten school event Excel schedule."
+            ),
+            "B05": (
+                "Medium two-shot at a Japanese school staffroom desk: on the left, a veteran male grade-head teacher in his 50s with glasses "
+                "setting down a red pen and ruler beside stacks of report-card drafts; on the right, a young teacher in his late 20s showing "
+                "a laptop spreadsheet with automated regular-expression character counters and green check highlights, two canned coffees on the desk."
+            ),
+            "B06": (
+                "Medium two-shot in a Japanese school staffroom by a window showing clearing rain over the sports ground: on the left, "
+                "a veteran male PE director in his 50s in a neat polo shirt and tracksuit jacket holding a green tea mug; on the right, "
+                "a young science teacher in his 20s showing a tablet and laptop with a live cloud Sports Day timetable and QR code."
+            ),
+            "B07": (
+                "Medium two-shot in a Japanese school staffroom on a rainy morning: on the left, a veteran male baseball-club advisor in his 50s "
+                "standing relieved beside an office telephone; on the right, a young teacher in his 20s showing a laptop screen glowing with "
+                "green parent read-receipt checkmarks on an automated club notification dashboard."
+            ),
+            "B08": (
+                "Medium two-shot in a Japanese school printing room (印刷室) beside a large commercial multifunction copier and duplicator (複合機・輪転機): "
+                "on the left, a veteran male teacher in his 50s smiling in amazement; on the right, a young technology teacher in his late 20s "
+                "operating the copier's digital touch panel and a tablet to auto-sort class handouts, bright sky visible through the window."
+            ),
+            "B09": (
+                "Medium two-shot at a Japanese school staffroom table covered with colorful red, blue, and yellow sticky notes and paper "
+                "parent-teacher conference slips: on the left, a veteran male academic-affairs teacher in his 50s with reading glasses holding "
+                "a warm canned coffee in amazement; on the right, a young male math teacher in his late 20s pointing at an open laptop displaying "
+                "a neatly organized, color-coded green and yellow Google Spreadsheet conference timetable."
+            ),
+            "B10": (
+                "Medium two-shot in a bright Japanese school infirmary (保健室): on the left, a veteran female school nurse (養護教諭) in her 50s "
+                "in a white medical coat over navy attire setting aside wooden class health-observation boards and a calculator; on the right, "
+                "a young ICT teacher in his 20s showing a laptop screen with a real-time digital health pivot-table chart and color-coded classroom heat map."
+            ),
+            "B11": (
+                "Medium two-shot in a Japanese school staffroom beside a wall schedule board: on the left, a veteran general-affairs teacher "
+                "in his 50s; on the right, a young science teacher in his 20s holding a tablet showing a clean Google Calendar room-booking "
+                "interface next to a portable classroom projector on the desk."
+            ),
+            "B12": (
+                "Medium two-shot at a Japanese school staffroom computer desk: on the left, a veteran grade-head teacher in his 50s looking "
+                "deeply relieved; on the right, a young information-security teacher in his late 20s pointing at a secure mailing-list BCC/group "
+                "delivery screen and cloud access-control settings on a laptop monitor."
+            ),
+            "B13": (
+                "Medium two-shot in a Japanese high school career guidance room lined with shelves of thick blue student record binders: "
+                "on the left, a veteran career director in his late 50s with glasses; on the right, a young informatics teacher in his 20s "
+                "showing a unified single-sheet student profile table built with XLOOKUP on a laptop."
+            ),
+            "B14": (
+                "Medium two-shot at a Japanese school staffroom desk: on the left, a veteran social-studies teacher in his 50s beside a tall "
+                "stack of paper quizzes and a red grading pen; on the right, a young female English teacher in her 20s showing an auto-graded "
+                "Google Forms quiz accuracy chart and heatmap on a laptop screen."
+            ),
+            "B15": (
+                "Medium two-shot in a Japanese school meeting room: on the left, a veteran male vice-principal in his 50s setting aside thick "
+                "stapled paper packets and a heavy stapler; on the right, a young teacher in his late 20s demonstrating a live collaborative "
+                "cloud meeting agenda document on a laptop and tablet."
+            ),
+            "B16": (
+                "Medium two-shot in a Japanese school computer/AV room (視聴覚室) near a network router rack and LAN cables: on the left, "
+                "a veteran AV director teacher in his 50s; on the right, a young informatics teacher in his late 20s showing a laptop network "
+                "diagnostic terminal resolving a DNS and web-filter whitelist issue."
+            ),
+            "B17": (
+                "Medium two-shot in a Japanese school library and equipment room (図書室) with bookshelves and boxed science kits: "
+                "on the left, a veteran library director teacher in her 50s; on the right, a young technology teacher in his 20s scanning "
+                "a QR-code label on a book set box using a tablet camera linked to an inventory spreadsheet."
+            ),
+            "B18": (
+                "Medium two-shot at a Japanese school staffroom desk with printed school-trip guidebooks (修学旅行のしおり) and route maps: "
+                "on the left, a veteran grade-head teacher in his 50s; on the right, a young social-studies teacher in his late 20s showing "
+                "a live student group check-in map and automated budget spreadsheet on a laptop."
+            ),
+            "B19": (
+                "Medium two-shot at a Japanese school staffroom desk beside a laser printer and formal Japanese award certificates (表彰状): "
+                "on the left, a veteran general-affairs teacher in his 50s with glasses; on the right, a young ICT teacher in his 20s showing "
+                "an automated mail-merge certificate generator on a laptop screen."
+            ),
+            "B20": (
+                "Medium two-shot at a Japanese school staffroom desk in spring: on the left, a veteran academic-affairs teacher in his 50s "
+                "holding old paper handover binders and USB drives; on the right, a young ICT teacher in his late 20s displaying a clean, "
+                "structured school intranet portal site and shared cloud drive on a laptop."
+            ),
+
+            # Pattern C: School Law & Governance (School Principal x Education Board Supervisor)
+            "C01": (
+                "Medium two-shot in a dignified Japanese school principal's office (校長室): on the left, a sharp-looking male education board "
+                "supervisor in his 40s in a navy suit pointing to an open statute book of the Anti-Bullying Promotion Act (いじめ防止対策推進法); "
+                "on the right, a male school principal in his late 50s with glasses in a charcoal suit holding an official incident report "
+                "document with a resolute expression."
+            ),
+            "C02": (
+                "Medium two-shot at a wooden table in a Japanese school principal's office: on the left, a male legal-affairs education board "
+                "supervisor in his 40s with glasses in a dark suit; on the right, a male school principal in his 50s in a grey suit, both "
+                "reviewing Article 11 of the School Education Act and student guidance case documents alongside two ceramic cups of green tea."
+            ),
+            "C03": (
+                "Medium two-shot in a Japanese school principal's office: on the left, an education board supervisor in his 40s in a navy suit; "
+                "on the right, a school principal in his 50s with glasses, looking at a tablet displaying an online metaverse/free-school "
+                "learning progress report alongside an official attendance ledger (指導要録) and education law guidelines on the desk."
+            ),
+            "C04": (
+                "Medium two-shot in a Japanese school principal's office: on the left, an education board personnel supervisor in his 40s "
+                "in a charcoal suit and tie; on the right, a school principal in his 50s with glasses, examining an Educational Information "
+                "Security Policy manual and a device-management compliance checklist on the wooden desk."
+            ),
+            "C05": (
+                "Medium two-shot in a Japanese school principal's office in a calm, resolute meeting: on the left, a student-guidance supervisor "
+                "in his 40s pointing to Article 6 of the Child Abuse Prevention Act statute book; on the right, a school principal in his 50s "
+                "beside the office telephone and an official child-welfare consultation notice form."
+            ),
+            "C06": (
+                "Medium two-shot in a Japanese school principal's office near a window overlooking a bright sunlit school sports ground: "
+                "on the left, a health-and-safety education board supervisor in his 40s; on the right, a school principal in his 50s with glasses, "
+                "checking a digital WBGT heat-stress index meter and a School Safety Plan binder on the desk."
+            ),
+            "C07": (
+                "Medium two-shot in a Japanese school principal's office: on the left, an educational ICT supervisor in his 40s with glasses "
+                "in a navy suit; on the right, a school principal in his 50s, reviewing a tablet displaying digital classroom teaching materials "
+                "alongside a Copyright Act Article 35 (SARTRAS) legal guideline booklet on the wooden desk."
+            ),
+            "C08": (
+                "Medium two-shot in a sunset-lit Japanese school principal's office (校長室): on the left, a special-needs education supervisor "
+                "in his 40s with glasses in a navy suit; on the right, a dignified school principal in his 50s in a charcoal suit and tie, "
+                "both examining an assistive text-to-speech reading tablet and printed Reasonable Accommodation (合理的配慮) legal guideline "
+                "documents on the wooden desk."
+            ),
+            "C09": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a labor-management supervisor in his 40s in a dark suit; "
+                "on the right, a school principal in his 50s with glasses, reviewing a teacher working-hours dashboard on a laptop and the "
+                "Teacher Salary Special Measures Act (給特法) reform guidelines on the desk."
+            ),
+            "C10": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a school health-and-lunch supervisor in her 40s in a "
+                "tailored navy blazer; on the right, a school principal in his 50s, examining a school-lunch food allergy safety manual and "
+                "an emergency EpiPen action flowchart on the conference table."
+            ),
+            "C11": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a school-health supervisor in his 40s; on the right, "
+                "a school principal in his 50s with glasses, reviewing an infectious-disease class closure criteria chart and Articles 19 & 20 "
+                "of the School Health and Safety Act on the desk."
+            ),
+            "C12": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a legal-affairs supervisor in his 40s with glasses; "
+                "on the right, a school principal in his 50s, reviewing a printed school newsletter, a student photo privacy consent form, "
+                "and a laptop displaying the school website."
+            ),
+            "C13": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a school-finance supervisor in his 40s in a navy suit; "
+                "on the right, a school principal in his 50s with glasses, reviewing supplementary student workbooks, an accounting ledger, "
+                "and a Constitutional Article 26 free-compulsory-education financial aid policy document."
+            ),
+            "C14": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a legal-support supervisor in his 40s; on the right, "
+                "a school principal in his 50s, examining a school corridor safety floor-plan diagram and State Redress Act court precedent "
+                "materials on the wooden desk."
+            ),
+            "C15": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a curriculum supervisor in his 40s with glasses; "
+                "on the right, a school principal in his 50s, reviewing an annual school timetable chart and a standard instructional hours "
+                "ledger (標準授業時数表) on the desk."
+            ),
+            "C16": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a teacher-personnel supervisor in his 40s in a dark suit; "
+                "on the right, a school principal in his 50s, reviewing a faculty subject-assignment board and Teacher Certification Act "
+                "(教育職員免許法) official permit documents."
+            ),
+            "C17": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a school disaster-safety supervisor in his 40s; "
+                "on the right, a school principal in his 50s withemergency disaster helmets resting on the desk beside a school gymnasium "
+                "evacuation shelter map and a student emergency handover roster."
+            ),
+            "C18": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a student-guidance supervisor in his 40s in a navy suit; "
+                "on the right, a school principal in his 50s with glasses, reviewing an online-trouble incident report and police liaison "
+                "guidelines under the Anti-Bullying Promotion Act."
+            ),
+            "C19": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a high-school education supervisor in his 40s; "
+                "on the right, a school principal in his 50s, reviewing civics mock-election teaching materials and Basic Act on Education "
+                "Articles 14 & 15 legal commentary pages on the desk."
+            ),
+            "C20": (
+                "Medium two-shot in a Japanese school principal's office: on the left, a school-management supervisor in his 40s in a navy suit; "
+                "on the right, a school principal in his 50s with glasses, reviewing a Community School (学校運営協議会) governance diagram "
+                "and school management policy binder on the wooden table."
+            ),
+        }
+
+        scene_desc = topic_scenes.get(tid, "")
+        if not scene_desc:
+            # Fallback if a custom topic_id is used
+            prob = topic.get("problem_title", "") or title
+            if clean_pattern == "A":
+                scene_desc = (
+                    "Medium two-shot of a young Japanese novice teacher in their 20s and a warm veteran mentor teacher in their 50s "
+                    "discussing classroom teaching notes and student notebooks at a wooden desk in a Japanese school staffroom."
+                )
+            elif clean_pattern == "B":
+                scene_desc = (
+                    "Medium two-shot of a veteran Japanese teacher in their 50s with reading glasses and a young ICT teacher in their 20s "
+                    "collaborating over a laptop displaying a clean color-coded spreadsheet in a Japanese school staffroom."
+                )
+            else:
+                scene_desc = (
+                    "Medium two-shot of a Japanese education board supervisor in their 40s in a navy suit and a dignified school principal "
+                    "in their 50s with glasses reviewing education law statute books and official documents in the principal's office."
+                )
+
+        # Dynamically inspect the novel's actual text (story_body + title) to reflect concrete details written in the story
+        extra_details: List[str] = []
+        combined_text = f"{title}\n{story_body[:3500]}"
+        if combined_text.strip():
+            # Time of day / lighting cues in the novel
+            if re.search(r"夕暮れ|西日|夕陽|夕焼け|茜色", combined_text):
+                extra_details.append("warm golden sunset light streaming through the school windows")
+            elif re.search(r"深夜|夜八時|夜九時|夜遅く|夜の帳", combined_text):
+                extra_details.append("warm indoor overhead lighting with evening twilight outside the windows")
+            elif re.search(r"朝|早朝|朝の光", combined_text):
+                extra_details.append("fresh morning daylight streaming through the windows")
+
+            # Specific beverage or desk item cues in the novel
+            if "缶コーヒー" in combined_text and "canned coffee" not in scene_desc:
+                extra_details.append("two warm canned coffees on the desk")
+            elif "緑茶" in combined_text and "green tea" not in scene_desc:
+                extra_details.append("ceramic Japanese green tea cups on the table")
+            elif "コーヒー" in combined_text and "coffee" not in scene_desc:
+                extra_details.append("ceramic coffee mugs on the table")
+
+            # Specific visual prop cues in the novel if not already in scene_desc
+            if "付箋" in combined_text and "sticky notes" not in scene_desc:
+                extra_details.append("colorful sticky notes on the desk")
+            if ("蛍光ペン" in combined_text or "マーカー" in combined_text) and "highlighter" not in scene_desc:
+                extra_details.append("colorful highlighter pens and marked notes")
+            if "赤ペン" in combined_text and "red pen" not in scene_desc and "red ink" not in scene_desc:
+                extra_details.append("a red grading pen and marked papers")
+            if ("複合機" in combined_text or "輪転機" in combined_text) and "copier" not in scene_desc:
+                extra_details.append("school multifunction copier machine in background")
+
+        extra_clause = (", " + ", ".join(extra_details)) if extra_details else ""
         style_suffix = (
-            "Both wearing blue neck strap ID lanyards and holding ceramic coffee mugs at a wooden table in a detailed Japanese "
-            "school staffroom, bookshelves packed with blue and white file binders, office desks and sunlit windows in background, "
-            "warm collegial atmosphere."
+            f"{extra_clause}. Both educators wearing blue neck strap ID lanyards, authentic Japanese school interior background "
+            "with bookshelves of blue and white file binders, warm collegial expression."
         )
 
-        scenes_a = [
-            (
-                "Medium two-shot of two Japanese female teachers talking warmly in the staffroom: "
-                "on the left, a young teacher in her mid-20s with a brown ponytail wearing a cream cardigan over a white blouse, smiling brightly; "
-                "on the right, a kind veteran female teacher in her 50s with short wavy dark hair and gentle laugh lines, wearing a navy cardigan."
-            ),
-            (
-                "Medium two-shot of two Japanese teachers conversing in the staffroom: "
-                "on the left, a young male novice teacher in his mid-20s with neat black hair wearing a dark navy suit and blue tie, smiling with relief; "
-                "on the right, a warm veteran male mentor teacher in his 50s with glasses and grey-streaked hair in a white dress shirt and tie."
-            ),
-            (
-                "Medium two-shot of two Japanese teachers discussing classroom notes over coffee in the staffroom: "
-                "on the left, a young female teacher in her 20s with shoulder-length dark hair in a light blue cardigan; "
-                "on the right, a veteran male guidance teacher in his 50s with glasses and a warm reassuring smile in a grey blazer."
-            ),
-        ]
-
-        scenes_b = [
-            (
-                "Medium two-shot of two Japanese male teachers smiling together in the staffroom: "
-                "on the left, a young ICT teacher in his late 20s with brown hair and glasses wearing a grey knit sweater over a collared shirt; "
-                "on the right, an experienced veteran teacher in his late 50s with grey-streaked hair and gentle smile wrinkles wearing a dark navy cardigan over a blue shirt."
-            ),
-            (
-                "Medium two-shot of two Japanese teachers collaborating over coffee and a laptop in the staffroom: "
-                "on the left, a veteran male teacher in his 50s with glasses and salt-and-pepper hair in a white shirt and tie, laughing warmly; "
-                "on the right, a young female ICT teacher in her late 20s with a neat ponytail and beige jacket explaining a clean chart."
-            ),
-            (
-                "Medium two-shot of two Japanese teachers talking cheerfully at a staffroom desk: "
-                "on the left, a young male teacher in his 20s in a navy suit and striped tie holding a white coffee mug; "
-                "on the right, a senior female head teacher in her 50s with short bob hair and glasses wearing a grey cardigan, smiling."
-            ),
-        ]
-
-        scenes_c = [
-            (
-                "Medium two-shot of a Japanese school principal and an education board supervisor talking warmly in the school office: "
-                "on the left, a sharp-looking male supervisor in his 30s with short black hair wearing a navy suit and blue tie holding a white mug; "
-                "on the right, a dignified male school principal in his late 50s with grey hair, glasses, and a warm smile wearing a white shirt and red-patterned tie holding a dark mug."
-            ),
-            (
-                "Medium two-shot of two senior Japanese educators in a calm, constructive meeting in the principal's office: "
-                "on the left, a female education board supervisor in her 40s with glasses and a tailored navy blazer; "
-                "on the right, a thoughtful male school principal in his late 50s with salt-and-pepper hair and a grey suit, nodding with confidence."
-            ),
-            (
-                "Medium two-shot of a female school principal and a male education board supervisor conversing over coffee in the school office: "
-                "on the left, a male supervisor in his late 30s with glasses in a charcoal suit and tie; "
-                "on the right, a dignified female principal in her 50s with short wavy hair and gentle smile lines wearing a navy jacket."
-            ),
-        ]
-
-        if clean_pattern == "A":
-            scene_desc = scenes_a[variant_idx % len(scenes_a)]
-        elif clean_pattern == "B":
-            scene_desc = scenes_b[variant_idx % len(scenes_b)]
-        else:
-            scene_desc = scenes_c[variant_idx % len(scenes_c)]
-
-        full_prompt = f"{style_prefix}{scene_desc} {style_suffix}"
-        logger.info(f"  -> Final FLUX.2 prompt: {full_prompt[:140]}...")
+        clean_scene = re.sub(r"\s*\([^\x00-\x7F]+\)", "", scene_desc)
+        full_prompt = f"{style_prefix}{clean_scene}{style_suffix}"
+        logger.info(f"  -> Story-specific FLUX.2 prompt [{tid}]: {full_prompt[:160]}...")
         return full_prompt
 
     def generate_illustration(
