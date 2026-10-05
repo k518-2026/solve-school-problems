@@ -20,9 +20,9 @@
     "title": "平等という名の障壁を越えて：実質的平等のための合理的配慮",
     "category": "学校法制・合理的配慮・障害者差別解消法",
     "keywords": "障害を理由とする差別の解消の推進に関する法律第7条・第8条 / 教育基本法第4条 / 発達障害者支援法第8条",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep28-c08.html",
-    "image": "assets/images/ep28-c08.png",
+    "image": "",
     "char_count": 4153
   },
   {
@@ -33,9 +33,9 @@
     "title": "紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解",
     "category": "三者面談・日程調整自動化",
     "keywords": "Google フォーム希望収集 / QUERY / FILTER / XLOOKUP 関数 / Google Apps Script 自動重複検知 / カレンダー自動登録",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep27-b09.html",
-    "image": "assets/images/ep27-b09.png",
+    "image": "",
     "char_count": 6761
   },
   {
@@ -46,9 +46,9 @@
     "title": "赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路",
     "category": "教育評価・形成的アセスメント",
     "keywords": "診断的・形成的・総括的評価 / 学習のための評価（Assessment for Learning） / 出口調査票（Exit Ticket）と即時フィードバック",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep26-a09.html",
-    "image": "assets/images/ep26-a09.png",
+    "image": "",
     "char_count": 6785
   },
   {
@@ -59,9 +59,9 @@
     "title": "デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤",
     "category": "学校法制・著作権法・教材利用",
     "keywords": "著作権法第35条第1項・第2項 / 授業目的公衆送信補償金制度（SARTRAS） / 教育基本法第2条",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep25-c07.html",
-    "image": "assets/images/ep25-c07.png",
+    "image": "",
     "char_count": 7500
   },
   {
@@ -85,9 +85,9 @@
     "title": "夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論",
     "category": "保護者対応・教育哲学",
     "keywords": "戦略的行為から対話的合意形成への転換 / 妥当性要求（真理性・正当性・誠実性） / 親と学校のパートナーシップ構築",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep23-a07.html",
-    "image": "assets/images/ep23-a07.png",
+    "image": "",
     "char_count": 5823
   },
   {
@@ -98,9 +98,9 @@
     "title": "善意の殻に隠れた盾――教員の私用端末利用と服務規律の限界",
     "category": "学校法制・公務員倫理・情報管理",
     "keywords": "地方公務員法第32条・第33条・第34条 / 教育公務員特例法 / 個人情報の保護に関する法律 / 教育情報セキュリティポリシーに関するガイドライン",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep22-c04.html",
-    "image": "assets/images/ep22-c04.png",
+    "image": "",
     "char_count": 6619
   },
   {
@@ -111,9 +111,9 @@
     "title": "朝の豪雨とダッシュボードの緑の光――野球部顧問を救うワンクリック緊急連絡システム",
     "category": "部活動・コミュニケーション自動化",
     "keywords": "学校・保護者間連絡システム / Google フォーム出欠確認 / メール一斉配信自動化 / リアルタイム回答確認ダッシュボード",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep21-b07.html",
-    "image": "assets/images/ep21-b07.png",
+    "image": "",
     "char_count": 6087
   },
   {
@@ -124,9 +124,9 @@
     "title": "背中の目と淀みない川――教室のざわめきを鎮めるモメンタムの技術",
     "category": "学級崩壊予防・教育社会学",
     "keywords": "ウィズィットネス（Withitness: 状況把握の目配り） / スムーズネス＆モメンタム（授業のテンポと途切れなさ） / 集団力学（グループ・ダイナミクス）",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep20-a08.html",
-    "image": "assets/images/ep20-a08.png",
+    "image": "",
     "char_count": 7788
   },
   {
@@ -137,9 +137,9 @@
     "title": "熱砂のグラウンドと校長の天秤――安全配慮義務と国家賠償責任の狭間で",
     "category": "学校法制・学校安全・国家賠償",
     "keywords": "学校保健安全法第27条・第29条 / 国家賠償法第1条 / 安全配慮義務（民法第415条類推適用・判例法理） / 環境省熱中症予防指針（WBGT）",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep19-c06.html",
-    "image": "assets/images/ep19-c06.png",
+    "image": "",
     "char_count": 7451
   },
   {
@@ -150,9 +150,9 @@
     "title": "雨雲を突き抜けるライブ・タイムテーブル――体育主任の祈りとクラウド連携の奇跡",
     "category": "イベント運営・クラウド連携",
     "keywords": "Google カレンダー 共有カレンダー / リアルタイム更新ホワイトボード / クラウド通知自動化 / QRコードによる保護者・職員向けライブタイムテーブル",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep18-b06.html",
-    "image": "assets/images/ep18-b06.png",
+    "image": "",
     "char_count": 8240
   },
   {
@@ -163,9 +163,9 @@
     "title": "夜の電話と対話の地平――保護者クレームを超える教育哲学",
     "category": "保護者対応・教育哲学",
     "keywords": "戦略的行為から対話的合意形成への転換 / 妥当性要求（真理性・正当性・誠実性） / 親と学校のパートナーシップ構築",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep17-a07.html",
-    "image": "assets/images/ep17-a07.png",
+    "image": "",
     "char_count": 5991
   },
   {
@@ -189,9 +189,9 @@
     "title": "深夜の文字数カウンターと正規表現の魔法――通知表所見の嵐を越えて",
     "category": "校務効率化・正規表現/マクロ",
     "keywords": "正規表現 (RegEx) / LEN / LENB 関数 / REGEXEXTRACT / REGEXREPLACE 関数 / 条件付き書式アラート",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep15-b05.html",
-    "image": "assets/images/ep15-b05.png",
+    "image": "",
     "char_count": 5619
   },
   {
@@ -202,9 +202,9 @@
     "title": "保健室のソファと編みかけの糸――関係性の傷口を癒やすケアの倫理",
     "category": "人間関係・生徒指導",
     "keywords": "関係性の回復と共感の場の設計 / 関係的攻撃性（Relational Aggression）の理解 / 修復的対話（Restorative Practices）",
-    "has_image": true,
+    "has_image": false,
     "url": "stories/ep14-a06.html",
-    "image": "assets/images/ep14-a06.png",
+    "image": "",
     "char_count": 5573
   },
   {
