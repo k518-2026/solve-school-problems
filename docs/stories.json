@@ -1,5 +1,18 @@
 [
   {
+    "no": 30,
+    "story_id": "ep30-b10",
+    "topic_id": "B10",
+    "pattern": "B",
+    "title": "紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光",
+    "category": "保健室DX・健康観察集計",
+    "keywords": "スプレッドシート COUNTIFS / ピボットテーブル / 条件付き書式による感染拡大ヒートマップ / リアルタイム集計グラフ / 教育委員会報告様式の自動生成",
+    "has_image": true,
+    "url": "stories/ep30-b10.html",
+    "image": "assets/images/ep30-b10.png",
+    "char_count": 3550
+  },
+  {
     "no": 29,
     "story_id": "ep29-a10",
     "topic_id": "A10",

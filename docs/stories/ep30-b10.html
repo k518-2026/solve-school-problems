@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #30 ・ [B10] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>保健室DX・健康観察集計（スプレッドシート COUNTIFS / ピボットテーブル / 条件付き書式による感染拡大ヒートマップ / リアルタイム集計グラフ / 教育委員会報告様式の自動生成）</div>
+      <div><strong>👥 登場人物：</strong>養護教諭・小山内先生（教職25年目） × 若手教諭・五十嵐先生（教職2年目・情報担当）</div>
+      <div><strong>💡 解決フレームワーク：</strong>クラウド出欠・健康観察ダッシュボード（ピボットテーブル・COUNTIFS関数）と学級閉鎖基準アラートのリアルタイム可視化</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep30-b10.png" alt="紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光" loading="lazy" />
+
+    <article class="story-content">
+      <p>冬の朝の職員室は、独特の湿り気を帯びた空気と、微かな消毒液の匂いに包まれていた。<br />
+　養護教諭の小山内先生は、机の上に積み上げられた「健康観察カード」の山と格闘していた。インフルエンザの流行期に入り、欠席や早退の報告は例年以上の頻度で届いている。一枚一枚のカードを手に取り、氏名と症状、そして欠席理由を正確に書き写しながら、電卓を叩く。<br />
+「……うう、また一箇所、入力漏れがあったかな」<br />
+　小山内先生は老眼鏡を押し上げ、眉間に深い皺を刻んだ。彼女の仕事は単なる事務ではない。この集計データをもとに、どのクラスで感染が広がりつつあるかを把握し、学級閉鎖の判断材料を教育委員会に迅速に提供しなければならない。しかし、手書きの報告カードを一つずつ読み取り、グラフへと落とし込む作業は、本来の「生徒の健康を守る」という使命を圧迫するほどの重労働となっていた。</p>
+<p>そこへ、若手の五十嵐先生がノートパソコンを手にやってきた。<br />
+「小山内先生、お疲れ様です。まだ集計の途中ですか？」<br />
+　五十嵐先生は穏やかな笑みを浮かべたが、その視線は机の上の膨大なカードの山に向けられていた。彼はこの学校のICT推進担当であり、ネットワークやクラウド技術に精通している。<br />
+「ええ、五十嵐先生。今、昨日の分をまとめ終わったところよ。でも、これだけカードが集まると、正確な数字を出すのが意外と大変で……。特に学級閉鎖の基準を判断するための『感染拡大マップ』を書くときは、もう頭がパンクしそうになるわ」<br />
+　小山内先生は、手書きで描かれた拙いヒートマップを見せた。赤や黄色のペンで塗りつぶされた図面は、彼女の献身的な努力の結晶ではあったが、リアルタイムでの更新には限界があった。</p>
+<p>五十嵐先生は椅子を引き寄せ、小山内先生の隣に座った。<br />
+「先生のこの正確な分析と、生徒への深い見守り、本当に尊敬しています。でも、この『紙からデータへの変換』という工程だけは、僕の技術で劇的に変えられると思います」<br />
+　五十嵐先生は自分のノートパソコンを広げた。画面にはGoogleスプレッドシートが開かれている。</p>
+<p>「具体的にはどういうこと？」と小山内先生は不思議そうに尋ねた。<br />
+「まず、クラスの担任の先生方に、紙のカードの代わりにQRコードから回答してもらう仕組みを作ります。生徒の欠席理由や症状をスマホから直接入力してもらうんです。それがクラウド上のスプレッドシートに自動で蓄積されるようにします」</p>
+<p>五十嵐先生は、実際に構築したプロトタイプを操作しながら説明を始めた。<br />
+「見てください。このシートには、担任の先生が入力したデータがリアルタイムで反映されます。そしてここにある『COUNTIFS関数』という数式を使えば、特定の学級や特定の症状（例えばインフルエンザ等）に該当する人数を瞬時にカウントできます」<br />
+　画面上では、クラス別の欠席者数が自動的に更新され、それと連動して円グラフが動いた。</p>
+<p>「さらに、ここを見てください」と五十嵐先生は画面の別のタブを指した。<br />
+　そこには、学校の校内図に基づいたヒートマップが表示されていた。特定の条件（例えば、同一学級で欠席者が3人以上など）を満たした際、そのクラスのエリアが自動的に赤く染まる「条件付き書式」を組み込んでいるのだ。<br />
+「先生が手書きでペンを動かす必要はありません。データが入った瞬間、このマップが『警告』を発するんです。これなら、教育委員会への報告資料もボタン一つで生成できますよ」</p>
+<p>小山内先生は、画面の動きに目を奪われた。<br />
+「……すごいわね。私が一時間かけて計算していたものが、一瞬で変わってしまうのね」<br />
+「はい。先生の役割は、『このデータを見てどう動くか』を判断することです。そのための『正確な鏡』を、僕が技術で作るお手伝いをさせてください」<br />
+　五十嵐先生の声には、単なる効率化への関心以上のものがあった。それは、小山内先生というベテランの知恵を、より輝かせるためのリスペクトだった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>数週間後、保健室の風景は一変した。<br />
+　朝、担任の先生方がタブレット端末を操作し、欠席報告を済ませる。その情報は瞬時にクラウドへ飛び、小山内先生のモニターに反映される。<br />
+「あ、3年B組で急な体調不良の報告が重なっているわね」<br />
+　小山内先生は、これまではカードの山をかき分けなければ分からなかった状況を、コーヒーを一口飲みながら優雅に把握していた。</p>
+<p>五十嵐先生がシステムを構築した際、最もこだわったのは「ネットワークの安定性」と「入力の簡便さ」だった。<br />
+　学校内のWi-Fi環境は混雑しやすいため、彼は特定のクラスエリアで優先的に通信ができるようアクセス制御を見直し、また、QRコードをスキャンするだけで該当するフォームが開くように設計した。<br />
+　さらに、Google Apps Script (GAS) を活用して、週に一度の報告用スプレッドシートからPDFを自動生成し、特定のフォルダへ保存する仕組みも組み込んだ。</p>
+<p>「先生、おかげで今朝は余裕を持って生徒一人ひとりの相談に乗ることができました」<br />
+　小山内先生は、タブレットを置いて笑顔で五十嵐先生に言った。<br />
+「それは光栄です。データはあくまで手段ですからね。先生の温かい対応こそが、この学校の宝です」<br />
+　五十嵐先生は誇らしげに、しかし謙虚に答えた。</p>
+<p>技術によって生まれた「余白」は、小山内先生の深い教育的知恵を動かすための時間へと変わった。<br />
+　デジタルという新しい道具が、長年積み上げられた教育の情熱を守り、支えるために融和した瞬間だった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>本編で登場した技術は、学校現場で「校務DX」を実現するための基礎的な柱となるものです。以下に分かりやすく解説します。</p>
+<ol>
+<li>
+<p><strong>GoogleスプレッドシートとCOUNTIFS関数</strong><br />
+   スプレッドシートはクラウド上で動作するため、複数の教員が同時に閲覧・更新することが可能です。「COUNTIFS関数」は、複数の条件（例：学年が「3年」かつ、症状が「発熱」）に一致する件数を数える関数です。これを使うことで、大量のデータから必要な項目だけを抽出して集計することが容易になります。</p>
+</li>
+<li>
+<p><strong>ピボットテーブル</strong><br />
+   大量のデータを「クラスごと」「症状別」など、自由な切り口で瞬時に集計・要約する機能です。複雑な計算式を書かなくても、ドラッグ＆ドロップで集計表を作成できるため、統計データの整理に非常に強力です。</p>
+</li>
+<li>
+<p><strong>条件付き書式とヒートマップ</strong><br />
+   「特定の数値を超えたらセルを赤くする」といったルールを設定する機能です。これを利用することで、例えば「欠席者が規定数を超えた学級」を視覚的に強調し、注意喚起（アラート）として機能させることができます。これにより、一目で異常事態を察知する仕組みが作れます。</p>
+</li>
+<li>
+<p><strong>QRコードとGoogleフォームの連携</strong><br />
+   紙のカードを廃止し、QRコードをスキャンして回答を入力してもらうことで、データの「手入力による転記ミス」をゼロにします。入力されたデータは直接クラウドへ蓄積されるため、集計作業そのものが自動化されます。</p>
+</li>
+<li>
+<p><strong>ネットワークとWi-Fi環境の考慮</strong><br />
+   学校現場では多くの端末が同時に接続するため、帯域の奪い合いが発生します。技術的には、混雑の少ない周波数帯（5GHz帯やWi-Fi 6Eなど）の活用や、重要な業務システムへの優先的なアクセス確保などが重要になります。</p>
+</li>
+</ol>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>以下のリソースは、日本の学校現場でDXを推進する際に非常に有用な公式資料です。</p>
+<ul>
+<li>文部科学省：学校と保護者等間における連絡手段のデジタル化の推進について<br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html</a></li>
+<li>Google ドキュメント エディタ ヘルプ（Google スプレッドシートの関数リスト）<br />
+<a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a></li>
+<li>デジタル庁：教育（教育DX・データ利活用）に関する施策<br />
+<a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a></li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep29-a10.html">← 前の作品：#29 色彩の迷宮と、記憶の深淵へ</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-06T01:21:20.666853+09:00",
-  "total_posted": 29,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-06T20:58:45.018544+09:00",
+  "total_posted": 30,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -300,6 +300,17 @@
       "category": "学習科学・メタ認知",
       "file_path": "content/2026-10-06_pattern_a_a10_色彩の迷宮と、記憶の深淵へ.md",
       "timestamp": "2026-10-06T01:21:20.666853+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光",
+      "pattern": "B",
+      "topic_id": "B10",
+      "category": "保健室DX・健康観察集計",
+      "file_path": "content/2026-10-06_pattern_b_b10_紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光.md",
+      "timestamp": "2026-10-06T20:58:45.018544+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
