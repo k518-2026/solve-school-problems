@@ -1,10 +1,9 @@
-name: Solve School Problems - GitHub Pages & Blog Publisher
+name: Solve School Problems - Daily 05:00 JST Blogger Publisher & GitHub Pages
 
 on:
-  # schedule:  # 2026-10-06 ブログメール自動投稿お休み＆GitHub Pages蓄積モードのため一時停止。再開は # を外す
-    # - cron: '15 21 * * *'
-    # - cron: '15 8 * * *'
-    # - cron: '15 13 * * *'
+  schedule:
+    # 毎日 朝 05:00 JST (20:00 UTC) に GitHub に蓄積されている記事を 1日1本 Blogger へ自動投稿（Blogger利用規約準拠）
+    - cron: '0 20 * * *'
 
   # Manual execution from GitHub Actions UI
   workflow_dispatch:
@@ -25,7 +24,7 @@ on:
         type: boolean
         default: false
       post_status:
-        description: 'Post status on WordPress (publish or draft)'
+        description: 'Post status (publish or draft)'
         required: true
         type: choice
         options:
@@ -33,15 +32,15 @@ on:
           - draft
         default: 'publish'
       topic_id:
-        description: 'Specific topic ID from catalog (e.g. A01, B02, C01, or leave blank for auto-selection)'
+        description: 'Specific topic ID from catalog (e.g. A10, B10, C09, or leave blank for next accumulated story)'
         required: false
         type: string
         default: ''
       blogger_only:
-        description: 'Blogger test/repost only (send latest published story to Blogger without sending to WordPress)'
+        description: 'Send to Blogger only'
         required: false
         type: boolean
-        default: false
+        default: true
 
 permissions:
   contents: write
@@ -52,7 +51,7 @@ concurrency:
 
 jobs:
   publish:
-    name: Build GitHub Pages Library (Blog Auto-Post Paused)
+    name: Publish 1 Accumulated Story to Blogger (05:00 JST) & Update GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
@@ -76,10 +75,10 @@ jobs:
         run: |
           python -m unittest discover tests
 
-      - name: Update GitHub Pages Library (Blog Auto-Post Paused)
+      - name: Publish 1 Accumulated GitHub Article to Blogger (Blogger ToS Compliant)
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          PAUSE_BLOG_AUTO_POST: 'true'
+          PAUSE_BLOG_AUTO_POST: 'false'
           SMTP_HOST: ${{ secrets.SMTP_HOST || 'smtp.gmail.com' }}
           SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
@@ -89,14 +88,23 @@ jobs:
           MAIL_FROM_NAME: ${{ vars.MAIL_FROM_NAME || 'Solve School Problems' }}
           ENABLE_WP_POST: 'false'
           WP_POST_EMAIL: ''
-          BLOGGER_POST_EMAIL: ''
+          BLOGGER_POST_EMAIL: ${{ secrets.BLOGGER_POST_EMAIL }}
           DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
           USE_JETPACK_SHORTCODES: 'true'
         run: |
           git pull --rebase origin main || true
-          python -m src.main --build-pages
+          ARGS="--blogger-daily"
+          if [ -n "${{ github.event.inputs.topic_id }}" ]; then
+            ARGS="$ARGS --topic-id ${{ github.event.inputs.topic_id }}"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          else
+            ARGS="$ARGS --send"
+          fi
+          python -m src.main $ARGS
 
-      - name: Commit and Push Updated GitHub Pages & History
+      - name: Commit and Push Updated History & GitHub Pages
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -107,7 +115,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes detected to commit."
           else
-            git commit -m "chore: Update Solve School Problems GitHub Pages [skip ci]"
+            git commit -m "chore(blogger): Record daily 05:00 JST Blogger publication & update GitHub Pages [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:${{ github.ref }}
           fi

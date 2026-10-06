@@ -124,6 +124,44 @@ class WordPressMailSender:
 
         return cleaned.strip()
 
+    BLOGGER_POLICY_DISCLAIMER_PLAIN = (
+        "\n\n---\n"
+        "※本記事の物語パートに登場する人物名・学校名・団体名・具体的なエピソードはすべて架空のフィクションであり、"
+        "実在の個人・学校・機関とは一切関係ありません。解説パートで紹介している教育理論・ICT技術・教育法規は"
+        "公的資料および学術文献に基づいています。（Solve School Problems 教育小説アーカイブ）"
+    )
+
+    BLOGGER_POLICY_DISCLAIMER_HTML = (
+        "\n<hr>\n"
+        "<p><small>※本記事の物語パートに登場する人物名・学校名・団体名・具体的なエピソードはすべて架空のフィクションであり、"
+        "実在の個人・学校・機関とは一切関係ありません。解説パートで紹介している教育理論・ICT技術・教育法規は"
+        "公的資料および学術文献に基づいています。（Solve School Problems 教育小説アーカイブ）</small></p>"
+    )
+
+    @classmethod
+    def validate_blogger_compliance(cls, post: FormattedPost) -> Dict[str, Any]:
+        """
+        Verifies that the post complies with Google Blogger's Content Policy & Terms of Service:
+        - Non-empty title and educational body within safe size limits
+        - No prohibited executable/embed tags (<script>, <iframe>, <object>, <embed>, <form>, javascript:)
+        - Clean semantic HTML with fiction/privacy disclaimer
+        """
+        issues: List[str] = []
+        title = (post.title or "").strip()
+        if not title:
+            issues.append("Post title is empty.")
+        raw_html = post.content_html_clean or post.content_html or ""
+        if not raw_html.strip():
+            issues.append("Post HTML content is empty.")
+        if len(raw_html) > 100_000:
+            issues.append(f"Post HTML content exceeds safe size limit ({len(raw_html)} chars).")
+        if re.search(r"<\s*(?:script|iframe|object|embed|form)\b|javascript:", raw_html, flags=re.IGNORECASE):
+            issues.append("Post contains prohibited script/iframe/embed/form tags.")
+        return {
+            "compliant": len(issues) == 0,
+            "issues": issues,
+        }
+
     def create_mime_message(
         self,
         post: FormattedPost,
@@ -183,8 +221,12 @@ class WordPressMailSender:
             plain_body = re.sub(r"\[([^\]]+)\]\(https?://[^\)]+\)", r"\1", raw_plain)
             plain_body = re.sub(r"https?://(?:dx\.)?doi\.org/(10\.\S+)", r"DOI: \1", plain_body)
             plain_body = re.sub(r"https?://\S+", "", plain_body)
+            if "架空のフィクション" not in plain_body:
+                plain_body = plain_body.rstrip() + self.BLOGGER_POLICY_DISCLAIMER_PLAIN
             raw_html = post.content_html_clean or post.content_html
             html_body = self._sanitize_html_for_blogger(raw_html)
+            if "架空のフィクション" not in html_body:
+                html_body = html_body.rstrip() + self.BLOGGER_POLICY_DISCLAIMER_HTML
         else:
             plain_body = post.content_plain
             html_body = post.content_html

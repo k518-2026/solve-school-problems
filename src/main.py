@@ -34,7 +34,7 @@ def sanitize_filename(name: str) -> str:
 
 
 def print_stock_status(history_mgr: HistoryManager):
-    """Displays current GitHub Pages library and illustration status."""
+    """Displays current GitHub Pages library, Blogger daily queue, and illustration status."""
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     except Exception:
@@ -49,13 +49,20 @@ def print_stock_status(history_mgr: HistoryManager):
         for p in ("A", "B", "C")
     )
     used_topic_ids = {s["topic_id"] for s in stories}
+    blogger_unposted = history_mgr.count_blogger_unposted_stock()
+    blogger_posted = sum(1 for p in history_mgr.history_data.get("posts", []) if p.get("sent_to_blogger", False))
+    next_blogger = history_mgr.get_next_blogger_stock_post()
 
     print("\n" + "=" * 78)
-    print(" 【Solve School Problems（Ollama×FLUX.2）GitHub Pages 公開＆蓄積状況】")
+    print(" 【Solve School Problems（shosetsu×FLUX.2）GitHub Pages ＆ Blogger 配信状況】")
     print("=" * 78)
     print("  ・Webサイト (GitHub Pages) : https://k518-2026.github.io/solve-school-problems/")
-    print("  ・ブログメール自動投稿     : 休止中（GitHub Pages 蓄積・Web公開モード）")
-    print("  ・外部生成AI API利用       : なし（Mac mini M4 完全ローカル生成）")
+    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝05:00 JST に蓄積記事から1日1本配信・規約準拠）")
+    print(f"  ・Blogger 配信状況         : 配信済み {blogger_posted} 話 ／ 未配信ストック {blogger_unposted} 話")
+    if next_blogger:
+        print(f"  ・次回 Blogger 配信予定    : [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
+    print("  ・WordPress 自動投稿       : 休止中")
+    print("  ・小説執筆＆挿絵生成       : Mac mini M4 ローカルAI（Ollama shosetsu & FLUX.2）")
     print(f"  ・カタログ総テーマ数       : {total_catalog} テーマ（A:20 / B:20 / C:20）")
     print(f"  ・GitHub Pages 公開済み    : {len(stories)} 話（うち挿絵付き {illustrated} 話）")
     print(f"  ・未執筆テーマ数（第1巡）  : {max(0, total_catalog - len(used_topic_ids))} テーマ")
@@ -336,6 +343,11 @@ def main():
         help="Send only to Blogger",
     )
     parser.add_argument(
+        "--blogger-daily",
+        action="store_true",
+        help="Publish 1 accumulated GitHub article to Blogger (enforces 1-post-per-day Blogger ToS compliance)",
+    )
+    parser.add_argument(
         "--verbose", "-v",
         action="store_true",
         help="Enable detailed debug logging",
@@ -497,9 +509,8 @@ def main():
         print_stock_status(history_mgr)
         return 0
 
-    # Default mode: Blog auto-posting is paused; rebuild GitHub Pages (docs/) and README.md
-    blog_paused = os.environ.get("PAUSE_BLOG_AUTO_POST", "true").strip().lower() in ("1", "true", "yes")
-    if blog_paused:
+    blog_paused = os.environ.get("PAUSE_BLOG_AUTO_POST", "false").strip().lower() in ("1", "true", "yes")
+    if blog_paused and not args.blogger_daily and not args.blogger_only:
         from src.site_builder import build_github_pages
         logger.info("Blog email auto-posting is paused (PAUSE_BLOG_AUTO_POST=true). Building GitHub Pages (docs/) and README.md...")
         build_github_pages(history_mgr)
@@ -511,14 +522,29 @@ def main():
     post_status = args.status or config.default_status
     dry_run = args.dry_run or (not args.send)
 
+    # Default / --blogger-daily mode: Pick 1 accumulated story from GitHub and post to Blogger (1/day at 05:00 JST)
+    use_blogger_daily = args.blogger_daily or args.blogger_only or not config.wp_post_email
+    if use_blogger_daily and not dry_run and not args.force and history_mgr.has_posted_to_blogger_today():
+        logger.info(
+            "Blogger daily quota (1 post/day) has already been fulfilled today (JST). "
+            "Skipping to comply with Blogger Terms of Service and anti-spam guidelines."
+        )
+        print_stock_status(history_mgr)
+        return 0
+
     target_file = args.file
-    if args.blogger_only and not target_file:
-        posts = history_mgr.history_data.get("posts", [])
-        for entry in reversed(posts):
-            candidate = entry.get("file_path")
-            if candidate and Path(candidate).exists():
-                target_file = candidate
-                break
+    if not target_file and use_blogger_daily:
+        next_stock = history_mgr.get_next_blogger_stock_post(topic_id=args.topic_id)
+        if next_stock and next_stock.get("resolved_path"):
+            target_file = str(next_stock["resolved_path"])
+            logger.info(
+                f"[Blogger Daily Queue] Selected accumulated GitHub article: "
+                f"[{next_stock.get('topic_id', '-')}] {next_stock.get('title', target_file)}"
+            )
+        else:
+            logger.warning("No unposted accumulated stories remain in content/ for Blogger.")
+            print_stock_status(history_mgr)
+            return 0
 
     topic = {}
     if target_file:
@@ -565,23 +591,37 @@ def main():
         preview_path.write_text(formatted_post.content_html, encoding="utf-8")
 
     sender = WordPressMailSender(config)
-    result = sender.send_post(formatted_post, dry_run=dry_run, blogger_only=args.blogger_only)
+    compliance = sender.validate_blogger_compliance(formatted_post)
+    if not compliance["compliant"]:
+        logger.error(f"Blogger Terms of Service / Content Policy check failed: {compliance['issues']}")
+        return 1
+    logger.info("Blogger Terms of Service & Content Policy check passed (clean HTML, fiction disclaimer, 1/day limit).")
 
-    if args.blogger_only:
-        return 0 if result.get("success") else 1
+    result = sender.send_post(
+        formatted_post,
+        dry_run=dry_run,
+        blogger_only=use_blogger_daily or args.blogger_only,
+    )
 
-    history_mgr.record_post({
-        "title": formatted_post.title,
-        "pattern": selected_pattern,
-        "topic_id": topic_id,
-        "category": topic_category,
-        "file_path": str(file_path).replace("\\", "/"),
-        "sent_to_wp": (not dry_run) and result.get("sent_to_wp", result.get("success", False)),
-        "sent_to_blogger": (not dry_run) and result.get("sent_to_blogger", False),
-        "status": post_status,
-    })
+    if not result.get("success"):
+        return 1
+
+    if not dry_run:
+        history_mgr.record_post({
+            "title": formatted_post.title,
+            "pattern": selected_pattern,
+            "topic_id": topic_id,
+            "category": topic_category,
+            "file_path": str(file_path).replace("\\", "/"),
+            "sent_to_wp": result.get("sent_to_wp", False),
+            "sent_to_blogger": result.get("sent_to_blogger", False),
+            "status": post_status,
+        })
     from src.site_builder import build_github_pages
     build_github_pages(history_mgr)
+    if args.push and not dry_run:
+        git_sync_and_push([Path("data/history.json"), Path("data/POSTED_STORIES.md")], logger)
+    print_stock_status(history_mgr)
     return 0
 
 
