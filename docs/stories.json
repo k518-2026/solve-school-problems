@@ -1,5 +1,18 @@
 [
   {
+    "no": 31,
+    "story_id": "ep31-c09",
+    "topic_id": "C09",
+    "pattern": "C",
+    "title": "静かなる法令の盾――聖域と労働の境界線",
+    "category": "学校法制・働き方改革・給特法",
+    "keywords": "公立の義務教育諸学校等の教育職員の給与等に関する特別措置法第6条・第7条 / 労働安全衛生法第66条 / 地方公務員法第42条",
+    "has_image": true,
+    "url": "stories/ep31-c09.html",
+    "image": "assets/images/ep31-c09.png",
+    "char_count": 3037
+  },
+  {
     "no": 30,
     "story_id": "ep30-b10",
     "topic_id": "B10",

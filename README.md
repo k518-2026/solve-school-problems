@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `shosetsu` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用**: 外部の有料・商用生成AI APIは一切使用せず、毎週土曜日（5本ずつ）Mac mini M4 上で文章と挿絵を作成して GitHub Pages に蓄積・公開しています（ブログへのメール自動投稿は休止中）。
-- **収録作品数**: 全 **30** 話（うち挿絵付き **30** 話 / 最終更新: 2026-10-06 20:58 JST）
+- **収録作品数**: 全 **31** 話（うち挿絵付き **31** 話 / 最終更新: 2026-10-06 21:05 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 31 | ⚖️ C: 学校法制・法務 | `C09` | **[静かなる法令の盾――聖域と労働の境界線](https://k518-2026.github.io/solve-school-problems/stories/ep31-c09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep31-c09.html) | [📄原稿](<content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.md>) | [🎨挿絵](<content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.png>) | 学校法制・働き方改革・給特法 | 3,037字 |
 | 30 | 💻 B: 校務DX・ICT | `B10` | **[紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光](https://k518-2026.github.io/solve-school-problems/stories/ep30-b10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep30-b10.html) | [📄原稿](<content/2026-10-06_pattern_b_b10_紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光.md>) | [🎨挿絵](<content/2026-10-06_pattern_b_b10_紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光.png>) | 保健室DX・健康観察集計 | 3,550字 |
 | 29 | 📘 A: 教育学・心理学 | `A10` | **[色彩の迷宮と、記憶の深淵へ](https://k518-2026.github.io/solve-school-problems/stories/ep29-a10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep29-a10.html) | [📄原稿](<content/2026-10-06_pattern_a_a10_色彩の迷宮と、記憶の深淵へ.md>) | [🎨挿絵](<content/2026-10-06_pattern_a_a10_色彩の迷宮と、記憶の深淵へ.png>) | 学習科学・メタ認知 | 3,892字 |
 | 28 | ⚖️ C: 学校法制・法務 | `C08` | **[平等という名の障壁を越えて：実質的平等のための合理的配慮](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep28-c08.html) | [📄原稿](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.md>) | [🎨挿絵](<content/2026-10-04_pattern_c_c08_平等という名の障壁を越えて：実質的平等のための合理的配慮.png>) | 学校法制・合理的配慮・障害者差別解消法 | 4,153字 |

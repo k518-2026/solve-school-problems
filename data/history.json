@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-06T20:58:45.018544+09:00",
-  "total_posted": 30,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-06T21:05:00.420235+09:00",
+  "total_posted": 31,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -311,6 +311,17 @@
       "category": "保健室DX・健康観察集計",
       "file_path": "content/2026-10-06_pattern_b_b10_紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光.md",
       "timestamp": "2026-10-06T20:58:45.018544+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静かなる法令の盾――聖域と労働の境界線",
+      "pattern": "C",
+      "topic_id": "C09",
+      "category": "学校法制・働き方改革・給特法",
+      "file_path": "content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.md",
+      "timestamp": "2026-10-06T21:05:00.420235+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

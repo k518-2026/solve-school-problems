@@ -15,10 +15,10 @@
       外部生成AI APIは一切使用せず、Mac mini M4 ローカルAI（Ollama &amp; Draw Things FLUX.2）で執筆・挿絵生成し、GitHub Pages上で公開しています。
     </p>
     <div class="stats-bar">
-      <div class="stat-pill"><strong>30</strong> 収録エピソード</div>
-      <div class="stat-pill"><strong>30</strong> 挿絵付き作品</div>
-      <div class="stat-pill">📘 A: <strong>11</strong> ／ 💻 B: <strong>10</strong> ／ ⚖️ C: <strong>9</strong></div>
-      <div class="stat-pill">最終更新: 2026-10-06 20:58 JST</div>
+      <div class="stat-pill"><strong>31</strong> 収録エピソード</div>
+      <div class="stat-pill"><strong>31</strong> 挿絵付き作品</div>
+      <div class="stat-pill">📘 A: <strong>11</strong> ／ 💻 B: <strong>10</strong> ／ ⚖️ C: <strong>10</strong></div>
+      <div class="stat-pill">最終更新: 2026-10-06 21:05 JST</div>
     </div>
   </header>
 
@@ -27,14 +27,14 @@
       <div class="filter-group">
         <input type="search" id="searchInput" class="search-input" placeholder="タイトル・教育理論・GAS/ICT技術・教育法規・登場人物で検索..." oninput="filterCards()" />
         <select id="patternFilter" class="select-filter" onchange="filterCards()">
-          <option value="">すべてのパターン（全30話）</option>
+          <option value="">すべてのパターン（全31話）</option>
           <option value="A">📘 パターンA：教育相談・教育学・心理学 (11)</option>
           <option value="B">💻 パターンB：校務DX・ICT・ネットワーク (10)</option>
-          <option value="C">⚖️ パターンC：学校法制・教育委員会 (9)</option>
+          <option value="C">⚖️ パターンC：学校法制・教育委員会 (10)</option>
         </select>
         <select id="imageFilter" class="select-filter" onchange="filterCards()">
           <option value="">すべて表示</option>
-          <option value="yes">🎨 挿絵ありのみ (30)</option>
+          <option value="yes">🎨 挿絵ありのみ (31)</option>
         </select>
         <select id="sortOrder" class="select-filter" onchange="sortCards()">
           <option value="desc">新しい順（#大 → #01）</option>
@@ -45,6 +45,24 @@
     </div>
 
     <div class="story-grid" id="storyGrid">
+      <div class="story-card-wrap" data-no="31" data-pattern="C" data-illustrated="yes" data-search="静かなる法令の盾――聖域と労働の境界線 c09 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・働き方改革・給特法 公立の義務教育諸学校等の教育職員の給与等に関する特別措置法第6条・第7条 / 労働安全衛生法第66条 / 地方公務員法第42条 公立の義務教育諸学校等の教育職員の給与等に関する特別措置法（給特法第6条 超勤4項目以外の時間外勤務命令の禁止、第7条 指針・在校等時間の上限ガイドライン）および労働安全衛生法に基づく校長の健康確保義務 校長・結城先生（校長就任1年目） × 教育委員会・教職員労務管理担当主事・篠田先生 ベテラン顧問が若手教員に休日の部活動引率や夜遅くまでの会議を事実上強制しており、疲弊した若手から訴えが出た。校長として給特法上の限界と労務管理責任に基づく業務削減を決断する。">
+        <article class="story-card">
+          <a href="stories/ep31-c09.html" class="card-thumb-wrap">
+            <img class="card-thumb" src="assets/images/ep31-c09.png" alt="静かなる法令の盾――聖域と労働の境界線" loading="lazy" />
+            <span class="card-no-badge">#31 [C09]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep31-c09.html">静かなる法令の盾――聖域と労働の境界線</a></h2>
+            <div class="card-framework">🏷️ 学校法制・働き方改革・給特法 ／ 公立の義務教育諸学校等の教育職員の給与等に関する特別措置法第6条・第7条 / 労働安全衛生法第66条 / 地方公務員法第42条</div>
+            <p class="card-summary">ベテラン顧問が若手教員に休日の部活動引率や夜遅くまでの会議を事実上強制しており、疲弊した若手から訴えが出た。校長として給特法上の限界と労務管理責任に基づく業務削減を決断する。</p>
+            <div class="card-footer">
+              <span>約 3,037 文字 🎨 挿絵あり</span>
+              <a class="read-link" href="stories/ep31-c09.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
       <div class="story-card-wrap" data-no="30" data-pattern="B" data-illustrated="yes" data-search="紙の山から解放される保健室：瞬時に映る感染症ヒートマップとdxの光 b10 💻 パターンb：校務dx・ict・ネットワーク 保健室dx・健康観察集計 スプレッドシート countifs / ピボットテーブル / 条件付き書式による感染拡大ヒートマップ / リアルタイム集計グラフ / 教育委員会報告様式の自動生成 クラウド出欠・健康観察ダッシュボード（ピボットテーブル・countifs関数）と学級閉鎖基準アラートのリアルタイム可視化 養護教諭・小山内先生（教職25年目） × 若手教諭・五十嵐先生（教職2年目・情報担当） インフルエンザ流行期に全クラスから紙の欠席・早退連絡カードが集まるのを待ち、養護教諭が電卓で集計して教育委員会への報告用グラフを手書きしている。">
         <article class="story-card">
           <a href="stories/ep30-b10.html" class="card-thumb-wrap">
