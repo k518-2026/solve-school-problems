@@ -1,6 +1,6 @@
 {
   "last_pattern": "C",
-  "last_run_at": "2026-10-06T21:05:00.420235+09:00",
+  "last_run_at": "2026-10-07T08:32:32.727037+09:00",
   "total_posted": 31,
   "posts": [
     {
@@ -301,8 +301,9 @@
       "file_path": "content/2026-10-06_pattern_a_a10_色彩の迷宮と、記憶の深淵へ.md",
       "timestamp": "2026-10-06T01:21:20.666853+09:00",
       "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
+      "sent_to_blogger": true,
+      "status": "publish",
+      "blogger_posted_at": "2026-10-07T08:32:32.727037+09:00"
     },
     {
       "title": "紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光",
