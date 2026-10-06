@@ -34,7 +34,7 @@ class SMTPConfig:
     use_jetpack_shortcodes: bool
     blogger_post_email: str = ""
     ollama_host: str = "http://192.168.128.59:11434"
-    writer_model: str = "gemma4:12b"
+    writer_model: str = "shosetsu"
     draw_things_host: str = "http://192.168.128.59:7860"
 
 def get_config() -> SMTPConfig:
@@ -59,7 +59,7 @@ def get_config() -> SMTPConfig:
     default_status = os.getenv("DEFAULT_POST_STATUS", "publish").strip()
     use_jetpack_shortcodes = os.getenv("USE_JETPACK_SHORTCODES", "true").lower() in ("true", "1", "yes")
     ollama_host = os.getenv("OLLAMA_HOST", "http://192.168.128.59:11434").strip()
-    writer_model = os.getenv("OLLAMA_WRITER_MODEL", "gemma4:12b").strip()
+    writer_model = os.getenv("OLLAMA_WRITER_MODEL", "shosetsu").strip()
     draw_things_host = os.getenv("DRAW_THINGS_HOST", "http://192.168.128.59:7860").strip()
 
     return SMTPConfig(

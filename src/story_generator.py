@@ -80,10 +80,11 @@ SYSTEM_PROMPT_C = """あなたは学校法務および教育行政に精通し�
 """
 
 DEFAULT_OLLAMA_HOST = "http://192.168.128.59:11434"
-DEFAULT_WRITER_MODEL = "gemma4:12b"
+DEFAULT_WRITER_MODEL = "shosetsu"
 DEFAULT_DRAW_THINGS_HOST = "http://192.168.128.59:7860"
 
 LOCAL_FALLBACK_MODELS = [
+    "shosetsu",
     "gemma4:12b",
     "qwen3.5:9b",
     "qwen2.5:14b",
@@ -93,8 +94,8 @@ LOCAL_FALLBACK_MODELS = [
 
 class StoryGenerator:
     """
-    Generates school problem solving stories using Mac mini M4 Local LLM via Ollama (no external AI APIs),
-    and generates 512x512 illustrations via Mac mini Ollama (gemma4:12b) + Draw Things HTTP API (FLUX.2 [klein] 4B).
+    Generates school problem solving stories using Mac mini M4 Local LLM via Ollama (`shosetsu`, no external AI APIs),
+    and generates 512x512 illustrations via Mac mini Draw Things HTTP API (FLUX.2 [klein] 4B).
     Alternates between Pattern A (Pedagogy/Psychology), Pattern B (ICT/Networking), and Pattern C (School Law).
     Outputs rich Markdown with Frontmatter, Technical/Legal Commentary, and Verified References.
     """
@@ -114,9 +115,15 @@ class StoryGenerator:
 
     def _get_local_model_candidates(self, available_models: List[str]) -> List[str]:
         """Returns ordered list of local Ollama models to try."""
+        normalized_avail = set()
+        for am in available_models:
+            normalized_avail.add(am)
+            if am.endswith(":latest"):
+                normalized_avail.add(am[:-7])
         candidates = [self.writer_model]
         for m in LOCAL_FALLBACK_MODELS:
-            if m not in candidates and (not available_models or m in available_models):
+            base_m = m[:-7] if m.endswith(":latest") else m
+            if m not in candidates and base_m not in candidates and (not normalized_avail or m in normalized_avail or base_m in normalized_avail):
                 candidates.append(m)
         return candidates
 
@@ -300,16 +307,27 @@ topic_id: "{topic.get('id', 'C01')}"
             for model_name in candidates:
                 try:
                     logger.info(f"[Ollama: {model_name}] Generating story via Mac mini M4 Local LLM...")
-                    raw_text = self.call_ollama_chat(
-                        model=model_name,
-                        messages=[
+                    is_shosetsu = model_name.split(":")[0] == "shosetsu"
+                    if is_shosetsu:
+                        # Preserve shosetsu's built-in Modelfile SYSTEM prompt & tuned parameters
+                        chat_messages = [
+                            {"role": "user", "content": f"{system_instruction}\n\n{user_prompt}"},
+                        ]
+                        temp_opt = None
+                    else:
+                        chat_messages = [
                             {"role": "system", "content": system_instruction},
                             {"role": "user", "content": user_prompt},
-                        ],
-                        temperature=0.72,
+                        ]
+                        temp_opt = 0.72
+                    raw_text = self.call_ollama_chat(
+                        model=model_name,
+                        messages=chat_messages,
+                        temperature=temp_opt,
                         num_predict=6000,
                         num_ctx=8192,
                         timeout=600,
+                        think=False,
                     )
                     text = raw_text.strip()
                     if text.startswith("```markdown"):
@@ -739,22 +757,26 @@ topic_id: "{topic.get('id', 'C01')}"
         self,
         model: str,
         messages: List[Dict[str, str]],
-        temperature: float = 0.65,
+        temperature: Optional[float] = 0.65,
         num_predict: int = 250,
         num_ctx: int = 4096,
         timeout: int = 120,
+        think: bool = False,
     ) -> str:
         """Calls Mac mini Ollama /api/chat endpoint."""
         url = f"{self.ollama_host}/api/chat"
-        payload = {
+        options: Dict[str, Any] = {
+            "num_predict": num_predict,
+            "num_ctx": num_ctx,
+        }
+        if temperature is not None:
+            options["temperature"] = temperature
+        payload: Dict[str, Any] = {
             "model": model,
             "messages": messages,
             "stream": False,
-            "options": {
-                "temperature": temperature,
-                "num_predict": num_predict,
-                "num_ctx": num_ctx,
-            },
+            "think": think,
+            "options": options,
         }
         data = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(
