@@ -1,6 +1,6 @@
 {
   "last_pattern": "A",
-  "last_run_at": "2026-10-08T07:41:38.345503+09:00",
+  "last_run_at": "2026-10-08T08:59:45.900289+09:00",
   "total_posted": 32,
   "posts": [
     {
@@ -313,9 +313,11 @@
       "category": "保健室DX・健康観察集計",
       "file_path": "content/2026-10-06_pattern_b_b10_紙の山から解放される保健室：瞬時に映る感染症ヒートマップとDXの光.md",
       "timestamp": "2026-10-06T20:58:45.018544+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish",
+      "wp_posted_at": "2026-10-08T08:59:45.900289+09:00",
+      "blogger_posted_at": "2026-10-08T08:59:45.900289+09:00"
     },
     {
       "title": "静かなる法令の盾――聖域と労働の境界線",
