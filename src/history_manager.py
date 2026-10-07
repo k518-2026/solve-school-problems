@@ -185,6 +185,7 @@ class HistoryManager:
                 existing_entry["title"] = post_info["title"]
             if post_info.get("sent_to_wp"):
                 existing_entry["sent_to_wp"] = True
+                existing_entry["wp_posted_at"] = now_iso
             if post_info.get("sent_to_blogger"):
                 existing_entry["sent_to_blogger"] = True
                 existing_entry["blogger_posted_at"] = now_iso
@@ -202,6 +203,8 @@ class HistoryManager:
                 "sent_to_blogger": post_info.get("sent_to_blogger", False),
                 "status": post_info.get("status", "publish"),
             }
+            if record["sent_to_wp"]:
+                record["wp_posted_at"] = now_iso
             if record["sent_to_blogger"]:
                 record["blogger_posted_at"] = now_iso
             self.history_data["last_pattern"] = pattern
@@ -211,6 +214,99 @@ class HistoryManager:
         self.history_data["last_run_at"] = now_iso
         self.save_history()
         self._update_markdown_log()
+
+    def has_posted_to_wp_today(self) -> bool:
+        """Checks whether an article has already been posted to WordPress on the current JST calendar day."""
+        today_prefix = datetime.now(JST).strftime("%Y-%m-%d")
+        for p in self.history_data.get("posts", []):
+            if not p.get("sent_to_wp", False):
+                continue
+            w_ts = str(p.get("wp_posted_at", ""))
+            if w_ts.startswith(today_prefix):
+                return True
+        return False
+
+    def count_wp_unposted_stock(self, content_dir: Path = Path("content")) -> int:
+        """Counts how many accumulated stories in history.json / content/ have not yet been sent to WordPress."""
+        count = 0
+        seen_names = {
+            "2026-09-29_pattern_a_classroom_silence.md",
+            "2026-09-29_pattern_b_spreadsheet_grade_calculation.md",
+        }
+        for p in self.history_data.get("posts", []):
+            fp_str = p.get("file_path", "")
+            if not fp_str:
+                continue
+            fp = Path(fp_str)
+            seen_names.add(fp.name)
+            if not p.get("sent_to_wp", False) and (fp.exists() or (content_dir / fp.name).exists()):
+                count += 1
+        if content_dir.exists():
+            for md_file in content_dir.glob("*.md"):
+                if md_file.name not in seen_names:
+                    count += 1
+        return count
+
+    def get_next_wp_stock_post(
+        self,
+        content_dir: Path = Path("content"),
+        topic_id: Optional[str] = None,
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Selects the next accumulated article from GitHub to post to WordPress:
+        1) If topic_id is explicitly specified, selects the matching entry in history/content.
+        2) Selects the oldest entry in `posts` where `sent_to_wp == False` (e.g. #29 -> #30 -> #31 -> #32...).
+        3) Falls back to any unrecorded `.md` file in `content/` (excluding initial sample files).
+        """
+        posts = self.history_data.get("posts", [])
+        clean_tid = topic_id.strip().upper() if topic_id else ""
+
+        def _resolve_path(fp_str: str) -> Optional[Path]:
+            if not fp_str:
+                return None
+            p = Path(fp_str)
+            if p.exists():
+                return p
+            cand = content_dir / p.name
+            if cand.exists():
+                return cand
+            return None
+
+        if clean_tid:
+            for entry in posts:
+                if str(entry.get("topic_id", "")).strip().upper() == clean_tid:
+                    resolved = _resolve_path(entry.get("file_path", ""))
+                    if resolved:
+                        res = dict(entry)
+                        res["resolved_path"] = resolved
+                        return res
+
+        for entry in posts:
+            if not entry.get("sent_to_wp", False):
+                resolved = _resolve_path(entry.get("file_path", ""))
+                if resolved:
+                    res = dict(entry)
+                    res["resolved_path"] = resolved
+                    return res
+
+        if content_dir.exists():
+            recorded_names = {
+                "2026-09-29_pattern_a_classroom_silence.md",
+                "2026-09-29_pattern_b_spreadsheet_grade_calculation.md",
+            }
+            for entry in posts:
+                fp_str = entry.get("file_path", "")
+                if fp_str:
+                    recorded_names.add(Path(fp_str).name)
+            for md_file in sorted(content_dir.glob("*.md")):
+                if md_file.name not in recorded_names:
+                    return {
+                        "title": md_file.stem,
+                        "file_path": str(md_file).replace("\\", "/"),
+                        "resolved_path": md_file,
+                        "sent_to_wp": False,
+                    }
+        return None
 
     def has_posted_to_blogger_today(self) -> bool:
         """
@@ -283,9 +379,9 @@ class HistoryManager:
                         res["resolved_path"] = resolved
                         return res
 
-        # Priority 1: Newly accumulated stories (status == "github_pages" and not sent_to_blogger)
+        # Priority 1: Newly accumulated stories (not sent_to_blogger and not sent_to_wp or status == "github_pages")
         for entry in posts:
-            if not entry.get("sent_to_blogger", False) and entry.get("status") == "github_pages":
+            if not entry.get("sent_to_blogger", False) and (entry.get("status") == "github_pages" or not entry.get("sent_to_wp", False)):
                 resolved = _resolve_path(entry.get("file_path", ""))
                 if resolved:
                     res = dict(entry)

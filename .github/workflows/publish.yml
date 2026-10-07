@@ -1,9 +1,15 @@
-name: Solve School Problems - Daily 05:00 JST Blogger Publisher & GitHub Pages
+name: Solve School Problems - Daily 05:00 JST WordPress & Blogger Publisher
 
 on:
   schedule:
-    # 毎日 朝 05:00 JST (20:00 UTC) に GitHub に蓄積されている記事を 1日1本 Blogger へ自動投稿（Blogger利用規約準拠）
+    # 毎日 朝 05:00 JST (20:00 UTC) に GitHub に蓄積されている記事を 1日1本 WordPress & Blogger へ自動投稿
     - cron: '0 20 * * *'
+
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/wp_trigger.txt'
 
   # Manual execution from GitHub Actions UI
   workflow_dispatch:
@@ -24,7 +30,7 @@ on:
         type: boolean
         default: false
       post_status:
-        description: 'Post status (publish or draft)'
+        description: 'Post status on WordPress (publish or draft)'
         required: true
         type: choice
         options:
@@ -36,11 +42,16 @@ on:
         required: false
         type: string
         default: ''
+      wp_only:
+        description: 'Send 1 accumulated story to WordPress only'
+        required: false
+        type: boolean
+        default: false
       blogger_only:
         description: 'Send to Blogger only'
         required: false
         type: boolean
-        default: true
+        default: false
 
 permissions:
   contents: write
@@ -51,7 +62,7 @@ concurrency:
 
 jobs:
   publish:
-    name: Publish 1 Accumulated Story to Blogger (05:00 JST) & Update GitHub Pages
+    name: Publish Accumulated Story to WordPress & Blogger & Update GitHub Pages
     runs-on: ubuntu-latest
 
     steps:
@@ -75,7 +86,7 @@ jobs:
         run: |
           python -m unittest discover tests
 
-      - name: Publish 1 Accumulated GitHub Article to Blogger (Blogger ToS Compliant)
+      - name: Publish Accumulated GitHub Article to WordPress / Blogger
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           PAUSE_BLOG_AUTO_POST: 'false'
@@ -86,14 +97,20 @@ jobs:
           SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS || 'true' }}
           SMTP_USE_SSL: ${{ secrets.SMTP_USE_SSL || 'false' }}
           MAIL_FROM_NAME: ${{ vars.MAIL_FROM_NAME || 'Solve School Problems' }}
-          ENABLE_WP_POST: 'false'
-          WP_POST_EMAIL: ''
+          ENABLE_WP_POST: 'true'
+          WP_POST_EMAIL: ${{ secrets.WP_POST_EMAIL }}
           BLOGGER_POST_EMAIL: ${{ secrets.BLOGGER_POST_EMAIL }}
           DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
           USE_JETPACK_SHORTCODES: 'true'
         run: |
           git pull --rebase origin main || true
-          ARGS="--blogger-daily"
+          if [ "${{ github.event_name }}" = "push" ] || [ "${{ github.event.inputs.wp_only }}" = "true" ]; then
+            ARGS="--wp-only"
+          elif [ "${{ github.event.inputs.blogger_only }}" = "true" ]; then
+            ARGS="--blogger-only"
+          else
+            ARGS="--blogger-daily"
+          fi
           if [ -n "${{ github.event.inputs.topic_id }}" ]; then
             ARGS="$ARGS --topic-id ${{ github.event.inputs.topic_id }}"
           fi
@@ -115,7 +132,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes detected to commit."
           else
-            git commit -m "chore(blogger): Record daily 05:00 JST Blogger publication & update GitHub Pages [skip ci]"
+            git commit -m "chore(publish): Record WordPress/Blogger publication & update GitHub Pages [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:${{ github.ref }}
           fi

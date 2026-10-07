@@ -277,22 +277,24 @@ class WordPressMailSender:
         self,
         post: FormattedPost,
         dry_run: bool = False,
-        blogger_only: bool = False
+        blogger_only: bool = False,
+        wp_only: bool = False,
     ) -> Dict[str, Any]:
         """
         Sends the formatted post to WordPress (WP_POST_EMAIL) and simultaneously to Blogger (BLOGGER_POST_EMAIL).
         If blogger_only is True, sends only to Blogger.
+        If wp_only is True, sends only to WordPress.
         If dry_run is True, skips actual network dispatch and logs details.
         """
         wp_targets = [] if blogger_only else self._parse_email_list(self.config.wp_post_email)
-        blogger_targets = self._parse_email_list(self.config.blogger_post_email)
+        blogger_targets = [] if wp_only else self._parse_email_list(self.config.blogger_post_email)
         has_image = bool(post.image_path and Path(post.image_path).exists())
 
         # Also auto-classify any @blogger.com address placed inside WP_POST_EMAIL
         clean_wp_targets = []
         for addr in wp_targets:
             if "@blogger.com" in addr.lower():
-                if addr not in blogger_targets:
+                if not wp_only and addr not in blogger_targets:
                     blogger_targets.append(addr)
             else:
                 clean_wp_targets.append(addr)
@@ -301,7 +303,8 @@ class WordPressMailSender:
             logger.info("================ [DRY RUN / MOCK MODE] ================")
             if not blogger_only:
                 logger.info(f"Target WP Email: {self.config.wp_post_email or '(Not Set - WP_POST_EMAIL)'}")
-            logger.info(f"Target Blogger Email: {self.config.blogger_post_email or '(Not Set - BLOGGER_POST_EMAIL)'}")
+            if not wp_only:
+                logger.info(f"Target Blogger Email: {self.config.blogger_post_email or '(Not Set - BLOGGER_POST_EMAIL)'}")
             logger.info(f"Subject (Post Title): {post.title}")
             logger.info(f"From: {self.config.user or '(Not Set - SMTP_USER)'}")
             logger.info(f"Pattern: {post.pattern}")

@@ -52,8 +52,7 @@ def get_config() -> SMTPConfig:
     use_tls = os.getenv("SMTP_USE_TLS", "true").lower() in ("true", "1", "yes")
     use_ssl = os.getenv("SMTP_USE_SSL", "false").lower() in ("true", "1", "yes")
     from_name = os.getenv("MAIL_FROM_NAME", "Solve School Problems").strip()
-    # Temporarily pause WordPress posting by default (set ENABLE_WP_POST=true to re-enable)
-    enable_wp = os.getenv("ENABLE_WP_POST", "false").strip().lower() in ("true", "1", "yes")
+    enable_wp = os.getenv("ENABLE_WP_POST", "true").strip().lower() in ("true", "1", "yes")
     wp_post_email = os.getenv("WP_POST_EMAIL", "").strip() if enable_wp else ""
     blogger_post_email = os.getenv("BLOGGER_POST_EMAIL", "").strip()
     default_status = os.getenv("DEFAULT_POST_STATUS", "publish").strip()

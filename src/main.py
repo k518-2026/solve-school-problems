@@ -49,19 +49,25 @@ def print_stock_status(history_mgr: HistoryManager):
         for p in ("A", "B", "C")
     )
     used_topic_ids = {s["topic_id"] for s in stories}
+    wp_unposted = history_mgr.count_wp_unposted_stock()
+    wp_posted = sum(1 for p in history_mgr.history_data.get("posts", []) if p.get("sent_to_wp", False))
+    next_wp = history_mgr.get_next_wp_stock_post()
     blogger_unposted = history_mgr.count_blogger_unposted_stock()
     blogger_posted = sum(1 for p in history_mgr.history_data.get("posts", []) if p.get("sent_to_blogger", False))
     next_blogger = history_mgr.get_next_blogger_stock_post()
 
     print("\n" + "=" * 78)
-    print(" 【Solve School Problems（shosetsu×FLUX.2）GitHub Pages ＆ Blogger 配信状況】")
+    print(" 【Solve School Problems（shosetsu×FLUX.2）WP・Blogger・GitHub Pages 状況】")
     print("=" * 78)
     print("  ・Webサイト (GitHub Pages) : https://k518-2026.github.io/solve-school-problems/")
+    print("  ・WordPress 自動投稿       : 稼働中（蓄積記事から順次配信）")
+    print(f"  ・WordPress 配信状況       : 配信済み {wp_posted} 話 ／ 未配信ストック {wp_unposted} 話")
+    if next_wp:
+        print(f"  ・次回 WordPress 配信予定  : [{next_wp.get('topic_id', '-')}] {next_wp.get('title', '-')}")
     print("  ・Blogger 自動投稿         : 稼働中（毎日 朝05:00 JST に蓄積記事から1日1本配信・規約準拠）")
     print(f"  ・Blogger 配信状況         : 配信済み {blogger_posted} 話 ／ 未配信ストック {blogger_unposted} 話")
     if next_blogger:
         print(f"  ・次回 Blogger 配信予定    : [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
-    print("  ・WordPress 自動投稿       : 休止中")
     print("  ・小説執筆＆挿絵生成       : Mac mini M4 ローカルAI（Ollama shosetsu & FLUX.2）")
     print(f"  ・カタログ総テーマ数       : {total_catalog} テーマ（A:20 / B:20 / C:20）")
     print(f"  ・GitHub Pages 公開済み    : {len(stories)} 話（うち挿絵付き {illustrated} 話）")
@@ -343,9 +349,14 @@ def main():
         help="Send only to Blogger",
     )
     parser.add_argument(
+        "--wp-only",
+        action="store_true",
+        help="Send 1 accumulated WP-unposted article only to WordPress",
+    )
+    parser.add_argument(
         "--blogger-daily",
         action="store_true",
-        help="Publish 1 accumulated GitHub article to Blogger (enforces 1-post-per-day Blogger ToS compliance)",
+        help="Publish 1 accumulated GitHub article to Blogger (and WordPress if not yet sent)",
     )
     parser.add_argument(
         "--verbose", "-v",
@@ -510,7 +521,7 @@ def main():
         return 0
 
     blog_paused = os.environ.get("PAUSE_BLOG_AUTO_POST", "false").strip().lower() in ("1", "true", "yes")
-    if blog_paused and not args.blogger_daily and not args.blogger_only:
+    if blog_paused and not args.blogger_daily and not args.blogger_only and not args.wp_only:
         from src.site_builder import build_github_pages
         logger.info("Blog email auto-posting is paused (PAUSE_BLOG_AUTO_POST=true). Building GitHub Pages (docs/) and README.md...")
         build_github_pages(history_mgr)
@@ -522,25 +533,40 @@ def main():
     post_status = args.status or config.default_status
     dry_run = args.dry_run or (not args.send)
 
-    # Default / --blogger-daily mode: Pick 1 accumulated story from GitHub and post to Blogger (1/day at 05:00 JST)
-    use_blogger_daily = args.blogger_daily or args.blogger_only or not config.wp_post_email
-    if use_blogger_daily and not dry_run and not args.force and history_mgr.has_posted_to_blogger_today():
-        logger.info(
-            "Blogger daily quota (1 post/day) has already been fulfilled today (JST). "
-            "Skipping to comply with Blogger Terms of Service and anti-spam guidelines."
-        )
-        print_stock_status(history_mgr)
-        return 0
-
     target_file = args.file
-    if not target_file and use_blogger_daily:
+    send_blogger_only = args.blogger_only
+    send_wp_only = args.wp_only
+
+    if args.wp_only and not target_file:
+        next_wp_stock = history_mgr.get_next_wp_stock_post(topic_id=args.topic_id)
+        if next_wp_stock and next_wp_stock.get("resolved_path"):
+            target_file = str(next_wp_stock["resolved_path"])
+            logger.info(
+                f"[WordPress Queue] Selected accumulated GitHub article: "
+                f"[{next_wp_stock.get('topic_id', '-')}] {next_wp_stock.get('title', target_file)}"
+            )
+        else:
+            logger.warning("No unposted accumulated stories remain in content/ for WordPress.")
+            print_stock_status(history_mgr)
+            return 0
+    elif (args.blogger_daily or args.blogger_only) and not target_file:
+        if not dry_run and not args.force and history_mgr.has_posted_to_blogger_today():
+            logger.info(
+                "Blogger daily quota (1 post/day) has already been fulfilled today (JST). "
+                "Skipping to comply with Blogger Terms of Service and anti-spam guidelines."
+            )
+            print_stock_status(history_mgr)
+            return 0
         next_stock = history_mgr.get_next_blogger_stock_post(topic_id=args.topic_id)
         if next_stock and next_stock.get("resolved_path"):
             target_file = str(next_stock["resolved_path"])
             logger.info(
-                f"[Blogger Daily Queue] Selected accumulated GitHub article: "
+                f"[Daily Queue] Selected accumulated GitHub article: "
                 f"[{next_stock.get('topic_id', '-')}] {next_stock.get('title', target_file)}"
             )
+            # If this article was already sent to WP, only send to Blogger to prevent duplicate WP posts
+            if next_stock.get("sent_to_wp", False) or not config.wp_post_email:
+                send_blogger_only = True
         else:
             logger.warning("No unposted accumulated stories remain in content/ for Blogger.")
             print_stock_status(history_mgr)
@@ -595,12 +621,13 @@ def main():
     if not compliance["compliant"]:
         logger.error(f"Blogger Terms of Service / Content Policy check failed: {compliance['issues']}")
         return 1
-    logger.info("Blogger Terms of Service & Content Policy check passed (clean HTML, fiction disclaimer, 1/day limit).")
+    logger.info("Terms of Service & Content Policy check passed (clean HTML, fiction disclaimer, 1/day limit).")
 
     result = sender.send_post(
         formatted_post,
         dry_run=dry_run,
-        blogger_only=use_blogger_daily or args.blogger_only,
+        blogger_only=send_blogger_only,
+        wp_only=send_wp_only,
     )
 
     if not result.get("success"):
