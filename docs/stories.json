@@ -1,5 +1,18 @@
 [
   {
+    "no": 32,
+    "story_id": "ep32-a11",
+    "topic_id": "A11",
+    "pattern": "A",
+    "title": "震える指先と、小さな「できた」の堆積",
+    "category": "教育心理学・自己効力感",
+    "keywords": "自己効力感の4源泉 / スモールステップによる達成体験（Mastery Experiences） / 身近なロールモデルの代理体験",
+    "has_image": true,
+    "url": "stories/ep32-a11.html",
+    "image": "assets/images/ep32-a11.png",
+    "char_count": 3754
+  },
+  {
     "no": 31,
     "story_id": "ep31-c09",
     "topic_id": "C09",
