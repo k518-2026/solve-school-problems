@@ -79,7 +79,11 @@ SYSTEM_PROMPT_C = """あなたは学校法務および教育行政に精通し�
      （実在する法律のe-Gov法令検索リンク `[https://laws.e-gov.go.jp/document?lawid=...](https://laws.e-gov.go.jp/document?lawid=...)` や文部科学省公式ガイドラインの正規URLを明記してください）
 """
 
-DEFAULT_OLLAMA_HOST = "http://192.168.128.59:11434"
+DEFAULT_OLLAMA_HOST = "http://192.168.128.62:11434"
+FALLBACK_OLLAMA_HOSTS = [
+    "http://192.168.128.62:11434",
+    "http://192.168.128.59:11434",
+]
 DEFAULT_WRITER_MODEL = "shosetsu"
 DEFAULT_DRAW_THINGS_HOST = "http://192.168.128.59:7860"
 
@@ -94,7 +98,7 @@ LOCAL_FALLBACK_MODELS = [
 
 class StoryGenerator:
     """
-    Generates school problem solving stories using Mac mini M4 Local LLM via Ollama (`shosetsu`, no external AI APIs),
+    Generates school problem solving stories using LAN Local LLM via Ollama (`shosetsu`, .62 primary / .59 fallback),
     and generates 512x512 illustrations via Mac mini Draw Things HTTP API (FLUX.2 [klein] 4B).
     Alternates between Pattern A (Pedagogy/Psychology), Pattern B (ICT/Networking), and Pattern C (School Law).
     Outputs rich Markdown with Frontmatter, Technical/Legal Commentary, and Verified References.
@@ -109,7 +113,14 @@ class StoryGenerator:
         draw_things_host: Optional[str] = None,
     ):
         self.api_key = None  # External AI APIs are disabled
-        self.ollama_host = (ollama_host or os.getenv("OLLAMA_HOST", DEFAULT_OLLAMA_HOST)).rstrip("/")
+        raw_host = (ollama_host or os.getenv("OLLAMA_HOST", DEFAULT_OLLAMA_HOST)).strip()
+        primary_hosts = [h.strip().rstrip("/") for h in raw_host.split(",") if h.strip()]
+        self.ollama_host = primary_hosts[0] if primary_hosts else DEFAULT_OLLAMA_HOST
+        self.ollama_hosts: List[str] = list(primary_hosts)
+        for fb in FALLBACK_OLLAMA_HOSTS:
+            fb_clean = fb.rstrip("/")
+            if fb_clean not in self.ollama_hosts:
+                self.ollama_hosts.append(fb_clean)
         self.writer_model = writer_model or os.getenv("OLLAMA_WRITER_MODEL", DEFAULT_WRITER_MODEL)
         self.draw_things_host = (draw_things_host or os.getenv("DRAW_THINGS_HOST", DEFAULT_DRAW_THINGS_HOST)).rstrip("/")
 
@@ -733,25 +744,31 @@ topic_id: "{topic.get('id', 'C01')}"
         return {"online": False, "host": self.draw_things_host}
 
     def check_ollama_connection(self) -> Dict[str, Any]:
-        """Checks connection to Mac mini Ollama server (/api/tags)."""
-        try:
-            req = urllib.request.Request(f"{self.ollama_host}/api/tags")
-            with urllib.request.urlopen(req, timeout=5) as res:
-                if res.getcode() == 200:
-                    data = json.loads(res.read().decode("utf-8", errors="ignore"))
-                    models = [m.get("name", "") for m in data.get("models", [])]
-                    return {
-                        "online": True,
-                        "host": self.ollama_host,
-                        "models": models,
-                    }
-        except Exception as e:
-            return {
-                "online": False,
-                "host": self.ollama_host,
-                "error": str(e),
-            }
-        return {"online": False, "host": self.ollama_host}
+        """Checks connection to LAN Ollama servers (.62 primary, .59 fallback) (/api/tags)."""
+        last_err = None
+        for candidate_host in self.ollama_hosts:
+            try:
+                req = urllib.request.Request(f"{candidate_host}/api/tags")
+                with urllib.request.urlopen(req, timeout=5) as res:
+                    if res.getcode() == 200:
+                        data = json.loads(res.read().decode("utf-8", errors="ignore"))
+                        models = [m.get("name", "") for m in data.get("models", [])]
+                        if candidate_host != self.ollama_host:
+                            logger.info(f"Switched active Ollama host from {self.ollama_host} to {candidate_host}")
+                            self.ollama_host = candidate_host
+                        return {
+                            "online": True,
+                            "host": self.ollama_host,
+                            "models": models,
+                        }
+            except Exception as e:
+                last_err = e
+                logger.debug(f"Ollama connection check failed on {candidate_host}: {e}")
+        return {
+            "online": False,
+            "host": self.ollama_host,
+            "error": str(last_err) if last_err else "Unreachable",
+        }
 
     def call_ollama_chat(
         self,
@@ -763,8 +780,7 @@ topic_id: "{topic.get('id', 'C01')}"
         timeout: int = 120,
         think: bool = False,
     ) -> str:
-        """Calls Mac mini Ollama /api/chat endpoint."""
-        url = f"{self.ollama_host}/api/chat"
+        """Calls LAN Ollama /api/chat endpoint (.62 primary, .59 fallback)."""
         options: Dict[str, Any] = {
             "num_predict": num_predict,
             "num_ctx": num_ctx,
@@ -779,18 +795,30 @@ topic_id: "{topic.get('id', 'C01')}"
             "options": options,
         }
         data = json.dumps(payload).encode("utf-8")
-        req = urllib.request.Request(
-            url,
-            data=data,
-            headers={"Content-Type": "application/json"},
-            method="POST",
-        )
-        with urllib.request.urlopen(req, timeout=timeout) as res:
-            body = json.loads(res.read().decode("utf-8", errors="ignore"))
-            msg = body.get("message", {})
-            content = msg.get("content", "")
-            content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
-            return content
+        hosts_to_try = [self.ollama_host] + [h for h in self.ollama_hosts if h != self.ollama_host]
+        last_err: Optional[Exception] = None
+        for host in hosts_to_try:
+            url = f"{host}/api/chat"
+            try:
+                req = urllib.request.Request(
+                    url,
+                    data=data,
+                    headers={"Content-Type": "application/json"},
+                    method="POST",
+                )
+                with urllib.request.urlopen(req, timeout=timeout) as res:
+                    body = json.loads(res.read().decode("utf-8", errors="ignore"))
+                    if host != self.ollama_host:
+                        logger.info(f"Failover succeeded on Ollama host {host}")
+                        self.ollama_host = host
+                    msg = body.get("message", {})
+                    content = msg.get("content", "")
+                    content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+                    return content
+            except Exception as e:
+                last_err = e
+                logger.warning(f"Ollama chat failed on {host} ({model}): {e}")
+        raise RuntimeError(f"All Ollama hosts ({hosts_to_try}) failed for model '{model}': {last_err}")
 
     def generate_english_image_prompt(
         self,
