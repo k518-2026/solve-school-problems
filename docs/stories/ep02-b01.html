@@ -30,50 +30,50 @@
     <img class="story-hero-image" src="../assets/images/ep02-b01.png" alt="深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現" loading="lazy" />
 
     <article class="story-content">
-      <p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">夕闇が深く沈み込んだ職員室には、鈍く光るデスクトップパソコンの画面と、紙をめくる乾いた音だけが響いていた。窓の外では、秋の冷たい雨がアスファルトを濡らしている。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「うーん、また合わない……。一の組の出席日数と、保健室の提出した台帳の数字が、どうしても三日ズレるぞ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">職員室の最奥、教務主任の机に陣取る大山（おおやま）は、厚手の老眼鏡を額まで押し上げ、両手でこめかみを強く揉みほぐした。教職歴二十八年。生徒一人ひとりの顔と名前、家庭環境まで記憶している古強者（ふるつわもの）だが、この時期ばかりは表情に深い疲労の色が浮かんでいる。目の下にはくっきりとクマができ、デスクの上には「学期末成績一覧表」「遅刻・欠席届集計」「考査素点データ」と書かれた紙の束が、幾重にも雪崩のように積み上げられていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山の目の前には、十キー付きの電卓が鎮座している。300人を超える生徒の各教科の素点を手作業で打ち込み、評定平均を計算し、さらに欠席日数や特記事項のカウントを一つひとつ目視で突き合わせる。少しでも数値を打ち間違えれば、どこでズレたのか分からなくなって最初からやり直しだ。昨夜も終電間際まで残り、今夜もすでに日付が変わろうとしていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「大山先生、まだ残っていらしたんですか。お疲れ様です」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">静まり返った部屋に、軽やかな足音が響いた。声の主は、情報科の若手教諭であり、校内のICT環境の整備を一手に引き受けている水野（みずの）だった。手には温かい缶コーヒーを持ち、心配そうに大山の背中を見つめている。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「おや、水野君か。いやね、明日の朝一番までに学年会議用の成績処理を終わらせなきゃいけないんだが、どうも電卓の計算結果とエクセルのセルが噛み合わなくてね。この生徒の出席簿、見出しの列が微妙にズレているせいで、VLOOKUPの参照先が狂っちまったらしいんだよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山は疲れ切った声でそう言いながら、ため息をついた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「手作業で直そうにも、300人×9教科分となると、どこに爆弾が埋まっているのやら……。若い頃は徹夜なんて何ともなかったんだが、最近はこの小さな文字を見ているだけで頭がクラクラするよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野は、大山の机の上に山積みにされた紙の束と、画面いっぱいに散らばるローカル保存のExcelファイル群を一瞥した。長年この学校の事務を支えてきた大山の丁寧で真面目な仕事ぶりを、水野は深く尊敬している。だからこそ、その善意の努力が非効率なアナログ作業によってすり潰されている現状が、もどかしくてならなかった。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「大山先生、その作業、完全に間違った方向へエネルギーを使っていますよ。少し画面を貸してください。僕が魔法をかけてみせますから」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「魔法、ねえ……。この泥沼から救い出してくれるなら、何でもすがりたい気分だがね」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山は苦笑しながら椅子を譲り、水野がサッと席に座るのを見守った。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野は慣れた手つきでキーボードを叩き始めた。まずは、デスクトップに散らばるバラバラのExcelファイルを、セキュアな学校用Google Workspace環境へとアップロードしていく。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「水野君、そこに入っているデータ、個人情報がぎっしり詰まっているんだぞ。そんなクラウドになんでも放り込んで大丈夫なのかい？ 職員会議でも情報漏洩は厳禁だって、教頭先生もうるさく言っているだろ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山が慌てて口を挟むと、水野は穏やかな笑みを浮かべて首を振った。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「ご安心ください、大山先生。今回使うのは、文部科学省のガイドラインに完全準拠し、厳格な二段階認証と組織内ドメイン管理が施された校務用のGoogle Workspaceです。外部へのリンク共有は完全にブロックされ、通信はすべて暗号化されています。手元のローカルPCのハードディスクがクラッシュしてデータが全滅するリスクや、USBメモリを紛失するリスクに比べたら、クラウドの信頼性とアクセス権限管理のほうがはるかに安全ですよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「なるほど……セキュリティの仕組みをちゃんと理解していれば、手作業のヒューマンエラーを防ぐ盾になるというわけか」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山は納得したようにうなずき、若手の確かな技術的裏付けに感心した様子を見せた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野の指先が、流れるようなリズムでキーボードを叩き続ける。画面上では、Googleスプレッドシートが次々と新しい姿に生まれ変わっていき、その圧倒的なスピード感に、大山は思わず身を乗り出した。</p>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「さて、まずは各クラスのバラバラな出欠席データと、教科ごとの素点マスターを一つのシートに結合します。ここで、従来のVLOOKUP関数ではなく、最新の <code style="background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9em; color: #0f172a;">XLOOKUP</code> 関数と、条件に一致するデータを一網打尽で抽出する <code style="background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9em; color: #0f172a;">FILTER</code> 関数を使います」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野がサクサクと数式を打ち込むと、これまでエラー値（#N/A）で埋め尽くされていたセル群に、一瞬で300人分の正確なデータが美しく整列した。手作業で電卓を叩いていた列には、数式の配列を一瞬で展開する <code style="background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9em; color: #0f172a;">ARRAYFORMULA</code> が適用され、一行目を修正すれば全生徒の計算がリアルタイムで連動する仕組みが組み上がっていく。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「おお……！ 一瞬で全員分の評定平均が算出されたぞ。しかも、転記ミスが入り込む隙間もない」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「さらにここからが本番です、大山先生。人間が目視で確認していると、どうしても見落としてしまう『あり得ない数値』がありますよね。例えば、100点満点のテストで105点が入力されていたり、出席日数が授業日数を超えていたりするケースです」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野は、スプレッドシートの「データ入力規則」と「条件付き書式」のメニューを開き、華麗な設定を施していく。すると、入力ミスや規定外の数値が含まれているセルが、鮮やかなパステルレッドにフワッと光り輝いた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「うわっ、なんだこれ！ 3年2組の佐藤君の英語の素点が『999』になっているじゃないか！ これは……私の打ち間違いだな、恥ずかしい……」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山が自分の頭を軽く叩いて苦笑いすると、水野は優しくフォローした。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「人間ですから打ち間違いは誰にでもありますよ。大切なのは、人間が根性でチェックするのではなく、システムにルールを覚えさせて、ミスを瞬時に検知させることです。そして、一番の山場である『指導要録用の評定換算と、各教科の観点別評価の集計』ですが……これはもう、人間の手でやらせたら夜が明けます。GAS（Google Apps Script）の出番です」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野のプログラミング画面に切り替わり、流れるようなJavaScriptベースのコードが書き込まれていく。そこには、学年全体の成績データを一瞬で読み込み、観点別評価のアルゴリズムに従って自動で五段階評価に換算し、さらに保護者説明用のPDF帳票を一人分ずつ自動生成してGoogleドライブのフォルダに格納するプログラムが組み上げられていた。</p>
-<pre style="background-color: #1e293b; color: #f8fafc; padding: 14px 18px; border-radius: 6px; overflow-x: auto; font-family: Consolas, Monaco, monospace; font-size: 13.5px; line-height: 1.5; margin: 1.2em 0;"><code>function generateReportCards() {
+      <p>夕闇が深く沈み込んだ職員室には、鈍く光るデスクトップパソコンの画面と、紙をめくる乾いた音だけが響いていた。窓の外では、秋の冷たい雨がアスファルトを濡らしている。</p>
+<p>「うーん、また合わない……。一の組の出席日数と、保健室の提出した台帳の数字が、どうしても三日ズレるぞ」</p>
+<p>職員室の最奥、教務主任の机に陣取る大山（おおやま）は、厚手の老眼鏡を額まで押し上げ、両手でこめかみを強く揉みほぐした。教職歴二十八年。生徒一人ひとりの顔と名前、家庭環境まで記憶している古強者（ふるつわもの）だが、この時期ばかりは表情に深い疲労の色が浮かんでいる。目の下にはくっきりとクマができ、デスクの上には「学期末成績一覧表」「遅刻・欠席届集計」「考査素点データ」と書かれた紙の束が、幾重にも雪崩のように積み上げられていた。</p>
+<p>大山の目の前には、十キー付きの電卓が鎮座している。300人を超える生徒の各教科の素点を手作業で打ち込み、評定平均を計算し、さらに欠席日数や特記事項のカウントを一つひとつ目視で突き合わせる。少しでも数値を打ち間違えれば、どこでズレたのか分からなくなって最初からやり直しだ。昨夜も終電間際まで残り、今夜もすでに日付が変わろうとしていた。</p>
+<p>「大山先生、まだ残っていらしたんですか。お疲れ様です」</p>
+<p>静まり返った部屋に、軽やかな足音が響いた。声の主は、情報科の若手教諭であり、校内のICT環境の整備を一手に引き受けている水野（みずの）だった。手には温かい缶コーヒーを持ち、心配そうに大山の背中を見つめている。</p>
+<p>「おや、水野君か。いやね、明日の朝一番までに学年会議用の成績処理を終わらせなきゃいけないんだが、どうも電卓の計算結果とエクセルのセルが噛み合わなくてね。この生徒の出席簿、見出しの列が微妙にズレているせいで、VLOOKUPの参照先が狂っちまったらしいんだよ」</p>
+<p>大山は疲れ切った声でそう言いながら、ため息をついた。</p>
+<p>「手作業で直そうにも、300人×9教科分となると、どこに爆弾が埋まっているのやら……。若い頃は徹夜なんて何ともなかったんだが、最近はこの小さな文字を見ているだけで頭がクラクラするよ」</p>
+<p>水野は、大山の机の上に山積みにされた紙の束と、画面いっぱいに散らばるローカル保存のExcelファイル群を一瞥した。長年この学校の事務を支えてきた大山の丁寧で真面目な仕事ぶりを、水野は深く尊敬している。だからこそ、その善意の努力が非効率なアナログ作業によってすり潰されている現状が、もどかしくてならなかった。</p>
+<p>「大山先生、その作業、完全に間違った方向へエネルギーを使っていますよ。少し画面を貸してください。僕が魔法をかけてみせますから」</p>
+<p>「魔法、ねえ……。この泥沼から救い出してくれるなら、何でもすがりたい気分だがね」</p>
+<p>大山は苦笑しながら椅子を譲り、水野がサッと席に座るのを見守った。</p>
+<p>水野は慣れた手つきでキーボードを叩き始めた。まずは、デスクトップに散らばるバラバラのExcelファイルを、セキュアな学校用Google Workspace環境へとアップロードしていく。</p>
+<p>「水野君、そこに入っているデータ、個人情報がぎっしり詰まっているんだぞ。そんなクラウドになんでも放り込んで大丈夫なのかい？ 職員会議でも情報漏洩は厳禁だって、教頭先生もうるさく言っているだろ」</p>
+<p>大山が慌てて口を挟むと、水野は穏やかな笑みを浮かべて首を振った。</p>
+<p>「ご安心ください、大山先生。今回使うのは、文部科学省のガイドラインに完全準拠し、厳格な二段階認証と組織内ドメイン管理が施された校務用のGoogle Workspaceです。外部へのリンク共有は完全にブロックされ、通信はすべて暗号化されています。手元のローカルPCのハードディスクがクラッシュしてデータが全滅するリスクや、USBメモリを紛失するリスクに比べたら、クラウドの信頼性とアクセス権限管理のほうがはるかに安全ですよ」</p>
+<p>「なるほど……セキュリティの仕組みをちゃんと理解していれば、手作業のヒューマンエラーを防ぐ盾になるというわけか」</p>
+<p>大山は納得したようにうなずき、若手の確かな技術的裏付けに感心した様子を見せた。</p>
+<p>水野の指先が、流れるようなリズムでキーボードを叩き続ける。画面上では、Googleスプレッドシートが次々と新しい姿に生まれ変わっていき、その圧倒的なスピード感に、大山は思わず身を乗り出した。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>「さて、まずは各クラスのバラバラな出欠席データと、教科ごとの素点マスターを一つのシートに結合します。ここで、従来のVLOOKUP関数ではなく、最新の <code>XLOOKUP</code> 関数と、条件に一致するデータを一網打尽で抽出する <code>FILTER</code> 関数を使います」</p>
+<p>水野がサクサクと数式を打ち込むと、これまでエラー値（#N/A）で埋め尽くされていたセル群に、一瞬で300人分の正確なデータが美しく整列した。手作業で電卓を叩いていた列には、数式の配列を一瞬で展開する <code>ARRAYFORMULA</code> が適用され、一行目を修正すれば全生徒の計算がリアルタイムで連動する仕組みが組み上がっていく。</p>
+<p>「おお……！ 一瞬で全員分の評定平均が算出されたぞ。しかも、転記ミスが入り込む隙間もない」</p>
+<p>「さらにここからが本番です、大山先生。人間が目視で確認していると、どうしても見落としてしまう『あり得ない数値』がありますよね。例えば、100点満点のテストで105点が入力されていたり、出席日数が授業日数を超えていたりするケースです」</p>
+<p>水野は、スプレッドシートの「データ入力規則」と「条件付き書式」のメニューを開き、華麗な設定を施していく。すると、入力ミスや規定外の数値が含まれているセルが、鮮やかなパステルレッドにフワッと光り輝いた。</p>
+<p>「うわっ、なんだこれ！ 3年2組の佐藤君の英語の素点が『999』になっているじゃないか！ これは……私の打ち間違いだな、恥ずかしい……」</p>
+<p>大山が自分の頭を軽く叩いて苦笑いすると、水野は優しくフォローした。</p>
+<p>「人間ですから打ち間違いは誰にでもありますよ。大切なのは、人間が根性でチェックするのではなく、システムにルールを覚えさせて、ミスを瞬時に検知させることです。そして、一番の山場である『指導要録用の評定換算と、各教科の観点別評価の集計』ですが……これはもう、人間の手でやらせたら夜が明けます。GAS（Google Apps Script）の出番です」</p>
+<p>水野のプログラミング画面に切り替わり、流れるようなJavaScriptベースのコードが書き込まれていく。そこには、学年全体の成績データを一瞬で読み込み、観点別評価のアルゴリズムに従って自動で五段階評価に換算し、さらに保護者説明用のPDF帳票を一人分ずつ自動生成してGoogleドライブのフォルダに格納するプログラムが組み上げられていた。</p>
+<pre><code class="language-javascript">function generateReportCards() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&quot;成績集計&quot;);
   const data = sheet.getDataRange().getValues();
   const headers = data[0];
-  
+
   // 1行目のヘッダーを除き、生徒データをループ処理
   for (let i = 1; i &lt; data.length; i++) {
     let studentId = data[i][0];
     let studentName = data[i][1];
     let totalScore = data[i][5];
-    
+
     // 自動評定換算ロジック
     let rating = calculateRating(totalScore);
-    
+
     // ログ出力と自動処理の確認
     Logger.log(`生徒ID: ${studentId}, 氏名: ${studentName}, 評定: ${rating}`);
   }
@@ -85,52 +85,57 @@ function calculateRating(score) {
   if (score &gt;= 50) return 3;
   if (score &gt;= 35) return 2;
   return 1;
-}</code></pre>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「大山先生、このスクリプトを実行しますよ。いきます……、せーのっ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野がエンターキーを叩いた瞬間、画面上のステータスバーが数秒間だけクルクルと回り、次の瞬間には「処理が正常に完了しました。300名分の帳票出力が完了しました」というポップアップが表示された。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">クラウド上の指定フォルダを開くとそこには、300人分の美しくフォーマットされた個人別の成績通知用PDFファイルが、一寸の狂いもなく整然と並んでいた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">職員室の静寂の中に、大山の深い感嘆のため息だけが響いた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「……信じられない。私があれほど丸二日かかって、目をシパシパさせながら電卓と格闘していた作業が、わずか五秒で終わっちまった……」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山は震える手でマウスを動かし、生成されたPDFファイルを開いてみた。そこには、誤字脱字もなく、見事なレイアウトで生徒たちの頑張りが記録されていた。長年、経験と根性で学校現場の事務作業を支えてきた誇り高いベテラン教員にとって、それはショックであると同時に、これ以上ないほどの感動的な解放の瞬間だった。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「水野君……すごいよ。君は魔法使いかい。いや、これが現代のコンピュータ技術の力というやつか」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山は立ち上がり、水野の肩にガッシリと手を置いた。その瞳には、安堵と、若者に対する心からの敬意が満ちていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「魔法なんかじゃありませんよ、大山先生。僕がやったのは、先生がこれまで長年かけて培ってきた『正しい評価の基準』や『生徒の状況を見落とさない眼差し』という教育的知恵を、そのままプログラムのルールに翻訳しただけです。先生の経験がなければ、どんなに優れたコードを書いたって、現場で使い物になるシステムなんて作れませんよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">水野が照れくさそうに笑いながらそう言うと、大山は大きくうなずいた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「なるほど、道具は使いようか。これまで私は『ICTなんて若い連中のオモチャだ』とどこかで斜に構えていたが、それは大きな間違いだったな。これだけの労力が浮くなら、そのぶんの時間をまるごと生徒一人ひとりと向き合う面談や、授業準備に充てることができる……！」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「その通りです！ 校務DXの目的は、仕事をラクにサボるためじゃなく、教員が本来やるべき『子どもたちと向き合う時間』を取り戻すことなんですから」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">窓の外の雨はいつの間にか上がり、雲の切れ間から朝の柔らかな光が差し始めようとしていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大山は机の上の電卓をそっと引き出しの奥にしまい、代わりにスプレッドシートが美しく光るディスプレイに向き直った。ベテランの教育的知恵と、若手の最新IT技術がしっかりと手を取り合った職員室には、新しい時代の確かな夜明けが訪れていた。</p>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<h3 style="color: #0f172a; border-left: 4px solid #3b82f6; padding: 6px 12px; margin-top: 1.8em; margin-bottom: 0.8em; font-size: 1.25em; background-color: #f0f9ff; border-radius: 0 4px 4px 0;">【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</h3>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">本編に登場した校務自動化およびネットワーク技術について、ITが苦手な教職員の皆様にもわかりやすく解説します。</p>
-<div style="margin: 0.4em 0; padding-left: 1.5em; text-indent: -1.5em; line-height: 1.8; color: #334155;"><span style="font-weight: bold; color: #2563eb; margin-right: 0.4em;">1.</span><strong>Google Apps Script (GAS) とは</strong></div>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;">Google Workspace（スプレッドシートやドキュメントなど）上で動作する、JavaScriptベースのクラウド型プログラミング言語です。サーバーを自前で用意する必要がなく、Googleのクラウド上でコードが実行されるため、校内のどのPCからでも安全に自動化処理を呼び出すことができます。本編では、成績データの集計から観点別評価の換算、PDF帳票の自動生成までを数秒で完了させました。</li>
+}
+</code></pre>
+<p>「大山先生、このスクリプトを実行しますよ。いきます……、せーのっ」</p>
+<p>水野がエンターキーを叩いた瞬間、画面上のステータスバーが数秒間だけクルクルと回り、次の瞬間には「処理が正常に完了しました。300名分の帳票出力が完了しました」というポップアップが表示された。</p>
+<p>クラウド上の指定フォルダを開くとそこには、300人分の美しくフォーマットされた個人別の成績通知用PDFファイルが、一寸の狂いもなく整然と並んでいた。</p>
+<p>職員室の静寂の中に、大山の深い感嘆のため息だけが響いた。</p>
+<p>「……信じられない。私があれほど丸二日かかって、目をシパシパさせながら電卓と格闘していた作業が、わずか五秒で終わっちまった……」</p>
+<p>大山は震える手でマウスを動かし、生成されたPDFファイルを開いてみた。そこには、誤字脱字もなく、見事なレイアウトで生徒たちの頑張りが記録されていた。長年、経験と根性で学校現場の事務作業を支えてきた誇り高いベテラン教員にとって、それはショックであると同時に、これ以上ないほどの感動的な解放の瞬間だった。</p>
+<p>「水野君……すごいよ。君は魔法使いかい。いや、これが現代のコンピュータ技術の力というやつか」</p>
+<p>大山は立ち上がり、水野の肩にガッシリと手を置いた。その瞳には、安堵と、若者に対する心からの敬意が満ちていた。</p>
+<p>「魔法なんかじゃありませんよ、大山先生。僕がやったのは、先生がこれまで長年かけて培ってきた『正しい評価の基準』や『生徒の状況を見落とさない眼差し』という教育的知恵を、そのままプログラムのルールに翻訳しただけです。先生の経験がなければ、どんなに優れたコードを書いたって、現場で使い物になるシステムなんて作れませんよ」</p>
+<p>水野が照れくさそうに笑いながらそう言うと、大山は大きくうなずいた。</p>
+<p>「なるほど、道具は使いようか。これまで私は『ICTなんて若い連中のオモチャだ』とどこかで斜に構えていたが、それは大きな間違いだったな。これだけの労力が浮くなら、そのぶんの時間をまるごと生徒一人ひとりと向き合う面談や、授業準備に充てることができる……！」</p>
+<p>「その通りです！ 校務DXの目的は、仕事をラクにサボるためじゃなく、教員が本来やるべき『子どもたちと向き合う時間』を取り戻すことなんですから」</p>
+<p>窓の外の雨はいつの間にか上がり、雲の切れ間から朝の柔らかな光が差し始めようとしていた。</p>
+<p>大山は机の上の電卓をそっと引き出しの奥にしまい、代わりにスプレッドシートが美しく光るディスプレイに向き直った。ベテランの教育的知恵と、若手の最新IT技術がしっかりと手を取り合った職員室には、新しい時代の確かな夜明けが訪れていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<h3>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</h3>
+<p>本編に登場した校務自動化およびネットワーク技術について、ITが苦手な教職員の皆様にもわかりやすく解説します。</p>
+<ol>
+<li>
+<p><strong>Google Apps Script (GAS) とは</strong><br />
+   - Google Workspace（スプレッドシートやドキュメントなど）上で動作する、JavaScriptベースのクラウド型プログラミング言語です。サーバーを自前で用意する必要がなく、Googleのクラウド上でコードが実行されるため、校内のどのPCからでも安全に自動化処理を呼び出すことができます。本編では、成績データの集計から観点別評価の換算、PDF帳票の自動生成までを数秒で完了させました。</p>
+</li>
+<li>
+<p><strong>最新のスプレッドシート関数（XLOOKUP, FILTER, ARRAYFORMULA）</strong><br />
+   - <strong>XLOOKUP</strong>: 従来のVLOOKUP関数で問題視されていた「検索列が左端に限定される」「列番号がズレるとエラーになる」といった弱点を克服した最新の検索関数です。指定した行や列を柔軟に参照し、正確にデータを引き出します。<br />
+   - <strong>FILTER</strong>: 条件に一致するデータの一覧を、数式一つで自動的に抽出してリスト化する関数です。<br />
+   - <strong>ARRAYFORMULA</strong>: 一つのセルに数式を入力するだけで、その列や行全体（300人分など）に自動的に計算結果を展開させる強力な関数です。行の追加や削除で数式が切れる心配がありません。</p>
+</li>
+<li>
+<p><strong>学校現場におけるクラウドセキュリティ（Google Workspace）</strong><br />
+   - 「クラウドは外部にデータが漏れるから危ない」という誤解が根強くありますが、文部科学省の「教育情報セキュリティポリシーに関するガイドライン」に準拠した組織アカウント（G Suite / Google Workspace for Education）を使用する場合、通信はすべて強力に暗号化され、学外からのアクセス制限や二段階認証が強制されます。個人のUSBメモリ紛失やローカルPCのハードディスク破損によるデータ消失リスクと比較して、遥かに高い安全性を誇ります。</p>
+</li>
+</ol>
+<div class="scene-divider">✦ ✦ ✦</div>
+<h3>【引用・参考文献（Technical References &amp; Documentation）】</h3>
+<ul>
+<li>
+<p>Microsoft Support (2024). <em>XLOOKUP 関数 – Microsoft サポート</em>.<br />
+<a href="https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" target="_blank" rel="noopener noreferrer">https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929</a></p>
+</li>
+<li>
+<p>文部科学省 (2021). <em>教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）</em>.<br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a></p>
+</li>
+<li>
+<p>Google ドキュメント エディタ ヘルプ. <em>Google スプレッドシートの関数リスト</em>.<br />
+<a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a></p>
+</li>
 </ul>
-<div style="margin: 0.4em 0; padding-left: 1.5em; text-indent: -1.5em; line-height: 1.8; color: #334155;"><span style="font-weight: bold; color: #2563eb; margin-right: 0.4em;">2.</span><strong>最新のスプレッドシート関数（XLOOKUP, FILTER, ARRAYFORMULA）</strong></div>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>XLOOKUP</strong>: 従来のVLOOKUP関数で問題視されていた「検索列が左端に限定される」「列番号がズレるとエラーになる」といった弱点を克服した最新の検索関数です。指定した行や列を柔軟に参照し、正確にデータを引き出します。</li>
-  <li style="margin-bottom: 0.3em;"><strong>FILTER</strong>: 条件に一致するデータの一覧を、数式一つで自動的に抽出してリスト化する関数です。</li>
-  <li style="margin-bottom: 0.3em;"><strong>ARRAYFORMULA</strong>: 一つのセルに数式を入力するだけで、その列や行全体（300人分など）に自動的に計算結果を展開させる強力な関数です。行の追加や削除で数式が切れる心配がありません。</li>
-</ul>
-<div style="margin: 0.4em 0; padding-left: 1.5em; text-indent: -1.5em; line-height: 1.8; color: #334155;"><span style="font-weight: bold; color: #2563eb; margin-right: 0.4em;">3.</span><strong>学校現場におけるクラウドセキュリティ（Google Workspace）</strong></div>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;">「クラウドは外部にデータが漏れるから危ない」という誤解が根強くありますが、文部科学省の「教育情報セキュリティポリシーに関するガイドライン」に準拠した組織アカウント（G Suite / Google Workspace for Education）を使用する場合、通信はすべて強力に暗号化され、学外からのアクセス制限や二段階認証が強制されます。個人のUSBメモリ紛失やローカルPCのハードディスク破損によるデータ消失リスクと比較して、遥かに高い安全性を誇ります。</li>
-</ul>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<h3 style="color: #0f172a; border-left: 4px solid #3b82f6; padding: 6px 12px; margin-top: 1.8em; margin-bottom: 0.8em; font-size: 1.25em; background-color: #f0f9ff; border-radius: 0 4px 4px 0;">【引用・参考文献（Technical References & Documentation）】</h3>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;">Microsoft Support (2024). <em>XLOOKUP 関数 – Microsoft サポート</em>.</li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929</a></p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;">文部科学省 (2021). <em>教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）</em>.</li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a></p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;">Google ドキュメント エディタ ヘルプ. <em>Google スプレッドシートの関数リスト</em>.</li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a></p>
     </article>
 
     <div class="story-pager">

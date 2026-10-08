@@ -1,7 +1,7 @@
 # 📋 分散ローカルLLM 自動作業リスト (`solve-school-problems`)
 
 - **会話ID**: `09f1227e-033f-496d-9750-362d7a3f9f27`
-- **最終同期日時 (JST)**: `2026-10-08T22:41:24`
+- **最終同期日時 (JST)**: `2026-10-08T22:49:11`
 - **進捗サマリー**: 全 **60** テーマ （完了: **33** / 挿絵待ち: **0** / **PC起動時実行キュー(溜まっているタスク): 0** / 待機中: **27**）
 
 ## 🖥️ 各ローカルLLM PCの役割分担（メインPC電源OFF時も各PC単体で自律実行）
@@ -10,7 +10,7 @@
 |:---|:---|:---|:---:|:---|
 | **`rtx5060lp`** | `writer_primary` | Ollama `shosetsu` (`:11434`) | 2 話 | 小説執筆・プライマリ（`sff7020` と1話ずつ交互に担当） |
 | **`sff7020`** | `writer_secondary` | LM Studio `google/gemma-4-26b-a4b-qat` (`:1234`) | 2 話 | 小説執筆・セカンダリ（`rtx5060lp` と1話ずつ交互に担当）＆校閲 |
-| **`kenomac-mini`** | `illustrator` | Draw Things `FLUX.2` (`:7860`) | 5 枚 | 挿絵生成 (`content/*.png`) ＆ GitHub Pages (`docs/`) 更新 |
+| **`kenomac-mini`** | `illustrator` | Draw Things `FLUX.2 [klein] 9B` (`flux_2_klein_base_9b_i8x.ckpt` / `:7860`) | 5 枚 | 挿絵生成専任 (`content/*.png`) ＆ GitHub Pages (`docs/`) 更新 |
 
 ## 🚀 次回PC起動時の自動実行キュー（GitHub蓄積タスク一覧）
 

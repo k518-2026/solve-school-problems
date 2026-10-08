@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-08T22:41:24.799942+09:00",
+  "updated_at": "2026-10-08T22:49:11.449976+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -28,9 +28,9 @@
       "role": "illustrator",
       "host": "http://kenomac-mini:7860",
       "fallback_host": "http://192.168.128.59:7860",
-      "model": "flux_2_klein_base_4b_i8x.ckpt",
+      "model": "flux_2_klein_base_9b_i8x.ckpt",
       "daily_quota": 5,
-      "description": "FLUX.2 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）"
+      "description": "FLUX.2 [klein] 9B 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）"
     }
   },
   "tasks": [
@@ -822,9 +822,9 @@
       "written_at": "2026-10-08",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": "content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.png",
+      "png_file": "content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-08T22:41:24.799925+09:00"
+      "illustrated_at": "2026-10-08T22:49:11.449959+09:00"
     },
     {
       "id": "A12",

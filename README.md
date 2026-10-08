@@ -8,9 +8,9 @@
 2. **💻 パターンB（年配教員 × 若手教員）**: Google Apps Script (GAS)、Python、正規表現、Wi-Fi設計など最新ICT技術による校務DXドラマ
 3. **⚖️ パターンC（校長先生 × 指導主事・教育委員会）**: 教育基本法、学校教育法、いじめ防止対策推進法、教育機会確保法など教育法規に基づく学校法務小説
 
-- **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `shosetsu` ＆ Draw Things `FLUX.2 [klein] 4B`）
+- **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・Blogger毎日朝5時配信**: 外部の商用生成AI APIは一切使用せず、毎週金・土曜日に Mac mini M4 上で文章と挿絵を5本ずつ作成して GitHub Pages に蓄積し、毎日朝5:00（JST）に1日1本ずつ Blogger の利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **35** 話（うち挿絵付き **35** 話 / 最終更新: 2026-10-08 22:41 JST）
+- **収録作品数**: 全 **36** 話（うち挿絵付き **36** 話 / 最終更新: 2026-10-08 22:49 JST）
 
 ---
 
@@ -18,7 +18,8 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
-| 35 | ⚖️ C: 学校法制・法務 | `C11` | **[境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html) | [📄原稿](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.png>) | 学校法制・感染症と出席停止・臨時休業 | 5,082字 |
+| 36 | ⚖️ C: 学校法制・法務 | `C11` | **[境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―](https://k518-2026.github.io/solve-school-problems/stories/ep36-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep36-c11.html) | [📄原稿](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.png>) | 学校法制・感染症と出席停止・臨時休業 | 5,082字 |
+| 35 | ⚖️ C: 学校法制・法務 | `C11` | **[境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html) | [📄原稿](<content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.png>) | 学校法制・感染症と出席停止・臨時休業 | 4,717字 |
 | 34 | 💻 B: 校務DX・ICT | `B11` | **[鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法](https://k518-2026.github.io/solve-school-problems/stories/ep34-b11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep34-b11.html) | [📄原稿](<content/2026-10-08_pattern_b_b11_鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法.md>) | [🎨挿絵](<content/2026-10-08_pattern_b_b11_鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法.png>) | 特別教室予約・備品貸出DX | 3,427字 |
 | 33 | ⚖️ C: 学校法制・法務 | `C10` | **[聖域の境界線――給食室の静寂と、エピペンを握る手の震え](https://k518-2026.github.io/solve-school-problems/stories/ep33-c10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep33-c10.html) | [📄原稿](<content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.png>) | 学校法制・学校給食・アレルギー事故防止 | 3,192字 |
 | 32 | 📘 A: 教育学・心理学 | `A11` | **[震える指先と、小さな「できた」の堆積](https://k518-2026.github.io/solve-school-problems/stories/ep32-a11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep32-a11.html) | [📄原稿](<content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.md>) | [🎨挿絵](<content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.png>) | 教育心理学・自己効力感 | 3,754字 |

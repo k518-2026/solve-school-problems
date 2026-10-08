@@ -1,6 +1,10 @@
 {
   "last_pattern": "C",
+<<<<<<< HEAD
   "last_run_at": "2026-10-08T22:37:10.290929+09:00",
+=======
+  "last_run_at": "2026-10-08T22:45:04.904036+09:00",
+>>>>>>> bca9733 (feat(sff7020): Write story [C11] via google/gemma-4-26b-a4b-qat & update task queue)
   "total_posted": 35,
   "posts": [
     {
@@ -364,12 +368,21 @@
       "status": "github_pages"
     },
     {
+<<<<<<< HEAD
       "title": "境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―",
       "pattern": "C",
       "topic_id": "C11",
       "category": "学校法制・感染症と出席停止・臨時休業",
       "file_path": "content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md",
       "timestamp": "2026-10-08T22:37:10.290929+09:00",
+=======
+      "title": "境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務",
+      "pattern": "C",
+      "topic_id": "C11",
+      "category": "学校法制・感染症と出席停止・臨時休業",
+      "file_path": "content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.md",
+      "timestamp": "2026-10-08T22:45:04.904036+09:00",
+>>>>>>> bca9733 (feat(sff7020): Write story [C11] via google/gemma-4-26b-a4b-qat & update task queue)
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
