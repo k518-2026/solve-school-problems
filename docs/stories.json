@@ -1,16 +1,42 @@
 [
   {
-    "no": 35,
-    "story_id": "ep35-c11",
+    "no": 37,
+    "story_id": "ep37-c11",
     "topic_id": "C11",
     "pattern": "C",
     "title": "境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―",
     "category": "学校法制・感染症と出席停止・臨時休業",
     "keywords": "学校保健安全法第19条（出席停止） / 学校保健安全法第20条（臨時休業） / 学校保健安全法施行規則第18条",
-    "has_image": false,
-    "url": "stories/ep35-c11.html",
-    "image": "",
+    "has_image": true,
+    "url": "stories/ep37-c11.html",
+    "image": "assets/images/ep37-c11.png",
     "char_count": 5082
+  },
+  {
+    "no": 36,
+    "story_id": "ep36-a12",
+    "topic_id": "A12",
+    "pattern": "A",
+    "title": "情報の海に、錨を降ろすために",
+    "category": "探究学習・教育哲学",
+    "keywords": "問題解決学習と五段階思考 / Doing by Learning（なすことによって学ぶ） / 本質的な問い（Essential Questions）の設計",
+    "has_image": true,
+    "url": "stories/ep36-a12.html",
+    "image": "assets/images/ep36-a12.png",
+    "char_count": 4405
+  },
+  {
+    "no": 35,
+    "story_id": "ep35-c11",
+    "topic_id": "C11",
+    "pattern": "C",
+    "title": "境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務",
+    "category": "学校法制・感染症と出席停止・臨時休業",
+    "keywords": "学校保健安全法第19条（出席停止） / 学校保健安全法第20条（臨時休業） / 学校保健安全法施行規則第18条",
+    "has_image": true,
+    "url": "stories/ep35-c11.html",
+    "image": "assets/images/ep35-c11.png",
+    "char_count": 4717
   },
   {
     "no": 34,

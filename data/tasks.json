@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-08T22:37:10.295178+09:00",
+  "updated_at": "2026-10-09T00:38:15.697453+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -810,7 +810,7 @@
       "title": "境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―",
       "problem_title": "感染症拡大時の『出席停止』『学級閉鎖』の法的権限と保護者からの抗議対応",
       "solution_framework": "学校保健安全法第19条（校長による出席停止命令の権限）と第20条（学校設置者＝教育委員会による臨時休業の決定権限）の明確な法的区分と公衆衛生上の義務",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "sff7020",
       "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
@@ -822,9 +822,9 @@
       "written_at": "2026-10-08T22:37:10.295172+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": "content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.png",
+      "png_file": "content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-08T22:49:11.449959+09:00"
+      "illustrated_at": "2026-10-09T00:38:15.697445+09:00"
     },
     {
       "id": "A12",
@@ -834,9 +834,9 @@
       "title": "情報の海に、錨を降ろすために",
       "problem_title": "総合的な探究の時間で生徒のテーマが『ネットのコピペ調べ学習』で終わってしまう",
       "solution_framework": "ジョン・デューイの「反省的思考（Reflective Thinking）・経験主義教育」と真正の学習（Authentic Learning）",
-      "status": "pending",
-      "assigned_writer": "rtx5060lp",
-      "assigned_model": "shosetsu",
+      "status": "completed",
+      "assigned_writer": "sff7020",
+      "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
       "plot_file": null,
       "plot_by": null,
