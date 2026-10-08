@@ -46,9 +46,9 @@
     "title": "デジタルが紡ぐ、信頼のバトン ― 修学旅行の嵐を越えて",
     "category": "情報セキュリティ・誤送信防止",
     "keywords": "TO/CC/BCCの事故防止アーキテクチャ / 脱PPAPとアクセス制限付きクラウド共有 / 2段階認証と送信前ディレイ（送信取り消し）設定 / 教育情報セキュリティポリシー準拠",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep37-b12.html",
-    "image": "",
+    "image": "assets/images/ep37-b12.png",
     "char_count": 5396
   },
   {

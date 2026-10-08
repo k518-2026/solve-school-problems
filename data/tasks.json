@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-09T02:17:42.888539+09:00",
+  "updated_at": "2026-10-09T02:22:07.277970+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -858,7 +858,7 @@
       "title": "デジタルが紡ぐ、信頼のバトン ― 修学旅行の嵐を越えて",
       "problem_title": "保護者一斉メールの『TO（宛先）』に全員のアドレスを入れてしまいそうになるヒヤリハット",
       "solution_framework": "メーリングリスト（Google グループ）配信・学校連絡システムの権限分離と、添付ファイル暗号化（PPAP）廃止に代わるクラウド安全共有リンク設計",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "sff7020",
       "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
@@ -870,9 +870,9 @@
       "written_at": "2026-10-09T02:17:42.888533+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-09T02:22:07.277960+09:00"
     },
     {
       "id": "C12",
