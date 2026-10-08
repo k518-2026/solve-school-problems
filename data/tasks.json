@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-09T02:22:07.277970+09:00",
+  "updated_at": "2026-10-09T02:26:29.510625+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -846,9 +846,9 @@
       "written_at": "2026-10-08",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": "content/2026-10-08_pattern_a_a12_情報の海に、錨を降ろすために.png",
+      "png_file": "content/2026-10-09_pattern_a_a12_情報の海を泳ぐための『問い』の羅針盤.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-08"
+      "illustrated_at": "2026-10-09T02:26:29.510617+09:00"
     },
     {
       "id": "B12",
