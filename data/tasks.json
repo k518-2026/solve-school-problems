@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-08T21:36:47.154910+09:00",
+  "updated_at": "2026-10-08T22:35:47.826447+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -28,9 +28,9 @@
       "role": "illustrator",
       "host": "http://kenomac-mini:7860",
       "fallback_host": "http://192.168.128.59:7860",
-      "model": "flux_2_klein_base_4b_i8x.ckpt",
+      "model": "flux_2_klein_base_9b_i8x.ckpt",
       "daily_quota": 5,
-      "description": "FLUX.2 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）"
+      "description": "FLUX.2 [klein] 9B 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）"
     }
   },
   "tasks": [

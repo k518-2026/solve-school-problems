@@ -54,9 +54,9 @@ DEFAULT_ROLES_CONFIG = {
         "role": "illustrator",
         "host": "http://kenomac-mini:7860",
         "fallback_host": "http://192.168.128.59:7860",
-        "model": "flux_2_klein_base_4b_i8x.ckpt",
+        "model": "flux_2_klein_base_9b_i8x.ckpt",
         "daily_quota": 5,
-        "description": "FLUX.2 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）",
+        "description": "FLUX.2 [klein] 9B 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）",
     },
 }
 
@@ -342,7 +342,7 @@ def write_tasks_markdown(manifest: Dict[str, Any]) -> None:
         "|:---|:---|:---|:---:|:---|",
         "| **`rtx5060lp`** | `writer_primary` | Ollama `shosetsu` (`:11434`) | 2 話 | 小説執筆・プライマリ（`sff7020` と1話ずつ交互に担当） |",
         "| **`sff7020`** | `writer_secondary` | LM Studio `google/gemma-4-26b-a4b-qat` (`:1234`) | 2 話 | 小説執筆・セカンダリ（`rtx5060lp` と1話ずつ交互に担当）＆校閲 |",
-        "| **`kenomac-mini`** | `illustrator` | Draw Things `FLUX.2` (`:7860`) | 5 枚 | 挿絵生成 (`content/*.png`) ＆ GitHub Pages (`docs/`) 更新 |",
+        "| **`kenomac-mini`** | `illustrator` | Draw Things `FLUX.2 [klein] 9B` (`flux_2_klein_base_9b_i8x.ckpt` / `:7860`) | 5 枚 | 挿絵生成専任 (`content/*.png`) ＆ GitHub Pages (`docs/`) 更新 |",
         "",
         "## 🚀 次回PC起動時の自動実行キュー（GitHub蓄積タスク一覧）",
         "",

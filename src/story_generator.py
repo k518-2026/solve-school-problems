@@ -748,7 +748,7 @@ topic_id: "{topic.get('id', 'C01')}"
                     return {
                         "online": True,
                         "host": self.draw_things_host,
-                        "model": data.get("model", "flux_2_klein_base_4b_i8x.ckpt"),
+                        "model": data.get("model", "flux_2_klein_base_9b_i8x.ckpt"),
                     }
         except Exception as e:
             return {
@@ -1281,7 +1281,7 @@ topic_id: "{topic.get('id', 'C01')}"
     ) -> Tuple[Optional[Path], str]:
         """
         Generates a 512x512 workplace drama illustration using Draw Things HTTP API
-        (`http://kenomac-mini:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_4b_i8x.ckpt`).
+        (`http://kenomac-mini:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_9b_i8x.ckpt`).
         Returns (saved_image_path_or_None, english_prompt_used).
         """
         dt_conn = self.check_draw_things_connection()
@@ -1302,10 +1302,10 @@ topic_id: "{topic.get('id', 'C01')}"
             )
 
         if progress_callback:
-            progress_callback(f"Draw Things ({self.draw_things_host}) で挿絵画像を生成中 (FLUX.2 [klein] 4B)...")
+            progress_callback(f"Draw Things ({self.draw_things_host}) で挿絵画像を生成中 (FLUX.2 [klein] 9B)...")
         logger.info(
             f"[Draw Things: {self.draw_things_host}] Generating 512x512 illustration "
-            f"(steps=12, guidance=4.0, sampler='Euler A Trailing')..."
+            f"(model={dt_conn.get('model')}, steps=12, guidance=4.0, sampler='Euler A Trailing')..."
         )
 
         url = f"{self.draw_things_host}/sdapi/v1/txt2img"
