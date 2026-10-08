@@ -1,16 +1,29 @@
 [
   {
-    "no": 39,
-    "story_id": "ep39-c11",
+    "no": 40,
+    "story_id": "ep40-c11",
     "topic_id": "C11",
     "pattern": "C",
     "title": "境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務",
     "category": "学校法制・感染症と出席停止・臨時休業",
     "keywords": "学校保健安全法第19条（出席停止） / 学校保健安全法第20条（臨時休業） / 学校保健安全法施行規則第18条",
     "has_image": true,
-    "url": "stories/ep39-c11.html",
-    "image": "assets/images/ep39-c11.png",
+    "url": "stories/ep40-c11.html",
+    "image": "assets/images/ep40-c11.png",
     "char_count": 4717
+  },
+  {
+    "no": 39,
+    "story_id": "ep39-a12",
+    "topic_id": "A12",
+    "pattern": "A",
+    "title": "情報の海に、錨を降ろすために",
+    "category": "探究学習・教育哲学",
+    "keywords": "問題解決学習と五段階思考 / Doing by Learning（なすことによって学ぶ） / 本質的な問い（Essential Questions）の設計",
+    "has_image": true,
+    "url": "stories/ep39-a12.html",
+    "image": "assets/images/ep39-a12.png",
+    "char_count": 4405
   },
   {
     "no": 38,
@@ -27,16 +40,16 @@
   },
   {
     "no": 37,
-    "story_id": "ep37-a12",
-    "topic_id": "A12",
-    "pattern": "A",
-    "title": "情報の海に、錨を降ろすために",
-    "category": "探究学習・教育哲学",
-    "keywords": "問題解決学習と五段階思考 / Doing by Learning（なすことによって学ぶ） / 本質的な問い（Essential Questions）の設計",
-    "has_image": true,
-    "url": "stories/ep37-a12.html",
-    "image": "assets/images/ep37-a12.png",
-    "char_count": 4405
+    "story_id": "ep37-b12",
+    "topic_id": "B12",
+    "pattern": "B",
+    "title": "デジタルが紡ぐ、信頼のバトン ― 修学旅行の嵐を越えて",
+    "category": "情報セキュリティ・誤送信防止",
+    "keywords": "TO/CC/BCCの事故防止アーキテクチャ / 脱PPAPとアクセス制限付きクラウド共有 / 2段階認証と送信前ディレイ（送信取り消し）設定 / 教育情報セキュリティポリシー準拠",
+    "has_image": false,
+    "url": "stories/ep37-b12.html",
+    "image": "",
+    "char_count": 5396
   },
   {
     "no": 36,
