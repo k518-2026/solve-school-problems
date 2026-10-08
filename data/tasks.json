@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-08T23:08:04.152890+09:00",
+  "updated_at": "2026-10-08T23:12:04.939834+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -834,7 +834,7 @@
       "title": "情報の海に、錨を降ろすために",
       "problem_title": "総合的な探究の時間で生徒のテーマが『ネットのコピペ調べ学習』で終わってしまう",
       "solution_framework": "ジョン・デューイの「反省的思考（Reflective Thinking）・経験主義教育」と真正の学習（Authentic Learning）",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "sff7020",
       "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
@@ -846,9 +846,9 @@
       "written_at": "2026-10-08T23:08:04.152885+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-08_pattern_a_a12_情報の海に、錨を降ろすために.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-08T23:12:04.939823+09:00"
     },
     {
       "id": "B12",
