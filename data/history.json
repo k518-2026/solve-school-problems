@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-09T02:17:42.884924+09:00",
-  "total_posted": 37,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-09T06:27:57.584018+09:00",
+  "total_posted": 38,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -392,6 +392,17 @@
       "category": "情報セキュリティ・誤送信防止",
       "file_path": "content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.md",
       "timestamp": "2026-10-09T02:17:42.884924+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "レンズが映し出した境界線 ― 肖像権と安全の狭間で",
+      "pattern": "C",
+      "topic_id": "C12",
+      "category": "学校法制・個人情報保護・肖像権",
+      "file_path": "content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.md",
+      "timestamp": "2026-10-09T06:27:57.584018+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
