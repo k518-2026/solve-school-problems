@@ -107,7 +107,12 @@ def release_worker_lock() -> None:
 def git_pull_latest() -> bool:
     try:
         logger.info("GitHubから最新のタスクキューと原稿を同期中 (git pull --rebase origin main)...")
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+        res = subprocess.run(
+            ["git", "pull", "--rebase", "-X", "theirs", "--autostash", "origin", "main"],
+            check=False,
+        )
+        if res.returncode != 0:
+            subprocess.run(["git", "rebase", "--abort"], check=False)
         return True
     except Exception as e:
         logger.warning(f"git pull warning: {e}")
@@ -125,7 +130,13 @@ def git_commit_and_push(message: str, paths: Optional[List[str]] = None) -> bool
             logger.info("コミット対象の変更はありません。")
             return True
         subprocess.run(["git", "commit", "-m", message], check=True)
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+        pull_res = subprocess.run(
+            ["git", "pull", "--rebase", "-X", "theirs", "origin", "main"],
+            check=False,
+        )
+        if pull_res.returncode != 0:
+            subprocess.run(["git", "rebase", "--abort"], check=False)
+            subprocess.run(["git", "pull", "--no-rebase", "-X", "ours", "origin", "main"], check=False)
         subprocess.run(["git", "push", "origin", "HEAD:main"], check=True)
         logger.info(f"GitHubへの自動プッシュ完了: {message}")
         return True
