@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-08T22:45:04.904036+09:00",
-  "total_posted": 35,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-08T23:08:04.150708+09:00",
+  "total_posted": 36,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -372,6 +372,17 @@
       "written_by": "sff7020",
       "writer_model": "google/gemma-4-26b-a4b-qat",
       "timestamp": "2026-10-08T22:45:04.904036+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "情報の海に、錨を降ろすために",
+      "pattern": "A",
+      "topic_id": "A12",
+      "category": "探究学習・教育哲学",
+      "file_path": "content/2026-10-08_pattern_a_a12_情報の海に、錨を降ろすために.md",
+      "timestamp": "2026-10-08T23:08:04.150708+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
