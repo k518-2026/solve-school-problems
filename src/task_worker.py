@@ -54,11 +54,9 @@ DEFAULT_ROLES_CONFIG = {
         "role": "illustrator",
         "host": "http://kenomac-mini:7860",
         "fallback_host": "http://192.168.128.59:7860",
-        "ollama_host": "http://kenomac-mini:11434",
-        "fallback_ollama_host": "http://192.168.128.59:11434",
         "model": "flux_2_klein_base_4b_i8x.ckpt",
         "daily_quota": 5,
-        "description": "FLUX.2 挿絵生成（content/*.png）＆ GitHub Pages（docs/）ビルド更新",
+        "description": "FLUX.2 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）",
     },
 }
 
