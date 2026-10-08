@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-08T17:44:04.371134+09:00",
-  "total_posted": 34,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-08T22:37:10.290929+09:00",
+  "total_posted": 35,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -359,6 +359,17 @@
       "category": "特別教室予約・備品貸出DX",
       "file_path": "content/2026-10-08_pattern_b_b11_鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法.md",
       "timestamp": "2026-10-08T17:44:04.371134+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―",
+      "pattern": "C",
+      "topic_id": "C11",
+      "category": "学校法制・感染症と出席停止・臨時休業",
+      "file_path": "content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md",
+      "timestamp": "2026-10-08T22:37:10.290929+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
