@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-09T06:38:06.707864+09:00",
+  "updated_at": "2026-10-09T08:37:12.240903+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -807,7 +807,7 @@
       "order_num": 33,
       "pattern": "C",
       "category": "学校法制・感染症と出席停止・臨時休業",
-      "title": "境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務",
+      "title": "境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―",
       "problem_title": "感染症拡大時の『出席停止』『学級閉鎖』の法的権限と保護者からの抗議対応",
       "solution_framework": "学校保健安全法第19条（校長による出席停止命令の権限）と第20条（学校設置者＝教育委員会による臨時休業の決定権限）の明確な法的区分と公衆衛生上の義務",
       "status": "completed",
@@ -817,12 +817,12 @@
       "plot_file": null,
       "plot_by": null,
       "plot_at": null,
-      "md_file": "content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.md",
+      "md_file": "content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md",
       "written_by": "rtx5060lp",
       "written_at": "2026-10-08",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": "content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.png",
+      "png_file": "content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.png",
       "illustrated_by": "kenomac-mini",
       "illustrated_at": "2026-10-08"
     },
@@ -882,7 +882,7 @@
       "title": "レンズが映し出した境界線 ― 肖像権と安全の狭間で",
       "problem_title": "学校だよりやホームページへの児童生徒の写真掲載と個人情報保護法・肖像権の同意手続",
       "solution_framework": "個人情報の保護に関する法律（第61条・第69条 保有個人情報の利用目的の特定と第三者提供の制限）および判例上の肖像権・プライバシー権保護、オプトアウト方式の限界と事前個別同意の原則",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "rtx5060lp",
       "assigned_model": "shosetsu",
       "queued_at": null,
@@ -906,7 +906,7 @@
       "title": "「間違い」という名の、学びの種を蒔くために",
       "problem_title": "間違った発言をするとクスクス笑いが起き、誰も挙手しなくなった教室",
       "solution_framework": "エイミー・エドモンドソンの「心理的安全性（Psychological Safety）」とエラー・マネジメント・カルチャー",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "sff7020",
       "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
@@ -918,9 +918,9 @@
       "written_at": "2026-10-09T06:38:06.707857+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-09T08:37:12.240890+09:00"
     },
     {
       "id": "B13",
