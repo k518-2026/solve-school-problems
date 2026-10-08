@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-08T22:49:11.449976+09:00",
+  "updated_at": "2026-10-08T22:52:18.109290+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -807,7 +807,7 @@
       "order_num": 33,
       "pattern": "C",
       "category": "学校法制・感染症と出席停止・臨時休業",
-      "title": "境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―",
+      "title": "境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務",
       "problem_title": "感染症拡大時の『出席停止』『学級閉鎖』の法的権限と保護者からの抗議対応",
       "solution_framework": "学校保健安全法第19条（校長による出席停止命令の権限）と第20条（学校設置者＝教育委員会による臨時休業の決定権限）の明確な法的区分と公衆衛生上の義務",
       "status": "completed",
@@ -817,7 +817,7 @@
       "plot_file": null,
       "plot_by": null,
       "plot_at": null,
-      "md_file": "content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md",
+      "md_file": "content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.md",
       "written_by": "rtx5060lp",
       "written_at": "2026-10-08",
       "reviewed_by": null,
