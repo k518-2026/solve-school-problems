@@ -1003,9 +1003,9 @@ topic_id: "{topic.get('id', 'C01')}"
                 "over an open silver laptop seen from the back, large glass windows with green trees in the background."
             ),
             "A13": (
-                "Medium two-shot in a sunlit junior high school classroom: on the left, a young female teacher in her 20s holding a closed "
-                "hardcover book and smiling cheerfully; on the right, a warm veteran male teacher in his 50s smiling kindly beside a clean blank "
-                "green blackboard and wooden student desks."
+                "Medium two-shot in a warm sunlit junior high school classroom in the afternoon: on the left, a young Japanese male teacher in his 20s "
+                "holding a closed textbook and smiling cheerfully with relief; on the right, a warm Japanese veteran male teacher in his 50s smiling kindly "
+                "beside a clean blank green blackboard and wooden student desks with ceramic tea cups, soft golden sunlight streaming through the windows."
             ),
             "A14": (
                 "Medium two-shot on a wooden bench in a sunlit school courtyard garden: on the left, a young male elementary teacher "
