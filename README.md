@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・Blogger毎日朝5時配信**: 外部の商用生成AI APIは一切使用せず、毎週金・土曜日に Mac mini M4 上で文章と挿絵を5本ずつ作成して GitHub Pages に蓄積し、毎日朝5:00（JST）に1日1本ずつ Blogger の利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **42** 話（うち挿絵付き **42** 話 / 最終更新: 2026-10-09 08:37 JST）
+- **収録作品数**: 全 **43** 話（うち挿絵付き **42** 話 / 最終更新: 2026-10-09 08:56 JST）
 
 ---
 
@@ -18,9 +18,10 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
-| 42 | ⚖️ C: 学校法制・法務 | `C11` | **[境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―](https://k518-2026.github.io/solve-school-problems/stories/ep42-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep42-c11.html) | [📄原稿](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.png>) | 学校法制・感染症と出席停止・臨時休業 | 5,082字 |
-| 41 | 📘 A: 教育学・心理学 | `A12` | **[情報の海に、錨を降ろすために](https://k518-2026.github.io/solve-school-problems/stories/ep41-a12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep41-a12.html) | [📄原稿](<content/2026-10-08_pattern_a_a12_情報の海に、錨を降ろすために.md>) | [🎨挿絵](<content/2026-10-08_pattern_a_a12_情報の海に、錨を降ろすために.png>) | 探究学習・教育哲学 | 4,405字 |
-| 40 | ⚖️ C: 学校法制・法務 | `C11` | **[境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務](https://k518-2026.github.io/solve-school-problems/stories/ep40-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep40-c11.html) | [📄原稿](<content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.png>) | 学校法制・感染症と出席停止・臨時休業 | 4,717字 |
+| 43 | ⚖️ C: 学校法制・法務 | `C11` | **[境界線上の決断 ― 感染症拡大期における校長の権限と公衆衛生の義務](https://k518-2026.github.io/solve-school-problems/stories/ep43-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep43-c11.html) | [📄原稿](<content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c11_境界線上の決断_感染症拡大期における校長の権限と公衆衛生の義務.png>) | 学校法制・感染症と出席停止・臨時休業 | 4,717字 |
+| 42 | 📘 A: 教育学・心理学 | `A12` | **[情報の海に、錨を降ろすために](https://k518-2026.github.io/solve-school-problems/stories/ep42-a12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep42-a12.html) | [📄原稿](<content/2026-10-08_pattern_a_a12_情報の海に、錨を降ろすために.md>) | [🎨挿絵](<content/2026-10-08_pattern_a_a12_情報の海に、錨を降ろすために.png>) | 探究学習・教育哲学 | 4,405字 |
+| 41 | ⚖️ C: 学校法制・法務 | `C11` | **[境界線の決断 ―感染症の蔓延と、教育の権利を巡る法理―](https://k518-2026.github.io/solve-school-problems/stories/ep41-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep41-c11.html) | [📄原稿](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.md>) | [🎨挿絵](<content/2026-10-08_pattern_c_c11_境界線の決断_感染症の蔓延と、教育の権利を巡る法理.png>) | 学校法制・感染症と出席停止・臨時休業 | 5,082字 |
+| 40 | 💻 B: 校務DX・ICT | `B13` | **[時を繋ぐデータ、未来を拓く指先 ― 進路指導の現場で起きた、リレーショナル・エール](https://k518-2026.github.io/solve-school-problems/stories/ep40-b13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep40-b13.html) | [📄原稿](<content/2026-10-09_pattern_b_b13_時を繋ぐデータ、未来を拓く指先_進路指導の現場で起きた、リレーショナル・エール.md>) | — | 進路指導・調査書データ統合 | 5,019字 |
 | 39 | 📘 A: 教育学・心理学 | `A13` | **[「間違い」という名の、学びの種を蒔くために](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html) | [📄原稿](<content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.md>) | [🎨挿絵](<content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.png>) | 学級経営・心理的安全性 | 4,868字 |
 | 38 | ⚖️ C: 学校法制・法務 | `C12` | **[レンズが映し出した境界線 ― 肖像権と安全の狭間で](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html) | [📄原稿](<content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.md>) | [🎨挿絵](<content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.png>) | 学校法制・個人情報保護・肖像権 | 4,313字 |
 | 37 | 💻 B: 校務DX・ICT | `B12` | **[デジタルが紡ぐ、信頼のバトン ― 修学旅行の嵐を越えて](https://k518-2026.github.io/solve-school-problems/stories/ep37-b12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep37-b12.html) | [📄原稿](<content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.md>) | [🎨挿絵](<content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.png>) | 情報セキュリティ・誤送信防止 | 5,396字 |

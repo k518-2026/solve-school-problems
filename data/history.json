@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-09T06:38:06.706035+09:00",
-  "total_posted": 39,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-09T08:56:27.442884+09:00",
+  "total_posted": 40,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -414,6 +414,17 @@
       "category": "学級経営・心理的安全性",
       "file_path": "content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.md",
       "timestamp": "2026-10-09T06:38:06.706035+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "時を繋ぐデータ、未来を拓く指先 ― 進路指導の現場で起きた、リレーショナル・エール",
+      "pattern": "B",
+      "topic_id": "B13",
+      "category": "進路指導・調査書データ統合",
+      "file_path": "content/2026-10-09_pattern_b_b13_時を繋ぐデータ、未来を拓く指先_進路指導の現場で起きた、リレーショナル・エール.md",
+      "timestamp": "2026-10-09T08:56:27.442884+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
