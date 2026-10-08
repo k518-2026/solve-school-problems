@@ -930,7 +930,9 @@ topic_id: "{topic.get('id', 'C01')}"
         style_prefix = (
             "Modern Japanese adult workplace anime illustration, clean anime cel-shading with crisp dark outlines "
             "and rich natural colors, well-proportioned adult anime characters (natural adult eyes, NOT cute moe or chibi), "
-            "both educators smiling warmly and cheerfully with bright friendly expressions, "
+            "candid workplace interaction with natural 3/4 angle poses, engaging in warm consultation or looking at each other or at their work instead of staring directly at the camera, "
+            "balanced 4:3 subject framing with comfortable headroom above their heads and foreground desk or floor space below, "
+            "pulled-back medium-wide shot, both educators smiling warmly and cheerfully with natural relaxed expressions, "
             "clear contrast, purely visual scene with NO text, NO letters, NO signage, and NO writing anywhere. "
         )
 
@@ -938,15 +940,18 @@ topic_id: "{topic.get('id', 'C01')}"
         topic_scenes: Dict[str, str] = {
             # Pattern A: Pedagogy & Educational Psychology (Novice teacher x Senior mentor teacher)
             "A01": (
-                "Medium two-shot in a sunlit Japanese school classroom after school: on the left, a young female novice teacher "
-                "in her mid-20s in a cream cardigan smiling brightly; on the right, a kind veteran male mentor teacher in his 50s "
-                "in a navy blazer holding a plain white ceramic coffee mug and laughing gently. Background shows large classroom "
-                "windows overlooking green schoolyard trees and a clean blank green blackboard."
+                "Medium-wide shot in a sunlit Japanese elementary classroom after school: on the left, a young Japanese female teacher "
+                "in her mid-20s in a cream cardigan in a three-quarter profile pose looking towards her mentor with a bright relieved smile; "
+                "on the right, a kind veteran Japanese male mentor teacher in his 50s in a navy blazer seated at an angle, laughing gently "
+                "in warm consultation while holding a plain white ceramic mug. Foreground shows spacious wooden student desks, "
+                "generous headroom above with tall sunny windows overlooking green trees and a clean blank green blackboard."
             ),
             "A02": (
-                "Medium two-shot in a bright elementary school classroom with grouped wooden student desks: on the left, a young male teacher "
-                "in his 20s in a collared shirt and navy vest smiling cheerfully; on the right, a warm senior female mentor teacher in her 40s "
-                "with glasses in a beige jacket smiling kindly, plain pastel-colored blank cards on the desk. Background shows sunlit windows and indoor potted plants."
+                "Medium-wide shot in a bright elementary school classroom with grouped wooden student desks: on the left, a young Japanese male teacher "
+                "in his 20s in a collared shirt in a three-quarter profile pose, gesturing in lively discussion with a cheerful smile; "
+                "on the right, a warm senior Japanese female mentor teacher in her 40s with glasses leaning forward slightly with a reassuring smile "
+                "as they consult together. Foreground shows spacious wooden student desks with blank pastel cards, "
+                "generous headroom above with tall sunlit classroom windows and leafy indoor potted plants."
             ),
             "A03": (
                 "Medium two-shot in a school hallway lounge area by a large window overlooking the schoolyard at sunset: on the left, "
@@ -1003,9 +1008,10 @@ topic_id: "{topic.get('id', 'C01')}"
                 "over an open silver laptop seen from the back, large glass windows with green trees in the background."
             ),
             "A13": (
-                "Medium two-shot in a warm sunlit junior high school classroom in the afternoon: on the left, a young Japanese male teacher in his 20s "
-                "holding a closed textbook and smiling cheerfully with relief; on the right, a warm Japanese veteran male teacher in his 50s smiling kindly "
-                "beside a clean blank green blackboard and wooden student desks with ceramic tea cups, soft golden sunlight streaming through the windows."
+                "Medium-wide shot in a warm sunlit junior high school classroom in the afternoon: on the left, a young Japanese male teacher in his 20s "
+                "seen in a dynamic three-quarter profile pose, holding an open textbook and looking towards his mentor with a relaxed smile; on the right, "
+                "a warm Japanese veteran male teacher in his 50s turned towards him in friendly discussion beside a clean blank green blackboard. "
+                "Generous headroom with tall sunny windows above and neat wooden student desks with ceramic tea cups in the foreground below."
             ),
             "A14": (
                 "Medium two-shot on a wooden bench in a sunlit school courtyard garden: on the left, a young male elementary teacher "
@@ -1043,10 +1049,10 @@ topic_id: "{topic.get('id', 'C01')}"
 
             # Pattern B: School DX & ICT (Veteran teacher x Young ICT/DX teacher)
             "B01": (
-                "Medium two-shot at a desk by a large window in a Japanese school office in the evening: on the left, a happy veteran "
-                "male teacher in his 50s with glasses setting aside a pocket calculator and holding a plain white ceramic mug with a warm smile; "
-                "on the right, a young male ICT teacher in his late 20s smiling cheerfully beside an open silver laptop seen from the back. "
-                "Background shows evening blue twilight through the window and indoor plants."
+                "Medium-wide shot at a spacious wooden desk in a quiet Japanese school office in the evening: on the left, a veteran Japanese "
+                "male teacher in his 50s with reading glasses in a three-quarter profile pose looking at the laptop screen and smiling with immense relief; "
+                "on the right, a young Japanese male ICT teacher in his late 20s turned towards him, pointing gently at the screen while laughing cheerfully. "
+                "Foreground shows a clean desk surface with a plain white ceramic mug, generous headroom above with large office windows showing deep evening twilight and soft indoor plant foliage."
             ),
             "B02": (
                 "Medium two-shot in a sunlit Japanese school classroom: on the left, a veteran male vice-principal in his late 50s in a suit "
@@ -1260,8 +1266,8 @@ topic_id: "{topic.get('id', 'C01')}"
                 )
 
         style_suffix = (
-            " Both educators wearing plain blue neck strap lanyards, warm cheerful smiles on both faces, "
-            "clean text-free background."
+            " Both educators wearing plain blue neck strap lanyards, engaging in warm candid consultation, natural three-quarter profile poses without looking straight at the camera, "
+            "comfortable wide framing with generous headroom above their heads, clean text-free background."
         )
 
         clean_scene = re.sub(r"\s*\([^\x00-\x7F]+\)", "", scene_desc)
@@ -1315,6 +1321,8 @@ topic_id: "{topic.get('id', 'C01')}"
                 "text, letters, kanji, japanese text, chinese characters, words, writing, handwriting, typography, "
                 "sign, signage, wall poster, notice board, qr code, label, logo, brand, numbers, caption, subtitle, watermark, signature, "
                 "bookshelves, blue binders, file binders, bookcase, open document with text, printed text, "
+                "staring at camera, looking at viewer, direct eye contact with camera, posed commemorative photo, frontal mugshot, stiff symmetry, "
+                "close-up, extreme close-up, cropped head, head touching top of frame, tight crop, cramped framing, "
                 "serious face, stern expression, frowning, sad, worried, grim, scowling, angry, tense expression, "
                 "hat, cap, helmet, missing arm, deformed limbs, "
                 "cute, moe, kawaii, bishoujo, big sparkling eyes, chibi, teenager, high school girl, "
