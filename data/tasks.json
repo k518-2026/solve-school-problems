@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-09T06:27:57.586565+09:00",
+  "updated_at": "2026-10-09T06:36:19.280311+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -882,7 +882,7 @@
       "title": "レンズが映し出した境界線 ― 肖像権と安全の狭間で",
       "problem_title": "学校だよりやホームページへの児童生徒の写真掲載と個人情報保護法・肖像権の同意手続",
       "solution_framework": "個人情報の保護に関する法律（第61条・第69条 保有個人情報の利用目的の特定と第三者提供の制限）および判例上の肖像権・プライバシー権保護、オプトアウト方式の限界と事前個別同意の原則",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "sff7020",
       "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
@@ -894,9 +894,9 @@
       "written_at": "2026-10-09T06:27:57.586555+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-09T06:36:19.280300+09:00"
     },
     {
       "id": "A13",
