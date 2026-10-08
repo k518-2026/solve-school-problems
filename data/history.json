@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-08T08:59:45.900289+09:00",
-  "total_posted": 32,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-08T14:35:29.932406+09:00",
+  "total_posted": 33,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -337,6 +337,17 @@
       "category": "教育心理学・自己効力感",
       "file_path": "content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.md",
       "timestamp": "2026-10-07T23:52:28.439638+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "聖域の境界線――給食室の静寂と、エピペンを握る手の震え",
+      "pattern": "C",
+      "topic_id": "C10",
+      "category": "学校法制・学校給食・アレルギー事故防止",
+      "file_path": "content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.md",
+      "timestamp": "2026-10-08T14:35:29.932406+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
