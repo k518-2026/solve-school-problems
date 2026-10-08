@@ -201,7 +201,6 @@ def sync_tasks_manifest(history_mgr: HistoryManager, ensure_min_queued: int = 0)
         if tid:
             story_by_tid[tid] = s
 
-    # Determine last completed writer so uncompleted tasks strictly alternate (sff7020 <-> rtx5060lp)
     last_writer = "rtx5060lp"
     for prev_t in existing_data.get("tasks", []):
         if prev_t.get("written_by") in ("rtx5060lp", "sff7020"):
@@ -275,7 +274,6 @@ def sync_tasks_manifest(history_mgr: HistoryManager, ensure_min_queued: int = 0)
         }
         synced_tasks.append(task_entry)
 
-    # Ensure minimum queued tasks if requested
     if ensure_min_queued > 0:
         currently_queued = sum(1 for t in synced_tasks if t["status"] == "queued")
         to_add = max(0, ensure_min_queued - currently_queued)
@@ -340,7 +338,7 @@ def write_tasks_markdown(manifest: Dict[str, Any]) -> None:
         f"- **最終同期日時 (JST)**: `{manifest.get('updated_at', '')[:19]}`",
         f"- **進捗サマリー**: 全 **{len(tasks)}** テーマ （完了: **{len(completed)}** / 挿絵待ち: **{len(pending_ill)}** / **PC起動時実行キュー(溜まっているタスク): {len(queued)}** / 待機中: **{len(plot_ready) + len(pending)}**）",
         "",
-        "## 🖥️ 各ローカルLLM PCの役割分担（プライマリ＆セカンダリ交互執筆）",
+        "## 🖥️ 各ローカルLLM PCの役割分担（メインPC電源OFF時も各PC単体で自律実行）",
         "",
         "| PCホスト名 | 役割 (`role`) | 使用モデル / API | 1回あたり上限 (`daily_quota`) | 担当作業内容 |",
         "|:---|:---|:---|:---:|:---|",
@@ -392,26 +390,28 @@ def write_tasks_markdown(manifest: Dict[str, Any]) -> None:
     TASKS_MD_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def resolve_writer_endpoints() -> Tuple[Optional[str], Optional[str]]:
-    """Returns (rtx5060lp_url_or_None, sff7020_url_or_None)."""
-    rtx_host = resolve_reachable_url(
-        [
-            os.getenv("OLLAMA_HOST", ""),
-            "http://rtx5060lp:11434",
-            "http://192.168.128.62:11434",
-            "http://localhost:11434",
-        ],
-        "/api/tags",
-    )
-    sff_host = resolve_reachable_url(
-        [
-            os.getenv("LM_STUDIO_HOST", ""),
-            "http://sff7020:1234",
-            "http://192.168.128.16:1234",
-            "http://localhost:1234",
-        ],
-        "/v1/models",
-    )
+def resolve_writer_endpoints(local_node: Optional[str] = None) -> Tuple[Optional[str], Optional[str]]:
+    """Returns (rtx5060lp_url_or_None, sff7020_url_or_None), prioritizing localhost when running directly on that PC."""
+    rtx_candidates = [
+        os.getenv("OLLAMA_HOST", ""),
+        "http://rtx5060lp:11434",
+        "http://192.168.128.62:11434",
+        "http://localhost:11434",
+    ]
+    if local_node == "rtx5060lp":
+        rtx_candidates.insert(0, "http://localhost:11434")
+
+    sff_candidates = [
+        os.getenv("LM_STUDIO_HOST", ""),
+        "http://sff7020:1234",
+        "http://192.168.128.16:1234",
+        "http://localhost:1234",
+    ]
+    if local_node == "sff7020":
+        sff_candidates.insert(0, "http://localhost:1234")
+
+    rtx_host = resolve_reachable_url(rtx_candidates, "/api/tags")
+    sff_host = resolve_reachable_url(sff_candidates, "/v1/models")
     return rtx_host, sff_host
 
 
@@ -421,12 +421,14 @@ def run_alternating_writer_role(
     quota_override: Optional[int] = None,
     push_to_git: bool = True,
     target_node_filter: Optional[str] = None,
+    allow_cross_node_failover: bool = True,
 ) -> int:
     """
     Executes queued (or next pending) story writing tasks stored on GitHub,
     alternating between Primary (`rtx5060lp` / `shosetsu`) and Secondary (`sff7020` / `google/gemma-4-26b-a4b-qat`).
+    Works both when dispatched from MINISFORUM64GB and when run autonomously on `rtx5060lp` or `sff7020` while MINISFORUM64GB is powered off.
     """
-    rtx_host, sff_host = resolve_writer_endpoints()
+    rtx_host, sff_host = resolve_writer_endpoints(local_node=target_node_filter)
     if not rtx_host and not sff_host:
         logger.info("[Writer] プライマリ (rtx5060lp:11434) と セカンダリ (sff7020:1234) の両方がオフラインのためスキップします。")
         return 0
@@ -443,31 +445,39 @@ def run_alternating_writer_role(
         queued_tasks = [t for t in queued_tasks if t.get("assigned_writer") == target_node_filter]
         other_pending = [t for t in other_pending if t.get("assigned_writer") == target_node_filter]
 
+    today_str = datetime.now(JST).strftime("%Y-%m-%d")
+
     if quota_override is not None:
         max_to_write = quota_override
         candidates = (queued_tasks + other_pending)[:max_to_write]
     elif queued_tasks:
-        # Process accumulated GitHub queued tasks (up to 4 per startup run to stay responsive)
         max_to_write = min(len(queued_tasks), 4)
         candidates = queued_tasks[:max_to_write]
-        logger.info(f"[GitHub Queue] GitHubに蓄積されている実行待ちタスク {len(queued_tasks)} 件のうち {len(candidates)} 件を実行します。")
-    else:
-        # If no explicitly queued tasks exist yet, check daily quota (default 2: 1 primary + 1 secondary)
-        today_str = datetime.now(JST).strftime("%Y-%m-%d")
-        written_today = sum(
-            1 for t in manifest["tasks"]
-            if str(t.get("written_at") or "").startswith(today_str)
+        logger.info(
+            f"[GitHub Queue] GitHubに蓄積されている実行待ちタスク {len(queued_tasks)} 件のうち {len(candidates)} 件を実行します。"
         )
-        max_to_write = max(0, 2 - written_today)
+    else:
+        if target_node_filter in ("rtx5060lp", "sff7020"):
+            written_today = sum(
+                1 for t in manifest["tasks"]
+                if t.get("written_by") == target_node_filter and str(t.get("written_at") or "").startswith(today_str)
+            )
+            node_quota = 1
+        else:
+            written_today = sum(
+                1 for t in manifest["tasks"]
+                if str(t.get("written_at") or "").startswith(today_str)
+            )
+            node_quota = 2
+        max_to_write = max(0, node_quota - written_today)
         if max_to_write == 0:
-            logger.info(f"[Writer] GitHub実行待ちキューは空で、本日の執筆ノルマ ({written_today}/2 話) も達成済みです。")
+            logger.info(f"[Writer] GitHub実行待ちキューは空で、本日の執筆ノルマ ({written_today}/{node_quota} 話) も達成済みです。")
             return 0
         candidates = other_pending[:max_to_write]
 
     catalog_map = {t["id"]: t for t in build_interleaved_catalog(history_mgr)}
     written_count = 0
     content_dir = Path("content")
-    today_str = datetime.now(JST).strftime("%Y-%m-%d")
 
     for task in candidates:
         topic = catalog_map.get(task["id"])
@@ -482,24 +492,26 @@ def run_alternating_writer_role(
                 active_host = sff_host
                 active_model = "google/gemma-4-26b-a4b-qat"
                 actual_writer = "sff7020"
-            elif rtx_host:
+            elif allow_cross_node_failover and rtx_host:
                 logger.info(f"[Failover] 担当 sff7020 がオフラインのため rtx5060lp (shosetsu) が代替執筆します: [{tid}]")
                 active_host = rtx_host
                 active_model = "shosetsu"
                 actual_writer = "rtx5060lp"
             else:
+                logger.info(f"[Skip] [{tid}] の担当 sff7020 がオフラインのため次回起動時まで待機します。")
                 continue
         else:
             if rtx_host:
                 active_host = rtx_host
                 active_model = "shosetsu"
                 actual_writer = "rtx5060lp"
-            elif sff_host:
+            elif allow_cross_node_failover and sff_host:
                 logger.info(f"[Failover] 担当 rtx5060lp がオフラインのため sff7020 (gemma-4-26b-a4b-qat) が代替執筆します: [{tid}]")
                 active_host = sff_host
                 active_model = "google/gemma-4-26b-a4b-qat"
                 actual_writer = "sff7020"
             else:
+                logger.info(f"[Skip] [{tid}] の担当 rtx5060lp がオフラインのため次回起動時まで待機します。")
                 continue
 
         generator = StoryGenerator(
@@ -563,10 +575,10 @@ def run_illustrator_role(
     quota = quota_override if quota_override is not None else int(role_cfg.get("daily_quota", 5))
     dt_host = resolve_reachable_url(
         [
+            "http://localhost:7860",
             os.getenv("DRAW_THINGS_HOST", ""),
             role_cfg.get("host", "http://kenomac-mini:7860"),
             role_cfg.get("fallback_host", "http://192.168.128.59:7860"),
-            "http://localhost:7860",
         ],
         "/sdapi/v1/options",
     )
@@ -695,18 +707,37 @@ def main():
             return
 
         if role == "rtx5060lp":
-            run_alternating_writer_role(
-                manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git, target_node_filter="rtx5060lp"
+            # Autonomous execution on rtx5060lp (works even when MINISFORUM64GB is powered off)
+            written = run_alternating_writer_role(
+                manifest,
+                history_mgr,
+                quota_override=args.quota,
+                push_to_git=push_to_git,
+                target_node_filter="rtx5060lp",
+                allow_cross_node_failover=False,
             )
+            if written > 0:
+                manifest = sync_tasks_manifest(history_mgr)
+                run_illustrator_role(manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git)
         elif role in ("sff7020", "director"):
-            run_alternating_writer_role(
-                manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git, target_node_filter="sff7020"
+            # Autonomous execution on sff7020 (works even when MINISFORUM64GB is powered off)
+            written = run_alternating_writer_role(
+                manifest,
+                history_mgr,
+                quota_override=args.quota,
+                push_to_git=push_to_git,
+                target_node_filter="sff7020",
+                allow_cross_node_failover=False,
             )
+            if written > 0:
+                manifest = sync_tasks_manifest(history_mgr)
+                run_illustrator_role(manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git)
         elif role == "writer":
             run_alternating_writer_role(
                 manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git
             )
         elif role in ("illustrator", "kenomac-mini"):
+            # Autonomous execution on kenomac-mini (works even when MINISFORUM64GB is powered off)
             run_illustrator_role(manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git)
         elif role in ("lan-dispatch", "startup"):
             logger.info(
@@ -714,11 +745,11 @@ def main():
                 "プライマリ(rtx5060lp/shosetsu) ＆ セカンダリ(sff7020/gemma-4-26b-a4b-qat) 交互執筆 ＋ "
                 "kenomac-mini(FLUX.2) 挿絵生成を実行します ==="
             )
-            # First backfill any missing illustrations
             run_illustrator_role(manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git)
             manifest = sync_tasks_manifest(history_mgr)
-            # Next run alternating writer on queued tasks
-            written = run_alternating_writer_role(manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git)
+            written = run_alternating_writer_role(
+                manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git, allow_cross_node_failover=False
+            )
             if written > 0:
                 manifest = sync_tasks_manifest(history_mgr)
                 run_illustrator_role(manifest, history_mgr, quota_override=args.quota, push_to_git=push_to_git)
