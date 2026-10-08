@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `shosetsu` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用・Blogger毎日朝5時配信**: 外部の商用生成AI APIは一切使用せず、毎週金・土曜日に Mac mini M4 上で文章と挿絵を5本ずつ作成して GitHub Pages に蓄積し、毎日朝5:00（JST）に1日1本ずつ Blogger の利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **33** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-08 14:35 JST）
+- **収録作品数**: 全 **34** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-08 17:44 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 34 | 💻 B: 校務DX・ICT | `B11` | **[鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法](https://k518-2026.github.io/solve-school-problems/stories/ep34-b11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep34-b11.html) | [📄原稿](<content/2026-10-08_pattern_b_b11_鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法.md>) | — | 特別教室予約・備品貸出DX | 3,427字 |
 | 33 | ⚖️ C: 学校法制・法務 | `C10` | **[聖域の境界線――給食室の静寂と、エピペンを握る手の震え](https://k518-2026.github.io/solve-school-problems/stories/ep33-c10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep33-c10.html) | [📄原稿](<content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.md>) | — | 学校法制・学校給食・アレルギー事故防止 | 3,192字 |
 | 32 | 📘 A: 教育学・心理学 | `A11` | **[震える指先と、小さな「できた」の堆積](https://k518-2026.github.io/solve-school-problems/stories/ep32-a11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep32-a11.html) | [📄原稿](<content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.md>) | [🎨挿絵](<content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.png>) | 教育心理学・自己効力感 | 3,754字 |
 | 31 | ⚖️ C: 学校法制・法務 | `C09` | **[静かなる法令の盾――聖域と労働の境界線](https://k518-2026.github.io/solve-school-problems/stories/ep31-c09.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep31-c09.html) | [📄原稿](<content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.md>) | [🎨挿絵](<content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.png>) | 学校法制・働き方改革・給特法 | 3,260字 |
