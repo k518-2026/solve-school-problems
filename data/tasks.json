@@ -2,36 +2,35 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-09T01:04:44.529936+09:00",
+  "updated_at": "2026-10-09T03:28:53.420681+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
-      "role": "writer",
+      "role": "writer_primary",
       "host": "http://rtx5060lp:11434",
       "fallback_host": "http://192.168.128.62:11434",
       "writer_model": "shosetsu",
       "daily_quota": 2,
-      "description": "小説本文・理論/技術/法規解説の執筆（content/*.md 生成）"
+      "description": "小説執筆・プライマリ担当（Ollama shosetsu / セカンダリと1話ずつ交互に執筆）"
+    },
+    "sff7020": {
+      "node": "sff7020",
+      "role": "writer_secondary",
+      "host": "http://sff7020:1234",
+      "fallback_host": "http://192.168.128.16:1234",
+      "writer_model": "google/gemma-4-26b-a4b-qat",
+      "model": "google/gemma-4-26b-a4b-qat",
+      "daily_quota": 2,
+      "description": "小説執筆・セカンダリ担当（LM Studio gemma-4-26b-a4b-qat / プライマリと1話ずつ交互に執筆＆校閲）"
     },
     "kenomac-mini": {
       "node": "kenomac-mini",
       "role": "illustrator",
       "host": "http://kenomac-mini:7860",
       "fallback_host": "http://192.168.128.59:7860",
-      "ollama_host": "http://kenomac-mini:11434",
-      "fallback_ollama_host": "http://192.168.128.59:11434",
-      "model": "flux_2_klein_base_4b_i8x.ckpt",
+      "model": "flux_2_klein_base_9b_i8x.ckpt",
       "daily_quota": 5,
-      "description": "FLUX.2 挿絵生成（content/*.png）＆ GitHub Pages（docs/）ビルド更新"
-    },
-    "sff7020": {
-      "node": "sff7020",
-      "role": "director",
-      "host": "http://sff7020:1234",
-      "fallback_host": "http://192.168.128.16:1234",
-      "model": "google/gemma-4-26b-a4b-qat",
-      "daily_quota": 2,
-      "description": "LM Studio による先行プロット設計（data/plots/*.md）＆ 執筆済み原稿の品質校閲"
+      "description": "FLUX.2 [klein] 9B 挿絵生成専任（content/*.png）＆ GitHub Pages（docs/）ビルド更新（Ollamaは使用しない）"
     }
   },
   "tasks": [
@@ -733,16 +732,16 @@
       "order_num": 34,
       "pattern": "A",
       "category": "探究学習・教育哲学",
-      "title": "総合的な探究の時間で生徒のテーマが『ネットのコピペ調べ学習』で終わってしまう",
+      "title": "反響する問いの淵 ― 表面の海を越え、深層の思考へ ―",
       "problem_title": "総合的な探究の時間で生徒のテーマが『ネットのコピペ調べ学習』で終わってしまう",
       "solution_framework": "ジョン・デューイの「反省的思考（Reflective Thinking）・経験主義教育」と真正の学習（Authentic Learning）",
-      "status": "pending",
+      "status": "pending_illustration",
       "plot_file": null,
       "plot_by": null,
       "plot_at": null,
-      "md_file": null,
-      "written_by": null,
-      "written_at": null,
+      "md_file": "content/2026-10-09_pattern_a_a12_反響する問いの淵_表面の海を越え、深層の思考へ.md",
+      "written_by": "rtx5060lp",
+      "written_at": "2026-10-09T03:28:53.420674+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": null,

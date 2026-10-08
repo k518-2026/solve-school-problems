@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-09T01:04:44.526435+09:00",
-  "total_posted": 35,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-09T03:28:53.419078+09:00",
+  "total_posted": 36,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -370,6 +370,17 @@
       "category": "学校法制・感染症と出席停止・臨時休業",
       "file_path": "content/2026-10-09_pattern_c_c11_公衆衛生の盾と教育の責務_出席停止命令の正当性を巡る法理.md",
       "timestamp": "2026-10-09T01:04:44.526435+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "反響する問いの淵 ― 表面の海を越え、深層の思考へ ―",
+      "pattern": "A",
+      "topic_id": "A12",
+      "category": "探究学習・教育哲学",
+      "file_path": "content/2026-10-09_pattern_a_a12_反響する問いの淵_表面の海を越え、深層の思考へ.md",
+      "timestamp": "2026-10-09T03:28:53.419078+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
