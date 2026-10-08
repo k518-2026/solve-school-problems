@@ -79,13 +79,13 @@ SYSTEM_PROMPT_C = """あなたは学校法務および教育行政に精通し�
      （実在する法律のe-Gov法令検索リンク `[https://laws.e-gov.go.jp/document?lawid=...](https://laws.e-gov.go.jp/document?lawid=...)` や文部科学省公式ガイドラインの正規URLを明記してください）
 """
 
-DEFAULT_OLLAMA_HOST = "http://192.168.128.62:11434"
+DEFAULT_OLLAMA_HOST = "http://rtx5060lp:11434"
 FALLBACK_OLLAMA_HOSTS = [
-    "http://192.168.128.62:11434",
-    "http://192.168.128.59:11434",
+    "http://rtx5060lp:11434",
+    "http://kenomac-mini:11434",
 ]
 DEFAULT_WRITER_MODEL = "shosetsu"
-DEFAULT_DRAW_THINGS_HOST = "http://192.168.128.59:7860"
+DEFAULT_DRAW_THINGS_HOST = "http://kenomac-mini:7860"
 
 LOCAL_FALLBACK_MODELS = [
     "shosetsu",
@@ -193,6 +193,14 @@ class StoryGenerator:
                 f"- このテーマ領域（{topic.get('id')}）では、過去に {joined_same} が執筆されています。\n"
                 f"- 過去の記事と内容が絶対に重ならないよう、上記の基本設定にある「登場人物の名前」「学年・校種（小学校・中学校・高校・特別支援学級）」「教科・行事・部活動」「トラブルの具体的なきっかけ」を**すべて新しく作り変えて（刷新して）**執筆してください。\n"
                 f"- 拠って立つ理論・技術・法令の核心（{topic.get('solution_framework', '')}）は活かしつつ、まったく別の学校・別の先生・別の具体的なエピソードとして、読者が『全く新しい物語だ』と新鮮に感動できるオリジナルストーリーを構築してください。\n"
+            )
+
+        director_plot = str(topic.get("_director_plot_blueprint", "")).strip()
+        if director_plot:
+            parts.append(
+                f"\n【構成作家（sff7020 / Gemma 4 26B）による事前プロット設計・構成指示】\n"
+                f"以下のプロット設計・キャラクター設定・シーン展開をベースにして小説本文を執筆してください:\n"
+                f"{director_plot}\n"
             )
 
         return "".join(parts)
@@ -1190,7 +1198,7 @@ topic_id: "{topic.get('id', 'C01')}"
     ) -> Tuple[Optional[Path], str]:
         """
         Generates a 512x512 workplace drama illustration using Draw Things HTTP API
-        (`http://192.168.128.59:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_4b_i8x.ckpt`).
+        (`http://kenomac-mini:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_4b_i8x.ckpt`).
         Returns (saved_image_path_or_None, english_prompt_used).
         """
         dt_conn = self.check_draw_things_connection()
