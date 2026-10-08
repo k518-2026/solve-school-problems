@@ -120,19 +120,20 @@ jobs:
             ARGS="$ARGS --send"
           fi
           python -m src.main $ARGS
+          python -m src.task_worker --role enqueue --quota 2 --no-push
 
-      - name: Commit and Push Updated History & GitHub Pages
+      - name: Commit and Push Updated History, Task Queue & GitHub Pages
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md
+          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md data/tasks.json data/TASKS.md
 
           if git diff --staged --quiet; then
             echo "No changes detected to commit."
           else
-            git commit -m "chore(publish): Record WordPress/Blogger publication & update GitHub Pages [skip ci]"
+            git commit -m "chore(publish): Record WordPress/Blogger publication & enqueue daily tasks [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:${{ github.ref }}
           fi

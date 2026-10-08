@@ -843,10 +843,22 @@ topic_id: "{topic.get('id', 'C01')}"
             is_openai_host = host.endswith(":1234")
             try:
                 if not is_openai_host:
+                    target_ollama_model = model
+                    if host != self.ollama_host:
+                        host_models = self._probe_host_models(host) or []
+                        norm_host_models = {m[:-7] if m.endswith(":latest") else m for m in host_models} | set(host_models)
+                        if host_models and target_ollama_model not in norm_host_models:
+                            for fb_m in LOCAL_FALLBACK_MODELS:
+                                if fb_m in norm_host_models:
+                                    target_ollama_model = fb_m
+                                    break
+                            else:
+                                target_ollama_model = host_models[0]
+                    cur_payload = dict(ollama_payload, model=target_ollama_model)
                     url = f"{host}/api/chat"
                     req = urllib.request.Request(
                         url,
-                        data=ollama_data,
+                        data=json.dumps(cur_payload).encode("utf-8"),
                         headers={"Content-Type": "application/json"},
                         method="POST",
                     )
@@ -854,7 +866,7 @@ topic_id: "{topic.get('id', 'C01')}"
                         body = json.loads(res.read().decode("utf-8", errors="ignore"))
                         if "error" not in body and "message" in body:
                             if host != self.ollama_host:
-                                logger.info(f"Failover succeeded on Ollama host {host}")
+                                logger.info(f"Failover succeeded on Ollama host {host} ({target_ollama_model})")
                                 self.ollama_host = host
                             msg = body.get("message", {})
                             content = msg.get("content", "")

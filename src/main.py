@@ -182,7 +182,13 @@ def replenish_stock_if_needed(
         needed = max(1, target_stock - current_stock) if current_stock <= min_stock else 0
 
     if needed > 0:
+        from src.task_worker import sync_tasks_manifest
         sim_pattern = history_mgr.history_data.get("last_pattern")
+        posts = history_mgr.history_data.get("posts", [])
+        last_writer = "rtx5060lp"
+        for p in posts:
+            if p.get("written_by") in ("rtx5060lp", "sff7020"):
+                last_writer = p["written_by"]
         used_topic_ids = set()
         for idx in range(1, needed + 1):
             if sim_pattern == "A":
@@ -192,6 +198,20 @@ def replenish_stock_if_needed(
             else:
                 next_pat = "A"
             sim_pattern = next_pat
+
+            next_writer = "sff7020" if last_writer == "rtx5060lp" else "rtx5060lp"
+            last_writer = next_writer
+            if next_writer == "sff7020":
+                turn_host = "http://sff7020:1234"
+                turn_model = "google/gemma-4-26b-a4b-qat"
+            else:
+                turn_host = "http://rtx5060lp:11434"
+                turn_model = "shosetsu"
+            turn_gen = StoryGenerator(
+                ollama_host=turn_host,
+                writer_model=turn_model,
+                draw_things_host=generator.draw_things_host,
+            )
 
             key = f"pattern_{next_pat}_topics"
             candidates = history_mgr.catalog_data.get(key, [])
@@ -207,9 +227,12 @@ def replenish_stock_if_needed(
             tid = chosen_topic.get("id", "unknown")
             used_topic_ids.add(tid)
 
-            logger.info(f"\n=== [Auto-Replenish {idx}/{needed}] Pattern {next_pat} | [{tid}] {chosen_topic.get('problem_title')} ===")
+            logger.info(
+                f"\n=== [Auto-Replenish {idx}/{needed}] Writer: {next_writer} ({turn_model}) | "
+                f"Pattern {next_pat} | [{tid}] {chosen_topic.get('problem_title')} ==="
+            )
             ep_assets: List[Path] = []
-            raw_md, title, _ = generator.generate_story(next_pat, chosen_topic, use_local_llm=True)
+            raw_md, title, _ = turn_gen.generate_story(next_pat, chosen_topic, use_local_llm=True)
             today_str = datetime.now(JST).strftime("%Y-%m-%d")
             safe_title = sanitize_filename(title)
             out_path = content_dir / f"{today_str}_pattern_{next_pat.lower()}_{tid.lower()}_{safe_title}.md"
@@ -220,7 +243,7 @@ def replenish_stock_if_needed(
             logger.info(f"Saved story: {out_path}")
 
             img_out_path = out_path.with_suffix(".png")
-            saved_img, _ = generator.generate_illustration(
+            saved_img, _ = turn_gen.generate_illustration(
                 pattern=next_pat,
                 topic=chosen_topic,
                 output_image_path=img_out_path,
@@ -237,11 +260,14 @@ def replenish_stock_if_needed(
                 "topic_id": tid,
                 "category": chosen_topic.get("category", ""),
                 "file_path": str(out_path).replace("\\", "/"),
+                "written_by": next_writer,
+                "writer_model": turn_model,
                 "sent_to_wp": False,
                 "sent_to_blogger": False,
                 "status": "github_pages",
             })
 
+            sync_tasks_manifest(history_mgr)
             build_github_pages(history_mgr)
             if push_to_git and ep_assets:
                 git_sync_and_push(ep_assets, logger)
