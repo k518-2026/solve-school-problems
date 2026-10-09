@@ -5,6 +5,12 @@ on:
     # 毎日 朝 06:35 JST (21:35 UTC 前日) に GitHub に蓄積されている記事を 1日1本 Blogger へ自動投稿（規約・スパム防止準拠）
     - cron: '35 21 * * *'
 
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/blogger_trigger.txt'
+
   # Manual execution from GitHub Actions UI
   workflow_dispatch:
     inputs:
