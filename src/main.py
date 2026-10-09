@@ -60,11 +60,11 @@ def print_stock_status(history_mgr: HistoryManager):
     print(" 【Solve School Problems（shosetsu×FLUX.2）WP・Blogger・GitHub Pages 状況】")
     print("=" * 78)
     print("  ・Webサイト (GitHub Pages) : https://k518-2026.github.io/solve-school-problems/")
-    print("  ・WordPress 自動投稿       : 稼働中（蓄積記事から順次配信）")
+    print("  ・WordPress 自動投稿       : 稼働中（毎日 朝06:40 JST に蓄積記事から1日1本配信・規約準拠）")
     print(f"  ・WordPress 配信状況       : 配信済み {wp_posted} 話 ／ 未配信ストック {wp_unposted} 話")
     if next_wp:
         print(f"  ・次回 WordPress 配信予定  : [{next_wp.get('topic_id', '-')}] {next_wp.get('title', '-')}")
-    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝05:00 JST に蓄積記事から1日1本配信・規約準拠）")
+    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝06:35 JST に蓄積記事から1日1本配信・規約準拠）")
     print(f"  ・Blogger 配信状況         : 配信済み {blogger_posted} 話 ／ 未配信ストック {blogger_unposted} 話")
     if next_blogger:
         print(f"  ・次回 Blogger 配信予定    : [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
@@ -564,6 +564,13 @@ def main():
     send_wp_only = args.wp_only
 
     if args.wp_only and not target_file:
+        if not dry_run and not args.force and history_mgr.has_posted_to_wp_today():
+            logger.info(
+                "WordPress daily quota (1 post/day) has already been fulfilled today (JST). "
+                "Skipping to comply with WordPress.com Terms of Service and anti-spam guidelines."
+            )
+            print_stock_status(history_mgr)
+            return 0
         next_wp_stock = history_mgr.get_next_wp_stock_post(topic_id=args.topic_id)
         if next_wp_stock and next_wp_stock.get("resolved_path"):
             target_file = str(next_wp_stock["resolved_path"])

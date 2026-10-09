@@ -974,7 +974,7 @@ def _write_root_readme(stories: List[Dict[str, Any]], target_readme: Path = Path
         "3. **⚖️ パターンC（校長先生 × 指導主事・教育委員会）**: 教育基本法、学校教育法、いじめ防止対策推進法、教育機会確保法など教育法規に基づく学校法務小説",
         "",
         "- **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成",
-        "- **外部生成AI API不使用・Blogger毎日朝5時配信**: 外部の商用生成AI APIは一切使用せず、毎週金・土曜日に Mac mini M4 上で文章と挿絵を5本ずつ作成して GitHub Pages に蓄積し、毎日朝5:00（JST）に1日1本ずつ Blogger の利用規約・コンテンツポリシーを遵守して自動配信しています。",
+        "- **外部生成AI API不使用・毎朝配信（Blogger 06:35 / WordPress 06:40）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 06:35 JST に Blogger、06:40 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。",
         f"- **収録作品数**: 全 **{len(stories)}** 話（うち挿絵付き **{illustrated_count}** 話 / 最終更新: {updated_str}）",
         "",
         "---",

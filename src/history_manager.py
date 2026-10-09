@@ -221,7 +221,7 @@ class HistoryManager:
         for p in self.history_data.get("posts", []):
             if not p.get("sent_to_wp", False):
                 continue
-            w_ts = str(p.get("wp_posted_at", ""))
+            w_ts = str(p.get("wp_posted_at") or p.get("timestamp") or "")
             if w_ts.startswith(today_prefix):
                 return True
         return False
@@ -317,7 +317,7 @@ class HistoryManager:
         for p in self.history_data.get("posts", []):
             if not p.get("sent_to_blogger", False):
                 continue
-            b_ts = str(p.get("blogger_posted_at", ""))
+            b_ts = str(p.get("blogger_posted_at") or p.get("timestamp") or "")
             if b_ts.startswith(today_prefix):
                 return True
         return False

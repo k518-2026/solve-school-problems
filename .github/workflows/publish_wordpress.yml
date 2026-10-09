@@ -1,0 +1,112 @@
+name: Solve School Problems - Daily 06:40 JST WordPress Publisher
+
+on:
+  schedule:
+    # 毎日 朝 06:40 JST (21:40 UTC 前日) に GitHub に蓄積されている記事を 1日1本 WordPress へ自動投稿（規約・スパム防止準拠）
+    - cron: '40 21 * * *'
+
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/wp_trigger.txt'
+
+  # Manual execution from GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run mode (Simulate without sending actual email)'
+        required: true
+        type: boolean
+        default: false
+      post_status:
+        description: 'Post status on WordPress (publish or draft)'
+        required: true
+        type: choice
+        options:
+          - publish
+          - draft
+        default: 'publish'
+      topic_id:
+        description: 'Specific topic ID from catalog (e.g. A10, B10, C09, or leave blank for next accumulated story)'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: solve-school-problems-wordpress
+  cancel-in-progress: false
+
+jobs:
+  publish_wordpress:
+    name: Publish Daily Story to WordPress (06:40 JST)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies (No external AI APIs)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: |
+          python -m unittest discover tests
+
+      - name: Publish Accumulated GitHub Article to WordPress (06:40 JST)
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          PAUSE_BLOG_AUTO_POST: 'false'
+          SMTP_HOST: ${{ secrets.SMTP_HOST || 'smtp.gmail.com' }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT || '587' }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS || 'true' }}
+          SMTP_USE_SSL: ${{ secrets.SMTP_USE_SSL || 'false' }}
+          MAIL_FROM_NAME: ${{ vars.MAIL_FROM_NAME || 'Solve School Problems' }}
+          ENABLE_WP_POST: 'true'
+          WP_POST_EMAIL: ${{ secrets.WP_POST_EMAIL }}
+          DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
+          USE_JETPACK_SHORTCODES: 'true'
+        run: |
+          git pull --rebase origin main || true
+          ARGS="--wp-only"
+          if [ -n "${{ github.event.inputs.topic_id }}" ]; then
+            ARGS="$ARGS --topic-id ${{ github.event.inputs.topic_id }}"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          else
+            ARGS="$ARGS --send"
+          fi
+          python -m src.main $ARGS
+          python -m src.task_worker --role enqueue --quota 2 --no-push
+
+      - name: Commit and Push Updated History, Task Queue & GitHub Pages
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md data/tasks.json data/TASKS.md
+
+          if git diff --staged --quiet; then
+            echo "No changes detected to commit."
+          else
+            git commit -m "chore(wordpress): Publish daily article to WordPress (06:40 JST) [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:${{ github.ref }}
+          fi

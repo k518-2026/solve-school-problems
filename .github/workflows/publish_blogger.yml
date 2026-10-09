@@ -1,68 +1,34 @@
-name: Solve School Problems - Daily 05:00 JST WordPress & Blogger Publisher
+name: Solve School Problems - Daily 06:35 JST Blogger Publisher
 
 on:
   schedule:
-    # 毎日 朝 05:00 JST (20:00 UTC) に GitHub に蓄積されている記事を 1日1本 WordPress & Blogger へ自動投稿
-    - cron: '0 20 * * *'
-
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/wp_trigger.txt'
+    # 毎日 朝 06:35 JST (21:35 UTC 前日) に GitHub に蓄積されている記事を 1日1本 Blogger へ自動投稿（規約・スパム防止準拠）
+    - cron: '35 21 * * *'
 
   # Manual execution from GitHub Actions UI
   workflow_dispatch:
     inputs:
-      pattern:
-        description: 'Story Pattern (auto: alternates A/B/C, A: Pedagogy, B: School ICT DX, C: School Law)'
-        required: true
-        type: choice
-        options:
-          - auto
-          - A
-          - B
-          - C
-        default: 'auto'
       dry_run:
         description: 'Dry run mode (Simulate without sending actual email)'
         required: true
         type: boolean
         default: false
-      post_status:
-        description: 'Post status on WordPress (publish or draft)'
-        required: true
-        type: choice
-        options:
-          - publish
-          - draft
-        default: 'publish'
       topic_id:
         description: 'Specific topic ID from catalog (e.g. A10, B10, C09, or leave blank for next accumulated story)'
         required: false
         type: string
         default: ''
-      wp_only:
-        description: 'Send 1 accumulated story to WordPress only'
-        required: false
-        type: boolean
-        default: false
-      blogger_only:
-        description: 'Send to Blogger only'
-        required: false
-        type: boolean
-        default: false
 
 permissions:
   contents: write
 
 concurrency:
-  group: solve-school-problems-publish
+  group: solve-school-problems-blogger
   cancel-in-progress: false
 
 jobs:
-  publish:
-    name: Publish Accumulated Story to WordPress & Blogger & Update GitHub Pages
+  publish_blogger:
+    name: Publish Daily Story to Blogger (06:35 JST)
     runs-on: ubuntu-latest
 
     steps:
@@ -86,7 +52,7 @@ jobs:
         run: |
           python -m unittest discover tests
 
-      - name: Publish Accumulated GitHub Article to WordPress / Blogger
+      - name: Publish Accumulated GitHub Article to Blogger (06:35 JST)
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           PAUSE_BLOG_AUTO_POST: 'false'
@@ -97,20 +63,10 @@ jobs:
           SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS || 'true' }}
           SMTP_USE_SSL: ${{ secrets.SMTP_USE_SSL || 'false' }}
           MAIL_FROM_NAME: ${{ vars.MAIL_FROM_NAME || 'Solve School Problems' }}
-          ENABLE_WP_POST: 'true'
-          WP_POST_EMAIL: ${{ secrets.WP_POST_EMAIL }}
           BLOGGER_POST_EMAIL: ${{ secrets.BLOGGER_POST_EMAIL }}
-          DEFAULT_POST_STATUS: ${{ github.event.inputs.post_status || 'publish' }}
-          USE_JETPACK_SHORTCODES: 'true'
         run: |
           git pull --rebase origin main || true
-          if [ "${{ github.event_name }}" = "push" ] || [ "${{ github.event.inputs.wp_only }}" = "true" ]; then
-            ARGS="--wp-only"
-          elif [ "${{ github.event.inputs.blogger_only }}" = "true" ]; then
-            ARGS="--blogger-only"
-          else
-            ARGS="--blogger-daily"
-          fi
+          ARGS="--blogger-only"
           if [ -n "${{ github.event.inputs.topic_id }}" ]; then
             ARGS="$ARGS --topic-id ${{ github.event.inputs.topic_id }}"
           fi
@@ -120,20 +76,19 @@ jobs:
             ARGS="$ARGS --send"
           fi
           python -m src.main $ARGS
-          python -m src.task_worker --role enqueue --quota 2 --no-push
 
-      - name: Commit and Push Updated History, Task Queue & GitHub Pages
+      - name: Commit and Push Updated History & GitHub Pages
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md data/tasks.json data/TASKS.md
+          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md
 
           if git diff --staged --quiet; then
             echo "No changes detected to commit."
           else
-            git commit -m "chore(publish): Record WordPress/Blogger publication & enqueue daily tasks [skip ci]"
+            git commit -m "chore(blogger): Publish daily article to Blogger (06:35 JST) [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:${{ github.ref }}
           fi
