@@ -1,6 +1,6 @@
 {
   "last_pattern": "C",
-  "last_run_at": "2026-10-10T00:12:17.567772+09:00",
+  "last_run_at": "2026-10-10T07:04:12.939838+09:00",
   "total_posted": 43,
   "posts": [
     {
@@ -339,9 +339,10 @@
       "category": "教育心理学・自己効力感",
       "file_path": "content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.md",
       "timestamp": "2026-10-07T23:52:28.439638+09:00",
-      "sent_to_wp": false,
+      "sent_to_wp": true,
       "sent_to_blogger": false,
-      "status": "github_pages"
+      "status": "publish",
+      "wp_posted_at": "2026-10-10T07:04:12.939838+09:00"
     },
     {
       "title": "聖域の境界線――給食室の静寂と、エピペンを握る手の震え",
