@@ -1,6 +1,6 @@
 {
   "last_pattern": "C",
-  "last_run_at": "2026-10-10T07:04:12.939838+09:00",
+  "last_run_at": "2026-10-10T07:06:13.303773+09:00",
   "total_posted": 43,
   "posts": [
     {
@@ -352,8 +352,9 @@
       "file_path": "content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.md",
       "timestamp": "2026-10-08T14:35:29.932406+09:00",
       "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
+      "sent_to_blogger": true,
+      "status": "publish",
+      "blogger_posted_at": "2026-10-10T07:06:13.303773+09:00"
     },
     {
       "title": "鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法",
