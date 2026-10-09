@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-09T08:56:27.442884+09:00",
+  "last_run_at": "2026-10-09T09:07:56.290779+09:00",
   "total_posted": 40,
   "posts": [
     {
@@ -326,9 +326,11 @@
       "category": "学校法制・働き方改革・給特法",
       "file_path": "content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.md",
       "timestamp": "2026-10-06T21:05:00.420235+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
+      "sent_to_wp": true,
+      "sent_to_blogger": true,
+      "status": "publish",
+      "wp_posted_at": "2026-10-09T09:07:56.290779+09:00",
+      "blogger_posted_at": "2026-10-09T09:07:56.290779+09:00"
     },
     {
       "title": "震える指先と、小さな「できた」の堆積",
