@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `shosetsu` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用・Blogger毎日朝5時配信**: 外部の商用生成AI APIは一切使用せず、毎週金・土曜日に Mac mini M4 上で文章と挿絵を5本ずつ作成して GitHub Pages に蓄積し、毎日朝5:00（JST）に1日1本ずつ Blogger の利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **36** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-09 03:28 JST）
+- **収録作品数**: 全 **37** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-10 00:15 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 37 | 💻 B: 校務DX・ICT | `B12` | **[境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤](https://k518-2026.github.io/solve-school-problems/stories/ep37-b12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep37-b12.html) | [📄原稿](<content/2026-10-10_pattern_b_b12_境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤.md>) | — | 情報セキュリティ・誤送信防止 | 3,491字 |
 | 36 | 📘 A: 教育学・心理学 | `A12` | **[反響する問いの淵 ― 表面の海を越え、深層の思考へ ―](https://k518-2026.github.io/solve-school-problems/stories/ep36-a12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep36-a12.html) | [📄原稿](<content/2026-10-09_pattern_a_a12_反響する問いの淵_表面の海を越え、深層の思考へ.md>) | — | 探究学習・教育哲学 | 3,252字 |
 | 35 | ⚖️ C: 学校法制・法務 | `C11` | **[公衆衛生の盾と教育の責務――出席停止命令の正当性を巡る法理](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html) | [📄原稿](<content/2026-10-09_pattern_c_c11_公衆衛生の盾と教育の責務_出席停止命令の正当性を巡る法理.md>) | — | 学校法制・感染症と出席停止・臨時休業 | 3,211字 |
 | 34 | 💻 B: 校務DX・ICT | `B11` | **[鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法](https://k518-2026.github.io/solve-school-problems/stories/ep34-b11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep34-b11.html) | [📄原稿](<content/2026-10-08_pattern_b_b11_鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法.md>) | — | 特別教室予約・備品貸出DX | 3,427字 |

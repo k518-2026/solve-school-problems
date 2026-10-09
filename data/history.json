@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-09T03:28:53.419078+09:00",
-  "total_posted": 36,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-10T00:15:51.135251+09:00",
+  "total_posted": 37,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -381,6 +381,17 @@
       "category": "探究学習・教育哲学",
       "file_path": "content/2026-10-09_pattern_a_a12_反響する問いの淵_表面の海を越え、深層の思考へ.md",
       "timestamp": "2026-10-09T03:28:53.419078+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤",
+      "pattern": "B",
+      "topic_id": "B12",
+      "category": "情報セキュリティ・誤送信防止",
+      "file_path": "content/2026-10-10_pattern_b_b12_境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤.md",
+      "timestamp": "2026-10-10T00:15:51.135251+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

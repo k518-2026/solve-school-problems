@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #37 ・ [B12] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>情報セキュリティ・誤送信防止（TO/CC/BCCの事故防止アーキテクチャ / 脱PPAPとアクセス制限付きクラウド共有 / 2段階認証と送信前ディレイ（送信取り消し）設定 / 教育情報セキュリティポリシー準拠）</div>
+      <div><strong>👥 登場人物：</strong>学年主任・谷口先生（教職28年目） × 若手教諭・松永先生（教職4年目・情報セキュリティ委員）</div>
+      <div><strong>💡 解決フレームワーク：</strong>メーリングリスト（Google グループ）配信・学校連絡システムの権限分離と、添付ファイル暗号化（PPAP）廃止に代わるクラウド安全共有リンク設計</div>
+    </div>
+
+    
+
+    <article class="story-content">
+      <p>窓の外では、夕暮れ時特有のオレンジ色の光が昇降式のカーテンを通り抜け、職員室のデスクを細長く照らしていた。<br />
+教務主任の谷口は、眉間に深く皺を寄せたまま、パソコンの画面と向き合っていた。教職二十八年。それだけ長くこの現場に立ち続けていれば、生徒一人ひとりの表情の変化や、保護者の不安な眼差しは手に取るように分かる。しかし、その「寄り添うための配慮」が、現代のデジタル環境においては時として巨大な壁となって立ちはだかることも事実だった。</p>
+<p>「……くっ、またこのパスワードの入力と、ファイルの添付確認か」</p>
+<p>谷口は低く唸り、老眼鏡を押し上げた。<br />
+今回の課題は、修学旅行を翌日に控えた保護者への緊急連絡である。行程の変更に伴う注意事項が含まれており、一刻も早く正確に伝えなければならない。しかし、昨今のセキュリティ強化により、以前のように「メールにファイルを添付して送る」という単純な行為すら、いくつものハードルを越えなければならなくなった。</p>
+<p>谷口は手慣れた動作でGoogleドライブから資料を開き、それをPDFとして書き出し、メールの本文に貼り付けた。そして、保護者全員のアドレスをコピーし、宛先の「TO」欄へ流し込んだ。<br />
+一通のメールには、多くの家庭のプライバシーが詰まっている。谷口はそれを守るために、細心の注意を払って作業を進めていた。</p>
+<p>その時だった。背後から静かな声がかかった。</p>
+<p>「谷口先生、ちょっとよろしいですか？」</p>
+<p>振り返ると、若手教員の松永が立っていた。彼は情報セキュリティ委員も兼ねており、いつも最新のデバイスやネットワーク構成に精通している。<br />
+谷口は少し照れくさそうに笑った。<br />
+「ああ、松永先生。すまないね、つい没頭してしまって」</p>
+<p>松永は画面を覗き込み、一瞬だけ目を見開いた。そして、すぐに自分の席へ戻り、キーボードを叩き始めた。<br />
+「……あ、危ないところでした。谷口先生、今のまま『送信』を押すと、全ての保護者がお互いのメールアドレスを見られてしまいますよ」</p>
+<p>谷口は心臓が跳ね上がるのを感じた。<br />
+「えっ……？ いや、私はBCCに入れようと思っていたんだが……」<br />
+「いえ、今は『TO』に入っていますね。コピー＆ペーストの際に、うっかり宛先欄に流れてしまったようです」</p>
+<p>松永は冷静に、しかし迅速な手つきで画面を操作し始めた。<br />
+「大丈夫です。今から私が修正します。ただ、これだけを直すのではなく、根本的な仕組みを変えてしまいましょう。次からは、この『ヒヤリハット』が起こらなくなるような仕組みを構築します」</p>
+<p>松永は椅子を引き寄せ、谷口の隣に座った。<br />
+「まず、個別のメールアドレスを管理するのをやめましょう。Googleグループを使って『メーリングリスト』を作るんです。これなら、一箇所のアドレスに対して送信するだけで、適切な権限を持つ人だけに配信されます。TOに入ってしまったとしても、他の人のアドレスは露出しない仕組みです」</p>
+<p>谷口はその言葉に、少し圧倒されるような感覚を覚えた。<br />
+「Googleグループ……？ それでいいのかね。セキュリティの問題はないのか？」</p>
+<p>「もちろんです。むしろ、個別のメールアドレスを教職員が手動で管理するよりも、権限管理が徹底されたグループ配信の方が安全です」と松永は熱心に説明した。「さらに、添付ファイルの扱いも変えましょう。今はPDFを添付して送っていますよね？ でもこれだと『脱PPAP』の観点からも、ファイル自体にパスワードをかける手間や、ウイルス検知の壁に阻られることがあります」</p>
+<p>松永は自分のラップトップを開き、あるURLを表示させた。<br />
+「このGoogleドライブの特定のフォルダに対して、保護者専用の『閲覧権限付きリンク』を発行するんです。リンク自体に期限を設定したり、特定のドメインからしかアクセスできないように制限をかけることができます。メールにはそのリンクを貼るだけです。これなら、ファイルが漏洩するリスクを最小限に抑えつつ、誰もが最新の資料にアクセスできます」</p>
+<p>谷口は画面を見つめながら、松永の指先が魔法のように設定を組み上げていく様子を凝視した。<br />
+「……すごいな。私は今まで、この『安全に送る』という行為のために、どれほどの時間を費やしてきたか」</p>
+<p>「谷口先生の『守りたい』という熱意は、技術で加速させるためのものです。先生がこれまで築き上げてきた教育の知恵を、デジタルという防波堤で保護する。それが私の役割です」<br />
+松永の声には、年上の先輩に対する敬意と、自分の得意分野への誇りが同居していた。</p>
+<p>数分後、松永は作業を終え、画面を谷口に向けた。<br />
+「設定完了です。この『メーリングリスト』宛に送信ボタンを押してください。あとは私が監視しますので、もし不備があればすぐに検知して通知を飛ばすようにしておきました」</p>
+<p>谷口は深く息を吐き、マウスを握った。そして、慎重にクリックする。<br />
+「送信……完了だ」</p>
+<p>数秒の静寂の後、松永が小さく頷いた。<br />
+「無事に届きました。宛先は保護者全員、しかしお互いのプライバシーは完璧に守られた状態でです」</p>
+<p>谷口は椅子にもたれかかり、ふっと笑った。<br />
+「松永先生、ありがとう。君の技術のおかげで、私の心臓への負担が劇的に減ったよ」</p>
+<p>「いえ、こちらこそ。先生のようなベテランの視点がないと、システムの『使い勝手』を損なうことになりかねません。次からはこの運用を標準にして、他の学年にも広めていきましょう」</p>
+<p>夕闇が深まる職員室で、二人の教員は顔を見合わせて笑った。<br />
+技術は、人のためのものだ。その当たり前で大切な真理が、若手の手によって鮮やかに具現化された瞬間だった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、学校現場における「情報漏洩の防止」と「業務の効率化」を両立させるための3つの主要な技術について触れました。</p>
+<ol>
+<li>
+<p><strong>メーリングリスト（Google グループ）による誤送信防止</strong><br />
+通常、メールの「TO」欄に複数のアドレスを入力すると、受信者は「誰に送られたか」をすべて知ることができます。これが保護者情報の漏洩につながります。「BCC」を使うことでこれを防げますが、手動での操作はミスを誘発しやすいのが難点です。<br />
+<strong>解決策：</strong> Google グループなどのメーリングリストを利用します。特定のグループアドレス（例：<code>parents-group@school.ed.jp</code>）に送信するだけで、システムが自動的に適切なメンバーへ配信します。これにより、送信者が誤って「TO」に全員のアドレスを入れてしまうリスクを構造的に排除できます。</p>
+</li>
+<li>
+<p><strong>脱PPAPとクラウド共有リンクの活用</strong><br />
+かつては「PPAP（パスワード付きZIPファイル）」という手法で機密性を守っていましたが、現在はセキュリティ上の理由から推奨されなくなっています。<br />
+<strong>解決策：</strong> ファイルそのものをメールに添付するのではなく、Google ドライブやOneDriveなどのクラウドストレージにアップロードし、特定のユーザーだけがアクセスできる「共有リンク」を発行します。これにより、ファイルへのアクセス権限を細かく制御でき、かつ最新のファイルを常に共有できるメリットがあります。</p>
+</li>
+<li>
+<p><strong>権限分離とアクセスコントロール</strong><br />
+学校のデータは極めて機密性が高いため、「誰が、どのデータに、どこからアクセスできるか」を厳格に管理する必要があります。<br />
+<strong>解決策：</strong> クラウドツールを使用する際は、単にリンクを共有するだけでなく「組織内ユーザーのみ」「特定のアドレスのみ」といったアクセスの制限（ACL: Access Control List）を設定することが重要です。これにより、意図しない第三者への情報流出を防ぎます。</p>
+</li>
+</ol>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<ul>
+<li>
+<p>文部科学省：教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）</p>
+</li>
+<li>
+<p>IPA（独立行政法人情報処理推進機構）：中小企業・組織向け情報セキュリティ対策ガイドライン（学校現場でも準用可能な基本的なセキュリティの考え方）</p>
+</li>
+<li>
+<p>Google ドライブ ヘルプ：ファイルやフォルダの以前のバージョンを確認する（誤操作や上書きに対するバックアップ機能）<br />
+<a href="https://support.google.com/drive/answer/2409045?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/drive/answer/2409045?hl=ja</a></p>
+</li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep36-a12.html">← 前の作品：#36 反響する問いの淵 ― 表面の海を越え、深層の思考へ ―</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>
