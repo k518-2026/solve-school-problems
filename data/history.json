@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-09T09:07:56.290779+09:00",
-  "total_posted": 40,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-09T19:17:22.763204+09:00",
+  "total_posted": 41,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -427,6 +427,17 @@
       "category": "進路指導・調査書データ統合",
       "file_path": "content/2026-10-09_pattern_b_b13_時を繋ぐデータ、未来を拓く指先_進路指導の現場で起きた、リレーショナル・エール.md",
       "timestamp": "2026-10-09T08:56:27.442884+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "「正解」という名の仮面を脱ぐとき――葛藤の海を渡る道徳教育",
+      "pattern": "A",
+      "topic_id": "A14",
+      "category": "道徳教育・発達心理学",
+      "file_path": "content/2026-10-09_pattern_a_a14_「正解」という名の仮面を脱ぐとき_葛藤の海を渡る道徳教育.md",
+      "timestamp": "2026-10-09T19:17:22.763204+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
