@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-10T07:06:13.303773+09:00",
-  "total_posted": 43,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-10T07:26:58.369756+09:00",
+  "total_posted": 44,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -462,6 +462,17 @@
       "category": "学校法制・学校事故・生徒間トラブルと民法責任",
       "file_path": "content/2026-10-10_pattern_c_c14_廊下の空白、法的責任の境界線.md",
       "timestamp": "2026-10-10T00:12:17.567772+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "赤ペンとデジタルの地図 ― 放課後の残業を、明日への対話に変える魔法",
+      "pattern": "B",
+      "topic_id": "B14",
+      "category": "授業ICT・リアルタイム小テスト",
+      "file_path": "content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.md",
+      "timestamp": "2026-10-10T07:26:58.369756+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

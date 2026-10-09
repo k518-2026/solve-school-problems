@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 06:35 / WordPress 06:40）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 06:35 JST に Blogger、06:40 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **43** 話（うち挿絵付き **43** 話 / 最終更新: 2026-10-10 07:06 JST）
+- **収録作品数**: 全 **44** 話（うち挿絵付き **43** 話 / 最終更新: 2026-10-10 07:26 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 44 | 💻 B: 校務DX・ICT | `B14` | **[赤ペンとデジタルの地図 ― 放課後の残業を、明日への対話に変える魔法](https://k518-2026.github.io/solve-school-problems/stories/ep44-b14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep44-b14.html) | [📄原稿](<content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.md>) | — | 授業ICT・リアルタイム小テスト | 4,325字 |
 | 43 | ⚖️ C: 学校法制・法務 | `C14` | **[廊下の空白、法的責任の境界線](https://k518-2026.github.io/solve-school-problems/stories/ep43-c14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep43-c14.html) | [📄原稿](<content/2026-10-10_pattern_c_c14_廊下の空白、法的責任の境界線.md>) | [🎨挿絵](<content/2026-10-10_pattern_c_c14_廊下の空白、法的責任の境界線.png>) | 学校法制・学校事故・生徒間トラブルと民法責任 | 4,172字 |
 | 42 | ⚖️ C: 学校法制・法務 | `C13` | **[憲法の静かなる規律――義務教育の無償原則と教育の質をめぐる相克](https://k518-2026.github.io/solve-school-problems/stories/ep42-c13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep42-c13.html) | [📄原稿](<content/2026-10-09_pattern_c_c13_憲法の静かなる規律_義務教育の無償原則と教育の質をめぐる相克.md>) | [🎨挿絵](<content/2026-10-09_pattern_c_c13_憲法の静かなる規律_義務教育の無償原則と教育の質をめぐる相克.png>) | 学校法制・日本国憲法・無償原則と私費負担 | 4,286字 |
 | 41 | 📘 A: 教育学・心理学 | `A14` | **[「正解」という名の仮面を脱ぐとき――葛藤の海を渡る道徳教育](https://k518-2026.github.io/solve-school-problems/stories/ep41-a14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep41-a14.html) | [📄原稿](<content/2026-10-09_pattern_a_a14_「正解」という名の仮面を脱ぐとき_葛藤の海を渡る道徳教育.md>) | [🎨挿絵](<content/2026-10-09_pattern_a_a14_「正解」という名の仮面を脱ぐとき_葛藤の海を渡る道徳教育.png>) | 道徳教育・発達心理学 | 3,727字 |

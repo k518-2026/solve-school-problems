@@ -1,5 +1,18 @@
 [
   {
+    "no": 44,
+    "story_id": "ep44-b14",
+    "topic_id": "B14",
+    "pattern": "B",
+    "title": "赤ペンとデジタルの地図 ― 放課後の残業を、明日への対話に変える魔法",
+    "category": "授業ICT・リアルタイム小テスト",
+    "keywords": "Google フォーム自動採点モード / 正答率・誤答パターンのリアルタイム可視化 / 正規表現による記述解答の表記ゆれ許容判定 / 成績一覧への自動転記",
+    "has_image": false,
+    "url": "stories/ep44-b14.html",
+    "image": "",
+    "char_count": 4325
+  },
+  {
     "no": 43,
     "story_id": "ep43-c14",
     "topic_id": "C14",
