@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-09T08:56:27.445506+09:00",
+  "updated_at": "2026-10-09T09:04:06.463279+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -930,7 +930,7 @@
       "title": "時を繋ぐデータ、未来を拓く指先 ― 進路指導の現場で起きた、リレーショナル・エール",
       "problem_title": "受験期の調査書・推薦書作成で、過年度からの評定・部活・委員会記録を別々の紙ファイルから探す苦行",
       "solution_framework": "生徒IDを主キー（Primary Key）としたリレーショナルデータ設計と、XLOOKUP / INDEX-MATCH によるワンシート生徒カルテ自動統合",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "sff7020",
       "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
@@ -942,9 +942,9 @@
       "written_at": "2026-10-09T08:56:27.445497+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-09_pattern_b_b13_時を繋ぐデータ、未来を拓く指先_進路指導の現場で起きた、リレーショナル・エール.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-09T09:04:06.463268+09:00"
     },
     {
       "id": "C13",
