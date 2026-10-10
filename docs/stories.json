@@ -1,5 +1,18 @@
 [
   {
+    "no": 40,
+    "story_id": "ep40-b13",
+    "topic_id": "B13",
+    "pattern": "B",
+    "title": "紙の迷宮から解放される調査書：主キーが紡ぐ進路指導の革新",
+    "category": "進路指導・調査書データ統合",
+    "keywords": "主キー（生徒ID）によるテーブル結合 / XLOOKUP 関数による複数年度データ統合 / データの入力規則と表記ゆれ防止 / チェックサム・整合性検証",
+    "has_image": false,
+    "url": "stories/ep40-b13.html",
+    "image": "",
+    "char_count": 4005
+  },
+  {
     "no": 39,
     "story_id": "ep39-a13",
     "topic_id": "A13",
