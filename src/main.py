@@ -52,22 +52,24 @@ def print_stock_status(history_mgr: HistoryManager):
     wp_unposted = history_mgr.count_wp_unposted_stock()
     wp_posted = sum(1 for p in history_mgr.history_data.get("posts", []) if p.get("sent_to_wp", False))
     next_wp = history_mgr.get_next_wp_stock_post()
+    next_wp_ep = history_mgr.history_data.get("wp_repost_next_ep", 1)
     blogger_unposted = history_mgr.count_blogger_unposted_stock()
     blogger_posted = sum(1 for p in history_mgr.history_data.get("posts", []) if p.get("sent_to_blogger", False))
     next_blogger = history_mgr.get_next_blogger_stock_post()
+    next_blogger_ep = history_mgr.history_data.get("blogger_repost_next_ep", 1)
 
     print("\n" + "=" * 78)
     print(" 【Solve School Problems（shosetsu×FLUX.2）WP・Blogger・GitHub Pages 状況】")
     print("=" * 78)
     print("  ・Webサイト (GitHub Pages) : https://k518-2026.github.io/solve-school-problems/")
-    print("  ・WordPress 自動投稿       : 稼働中（毎日 朝06:40 JST に蓄積記事から1日1本配信・規約準拠）")
-    print(f"  ・WordPress 配信状況       : 配信済み {wp_posted} 話 ／ 未配信ストック {wp_unposted} 話")
+    print("  ・WordPress 自動投稿       : 稼働中（毎日 朝06:40 JST に #01から順次再配信・規約準拠）")
+    print(f"  ・WordPress 配信状況       : 再配信待機 {wp_unposted} 話 ／ 次回エピソード #{next_wp_ep:02d}")
     if next_wp:
-        print(f"  ・次回 WordPress 配信予定  : [{next_wp.get('topic_id', '-')}] {next_wp.get('title', '-')}")
-    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝06:35 JST に蓄積記事から1日1本配信・規約準拠）")
-    print(f"  ・Blogger 配信状況         : 配信済み {blogger_posted} 話 ／ 未配信ストック {blogger_unposted} 話")
+        print(f"  ・次回 WordPress 配信予定  : [#{next_wp.get('no', next_wp_ep):02d}] [{next_wp.get('topic_id', '-')}] {next_wp.get('title', '-')}")
+    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝06:35 JST に #01から順次再配信・規約準拠）")
+    print(f"  ・Blogger 配信状況         : 再配信待機 {blogger_unposted} 話 ／ 次回エピソード #{next_blogger_ep:02d}")
     if next_blogger:
-        print(f"  ・次回 Blogger 配信予定    : [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
+        print(f"  ・次回 Blogger 配信予定    : [#{next_blogger.get('no', next_blogger_ep):02d}] [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
     print("  ・小説執筆＆挿絵生成       : Mac mini M4 ローカルAI（Ollama shosetsu & FLUX.2）")
     print(f"  ・カタログ総テーマ数       : {total_catalog} テーマ（A:20 / B:20 / C:20）")
     print(f"  ・GitHub Pages 公開済み    : {len(stories)} 話（うち挿絵付き {illustrated} 話）")
@@ -562,6 +564,8 @@ def main():
     target_file = args.file
     send_blogger_only = args.blogger_only
     send_wp_only = args.wp_only
+    next_wp_stock = None
+    next_stock = None
 
     if args.wp_only and not target_file:
         if not dry_run and not args.force and history_mgr.has_posted_to_wp_today():
@@ -638,11 +642,18 @@ def main():
             file_path = content_dir / filename
             file_path.write_text(raw_markdown, encoding="utf-8")
 
+    target_image = None
+    if next_stock and next_stock.get("image_path"):
+        target_image = next_stock["image_path"]
+    elif next_wp_stock and next_wp_stock.get("image_path"):
+        target_image = next_wp_stock["image_path"]
+
     formatted_post = format_post_content(
         raw_markdown=raw_markdown,
         default_status=post_status,
         use_jetpack_shortcodes=config.use_jetpack_shortcodes,
         file_path=str(file_path),
+        image_path=target_image,
     )
 
     if args.preview_html:
@@ -676,6 +687,8 @@ def main():
             "sent_to_wp": result.get("sent_to_wp", False),
             "sent_to_blogger": result.get("sent_to_blogger", False),
             "status": post_status,
+            "wp_ep": next_wp_stock.get("no") if next_wp_stock else None,
+            "blogger_ep": next_stock.get("no") if next_stock else None,
         })
     from src.site_builder import build_github_pages
     build_github_pages(history_mgr)
