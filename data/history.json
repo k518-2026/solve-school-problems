@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-10T07:26:58.369756+09:00",
-  "total_posted": 44,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-10T09:48:24.737682+09:00",
+  "total_posted": 45,
   "wp_repost_next_ep": 1,
   "blogger_repost_next_ep": 1,
   "posts": [
@@ -475,6 +475,17 @@
       "category": "授業ICT・リアルタイム小テスト",
       "file_path": "content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.md",
       "timestamp": "2026-10-10T07:26:58.369756+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "グラデーションの旋律 ― 違いを「障害」から「多様性」へ書き換える",
+      "pattern": "A",
+      "topic_id": "A15",
+      "category": "インクルーシブ教育・UDL",
+      "file_path": "content/2026-10-10_pattern_a_a15_グラデーションの旋律_違いを「障害」から「多様性」へ書き換える.md",
+      "timestamp": "2026-10-10T09:48:24.737682+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
