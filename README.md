@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **52** 話（うち挿絵付き **49** 話 / 最終更新: 2026-10-11 08:16 JST）
+- **収録作品数**: 全 **52** 話（うち挿絵付き **50** 話 / 最終更新: 2026-10-11 08:21 JST）
 
 ---
 
@@ -32,7 +32,7 @@
 | 41 | ⚖️ C: 学校法制・法務 | `C12` | **[レンズが映し出した境界線 ― 肖像権と安全の狭間で](https://k518-2026.github.io/solve-school-problems/stories/ep41-c12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep41-c12.html) | [📄原稿](<content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.md>) | [🎨挿絵](<content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.png>) | 学校法制・個人情報保護・肖像権 | 4,313字 |
 | 40 | 💻 B: 校務DX・ICT | `B12` | **[デジタルが紡ぐ、信頼のバトン ― 修学旅行の嵐を越えて](https://k518-2026.github.io/solve-school-problems/stories/ep40-b12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep40-b12.html) | [📄原稿](<content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.md>) | [🎨挿絵](<content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.png>) | 情報セキュリティ・誤送信防止 | 5,396字 |
 | 39 | 📘 A: 教育学・心理学 | `A12` | **[情報の海を泳ぐための『問い』の羅針盤](https://k518-2026.github.io/solve-school-problems/stories/ep39-a12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep39-a12.html) | [📄原稿](<content/2026-10-09_pattern_a_a12_情報の海を泳ぐための『問い』の羅針盤.md>) | [🎨挿絵](<content/2026-10-09_pattern_a_a12_情報の海を泳ぐための『問い』の羅針盤.png>) | 探究学習・教育哲学 | 3,473字 |
-| 38 | 📘 A: 教育学・心理学 | `A17` | **[空白のキャンバスに、偶然という名の筆跡を](https://k518-2026.github.io/solve-school-problems/stories/ep38-a17.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep38-a17.html) | [📄原稿](<content/2026-10-11_pattern_a_a17_空白のキャンバスに、偶然という名の筆跡を.md>) | — | キャリア教育・青年心理学 | 4,584字 |
+| 38 | 📘 A: 教育学・心理学 | `A17` | **[空白のキャンバスに、偶然という名の筆跡を](https://k518-2026.github.io/solve-school-problems/stories/ep38-a17.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep38-a17.html) | [📄原稿](<content/2026-10-11_pattern_a_a17_空白のキャンバスに、偶然という名の筆跡を.md>) | [🎨挿絵](<content/2026-10-11_pattern_a_a17_空白のキャンバスに、偶然という名の筆跡を.png>) | キャリア教育・青年心理学 | 4,584字 |
 | 37 | ⚖️ C: 学校法制・法務 | `C16` | **[学びの正統性を守るために ―免許外教科担任の狭間に立つ決断―](https://k518-2026.github.io/solve-school-problems/stories/ep37-c16.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep37-c16.html) | [📄原稿](<content/2026-10-11_pattern_c_c16_学びの正統性を守るために_免許外教科担任の狭間に立つ決断.md>) | — | 学校法制・免許法・無免許授業の防止 | 3,842字 |
 | 36 | 💻 B: 校務DX・ICT | `B13` | **[紙の山を越えるデジタルな導き――生徒IDで繋ぐ『進路指導の絆](https://k518-2026.github.io/solve-school-problems/stories/ep36-b13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep36-b13.html) | [📄原稿](<content/2026-10-11_pattern_b_b13_紙の山を越えるデジタルな導き_生徒IDで繋ぐ『進路指導の絆.md>) | — | 進路指導・調査書データ統合 | 3,898字 |
 | 35 | ⚖️ C: 学校法制・法務 | `C11` | **[公衆衛生の盾と教育の責務――出席停止命令の正当性を巡る法理](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep35-c11.html) | [📄原稿](<content/2026-10-09_pattern_c_c11_公衆衛生の盾と教育の責務_出席停止命令の正当性を巡る法理.md>) | [🎨挿絵](<content/2026-10-09_pattern_c_c11_公衆衛生の盾と教育の責務_出席停止命令の正当性を巡る法理.png>) | 学校法制・感染症と出席停止・臨時休業 | 3,211字 |
