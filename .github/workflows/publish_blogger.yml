@@ -1,9 +1,9 @@
-name: Solve School Problems - Daily 06:35 JST Blogger Publisher
+name: Solve School Problems - Daily 05:33 JST Blogger Publisher
 
 on:
   schedule:
-    # 毎日 朝 06:35 JST (21:35 UTC 前日) に GitHub に蓄積されている記事を 1日1本 Blogger へ自動投稿（規約・スパム防止準拠）
-    - cron: '35 21 * * *'
+    # 毎日 朝 05:33 JST (20:33 UTC 前日) に GitHub に蓄積されている記事を 1日1本 Blogger へ自動投稿（規約・スパム防止準拠）
+    - cron: '33 20 * * *'
 
   push:
     branches:
@@ -34,7 +34,7 @@ concurrency:
 
 jobs:
   publish_blogger:
-    name: Publish Daily Story to Blogger (06:35 JST)
+    name: Publish Daily Story to Blogger (05:33 JST)
     runs-on: ubuntu-latest
 
     steps:
@@ -58,7 +58,7 @@ jobs:
         run: |
           python -m unittest discover tests
 
-      - name: Publish Accumulated GitHub Article to Blogger (06:35 JST)
+      - name: Publish Accumulated GitHub Article to Blogger (05:33 JST)
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
           PAUSE_BLOG_AUTO_POST: 'false'
@@ -94,7 +94,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes detected to commit."
           else
-            git commit -m "chore(blogger): Publish daily article to Blogger (06:35 JST) [skip ci]"
+            git commit -m "chore(blogger): Publish daily article to Blogger (05:33 JST) [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:${{ github.ref }}
           fi

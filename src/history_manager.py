@@ -255,7 +255,7 @@ class HistoryManager:
         topic_id: Optional[str] = None,
     ) -> Optional[Dict[str, Any]]:
         """
-        Selects the next article from GitHub to post to WordPress (1 per day at 06:40 JST).
+        Selects the next article from GitHub to post to WordPress (1 per day at 05:38 JST).
         Per user instruction, re-posts all episodes sequentially starting from #01 (#01 -> #02 -> #03 ...),
         attaching the updated 4:3 non-frontal FLUX.2 Klein 9B illustrations.
         1) If topic_id is explicitly specified, selects the matching entry in history/content.
@@ -341,7 +341,7 @@ class HistoryManager:
         topic_id: Optional[str] = None,
     ) -> Optional[Dict[str, Any]]:
         """
-        Selects the next article from GitHub to post to Blogger (1 per day at 06:35 JST).
+        Selects the next article from GitHub to post to Blogger (1 per day at 05:33 JST).
         Per user instruction, re-posts all episodes sequentially starting from #01 (#01 -> #02 -> #03 ...),
         attaching the updated 4:3 non-frontal FLUX.2 Klein 9B illustrations.
         1) If topic_id is explicitly specified, selects the matching entry in history/content.
@@ -414,8 +414,8 @@ class HistoryManager:
             f"- **総投稿数**: {len(posts)} 件",
             f"- **最終更新**: {datetime.now(JST).strftime('%Y-%m-%d %H:%M:%S JST')}",
             f"- **前回のパターン**: パターン {self.history_data.get('last_pattern', 'なし')}",
-            f"- **WordPress 配信キュー**: #01から順次再配信中（次回配信予定: #{self.history_data.get('wp_repost_next_ep', 1):02d} / 毎朝06:40 JST）",
-            f"- **Blogger 配信キュー**: #01から順次再配信中（次回配信予定: #{self.history_data.get('blogger_repost_next_ep', 1):02d} / 毎朝06:35 JST）",
+            f"- **WordPress 配信キュー**: #01から順次再配信中（次回配信予定: #{self.history_data.get('wp_repost_next_ep', 1):02d} / 毎朝05:38 JST）",
+            f"- **Blogger 配信キュー**: #01から順次再配信中（次回配信予定: #{self.history_data.get('blogger_repost_next_ep', 1):02d} / 毎朝05:33 JST）",
             "",
             "| No. | 配信日時 | パターン | ID | タイトル | カテゴリ | WP / Blogger送信 | ファイル |",
             "|:---:|:---|:---:|:---:|:---|:---|:---:|:---|"

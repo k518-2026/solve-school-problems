@@ -62,11 +62,11 @@ def print_stock_status(history_mgr: HistoryManager):
     print(" 【Solve School Problems（shosetsu×FLUX.2）WP・Blogger・GitHub Pages 状況】")
     print("=" * 78)
     print("  ・Webサイト (GitHub Pages) : https://k518-2026.github.io/solve-school-problems/")
-    print("  ・WordPress 自動投稿       : 稼働中（毎日 朝06:40 JST に #01から順次再配信・規約準拠）")
+    print("  ・WordPress 自動投稿       : 稼働中（毎日 朝05:38 JST に #01から順次再配信・規約準拠）")
     print(f"  ・WordPress 配信状況       : 再配信待機 {wp_unposted} 話 ／ 次回エピソード #{next_wp_ep:02d}")
     if next_wp:
         print(f"  ・次回 WordPress 配信予定  : [#{next_wp.get('no', next_wp_ep):02d}] [{next_wp.get('topic_id', '-')}] {next_wp.get('title', '-')}")
-    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝06:35 JST に #01から順次再配信・規約準拠）")
+    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝05:33 JST に #01から順次再配信・規約準拠）")
     print(f"  ・Blogger 配信状況         : 再配信待機 {blogger_unposted} 話 ／ 次回エピソード #{next_blogger_ep:02d}")
     if next_blogger:
         print(f"  ・次回 Blogger 配信予定    : [#{next_blogger.get('no', next_blogger_ep):02d}] [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
