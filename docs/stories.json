@@ -215,9 +215,9 @@
     "title": "紙の山を越えるデジタルな導き――生徒IDで繋ぐ『進路指導の絆",
     "category": "進路指導・調査書データ統合",
     "keywords": "主キー（生徒ID）によるテーブル結合 / XLOOKUP 関数による複数年度データ統合 / データの入力規則と表記ゆれ防止 / チェックサム・整合性検証",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep36-b13.html",
-    "image": "",
+    "image": "assets/images/ep36-b13.png",
     "char_count": 3898
   },
   {
