@@ -30,77 +30,79 @@
     <img class="story-hero-image" src="../assets/images/ep49-b16.png" alt="見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体" loading="lazy" />
 
     <article class="story-content">
-      <p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「……いや、おかしい。さっきまで普通に見られていたはずなのに」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大塚先生は、額に滲んだ汗を拭いながら、職員室のデスクで頭を抱えた。彼の前には、数台の児童用タブレットと、それらを繋ぐ複雑な配線の山、そして「接続できません」という無機質なエラーメッセージが表示された画面が並んでいる。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">今日は総合学習の時間。児童たちは地域文化に関する調べ学習に取り組んでいたが、特定の教育系Webサイトだけが全く開かないという事態に陥ったのだ。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「大塚先生、どうしました？」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">声をかけたのは、新しく着任したばかりの日向先生だった。若手らしい快活な笑顔だが、その目は真剣だ。日向は情報科の担当であり、学校のネットワーク構築にも深く関わっている。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「日向先生、助けてくれ……。このサイトだけがどうしても開けないんだ。他のGoogle検索やYouTubeは見られるのに、この教材サイトだけが『タイムアウト』になる。LANケーブルを抜き差ししてみたけれど、反応がないんだよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大塚先生は、視聴覚主任として長年学校のICT環境を守ってきたベテランだ。しかし、近年の高度なネットワーク技術や複雑なセキュリティフィルターの挙動までは、すべてを把握しきれるものではなかった。彼は焦燥感から、物理的な接続を疑い、根気強くケーブルを抜き差ししていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「なるほど……他のサイトは見られるということですね」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">日向先生は、大塚先生の隣に座り、タブレットの画面を覗き込んだ。「それなら、物理的な断線やルーターの故障ではありませんね。原因はもう少し上の層にある可能性が高いです」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">日向先生は、自分のノートPCを取り出し、キーボードを叩き始めた。大塚先生は、その手並みの速さに圧倒されながらも、不思議な安心感を覚えた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「まずは『どこで止まっているか』を確認しましょう。ネットワークには『OSI参照モデル』という階層構造があって、通信がどの段階で失敗しているかを見極めるのが鉄則です」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">日向先生はまず、コマンドプロンプトを開いた。「大塚先生、このURLのドメイン名に『Ping』を打ってみてください。まずはIPアドレスへの疎通確認です」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「……ピン……？　何をするんだい？」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「これは、相手のサーバーに『生きてるか？』と小さな信号を送って、返事が来るか確かめるコマンドです。これで反応があれば、インターネット自体には繋がっています」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大塚先生が指示通りに入力すると、画面には「要求がタイムアウトしました」と表示された。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「あ……ダメだ。反応がない」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「いいえ、これは『サイトが開かない原因』を絞り込むための第一歩です。次はDNS（ドメインネームシステム）の確認です」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">日向先生はさらに一歩踏み込んだ。「インターネットは『google.com』のような名前で動いていますが、コンピュータは数字の住所しか理解できません。名前を住所に変換する『電話帳』のような仕組みがDNSです。このサイトだけ名前から住所への変換がうまくいっていないか、あるいは変換された後の経路で遮断されている可能性があります」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">日向先生はさらに別のコマンドを入力し、特定のドメインに対する名前解決の挙動を解析していった。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「……あ、見つけました。大塚先生、これを見てください」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">画面には、特定のWebサイトへのアクセスのみが拒否されているようなログの一部が表示されていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「これはですね……学校のネットワークに導入している『プロキシサーバー』の設定です。教育委員会や自治体がセキュリティのために導入しているフィルターですが、このサイトだけが『ホワイトリスト（許可リスト）』に入っていないか、あるいは逆に『ブラックリスト（禁止リスト）』に近い判定を受けてしまっているようです」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大塚先生は目を見開いた。「プロキシ……？　あの、外部との通信を中継する装置のことかい？」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「その通りです。大塚先生の仰った通り、他のサイトが見られるのは、それらが許可されているから。でもこの教材サイトは、何らかの理由でフィルターに引っかかってしまっているんです。おそらく、サイト運営側がサーバーのIPアドレスを変えたか、あるいはこちらのプロキシの設定が更新されていないのが原因でしょう」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大塚先生は、自分の不甲斐なさを恥じるように視線を落とした。「私はただ、子供たちが困っているのを見て……。物理的に直せればいいと思っていた。技術の壁があるなんて、少し圧倒されてしまったよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「そんなことありません。大塚先生がこれまで築いてきた『子供たちに最高の学習環境を届けたい』という情熱があるからこそ、今のこの状況があるんです。技術はそれを支えるための道具に過ぎません。私がその道具の扱い方を少し知っているだけです」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">�　日向先生は穏やかに微笑み、大塚先生の肩を軽く叩いた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「さあ、解決しましょう。まずは情報システム担当の部署へ連絡して、プロキシのホワイトリストに追加してもらうよう依頼を出します。その間に、このサイトの代替URLや、オフラインで使えるキャッシュデータがないかを確認しましょう。それだけで、今日の授業は続けられます」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大塚先生は、顔を上げた。先ほどまでの焦燥感は消え、代わりに誇らしげな若手の技術への信頼と、それを共に解決する喜びが胸に広がった。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「ありがとう、日向先生。君の知恵を借りられるのは、本当に心強いよ。さあ、一緒にやってみようじゃないか」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">二人の教員は、再び画面に向き合った。複雑なネットワークの迷宮の中で、若手の正確な診断とベテランの深い教育的視点が結びついた瞬間だった。</p>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<h3 style="color: #0f172a; border-left: 4px solid #3b82f6; padding: 6px 12px; margin-top: 1.8em; margin-bottom: 0.8em; font-size: 1.25em; background-color: #f0f9ff; border-radius: 0 4px 4px 0;">【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</h3>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">本編では、学校現場で頻繁に発生する「特定のサイトだけ開かない」というトラブルを解決するプロセスを描きました。以下に登場した主要な概念を解説します。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>1. OSI参照モデルと障害切り分け</strong></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">ネットワークトラブルの解決において最も重要な考え方です。「LANケーブルが抜けている（物理層）」のか、「IPアドレスは正しく割り振られているか（ネットワーク層）」のか、「名前からIPへの変換ができているか（アプリケーション層）」といった階層を順番に確認することで、原因を特定しやすくします。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>2. Ping（ピン）による疎通確認</strong></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">ICMPというプロトコルを用いた基本的な診断ツールです。特定のサーバーに対して信号を送り、応答があるかを確認します。これで反応がなければ、経路のどこかで通信が遮断されていることがわかります。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>3. DNS（Domain Name System）の名前解決</strong></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">私たちは「google.com」のようなドメイン名でアクセスしますが、コンピュータは「142.250.xxx.xxx」のようなIPアドレスを必要とします。この変換を行うのがDNSです。時々、DNSのキャッシュ（古い情報）が残っていたり、特定のドメインに対する解決が拒否されたりすることが原因でサイトが開かないことがあります。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>4. プロキシサーバーとWebフィルタリング</strong></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">学校などの組織では、セキュリティや児童の保護のために「プロキシサーバー」を経由してインターネットに接続するのが一般的です。すべての通信をこの中継地点がチェックしており、「許可されたサイト（ホワイトリスト）」以外へのアクセスを遮断します。今回のケースは、教材サイト側で設定変更があったために、学校側のホワイトリストと不整合を起こした典型的な事例です。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>5. ホワイトリスト制御の重要性</strong></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">校務DXを進める上で、必要な教育リソースを確実に使えるようにするための「ホワイトリスト」の適切な管理は不可欠です。単に「遮断する」だけでなく、「必要なものをどう通すか」という技術的な調整が、授業の円滑な進行には欠かせません。</p>
-<h3 style="color: #0f172a; border-left: 4px solid #3b82f6; padding: 6px 12px; margin-top: 1.8em; margin-bottom: 0.8em; font-size: 1.25em; background-color: #f0f9ff; border-radius: 0 4px 4px 0;">【引用・参考文献（Technical References & Domestic Guidelines）】</h3>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">学校現場でのICT活用やネットワークトラブル解決の指針として、以下の公的機関の資料を参考にしてください。</p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>文部科学省：教育情報セキュリティの確保</strong></li>
+      <p>「……いや、おかしい。さっきまで普通に見られていたはずなのに」</p>
+<p>大塚先生は、額に滲んだ汗を拭いながら、職員室のデスクで頭を抱えた。彼の前には、数台の児童用タブレットと、それらを繋ぐ複雑な配線の山、そして「接続できません」という無機質なエラーメッセージが表示された画面が並んでいる。</p>
+<p>今日は総合学習の時間。児童たちは地域文化に関する調べ学習に取り組んでいたが、特定の教育系Webサイトだけが全く開かないという事態に陥ったのだ。</p>
+<p>「大塚先生、どうしました？」</p>
+<p>声をかけたのは、新しく着任したばかりの日向先生だった。若手らしい快活な笑顔だが、その目は真剣だ。日向は情報科の担当であり、学校のネットワーク構築にも深く関わっている。</p>
+<p>「日向先生、助けてくれ……。このサイトだけがどうしても開けないんだ。他のGoogle検索やYouTubeは見られるのに、この教材サイトだけが『タイムアウト』になる。LANケーブルを抜き差ししてみたけれど、反応がないんだよ」</p>
+<p>大塚先生は、視聴覚主任として長年学校のICT環境を守ってきたベテランだ。しかし、近年の高度なネットワーク技術や複雑なセキュリティフィルターの挙動までは、すべてを把握しきれるものではなかった。彼は焦燥感から、物理的な接続を疑い、根気強くケーブルを抜き差ししていた。</p>
+<p>「なるほど……他のサイトは見られるということですね」</p>
+<p>日向先生は、大塚先生の隣に座り、タブレットの画面を覗き込んだ。「それなら、物理的な断線やルーターの故障ではありませんね。原因はもう少し上の層にある可能性が高いです」</p>
+<p>日向先生は、自分のノートPCを取り出し、キーボードを叩き始めた。大塚先生は、その手並みの速さに圧倒されながらも、不思議な安心感を覚えた。</p>
+<p>「まずは『どこで止まっているか』を確認しましょう。ネットワークには『OSI参照モデル』という階層構造があって、通信がどの段階で失敗しているかを見極めるのが鉄則です」</p>
+<p>日向先生はまず、コマンドプロンプトを開いた。「大塚先生、このURLのドメイン名に『Ping』を打ってみてください。まずはIPアドレスへの疎通確認です」</p>
+<p>「……ピン……？　何をするんだい？」</p>
+<p>「これは、相手のサーバーに『生きてるか？』と小さな信号を送って、返事が来るか確かめるコマンドです。これで反応があれば、インターネット自体には繋がっています」</p>
+<p>大塚先生が指示通りに入力すると、画面には「要求がタイムアウトしました」と表示された。</p>
+<p>「あ……ダメだ。反応がない」</p>
+<p>「いいえ、これは『サイトが開かない原因』を絞り込むための第一歩です。次はDNS（ドメインネームシステム）の確認です」</p>
+<p>日向先生はさらに一歩踏み込んだ。「インターネットは『google.com』のような名前で動いていますが、コンピュータは数字の住所しか理解できません。名前を住所に変換する『電話帳』のような仕組みがDNSです。このサイトだけ名前から住所への変換がうまくいっていないか、あるいは変換された後の経路で遮断されている可能性があります」</p>
+<p>日向先生はさらに別のコマンドを入力し、特定のドメインに対する名前解決の挙動を解析していった。</p>
+<p>「……あ、見つけました。大塚先生、これを見てください」</p>
+<p>画面には、特定のWebサイトへのアクセスのみが拒否されているようなログの一部が表示されていた。</p>
+<p>「これはですね……学校のネットワークに導入している『プロキシサーバー』の設定です。教育委員会や自治体がセキュリティのために導入しているフィルターですが、このサイトだけが『ホワイトリスト（許可リスト）』に入っていないか、あるいは逆に『ブラックリスト（禁止リスト）』に近い判定を受けてしまっているようです」</p>
+<p>大塚先生は目を見開いた。「プロキシ……？　あの、外部との通信を中継する装置のことかい？」</p>
+<p>「その通りです。大塚先生の仰った通り、他のサイトが見られるのは、それらが許可されているから。でもこの教材サイトは、何らかの理由でフィルターに引っかかってしまっているんです。おそらく、サイト運営側がサーバーのIPアドレスを変えたか、あるいはこちらのプロキシの設定が更新されていないのが原因でしょう」</p>
+<p>大塚先生は、自分の不甲斐なさを恥じるように視線を落とした。「私はただ、子供たちが困っているのを見て……。物理的に直せればいいと思っていた。技術の壁があるなんて、少し圧倒されてしまったよ」</p>
+<p>「そんなことありません。大塚先生がこれまで築いてきた『子供たちに最高の学習環境を届けたい』という情熱があるからこそ、今のこの状況があるんです。技術はそれを支えるための道具に過ぎません。私がその道具の扱い方を少し知っているだけです」</p>
+<p>�　日向先生は穏やかに微笑み、大塚先生の肩を軽く叩いた。</p>
+<p>「さあ、解決しましょう。まずは情報システム担当の部署へ連絡して、プロキシのホワイトリストに追加してもらうよう依頼を出します。その間に、このサイトの代替URLや、オフラインで使えるキャッシュデータがないかを確認しましょう。それだけで、今日の授業は続けられます」</p>
+<p>大塚先生は、顔を上げた。先ほどまでの焦燥感は消え、代わりに誇らしげな若手の技術への信頼と、それを共に解決する喜びが胸に広がった。</p>
+<p>「ありがとう、日向先生。君の知恵を借りられるのは、本当に心強いよ。さあ、一緒にやってみようじゃないか」</p>
+<p>二人の教員は、再び画面に向き合った。複雑なネットワークの迷宮の中で、若手の正確な診断とベテランの深い教育的視点が結びついた瞬間だった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<h3>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</h3>
+<p>本編では、学校現場で頻繁に発生する「特定のサイトだけ開かない」というトラブルを解決するプロセスを描きました。以下に登場した主要な概念を解説します。</p>
+<p><strong>1. OSI参照モデルと障害切り分け</strong><br />
+ネットワークトラブルの解決において最も重要な考え方です。「LANケーブルが抜けている（物理層）」のか、「IPアドレスは正しく割り振られているか（ネットワーク層）」のか、「名前からIPへの変換ができているか（アプリケーション層）」といった階層を順番に確認することで、原因を特定しやすくします。</p>
+<p><strong>2. Ping（ピン）による疎通確認</strong><br />
+ICMPというプロトコルを用いた基本的な診断ツールです。特定のサーバーに対して信号を送り、応答があるかを確認します。これで反応がなければ、経路のどこかで通信が遮断されていることがわかります。</p>
+<p><strong>3. DNS（Domain Name System）の名前解決</strong><br />
+私たちは「google.com」のようなドメイン名でアクセスしますが、コンピュータは「142.250.xxx.xxx」のようなIPアドレスを必要とします。この変換を行うのがDNSです。時々、DNSのキャッシュ（古い情報）が残っていたり、特定のドメインに対する解決が拒否されたりすることが原因でサイトが開かないことがあります。</p>
+<p><strong>4. プロキシサーバーとWebフィルタリング</strong><br />
+学校などの組織では、セキュリティや児童の保護のために「プロキシサーバー」を経由してインターネットに接続するのが一般的です。すべての通信をこの中継地点がチェックしており、「許可されたサイト（ホワイトリスト）」以外へのアクセスを遮断します。今回のケースは、教材サイト側で設定変更があったために、学校側のホワイトリストと不整合を起こした典型的な事例です。</p>
+<p><strong>5. ホワイトリスト制御の重要性</strong><br />
+校務DXを進める上で、必要な教育リソースを確実に使えるようにするための「ホワイトリスト」の適切な管理は不可欠です。単に「遮断する」だけでなく、「必要なものをどう通すか」という技術的な調整が、授業の円滑な進行には欠かせません。</p>
+<h3>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</h3>
+<p>学校現場でのICT活用やネットワークトラブル解決の指針として、以下の公的機関の資料を参考にしてください。</p>
+<ul>
+<li>
+<p><strong>文部科学省：教育情報セキュリティの確保</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a><br />
+  （校務DXにおけるセキュリティとネットワークの基本方針について）</p>
+</li>
+<li>
+<p><strong>総務省：教育分野における情報通信技術の利活用</strong><br />
+<a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/" target="_blank" rel="noopener noreferrer">https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/</a><br />
+  （教育分野でのネットワーク構築に関する基礎知識）</p>
+</li>
+<li>
+<p><strong>文部科学省：高等学校情報科「情報Ⅰ」教員研修用教材（情報通信ネットワーク）</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html</a><br />
+  （ネットワークの基礎構造やOSI参照モデルなどの教育的解説）</p>
+</li>
+<li>
+<p><strong>Google Workspace for Education ヘルプセンター</strong><br />
+<a href="https://support.google.com/a/" target="_blank" rel="noopener noreferrer">https://support.google.com/a/</a><br />
+  （クラウド連携やフィルタリング設定に関する公式マニュアル）</p>
+</li>
 </ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">（校務DXにおけるセキュリティとネットワークの基本方針について）</p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>総務省：教育分野における情報通信技術の利活用</strong></li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/</a></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">（教育分野でのネットワーク構築に関する基礎知識）</p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>文部科学省：高等学校情報科「情報Ⅰ」教員研修用教材（情報通信ネットワーク）</strong></li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html</a></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">（ネットワークの基礎構造やOSI参照モデルなどの教育的解説）</p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>Google Workspace for Education ヘルプセンター</strong></li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://support.google.com/a/" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://support.google.com/a/</a></p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">（クラウド連携やフィルタリング設定に関する公式マニュアル）</p>
     </article>
 
     <div class="story-pager">
-      <a class="pager-btn" href="ep48-a16.html">← 前の作品：#48 静寂の境界線</a>
-      <a class="pager-btn" href="ep50-c16.html">次の作品：#50 学びの正統性を守るために ―免許外教科担任の狭間に立つ決断― →</a>
+      <a class="pager-btn" href="ep48-b15.html">← 前の作品：#48 紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX</a>
+      <a class="pager-btn" href="ep50-c14.html">次の作品：#50 廊下の空白、法的責任の境界線 →</a>
     </div>
   </main>
 
