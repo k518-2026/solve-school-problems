@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-10T09:48:24.737682+09:00",
-  "total_posted": 45,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-10T10:34:34.565237+09:00",
+  "total_posted": 46,
   "wp_repost_next_ep": 1,
   "blogger_repost_next_ep": 1,
   "posts": [
@@ -486,6 +486,17 @@
       "category": "インクルーシブ教育・UDL",
       "file_path": "content/2026-10-10_pattern_a_a15_グラデーションの旋律_違いを「障害」から「多様性」へ書き換える.md",
       "timestamp": "2026-10-10T09:48:24.737682+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "時数という名の規範：教育課程の正当性を巡る決断",
+      "pattern": "C",
+      "topic_id": "C15",
+      "category": "学校法制・教育課程編成権と学習指導要領",
+      "file_path": "content/2026-10-10_pattern_c_c15_時数という名の規範：教育課程の正当性を巡る決断.md",
+      "timestamp": "2026-10-10T10:34:34.565237+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
