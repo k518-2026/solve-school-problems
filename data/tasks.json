@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-10T09:48:24.739077+09:00",
+  "updated_at": "2026-10-10T09:54:39.700716+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -1050,7 +1050,7 @@
       "title": "グラデーションの旋律 ― 違いを「障害」から「多様性」へ書き換える",
       "problem_title": "学力差・特性差が大きいクラスで、一斉授業のペースをどこに合わせればいいか分からない",
       "solution_framework": "CAST（デビッド・ローズら）の「学びのユニバーサルデザイン（UDL: Universal Design for Learning）」",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "sff7020",
       "assigned_model": "google/gemma-4-26b-a4b-qat",
       "queued_at": null,
@@ -1062,9 +1062,9 @@
       "written_at": "2026-10-10T09:48:24.739072+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-10_pattern_a_a15_グラデーションの旋律_違いを「障害」から「多様性」へ書き換える.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-10T09:54:39.700708+09:00"
     },
     {
       "id": "B15",
