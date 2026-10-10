@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 06:35 / WordPress 06:40）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 06:35 JST に Blogger、06:40 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **46** 話（うち挿絵付き **45** 話 / 最終更新: 2026-10-10 10:34 JST）
+- **収録作品数**: 全 **46** 話（うち挿絵付き **46** 話 / 最終更新: 2026-10-10 10:42 JST）
 
 ---
 
@@ -18,7 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
-| 46 | ⚖️ C: 学校法制・法務 | `C15` | **[時数という名の規範：教育課程の正当性を巡る決断](https://k518-2026.github.io/solve-school-problems/stories/ep46-c15.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep46-c15.html) | [📄原稿](<content/2026-10-10_pattern_c_c15_時数という名の規範：教育課程の正当性を巡る決断.md>) | — | 学校法制・教育課程編成権と学習指導要領 | 4,738字 |
+| 46 | ⚖️ C: 学校法制・法務 | `C15` | **[時数という名の規範：教育課程の正当性を巡る決断](https://k518-2026.github.io/solve-school-problems/stories/ep46-c15.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep46-c15.html) | [📄原稿](<content/2026-10-10_pattern_c_c15_時数という名の規範：教育課程の正当性を巡る決断.md>) | [🎨挿絵](<content/2026-10-10_pattern_c_c15_時数という名の規範：教育課程の正当性を巡る決断.png>) | 学校法制・教育課程編成権と学習指導要領 | 4,738字 |
 | 45 | 📘 A: 教育学・心理学 | `A15` | **[グラデーションの旋律 ― 違いを「障害」から「多様性」へ書き換える](https://k518-2026.github.io/solve-school-problems/stories/ep45-a15.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep45-a15.html) | [📄原稿](<content/2026-10-10_pattern_a_a15_グラデーションの旋律_違いを「障害」から「多様性」へ書き換える.md>) | [🎨挿絵](<content/2026-10-10_pattern_a_a15_グラデーションの旋律_違いを「障害」から「多様性」へ書き換える.png>) | インクルーシブ教育/UDL | 4,663字 |
 | 44 | 💻 B: 校務DX・ICT | `B14` | **[赤ペンとデジタルの地図 ― 放課後の残業を、明日への対話に変える魔法](https://k518-2026.github.io/solve-school-problems/stories/ep44-b14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep44-b14.html) | [📄原稿](<content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.md>) | [🎨挿絵](<content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.png>) | 授業ICT・リアルタイム小テスト | 4,325字 |
 | 43 | ⚖️ C: 学校法制・法務 | `C14` | **[廊下の空白、法的責任の境界線](https://k518-2026.github.io/solve-school-problems/stories/ep43-c14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep43-c14.html) | [📄原稿](<content/2026-10-10_pattern_c_c14_廊下の空白、法的責任の境界線.md>) | [🎨挿絵](<content/2026-10-10_pattern_c_c14_廊下の空白、法的責任の境界線.png>) | 学校法制・学校事故・生徒間トラブルと民法責任 | 4,172字 |
