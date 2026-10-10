@@ -30,80 +30,78 @@
     
 
     <article class="story-content">
-      <p>窓の外では、入試を控えた三年生の熱気が夕暮れの校庭に漂っている。しかし、進路指導室の空気はそれとは対照的に、重苦しい紙の束と埃っぽさに支配されていた。</p>
-<p>「あぁ、またこのページか……」</p>
-<p>岩本先生は、老眼鏡をずらしながら深くため息をついた。教職三十年。これまで数えきれないほどの生徒を送り出してきた彼にとって、調査書の作成は神聖な儀式に近いものだった。しかし、近年の志願校の多様化と複雑な評価基準により、その作業はかつてないほど過酷なものへと変貌していた。</p>
-<p>机の上には、倉庫から引っ張り出してきた一・二年時の「指導要録補助簿」や「委員会名簿」が山積みになっている。岩本先生は、ある生徒の部活動の記録を見つけるために、数冊のファイルを開き、指先でページをめくり続ける。執拗なまでの手作業の繰り返しは、彼の右手に腱鞘炎の痛みをもたらしていた。</p>
-<p>「先生、まだ終わらないんですか？ もうすぐ定時ですよ」</p>
-<p>背後から声をかけたのは、若手の高梨先生だった。商業科と情報科を担当する彼は、いつも最新のデバイスを使いこなし、効率的な校務を追求する姿勢で知られていた。</p>
-<p>「すまないね、高梨先生。この生徒、一年前は委員会で非常に優秀な活動をしていたはずなんだが、今の記録と照らし合わせるのが難しくて……。紙のファイルは、時として迷宮のように複雑だからね」</p>
-<p>岩本先生は、指先の痛みを堪えながら、書き込みの薄い指導要録の一行をなぞった。その目は、単に事務作業をしているのではなく、この生徒が将来どのような道を歩むべきかを見極めようとする、深い愛情に満ちていた。</p>
-<p>「……あの、もしよろしければ、少しだけ手伝わせてください」</p>
-<p>高梨先生はそう言って、自分のノートパソコンを開き、岩本先生の机の端に置いた。</p>
-<p>「技術で、この『迷宮』を整理できるかもしれません」</p>
-<div class="scene-divider">✦ ✦ ✦</div>
-<p>高梨先生の指先がキーボードの上で踊り始めた。彼はまず、山積みの紙の束を前にして、岩本先生に問いかけた。</p>
-<p>「先生、このデータの中で一番変わらない、つまり『絶対に重複しない』項目は何ですか？」</p>
-<p>「うむ……生徒の名前ならあるが、同姓同名の生徒もいるだろう。あぁ、そうか。学籍番号だね。あれなら一人に一つしか割り当てられない」</p>
-<p>岩本先生の言葉に、高梨先生は小さく頷いた。</p>
-<p>「そうです。その『学籍番号』を、すべてのデータの中心——いわゆる主キー（Primary Key）として扱うんです」</p>
-<p>高梨先生は、Excelを開き、いくつかのシートを作成し始めた。彼は単にデータを打ち込むのではなく、構造を設計するように動いた。</p>
-<p>「まず、一・二年時の記録、部活動の推移、委員会の役割といった個別の項目を、それぞれ独立した『テーブル』として整理します。そして、それらすべてを生徒IDで紐付けるんです。今の状態は、バラバラの情報のパズルですが、これを一つの大きな地図に統合する作業を行います」</p>
-<p>岩本先生は、高梨先生の画面を覗き込んだ。そこには、彼がこれまで苦労して手作業で照合していたデータが、整然とした表として整理されつつあった。</p>
-<p>「これでは、生徒の一人を選ぶだけで、過去のすべての軌跡が見えるようになるわけだね？」</p>
-<p>「はい。そして、ここがポイントです」</p>
-<p>高梨先生は、特定の関数を打ち込んだ。</p>
-<p>「XLOOKUP関数を使います。この関数を使えば、例えば『生徒ID』を入力するだけで、他のシートから該当する『部活動の評価』や『委員会での役割』を瞬時に引っ張ってくることができます。これなら、紙をめくる必要はありません」</p>
-<p>高梨先生はさらに解説を続けた。</p>
-<p>「ただ、データが正しく結合されるためには、入力規則も重要です。例えば、『部活動』の名称に『サッカー』と書いたり『蹴球』と書いたりすると、コンピュータは別物だと判断してしまいます。あらかじめ選択肢をドロップダウンリストから選ばせるようにすれば、表記ゆれを防げます」</p>
-<p>岩本先生は驚いたように目を丸くした。<br />
-「ほう……『表記ゆれ』を防ぐために、最初から入力を制限するのか。実に合理的だ」</p>
-<div class="scene-divider">✦ ✦ ✦</div>
-<p>数日後、進路指導室には劇的な変化が訪れていた。<br />
-　かつて山のように積まれていた紙のファイルは、倉庫へと戻された。代わりに、高梨先生が構築した「生徒カルテ統合システム（Excel）」がモニター上に鎮座していた。</p>
-<p>岩本先生は、ある生徒のIDを検索窓に入力した。<br />
-　その瞬間、画面上のセルが次々と埋まっていく。一年前の委員会での功績、二年前の部活動でのエピソード、そして現在の進路希望。それらすべてが、一つのシートに美しく統合されて表示された。</p>
-<p>「……これは、魔法のようだ」</p>
-<p>岩本先生は感嘆の声を漏らした。<br />
-　これまでは、一人の生徒の記録を辿るために十数分を費やしていた。しかし今では、わずか数秒で全ての情報が目の前に現れる。それによって生まれた「余白」の時間こそが、彼にとって最も価値のあるものだった。</p>
-<p>「おかげで、この生徒とじっくり向き合う時間が確保できました。技術は、人を置き換えるものではなく、人が人に向き合うための時間を生み出すものなのですね」</p>
-<p>岩本先生の言葉に、高梨先生は誇らしげに、しかし謙虚に微笑んだ。</p>
-<p>「先生の教育に対する熱意があるからこそ、このシステムは意味を成すんです。データの統合は私がやります。でも、そのデータに命を吹き込むのは、先生の仕事です」</p>
-<p>二人の教員は、モニターの光に照らされながら、再び生徒たちの未来について語り合い始めた。<br />
-　進路指導室には、かつての埃っぽさではなく、新しい時代の教育への希望が満ちていた。</p>
-<div class="scene-divider">✦ ✦ ✦</div>
-<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
-<p>今回の物語では、校務における「データ統合」という課題に対し、データベース設計の基礎概念とExcelの高度な関数を組み合わせて解決しました。以下に重要なポイントを解説します。</p>
-<p><strong>1. 主キー（Primary Key）によるデータ設計</strong><br />
-データベースの世界では、各データを一意に識別するための「主キー」という概念があります。学校現場においては「生徒ID（学籍番号）」がこれに最適です。名前は重複する可能性があるため、システムで管理する際は必ずIDを軸に据えることで、データの「紐付けミス」を確実に防ぐことができます。</p>
-<p><strong>2. テーブル結合とXLOOKUP関数</strong><br />
-「指導要録」「部活動記録」「委員会名簿」といった異なる種類の情報を別々のシート（テーブル）に分けて管理するのは、正しいデータ設計の基本です。<br />
-これらを統合する際に活躍するのが<code>XLOOKUP</code>関数です。従来のVLOOKUP関数よりも柔軟で、指定したIDを元に「他のシートから特定の項目を抜き出す」という動作を非常に高速・正確に行います。</p>
-<p><strong>3. 入力規則と表記ゆれ防止</strong><br />
-DXにおいて最も厄介なのが「データの汚れ（表記ゆれ）」です。例えば、ある人が「テニス」、別の人が「卓テニス」と入力すると、集計時に正しく合致しません。Excelの「データの入力規則」機能を使ってドロップダウンリストを作成することで、あらかじめ定義された選択肢から選ばせるようにすれば、データの一貫性を保つことができます。</p>
-<p><strong>4. チェックサム・整合性の重要性</strong><br />
-大量のデータを扱う場合、計算ミスや転記ミスがないかを確認することも重要です。例えば、全生徒のID数が各シートで一致しているか、あるいは合計点数に異常がないかといった「整合性チェック」の数式を組み込むことで、人的ミスによる調査書の誤記という重大なトラブルを未然に防ぐことができます。</p>
-<div class="scene-divider">✦ ✦ ✦</div>
-<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
-<p>以下の資料は、学校現場でのDX推進や、Excelを用いたデータ活用のための基礎知識として役立つ公的なガイドラインおよび公式マニュアルです。</p>
-<ul>
-<li>
-<p>Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート<br />
-<a href="https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" target="_blank" rel="noopener noreferrer">https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929</a></p>
-</li>
-<li>
-<p>文部科学省. 高等学校情報科「情報Ⅰ」教員研修用教材（データベースとデータ活用）<br />
-<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html</a></p>
-</li>
-<li>
-<p>文部科学省. 教育情報セキュリティの確保（校務DXにおけるデータ保護の基礎）<br />
-<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a></p>
-</li>
-<li>
-<p>デジタル庁. 校務DX推進に向けたガイドライン（自治体・学校等への展開資料）<br />
-<a href="https://www.digital.go.jp/" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/</a>（※最新の校務DX関連通知を確認してください）</p>
-</li>
+      <p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">窓の外では、入試を控えた三年生の熱気が夕暮れの校庭に漂っている。しかし、進路指導室の空気はそれとは対照的に、重苦しい紙の束と埃っぽさに支配されていた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「あぁ、またこのページか……」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生は、老眼鏡をずらしながら深くため息をついた。教職三十年。これまで数えきれないほどの生徒を送り出してきた彼にとって、調査書の作成は神聖な儀式に近いものだった。しかし、近年の志願校の多様化と複雑な評価基準により、その作業はかつてないほど過酷なものへと変貌していた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">机の上には、倉庫から引っ張り出してきた一・二年時の「指導要録補助簿」や「委員会名簿」が山積みになっている。岩本先生は、ある生徒の部活動の記録を見つけるために、数冊のファイルを開き、指先でページをめくり続ける。執拗なまでの手作業の繰り返しは、彼の右手に腱鞘炎の痛みをもたらしていた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「先生、まだ終わらないんですか？ もうすぐ定時ですよ」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">背後から声をかけたのは、若手の高梨先生だった。商業科と情報科を担当する彼は、いつも最新のデバイスを使いこなし、効率的な校務を追求する姿勢で知られていた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「すまないね、高梨先生。この生徒、一年前は委員会で非常に優秀な活動をしていたはずなんだが、今の記録と照らし合わせるのが難しくて……。紙のファイルは、時として迷宮のように複雑だからね」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生は、指先の痛みを堪えながら、書き込みの薄い指導要録の一行をなぞった。その目は、単に事務作業をしているのではなく、この生徒が将来どのような道を歩むべきかを見極めようとする、深い愛情に満ちていた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「……あの、もしよろしければ、少しだけ手伝わせてください」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">高梨先生はそう言って、自分のノートパソコンを開き、岩本先生の机の端に置いた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「技術で、この『迷宮』を整理できるかもしれません」</p>
+<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">高梨先生の指先がキーボードの上で踊り始めた。彼はまず、山積みの紙の束を前にして、岩本先生に問いかけた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「先生、このデータの中で一番変わらない、つまり『絶対に重複しない』項目は何ですか？」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「うむ……生徒の名前ならあるが、同姓同名の生徒もいるだろう。あぁ、そうか。学籍番号だね。あれなら一人に一つしか割り当てられない」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生の言葉に、高梨先生は小さく頷いた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「そうです。その『学籍番号』を、すべてのデータの中心——いわゆる主キー（Primary Key）として扱うんです」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">高梨先生は、Excelを開き、いくつかのシートを作成し始めた。彼は単にデータを打ち込むのではなく、構造を設計するように動いた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「まず、一・二年時の記録、部活動の推移、委員会の役割といった個別の項目を、それぞれ独立した『テーブル』として整理します。そして、それらすべてを生徒IDで紐付けるんです。今の状態は、バラバラの情報のパズルですが、これを一つの大きな地図に統合する作業を行います」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生は、高梨先生の画面を覗き込んだ。そこには、彼がこれまで苦労して手作業で照合していたデータが、整然とした表として整理されつつあった。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「これでは、生徒の一人を選ぶだけで、過去のすべての軌跡が見えるようになるわけだね？」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「はい。そして、ここがポイントです」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">高梨先生は、特定の関数を打ち込んだ。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「XLOOKUP関数を使います。この関数を使えば、例えば『生徒ID』を入力するだけで、他のシートから該当する『部活動の評価』や『委員会での役割』を瞬時に引っ張ってくることができます。これなら、紙をめくる必要はありません」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">高梨先生はさらに解説を続けた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「ただ、データが正しく結合されるためには、入力規則も重要です。例えば、『部活動』の名称に『サッカー』と書いたり『蹴球』と書いたりすると、コンピュータは別物だと判断してしまいます。あらかじめ選択肢をドロップダウンリストから選ばせるようにすれば、表記ゆれを防げます」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生は驚いたように目を丸くした。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「ほう……『表記ゆれ』を防ぐために、最初から入力を制限するのか。実に合理的だ」</p>
+<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">数日後、進路指導室には劇的な変化が訪れていた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">かつて山のように積まれていた紙のファイルは、倉庫へと戻された。代わりに、高梨先生が構築した「生徒カルテ統合システム（Excel）」がモニター上に鎮座していた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生は、ある生徒のIDを検索窓に入力した。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">その瞬間、画面上のセルが次々と埋まっていく。一年前の委員会での功績、二年前の部活動でのエピソード、そして現在の進路希望。それらすべてが、一つのシートに美しく統合されて表示された。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「……これは、魔法のようだ」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生は感嘆の声を漏らした。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">これまでは、一人の生徒の記録を辿るために十数分を費やしていた。しかし今では、わずか数秒で全ての情報が目の前に現れる。それによって生まれた「余白」の時間こそが、彼にとって最も価値のあるものだった。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「おかげで、この生徒とじっくり向き合う時間が確保できました。技術は、人を置き換えるものではなく、人が人に向き合うための時間を生み出すものなのですね」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">岩本先生の言葉に、高梨先生は誇らしげに、しかし謙虚に微笑んだ。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「先生の教育に対する熱意があるからこそ、このシステムは意味を成すんです。データの統合は私がやります。でも、そのデータに命を吹き込むのは、先生の仕事です」</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">二人の教員は、モニターの光に照らされながら、再び生徒たちの未来について語り合い始めた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">進路指導室には、かつての埃っぽさではなく、新しい時代の教育への希望が満ちていた。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">✦ ✦ ✦</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">今回の物語では、校務における「データ統合」という課題に対し、データベース設計の基礎概念とExcelの高度な関数を組み合わせて解決しました。以下に重要なポイントを解説します。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>1. 主キー（Primary Key）によるデータ設計</strong></p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">データベースの世界では、各データを一意に識別するための「主キー」という概念があります。学校現場においては「生徒ID（学籍番号）」がこれに最適です。名前は重複する可能性があるため、システムで管理する際は必ずIDを軸に据えることで、データの「紐付けミス」を確実に防ぐことができます。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>2. テーブル結合とXLOOKUP関数</strong></p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「指導要録」「部活動記録」「委員会名簿」といった異なる種類の情報を別々のシート（テーブル）に分けて管理するのは、正しいデータ設計の基本です。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">これらを統合する際に活躍するのが<code style="background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9em; color: #0f172a;">XLOOKUP</code>関数です。従来のVLOOKUP関数よりも柔軟で、指定したIDを元に「他のシートから特定の項目を抜き出す」という動作を非常に高速・正確に行います。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>3. 入力規則と表記ゆれ防止</strong></p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">DXにおいて最も厄介なのが「データの汚れ（表記ゆれ）」です。例えば、ある人が「テニス」、別の人が「卓テニス」と入力すると、集計時に正しく合致しません。Excelの「データの入力規則」機能を使ってドロップダウンリストを作成することで、あらかじめ定義された選択肢から選ばせるようにすれば、データの一貫性を保つことができます。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><strong>4. チェックサム・整合性の重要性</strong></p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">大量のデータを扱う場合、計算ミスや転記ミスがないかを確認することも重要です。例えば、全生徒のID数が各シートで一致しているか、あるいは合計点数に異常がないかといった「整合性チェック」の数式を組み込むことで、人的ミスによる調査書の誤記という重大なトラブルを未然に防ぐことができます。</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">✦ ✦ ✦</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">【引用・参考文献（Technical References & Domestic Guidelines）】</p>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">以下の資料は、学校現場でのDX推進や、Excelを用いたデータ活用のための基礎知識として役立つ公的なガイドラインおよび公式マニュアルです。</p>
+<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
+  <li style="margin-bottom: 0.3em;">Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート</li>
 </ul>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929</a></p>
+<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
+  <li style="margin-bottom: 0.3em;">文部科学省. 高等学校情報科「情報Ⅰ」教員研修用教材（データベースとデータ活用）</li>
+</ul>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html</a></p>
+<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
+  <li style="margin-bottom: 0.3em;">文部科学省. 教育情報セキュリティの確保（校務DXにおけるデータ保護の基礎）</li>
+</ul>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a></p>
+<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
+  <li style="margin-bottom: 0.3em;">デジタル庁. 校務DX推進に向けたガイドライン（自治体・学校等への展開資料）</li>
+</ul>
+<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.digital.go.jp/" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/</a>（※最新の校務DX関連通知を確認してください）</p>
     </article>
 
     <div class="story-pager">
