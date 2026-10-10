@@ -1,7 +1,9 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-11T00:33:51.273800+09:00",
-  "total_posted": 40,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-11T02:07:26.415256+09:00",
+  "total_posted": 50,
+  "wp_repost_next_ep": 1,
+  "blogger_repost_next_ep": 1,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -425,6 +427,17 @@
       "category": "進路指導・調査書データ統合",
       "file_path": "content/2026-10-11_pattern_b_b13_紙の山を越えるデジタルな導き_生徒IDで繋ぐ『進路指導の絆.md",
       "timestamp": "2026-10-11T00:33:51.273800+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "学びの正統性を守るために ―免許外教科担任の狭間に立つ決断―",
+      "pattern": "C",
+      "topic_id": "C16",
+      "category": "学校法制・免許法・無免許授業の防止",
+      "file_path": "content/2026-10-11_pattern_c_c16_学びの正統性を守るために_免許外教科担任の狭間に立つ決断.md",
+      "timestamp": "2026-10-11T02:07:26.415256+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

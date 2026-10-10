@@ -1,16 +1,16 @@
 [
   {
     "no": 50,
-    "story_id": "ep50-c15",
-    "topic_id": "C15",
+    "story_id": "ep50-c16",
+    "topic_id": "C16",
     "pattern": "C",
-    "title": "時数という名の規範：教育課程の正当性を巡る決断",
-    "category": "学校法制・教育課程編成権と学習指導要領",
-    "keywords": "学校教育法施行規則第50条・第72条（標準授業時数） / 学校教育法第30条・第33条 / 地方教育行政の組織及び運営に関する法律第21条",
-    "has_image": true,
-    "url": "stories/ep50-c15.html",
-    "image": "assets/images/ep50-c15.png",
-    "char_count": 4738
+    "title": "学びの正統性を守るために ―免許外教科担任の狭間に立つ決断―",
+    "category": "学校法制・免許法・無免許授業の防止",
+    "keywords": "教育職員免許法第3条（免許） / 教育職員免許法附則第2項（免許外教科担任の許可） / 学校教育法第9条",
+    "has_image": false,
+    "url": "stories/ep50-c16.html",
+    "image": "",
+    "char_count": 3842
   },
   {
     "no": 49,
