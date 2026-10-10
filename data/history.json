@@ -1,9 +1,7 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-10T23:22:04.059792+09:00",
-  "total_posted": 49,
-  "wp_repost_next_ep": 1,
-  "blogger_repost_next_ep": 1,
+  "last_run_at": "2026-10-11T00:33:51.273800+09:00",
+  "total_posted": 40,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -328,11 +326,9 @@
       "category": "学校法制・働き方改革・給特法",
       "file_path": "content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.md",
       "timestamp": "2026-10-06T21:05:00.420235+09:00",
-      "sent_to_wp": true,
-      "sent_to_blogger": true,
-      "status": "publish",
-      "wp_posted_at": "2026-10-09T09:07:56.290779+09:00",
-      "blogger_posted_at": "2026-10-09T09:07:56.290779+09:00"
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
     },
     {
       "title": "震える指先と、小さな「できた」の堆積",
@@ -341,10 +337,9 @@
       "category": "教育心理学・自己効力感",
       "file_path": "content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.md",
       "timestamp": "2026-10-07T23:52:28.439638+09:00",
-      "sent_to_wp": true,
+      "sent_to_wp": false,
       "sent_to_blogger": false,
-      "status": "publish",
-      "wp_posted_at": "2026-10-10T07:04:12.939838+09:00"
+      "status": "github_pages"
     },
     {
       "title": "聖域の境界線――給食室の静寂と、エピペンを握る手の震え",
@@ -354,9 +349,8 @@
       "file_path": "content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.md",
       "timestamp": "2026-10-08T14:35:29.932406+09:00",
       "sent_to_wp": false,
-      "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-10-10T07:06:13.303773+09:00"
+      "sent_to_blogger": false,
+      "status": "github_pages"
     },
     {
       "title": "鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法",
@@ -381,155 +375,56 @@
       "status": "github_pages"
     },
     {
-      "title": "情報の海を泳ぐための『問い』の羅針盤",
+      "title": "反響する問いの淵 ― 表面の海を越え、深層の思考へ ―",
       "pattern": "A",
       "topic_id": "A12",
       "category": "探究学習・教育哲学",
-      "file_path": "content/2026-10-09_pattern_a_a12_情報の海を泳ぐための『問い』の羅針盤.md",
-      "timestamp": "2026-10-09T01:06:48.549066+09:00",
+      "file_path": "content/2026-10-09_pattern_a_a12_反響する問いの淵_表面の海を越え、深層の思考へ.md",
+      "timestamp": "2026-10-09T03:28:53.419078+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
     },
     {
-      "title": "デジタルが紡ぐ、信頼のバトン ― 修学旅行の嵐を越えて",
+      "title": "境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤",
       "pattern": "B",
       "topic_id": "B12",
       "category": "情報セキュリティ・誤送信防止",
-      "file_path": "content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.md",
-      "timestamp": "2026-10-09T02:17:42.884924+09:00",
+      "file_path": "content/2026-10-10_pattern_b_b12_境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤.md",
+      "timestamp": "2026-10-10T00:15:51.135251+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
     },
     {
-      "title": "レンズが映し出した境界線 ― 肖像権と安全の狭間で",
+      "title": "静かなる教室の肖像――見えざる境界線を守るための決断",
       "pattern": "C",
       "topic_id": "C12",
       "category": "学校法制・個人情報保護・肖像権",
-      "file_path": "content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.md",
-      "timestamp": "2026-10-09T06:27:57.584018+09:00",
+      "file_path": "content/2026-10-10_pattern_c_c12_静かなる教室の肖像_見えざる境界線を守るための決断.md",
+      "timestamp": "2026-10-10T01:40:24.277996+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
     },
     {
-      "title": "「間違い」という名の、学びの種を蒔くために",
+      "title": "笑いの影に隠れた沈黙の教室 ― 心理的安全性を再建する「間違い」の作法",
       "pattern": "A",
       "topic_id": "A13",
       "category": "学級経営・心理的安全性",
-      "file_path": "content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.md",
-      "timestamp": "2026-10-09T06:38:06.706035+09:00",
+      "file_path": "content/2026-10-11_pattern_a_a13_笑いの影に隠れた沈黙の教室_心理的安全性を再建する「間違い」の作法.md",
+      "timestamp": "2026-10-11T00:31:27.174822+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
     },
     {
-      "title": "時を繋ぐデータ、未来を拓く指先 ― 進路指導の現場で起きた、リレーショナル・エール",
+      "title": "紙の山を越えるデジタルな導き――生徒IDで繋ぐ『進路指導の絆",
       "pattern": "B",
       "topic_id": "B13",
       "category": "進路指導・調査書データ統合",
-      "file_path": "content/2026-10-09_pattern_b_b13_時を繋ぐデータ、未来を拓く指先_進路指導の現場で起きた、リレーショナル・エール.md",
-      "timestamp": "2026-10-09T08:56:27.442884+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "「正解」という名の仮面を脱ぐとき――葛藤の海を渡る道徳教育",
-      "pattern": "A",
-      "topic_id": "A14",
-      "category": "道徳教育・発達心理学",
-      "file_path": "content/2026-10-09_pattern_a_a14_「正解」という名の仮面を脱ぐとき_葛藤の海を渡る道徳教育.md",
-      "timestamp": "2026-10-09T19:17:22.763204+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "憲法の静かなる規律――義務教育の無償原則と教育の質をめぐる相克",
-      "pattern": "C",
-      "topic_id": "C13",
-      "category": "学校法制・日本国憲法・無償原則と私費負担",
-      "file_path": "content/2026-10-09_pattern_c_c13_憲法の静かなる規律_義務教育の無償原則と教育の質をめぐる相克.md",
-      "timestamp": "2026-10-09T19:38:41.898167+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "廊下の空白、法的責任の境界線",
-      "pattern": "C",
-      "topic_id": "C14",
-      "category": "学校法制・学校事故・生徒間トラブルと民法責任",
-      "file_path": "content/2026-10-10_pattern_c_c14_廊下の空白、法的責任の境界線.md",
-      "timestamp": "2026-10-10T00:12:17.567772+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "赤ペンとデジタルの地図 ― 放課後の残業を、明日への対話に変える魔法",
-      "pattern": "B",
-      "topic_id": "B14",
-      "category": "授業ICT・リアルタイム小テスト",
-      "file_path": "content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.md",
-      "timestamp": "2026-10-10T07:26:58.369756+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "グラデーションの旋律 ― 違いを「障害」から「多様性」へ書き換える",
-      "pattern": "A",
-      "topic_id": "A15",
-      "category": "インクルーシブ教育・UDL",
-      "file_path": "content/2026-10-10_pattern_a_a15_グラデーションの旋律_違いを「障害」から「多様性」へ書き換える.md",
-      "timestamp": "2026-10-10T09:48:24.737682+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "時数という名の規範：教育課程の正当性を巡る決断",
-      "pattern": "C",
-      "topic_id": "C15",
-      "category": "学校法制・教育課程編成権と学習指導要領",
-      "file_path": "content/2026-10-10_pattern_c_c15_時数という名の規範：教育課程の正当性を巡る決断.md",
-      "timestamp": "2026-10-10T10:34:34.565237+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX",
-      "pattern": "B",
-      "topic_id": "B15",
-      "category": "職員会議・ペーパーレス議事録",
-      "file_path": "content/2026-10-10_pattern_b_b15_紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX.md",
-      "timestamp": "2026-10-10T23:15:18.422614+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "静寂の境界線――沸騰する感情を飼いならすための処方箋",
-      "pattern": "A",
-      "topic_id": "A16",
-      "category": "生徒指導・アンガーマネジメント",
-      "file_path": "content/2026-10-10_pattern_a_a16_静寂の境界線_沸騰する感情を飼いならすための処方箋.md",
-      "timestamp": "2026-10-10T23:15:18.434492+09:00",
-      "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
-    },
-    {
-      "title": "見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体",
-      "pattern": "B",
-      "topic_id": "B16",
-      "category": "校内ネットワーク・DNS/プロキシ診断",
-      "file_path": "content/2026-10-10_pattern_b_b16_見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体.md",
-      "timestamp": "2026-10-10T23:22:04.059792+09:00",
+      "file_path": "content/2026-10-11_pattern_b_b13_紙の山を越えるデジタルな導き_生徒IDで繋ぐ『進路指導の絆.md",
+      "timestamp": "2026-10-11T00:33:51.273800+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
