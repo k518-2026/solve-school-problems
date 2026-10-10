@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `shosetsu` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用・Blogger毎日朝5時配信**: 外部の商用生成AI APIは一切使用せず、毎週金・土曜日に Mac mini M4 上で文章と挿絵を5本ずつ作成して GitHub Pages に蓄積し、毎日朝5:00（JST）に1日1本ずつ Blogger の利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **38** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-10 01:40 JST）
+- **収録作品数**: 全 **39** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-11 00:31 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 39 | 📘 A: 教育学・心理学 | `A13` | **[笑いの影に隠れた沈黙の教室 ― 心理的安全性を再建する「間違い」の作法](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html) | [📄原稿](<content/2026-10-11_pattern_a_a13_笑いの影に隠れた沈黙の教室_心理的安全性を再建する「間違い」の作法.md>) | — | 学級経営・心理的安全性 | 3,339字 |
 | 38 | ⚖️ C: 学校法制・法務 | `C12` | **[静かなる教室の肖像――見えざる境界線を守るための決断](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html) | [📄原稿](<content/2026-10-10_pattern_c_c12_静かなる教室の肖像_見えざる境界線を守るための決断.md>) | — | 学校法制・個人情報保護・肖像権 | 3,830字 |
 | 37 | 💻 B: 校務DX・ICT | `B12` | **[境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤](https://k518-2026.github.io/solve-school-problems/stories/ep37-b12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep37-b12.html) | [📄原稿](<content/2026-10-10_pattern_b_b12_境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤.md>) | — | 情報セキュリティ・誤送信防止 | 3,491字 |
 | 36 | 📘 A: 教育学・心理学 | `A12` | **[反響する問いの淵 ― 表面の海を越え、深層の思考へ ―](https://k518-2026.github.io/solve-school-problems/stories/ep36-a12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep36-a12.html) | [📄原稿](<content/2026-10-09_pattern_a_a12_反響する問いの淵_表面の海を越え、深層の思考へ.md>) | — | 探究学習・教育哲学 | 3,252字 |

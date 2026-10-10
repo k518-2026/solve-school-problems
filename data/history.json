@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-10T01:40:24.277996+09:00",
-  "total_posted": 38,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-11T00:31:27.174822+09:00",
+  "total_posted": 39,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -403,6 +403,17 @@
       "category": "学校法制・個人情報保護・肖像権",
       "file_path": "content/2026-10-10_pattern_c_c12_静かなる教室の肖像_見えざる境界線を守るための決断.md",
       "timestamp": "2026-10-10T01:40:24.277996+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "笑いの影に隠れた沈黙の教室 ― 心理的安全性を再建する「間違い」の作法",
+      "pattern": "A",
+      "topic_id": "A13",
+      "category": "学級経営・心理的安全性",
+      "file_path": "content/2026-10-11_pattern_a_a13_笑いの影に隠れた沈黙の教室_心理的安全性を再建する「間違い」の作法.md",
+      "timestamp": "2026-10-11T00:31:27.174822+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
