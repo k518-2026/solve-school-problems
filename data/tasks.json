@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-10T09:54:39.700716+09:00",
+  "updated_at": "2026-10-10T09:58:55.122235+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -1002,7 +1002,7 @@
       "title": "赤ペンとデジタルの地図 ― 放課後の残業を、明日への対話に変える魔法",
       "problem_title": "毎時間の小テスト40人×5クラスの丸付けと得点記録で放課後がすべて潰れる",
       "solution_framework": "Google フォームの「テスト機能（自動採点・解説フィードバック）」とスプレッドシート連携による誤答率ヒートマップ即時生成",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "rtx5060lp",
       "assigned_model": "shosetsu",
       "queued_at": null,
@@ -1014,9 +1014,9 @@
       "written_at": "2026-10-10",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-10T09:58:55.122227+09:00"
     },
     {
       "id": "C14",
