@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-10T10:34:34.565237+09:00",
-  "total_posted": 46,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-10T23:22:04.059792+09:00",
+  "total_posted": 49,
   "wp_repost_next_ep": 1,
   "blogger_repost_next_ep": 1,
   "posts": [
@@ -497,6 +497,39 @@
       "category": "学校法制・教育課程編成権と学習指導要領",
       "file_path": "content/2026-10-10_pattern_c_c15_時数という名の規範：教育課程の正当性を巡る決断.md",
       "timestamp": "2026-10-10T10:34:34.565237+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX",
+      "pattern": "B",
+      "topic_id": "B15",
+      "category": "職員会議・ペーパーレス議事録",
+      "file_path": "content/2026-10-10_pattern_b_b15_紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX.md",
+      "timestamp": "2026-10-10T23:15:18.422614+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂の境界線――沸騰する感情を飼いならすための処方箋",
+      "pattern": "A",
+      "topic_id": "A16",
+      "category": "生徒指導・アンガーマネジメント",
+      "file_path": "content/2026-10-10_pattern_a_a16_静寂の境界線_沸騰する感情を飼いならすための処方箋.md",
+      "timestamp": "2026-10-10T23:15:18.434492+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体",
+      "pattern": "B",
+      "topic_id": "B16",
+      "category": "校内ネットワーク・DNS/プロキシ診断",
+      "file_path": "content/2026-10-10_pattern_b_b16_見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体.md",
+      "timestamp": "2026-10-10T23:22:04.059792+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

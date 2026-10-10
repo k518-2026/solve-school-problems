@@ -1,5 +1,44 @@
 [
   {
+    "no": 49,
+    "story_id": "ep49-b16",
+    "topic_id": "B16",
+    "pattern": "B",
+    "title": "見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体",
+    "category": "校内ネットワーク・DNS/プロキシ診断",
+    "keywords": "OSI参照モデルに基づく障害切り分け / DNS名前解決とキャッシュ確認 / 教育委員会プロキシ・フィルタリング設定 / 同時接続セッション数の制御",
+    "has_image": true,
+    "url": "stories/ep49-b16.html",
+    "image": "assets/images/ep49-b16.png",
+    "char_count": 4002
+  },
+  {
+    "no": 48,
+    "story_id": "ep48-a16",
+    "topic_id": "A16",
+    "pattern": "A",
+    "title": "静寂の境界線――沸騰する感情を飼いならすための処方箋",
+    "category": "生徒指導・アンガーマネジメント",
+    "keywords": "自動思考とイラショナル・ビリーフの気づき / 6秒ルールとコーピング（感情調整スキル） / アサーティブ・コミュニケーション（Iメッセージ）",
+    "has_image": true,
+    "url": "stories/ep48-a16.html",
+    "image": "assets/images/ep48-a16.png",
+    "char_count": 3188
+  },
+  {
+    "no": 47,
+    "story_id": "ep47-b15",
+    "topic_id": "B15",
+    "pattern": "B",
+    "title": "紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX",
+    "category": "職員会議・ペーパーレス議事録",
+    "keywords": "クラウド共同編集（Google ドキュメント） / 事前コメント機能による会議時間短縮 / 見出しアウトライン構造化 / 閲覧権限とアーカイブ検索",
+    "has_image": true,
+    "url": "stories/ep47-b15.html",
+    "image": "assets/images/ep47-b15.png",
+    "char_count": 4182
+  },
+  {
     "no": 46,
     "story_id": "ep46-c15",
     "topic_id": "C15",
