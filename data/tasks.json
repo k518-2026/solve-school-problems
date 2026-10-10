@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-11T08:21:15.537496+09:00",
+  "updated_at": "2026-10-11T08:25:31.864590+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -1170,7 +1170,7 @@
       "title": "学びの正統性を守るために ―免許外教科担任の狭間に立つ決断―",
       "problem_title": "免許外教科担任の許可手続漏れリスクと教育職員免許法の厳格な遵守",
       "solution_framework": "教育職員免許法第3条（免許状主義の原則）および附則第2項（免許外教科担任の都道府県教育委員会による事前許可要件）、単位履修の有効性に関する厳格な人事・法務手続",
-      "status": "pending_illustration",
+      "status": "completed",
       "assigned_writer": "rtx5060lp",
       "assigned_model": "shosetsu",
       "queued_at": null,
@@ -1182,9 +1182,9 @@
       "written_at": "2026-10-11",
       "reviewed_by": null,
       "reviewed_at": null,
-      "png_file": null,
-      "illustrated_by": null,
-      "illustrated_at": null
+      "png_file": "content/2026-10-11_pattern_c_c16_学びの正統性を守るために_免許外教科担任の狭間に立つ決断.png",
+      "illustrated_by": "kenomac-mini",
+      "illustrated_at": "2026-10-11T08:25:31.864578+09:00"
     },
     {
       "id": "A17",
