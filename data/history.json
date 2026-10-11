@@ -1,8 +1,8 @@
 {
   "last_pattern": "A",
-  "last_run_at": "2026-10-11T23:54:02.782827+09:00",
+  "last_run_at": "2026-10-11T23:54:45.305913+09:00",
   "total_posted": 51,
-  "wp_repost_next_ep": 2,
+  "wp_repost_next_ep": 3,
   "blogger_repost_next_ep": 3,
   "posts": [
     {
@@ -31,7 +31,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-11T23:54:02.782827+09:00",
-      "blogger_repost_ep": 2
+      "blogger_repost_ep": 2,
+      "wp_posted_at": "2026-10-11T23:54:45.305913+09:00",
+      "wp_repost_ep": 2
     },
     {
       "title": "ポリフォニーが響く教室へ――ジグソー法と足場かけが紡ぎ直す協働の絆",
