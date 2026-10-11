@@ -30,75 +30,73 @@
     <img class="story-hero-image" src="../assets/images/ep06-b02.png" alt="公開授業のWi-Fi迷宮――DFSとチャネル設計が救った教室の未来" loading="lazy" />
 
     <article class="story-content">
-      <p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">夕暮れ時の職員室は、一日を駆け抜けた教員たちの静かな疲労感に包まれていた。しかし、その一角にある副校長室の扉は開け放たれ、ただならぬ緊迫感が漂っていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「くそっ、また切れた……！ なんでだ、昨日のリハーサルはうまくいったのに……！」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">佐々木正隆（55）は、教職生活三十年を迎えるベテランの副校長である。長年、数学の教壇に立ち、生徒一人ひとりと向き合ってきた彼は、GIGAスクール構想が始まった当初こそ戸惑ったものの、子どもたちの学びを広げるため必死にICT活用に向き合ってきた。今日の午後、学校全体で行われる公開研究授業のため、彼は何日もかけて指導案を練り上げ、環境を整えたはずだった。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">だが、運命の公開授業の本番。佐々木が見守る中、2年A組の生徒40人が一斉にタブレット端末を開き、クラウド上の動画教材を再生したその瞬間だった。「先生、画面が真っ白になりました」「インターネットに接続できません」という悲鳴のような声が教室中に響き渡った。Wi-Fiのピクトグラムには無情にもバツ印がつき、タブレットは完全にネットから遮断された。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">冷や汗を流しながら、佐々木は廊下の天井に設置された無線アクセスポイント（AP）のコンセントを抜き、祈るように十秒数えてから挿し直した。しかし、数分は復旧したように見えても、全員が同時にアクセスした瞬間に、再び「プツリ」と接続が途絶える。授業は冷や汗の流れる沈黙の中、紙の資料に頼る形で何とかやり過ごしたが、公開授業の終わった今も、佐々木の胸中には言いようのない無力感と焦燥感が渦巻いていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「佐々木先生、お疲れ様です。職員室まで聞こえるほどの大きな溜息でしたよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">声をかけたのは、理科教諭の藤堂拓海（26）だった。教職4年目の藤堂は、赴任当初から学校のパソコンやネットワーク機器の不調を次々と解決してきた、校内の「ネットワーク愛好家」である。白衣のポケットに無線LANテスターとドライバーを忍ばせ、日々校内のインフラ最適化に目を光らせている若手だった。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「藤堂くん……聞いてくれ。今日の公開授業、大失態だ。私の設定が甘かったのか、それともこの古い校舎の配線が限界なのか……。40台の端末が同時に動画を見始めた途端、Wi-Fiが全滅したんだ。ルーターの電源を落としても、再起動しても改善しない。私の三十年の指導歴の中で、最も冷や汗をかいた授業だったよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">佐々木は老眼鏡を外し、ぐしゃぐしゃにかきむしった髪の毛のまま、机の上に突っ伏した。その背中からは、GIGA端末の波に飲み込まれまいと必死にもがいてきたベテランの孤独と、生徒の学びの機会を止めてしまった悔しさが痛いほど伝わってきた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">藤堂は佐々木の肩にそっと手を置き、温かい笑みを浮かべた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「佐々木先生、それは先生の指導案や授業のせいじゃありません。今日の授業で起きたのは、典型的な『電波の交通渋滞』と『気象レーダーとの電波干渉』です。佐々木先生が一人で抱え込む問題じゃありませんよ。ちょっと、管理コンソールを一緒に見てみましょう」</p>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">藤堂は自分のノートパソコンを佐々木の机の横に広げ、学内ネットワークのコントローラー画面にログインした。画面には、今日の公開授業が行われた2年A組の教室周辺のアクセスポイントログが詳細に記録されていた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「見てください、佐々木先生。このアクセスポイント、チャンネルが『W56（5GHz帯のチャンネル100〜144）』に固定されていませんか？」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「あ、ああ……。以前、業者から『干渉を受けにくい上のチャンネルが良い』と聞いた気がしてね。そこを指定したはずだが……それが何か問題かね？」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「そこが最大の罠なんです」と、藤堂は画面の数値を指さしながら解説を始めた。「W56帯は気象レーダーや航空管制レーダーと同じ周波数帯域を使っています。IEEE 802.11の規格では、この帯域を使うアクセスポイントは、レーダー波を検知した瞬間に、電波の送信を即座に停止しなければならないという『DFS（Dynamic Frequency Selection：動的周波数選択）』機能が法律で義務付けられています」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">佐々木はハッとした。「レーダーを検知して……停止する？ まさか、公開授業の最中にレーダー波を拾ったとでもいうのかね？」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「その通りです。正確には、レーダー波ではなく、周辺の電波環境のノイズやチャネルの切り替え（CAC：チャンネル可用性チェック）が誤検知を引き起こした可能性が高い。公開授業の直前、一斉に40台のタブレットが接続を試みた瞬間、アクセスポイント側でパケットが輻輳し、DFSが誤作動を起こしてチャンネルの強制的な切り替え（チャネルホッピング）が発生したんです。その結果、数分間の切断が起き、生徒たちが一斉に再接続を試みたため、今度はIPアドレスを割り当てるDHCPサーバーがリース切れを起こしてパンクした。これが『Wi-Fi全滅』の真相です」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">佐々木の目が驚愕で見開かれた。「そんな……。機械が勝手に安全装置働かせて、自爆していたというのかね。私には全く思いもよらなかった……」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「長年、数学の美しさと生徒の心に向き合ってきた佐々木先生に、こんな無線工学の泥臭いトラブルまで背負わせる方が無理というものです。でも、安心してください。原因がわかれば、ネットワークの設計を少し変えるだけで、この教室は最強の学びの場に生まれ変わります」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">藤堂の頼もしい言葉に、佐々木は深くうなずき、少しだけ表情を緩ませた。「頼む、藤堂くん。私の知らない世界を、どうか救ってくれ」</p>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">その日の放課後、生徒たちが下校した静まり返った校舎で、藤堂と佐々木の「ネットワーク大改革」が始まった。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「まず、物理的な対策からいきますよ」と、藤堂は脚立に登り、2年A組の天井にあるアクセスポイントの配線を調整しながら言った。「今のアクセスポイントはWi-Fi 5の古い規格が混ざっています。これを、最新の『Wi-Fi 6（IEEE 802.11ax）』に対応したモデルへ換装します。Wi-Fi 6の最大の武器は、OFDMA（直交周波数分割多元接続）という技術です。これまでは一本の太い道路を車が順番に走っていたような通信でしたが、Wi-Fi 6では道路を細かく分割して、40台のタブレットへ同時に、途切れることなくデータを送り届けられるようになります」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「ほう……！ まさに数学のグラフでいうところの、一次元から多次元への拡張だな」佐々木は下から脚立を支えながら、興味深そうに見上げた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「その通りです！ そして、先ほどのDFSの罠を回避するため、気象レーダーの影響を受けない『W52（チャンネル36〜48）』と『W53』の屋内専用帯域へチャンネルを再設計します。さらに、2.4GHz帯と5GHz帯が混在して端末が迷子にならないよう、『バンドステアリング』機能を有効化します。これによって、通信速度の速い5GHz帯に優秀なタブレットを自動で誘導し、電波の混雑を完全にコントロールします」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">藤堂の手際よい作業はまるで芸術のようだった。コンソール画面でコマンドを叩き、各アクセスポイントの出力パワーを最適化し、チャネルボンディングの帯域幅を20MHzから40MHzへ調整していく。かつて佐々木が手作業で黒板に数式を美しく配置していったように、藤堂は電波という目に見えない空間のパズルを、論理的かつ鮮やかに組み上げていく。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「最後に、DHCPのリース時間をこれまでの『24時間』から『2時間』に変更します。授業が終われば速やかにIPアドレスがプールに返却されるようにして、翌日の朝に『IPアドレスが足りません』というエラーが出るのを完全に予防します。――よし、これで設定完了です！」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">藤堂が脚立からひらりと飛び降り、ノートパソコンのエンターキーを叩いた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「佐々木先生、テストをしてみましょう。私の端末から、2年A組のアクセスポイントに向けて一斉負荷テスト（ストレステスト）を実行します。いっせいに動画を40台分、ストリーミング再生しますよ」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">息を呑む佐々木の見守る中、画面上のグラフが急上昇した。数十メガbpsのトラフィックが一気に流れる。しかし、先ほどのようなエラーログは一切流れない。アクセスポイントのインジケーターランプは安定した緑色の光を放ち続け、接続されている仮想クライアントのパケットロス率は「0.0%」を維持していた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「……おお……！」佐々木は思わず声を漏らし、自分の眼鏡を拭きながら画面を覗き込んだ。「すごい……全く切れない。あの時のようなパケットの詰まりが、嘘のようにスムーズに流れている……！」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「大成功です、佐々木先生。これで、次回の公開授業では、生徒たちがどれだけ重い3D教材や高画質動画を開こうとも、Wi-Fiが音を上げることは二度とありません」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">佐々木は深く息をつき、それから満面の笑みを浮かべて藤堂の肩を力強く叩いた。</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「素晴らしい……！ 藤堂くん、君は我が校の救世主だな。私の三十年の経験も、君のこの最先端の技術の前には脱帽するしかない。私たちがどんなに熱い指導案を作っても、それを支える足元がしっかりしていなければ、子どもたちの翼をもぐことになってしまうところだった」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">「とんでもないです。僕がやっているのは、佐々木先生が長年かけて築いてきた素晴らしい教育の実践を、ほんの少し裏方から支えただけですから。教育の主役は、あくまで先生と生徒たちです」</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">夕闇に包まれ始めた職員室の窓の外には、静かに夜のグラウンドが広がっていた。ベテランの教育愛と、若手の確かな技術力がしっかりと手を取り合った学校の夜は、明日から始まる新しい授業への希望の光に満ちあふれていた。</p>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">本編で登場したネットワークトラブルの原因と、若手教員が用いた解決技術について、ITやネットワークが苦手な方にもわかりやすく解説します。</p>
-<div style="margin: 0.4em 0; padding-left: 1.5em; text-indent: -1.5em; line-height: 1.8; color: #334155;"><span style="font-weight: bold; color: #2563eb; margin-right: 0.4em;">1.</span><strong>DFS（Dynamic Frequency Selection：動的周波数選択）の罠</strong></div>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>問題</strong>: 5GHz帯の無線LAN（Wi-Fi）には、気象レーダーや航空管制レーダーと電波を共有する「W56」と呼ばれる周波数帯があります。日本の法律上、無線機器はこれらのレーダー波を検出すると、干渉を防ぐために即座に電波の送信を停止し、別のチャンネルへ強制的に移動（チャネルホッピング）することが義務付けられています。</li>
-  <li style="margin-bottom: 0.3em;"><strong>解決</strong>: 多くの端末が一挙に接続を試みる公開授業のタイミングで誤検知やパケットの輻輳が起きたため、AP（アクセスポイント）が安全装置を働かせて一時的に通信が途絶えました。これを回避するため、レーダー波の影響を受けない「屋内専用」の周波数帯（W52 / W53）へチャネルを適切に設計・固定することで、予期せぬ切断を防ぎました。</li>
+      <p>夕暮れ時の職員室は、一日を駆け抜けた教員たちの静かな疲労感に包まれていた。しかし、その一角にある副校長室の扉は開け放たれ、ただならぬ緊迫感が漂っていた。</p>
+<p>「くそっ、また切れた……！ なんでだ、昨日のリハーサルはうまくいったのに……！」</p>
+<p>佐々木正隆（55）は、教職生活三十年を迎えるベテランの副校長である。長年、数学の教壇に立ち、生徒一人ひとりと向き合ってきた彼は、GIGAスクール構想が始まった当初こそ戸惑ったものの、子どもたちの学びを広げるため必死にICT活用に向き合ってきた。今日の午後、学校全体で行われる公開研究授業のため、彼は何日もかけて指導案を練り上げ、環境を整えたはずだった。</p>
+<p>だが、運命の公開授業の本番。佐々木が見守る中、2年A組の生徒40人が一斉にタブレット端末を開き、クラウド上の動画教材を再生したその瞬間だった。「先生、画面が真っ白になりました」「インターネットに接続できません」という悲鳴のような声が教室中に響き渡った。Wi-Fiのピクトグラムには無情にもバツ印がつき、タブレットは完全にネットから遮断された。</p>
+<p>冷や汗を流しながら、佐々木は廊下の天井に設置された無線アクセスポイント（AP）のコンセントを抜き、祈るように十秒数えてから挿し直した。しかし、数分は復旧したように見えても、全員が同時にアクセスした瞬間に、再び「プツリ」と接続が途絶える。授業は冷や汗の流れる沈黙の中、紙の資料に頼る形で何とかやり過ごしたが、公開授業の終わった今も、佐々木の胸中には言いようのない無力感と焦燥感が渦巻いていた。</p>
+<p>「佐々木先生、お疲れ様です。職員室まで聞こえるほどの大きな溜息でしたよ」</p>
+<p>声をかけたのは、理科教諭の藤堂拓海（26）だった。教職4年目の藤堂は、赴任当初から学校のパソコンやネットワーク機器の不調を次々と解決してきた、校内の「ネットワーク愛好家」である。白衣のポケットに無線LANテスターとドライバーを忍ばせ、日々校内のインフラ最適化に目を光らせている若手だった。</p>
+<p>「藤堂くん……聞いてくれ。今日の公開授業、大失態だ。私の設定が甘かったのか、それともこの古い校舎の配線が限界なのか……。40台の端末が同時に動画を見始めた途端、Wi-Fiが全滅したんだ。ルーターの電源を落としても、再起動しても改善しない。私の三十年の指導歴の中で、最も冷や汗をかいた授業だったよ」</p>
+<p>佐々木は老眼鏡を外し、ぐしゃぐしゃにかきむしった髪の毛のまま、机の上に突っ伏した。その背中からは、GIGA端末の波に飲み込まれまいと必死にもがいてきたベテランの孤独と、生徒の学びの機会を止めてしまった悔しさが痛いほど伝わってきた。</p>
+<p>藤堂は佐々木の肩にそっと手を置き、温かい笑みを浮かべた。<br />
+「佐々木先生、それは先生の指導案や授業のせいじゃありません。今日の授業で起きたのは、典型的な『電波の交通渋滞』と『気象レーダーとの電波干渉』です。佐々木先生が一人で抱え込む問題じゃありませんよ。ちょっと、管理コンソールを一緒に見てみましょう」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>藤堂は自分のノートパソコンを佐々木の机の横に広げ、学内ネットワークのコントローラー画面にログインした。画面には、今日の公開授業が行われた2年A組の教室周辺のアクセスポイントログが詳細に記録されていた。</p>
+<p>「見てください、佐々木先生。このアクセスポイント、チャンネルが『W56（5GHz帯のチャンネル100〜144）』に固定されていませんか？」</p>
+<p>「あ、ああ……。以前、業者から『干渉を受けにくい上のチャンネルが良い』と聞いた気がしてね。そこを指定したはずだが……それが何か問題かね？」</p>
+<p>「そこが最大の罠なんです」と、藤堂は画面の数値を指さしながら解説を始めた。「W56帯は気象レーダーや航空管制レーダーと同じ周波数帯域を使っています。IEEE 802.11の規格では、この帯域を使うアクセスポイントは、レーダー波を検知した瞬間に、電波の送信を即座に停止しなければならないという『DFS（Dynamic Frequency Selection：動的周波数選択）』機能が法律で義務付けられています」</p>
+<p>佐々木はハッとした。「レーダーを検知して……停止する？ まさか、公開授業の最中にレーダー波を拾ったとでもいうのかね？」</p>
+<p>「その通りです。正確には、レーダー波ではなく、周辺の電波環境のノイズやチャネルの切り替え（CAC：チャンネル可用性チェック）が誤検知を引き起こした可能性が高い。公開授業の直前、一斉に40台のタブレットが接続を試みた瞬間、アクセスポイント側でパケットが輻輳し、DFSが誤作動を起こしてチャンネルの強制的な切り替え（チャネルホッピング）が発生したんです。その結果、数分間の切断が起き、生徒たちが一斉に再接続を試みたため、今度はIPアドレスを割り当てるDHCPサーバーがリース切れを起こしてパンクした。これが『Wi-Fi全滅』の真相です」</p>
+<p>佐々木の目が驚愕で見開かれた。「そんな……。機械が勝手に安全装置働かせて、自爆していたというのかね。私には全く思いもよらなかった……」</p>
+<p>「長年、数学の美しさと生徒の心に向き合ってきた佐々木先生に、こんな無線工学の泥臭いトラブルまで背負わせる方が無理というものです。でも、安心してください。原因がわかれば、ネットワークの設計を少し変えるだけで、この教室は最強の学びの場に生まれ変わります」</p>
+<p>藤堂の頼もしい言葉に、佐々木は深くうなずき、少しだけ表情を緩ませた。「頼む、藤堂くん。私の知らない世界を、どうか救ってくれ」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>その日の放課後、生徒たちが下校した静まり返った校舎で、藤堂と佐々木の「ネットワーク大改革」が始まった。</p>
+<p>「まず、物理的な対策からいきますよ」と、藤堂は脚立に登り、2年A組の天井にあるアクセスポイントの配線を調整しながら言った。「今のアクセスポイントはWi-Fi 5の古い規格が混ざっています。これを、最新の『Wi-Fi 6（IEEE 802.11ax）』に対応したモデルへ換装します。Wi-Fi 6の最大の武器は、OFDMA（直交周波数分割多元接続）という技術です。これまでは一本の太い道路を車が順番に走っていたような通信でしたが、Wi-Fi 6では道路を細かく分割して、40台のタブレットへ同時に、途切れることなくデータを送り届けられるようになります」</p>
+<p>「ほう……！ まさに数学のグラフでいうところの、一次元から多次元への拡張だな」佐々木は下から脚立を支えながら、興味深そうに見上げた。</p>
+<p>「その通りです！ そして、先ほどのDFSの罠を回避するため、気象レーダーの影響を受けない『W52（チャンネル36〜48）』と『W53』の屋内専用帯域へチャンネルを再設計します。さらに、2.4GHz帯と5GHz帯が混在して端末が迷子にならないよう、『バンドステアリング』機能を有効化します。これによって、通信速度の速い5GHz帯に優秀なタブレットを自動で誘導し、電波の混雑を完全にコントロールします」</p>
+<p>藤堂の手際よい作業はまるで芸術のようだった。コンソール画面でコマンドを叩き、各アクセスポイントの出力パワーを最適化し、チャネルボンディングの帯域幅を20MHzから40MHzへ調整していく。かつて佐々木が手作業で黒板に数式を美しく配置していったように、藤堂は電波という目に見えない空間のパズルを、論理的かつ鮮やかに組み上げていく。</p>
+<p>「最後に、DHCPのリース時間をこれまでの『24時間』から『2時間』に変更します。授業が終われば速やかにIPアドレスがプールに返却されるようにして、翌日の朝に『IPアドレスが足りません』というエラーが出るのを完全に予防します。――よし、これで設定完了です！」</p>
+<p>藤堂が脚立からひらりと飛び降り、ノートパソコンのエンターキーを叩いた。</p>
+<p>「佐々木先生、テストをしてみましょう。私の端末から、2年A組のアクセスポイントに向けて一斉負荷テスト（ストレステスト）を実行します。いっせいに動画を40台分、ストリーミング再生しますよ」</p>
+<p>息を呑む佐々木の見守る中、画面上のグラフが急上昇した。数十メガbpsのトラフィックが一気に流れる。しかし、先ほどのようなエラーログは一切流れない。アクセスポイントのインジケーターランプは安定した緑色の光を放ち続け、接続されている仮想クライアントのパケットロス率は「0.0%」を維持していた。</p>
+<p>「……おお……！」佐々木は思わず声を漏らし、自分の眼鏡を拭きながら画面を覗き込んだ。「すごい……全く切れない。あの時のようなパケットの詰まりが、嘘のようにスムーズに流れている……！」</p>
+<p>「大成功です、佐々木先生。これで、次回の公開授業では、生徒たちがどれだけ重い3D教材や高画質動画を開こうとも、Wi-Fiが音を上げることは二度とありません」</p>
+<p>佐々木は深く息をつき、それから満面の笑みを浮かべて藤堂の肩を力強く叩いた。<br />
+「素晴らしい……！ 藤堂くん、君は我が校の救世主だな。私の三十年の経験も、君のこの最先端の技術の前には脱帽するしかない。私たちがどんなに熱い指導案を作っても、それを支える足元がしっかりしていなければ、子どもたちの翼をもぐことになってしまうところだった」</p>
+<p>「とんでもないです。僕がやっているのは、佐々木先生が長年かけて築いてきた素晴らしい教育の実践を、ほんの少し裏方から支えただけですから。教育の主役は、あくまで先生と生徒たちです」</p>
+<p>夕闇に包まれ始めた職員室の窓の外には、静かに夜のグラウンドが広がっていた。ベテランの教育愛と、若手の確かな技術力がしっかりと手を取り合った学校の夜は、明日から始まる新しい授業への希望の光に満ちあふれていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>本編で登場したネットワークトラブルの原因と、若手教員が用いた解決技術について、ITやネットワークが苦手な方にもわかりやすく解説します。</p>
+<ol>
+<li>
+<p><strong>DFS（Dynamic Frequency Selection：動的周波数選択）の罠</strong><br />
+   - <strong>問題</strong>: 5GHz帯の無線LAN（Wi-Fi）には、気象レーダーや航空管制レーダーと電波を共有する「W56」と呼ばれる周波数帯があります。日本の法律上、無線機器はこれらのレーダー波を検出すると、干渉を防ぐために即座に電波の送信を停止し、別のチャンネルへ強制的に移動（チャネルホッピング）することが義務付けられています。<br />
+   - <strong>解決</strong>: 多くの端末が一挙に接続を試みる公開授業のタイミングで誤検知やパケットの輻輳が起きたため、AP（アクセスポイント）が安全装置を働かせて一時的に通信が途絶えました。これを回避するため、レーダー波の影響を受けない「屋内専用」の周波数帯（W52 / W53）へチャネルを適切に設計・固定することで、予期せぬ切断を防ぎました。</p>
+</li>
+<li>
+<p><strong>Wi-Fi 6（IEEE 802.11ax）とOFDMAによる混雑解消</strong><br />
+   - <strong>問題</strong>: 従来のWi-Fi規格では、複数の端末が同時に通信しようとすると、順番待ち（衝突制御）が発生し、教室のように大勢が同時に動画を再生するとパケットが詰まっていました。<br />
+   - <strong>解決</strong>: 最新のWi-Fi 6規格に備わる「OFDMA（直交周波数分割多元接続）」技術を活用しました。これは、一本の通信回線を細かく分割し、何十台もの端末へ同時にデータを並行して届ける仕組みです。これにより、40台のタブレットが同時に動画教材を開いても、遅延や切断が起きない強靭な通信環境を実現しました。</p>
+</li>
+<li>
+<p><strong>バンドステアリングとDHCPリース時間の最適化</strong><br />
+   - <strong>バンドステアリング</strong>: 混雑しやすい「2.4GHz帯」と、高速通信が可能な「5GHz帯」の両方を飛ばす際、古い端末や電波の弱い端末が低速な2.4GHz帯に群がるのを防ぎ、自動的に快適な5GHz帯へ誘導する機能です。<br />
+   - <strong>DHCPリース時間</strong>: ルーターが端末にIPアドレスを貸し出す時間のことで、初期設定の「24時間」では前日の接続情報が残り続け、翌朝の登校時にIPアドレスが枯渇する原因になります。これを「2時間」などに短縮することで、授業が終わった端末のIPアドレスを迅速に回収し、常に新鮮なIPプールを確保しました。</p>
+</li>
+</ol>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Documentation）】</p>
+<ul>
+<li><strong>IEEE Standard for Information technology—Telecommunications and information exchange between systems Local and metropolitan area networks—Specific requirements - Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications - Amendment 1: Enhancements for High-Efficiency WLAN (IEEE 802.11ax-2021)</strong><br />
+<a href="https://standards.ieee.org/ieee/802.11ax/6829/" target="_blank" rel="noopener noreferrer">https://standards.ieee.org/ieee/802.11ax/6829/</a></li>
+<li><strong>Cisco Enterprise Mobility 8.5 Design Guide (Dynamic Frequency Selection &amp; Radio Resource Management)</strong><br />
+<a href="https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/Enterprise-Mobility-8-5-Design-Guide.html" target="_blank" rel="noopener noreferrer">https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/Enterprise-Mobility-8-5-Design-Guide.html</a></li>
+<li><strong>総務省: 無線LANの周波数帯とチャネル変更に関する技術的基準ガイドライン</strong><br />
+<a href="https://www.tele.soumu.go.jp/" target="_blank" rel="noopener noreferrer">https://www.tele.soumu.go.jp/</a></li>
 </ul>
-<div style="margin: 0.4em 0; padding-left: 1.5em; text-indent: -1.5em; line-height: 1.8; color: #334155;"><span style="font-weight: bold; color: #2563eb; margin-right: 0.4em;">2.</span><strong>Wi-Fi 6（IEEE 802.11ax）とOFDMAによる混雑解消</strong></div>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>問題</strong>: 従来のWi-Fi規格では、複数の端末が同時に通信しようとすると、順番待ち（衝突制御）が発生し、教室のように大勢が同時に動画を再生するとパケットが詰まっていました。</li>
-  <li style="margin-bottom: 0.3em;"><strong>解決</strong>: 最新のWi-Fi 6規格に備わる「OFDMA（直交周波数分割多元接続）」技術を活用しました。これは、一本の通信回線を細かく分割し、何十台もの端末へ同時にデータを並行して届ける仕組みです。これにより、40台のタブレットが同時に動画教材を開いても、遅延や切断が起きない強靭な通信環境を実現しました。</li>
-</ul>
-<div style="margin: 0.4em 0; padding-left: 1.5em; text-indent: -1.5em; line-height: 1.8; color: #334155;"><span style="font-weight: bold; color: #2563eb; margin-right: 0.4em;">3.</span><strong>バンドステアリングとDHCPリース時間の最適化</strong></div>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>バンドステアリング</strong>: 混雑しやすい「2.4GHz帯」と、高速通信が可能な「5GHz帯」の両方を飛ばす際、古い端末や電波の弱い端末が低速な2.4GHz帯に群がるのを防ぎ、自動的に快適な5GHz帯へ誘導する機能です。</li>
-  <li style="margin-bottom: 0.3em;"><strong>DHCPリース時間</strong>: ルーターが端末にIPアドレスを貸し出す時間のことで、初期設定の「24時間」では前日の接続情報が残り続け、翌朝の登校時にIPアドレスが枯渇する原因になります。これを「2時間」などに短縮することで、授業が終わった端末のIPアドレスを迅速に回収し、常に新鮮なIPプールを確保しました。</li>
-</ul>
-<div style="text-align: center; margin: 2em 0; color: #94a3b8; font-size: 1.2em; letter-spacing: 0.5em;">✦ ✦ ✦</div>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;">【引用・参考文献（Technical References & Documentation）】</p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>IEEE Standard for Information technology—Telecommunications and information exchange between systems Local and metropolitan area networks—Specific requirements - Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications - Amendment 1: Enhancements for High-Efficiency WLAN (IEEE 802.11ax-2021)</strong></li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://standards.ieee.org/ieee/802.11ax/6829/" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://standards.ieee.org/ieee/802.11ax/6829/</a></p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>Cisco Enterprise Mobility 8.5 Design Guide (Dynamic Frequency Selection & Radio Resource Management)</strong></li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/Enterprise-Mobility-8-5-Design-Guide.html" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/Enterprise-Mobility-8-5-Design-Guide.html</a></p>
-<ul style="margin: 0.8em 0; padding-left: 1.8em; line-height: 1.8; color: #334155;">
-  <li style="margin-bottom: 0.3em;"><strong>総務省: 無線LANの周波数帯とチャネル変更に関する技術的基準ガイドライン</strong></li>
-</ul>
-<p style="margin: 1em 0; line-height: 1.85; font-size: 16px; color: #1e293b;"><a href="https://www.tele.soumu.go.jp/" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;" target="_blank" rel="noopener noreferrer">https://www.tele.soumu.go.jp/</a></p>
     </article>
 
     <div class="story-pager">
