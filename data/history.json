@@ -1,6 +1,6 @@
 {
   "last_pattern": "A",
-  "last_run_at": "2026-10-12T07:10:50.322664+09:00",
+  "last_run_at": "2026-10-12T08:53:39.196743+09:00",
   "total_posted": 42,
   "posts": [
     {
@@ -11,7 +11,10 @@
       "file_path": "content/2026-09-29_pattern_a_教室の沈黙と自己決定_新米教員が学ぶ内発的動機づけの理論.md",
       "timestamp": "2026-09-29T21:56:52.529406+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-12T08:53:39.196743+09:00",
+      "blogger_repost_ep": 1
     },
     {
       "title": "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと正規表現",
@@ -451,5 +454,6 @@
       "sent_to_blogger": false,
       "status": "github_pages"
     }
-  ]
+  ],
+  "blogger_repost_next_ep": 2
 }
