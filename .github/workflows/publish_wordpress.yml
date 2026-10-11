@@ -1,4 +1,4 @@
-name: Solve School Problems - Daily 05:38 JST WordPress Publisher
+name: WordPress Publisher (05:38 JST)
 
 on:
   schedule:
@@ -93,15 +93,14 @@ jobs:
             ARGS="$ARGS --send"
           fi
           python -m src.main $ARGS
-          python -m src.task_worker --role enqueue --quota 2 --no-push
 
-      - name: Commit and Push Updated History, Task Queue & GitHub Pages
+      - name: Commit and Push Updated History & GitHub Pages
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md data/tasks.json data/TASKS.md
+          git add README.md docs/ content/ data/history.json data/POSTED_STORIES.md
 
           if git diff --staged --quiet; then
             echo "No changes detected to commit."
