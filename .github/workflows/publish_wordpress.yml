@@ -14,6 +14,11 @@ on:
   # Manual execution from GitHub Actions UI
   workflow_dispatch:
     inputs:
+      force:
+        description: 'Force post even if 1 post/day quota already met today'
+        required: true
+        type: boolean
+        default: true
       dry_run:
         description: 'Dry run mode (Simulate without sending actual email)'
         required: true
@@ -84,6 +89,9 @@ jobs:
         run: |
           git pull --rebase origin main || true
           ARGS="--wp-only"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force }}" != "false" ]; then
+            ARGS="$ARGS --force"
+          fi
           if [ -n "${{ github.event.inputs.topic_id }}" ]; then
             ARGS="$ARGS --topic-id ${{ github.event.inputs.topic_id }}"
           fi
