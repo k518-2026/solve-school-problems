@@ -1,9 +1,9 @@
 {
   "last_pattern": "A",
-  "last_run_at": "2026-10-11T23:54:45.305913+09:00",
+  "last_run_at": "2026-10-12T06:40:21.777654+09:00",
   "total_posted": 51,
   "wp_repost_next_ep": 3,
-  "blogger_repost_next_ep": 3,
+  "blogger_repost_next_ep": 4,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -43,7 +43,10 @@
       "file_path": "content/2026-09-29_pattern_a_ポリフォニーが響く教室へ_ジグソー法と足場かけが紡ぎ直す協働の絆.md",
       "timestamp": "2026-09-29T22:52:34.616637+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-12T06:40:21.777654+09:00",
+      "blogger_repost_ep": 3
     },
     {
       "title": "疑いと報告のあいだ――校長が学ぶいじめ防止対策推進法と重大事態の判断",
