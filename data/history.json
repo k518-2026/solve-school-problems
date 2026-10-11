@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-11T03:38:19.505803+09:00",
-  "total_posted": 40,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-12T07:08:22.995752+09:00",
+  "total_posted": 41,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -425,6 +425,17 @@
       "category": "進路指導・調査書データ統合",
       "file_path": "content/2026-10-11_pattern_b_b13_紙の迷宮から解放される調査書：主キーが紡ぐ進路指導の革新.md",
       "timestamp": "2026-10-11T03:38:19.505803+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "憲法の重みと教室の温度――義務教育の無償原則を巡る静かなる闘争",
+      "pattern": "C",
+      "topic_id": "C13",
+      "category": "学校法制・日本国憲法・無償原則と私費負担",
+      "file_path": "content/2026-10-12_pattern_c_c13_憲法の重みと教室の温度_義務教育の無償原則を巡る静かなる闘争.md",
+      "timestamp": "2026-10-12T07:08:22.995752+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

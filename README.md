@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: Mac mini M4 ローカル環境（Ollama `shosetsu` ＆ Draw Things `FLUX.2 [klein] 4B`）
 - **外部生成AI API不使用・Blogger毎日朝5時配信**: 外部の商用生成AI APIは一切使用せず、毎週金・土曜日に Mac mini M4 上で文章と挿絵を5本ずつ作成して GitHub Pages に蓄積し、毎日朝5:00（JST）に1日1本ずつ Blogger の利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **40** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-11 03:38 JST）
+- **収録作品数**: 全 **41** 話（うち挿絵付き **32** 話 / 最終更新: 2026-10-12 07:08 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 41 | ⚖️ C: 学校法制・法務 | `C13` | **[憲法の重みと教室の温度――義務教育の無償原則を巡る静かなる闘争](https://k518-2026.github.io/solve-school-problems/stories/ep41-c13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep41-c13.html) | [📄原稿](<content/2026-10-12_pattern_c_c13_憲法の重みと教室の温度_義務教育の無償原則を巡る静かなる闘争.md>) | — | 学校法制・日本国憲法・無償原則と私費負担 | 3,820字 |
 | 40 | 💻 B: 校務DX・ICT | `B13` | **[紙の迷宮から解放される調査書：主キーが紡ぐ進路指導の革新](https://k518-2026.github.io/solve-school-problems/stories/ep40-b13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep40-b13.html) | [📄原稿](<content/2026-10-11_pattern_b_b13_紙の迷宮から解放される調査書：主キーが紡ぐ進路指導の革新.md>) | — | 進路指導・調査書データ統合 | 4,005字 |
 | 39 | 📘 A: 教育学・心理学 | `A13` | **[笑いの影に隠れた沈黙の教室 ― 心理的安全性を再建する「間違い」の作法](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html) | [📄原稿](<content/2026-10-11_pattern_a_a13_笑いの影に隠れた沈黙の教室_心理的安全性を再建する「間違い」の作法.md>) | — | 学級経営・心理的安全性 | 3,339字 |
 | 38 | ⚖️ C: 学校法制・法務 | `C12` | **[静かなる教室の肖像――見えざる境界線を守るための決断](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html) | [📄原稿](<content/2026-10-10_pattern_c_c12_静かなる教室の肖像_見えざる境界線を守るための決断.md>) | — | 学校法制・個人情報保護・肖像権 | 3,830字 |
