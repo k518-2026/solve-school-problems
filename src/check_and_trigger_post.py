@@ -1,6 +1,6 @@
 """
 Check if today's story has been published to Blogger and WordPress for solve-school-problems.
-If not, trigger the publication workflows via push event or GitHub Actions dispatch.
+If not, trigger the publication workflows directly via GitHub Actions Workflow Dispatch API.
 """
 
 import base64
@@ -16,6 +16,10 @@ from pathlib import Path
 JST = timezone(timedelta(hours=9))
 REPO = "k518-2026/solve-school-problems"
 
+# GitHub Actions Workflow IDs
+WORKFLOW_BLOGGER_ID = 379654976
+WORKFLOW_WP_ID = 379654977
+
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] [%(levelname)s] %(message)s",
@@ -24,8 +28,50 @@ logging.basicConfig(
 logger = logging.getLogger("startup-publisher")
 
 
+def get_github_token() -> str:
+    """Retrieve GitHub Personal Access Token or credential from git-credential-manager."""
+    res = subprocess.run(
+        ["git", "credential", "fill"],
+        input="protocol=https\nhost=github.com\n\n",
+        text=True,
+        capture_output=True,
+    )
+    for line in res.stdout.splitlines():
+        if line.startswith("password="):
+            return line.split("=", 1)[1]
+    return ""
+
+
 def get_today_jst() -> str:
     return datetime.now(JST).strftime("%Y-%m-%d")
+
+
+def trigger_workflow_api(token: str, workflow_id: int, name: str) -> bool:
+    url = f"https://api.github.com/repos/{REPO}/actions/workflows/{workflow_id}/dispatches"
+    payload = json.dumps({"ref": "main"}).encode("utf-8")
+    req = urllib.request.Request(
+        url,
+        data=payload,
+        headers={
+            "Authorization": f"token {token}",
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json",
+            "User-Agent": "StartupPublisher/1.0",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            if resp.status in (200, 204):
+                logger.info(f"Successfully triggered '{name}' on GitHub Actions!")
+                return True
+            else:
+                logger.warning(f"Trigger {name} returned status: {resp.status}")
+    except urllib.error.HTTPError as e:
+        logger.error(f"HTTPError triggering {name}: {e.code} - {e.read().decode('utf-8', errors='ignore')}")
+    except Exception as e:
+        logger.error(f"Error triggering {name}: {e}")
+    return False
 
 
 def check_and_trigger():
@@ -33,15 +79,13 @@ def check_and_trigger():
     logger.info(f"Checking today's ({today_jst} JST) publication status for {REPO}...")
 
     repo_dir = Path("E:/GoogleAntigravity/books/solve-school-problems")
-    if not repo_dir.exists():
-        logger.error(f"Repository directory not found: {repo_dir}")
-        return
-
-    # Check history.json
     history_file = repo_dir / "data" / "history.json"
     if not history_file.exists():
         logger.warning(f"history.json not found at {history_file}")
         return
+
+    # Sync latest state first
+    subprocess.run(["git", "pull", "--rebase", "origin", "main"], cwd=str(repo_dir), capture_output=True)
 
     try:
         data = json.loads(history_file.read_text(encoding="utf-8"))
@@ -49,7 +93,6 @@ def check_and_trigger():
         logger.error(f"Failed to read history.json: {e}")
         return
 
-    last_run_at = (data.get("last_run_at") or "")[:10]
     posts = data.get("posts", [])
     has_blogger_today = False
     has_wp_today = False
@@ -62,30 +105,22 @@ def check_and_trigger():
         if w_at == today_jst:
             has_wp_today = True
 
-    targets_needed = []
-    if not has_blogger_today:
-        targets_needed.append("blogger")
-    if not has_wp_today:
-        targets_needed.append("wordpress")
-
-    if not targets_needed:
-        logger.info(f"Both Blogger and WordPress already published today ({today_jst}). Nothing to do.")
+    token = get_github_token()
+    if not token:
+        logger.error("GitHub token not found. Cannot dispatch workflows.")
         return
 
-    logger.info(f"Missing publications today for: {targets_needed}. Triggering via trigger_publish.ps1...")
-    target_arg = "all" if len(targets_needed) == 2 else targets_needed[0]
-
-    ps1_script = repo_dir / "trigger_publish.ps1"
-    res = subprocess.run(
-        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(ps1_script), "-Target", target_arg],
-        cwd=str(repo_dir),
-        capture_output=True,
-        text=True,
-    )
-    if res.returncode == 0:
-        logger.info(f"Successfully triggered publication for {target_arg}!")
+    if not has_blogger_today:
+        logger.info(f"Blogger post missing today ({today_jst}). Dispatching workflow...")
+        trigger_workflow_api(token, WORKFLOW_BLOGGER_ID, "Blogger Publisher")
     else:
-        logger.error(f"Failed to trigger publication: {res.stderr}")
+        logger.info(f"Blogger already posted today ({today_jst}).")
+
+    if not has_wp_today:
+        logger.info(f"WordPress post missing today ({today_jst}). Dispatching workflow...")
+        trigger_workflow_api(token, WORKFLOW_WP_ID, "WordPress Publisher")
+    else:
+        logger.info(f"WordPress already posted today ({today_jst}).")
 
 
 if __name__ == "__main__":
