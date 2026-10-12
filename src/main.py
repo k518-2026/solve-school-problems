@@ -492,8 +492,8 @@ def main():
                 next_pat = "A"
             sim_pattern = next_pat
 
-            key = f"pattern_{next_pat}_topics"
-            candidates = history_mgr.catalog_data.get(key, [])
+            key = f"pattern_{next_pat.upper()}_topics"
+            candidates = history_mgr.catalog_data.get(key, []) or history_mgr.catalog_data.get(f"pattern_{next_pat.lower()}_topics", [])
             posted_topic_ids = {p.get("topic_id") for p in history_mgr.history_data.get("posts", [])}
             chosen_topic = None
             for t in candidates:
