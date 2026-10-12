@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **62** 話（うち挿絵付き **56** 話 / 最終更新: 2026-10-13 00:08 JST）
+- **収録作品数**: 全 **62** 話（うち挿絵付き **57** 話 / 最終更新: 2026-10-13 00:11 JST）
 
 ---
 
@@ -39,7 +39,7 @@
 | 44 | ⚖️ C: 学校法制・法務 | `C17` | **[聖域の境界線――災害下における児童の安全と公共空間の法理](https://k518-2026.github.io/solve-school-problems/stories/ep44-c17.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep44-c17.html) | [📄原稿](<content/2026-10-12_pattern_c_c17_聖域の境界線_災害下における児童の安全と公共空間の法理.md>) | [🎨挿絵](<content/2026-10-12_pattern_c_c17_聖域の境界線_災害下における児童の安全と公共空間の法理.png>) | 学校法制・防災と指定避難所運営 | 3,653字 |
 | 43 | 💻 B: 校務DX・ICT | `B17` | **[紙の束から解放される図書室：QRコードとGASが紡ぐ「届ける」ための革新](https://k518-2026.github.io/solve-school-problems/stories/ep43-b17.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep43-b17.html) | [📄原稿](<content/2026-10-12_pattern_b_b17_紙の束から解放される図書室：QRコードとGASが紡ぐ「届ける」ための革新.md>) | [🎨挿絵](<content/2026-10-12_pattern_b_b17_紙の束から解放される図書室：QRコードとGASが紡ぐ「届ける」ための革新.png>) | 図書室・教材在庫管理DX | 3,597字 |
 | 42 | 📘 A: 教育学・心理学 | `A14` | **[鏡の中の『正解』を脱ぎ捨てる時](https://k518-2026.github.io/solve-school-problems/stories/ep42-a14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep42-a14.html) | [📄原稿](<content/2026-10-12_pattern_a_a14_鏡の中の『正解』を脱ぎ捨てる時.md>) | [🎨挿絵](<content/2026-10-12_pattern_a_a14_鏡の中の『正解』を脱ぎ捨てる時.png>) | 道徳教育・発達心理学 | 3,877字 |
-| 41 | ⚖️ C: 学校法制・法務 | `C13` | **[憲法の重みと教室の温度――義務教育の無償原則を巡る静かなる闘争](https://k518-2026.github.io/solve-school-problems/stories/ep41-c13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep41-c13.html) | [📄原稿](<content/2026-10-12_pattern_c_c13_憲法の重みと教室の温度_義務教育の無償原則を巡る静かなる闘争.md>) | — | 学校法制・日本国憲法・無償原則と私費負担 | 3,820字 |
+| 41 | ⚖️ C: 学校法制・法務 | `C13` | **[憲法の重みと教室の温度――義務教育の無償原則を巡る静かなる闘争](https://k518-2026.github.io/solve-school-problems/stories/ep41-c13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep41-c13.html) | [📄原稿](<content/2026-10-12_pattern_c_c13_憲法の重みと教室の温度_義務教育の無償原則を巡る静かなる闘争.md>) | [🎨挿絵](<content/2026-10-12_pattern_c_c13_憲法の重みと教室の温度_義務教育の無償原則を巡る静かなる闘争.png>) | 学校法制・日本国憲法・無償原則と私費負担 | 3,820字 |
 | 40 | 💻 B: 校務DX・ICT | `B13` | **[紙の迷宮から解放される調査書：主キーが紡ぐ進路指導の革新](https://k518-2026.github.io/solve-school-problems/stories/ep40-b13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep40-b13.html) | [📄原稿](<content/2026-10-11_pattern_b_b13_紙の迷宮から解放される調査書：主キーが紡ぐ進路指導の革新.md>) | — | 進路指導・調査書データ統合 | 4,005字 |
 | 39 | 📘 A: 教育学・心理学 | `A13` | **[笑いの影に隠れた沈黙の教室 ― 心理的安全性を再建する「間違い」の作法](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep39-a13.html) | [📄原稿](<content/2026-10-11_pattern_a_a13_笑いの影に隠れた沈黙の教室_心理的安全性を再建する「間違い」の作法.md>) | — | 学級経営・心理的安全性 | 3,339字 |
 | 38 | ⚖️ C: 学校法制・法務 | `C12` | **[静かなる教室の肖像――見えざる境界線を守るための決断](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep38-c12.html) | [📄原稿](<content/2026-10-10_pattern_c_c12_静かなる教室の肖像_見えざる境界線を守るための決断.md>) | — | 学校法制・個人情報保護・肖像権 | 3,830字 |
