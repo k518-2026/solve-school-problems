@@ -82,23 +82,26 @@ SYSTEM_PROMPT_C = """あなたは学校法務および教育行政に精通し�
 DEFAULT_OLLAMA_HOST = "http://rtx5060lp:11434"
 FALLBACK_OLLAMA_HOSTS = [
     "http://rtx5060lp:11434",
-    "http://kenomac-mini:11434",
+    "http://sff7020:1234",
 ]
 DEFAULT_WRITER_MODEL = "shosetsu"
 DEFAULT_DRAW_THINGS_HOST = "http://kenomac-mini:7860"
 
 LOCAL_FALLBACK_MODELS = [
     "shosetsu",
+    "google/gemma-4-26b-a4b-qat",
     "gemma4:12b",
     "qwen3.5:9b",
     "qwen2.5:14b",
     "gemma2:9b",
+    "google/gemma-3-4b",
+    "gemma-3-4b-it",
 ]
 
 
 class StoryGenerator:
     """
-    Generates school problem solving stories using LAN Local LLM via Ollama (`shosetsu`, .62 primary / .59 fallback),
+    Generates school problem solving stories using LAN Local LLM (`shosetsu` on rtx5060lp:11434 primary / sff7020:1234 secondary),
     and generates 512x512 illustrations via Mac mini Draw Things HTTP API (FLUX.2 [klein] 4B).
     Alternates between Pattern A (Pedagogy/Psychology), Pattern B (ICT/Networking), and Pattern C (School Law).
     Outputs rich Markdown with Frontmatter, Technical/Legal Commentary, and Verified References.
@@ -125,17 +128,21 @@ class StoryGenerator:
         self.draw_things_host = (draw_things_host or os.getenv("DRAW_THINGS_HOST", DEFAULT_DRAW_THINGS_HOST)).rstrip("/")
 
     def _get_local_model_candidates(self, available_models: List[str]) -> List[str]:
-        """Returns ordered list of local Ollama models to try."""
+        """Returns ordered list of local LLM models to try across Ollama and LM Studio."""
         normalized_avail = set()
         for am in available_models:
             normalized_avail.add(am)
             if am.endswith(":latest"):
                 normalized_avail.add(am[:-7])
-        candidates = [self.writer_model]
+        candidates: List[str] = []
+        if not normalized_avail or self.writer_model in normalized_avail or f"{self.writer_model}:latest" in normalized_avail:
+            candidates.append(self.writer_model)
         for m in LOCAL_FALLBACK_MODELS:
             base_m = m[:-7] if m.endswith(":latest") else m
             if m not in candidates and base_m not in candidates and (not normalized_avail or m in normalized_avail or base_m in normalized_avail):
                 candidates.append(m)
+        if not candidates:
+            candidates.append(self.writer_model)
         return candidates
 
     def _ensure_frontmatter(self, text: str, pattern: str, topic: Dict[str, Any]) -> Tuple[str, str]:
@@ -741,7 +748,7 @@ topic_id: "{topic.get('id', 'C01')}"
                     return {
                         "online": True,
                         "host": self.draw_things_host,
-                        "model": data.get("model", "flux_2_klein_base_4b_i8x.ckpt"),
+                        "model": data.get("model", "flux_2_klein_base_9b_i8x.ckpt"),
                     }
         except Exception as e:
             return {
@@ -751,27 +758,54 @@ topic_id: "{topic.get('id', 'C01')}"
             }
         return {"online": False, "host": self.draw_things_host}
 
-    def check_ollama_connection(self) -> Dict[str, Any]:
-        """Checks connection to LAN Ollama servers (.62 primary, .59 fallback) (/api/tags)."""
-        last_err = None
-        for candidate_host in self.ollama_hosts:
+    def _probe_host_models(self, candidate_host: str) -> Optional[List[str]]:
+        """Probes an Ollama (/api/tags) or OpenAI-compatible LM Studio (/v1/models) host and returns available model IDs."""
+        # 1. Try Ollama /api/tags unless clearly an LM Studio port (:1234)
+        if not candidate_host.endswith(":1234"):
             try:
                 req = urllib.request.Request(f"{candidate_host}/api/tags")
                 with urllib.request.urlopen(req, timeout=5) as res:
                     if res.getcode() == 200:
                         data = json.loads(res.read().decode("utf-8", errors="ignore"))
-                        models = [m.get("name", "") for m in data.get("models", [])]
-                        if candidate_host != self.ollama_host:
-                            logger.info(f"Switched active Ollama host from {self.ollama_host} to {candidate_host}")
-                            self.ollama_host = candidate_host
-                        return {
-                            "online": True,
-                            "host": self.ollama_host,
-                            "models": models,
-                        }
+                        if isinstance(data, dict) and isinstance(data.get("models"), list):
+                            return [m.get("name", "") for m in data["models"] if m.get("name")]
+            except Exception:
+                pass
+
+        # 2. Try OpenAI-compatible /v1/models (e.g. LM Studio on http://sff7020:1234)
+        try:
+            req = urllib.request.Request(f"{candidate_host}/v1/models")
+            with urllib.request.urlopen(req, timeout=5) as res:
+                if res.getcode() == 200:
+                    data = json.loads(res.read().decode("utf-8", errors="ignore"))
+                    if isinstance(data, dict) and isinstance(data.get("data"), list):
+                        return [
+                            m.get("id", "")
+                            for m in data["data"]
+                            if m.get("id") and "embed" not in m.get("id", "").lower()
+                        ]
+        except Exception:
+            pass
+        return None
+
+    def check_ollama_connection(self) -> Dict[str, Any]:
+        """Checks connection to LAN LLM servers (rtx5060lp:11434 primary, sff7020:1234 secondary)."""
+        last_err = None
+        for candidate_host in self.ollama_hosts:
+            try:
+                models = self._probe_host_models(candidate_host)
+                if models is not None:
+                    if candidate_host != self.ollama_host:
+                        logger.info(f"Switched active LLM host from {self.ollama_host} to {candidate_host}")
+                        self.ollama_host = candidate_host
+                    return {
+                        "online": True,
+                        "host": self.ollama_host,
+                        "models": models,
+                    }
             except Exception as e:
                 last_err = e
-                logger.debug(f"Ollama connection check failed on {candidate_host}: {e}")
+                logger.debug(f"LLM connection check failed on {candidate_host}: {e}")
         return {
             "online": False,
             "host": self.ollama_host,
@@ -788,45 +822,94 @@ topic_id: "{topic.get('id', 'C01')}"
         timeout: int = 120,
         think: bool = False,
     ) -> str:
-        """Calls LAN Ollama /api/chat endpoint (.62 primary, .59 fallback)."""
+        """Calls LAN LLM chat endpoint (rtx5060lp:11434 Ollama primary, sff7020:1234 LM Studio secondary)."""
         options: Dict[str, Any] = {
             "num_predict": num_predict,
             "num_ctx": num_ctx,
         }
         if temperature is not None:
             options["temperature"] = temperature
-        payload: Dict[str, Any] = {
+        ollama_payload: Dict[str, Any] = {
             "model": model,
             "messages": messages,
             "stream": False,
             "think": think,
             "options": options,
         }
-        data = json.dumps(payload).encode("utf-8")
+        ollama_data = json.dumps(ollama_payload).encode("utf-8")
         hosts_to_try = [self.ollama_host] + [h for h in self.ollama_hosts if h != self.ollama_host]
         last_err: Optional[Exception] = None
         for host in hosts_to_try:
-            url = f"{host}/api/chat"
+            is_openai_host = host.endswith(":1234")
             try:
+                if not is_openai_host:
+                    target_ollama_model = model
+                    if host != self.ollama_host:
+                        host_models = self._probe_host_models(host) or []
+                        norm_host_models = {m[:-7] if m.endswith(":latest") else m for m in host_models} | set(host_models)
+                        if host_models and target_ollama_model not in norm_host_models:
+                            for fb_m in LOCAL_FALLBACK_MODELS:
+                                if fb_m in norm_host_models:
+                                    target_ollama_model = fb_m
+                                    break
+                            else:
+                                target_ollama_model = host_models[0]
+                    cur_payload = dict(ollama_payload, model=target_ollama_model)
+                    url = f"{host}/api/chat"
+                    req = urllib.request.Request(
+                        url,
+                        data=json.dumps(cur_payload).encode("utf-8"),
+                        headers={"Content-Type": "application/json"},
+                        method="POST",
+                    )
+                    with urllib.request.urlopen(req, timeout=timeout) as res:
+                        body = json.loads(res.read().decode("utf-8", errors="ignore"))
+                        if "error" not in body and "message" in body:
+                            if host != self.ollama_host:
+                                logger.info(f"Failover succeeded on Ollama host {host} ({target_ollama_model})")
+                                self.ollama_host = host
+                            msg = body.get("message", {})
+                            content = msg.get("content", "")
+                            content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+                            return content
+
+                # OpenAI-compatible /v1/chat/completions (e.g. http://sff7020:1234)
+                target_model = model
+                host_models = self._probe_host_models(host) or []
+                if host_models and target_model not in host_models:
+                    for fb_m in LOCAL_FALLBACK_MODELS:
+                        if fb_m in host_models:
+                            target_model = fb_m
+                            break
+                    else:
+                        target_model = host_models[0]
+                openai_payload: Dict[str, Any] = {
+                    "model": target_model,
+                    "messages": messages,
+                    "max_tokens": num_predict,
+                    "temperature": temperature if temperature is not None else 0.72,
+                    "stream": False,
+                }
                 req = urllib.request.Request(
-                    url,
-                    data=data,
+                    f"{host}/v1/chat/completions",
+                    data=json.dumps(openai_payload).encode("utf-8"),
                     headers={"Content-Type": "application/json"},
                     method="POST",
                 )
                 with urllib.request.urlopen(req, timeout=timeout) as res:
                     body = json.loads(res.read().decode("utf-8", errors="ignore"))
-                    if host != self.ollama_host:
-                        logger.info(f"Failover succeeded on Ollama host {host}")
-                        self.ollama_host = host
-                    msg = body.get("message", {})
-                    content = msg.get("content", "")
-                    content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
-                    return content
+                    choices = body.get("choices", [])
+                    if choices:
+                        if host != self.ollama_host:
+                            logger.info(f"Failover succeeded on OpenAI/LM Studio host {host} ({target_model})")
+                            self.ollama_host = host
+                        content = choices[0].get("message", {}).get("content", "")
+                        content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
+                        return content
             except Exception as e:
                 last_err = e
-                logger.warning(f"Ollama chat failed on {host} ({model}): {e}")
-        raise RuntimeError(f"All Ollama hosts ({hosts_to_try}) failed for model '{model}': {last_err}")
+                logger.warning(f"LLM chat failed on {host} ({model}): {e}")
+        raise RuntimeError(f"All LLM hosts ({hosts_to_try}) failed for model '{model}': {last_err}")
 
     def generate_english_image_prompt(
         self,
@@ -847,7 +930,9 @@ topic_id: "{topic.get('id', 'C01')}"
         style_prefix = (
             "Modern Japanese adult workplace anime illustration, clean anime cel-shading with crisp dark outlines "
             "and rich natural colors, well-proportioned adult anime characters (natural adult eyes, NOT cute moe or chibi), "
-            "both educators smiling warmly and cheerfully with bright friendly expressions, "
+            "candid workplace interaction with natural 3/4 angle poses, engaging in warm consultation or looking at each other or at their work instead of staring directly at the camera, "
+            "balanced 4:3 subject framing with comfortable headroom above their heads and foreground desk or floor space below, "
+            "pulled-back medium-wide shot, both educators smiling warmly and cheerfully with natural relaxed expressions, "
             "clear contrast, purely visual scene with NO text, NO letters, NO signage, and NO writing anywhere. "
         )
 
@@ -855,15 +940,18 @@ topic_id: "{topic.get('id', 'C01')}"
         topic_scenes: Dict[str, str] = {
             # Pattern A: Pedagogy & Educational Psychology (Novice teacher x Senior mentor teacher)
             "A01": (
-                "Medium two-shot in a sunlit Japanese school classroom after school: on the left, a young female novice teacher "
-                "in her mid-20s in a cream cardigan smiling brightly; on the right, a kind veteran male mentor teacher in his 50s "
-                "in a navy blazer holding a plain white ceramic coffee mug and laughing gently. Background shows large classroom "
-                "windows overlooking green schoolyard trees and a clean blank green blackboard."
+                "Medium-wide shot in a sunlit Japanese elementary classroom after school: on the left, a young Japanese female teacher "
+                "in her mid-20s in a cream cardigan in a three-quarter profile pose looking towards her mentor with a bright relieved smile; "
+                "on the right, a kind veteran Japanese male mentor teacher in his 50s in a navy blazer seated at an angle, laughing gently "
+                "in warm consultation while holding a plain white ceramic mug. Foreground shows spacious wooden student desks, "
+                "generous headroom above with tall sunny windows overlooking green trees and a clean blank green blackboard."
             ),
             "A02": (
-                "Medium two-shot in a bright elementary school classroom with grouped wooden student desks: on the left, a young male teacher "
-                "in his 20s in a collared shirt and navy vest smiling cheerfully; on the right, a warm senior female mentor teacher in her 40s "
-                "with glasses in a beige jacket smiling kindly, plain pastel-colored blank cards on the desk. Background shows sunlit windows and indoor potted plants."
+                "Medium-wide shot in a bright elementary school classroom with grouped wooden student desks: on the left, a young Japanese male teacher "
+                "in his 20s in a collared shirt in a three-quarter profile pose, gesturing in lively discussion with a cheerful smile; "
+                "on the right, a warm senior Japanese female mentor teacher in her 40s with glasses leaning forward slightly with a reassuring smile "
+                "as they consult together. Foreground shows spacious wooden student desks with blank pastel cards, "
+                "generous headroom above with tall sunlit classroom windows and leafy indoor potted plants."
             ),
             "A03": (
                 "Medium two-shot in a school hallway lounge area by a large window overlooking the schoolyard at sunset: on the left, "
@@ -920,9 +1008,10 @@ topic_id: "{topic.get('id', 'C01')}"
                 "over an open silver laptop seen from the back, large glass windows with green trees in the background."
             ),
             "A13": (
-                "Medium two-shot in a sunlit junior high school classroom: on the left, a young female teacher in her 20s holding a closed "
-                "hardcover book and smiling cheerfully; on the right, a warm veteran male teacher in his 50s smiling kindly beside a clean blank "
-                "green blackboard and wooden student desks."
+                "Medium-wide shot in a warm sunlit junior high school classroom in the afternoon: on the left, a young Japanese male teacher in his 20s "
+                "seen in a dynamic three-quarter profile pose, holding an open textbook and looking towards his mentor with a relaxed smile; on the right, "
+                "a warm Japanese veteran male teacher in his 50s turned towards him in friendly discussion beside a clean blank green blackboard. "
+                "Generous headroom with tall sunny windows above and neat wooden student desks with ceramic tea cups in the foreground below."
             ),
             "A14": (
                 "Medium two-shot on a wooden bench in a sunlit school courtyard garden: on the left, a young male elementary teacher "
@@ -960,10 +1049,10 @@ topic_id: "{topic.get('id', 'C01')}"
 
             # Pattern B: School DX & ICT (Veteran teacher x Young ICT/DX teacher)
             "B01": (
-                "Medium two-shot at a desk by a large window in a Japanese school office in the evening: on the left, a happy veteran "
-                "male teacher in his 50s with glasses setting aside a pocket calculator and holding a plain white ceramic mug with a warm smile; "
-                "on the right, a young male ICT teacher in his late 20s smiling cheerfully beside an open silver laptop seen from the back. "
-                "Background shows evening blue twilight through the window and indoor plants."
+                "Medium-wide shot at a spacious wooden desk in a quiet Japanese school office in the evening: on the left, a veteran Japanese "
+                "male teacher in his 50s with reading glasses in a three-quarter profile pose looking at the laptop screen and smiling with immense relief; "
+                "on the right, a young Japanese male ICT teacher in his late 20s turned towards him, pointing gently at the screen while laughing cheerfully. "
+                "Foreground shows a clean desk surface with a plain white ceramic mug, generous headroom above with large office windows showing deep evening twilight and soft indoor plant foliage."
             ),
             "B02": (
                 "Medium two-shot in a sunlit Japanese school classroom: on the left, a veteran male vice-principal in his late 50s in a suit "
@@ -1177,8 +1266,8 @@ topic_id: "{topic.get('id', 'C01')}"
                 )
 
         style_suffix = (
-            " Both educators wearing plain blue neck strap lanyards, warm cheerful smiles on both faces, "
-            "clean text-free background."
+            " Both educators wearing plain blue neck strap lanyards, engaging in warm candid consultation, natural three-quarter profile poses without looking straight at the camera, "
+            "comfortable wide framing with generous headroom above their heads, clean text-free background."
         )
 
         clean_scene = re.sub(r"\s*\([^\x00-\x7F]+\)", "", scene_desc)
@@ -1198,7 +1287,7 @@ topic_id: "{topic.get('id', 'C01')}"
     ) -> Tuple[Optional[Path], str]:
         """
         Generates a 512x512 workplace drama illustration using Draw Things HTTP API
-        (`http://kenomac-mini:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_4b_i8x.ckpt`).
+        (`http://kenomac-mini:7860/sdapi/v1/txt2img`, model `flux_2_klein_base_9b_i8x.ckpt`).
         Returns (saved_image_path_or_None, english_prompt_used).
         """
         dt_conn = self.check_draw_things_connection()
@@ -1219,10 +1308,10 @@ topic_id: "{topic.get('id', 'C01')}"
             )
 
         if progress_callback:
-            progress_callback(f"Draw Things ({self.draw_things_host}) で挿絵画像を生成中 (FLUX.2 [klein] 4B)...")
+            progress_callback(f"Draw Things ({self.draw_things_host}) で挿絵画像を生成中 (FLUX.2 [klein] 9B)...")
         logger.info(
             f"[Draw Things: {self.draw_things_host}] Generating 512x512 illustration "
-            f"(steps=12, guidance=4.0, sampler='Euler A Trailing')..."
+            f"(model={dt_conn.get('model')}, steps=12, guidance=4.0, sampler='Euler A Trailing')..."
         )
 
         url = f"{self.draw_things_host}/sdapi/v1/txt2img"
@@ -1232,6 +1321,8 @@ topic_id: "{topic.get('id', 'C01')}"
                 "text, letters, kanji, japanese text, chinese characters, words, writing, handwriting, typography, "
                 "sign, signage, wall poster, notice board, qr code, label, logo, brand, numbers, caption, subtitle, watermark, signature, "
                 "bookshelves, blue binders, file binders, bookcase, open document with text, printed text, "
+                "staring at camera, looking at viewer, direct eye contact with camera, posed commemorative photo, frontal mugshot, stiff symmetry, "
+                "close-up, extreme close-up, cropped head, head touching top of frame, tight crop, cramped framing, "
                 "serious face, stern expression, frowning, sad, worried, grim, scowling, angry, tense expression, "
                 "hat, cap, helmet, missing arm, deformed limbs, "
                 "cute, moe, kawaii, bishoujo, big sparkling eyes, chibi, teenager, high school girl, "

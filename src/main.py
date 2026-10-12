@@ -52,22 +52,24 @@ def print_stock_status(history_mgr: HistoryManager):
     wp_unposted = history_mgr.count_wp_unposted_stock()
     wp_posted = sum(1 for p in history_mgr.history_data.get("posts", []) if p.get("sent_to_wp", False))
     next_wp = history_mgr.get_next_wp_stock_post()
+    next_wp_ep = history_mgr.history_data.get("wp_repost_next_ep", 1)
     blogger_unposted = history_mgr.count_blogger_unposted_stock()
     blogger_posted = sum(1 for p in history_mgr.history_data.get("posts", []) if p.get("sent_to_blogger", False))
     next_blogger = history_mgr.get_next_blogger_stock_post()
+    next_blogger_ep = history_mgr.history_data.get("blogger_repost_next_ep", 1)
 
     print("\n" + "=" * 78)
     print(" 【Solve School Problems（shosetsu×FLUX.2）WP・Blogger・GitHub Pages 状況】")
     print("=" * 78)
     print("  ・Webサイト (GitHub Pages) : https://k518-2026.github.io/solve-school-problems/")
-    print("  ・WordPress 自動投稿       : 稼働中（蓄積記事から順次配信）")
-    print(f"  ・WordPress 配信状況       : 配信済み {wp_posted} 話 ／ 未配信ストック {wp_unposted} 話")
+    print("  ・WordPress 自動投稿       : 稼働中（毎日 朝05:38 JST に #01から順次再配信・規約準拠）")
+    print(f"  ・WordPress 配信状況       : 再配信待機 {wp_unposted} 話 ／ 次回エピソード #{next_wp_ep:02d}")
     if next_wp:
-        print(f"  ・次回 WordPress 配信予定  : [{next_wp.get('topic_id', '-')}] {next_wp.get('title', '-')}")
-    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝05:00 JST に蓄積記事から1日1本配信・規約準拠）")
-    print(f"  ・Blogger 配信状況         : 配信済み {blogger_posted} 話 ／ 未配信ストック {blogger_unposted} 話")
+        print(f"  ・次回 WordPress 配信予定  : [#{next_wp.get('no', next_wp_ep):02d}] [{next_wp.get('topic_id', '-')}] {next_wp.get('title', '-')}")
+    print("  ・Blogger 自動投稿         : 稼働中（毎日 朝05:33 JST に #01から順次再配信・規約準拠）")
+    print(f"  ・Blogger 配信状況         : 再配信待機 {blogger_unposted} 話 ／ 次回エピソード #{next_blogger_ep:02d}")
     if next_blogger:
-        print(f"  ・次回 Blogger 配信予定    : [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
+        print(f"  ・次回 Blogger 配信予定    : [#{next_blogger.get('no', next_blogger_ep):02d}] [{next_blogger.get('topic_id', '-')}] {next_blogger.get('title', '-')}")
     print("  ・小説執筆＆挿絵生成       : Mac mini M4 ローカルAI（Ollama shosetsu & FLUX.2）")
     print(f"  ・カタログ総テーマ数       : {total_catalog} テーマ（A:20 / B:20 / C:20）")
     print(f"  ・GitHub Pages 公開済み    : {len(stories)} 話（うち挿絵付き {illustrated} 話）")
@@ -182,7 +184,13 @@ def replenish_stock_if_needed(
         needed = max(1, target_stock - current_stock) if current_stock <= min_stock else 0
 
     if needed > 0:
+        from src.task_worker import sync_tasks_manifest
         sim_pattern = history_mgr.history_data.get("last_pattern")
+        posts = history_mgr.history_data.get("posts", [])
+        last_writer = "rtx5060lp"
+        for p in posts:
+            if p.get("written_by") in ("rtx5060lp", "sff7020"):
+                last_writer = p["written_by"]
         used_topic_ids = set()
         for idx in range(1, needed + 1):
             if sim_pattern == "A":
@@ -192,6 +200,20 @@ def replenish_stock_if_needed(
             else:
                 next_pat = "A"
             sim_pattern = next_pat
+
+            next_writer = "sff7020" if last_writer == "rtx5060lp" else "rtx5060lp"
+            last_writer = next_writer
+            if next_writer == "sff7020":
+                turn_host = "http://sff7020:1234"
+                turn_model = "google/gemma-4-26b-a4b-qat"
+            else:
+                turn_host = "http://rtx5060lp:11434"
+                turn_model = "shosetsu"
+            turn_gen = StoryGenerator(
+                ollama_host=turn_host,
+                writer_model=turn_model,
+                draw_things_host=generator.draw_things_host,
+            )
 
             key = f"pattern_{next_pat}_topics"
             candidates = history_mgr.catalog_data.get(key, [])
@@ -207,9 +229,12 @@ def replenish_stock_if_needed(
             tid = chosen_topic.get("id", "unknown")
             used_topic_ids.add(tid)
 
-            logger.info(f"\n=== [Auto-Replenish {idx}/{needed}] Pattern {next_pat} | [{tid}] {chosen_topic.get('problem_title')} ===")
+            logger.info(
+                f"\n=== [Auto-Replenish {idx}/{needed}] Writer: {next_writer} ({turn_model}) | "
+                f"Pattern {next_pat} | [{tid}] {chosen_topic.get('problem_title')} ==="
+            )
             ep_assets: List[Path] = []
-            raw_md, title, _ = generator.generate_story(next_pat, chosen_topic, use_local_llm=True)
+            raw_md, title, _ = turn_gen.generate_story(next_pat, chosen_topic, use_local_llm=True)
             today_str = datetime.now(JST).strftime("%Y-%m-%d")
             safe_title = sanitize_filename(title)
             out_path = content_dir / f"{today_str}_pattern_{next_pat.lower()}_{tid.lower()}_{safe_title}.md"
@@ -220,7 +245,7 @@ def replenish_stock_if_needed(
             logger.info(f"Saved story: {out_path}")
 
             img_out_path = out_path.with_suffix(".png")
-            saved_img, _ = generator.generate_illustration(
+            saved_img, _ = turn_gen.generate_illustration(
                 pattern=next_pat,
                 topic=chosen_topic,
                 output_image_path=img_out_path,
@@ -237,11 +262,14 @@ def replenish_stock_if_needed(
                 "topic_id": tid,
                 "category": chosen_topic.get("category", ""),
                 "file_path": str(out_path).replace("\\", "/"),
+                "written_by": next_writer,
+                "writer_model": turn_model,
                 "sent_to_wp": False,
                 "sent_to_blogger": False,
                 "status": "github_pages",
             })
 
+            sync_tasks_manifest(history_mgr)
             build_github_pages(history_mgr)
             if push_to_git and ep_assets:
                 git_sync_and_push(ep_assets, logger)
@@ -464,8 +492,8 @@ def main():
                 next_pat = "A"
             sim_pattern = next_pat
 
-            key = f"pattern_{next_pat}_topics"
-            candidates = history_mgr.catalog_data.get(key, [])
+            key = f"pattern_{next_pat.upper()}_topics"
+            candidates = history_mgr.catalog_data.get(key, []) or history_mgr.catalog_data.get(f"pattern_{next_pat.lower()}_topics", [])
             posted_topic_ids = {p.get("topic_id") for p in history_mgr.history_data.get("posts", [])}
             chosen_topic = None
             for t in candidates:
@@ -536,8 +564,17 @@ def main():
     target_file = args.file
     send_blogger_only = args.blogger_only
     send_wp_only = args.wp_only
+    next_wp_stock = None
+    next_stock = None
 
     if args.wp_only and not target_file:
+        if not dry_run and not args.force and history_mgr.has_posted_to_wp_today():
+            logger.info(
+                "WordPress daily quota (1 post/day) has already been fulfilled today (JST). "
+                "Skipping to comply with WordPress.com Terms of Service and anti-spam guidelines."
+            )
+            print_stock_status(history_mgr)
+            return 0
         next_wp_stock = history_mgr.get_next_wp_stock_post(topic_id=args.topic_id)
         if next_wp_stock and next_wp_stock.get("resolved_path"):
             target_file = str(next_wp_stock["resolved_path"])
@@ -605,11 +642,18 @@ def main():
             file_path = content_dir / filename
             file_path.write_text(raw_markdown, encoding="utf-8")
 
+    target_image = None
+    if next_stock and next_stock.get("image_path"):
+        target_image = next_stock["image_path"]
+    elif next_wp_stock and next_wp_stock.get("image_path"):
+        target_image = next_wp_stock["image_path"]
+
     formatted_post = format_post_content(
         raw_markdown=raw_markdown,
         default_status=post_status,
         use_jetpack_shortcodes=config.use_jetpack_shortcodes,
         file_path=str(file_path),
+        image_path=target_image,
     )
 
     if args.preview_html:
@@ -643,6 +687,8 @@ def main():
             "sent_to_wp": result.get("sent_to_wp", False),
             "sent_to_blogger": result.get("sent_to_blogger", False),
             "status": post_status,
+            "wp_ep": next_wp_stock.get("no") if next_wp_stock else None,
+            "blogger_ep": next_stock.get("no") if next_stock else None,
         })
     from src.site_builder import build_github_pages
     build_github_pages(history_mgr)

@@ -1,5 +1,5 @@
 param(
-    [string]$Role = "auto",
+    [string]$Role = "startup",
     [int]$Quota = 0,
     [switch]$NoPush
 )
@@ -15,5 +15,5 @@ if ($NoPush) {
     $argsList += "--no-push"
 }
 
-Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Starting Distributed Local LLM Worker (Role: $Role) in $PSScriptRoot..." -ForegroundColor Cyan
+Write-Host "[$(Get-Date -Format 'HH:mm:ss')] Starting GitHub-Synced Local LLM Worker (Role: $Role) in $PSScriptRoot..." -ForegroundColor Cyan
 python @argsList

@@ -37,4 +37,6 @@ wheels/
 preview_output.html
 test_preview.html
 logs/
+.worker.lock
+worker_startup.log
 

@@ -1,1 +1,1 @@
-2026-10-08T07:40:00+09:00 Trigger 1 accumulated story to WordPress
+2026-10-11 07:48:40 JST Trigger WordPress publish #01
