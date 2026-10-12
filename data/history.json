@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-12T20:43:06.379984+09:00",
-  "total_posted": 44,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-12T20:50:14.376935+09:00",
+  "total_posted": 45,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -474,6 +474,17 @@
       "category": "学校法制・防災と指定避難所運営",
       "file_path": "content/2026-10-12_pattern_c_c17_聖域の境界線_災害下における児童の安全と公共空間の法理.md",
       "timestamp": "2026-10-12T20:43:06.379984+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "揺らぐ砂上の真理――概念の地殻変動を促すための対話",
+      "pattern": "A",
+      "topic_id": "A18",
+      "category": "授業改善・概念変化理論",
+      "file_path": "content/2026-10-12_pattern_a_a18_揺らぐ砂上の真理_概念の地殻変動を促すための対話.md",
+      "timestamp": "2026-10-12T20:50:14.376935+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
