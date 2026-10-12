@@ -114,6 +114,8 @@ jobs:
             echo "No changes detected to commit."
           else
             git commit -m "chore(wordpress): Publish daily article to WordPress (05:38 JST) [skip ci]"
-            git pull --rebase origin main
-            git push origin HEAD:${{ github.ref }}
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main || true
+              git push origin HEAD:${{ github.ref }} && break || sleep 3
+            done
           fi
