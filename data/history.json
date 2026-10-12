@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-12T08:53:48.625114+09:00",
-  "total_posted": 42,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-12T20:36:07.584497+09:00",
+  "total_posted": 43,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -452,6 +452,17 @@
       "category": "道徳教育・発達心理学",
       "file_path": "content/2026-10-12_pattern_a_a14_鏡の中の『正解』を脱ぎ捨てる時.md",
       "timestamp": "2026-10-12T07:10:50.322664+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "紙の束から解放される図書室：QRコードとGASが紡ぐ「届ける」ための革新",
+      "pattern": "B",
+      "topic_id": "B17",
+      "category": "図書室・教材在庫管理DX",
+      "file_path": "content/2026-10-12_pattern_b_b17_紙の束から解放される図書室：QRコードとGASが紡ぐ「届ける」ための革新.md",
+      "timestamp": "2026-10-12T20:36:07.584497+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
