@@ -280,9 +280,9 @@
     "title": "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと配列数式",
     "category": "校外学習・しおり＆緊急連絡DX",
     "keywords": "時間計算・予算自動集計シート / プルダウン入力規則による駅名・見学先選択 / フォームによる班別現在地・健康報告 / 本部リアルタイム進捗一覧",
-    "has_image": false,
+    "has_image": true,
     "url": "stories/ep43-b18.html",
-    "image": "",
+    "image": "assets/images/ep43-b18.png",
     "char_count": 2900
   },
   {
