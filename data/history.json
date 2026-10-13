@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-13T21:02:21.886179+09:00",
-  "total_posted": 48,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-13T21:06:41.348787+09:00",
+  "total_posted": 49,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -523,6 +523,17 @@
       "category": "部活動・リーダーシップ理論",
       "file_path": "content/2026-10-13_pattern_a_a20_旋律の断層_支配と奉仕の境界線で.md",
       "timestamp": "2026-10-13T21:02:21.886179+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "断絶する記憶をクラウドへ：ナレッジの絆を紡ぐ校務DXの夜",
+      "pattern": "B",
+      "topic_id": "B20",
+      "category": "年度末引き継ぎ・ナレッジ管理DX",
+      "file_path": "content/2026-10-13_pattern_b_b20_断絶する記憶をクラウドへ：ナレッジの絆を紡ぐ校務DXの夜.md",
+      "timestamp": "2026-10-13T21:06:41.348787+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
