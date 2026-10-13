@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-13T19:49:25.126103+09:00",
-  "total_posted": 45,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-13T19:59:17.625617+09:00",
+  "total_posted": 46,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -490,6 +490,17 @@
       "category": "不登校支援・システムズアプローチ",
       "file_path": "content/2026-10-13_pattern_a_a19_静かな教室の砂時計_「来ること」の重圧を解くための対話.md",
       "timestamp": "2026-10-13T19:49:25.126103+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "一筆の重みと一行のコード――卒業証書に宿る「正確さ」の継承",
+      "pattern": "B",
+      "topic_id": "B19",
+      "category": "賞状・通知文の差し込み印刷DX",
+      "file_path": "content/2026-10-13_pattern_b_b19_一筆の重みと一行のコード_卒業証書に宿る「正確さ」の継承.md",
+      "timestamp": "2026-10-13T19:59:17.625617+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
