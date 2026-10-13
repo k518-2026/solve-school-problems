@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-13T19:40:12.823115+09:00",
-  "total_posted": 44,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-13T19:49:25.126103+09:00",
+  "total_posted": 45,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -479,6 +479,17 @@
       "category": "学校法制・政治的中立性と宗教的配慮",
       "file_path": "content/2026-10-13_pattern_c_c19_正義の天秤_主権者教育の矜持と信仰の自由の調和.md",
       "timestamp": "2026-10-13T19:40:12.823115+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静かな教室の砂時計――「来ること」の重圧を解くための対話",
+      "pattern": "A",
+      "topic_id": "A19",
+      "category": "不登校支援・システムズアプローチ",
+      "file_path": "content/2026-10-13_pattern_a_a19_静かな教室の砂時計_「来ること」の重圧を解くための対話.md",
+      "timestamp": "2026-10-13T19:49:25.126103+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
