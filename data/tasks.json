@@ -2,7 +2,7 @@
   "project_id": "09f1227e-033f-496d-9750-362d7a3f9f27",
   "project_name": "solve-school-problems",
   "project_title": "Solve School Problems（学校課題解決・教育法務ドラマ）",
-  "updated_at": "2026-10-13T17:52:54.909916+09:00",
+  "updated_at": "2026-10-14T00:07:02.021196+09:00",
   "roles": {
     "rtx5060lp": {
       "node": "rtx5060lp",
@@ -747,7 +747,7 @@
       "plot_at": null,
       "md_file": "content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-08T14:35:29.933579+09:00",
+      "written_at": "2026-10-08",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-08_pattern_c_c10_聖域の境界線_給食室の静寂と、エピペンを握る手の震え.png",
@@ -795,7 +795,7 @@
       "plot_at": null,
       "md_file": "content/2026-10-08_pattern_b_b11_鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-08T17:44:04.372948+09:00",
+      "written_at": "2026-10-08",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-08_pattern_b_b11_鉛筆の跡をデジタルへ：教室予約の混沌を紐解くリソース管理の魔法.png",
@@ -819,7 +819,7 @@
       "plot_at": null,
       "md_file": "content/2026-10-09_pattern_c_c11_公衆衛生の盾と教育の責務_出席停止命令の正当性を巡る法理.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-09T01:04:44.529929+09:00",
+      "written_at": "2026-10-09",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-09_pattern_c_c11_公衆衛生の盾と教育の責務_出席停止命令の正当性を巡る法理.png",
@@ -843,12 +843,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-09_pattern_a_a12_情報の海を泳ぐための『問い』の羅針盤.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-09T03:28:53.420674+09:00",
+      "written_at": "2026-10-09",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-09_pattern_a_a12_情報の海を泳ぐための『問い』の羅針盤.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T01:14:00.688012+09:00"
+      "illustrated_at": "2026-10-09"
     },
     {
       "id": "B12",
@@ -867,12 +867,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-10T00:15:51.138283+09:00",
+      "written_at": "2026-10-09",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T01:09:44.522457+09:00"
+      "illustrated_at": "2026-10-09"
     },
     {
       "id": "C12",
@@ -891,12 +891,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-10T01:40:24.281274+09:00",
+      "written_at": "2026-10-09",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T00:23:52.084656+09:00"
+      "illustrated_at": "2026-10-09"
     },
     {
       "id": "A13",
@@ -915,12 +915,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-11T00:31:27.177900+09:00",
+      "written_at": "2026-10-09",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T00:20:24.908305+09:00"
+      "illustrated_at": "2026-10-09"
     },
     {
       "id": "B13",
@@ -939,12 +939,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-11_pattern_b_b13_紙の山を越えるデジタルな導き_生徒IDで繋ぐ『進路指導の絆.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-11T03:38:19.508550+09:00",
+      "written_at": "2026-10-11",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-11_pattern_b_b13_紙の山を越えるデジタルな導き_生徒IDで繋ぐ『進路指導の絆.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T00:16:09.260809+09:00"
+      "illustrated_at": "2026-10-11"
     },
     {
       "id": "C13",
@@ -963,12 +963,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-09_pattern_c_c13_憲法の静かなる規律_義務教育の無償原則と教育の質をめぐる相克.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-12T07:08:22.997686+09:00",
+      "written_at": "2026-10-09",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-09_pattern_c_c13_憲法の静かなる規律_義務教育の無償原則と教育の質をめぐる相克.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T00:11:53.077193+09:00"
+      "illustrated_at": "2026-10-09"
     },
     {
       "id": "A14",
@@ -987,12 +987,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-12_pattern_a_a14_鏡の中の『正解』を脱ぎ捨てる時.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-12T07:10:50.324049+09:00",
+      "written_at": "2026-10-12",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-12_pattern_a_a14_鏡の中の『正解』を脱ぎ捨てる時.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T00:08:29.295056+09:00"
+      "illustrated_at": "2026-10-12"
     },
     {
       "id": "B14",
@@ -1291,20 +1291,20 @@
       "problem_title": "修学旅行の班別行動計画書のチェックと、当日の遅延・迷子連絡の混乱",
       "solution_framework": "スプレッドシート共同作成による予算・時間自動計算テンプレートと、1人1台端末を活用したチェックポイント到着報告システム",
       "status": "completed",
-      "assigned_writer": "sff7020",
-      "assigned_model": "google/gemma-4-26b-a4b-qat",
+      "assigned_writer": "rtx5060lp",
+      "assigned_model": "shosetsu",
       "queued_at": null,
       "plot_file": null,
       "plot_by": null,
       "plot_at": null,
       "md_file": "content/2026-10-13_pattern_b_b18_深夜の成績集計とスプレッドシートの奇跡_年配教員を救うGASと配列数式.md",
-      "written_by": "sff7020",
-      "written_at": "2026-10-13T17:50:42.586174+09:00",
+      "written_by": "rtx5060lp",
+      "written_at": "2026-10-13",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-13_pattern_b_b18_深夜の成績集計とスプレッドシートの奇跡_年配教員を救うGASと配列数式.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T17:52:54.909899+09:00"
+      "illustrated_at": "2026-10-13"
     },
     {
       "id": "C18",
@@ -1323,12 +1323,12 @@
       "plot_at": null,
       "md_file": "content/2026-10-13_pattern_c_c18_法の境界線と教育の責務_デジタル空間に潜む影への決断.md",
       "written_by": "rtx5060lp",
-      "written_at": "2026-10-13T01:01:02.789996+09:00",
+      "written_at": "2026-10-13",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": "content/2026-10-13_pattern_c_c18_法の境界線と教育の責務_デジタル空間に潜む影への決断.png",
       "illustrated_by": "kenomac-mini",
-      "illustrated_at": "2026-10-13T01:05:25.501934+09:00"
+      "illustrated_at": "2026-10-13"
     },
     {
       "id": "A19",
@@ -1359,19 +1359,19 @@
       "order_num": 56,
       "pattern": "B",
       "category": "賞状・通知文の差し込み印刷DX",
-      "title": "卒業証書や表彰状、保護者宛て個別通知の氏名・漢数字を1枚ずつ手入力して印刷ミス連発",
+      "title": "一文字の重みとコードの魔法：名簿マスターから導く表彰状DX",
       "problem_title": "卒業証書や表彰状、保護者宛て個別通知の氏名・漢数字を1枚ずつ手入力して印刷ミス連発",
       "solution_framework": "名簿マスターデータ（単一情報源：Single Source of Truth）からの差し込み印刷（Mail Merge）およびGASドキュメント自動生成",
-      "status": "pending",
+      "status": "pending_illustration",
       "assigned_writer": "rtx5060lp",
       "assigned_model": "shosetsu",
       "queued_at": null,
       "plot_file": null,
       "plot_by": null,
       "plot_at": null,
-      "md_file": null,
-      "written_by": null,
-      "written_at": null,
+      "md_file": "content/2026-10-14_pattern_b_b19_一文字の重みとコードの魔法：名簿マスターから導く表彰状DX.md",
+      "written_by": "rtx5060lp",
+      "written_at": "2026-10-14T00:07:02.021187+09:00",
       "reviewed_by": null,
       "reviewed_at": null,
       "png_file": null,
