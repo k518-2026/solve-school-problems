@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-14T07:32:39.135763+09:00",
+  "last_run_at": "2026-10-14T08:49:54.891058+09:00",
   "total_posted": 44,
   "posts": [
     {
@@ -64,7 +64,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-14T07:16:47.071895+09:00",
-      "blogger_repost_ep": 5
+      "blogger_repost_ep": 5,
+      "wp_posted_at": "2026-10-14T08:49:54.891058+09:00",
+      "wp_repost_ep": 5
     },
     {
       "title": "公開授業のWi-Fi迷宮――DFSとチャネル設計が救った教室の未来",
@@ -491,5 +493,5 @@
     }
   ],
   "blogger_repost_next_ep": 7,
-  "wp_repost_next_ep": 5
+  "wp_repost_next_ep": 6
 }
