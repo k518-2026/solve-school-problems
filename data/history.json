@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-13T07:07:54.097766+09:00",
-  "total_posted": 42,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-13T17:50:42.580675+09:00",
+  "total_posted": 43,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -457,6 +457,17 @@
       "category": "学校法制・非行問題と警察・児童相談所連携",
       "file_path": "content/2026-10-13_pattern_c_c18_法の境界線と教育の責務_デジタル空間に潜む影への決断.md",
       "timestamp": "2026-10-13T01:01:02.786859+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "深夜の成績集計とスプレッドシートの奇跡――年配教員を救うGASと配列数式",
+      "pattern": "B",
+      "topic_id": "B18",
+      "category": "校外学習・しおり＆緊急連絡DX",
+      "file_path": "content/2026-10-13_pattern_b_b18_深夜の成績集計とスプレッドシートの奇跡_年配教員を救うGASと配列数式.md",
+      "timestamp": "2026-10-13T17:50:42.580675+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
