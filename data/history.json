@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-15T03:40:39.514147+09:00",
+  "last_run_at": "2026-10-15T07:05:51.106228+09:00",
   "total_posted": 44,
   "posts": [
     {
@@ -103,7 +103,9 @@
       "file_path": "content/2026-09-30_pattern_a_溢れるスライドと光らない電球_ワーキングメモリをひらく「引き算」の授業設計.md",
       "timestamp": "2026-09-30T07:49:39.771676+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "wp_posted_at": "2026-10-15T07:05:51.106228+09:00",
+      "wp_repost_ep": 8
     },
     {
       "title": "ハサミと模造紙を捨てた夜――500通の声を読み解くPythonテキストマイニング",
@@ -497,5 +499,5 @@
     }
   ],
   "blogger_repost_next_ep": 7,
-  "wp_repost_next_ep": 8
+  "wp_repost_next_ep": 9
 }
