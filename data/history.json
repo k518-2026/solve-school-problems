@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-14T10:34:02.573602+09:00",
+  "last_run_at": "2026-10-15T03:40:39.514147+09:00",
   "total_posted": 44,
   "posts": [
     {
@@ -91,7 +91,9 @@
       "file_path": "content/2026-09-30_pattern_c_腕の温もりと法の冷厳_校長が決断する懲戒の境界線.md",
       "timestamp": "2026-09-30T06:44:20.075471+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "wp_posted_at": "2026-10-15T03:40:39.514147+09:00",
+      "wp_repost_ep": 7
     },
     {
       "title": "溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計",
@@ -495,5 +497,5 @@
     }
   ],
   "blogger_repost_next_ep": 7,
-  "wp_repost_next_ep": 7
+  "wp_repost_next_ep": 8
 }
