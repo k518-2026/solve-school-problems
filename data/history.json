@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-14T08:49:54.891058+09:00",
+  "last_run_at": "2026-10-14T10:34:02.573602+09:00",
   "total_posted": 44,
   "posts": [
     {
@@ -79,7 +79,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-14T07:32:39.135763+09:00",
-      "blogger_repost_ep": 6
+      "blogger_repost_ep": 6,
+      "wp_posted_at": "2026-10-14T10:34:02.573602+09:00",
+      "wp_repost_ep": 6
     },
     {
       "title": "腕の温もりと法の冷厳――校長が決断する懲戒の境界線",
@@ -493,5 +495,5 @@
     }
   ],
   "blogger_repost_next_ep": 7,
-  "wp_repost_next_ep": 6
+  "wp_repost_next_ep": 7
 }
