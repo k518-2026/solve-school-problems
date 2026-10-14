@@ -82,14 +82,12 @@ SYSTEM_PROMPT_C = """あなたは学校法務および教育行政に精通し�
 DEFAULT_OLLAMA_HOST = "http://rtx5060lp:11434"
 FALLBACK_OLLAMA_HOSTS = [
     "http://rtx5060lp:11434",
-    "http://sff7020:1234",
 ]
 DEFAULT_WRITER_MODEL = "shosetsu"
 DEFAULT_DRAW_THINGS_HOST = "http://kenomac-mini:7860"
 
 LOCAL_FALLBACK_MODELS = [
     "shosetsu",
-    "google/gemma-4-26b-a4b-qat",
     "gemma4:12b",
     "qwen3.5:9b",
     "qwen2.5:14b",

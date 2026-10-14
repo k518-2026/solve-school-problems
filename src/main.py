@@ -201,14 +201,11 @@ def replenish_stock_if_needed(
                 next_pat = "A"
             sim_pattern = next_pat
 
-            next_writer = "sff7020" if last_writer == "rtx5060lp" else "rtx5060lp"
+            # Writer policy: only rtx5060lp (Ollama shosetsu) writes stories.
+            next_writer = "rtx5060lp"
             last_writer = next_writer
-            if next_writer == "sff7020":
-                turn_host = "http://sff7020:1234"
-                turn_model = "google/gemma-4-26b-a4b-qat"
-            else:
-                turn_host = "http://rtx5060lp:11434"
-                turn_model = "shosetsu"
+            turn_host = "http://rtx5060lp:11434"
+            turn_model = "shosetsu"
             turn_gen = StoryGenerator(
                 ollama_host=turn_host,
                 writer_model=turn_model,

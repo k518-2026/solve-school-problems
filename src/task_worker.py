@@ -247,15 +247,15 @@ def sync_tasks_manifest(history_mgr: HistoryManager, ensure_min_queued: int = 0)
         if stock_md and re.match(r"^\d{4}-\d{2}-\d{2}_", stock_md.name):
             inferred_date = stock_md.name[:10]
 
+        # Writer policy: only rtx5060lp (Ollama shosetsu) writes stories. Past records keep their original written_by.
         if md_rel:
             written_by = prev.get("written_by") or "rtx5060lp"
             assigned_writer = written_by
             assigned_model = "google/gemma-4-26b-a4b-qat" if written_by == "sff7020" else "shosetsu"
         else:
             written_by = None
-            assigned_writer = next_alt_writer
-            assigned_model = "google/gemma-4-26b-a4b-qat" if assigned_writer == "sff7020" else "shosetsu"
-            next_alt_writer = "rtx5060lp" if next_alt_writer == "sff7020" else "sff7020"
+            assigned_writer = "rtx5060lp"
+            assigned_model = "shosetsu"
 
         task_entry = {
             "id": tid,
@@ -410,17 +410,9 @@ def resolve_writer_endpoints(local_node: Optional[str] = None) -> Tuple[Optional
     if local_node == "rtx5060lp":
         rtx_candidates.insert(0, "http://localhost:11434")
 
-    sff_candidates = [
-        os.getenv("LM_STUDIO_HOST", ""),
-        "http://sff7020:1234",
-        "http://192.168.128.16:1234",
-        "http://localhost:1234",
-    ]
-    if local_node == "sff7020":
-        sff_candidates.insert(0, "http://localhost:1234")
-
+    # Writer policy: sff7020 (LM Studio) is no longer used for writing. Only rtx5060lp is resolved.
     rtx_host = resolve_reachable_url(rtx_candidates, "/api/tags")
-    sff_host = resolve_reachable_url(sff_candidates, "/v1/models")
+    sff_host = None
     return rtx_host, sff_host
 
 
@@ -438,21 +430,19 @@ def run_alternating_writer_role(
     Works both when dispatched from MINISFORUM64GB and when run autonomously on `rtx5060lp` or `sff7020` while MINISFORUM64GB is powered off.
     """
     rtx_host, sff_host = resolve_writer_endpoints(local_node=target_node_filter)
-    if not rtx_host and not sff_host:
-        logger.info("[Writer] プライマリ (rtx5060lp:11434) と セカンダリ (sff7020:1234) の両方がオフラインのためスキップします。")
+    if not rtx_host:
+        logger.info("[Writer] rtx5060lp:11434 がオフラインのため執筆をスキップします（執筆LLMは rtx5060lp のみ使用）。")
         return 0
 
-    logger.info(
-        f"[Writer Status] Primary (rtx5060lp/shosetsu): {rtx_host or 'OFFLINE'} | "
-        f"Secondary (sff7020/gemma-4-26b-a4b-qat): {sff_host or 'OFFLINE'}"
-    )
+    logger.info(f"[Writer Status] rtx5060lp/shosetsu (only writer): {rtx_host}")
 
     queued_tasks = [t for t in manifest["tasks"] if t["status"] == "queued"]
     other_pending = [t for t in manifest["tasks"] if t["status"] in ("plot_ready", "pending")]
 
-    if target_node_filter in ("rtx5060lp", "sff7020"):
-        queued_tasks = [t for t in queued_tasks if t.get("assigned_writer") == target_node_filter]
-        other_pending = [t for t in other_pending if t.get("assigned_writer") == target_node_filter]
+    if target_node_filter == "sff7020":
+        # sff7020 no longer writes stories.
+        logger.info("[Writer] sff7020 は執筆に使用しません（rtx5060lp のみ）。")
+        return 0
 
     today_str = datetime.now(JST).strftime("%Y-%m-%d")
 
@@ -466,7 +456,7 @@ def run_alternating_writer_role(
             f"[GitHub Queue] GitHubに蓄積されている実行待ちタスク {len(queued_tasks)} 件のうち {len(candidates)} 件を実行します。"
         )
     else:
-        if target_node_filter in ("rtx5060lp", "sff7020"):
+        if target_node_filter == "rtx5060lp":
             written_today = sum(
                 1 for t in manifest["tasks"]
                 if t.get("written_by") == target_node_filter and str(t.get("written_at") or "").startswith(today_str)
@@ -494,34 +484,14 @@ def run_alternating_writer_role(
             continue
         pat = topic.get("pattern", "A")
         tid = topic["id"]
-        assigned = task.get("assigned_writer", "rtx5060lp")
-
-        if assigned == "sff7020":
-            if sff_host:
-                active_host = sff_host
-                active_model = "google/gemma-4-26b-a4b-qat"
-                actual_writer = "sff7020"
-            elif allow_cross_node_failover and rtx_host:
-                logger.info(f"[Failover] 担当 sff7020 がオフラインのため rtx5060lp (shosetsu) が代替執筆します: [{tid}]")
-                active_host = rtx_host
-                active_model = "shosetsu"
-                actual_writer = "rtx5060lp"
-            else:
-                logger.info(f"[Skip] [{tid}] の担当 sff7020 がオフラインのため次回起動時まで待機します。")
-                continue
+        # Writer policy: every task (including legacy ones assigned to sff7020) is written by rtx5060lp / shosetsu only.
+        if rtx_host:
+            active_host = rtx_host
+            active_model = "shosetsu"
+            actual_writer = "rtx5060lp"
         else:
-            if rtx_host:
-                active_host = rtx_host
-                active_model = "shosetsu"
-                actual_writer = "rtx5060lp"
-            elif allow_cross_node_failover and sff_host:
-                logger.info(f"[Failover] 担当 rtx5060lp がオフラインのため sff7020 (gemma-4-26b-a4b-qat) が代替執筆します: [{tid}]")
-                active_host = sff_host
-                active_model = "google/gemma-4-26b-a4b-qat"
-                actual_writer = "sff7020"
-            else:
-                logger.info(f"[Skip] [{tid}] の担当 rtx5060lp がオフラインのため次回起動時まで待機します。")
-                continue
+            logger.info(f"[Skip] [{tid}] rtx5060lp がオフラインのため次回起動時まで待機します。")
+            continue
 
         generator = StoryGenerator(
             ollama_host=active_host,
