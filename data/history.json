@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-15T07:05:51.106228+09:00",
+  "last_run_at": "2026-10-15T08:23:19.718737+09:00",
   "total_posted": 44,
   "posts": [
     {
@@ -93,7 +93,10 @@
       "sent_to_wp": true,
       "status": "publish",
       "wp_posted_at": "2026-10-15T03:40:39.514147+09:00",
-      "wp_repost_ep": 7
+      "wp_repost_ep": 7,
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-15T08:23:19.718737+09:00",
+      "blogger_repost_ep": 7
     },
     {
       "title": "溢れるスライドと光らない電球――ワーキングメモリをひらく「引き算」の授業設計",
@@ -498,6 +501,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 7,
+  "blogger_repost_next_ep": 8,
   "wp_repost_next_ep": 9
 }
