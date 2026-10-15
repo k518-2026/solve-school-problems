@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-15T20:40:06.290821+09:00",
-  "total_posted": 46,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-15T20:46:43.306758+09:00",
+  "total_posted": 47,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -521,6 +521,17 @@
       "category": "道徳教育・発達心理学",
       "file_path": "content/2026-10-15_pattern_a_a14_白紙の聖域と、葛藤の産声_模範の鎧を脱ぐための「問い」の設計.md",
       "timestamp": "2026-10-15T20:40:06.290821+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "紅く染まる職員室の灯と、瞬時に色づく正答率の地図",
+      "pattern": "B",
+      "topic_id": "B14",
+      "category": "授業ICT・リアルタイム小テスト",
+      "file_path": "content/2026-10-15_pattern_b_b14_紅く染まる職員室の灯と、瞬時に色づく正答率の地図.md",
+      "timestamp": "2026-10-15T20:46:43.306758+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
