@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-15T20:46:43.306758+09:00",
+  "last_run_at": "2026-10-16T07:27:17.858481+09:00",
   "total_posted": 47,
   "posts": [
     {
@@ -121,7 +121,9 @@
       "file_path": "content/2026-09-30_pattern_b_ハサミと模造紙を捨てた夜_500通の声を読み解くPythonテキストマイニング.md",
       "timestamp": "2026-09-30T18:27:45.088967+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "wp_posted_at": "2026-10-16T07:27:17.858481+09:00",
+      "wp_repost_ep": 9
     },
     {
       "title": "出席と承認の境界――校長裁量が拓く学びの機会確保",
@@ -538,5 +540,5 @@
     }
   ],
   "blogger_repost_next_ep": 9,
-  "wp_repost_next_ep": 9
+  "wp_repost_next_ep": 10
 }
