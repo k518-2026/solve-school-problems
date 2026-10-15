@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-15T08:23:19.718737+09:00",
+  "last_run_at": "2026-10-15T19:35:16.327137+09:00",
   "total_posted": 44,
   "posts": [
     {
@@ -108,7 +108,10 @@
       "sent_to_wp": true,
       "status": "publish",
       "wp_posted_at": "2026-10-15T07:05:51.106228+09:00",
-      "wp_repost_ep": 8
+      "wp_repost_ep": 8,
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-15T19:35:16.327137+09:00",
+      "blogger_repost_ep": 8
     },
     {
       "title": "ハサミと模造紙を捨てた夜――500通の声を読み解くPythonテキストマイニング",
@@ -501,6 +504,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 8,
+  "blogger_repost_next_ep": 9,
   "wp_repost_next_ep": 9
 }
