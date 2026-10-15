@@ -1240,8 +1240,9 @@ topic_id: "{topic.get('id', 'C01')}"
                 "education supervisor in his 40s smiling brightly; on the right, a school principal in his 50s smiling warmly."
             ),
             "C20": (
-                "Medium two-shot in a bright community meeting room in a Japanese school with wooden tables and courtyard view: "
-                "on the left, a school-management supervisor in his 40s in a navy suit smiling cheerfully; on the right, a school principal in his 50s with glasses smiling warmly."
+                "Medium two-shot in a bright, sunlit community meeting room in a Japanese school with light natural oak tables and large glass windows overlooking a green courtyard garden: "
+                "on the left, a school-management supervisor in his 40s wearing a light blue dress shirt and light grey tailored trousers seated on a modern light-beige fabric armchair, smiling cheerfully; "
+                "on the right, a dignified school principal in his 50s with tortoiseshell glasses wearing a crisp white dress shirt with navy vest and tan khaki slacks seated on an amber wooden chair, smiling warmly with high contrast between clothing and chairs."
             ),
         }
 
