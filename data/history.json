@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-15T20:32:47.230096+09:00",
-  "total_posted": 45,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-15T20:40:06.290821+09:00",
+  "total_posted": 46,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -510,6 +510,17 @@
       "category": "学校法制・学校事故・生徒間トラブルと民法責任",
       "file_path": "content/2026-10-15_pattern_c_c14_静寂の廊下に響く責任の重圧_予見可能性と監督義務の境界線.md",
       "timestamp": "2026-10-15T20:32:47.230096+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "白紙の聖域と、葛藤の産声 ― 模範の鎧を脱ぐための「問い」の設計",
+      "pattern": "A",
+      "topic_id": "A14",
+      "category": "道徳教育・発達心理学",
+      "file_path": "content/2026-10-15_pattern_a_a14_白紙の聖域と、葛藤の産声_模範の鎧を脱ぐための「問い」の設計.md",
+      "timestamp": "2026-10-15T20:40:06.290821+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
