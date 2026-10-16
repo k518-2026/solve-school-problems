@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-16T07:27:31.326417+09:00",
+  "last_run_at": "2026-10-17T07:58:35.858129+09:00",
   "total_posted": 47,
   "posts": [
     {
@@ -136,7 +136,9 @@
       "file_path": "content/2026-09-30_pattern_c_出席と承認の境界_校長裁量が拓く学びの機会確保.md",
       "timestamp": "2026-09-30T22:35:34.013467+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "wp_posted_at": "2026-10-17T07:58:35.858129+09:00",
+      "wp_repost_ep": 10
     },
     {
       "title": "夕暮れのチョークと、静かなる星座――衝動的な行動を読み解く機能的アセスメント",
@@ -543,5 +545,5 @@
     }
   ],
   "blogger_repost_next_ep": 10,
-  "wp_repost_next_ep": 10
+  "wp_repost_next_ep": 11
 }
