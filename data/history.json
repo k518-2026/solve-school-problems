@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-18T08:28:06.229201+09:00",
+  "last_run_at": "2026-10-18T08:28:42.298415+09:00",
   "total_posted": 47,
   "posts": [
     {
@@ -169,7 +169,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-18T08:28:06.229201+09:00",
-      "blogger_repost_ep": 12
+      "blogger_repost_ep": 12,
+      "wp_posted_at": "2026-10-18T08:28:42.298415+09:00",
+      "wp_repost_ep": 12
     },
     {
       "title": "クラウドに揺れる規範――校長が問う情報管理と公務員倫理の分水嶺",
@@ -556,5 +558,5 @@
     }
   ],
   "blogger_repost_next_ep": 13,
-  "wp_repost_next_ep": 12
+  "wp_repost_next_ep": 13
 }
