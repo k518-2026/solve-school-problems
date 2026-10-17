@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-17T08:31:14.726332+09:00",
+  "last_run_at": "2026-10-18T07:34:58.913712+09:00",
   "total_posted": 47,
   "posts": [
     {
@@ -151,7 +151,10 @@
       "file_path": "content/2026-10-01_pattern_a_夕暮れのチョークと、静かなる星座_衝動的な行動を読み解く機能的アセスメント.md",
       "timestamp": "2026-10-01T06:28:05.607405+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-18T07:34:58.913712+09:00",
+      "blogger_repost_ep": 11
     },
     {
       "title": "上書きされた春の計画――クラウドの版管理が救う学校の絆",
@@ -547,6 +550,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 11,
+  "blogger_repost_next_ep": 12,
   "wp_repost_next_ep": 11
 }
