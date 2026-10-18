@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-18T12:21:05.929655+09:00",
-  "total_posted": 49,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-18T12:27:51.778248+09:00",
+  "total_posted": 50,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -574,6 +574,17 @@
       "category": "インクルーシブ教育・UDL",
       "file_path": "content/2026-10-18_pattern_a_a15_重なり合う波の旋律_UDLが紡ぐ、多様な速度の教室.md",
       "timestamp": "2026-10-18T12:21:05.929655+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "インクの香りを脱ぎ捨てる夜――共有ドキュメントが紡ぐ会議の静寂",
+      "pattern": "B",
+      "topic_id": "B15",
+      "category": "職員会議・ペーパーレス議事録",
+      "file_path": "content/2026-10-18_pattern_b_b15_インクの香りを脱ぎ捨てる夜_共有ドキュメントが紡ぐ会議の静寂.md",
+      "timestamp": "2026-10-18T12:27:51.778248+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
