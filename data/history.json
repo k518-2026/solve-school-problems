@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-18T12:27:51.778248+09:00",
+  "last_run_at": "2026-10-19T07:33:01.844974+09:00",
   "total_posted": 50,
   "posts": [
     {
@@ -181,7 +181,10 @@
       "file_path": "content/2026-10-01_pattern_c_クラウドに揺れる規範_校長が問う情報管理と公務員倫理の分水嶺.md",
       "timestamp": "2026-10-01T22:37:00.407379+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-19T07:33:01.844974+09:00",
+      "blogger_repost_ep": 13
     },
     {
       "title": "保健室のソファと編みかけの糸――関係性の傷口を癒やすケアの倫理",
@@ -590,6 +593,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 13,
+  "blogger_repost_next_ep": 14,
   "wp_repost_next_ep": 13
 }
