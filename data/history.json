@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-18T12:14:23.000690+09:00",
-  "total_posted": 48,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-18T12:21:05.929655+09:00",
+  "total_posted": 49,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -563,6 +563,17 @@
       "category": "学校法制・教育課程編成権と学習指導要領",
       "file_path": "content/2026-10-18_pattern_c_c15_標準授業時数の峻烈なる規範_教育課程の聖域を守る校長の決断.md",
       "timestamp": "2026-10-18T12:14:23.000690+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "重なり合う波の旋律――UDLが紡ぐ、多様な速度の教室",
+      "pattern": "A",
+      "topic_id": "A15",
+      "category": "インクルーシブ教育・UDL",
+      "file_path": "content/2026-10-18_pattern_a_a15_重なり合う波の旋律_UDLが紡ぐ、多様な速度の教室.md",
+      "timestamp": "2026-10-18T12:21:05.929655+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
