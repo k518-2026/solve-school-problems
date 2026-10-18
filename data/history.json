@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-18T08:28:42.298415+09:00",
-  "total_posted": 47,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-18T12:14:23.000690+09:00",
+  "total_posted": 48,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -552,6 +552,17 @@
       "category": "授業ICT・リアルタイム小テスト",
       "file_path": "content/2026-10-15_pattern_b_b14_紅く染まる職員室の灯と、瞬時に色づく正答率の地図.md",
       "timestamp": "2026-10-15T20:46:43.306758+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "標準授業時数の峻烈なる規範――教育課程の聖域を守る校長の決断",
+      "pattern": "C",
+      "topic_id": "C15",
+      "category": "学校法制・教育課程編成権と学習指導要領",
+      "file_path": "content/2026-10-18_pattern_c_c15_標準授業時数の峻烈なる規範_教育課程の聖域を守る校長の決断.md",
+      "timestamp": "2026-10-18T12:14:23.000690+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
