@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-19T22:39:58.461377+09:00",
-  "total_posted": 51,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-19T22:46:41.038694+09:00",
+  "total_posted": 52,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -599,6 +599,17 @@
       "category": "学校法制・免許法・無免許授業の防止",
       "file_path": "content/2026-10-19_pattern_c_c16_資格の聖域と現場の焦燥_免許外教科担任という名の法的隘路.md",
       "timestamp": "2026-10-19T22:39:58.461377+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "沸騰する瞬間の澱（よどみ）――怒りの火を鎮める『六秒』の対話",
+      "pattern": "A",
+      "topic_id": "A16",
+      "category": "生徒指導・アンガーマネジメント",
+      "file_path": "content/2026-10-19_pattern_a_a16_沸騰する瞬間の澱（よどみ）_怒りの火を鎮める『六秒』の対話.md",
+      "timestamp": "2026-10-19T22:46:41.038694+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
