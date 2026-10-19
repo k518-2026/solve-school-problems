@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-19T07:33:01.844974+09:00",
-  "total_posted": 50,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-19T22:39:58.461377+09:00",
+  "total_posted": 51,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -588,6 +588,17 @@
       "category": "職員会議・ペーパーレス議事録",
       "file_path": "content/2026-10-18_pattern_b_b15_インクの香りを脱ぎ捨てる夜_共有ドキュメントが紡ぐ会議の静寂.md",
       "timestamp": "2026-10-18T12:27:51.778248+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "資格の聖域と現場の焦燥――免許外教科担任という名の法的隘路",
+      "pattern": "C",
+      "topic_id": "C16",
+      "category": "学校法制・免許法・無免許授業の防止",
+      "file_path": "content/2026-10-19_pattern_c_c16_資格の聖域と現場の焦燥_免許外教科担任という名の法的隘路.md",
+      "timestamp": "2026-10-19T22:39:58.461377+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
