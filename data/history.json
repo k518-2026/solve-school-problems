@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-20T08:25:26.501192+09:00",
-  "total_posted": 55,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-20T08:31:45.793358+09:00",
+  "total_posted": 56,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -643,6 +643,17 @@
       "category": "キャリア教育・青年心理学",
       "file_path": "content/2026-10-20_pattern_a_a17_漂流する羅針盤と、偶然という名の航路.md",
       "timestamp": "2026-10-20T08:25:26.501192+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "失われた備品と静かなる革命――QRコードが紡ぐ図書室の再編",
+      "pattern": "B",
+      "topic_id": "B17",
+      "category": "図書室・教材在庫管理DX",
+      "file_path": "content/2026-10-20_pattern_b_b17_失われた備品と静かなる革命_QRコードが紡ぐ図書室の再編.md",
+      "timestamp": "2026-10-20T08:31:45.793358+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
