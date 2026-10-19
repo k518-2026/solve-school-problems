@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-19T22:46:41.038694+09:00",
-  "total_posted": 52,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-19T22:53:30.689626+09:00",
+  "total_posted": 53,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -610,6 +610,17 @@
       "category": "生徒指導・アンガーマネジメント",
       "file_path": "content/2026-10-19_pattern_a_a16_沸騰する瞬間の澱（よどみ）_怒りの火を鎮める『六秒』の対話.md",
       "timestamp": "2026-10-19T22:46:41.038694+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "見えない境界線の迷宮――通信の断絶を解き明かすOSIモデルの視線",
+      "pattern": "B",
+      "topic_id": "B16",
+      "category": "校内ネットワーク・DNS/プロキシ診断",
+      "file_path": "content/2026-10-19_pattern_b_b16_見えない境界線の迷宮_通信の断絶を解き明かすOSIモデルの視線.md",
+      "timestamp": "2026-10-19T22:53:30.689626+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
