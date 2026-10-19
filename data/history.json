@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-20T08:31:45.793358+09:00",
+  "last_run_at": "2026-10-20T08:53:59.363277+09:00",
   "total_posted": 56,
   "posts": [
     {
@@ -184,7 +184,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-19T07:33:01.844974+09:00",
-      "blogger_repost_ep": 13
+      "blogger_repost_ep": 13,
+      "wp_posted_at": "2026-10-20T08:53:59.363277+09:00",
+      "wp_repost_ep": 13
     },
     {
       "title": "保健室のソファと編みかけの糸――関係性の傷口を癒やすケアの倫理",
@@ -660,5 +662,5 @@
     }
   ],
   "blogger_repost_next_ep": 14,
-  "wp_repost_next_ep": 13
+  "wp_repost_next_ep": 14
 }
