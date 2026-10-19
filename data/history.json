@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-19T22:53:30.689626+09:00",
-  "total_posted": 53,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-20T08:18:45.031565+09:00",
+  "total_posted": 54,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -621,6 +621,17 @@
       "category": "校内ネットワーク・DNS/プロキシ診断",
       "file_path": "content/2026-10-19_pattern_b_b16_見えない境界線の迷宮_通信の断絶を解き明かすOSIモデルの視線.md",
       "timestamp": "2026-10-19T22:53:30.689626+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "震災の咆哮と聖域の防壁――児童の安全を司る法的規律の行方",
+      "pattern": "C",
+      "topic_id": "C17",
+      "category": "学校法制・防災と指定避難所運営",
+      "file_path": "content/2026-10-20_pattern_c_c17_震災の咆哮と聖域の防壁_児童の安全を司る法的規律の行方.md",
+      "timestamp": "2026-10-20T08:18:45.031565+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
