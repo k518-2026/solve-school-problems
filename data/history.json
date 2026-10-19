@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-20T08:18:45.031565+09:00",
-  "total_posted": 54,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-20T08:25:26.501192+09:00",
+  "total_posted": 55,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -632,6 +632,17 @@
       "category": "学校法制・防災と指定避難所運営",
       "file_path": "content/2026-10-20_pattern_c_c17_震災の咆哮と聖域の防壁_児童の安全を司る法的規律の行方.md",
       "timestamp": "2026-10-20T08:18:45.031565+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "漂流する羅針盤と、偶然という名の航路",
+      "pattern": "A",
+      "topic_id": "A17",
+      "category": "キャリア教育・青年心理学",
+      "file_path": "content/2026-10-20_pattern_a_a17_漂流する羅針盤と、偶然という名の航路.md",
+      "timestamp": "2026-10-20T08:25:26.501192+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
