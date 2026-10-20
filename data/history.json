@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-20T08:53:59.363277+09:00",
+  "last_run_at": "2026-10-21T08:19:59.383464+09:00",
   "total_posted": 56,
   "posts": [
     {
@@ -196,7 +196,10 @@
       "file_path": "content/2026-10-02_pattern_a_保健室のソファと編みかけの糸_関係性の傷口を癒やすケアの倫理.md",
       "timestamp": "2026-10-02T06:28:13.856425+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-21T08:19:59.383464+09:00",
+      "blogger_repost_ep": 14
     },
     {
       "title": "深夜の文字数カウンターと正規表現の魔法――通知表所見の嵐を越えて",
@@ -661,6 +664,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 14,
+  "blogger_repost_next_ep": 15,
   "wp_repost_next_ep": 14
 }
