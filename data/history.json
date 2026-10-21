@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-21T08:19:59.383464+09:00",
-  "total_posted": 56,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-21T12:03:30.876561+09:00",
+  "total_posted": 57,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -659,6 +659,17 @@
       "category": "図書室・教材在庫管理DX",
       "file_path": "content/2026-10-20_pattern_b_b17_失われた備品と静かなる革命_QRコードが紡ぐ図書室の再編.md",
       "timestamp": "2026-10-20T08:31:45.793358+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "聖域と中立の羅針盤――主権者教育の均衡と信仰への配慮",
+      "pattern": "C",
+      "topic_id": "C19",
+      "category": "学校法制・政治的中立性と宗教的配慮",
+      "file_path": "content/2026-10-21_pattern_c_c19_聖域と中立の羅針盤_主権者教育の均衡と信仰への配慮.md",
+      "timestamp": "2026-10-21T12:03:30.876561+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
