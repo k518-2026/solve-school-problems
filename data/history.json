@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-21T12:07:58.082112+09:00",
-  "total_posted": 58,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-21T12:14:18.091268+09:00",
+  "total_posted": 59,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -681,6 +681,17 @@
       "category": "授業改善・概念変化理論",
       "file_path": "content/2026-10-21_pattern_a_a18_重力に抗う眼差しと、揺らぐ常識の境界線.md",
       "timestamp": "2026-10-21T12:07:58.082112+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "記憶の断片を紡ぐクラウド：失われた引継ぎを再構築するナレッジベースの革命",
+      "pattern": "B",
+      "topic_id": "B20",
+      "category": "年度末引き継ぎ・ナレッジ管理DX",
+      "file_path": "content/2026-10-21_pattern_b_b20_記憶の断片を紡ぐクラウド：失われた引継ぎを再構築するナレッジベースの革命.md",
+      "timestamp": "2026-10-21T12:14:18.091268+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
