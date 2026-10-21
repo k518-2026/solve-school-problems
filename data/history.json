@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-21T12:03:30.876561+09:00",
-  "total_posted": 57,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-21T12:07:58.082112+09:00",
+  "total_posted": 58,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -670,6 +670,17 @@
       "category": "学校法制・政治的中立性と宗教的配慮",
       "file_path": "content/2026-10-21_pattern_c_c19_聖域と中立の羅針盤_主権者教育の均衡と信仰への配慮.md",
       "timestamp": "2026-10-21T12:03:30.876561+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "重力に抗う眼差しと、揺らぐ常識の境界線",
+      "pattern": "A",
+      "topic_id": "A18",
+      "category": "授業改善・概念変化理論",
+      "file_path": "content/2026-10-21_pattern_a_a18_重力に抗う眼差しと、揺らぐ常識の境界線.md",
+      "timestamp": "2026-10-21T12:07:58.082112+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
