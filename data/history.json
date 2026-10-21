@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-21T12:14:18.091268+09:00",
+  "last_run_at": "2026-10-22T08:33:49.153790+09:00",
   "total_posted": 59,
   "posts": [
     {
@@ -209,7 +209,10 @@
       "file_path": "content/2026-10-02_pattern_b_深夜の文字数カウンターと正規表現の魔法_通知表所見の嵐を越えて.md",
       "timestamp": "2026-10-02T17:31:54.019107+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-22T08:33:49.153790+09:00",
+      "blogger_repost_ep": 15
     },
     {
       "title": "法の下の盾――児童虐待の疑いと通告義務の法的決断",
@@ -697,6 +700,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 15,
+  "blogger_repost_next_ep": 16,
   "wp_repost_next_ep": 14
 }
