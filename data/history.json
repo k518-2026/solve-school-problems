@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-22T08:33:49.153790+09:00",
+  "last_run_at": "2026-10-23T08:31:37.465366+09:00",
   "total_posted": 59,
   "posts": [
     {
@@ -222,7 +222,10 @@
       "file_path": "content/2026-10-02_pattern_c_法の下の盾_児童虐待の疑いと通告義務の法的決断.md",
       "timestamp": "2026-10-02T22:39:08.690422+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-23T08:31:37.465366+09:00",
+      "blogger_repost_ep": 16
     },
     {
       "title": "夜の電話と対話の地平――保護者クレームを超える教育哲学",
@@ -700,6 +703,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 16,
+  "blogger_repost_next_ep": 17,
   "wp_repost_next_ep": 14
 }
