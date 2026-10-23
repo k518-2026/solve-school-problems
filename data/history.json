@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-24T08:23:53.185530+09:00",
+  "last_run_at": "2026-10-24T08:24:14.677407+09:00",
   "total_posted": 59,
   "posts": [
     {
@@ -214,7 +214,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-22T08:33:49.153790+09:00",
-      "blogger_repost_ep": 15
+      "blogger_repost_ep": 15,
+      "wp_posted_at": "2026-10-24T08:24:14.677407+09:00",
+      "wp_repost_ep": 15
     },
     {
       "title": "法の下の盾――児童虐待の疑いと通告義務の法的決断",
@@ -709,5 +711,5 @@
     }
   ],
   "blogger_repost_next_ep": 18,
-  "wp_repost_next_ep": 15
+  "wp_repost_next_ep": 16
 }
