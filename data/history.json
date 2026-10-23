@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-23T08:31:52.286702+09:00",
+  "last_run_at": "2026-10-24T08:23:53.185530+09:00",
   "total_posted": 59,
   "posts": [
     {
@@ -237,7 +237,10 @@
       "file_path": "content/2026-10-02_pattern_a_夜の電話と対話の地平_保護者クレームを超える教育哲学.md",
       "timestamp": "2026-10-02T22:58:33.219274+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-24T08:23:53.185530+09:00",
+      "blogger_repost_ep": 17
     },
     {
       "title": "雨雲を突き抜けるライブ・タイムテーブル――体育主任の祈りとクラウド連携の奇跡",
@@ -705,6 +708,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 17,
+  "blogger_repost_next_ep": 18,
   "wp_repost_next_ep": 15
 }
