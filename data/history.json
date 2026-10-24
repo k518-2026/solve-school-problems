@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-24T08:24:14.677407+09:00",
+  "last_run_at": "2026-10-25T07:41:35.867873+09:00",
   "total_posted": 59,
   "posts": [
     {
@@ -252,7 +252,10 @@
       "file_path": "content/2026-10-03_pattern_b_雨雲を突き抜けるライブ・タイムテーブル_体育主任の祈りとクラウド連携の奇跡.md",
       "timestamp": "2026-10-03T06:24:46.301973+09:00",
       "sent_to_wp": true,
-      "status": "publish"
+      "status": "publish",
+      "sent_to_blogger": true,
+      "blogger_posted_at": "2026-10-25T07:41:35.867873+09:00",
+      "blogger_repost_ep": 18
     },
     {
       "title": "熱砂のグラウンドと校長の天秤――安全配慮義務と国家賠償責任の狭間で",
@@ -710,6 +713,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 18,
+  "blogger_repost_next_ep": 19,
   "wp_repost_next_ep": 16
 }
