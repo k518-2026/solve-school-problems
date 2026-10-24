@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-25T07:41:35.867873+09:00",
+  "last_run_at": "2026-10-25T07:41:40.822567+09:00",
   "total_posted": 59,
   "posts": [
     {
@@ -229,7 +229,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-23T08:31:37.465366+09:00",
-      "blogger_repost_ep": 16
+      "blogger_repost_ep": 16,
+      "wp_posted_at": "2026-10-25T07:41:40.822567+09:00",
+      "wp_repost_ep": 16
     },
     {
       "title": "夜の電話と対話の地平――保護者クレームを超える教育哲学",
@@ -714,5 +716,5 @@
     }
   ],
   "blogger_repost_next_ep": 19,
-  "wp_repost_next_ep": 16
+  "wp_repost_next_ep": 17
 }
