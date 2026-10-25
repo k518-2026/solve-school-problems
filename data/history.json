@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-25T07:41:40.822567+09:00",
-  "total_posted": 59,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-25T11:37:35.527657+09:00",
+  "total_posted": 60,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -710,6 +710,17 @@
       "category": "年度末引き継ぎ・ナレッジ管理DX",
       "file_path": "content/2026-10-21_pattern_b_b20_記憶の断片を紡ぐクラウド：失われた引継ぎを再構築するナレッジベースの革命.md",
       "timestamp": "2026-10-21T12:14:18.091268+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "共生の境界線――地域自治の熱情と校長の統治権",
+      "pattern": "C",
+      "topic_id": "C20",
+      "category": "学校法制・学校運営協議会（コミュニティ・スクール）と校長の権限",
+      "file_path": "content/2026-10-25_pattern_c_c20_共生の境界線_地域自治の熱情と校長の統治権.md",
+      "timestamp": "2026-10-25T11:37:35.527657+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
