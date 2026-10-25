@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-25T11:37:35.527657+09:00",
-  "total_posted": 60,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-25T11:44:16.975718+09:00",
+  "total_posted": 61,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -721,6 +721,17 @@
       "category": "学校法制・学校運営協議会（コミュニティ・スクール）と校長の権限",
       "file_path": "content/2026-10-25_pattern_c_c20_共生の境界線_地域自治の熱情と校長の統治権.md",
       "timestamp": "2026-10-25T11:37:35.527657+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "揺らぐ境界線のための錨 ― 変化の渦に潜む『小さな一歩』を掬い上げる技術",
+      "pattern": "A",
+      "topic_id": "A19",
+      "category": "不登校支援・システムズアプローチ",
+      "file_path": "content/2026-10-25_pattern_a_a19_揺らぐ境界線のための錨_変化の渦に潜む『小さな一歩』を掬い上げる技術.md",
+      "timestamp": "2026-10-25T11:44:16.975718+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
