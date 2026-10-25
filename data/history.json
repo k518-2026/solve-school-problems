@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-26T07:46:00.757627+09:00",
+  "last_run_at": "2026-10-26T07:46:12.705699+09:00",
   "total_posted": 62,
   "posts": [
     {
@@ -244,7 +244,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-24T08:23:53.185530+09:00",
-      "blogger_repost_ep": 17
+      "blogger_repost_ep": 17,
+      "wp_posted_at": "2026-10-26T07:46:12.705699+09:00",
+      "wp_repost_ep": 17
     },
     {
       "title": "雨雲を突き抜けるライブ・タイムテーブル――体育主任の祈りとクラウド連携の奇跡",
@@ -751,5 +753,5 @@
     }
   ],
   "blogger_repost_next_ep": 20,
-  "wp_repost_next_ep": 17
+  "wp_repost_next_ep": 18
 }
