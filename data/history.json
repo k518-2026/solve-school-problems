@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-27T07:35:23.644630+09:00",
-  "total_posted": 66,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-27T07:41:57.793652+09:00",
+  "total_posted": 67,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -791,6 +791,17 @@
       "category": "学校法制・教員懲戒・指導",
       "file_path": "content/2026-10-27_pattern_c_c02_静寂を貫く法の正義_安全確保と体罰の境界に立つ決断.md",
       "timestamp": "2026-10-27T07:35:23.644630+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "透明な鳥籠と、自ら羽ばたくための『余白",
+      "pattern": "A",
+      "topic_id": "A01",
+      "category": "学級経営・内発的動機づけ",
+      "file_path": "content/2026-10-27_pattern_a_a01_透明な鳥籠と、自ら羽ばたくための『余白.md",
+      "timestamp": "2026-10-27T07:41:57.793652+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
