@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-26T22:52:54.181340+09:00",
-  "total_posted": 65,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-27T07:35:23.644630+09:00",
+  "total_posted": 66,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -780,6 +780,17 @@
       "category": "ネットワーク・インフラ改善",
       "file_path": "content/2026-10-26_pattern_b_b02_電波の迷宮を切り拓く羅針盤_公開授業を救った周波数帯の戦略.md",
       "timestamp": "2026-10-26T22:52:54.181340+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂を貫く法の正義――安全確保と体罰の境界に立つ決断",
+      "pattern": "C",
+      "topic_id": "C02",
+      "category": "学校法制・教員懲戒・指導",
+      "file_path": "content/2026-10-27_pattern_c_c02_静寂を貫く法の正義_安全確保と体罰の境界に立つ決断.md",
+      "timestamp": "2026-10-27T07:35:23.644630+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
