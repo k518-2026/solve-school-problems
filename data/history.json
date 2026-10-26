@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-26T22:39:57.770563+09:00",
-  "total_posted": 63,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-26T22:46:14.677399+09:00",
+  "total_posted": 64,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -758,6 +758,17 @@
       "category": "学校法制・いじめ防止",
       "file_path": "content/2026-10-26_pattern_c_c01_沈黙の境界線_重大事態への法的覚醒と守護の責務.md",
       "timestamp": "2026-10-26T22:39:57.770563+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "共鳴する旋律と、統率の輪郭――群像の不協和音を調律する「奉仕」の哲学",
+      "pattern": "A",
+      "topic_id": "A20",
+      "category": "部活動・リーダーシップ理論",
+      "file_path": "content/2026-10-26_pattern_a_a20_共鳴する旋律と、統率の輪郭_群像の不協和音を調律する「奉仕」の哲学.md",
+      "timestamp": "2026-10-26T22:46:14.677399+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
