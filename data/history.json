@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-27T07:41:57.793652+09:00",
-  "total_posted": 67,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-27T07:48:59.792681+09:00",
+  "total_posted": 68,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -802,6 +802,17 @@
       "category": "学級経営・内発的動機づけ",
       "file_path": "content/2026-10-27_pattern_a_a01_透明な鳥籠と、自ら羽ばたくための『余白.md",
       "timestamp": "2026-10-27T07:41:57.793652+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "沈黙する声の海を越えて――500通の祈りを紡ぐPythonの知恵",
+      "pattern": "B",
+      "topic_id": "B03",
+      "category": "データ処理・Python/テキスト処理",
+      "file_path": "content/2026-10-27_pattern_b_b03_沈黙する声の海を越えて_500通の祈りを紡ぐPythonの知恵.md",
+      "timestamp": "2026-10-27T07:48:59.792681+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
