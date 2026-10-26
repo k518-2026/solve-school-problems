@@ -1246,7 +1246,43 @@ topic_id: "{topic.get('id', 'C01')}"
             ),
         }
 
-        scene_desc = topic_scenes.get(tid, "")
+        scene_desc = ""
+        # 1. First attempt: If story_body is provided, extract an authentic, story-aligned scene via local LLM
+        # so compositions do not become repetitive and directly match the actual story narrative.
+        if story_body and len(story_body.strip()) > 200:
+            try:
+                excerpt = story_body.strip()[:1500]
+                extractor_prompt = (
+                    "You are an anime art director. Based on this short story excerpt, write a single concise English visual scene description "
+                    "(2-3 sentences, 40-70 words) for a high quality anime illustration.\n"
+                    "Constraints:\n"
+                    "- Focus on the specific room/setting, unique lighting/time of day, camera angle/composition, and distinctive visual objects from the text.\n"
+                    "- Describe the two adult educators (e.g. young teacher, veteran mentor, principal, supervisor), their attire, postures, and warm candid interaction.\n"
+                    "- Emphasize good contrast between clothing and furniture/chairs.\n"
+                    "- Strictly NO text, NO letters, NO signage, NO banners, NO posters with words.\n"
+                    "- Output ONLY the English scene description without any preface, explanations, or quotes.\n\n"
+                    f"Story title: {title}\n"
+                    f"Story excerpt:\n{excerpt}\n"
+                )
+                extracted = self.call_ollama_chat(
+                    model=self.writer_model,
+                    messages=[{"role": "user", "content": extractor_prompt}],
+                    temperature=0.6,
+                    num_predict=140,
+                    timeout=60,
+                )
+                if extracted and len(extracted.strip()) > 30:
+                    clean_extracted = re.sub(r'^(Here is|Visual scene|Description|Prompt)[:\s]*', '', extracted.strip(), flags=re.I)
+                    clean_extracted = clean_extracted.strip('"\n\r ')
+                    scene_desc = clean_extracted
+                    logger.info(f"  -> Generated dynamic scene description from story body: {scene_desc[:120]}...")
+            except Exception as e:
+                logger.debug(f"Dynamic scene extraction from story_body failed ({e}), falling back to catalog scene.")
+
+        # 2. Fallback to predefined topic scene if LLM extraction did not produce a scene
+        if not scene_desc:
+            scene_desc = topic_scenes.get(tid, "")
+
         if not scene_desc:
             if clean_pattern == "A":
                 scene_desc = (
