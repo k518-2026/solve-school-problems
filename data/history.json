@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-27T09:01:56.966790+09:00",
+  "last_run_at": "2026-10-27T09:02:13.029491+09:00",
   "total_posted": 68,
   "posts": [
     {
@@ -259,7 +259,9 @@
       "status": "publish",
       "sent_to_blogger": true,
       "blogger_posted_at": "2026-10-25T07:41:35.867873+09:00",
-      "blogger_repost_ep": 18
+      "blogger_repost_ep": 18,
+      "wp_posted_at": "2026-10-27T09:02:13.029491+09:00",
+      "wp_repost_ep": 18
     },
     {
       "title": "熱砂のグラウンドと校長の天秤――安全配慮義務と国家賠償責任の狭間で",
@@ -821,5 +823,5 @@
     }
   ],
   "blogger_repost_next_ep": 21,
-  "wp_repost_next_ep": 18
+  "wp_repost_next_ep": 19
 }
