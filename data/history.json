@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-27T09:02:13.029491+09:00",
+  "last_run_at": "2026-10-28T08:56:40.917487+09:00",
   "total_posted": 68,
   "posts": [
     {
@@ -274,7 +274,9 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-10-26T07:46:00.757627+09:00",
-      "blogger_repost_ep": 19
+      "blogger_repost_ep": 19,
+      "wp_posted_at": "2026-10-28T08:56:40.917487+09:00",
+      "wp_repost_ep": 19
     },
     {
       "title": "背中の目と淀みない川――教室のざわめきを鎮めるモメンタムの技術",
@@ -823,5 +825,5 @@
     }
   ],
   "blogger_repost_next_ep": 21,
-  "wp_repost_next_ep": 19
+  "wp_repost_next_ep": 20
 }
