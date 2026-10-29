@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-28T08:56:46.632185+09:00",
+  "last_run_at": "2026-10-29T09:18:10.310427+09:00",
   "total_posted": 68,
   "posts": [
     {
@@ -313,7 +313,9 @@
       "timestamp": "2026-10-03T17:28:41.905639+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish"
+      "status": "publish",
+      "blogger_posted_at": "2026-10-29T09:18:10.310427+09:00",
+      "blogger_repost_ep": 22
     },
     {
       "title": "夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論",
@@ -826,6 +828,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 22,
+  "blogger_repost_next_ep": 23,
   "wp_repost_next_ep": 20
 }
