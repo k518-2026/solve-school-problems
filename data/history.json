@@ -1,7 +1,7 @@
 {
   "last_pattern": "B",
   "last_run_at": "2026-10-29T09:18:27.371407+09:00",
-  "total_posted": 68,
+  "total_posted": 96,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -478,6 +478,83 @@
       "status": "github_pages"
     },
     {
+      "title": "情報の海を泳ぐための『問い』の羅針盤",
+      "pattern": "A",
+      "topic_id": "A12",
+      "category": "探究学習・教育哲学",
+      "file_path": "content/2026-10-09_pattern_a_a12_情報の海を泳ぐための『問い』の羅針盤.md",
+      "timestamp": "2026-10-09T06:19:16.007879+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "デジタルが紡ぐ、信頼のバトン ― 修学旅行の嵐を越えて",
+      "pattern": "B",
+      "topic_id": "B12",
+      "category": "情報セキュリティ・誤送信防止",
+      "file_path": "content/2026-10-09_pattern_b_b12_デジタルが紡ぐ、信頼のバトン_修学旅行の嵐を越えて.md",
+      "timestamp": "2026-10-09T06:19:16.010886+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "レンズが映し出した境界線 ― 肖像権と安全の狭間で",
+      "pattern": "C",
+      "topic_id": "C12",
+      "category": "学校法制・個人情報保護・肖像権",
+      "file_path": "content/2026-10-09_pattern_c_c12_レンズが映し出した境界線_肖像権と安全の狭間で.md",
+      "timestamp": "2026-10-09T06:27:57.579992+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "「間違い」という名の、学びの種を蒔くために",
+      "pattern": "A",
+      "topic_id": "A13",
+      "category": "学級経営・心理的安全性",
+      "file_path": "content/2026-10-09_pattern_a_a13_「間違い」という名の、学びの種を蒔くために.md",
+      "timestamp": "2026-10-09T08:21:32.720623+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "時を繋ぐデータ、未来を拓く指先 ― 進路指導の現場で起きた、リレーショナル・エール",
+      "pattern": "B",
+      "topic_id": "B13",
+      "category": "進路指導・調査書データ統合",
+      "file_path": "content/2026-10-09_pattern_b_b13_時を繋ぐデータ、未来を拓く指先_進路指導の現場で起きた、リレーショナル・エール.md",
+      "timestamp": "2026-10-09T09:00:06.427211+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "「正解」という名の仮面を脱ぐとき――葛藤の海を渡る道徳教育",
+      "pattern": "A",
+      "topic_id": "A14",
+      "category": "道徳教育・発達心理学",
+      "file_path": "content/2026-10-09_pattern_a_a14_「正解」という名の仮面を脱ぐとき_葛藤の海を渡る道徳教育.md",
+      "timestamp": "2026-10-09T19:35:31.930649+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "憲法の静かなる規律――義務教育の無償原則と教育の質をめぐる相克",
+      "pattern": "C",
+      "topic_id": "C13",
+      "category": "学校法制・日本国憲法・無償原則と私費負担",
+      "file_path": "content/2026-10-09_pattern_c_c13_憲法の静かなる規律_義務教育の無償原則と教育の質をめぐる相克.md",
+      "timestamp": "2026-10-09T19:38:41.894475+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
       "title": "境界を越える守護者たち：一通のメールに込められた知恵と技術の防波堤",
       "pattern": "B",
       "topic_id": "B12",
@@ -495,6 +572,83 @@
       "category": "学校法制・個人情報保護・肖像権",
       "file_path": "content/2026-10-10_pattern_c_c12_静かなる教室の肖像_見えざる境界線を守るための決断.md",
       "timestamp": "2026-10-10T01:40:24.277996+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "廊下の空白、法的責任の境界線",
+      "pattern": "C",
+      "topic_id": "C14",
+      "category": "学校法制・学校事故・生徒間トラブルと民法責任",
+      "file_path": "content/2026-10-10_pattern_c_c14_廊下の空白、法的責任の境界線.md",
+      "timestamp": "2026-10-10T06:59:29.238101+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "赤ペンとデジタルの地図 ― 放課後の残業を、明日への対話に変える魔法",
+      "pattern": "B",
+      "topic_id": "B14",
+      "category": "授業ICT・リアルタイム小テスト",
+      "file_path": "content/2026-10-10_pattern_b_b14_赤ペンとデジタルの地図_放課後の残業を、明日への対話に変える魔法.md",
+      "timestamp": "2026-10-10T09:00:01.794629+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "グラデーションの旋律 ― 違いを「障害」から「多様性」へ書き換える",
+      "pattern": "A",
+      "topic_id": "A15",
+      "category": "インクルーシブ教育/UDL",
+      "file_path": "content/2026-10-10_pattern_a_a15_グラデーションの旋律_違いを「障害」から「多様性」へ書き換える.md",
+      "timestamp": "2026-10-10T22:51:08.080737+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX",
+      "pattern": "B",
+      "topic_id": "B15",
+      "category": "職員会議・ペーパーレス議事録",
+      "file_path": "content/2026-10-10_pattern_b_b15_紙の重圧を解き放つクラウドの魔法：教頭の溜息と若手のコードが織りなす校務DX.md",
+      "timestamp": "2026-10-10T23:13:56.930511+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂の境界線――沸騰する感情を飼いならすための処方箋",
+      "pattern": "A",
+      "topic_id": "A16",
+      "category": "生徒指導・アンガーマネジメント",
+      "file_path": "content/2026-10-10_pattern_a_a16_静寂の境界線_沸騰する感情を飼いならすための処方箋.md",
+      "timestamp": "2026-10-10T23:14:00.566046+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "時数という名の規範：教育課程の正当性を巡る決断",
+      "pattern": "C",
+      "topic_id": "C15",
+      "category": "学校法制・教育課程編成権と学習指導要領",
+      "file_path": "content/2026-10-10_pattern_c_c15_時数という名の規範：教育課程の正当性を巡る決断.md",
+      "timestamp": "2026-10-10T23:14:53.688064+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体",
+      "pattern": "B",
+      "topic_id": "B16",
+      "category": "校内ネットワーク・DNS/プロキシ診断",
+      "file_path": "content/2026-10-10_pattern_b_b16_見えない壁を切り裂く、一筋の診断：GIGAスクールにおける『繋がらない』の正体.md",
+      "timestamp": "2026-10-10T23:17:54.350168+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
@@ -522,12 +676,89 @@
       "status": "github_pages"
     },
     {
+      "title": "紙の山を越えるデジタルな導き――生徒IDで繋ぐ『進路指導の絆』",
+      "pattern": "B",
+      "topic_id": "B13",
+      "category": "進路指導・調査書データ統合",
+      "file_path": "content/2026-10-11_pattern_b_b13_紙の山を越えるデジタルな導き_生徒IDで繋ぐ『進路指導の絆.md",
+      "timestamp": "2026-10-11T07:26:00.935775+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "学びの正統性を守るために ―免許外教科担任の狭間に立つ決断―",
+      "pattern": "C",
+      "topic_id": "C16",
+      "category": "学校法制・免許法・無免許授業の防止",
+      "file_path": "content/2026-10-11_pattern_c_c16_学びの正統性を守るために_免許外教科担任の狭間に立つ決断.md",
+      "timestamp": "2026-10-11T07:26:00.936064+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "空白のキャンバスに、偶然という名の筆跡を",
+      "pattern": "A",
+      "topic_id": "A17",
+      "category": "キャリア教育・青年心理学",
+      "file_path": "content/2026-10-11_pattern_a_a17_空白のキャンバスに、偶然という名の筆跡を.md",
+      "timestamp": "2026-10-11T20:13:55.874554+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
       "title": "憲法の重みと教室の温度――義務教育の無償原則を巡る静かなる闘争",
       "pattern": "C",
       "topic_id": "C13",
       "category": "学校法制・日本国憲法・無償原則と私費負担",
       "file_path": "content/2026-10-12_pattern_c_c13_憲法の重みと教室の温度_義務教育の無償原則を巡る静かなる闘争.md",
       "timestamp": "2026-10-12T07:08:22.995752+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "鏡の中の『正解』を脱ぎ捨てる時",
+      "pattern": "A",
+      "topic_id": "A14",
+      "category": "道徳教育・発達心理学",
+      "file_path": "content/2026-10-12_pattern_a_a14_鏡の中の『正解』を脱ぎ捨てる時.md",
+      "timestamp": "2026-10-12T20:28:35.060149+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "紙の束から解放される図書室：QRコードとGASが紡ぐ「届ける」ための革新",
+      "pattern": "B",
+      "topic_id": "B17",
+      "category": "図書室・教材在庫管理DX",
+      "file_path": "content/2026-10-12_pattern_b_b17_紙の束から解放される図書室：QRコードとGASが紡ぐ「届ける」ための革新.md",
+      "timestamp": "2026-10-12T20:31:58.993767+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "聖域の境界線――災害下における児童の安全と公共空間の法理",
+      "pattern": "C",
+      "topic_id": "C17",
+      "category": "学校法制・防災と指定避難所運営",
+      "file_path": "content/2026-10-12_pattern_c_c17_聖域の境界線_災害下における児童の安全と公共空間の法理.md",
+      "timestamp": "2026-10-12T20:38:57.583136+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "揺らぐ砂上の真理――概念の地殻変動を促すための対話",
+      "pattern": "A",
+      "topic_id": "A18",
+      "category": "授業改善・概念変化理論",
+      "file_path": "content/2026-10-12_pattern_a_a18_揺らぐ砂上の真理_概念の地殻変動を促すための対話.md",
+      "timestamp": "2026-10-12T20:46:05.809846+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
@@ -550,6 +781,72 @@
       "category": "校外学習・しおり＆緊急連絡DX",
       "file_path": "content/2026-10-13_pattern_b_b18_深夜の成績集計とスプレッドシートの奇跡_年配教員を救うGASと配列数式.md",
       "timestamp": "2026-10-13T17:50:42.580675+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "正義の天秤――主権者教育の矜持と信仰の自由の調和",
+      "pattern": "C",
+      "topic_id": "C19",
+      "category": "学校法制・政治的中立性と宗教的配慮",
+      "file_path": "content/2026-10-13_pattern_c_c19_正義の天秤_主権者教育の矜持と信仰の自由の調和.md",
+      "timestamp": "2026-10-13T19:38:19.509442+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静かな教室の砂時計――「来ること」の重圧を解くための対話",
+      "pattern": "A",
+      "topic_id": "A19",
+      "category": "不登校支援・システムズアプローチ",
+      "file_path": "content/2026-10-13_pattern_a_a19_静かな教室の砂時計_「来ること」の重圧を解くための対話.md",
+      "timestamp": "2026-10-13T19:47:33.145245+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "一筆の重みと一行のコード――卒業証書に宿る「正確さ」の継承",
+      "pattern": "B",
+      "topic_id": "B19",
+      "category": "賞状・通知文の差し込み印刷DX",
+      "file_path": "content/2026-10-13_pattern_b_b19_一筆の重みと一行のコード_卒業証書に宿る「正確さ」の継承.md",
+      "timestamp": "2026-10-13T19:57:28.913814+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "聖域の境界線――コミュニティ・スクールにおける校長の権限と法の盾",
+      "pattern": "C",
+      "topic_id": "C20",
+      "category": "学校法制・学校運営協議会（コミュニティ・スクール）と校長の権限",
+      "file_path": "content/2026-10-13_pattern_c_c20_聖域の境界線_コミュニティ・スクールにおける校長の権限と法の盾.md",
+      "timestamp": "2026-10-13T20:55:19.745568+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "旋律の断層――支配と奉仕の境界線で",
+      "pattern": "A",
+      "topic_id": "A20",
+      "category": "部活動・リーダーシップ理論",
+      "file_path": "content/2026-10-13_pattern_a_a20_旋律の断層_支配と奉仕の境界線で.md",
+      "timestamp": "2026-10-13T21:00:28.884584+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "断絶する記憶をクラウドへ：ナレッジの絆を紡ぐ校務DXの夜",
+      "pattern": "B",
+      "topic_id": "B20",
+      "category": "年度末引き継ぎ・ナレッジ管理DX",
+      "file_path": "content/2026-10-13_pattern_b_b20_断絶する記憶をクラウドへ：ナレッジの絆を紡ぐ校務DXの夜.md",
+      "timestamp": "2026-10-13T21:04:48.557669+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
@@ -594,6 +891,17 @@
       "category": "授業ICT・リアルタイム小テスト",
       "file_path": "content/2026-10-15_pattern_b_b14_紅く染まる職員室の灯と、瞬時に色づく正答率の地図.md",
       "timestamp": "2026-10-15T20:46:43.306758+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂の裏側にある法理――重大事態の境界線と校長の覚悟",
+      "pattern": "C",
+      "topic_id": "C01",
+      "category": "学校法制・いじめ防止",
+      "file_path": "content/2026-10-17_pattern_c_c01_静寂の裏側にある法理_重大事態の境界線と校長の覚悟.md",
+      "timestamp": "2026-10-17T09:05:14.377331+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

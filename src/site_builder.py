@@ -146,7 +146,7 @@ def collect_all_stories(history_mgr: Optional[HistoryManager] = None) -> List[Di
                 ordered_files.append(p)
                 seen_resolved.add(res)
 
-    # 2. Remaining stocked files in content/, ordered chronologically by filename date prefix & mtime
+    # 2. Remaining stocked files in content/ (if any were not recorded in history)
     content_dir = Path("content")
     if content_dir.exists():
         unposted_candidates = []
@@ -164,6 +164,25 @@ def collect_all_stories(history_mgr: Optional[HistoryManager] = None) -> List[Di
         for _, _, md_path in unposted_candidates:
             ordered_files.append(md_path)
             seen_resolved.add(md_path.resolve())
+
+    # 3. Always ensure final ordered_files list is strictly chronologically sorted
+    hist_ts_map = {}
+    for post in history_mgr.history_data.get("posts", []):
+        fn = Path(post.get("file_path", "")).name
+        ts = post.get("timestamp") or post.get("posted_at") or ""
+        if fn and ts:
+            hist_ts_map[fn] = str(ts)
+
+    def _file_sort_key(p: Path):
+        fn = p.name
+        if fn in hist_ts_map:
+            ts = hist_ts_map[fn]
+            return (ts[:10], ts, fn)
+        date_pfx = fn[:10] if re.match(r"^\d{4}-\d{2}-\d{2}", fn) else "0000-00-00"
+        mtime_iso = datetime.fromtimestamp(p.stat().st_mtime).isoformat()
+        return (date_pfx, mtime_iso, fn)
+
+    ordered_files.sort(key=_file_sort_key)
 
     stories: List[Dict[str, Any]] = []
     for idx, md_path in enumerate(ordered_files, start=1):
