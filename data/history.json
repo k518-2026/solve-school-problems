@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-29T09:18:10.310427+09:00",
+  "last_run_at": "2026-10-29T09:18:27.371407+09:00",
   "total_posted": 68,
   "posts": [
     {
@@ -289,7 +289,9 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-10-27T09:01:56.966790+09:00",
-      "blogger_repost_ep": 20
+      "blogger_repost_ep": 20,
+      "wp_posted_at": "2026-10-29T09:18:27.371407+09:00",
+      "wp_repost_ep": 20
     },
     {
       "title": "朝の豪雨とダッシュボードの緑の光――野球部顧問を救うワンクリック緊急連絡システム",
@@ -829,5 +831,5 @@
     }
   ],
   "blogger_repost_next_ep": 23,
-  "wp_repost_next_ep": 20
+  "wp_repost_next_ep": 21
 }
