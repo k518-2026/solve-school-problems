@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-30T18:01:12.488939+09:00",
-  "total_posted": 98,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-30T18:05:31.460821+09:00",
+  "total_posted": 99,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1155,6 +1155,17 @@
       "category": "授業改善・協調学習",
       "file_path": "content/2026-10-30_pattern_a_a02_織りなされる糸の重み_「個」の孤立を溶かす、共鳴する学びの設計.md",
       "timestamp": "2026-10-30T18:01:12.488939+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "電子の記憶を呼び覚ます指先――失われた行事計画とクラウドの守護神",
+      "pattern": "B",
+      "topic_id": "B04",
+      "category": "セキュリティ・ファイル共有",
+      "file_path": "content/2026-10-30_pattern_b_b04_電子の記憶を呼び覚ます指先_失われた行事計画とクラウドの守護神.md",
+      "timestamp": "2026-10-30T18:05:31.460821+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
