@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-30T09:11:11.259188+09:00",
+  "last_run_at": "2026-10-30T09:11:41.624768+09:00",
   "total_posted": 96,
   "posts": [
     {
@@ -304,7 +304,9 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-10-28T08:56:46.632185+09:00",
-      "blogger_repost_ep": 21
+      "blogger_repost_ep": 21,
+      "wp_posted_at": "2026-10-30T09:11:41.624768+09:00",
+      "wp_repost_ep": 21
     },
     {
       "title": "善意の殻に隠れた盾――教員の私用端末利用と服務規律の限界",
@@ -1141,5 +1143,5 @@
     }
   ],
   "blogger_repost_next_ep": 24,
-  "wp_repost_next_ep": 21
+  "wp_repost_next_ep": 22
 }
