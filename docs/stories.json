@@ -1,5 +1,31 @@
 [
   {
+    "no": 98,
+    "story_id": "ep98-a02",
+    "topic_id": "A02",
+    "pattern": "A",
+    "title": "織りなされる糸の重み――「個」の孤立を溶かす、共鳴する学びの設計",
+    "category": "授業改善・協調学習",
+    "keywords": "最近接発達領域（ZPD） / 認知的足場かけ（Scaffolding） / ジグソー法と相互依存性",
+    "has_image": true,
+    "url": "stories/ep98-a02.html",
+    "image": "assets/images/ep98-a02.png",
+    "char_count": 3891
+  },
+  {
+    "no": 97,
+    "story_id": "ep97-c03",
+    "topic_id": "C03",
+    "pattern": "C",
+    "title": "学びの居場所と法の地平――不登校児の「出席」を巡る責務と裁量",
+    "category": "学校法制・就学義務・不登校",
+    "keywords": "教育基本法第4条・第5条 / 義務教育の段階における普通教育に相当する教育の機会の確保等に関する法律 / 学校教育法施行規則第24条・第33条",
+    "has_image": true,
+    "url": "stories/ep97-c03.html",
+    "image": "assets/images/ep97-c03.png",
+    "char_count": 3808
+  },
+  {
     "no": 96,
     "story_id": "ep96-b03",
     "topic_id": "B03",

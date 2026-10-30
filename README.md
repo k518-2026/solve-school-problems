@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **96** 話（うち挿絵付き **96** 話 / 最終更新: 2026-10-30 09:11 JST）
+- **収録作品数**: 全 **98** 話（うち挿絵付き **98** 話 / 最終更新: 2026-10-30 18:01 JST）
 
 ---
 
@@ -18,6 +18,8 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 98 | 📘 A: 教育学・心理学 | `A02` | **[織りなされる糸の重み――「個」の孤立を溶かす、共鳴する学びの設計](https://k518-2026.github.io/solve-school-problems/stories/ep98-a02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep98-a02.html) | [📄原稿](<content/2026-10-30_pattern_a_a02_織りなされる糸の重み_「個」の孤立を溶かす、共鳴する学びの設計.md>) | [🎨挿絵](<content/2026-10-30_pattern_a_a02_織りなされる糸の重み_「個」の孤立を溶かす、共鳴する学びの設計.png>) | 授業改善・協調学習 | 3,891字 |
+| 97 | ⚖️ C: 学校法制・法務 | `C03` | **[学びの居場所と法の地平――不登校児の「出席」を巡る責務と裁量](https://k518-2026.github.io/solve-school-problems/stories/ep97-c03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep97-c03.html) | [📄原稿](<content/2026-10-30_pattern_c_c03_学びの居場所と法の地平_不登校児の「出席」を巡る責務と裁量.md>) | [🎨挿絵](<content/2026-10-30_pattern_c_c03_学びの居場所と法の地平_不登校児の「出席」を巡る責務と裁量.png>) | 学校法制・就学義務・不登校 | 3,808字 |
 | 96 | 💻 B: 校務DX・ICT | `B03` | **[沈黙する声の海を越えて――500通の祈りを紡ぐPythonの知恵](https://k518-2026.github.io/solve-school-problems/stories/ep96-b03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep96-b03.html) | [📄原稿](<content/2026-10-27_pattern_b_b03_沈黙する声の海を越えて_500通の祈りを紡ぐPythonの知恵.md>) | [🎨挿絵](<content/2026-10-27_pattern_b_b03_沈黙する声の海を越えて_500通の祈りを紡ぐPythonの知恵.png>) | データ処理・Python/テキスト処理 | 3,857字 |
 | 95 | 📘 A: 教育学・心理学 | `A01` | **[透明な鳥籠と、自ら羽ばたくための『余白](https://k518-2026.github.io/solve-school-problems/stories/ep95-a01.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep95-a01.html) | [📄原稿](<content/2026-10-27_pattern_a_a01_透明な鳥籠と、自ら羽ばたくための『余白.md>) | [🎨挿絵](<content/2026-10-27_pattern_a_a01_透明な鳥籠と、自ら羽ばたくための『余白.png>) | 学級経営・内発的動機づけ | 3,403字 |
 | 94 | ⚖️ C: 学校法制・法務 | `C02` | **[静寂を貫く法の正義――安全確保と体罰の境界に立つ決断](https://k518-2026.github.io/solve-school-problems/stories/ep94-c02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep94-c02.html) | [📄原稿](<content/2026-10-27_pattern_c_c02_静寂を貫く法の正義_安全確保と体罰の境界に立つ決断.md>) | [🎨挿絵](<content/2026-10-27_pattern_c_c02_静寂を貫く法の正義_安全確保と体罰の境界に立つ決断.png>) | 学校法制・教員懲戒・指導 | 3,542字 |

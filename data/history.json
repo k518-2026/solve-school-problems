@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-30T09:11:41.624768+09:00",
-  "total_posted": 96,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-30T18:01:12.488939+09:00",
+  "total_posted": 98,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -304,9 +304,7 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-10-28T08:56:46.632185+09:00",
-      "blogger_repost_ep": 21,
-      "wp_posted_at": "2026-10-30T09:11:41.624768+09:00",
-      "wp_repost_ep": 21
+      "blogger_repost_ep": 21
     },
     {
       "title": "善意の殻に隠れた盾――教員の私用端末利用と服務規律の限界",
@@ -330,9 +328,7 @@
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-10-30T09:11:11.259188+09:00",
-      "blogger_repost_ep": 23
+      "status": "publish"
     },
     {
       "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
@@ -1140,8 +1136,30 @@
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
+    },
+    {
+      "title": "学びの居場所と法の地平――不登校児の「出席」を巡る責務と裁量",
+      "pattern": "C",
+      "topic_id": "C03",
+      "category": "学校法制・就学義務・不登校",
+      "file_path": "content/2026-10-30_pattern_c_c03_学びの居場所と法の地平_不登校児の「出席」を巡る責務と裁量.md",
+      "timestamp": "2026-10-30T17:57:19.855425+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "織りなされる糸の重み――「個」の孤立を溶かす、共鳴する学びの設計",
+      "pattern": "A",
+      "topic_id": "A02",
+      "category": "授業改善・協調学習",
+      "file_path": "content/2026-10-30_pattern_a_a02_織りなされる糸の重み_「個」の孤立を溶かす、共鳴する学びの設計.md",
+      "timestamp": "2026-10-30T18:01:12.488939+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 24,
-  "wp_repost_next_ep": 22
+  "blogger_repost_next_ep": 23,
+  "wp_repost_next_ep": 21
 }
