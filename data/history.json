@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-10-29T09:18:27.371407+09:00",
+  "last_run_at": "2026-10-30T09:11:11.259188+09:00",
   "total_posted": 96,
   "posts": [
     {
@@ -328,7 +328,9 @@
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish"
+      "status": "publish",
+      "blogger_posted_at": "2026-10-30T09:11:11.259188+09:00",
+      "blogger_repost_ep": 23
     },
     {
       "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
@@ -1138,6 +1140,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 23,
+  "blogger_repost_next_ep": 24,
   "wp_repost_next_ep": 21
 }
