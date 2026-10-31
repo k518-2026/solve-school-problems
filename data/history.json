@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-10-31T23:25:15.610509+09:00",
-  "total_posted": 100,
+  "last_pattern": "A",
+  "last_run_at": "2026-10-31T23:29:04.390963+09:00",
+  "total_posted": 101,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1179,6 +1179,17 @@
       "category": "学校法制・児童虐待防止",
       "file_path": "content/2026-10-31_pattern_c_c05_法の盾と子供の涙_沈黙を破る通告義務の峻烈なる決断.md",
       "timestamp": "2026-10-31T23:25:15.610509+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "澱んだ水面に投げられた石――「無力感」の殻を剥ぐための対話",
+      "pattern": "A",
+      "topic_id": "A03",
+      "category": "生徒指導・学習観の変革",
+      "file_path": "content/2026-10-31_pattern_a_a03_澱んだ水面に投げられた石_「無力感」の殻を剥ぐための対話.md",
+      "timestamp": "2026-10-31T23:29:04.390963+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

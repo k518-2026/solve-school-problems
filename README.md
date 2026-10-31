@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **100** 話（うち挿絵付き **100** 話 / 最終更新: 2026-10-31 23:25 JST）
+- **収録作品数**: 全 **101** 話（うち挿絵付き **101** 話 / 最終更新: 2026-10-31 23:29 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 101 | 📘 A: 教育学・心理学 | `A03` | **[澱んだ水面に投げられた石――「無力感」の殻を剥ぐための対話](https://k518-2026.github.io/solve-school-problems/stories/ep101-a03.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep101-a03.html) | [📄原稿](<content/2026-10-31_pattern_a_a03_澱んだ水面に投げられた石_「無力感」の殻を剥ぐための対話.md>) | [🎨挿絵](<content/2026-10-31_pattern_a_a03_澱んだ水面に投げられた石_「無力感」の殻を剥ぐための対話.png>) | 生徒指導・学習観の変革 | 3,588字 |
 | 100 | ⚖️ C: 学校法制・法務 | `C05` | **[法の盾と子供の涙――沈黙を破る通告義務の峻烈なる決断](https://k518-2026.github.io/solve-school-problems/stories/ep100-c05.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep100-c05.html) | [📄原稿](<content/2026-10-31_pattern_c_c05_法の盾と子供の涙_沈黙を破る通告義務の峻烈なる決断.md>) | [🎨挿絵](<content/2026-10-31_pattern_c_c05_法の盾と子供の涙_沈黙を破る通告義務の峻烈なる決断.png>) | 学校法制・児童虐待防止 | 3,308字 |
 | 99 | 💻 B: 校務DX・ICT | `B04` | **[電子の記憶を呼び覚ます指先――失われた行事計画とクラウドの守護神](https://k518-2026.github.io/solve-school-problems/stories/ep99-b04.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep99-b04.html) | [📄原稿](<content/2026-10-30_pattern_b_b04_電子の記憶を呼び覚ます指先_失われた行事計画とクラウドの守護神.md>) | [🎨挿絵](<content/2026-10-30_pattern_b_b04_電子の記憶を呼び覚ます指先_失われた行事計画とクラウドの守護神.png>) | セキュリティ・ファイル共有 | 4,174字 |
 | 98 | 📘 A: 教育学・心理学 | `A02` | **[織りなされる糸の重み――「個」の孤立を溶かす、共鳴する学びの設計](https://k518-2026.github.io/solve-school-problems/stories/ep98-a02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep98-a02.html) | [📄原稿](<content/2026-10-30_pattern_a_a02_織りなされる糸の重み_「個」の孤立を溶かす、共鳴する学びの設計.md>) | [🎨挿絵](<content/2026-10-30_pattern_a_a02_織りなされる糸の重み_「個」の孤立を溶かす、共鳴する学びの設計.png>) | 授業改善・協調学習 | 3,891字 |
