@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-10-31T08:59:48.188741+09:00",
-  "total_posted": 99,
+  "last_pattern": "C",
+  "last_run_at": "2026-10-31T23:25:15.610509+09:00",
+  "total_posted": 100,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1168,6 +1168,17 @@
       "category": "セキュリティ・ファイル共有",
       "file_path": "content/2026-10-30_pattern_b_b04_電子の記憶を呼び覚ます指先_失われた行事計画とクラウドの守護神.md",
       "timestamp": "2026-10-30T18:05:31.460821+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "法の盾と子供の涙――沈黙を破る通告義務の峻烈なる決断",
+      "pattern": "C",
+      "topic_id": "C05",
+      "category": "学校法制・児童虐待防止",
+      "file_path": "content/2026-10-31_pattern_c_c05_法の盾と子供の涙_沈黙を破る通告義務の峻烈なる決断.md",
+      "timestamp": "2026-10-31T23:25:15.610509+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

@@ -1,5 +1,18 @@
 [
   {
+    "no": 100,
+    "story_id": "ep100-c05",
+    "topic_id": "C05",
+    "pattern": "C",
+    "title": "法の盾と子供の涙――沈黙を破る通告義務の峻烈なる決断",
+    "category": "学校法制・児童虐待防止",
+    "keywords": "児童虐待の防止等に関する法律第6条（通告義務） / 児童福祉法第25条 / 守秘義務の適用除外",
+    "has_image": true,
+    "url": "stories/ep100-c05.html",
+    "image": "assets/images/ep100-c05.png",
+    "char_count": 3308
+  },
+  {
     "no": 99,
     "story_id": "ep99-b04",
     "topic_id": "B04",

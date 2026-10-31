@@ -15,10 +15,10 @@
       外部生成AI APIは一切使用せず、Mac mini M4 ローカルAI（Ollama &amp; Draw Things FLUX.2）で執筆・挿絵生成し、GitHub Pages上で公開しています。
     </p>
     <div class="stats-bar">
-      <div class="stat-pill"><strong>99</strong> 収録エピソード</div>
-      <div class="stat-pill"><strong>99</strong> 挿絵付き作品</div>
-      <div class="stat-pill">📘 A: <strong>33</strong> ／ 💻 B: <strong>33</strong> ／ ⚖️ C: <strong>33</strong></div>
-      <div class="stat-pill">最終更新: 2026-10-31 08:59 JST</div>
+      <div class="stat-pill"><strong>100</strong> 収録エピソード</div>
+      <div class="stat-pill"><strong>100</strong> 挿絵付き作品</div>
+      <div class="stat-pill">📘 A: <strong>33</strong> ／ 💻 B: <strong>33</strong> ／ ⚖️ C: <strong>34</strong></div>
+      <div class="stat-pill">最終更新: 2026-10-31 23:25 JST</div>
     </div>
   </header>
 
@@ -27,14 +27,14 @@
       <div class="filter-group">
         <input type="search" id="searchInput" class="search-input" placeholder="タイトル・教育理論・GAS/ICT技術・教育法規・登場人物で検索..." oninput="filterCards()" />
         <select id="patternFilter" class="select-filter" onchange="filterCards()">
-          <option value="">すべてのパターン（全99話）</option>
+          <option value="">すべてのパターン（全100話）</option>
           <option value="A">📘 パターンA：教育相談・教育学・心理学 (33)</option>
           <option value="B">💻 パターンB：校務DX・ICT・ネットワーク (33)</option>
-          <option value="C">⚖️ パターンC：学校法制・教育委員会 (33)</option>
+          <option value="C">⚖️ パターンC：学校法制・教育委員会 (34)</option>
         </select>
         <select id="imageFilter" class="select-filter" onchange="filterCards()">
           <option value="">すべて表示</option>
-          <option value="yes">🎨 挿絵ありのみ (99)</option>
+          <option value="yes">🎨 挿絵ありのみ (100)</option>
         </select>
         <select id="sortOrder" class="select-filter" onchange="sortCards()">
           <option value="desc">新しい順（#大 → #01）</option>
@@ -45,6 +45,24 @@
     </div>
 
     <div class="story-grid" id="storyGrid">
+      <div class="story-card-wrap" data-no="100" data-pattern="C" data-illustrated="yes" data-search="法の盾と子供の涙――沈黙を破る通告義務の峻烈なる決断 c05 ⚖️ パターンc：学校法制・教育委員会・学校法務 学校法制・児童虐待防止 児童虐待の防止等に関する法律第6条（通告義務） / 児童福祉法第25条 / 守秘義務の適用除外 児童虐待の防止等に関する法律第6条（通告義務）における『疑い』レベルでの即時通告義務と守秘義務の明示的解除規定（刑法・公務員法上の守秘義務に優先する原則）の徹底 校長・宮本先生（校長就任2年目） × 教育委員会・生徒指導担当指導主事・安田先生 児童の腕や背中に複数の不自然な痣があり、ネグレクトも疑われるが、保護者は『家庭内の問題に口を出すな、学校を訴える』と強硬に抗議。教職員が保護者の反発を恐れて躊躇する中、校長が法的義務を確認する。">
+        <article class="story-card">
+          <a href="stories/ep100-c05.html" class="card-thumb-wrap">
+            <img class="card-thumb" src="assets/images/ep100-c05.png" alt="法の盾と子供の涙――沈黙を破る通告義務の峻烈なる決断" loading="lazy" />
+            <span class="card-no-badge">#100 [C05]</span>
+          </a>
+          <div class="card-body">
+            <div class="card-pattern pat-C">⚖️ パターンC：学校法制・教育委員会・学校法務</div>
+            <h2 class="card-title"><a href="stories/ep100-c05.html">法の盾と子供の涙――沈黙を破る通告義務の峻烈なる決断</a></h2>
+            <div class="card-framework">🏷️ 学校法制・児童虐待防止 ／ 児童虐待の防止等に関する法律第6条（通告義務） / 児童福祉法第25条 / 守秘義務の適用除外</div>
+            <p class="card-summary">児童の腕や背中に複数の不自然な痣があり、ネグレクトも疑われるが、保護者は『家庭内の問題に口を出すな、学校を訴える』と強硬に抗議。教職員が保護者の反発を恐れて躊躇する中、校長が法的義務を確認する。</p>
+            <div class="card-footer">
+              <span>約 3,308 文字 🎨 挿絵あり</span>
+              <a class="read-link" href="stories/ep100-c05.html">物語を読む →</a>
+            </div>
+          </div>
+        </article>
+      </div>
       <div class="story-card-wrap" data-no="99" data-pattern="B" data-illustrated="yes" data-search="電子の記憶を呼び覚ます指先――失われた行事計画とクラウドの守護神 b04 💻 パターンb：校務dx・ict・ネットワーク セキュリティ・ファイル共有 google drive 版管理（バージョン履歴） / 共有権限とアクセス制御 (rbac) / スプレッドシートの保護されたシート/範囲 / 3-2-1バックアップ原則 クラウドストレージ（google drive / onedrive）の版管理（バージョン履歴復元）と共有権限（閲覧のみ・編集者）のロール分離（rbac） 年配教諭・高橋先生（教職25年目・生徒指導主任） × 若手教諭・森田先生（教職3年目・情報推進委員） 行事計画のマスターexcelファイルが誰かに白紙で上書き保存されてしまい、バックアップもなく高橋先生が頭を抱えて全員に聞き回っている。">
         <article class="story-card">
           <a href="stories/ep99-b04.html" class="card-thumb-wrap">
