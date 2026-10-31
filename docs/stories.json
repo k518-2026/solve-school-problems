@@ -1,5 +1,18 @@
 [
   {
+    "no": 102,
+    "story_id": "ep102-b05",
+    "topic_id": "B05",
+    "pattern": "B",
+    "title": "赤ペンが止まった夜の静寂――正規表現で編み直す通知表の絆",
+    "category": "校務効率化・正規表現/マクロ",
+    "keywords": "正規表現 (RegEx) / LEN / LENB 関数 / REGEXEXTRACT / REGEXREPLACE 関数 / 条件付き書式アラート",
+    "has_image": true,
+    "url": "stories/ep102-b05.html",
+    "image": "assets/images/ep102-b05.png",
+    "char_count": 3942
+  },
+  {
     "no": 101,
     "story_id": "ep101-a03",
     "topic_id": "A03",

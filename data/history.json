@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-10-31T23:29:04.390963+09:00",
-  "total_posted": 101,
+  "last_pattern": "B",
+  "last_run_at": "2026-10-31T23:33:04.974371+09:00",
+  "total_posted": 102,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1190,6 +1190,17 @@
       "category": "生徒指導・学習観の変革",
       "file_path": "content/2026-10-31_pattern_a_a03_澱んだ水面に投げられた石_「無力感」の殻を剥ぐための対話.md",
       "timestamp": "2026-10-31T23:29:04.390963+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "赤ペンが止まった夜の静寂――正規表現で編み直す通知表の絆",
+      "pattern": "B",
+      "topic_id": "B05",
+      "category": "校務効率化・正規表現/マクロ",
+      "file_path": "content/2026-10-31_pattern_b_b05_赤ペンが止まった夜の静寂_正規表現で編み直す通知表の絆.md",
+      "timestamp": "2026-10-31T23:33:04.974371+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

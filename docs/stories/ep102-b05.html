@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>赤ペンが止まった夜の静寂――正規表現で編み直す通知表の絆 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #102 ・ [B05] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">赤ペンが止まった夜の静寂――正規表現で編み直す通知表の絆</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>校務効率化・正規表現/マクロ（正規表現 (RegEx) / LEN / LENB 関数 / REGEXEXTRACT / REGEXREPLACE 関数 / 条件付き書式アラート）</div>
+      <div><strong>👥 登場人物：</strong>学年主任・川上先生（教職27年目） × 若手教諭・西村先生（教職4年目・国語科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>正規表現（Regular Expressions）とGoogleスプレッドシートのテキスト関数による自動文字数カウント・校正チェック</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep102-b05.png" alt="赤ペンが止まった夜の静寂――正規表現で編み直す通知表の絆" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外では、夜の帳が深く下りていた。県立市立中学校の職員室には、数台のデスクライトだけが灯り、静かな熱気と、紙の擦れる音が支配している。</p>
+<p>「……ううむ、やはりこの生徒の記述は、規定の文字数をわずかに超えてしまっているな」</p>
+<p>学年主任の佐藤先生（教職28年目）は、深いため息をつきながら眼鏡をずらした。手元の通知表には、赤いペンで細かく修正の跡が入っている。担任から集められた数百人分の所見。それらは、生徒一人ひとりの成長を凝縮した大切な言葉であり、佐藤先生はそれを一字一句漏らさず確認し、公的な書類としての正確性を担保しなければならないという強い責任感を持っていた。</p>
+<p>しかし、現実は過酷だった。<br />
+　「あ、ここは『田中』ではなく『高橋』だ。……いや、あちらの生徒の名前が誤記されている。またここも、句読点の数え間違いか」<br />
+　佐藤先生は、定規を手に取り、まるで職人のように一文字ずつ数え始めた。深夜2時。疲労で視界が霞み始めているにもかかわらず、彼は筆を置くことができなかった。生徒たちの未来を左右するこの書類に、一点の曇りも許したくないという教育者としての矜持が、彼を椅子に縛り付けていた。</p>
+<p>その時、背後のドアが静かに開き、一人の若手教員が顔を出した。<br />
+　国語科の西村先生（教職3年目）だ。彼はまだ、自分の技術がこの現場でどれほどの価値を持つか、正確には測りかねていた。</p>
+<p>「佐藤先生、まだお仕事の途中ですか？」</p>
+<p>西村先生の声は、深夜の静寂に低く響いた。佐藤先生は顔を上げ、少し困ったような、しかし優しい笑みを浮かべた。</p>
+<p>「ああ、西村先生か。すまないね、まだ終わらないんだ。通知表の所見なんだけど、担任の先生方が熱意を持って書いてくれた分、どうしても文字数の調整や、固有名詞の照合に時間がかかってしまってね……」<br />
+　佐藤先生は、山積みの通知表と、書き込みの激しい赤ペンの束を指し示した。</p>
+<p>西村先生はデスクに歩み寄り、その山を見つめた。担任たちが苦労して書き上げた「言葉の結晶」が、事務的な制約という壁にぶつかっている。<br />
+　彼は一瞬だけ躊躇したが、すぐに自分のノートパソコンを開いた。</p>
+<p>「……もしよろしければ、少しだけ手伝わせてください。私の方で、チェックの工程を自動化できるかもしれません」<br />
+　佐藤先生は意外そうな表情を見せた。<br />
+「自動化？ 確かに便利だろうが、通知表の所見というのは個別の感性が反映されるものだからね。機械に任せきりにはできないんだよ」</p>
+<p>西村先生は頷いた。「おっしゃる通りです。正確な『検閲』は先生の役割です。私がやりたいのは、先生が『探す』ための手間を減らすことです。例えば、この数百人のリストから、文字数オーバーの箇所や、名簿と一致しない名前を一瞬で抽出する仕組みを作ります」</p>
+<p>西村先生はキーボードを叩き始めた。<br />
+　彼はまず、Googleスプレッドシートを開いた。そこには担任から提出された所見のデータが並んでいる。</p>
+<p>「佐藤先生、ここにある名簿の『氏名』列と、各担任が入力した『所見』内の名前を照合させます。そして、規定の文字数を超えている箇所を自動でハイライトさせるようにします」</p>
+<p>西村先生の指先が踊る。彼は「正規表現（Regular Expressions）」という強力な武器を取り出した。</p>
+<p>「例えば、この正規表現を使えば……」<br />
+　西村先生は画面を指さした。<br />
+<code>[^\s]{100,}</code> という短い文字列の羅列。それは、「空白以外の文字が連続して100文字以上続く箇所」を特定する魔法の呪文のようなものだ。</p>
+<p>「これを入れるだけで、スプレッドシートが自動的に『ここから先はオーバーです』と判定してくれます。さらに、『REGEXREPLACE』関数を使って、特定の名前の誤字を一括で置換することも可能です」</p>
+<p>佐藤先生は身を乗り出した。画面には、複雑な数式が次々と書き込まれていく。<br />
+　しかし、彼が見ているのは数式ではなく、その先にある「結果」だった。</p>
+<p>数分後、西村先生はエンターキーを押した。<br />
+　すると、無秩序に並んでいた文字の羅列の中に、一瞬で赤色の警告が表示された。<br />
+　「……ほう」<br />
+　佐藤先生の声が漏れた。<br />
+　あんなに苦労して一文字ずつ数えていた箇所が、まるでライトを当てたかのように浮かび上がっている。</p>
+<p>「さらに、こちらを見てください」<br />
+　西村先生は別のセルを見せた。そこには、名簿と照合して「不一致」と判定された名前だけがリストアップされていた。<br />
+　「正規表現で『苗字』のパターンを抽出し、名簿マスターと比較しています。手作業では見落としていたかもしれない微細な誤字も、これで一網打尽です」</p>
+<p>佐藤先生は深く椅子にもたれかかり、しばらく画面を見つめた。<br />
+　彼の目には、技術への驚きと、それによって救われる「時間」の重みが映っていた。</p>
+<p>「西村先生……君のやっていることは、単なる事務作業の効率化じゃない。これは、私たちが生徒と向き合うための『余白』を作ってくれているんだね」<br />
+　佐藤先生は声を震わせた。<br />
+「私が赤ペンを走らせる時間は、本来なら生徒たちの話を聞いたり、次の授業の準備をしたりするための時間であるべきなんだ。それを君が技術で肩代わりしてくれている」</p>
+<p>西村先生は少し照れくさそうに笑った。<br />
+「いえ、佐藤先生が積み重ねてきた教育への情熱があるからこそ、このデータには意味があるんです。私はただ、その価値を正しく届けるための『道』を整えているだけです」</p>
+<p>深夜の職員室に、再び静寂が訪れた。<br />
+　しかし、先ほどまでの重苦しい空気は消えていた。<br />
+　佐藤先生は再び赤ペンを取った。しかし今度は、疲れ果てた顔ではない。<br />
+　システムが弾き出した「要修正箇所」だけを正確に確認し、一筆ごとに、生徒の成長を祝福するような言葉を添えていく。</p>
+<p>窓の外では、夜明けの光が白み始めていた。<br />
+　技術と情熱。二つの力が手を取り合った時、学校という現場には新しい時代の風が吹き抜けた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>本編では、通知表の所見校正というアナログで極めて正確性が求められる業務を、Googleスプレッドシートと「正規表現」を組み合わせて解決するシーンを描きました。ここで登場した技術のポイントを解説します。</p>
+<p><strong>1. 正規表現 (Regular Expressions / RegEx) とは？</strong><br />
+正規表現とは、特定のパターン（文字列の規則性）を検索したり、抽出したり、置換したりするための特別な記法です。例えば、「電話番号の形式（090から始まる数字など）」や「メールアドレスの形式」などを指定して一括で処理する際に非常に強力な威力を発揮します。<br />
+本編では、以下の用途で活用しました。<br />
+- <strong>文字数カウント</strong>: 単純な文字数カウント関数だけでは、「空白を除いた実質的な文字数」を正確に測るのが難しい場合があります。正規表現を使うことで「特定の記号や空白を除外した状態での連続する文字数」を特定できます。<br />
+- <strong>固有名詞の照合</strong>: 所見の中に含まれる生徒の名前が、名簿データと一致しているかをパターンで抽出して比較します。</p>
+<p><strong>2. Googleスプレッドシートの活用関数</strong><br />
+物語の中で西村先生が使用した主要な関数は以下の通りです。<br />
+- <strong>LEN / LENB 関数</strong>: 文字列の長さをカウントします。特に日本語（全角文字）を扱う際、バイト数や文字数の違いに注意が必要です。<br />
+- <strong>REGEXEXTRACT 関数</strong>: 指定した正規表現に一致する部分だけを取り出します。例えば「所見の中から生徒の名前の部分だけを抜き出す」といった操作が可能です。<br />
+- <strong>REGEXREPLACE 関数</strong>: 正規表現に一致する部分を、別の文字列に置き換えます。これにより、「特定の誤字のパターン」を検知して一括で修正することが可能になります。</p>
+<p><strong>3. 条件付き書式との連携</strong><br />
+数式で判定した結果（例：文字数オーバー＝TRUE）を「条件付き書式」と組み合わせることで、エラー箇所をセル自体を赤く塗りつぶすなど視覚的に強調できます。これにより、確認者の「見落とし」を防ぐ仕組みを作ることができます。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>本物語で取り上げた技術や校務DXの推進については、以下の公的資料や公式ヘルプが実務の指針となります。</p>
+<ul>
+<li>
+<p><strong>文部科学省：教育の情報化の推進</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm</a><br />
+  （学校におけるICT活用の基本方針や、教員の校務負担軽減に関する指針が確認できます）</p>
+</li>
+<li>
+<p><strong>Google ドキュメント エディタ ヘルプ：Google スプレッドシートの関数リスト</strong><br />
+<a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a><br />
+  （スプレッドシートで利用可能な各種関数の一覧です）</p>
+</li>
+<li>
+<p><strong>Google ドキュメント エディタ ヘルプ：Google スプレッドシートの正規表現関数（REGEXEXTRACT / REGEXREPLACE）</strong><br />
+<a href="https://support.google.com/docs/answer/3098244?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/answer/3098244?hl=ja</a><br />
+  （正規表現を用いた高度な文字列操作の具体的な使い方が解説されています）</p>
+</li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep101-a03.html">← 前の作品：#101 澱んだ水面に投げられた石</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>
