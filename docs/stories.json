@@ -1,5 +1,31 @@
 [
   {
+    "no": 104,
+    "story_id": "ep104-a04",
+    "topic_id": "A04",
+    "pattern": "A",
+    "title": "情報の奔流と、静止する思考の地平",
+    "category": "授業設計・認知心理学",
+    "keywords": "内在性・外因性・関連性負荷 / ワーキングメモリの制約 / 冗長性の排除と分割効果",
+    "has_image": true,
+    "url": "stories/ep104-a04.html",
+    "image": "assets/images/ep104-a04.png",
+    "char_count": 4174
+  },
+  {
+    "no": 103,
+    "story_id": "ep103-c06",
+    "topic_id": "C06",
+    "pattern": "C",
+    "title": "熱波の聖域と安全の天秤――予見可能性の境界に立つ決断",
+    "category": "学校法制・学校安全・国家賠償",
+    "keywords": "学校保健安全法第27条・第29条 / 国家賠償法第1条 / 安全配慮義務（民法第415条類推適用・判例法理） / 環境省熱中症予防指針（WBGT）",
+    "has_image": true,
+    "url": "stories/ep103-c06.html",
+    "image": "assets/images/ep103-c06.png",
+    "char_count": 3420
+  },
+  {
     "no": 102,
     "story_id": "ep102-b05",
     "topic_id": "B05",

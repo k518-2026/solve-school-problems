@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-06T10:04:42.289431+09:00",
-  "total_posted": 102,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-06T19:54:24.222506+09:00",
+  "total_posted": 104,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -319,9 +319,7 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-10-29T09:18:10.310427+09:00",
-      "blogger_repost_ep": 22,
-      "wp_posted_at": "2026-11-02T08:50:00.257015+09:00",
-      "wp_repost_ep": 22
+      "blogger_repost_ep": 22
     },
     {
       "title": "夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論",
@@ -332,11 +330,7 @@
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-01T08:37:29.756040+09:00",
-      "blogger_repost_ep": 23,
-      "wp_posted_at": "2026-11-03T11:35:33.467222+09:00",
-      "wp_repost_ep": 23
+      "status": "publish"
     },
     {
       "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
@@ -347,11 +341,7 @@
       "timestamp": "2026-10-04T03:23:30.402661+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-02T08:49:39.631919+09:00",
-      "blogger_repost_ep": 24,
-      "wp_posted_at": "2026-11-04T09:49:33.688062+09:00",
-      "wp_repost_ep": 24
+      "status": "publish"
     },
     {
       "title": "デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤",
@@ -362,11 +352,7 @@
       "timestamp": "2026-10-04T11:49:25.812912+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-03T11:35:20.382709+09:00",
-      "blogger_repost_ep": 25,
-      "wp_posted_at": "2026-11-05T10:00:42.758163+09:00",
-      "wp_repost_ep": 25
+      "status": "publish"
     },
     {
       "title": "赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路",
@@ -377,11 +363,7 @@
       "timestamp": "2026-10-04T22:58:57.575426+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-04T09:49:08.803629+09:00",
-      "blogger_repost_ep": 26,
-      "wp_posted_at": "2026-11-06T10:04:42.289431+09:00",
-      "wp_repost_ep": 26
+      "status": "publish"
     },
     {
       "title": "紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解",
@@ -392,9 +374,7 @@
       "timestamp": "2026-10-05T02:39:00.064370+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-05T10:00:23.959552+09:00",
-      "blogger_repost_ep": 27
+      "status": "publish"
     },
     {
       "title": "平等という名の障壁を越えて：実質的平等のための合理的配慮",
@@ -405,9 +385,7 @@
       "timestamp": "2026-10-05T08:56:28.397630+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-06T10:04:29.367538+09:00",
-      "blogger_repost_ep": 28
+      "status": "publish"
     },
     {
       "title": "色彩の迷宮と、記憶の深淵へ",
@@ -1226,8 +1204,30 @@
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
+    },
+    {
+      "title": "熱波の聖域と安全の天秤――予見可能性の境界に立つ決断",
+      "pattern": "C",
+      "topic_id": "C06",
+      "category": "学校法制・学校安全・国家賠償",
+      "file_path": "content/2026-11-06_pattern_c_c06_熱波の聖域と安全の天秤_予見可能性の境界に立つ決断.md",
+      "timestamp": "2026-11-06T19:50:10.919782+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "情報の奔流と、静止する思考の地平",
+      "pattern": "A",
+      "topic_id": "A04",
+      "category": "授業設計・認知心理学",
+      "file_path": "content/2026-11-06_pattern_a_a04_情報の奔流と、静止する思考の地平.md",
+      "timestamp": "2026-11-06T19:54:24.222506+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 29,
-  "wp_repost_next_ep": 27
+  "blogger_repost_next_ep": 23,
+  "wp_repost_next_ep": 22
 }
