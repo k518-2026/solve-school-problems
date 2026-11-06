@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>静寂の式典を揺るがす紙の迷宮――文化祭運営の断絶を繋ぎ合わせたクラウドの絆 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #105 ・ [B06] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">静寂の式典を揺るがす紙の迷宮――文化祭運営の断絶を繋ぎ合わせたクラウドの絆</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>イベント運営・クラウド連携（Google カレンダー 共有カレンダー / リアルタイム更新ホワイトボード / クラウド通知自動化 / QRコードによる保護者・職員向けライブタイムテーブル）</div>
+      <div><strong>👥 登場人物：</strong>体育主任・石井先生（教職24年目） × 若手教諭・坂本先生（教職2年目・理科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>クラウドカレンダー（Google Calendar）＋リアルタイム共有タイムテーブルによる変更即時反映と通知自動化</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep105-b06.png" alt="静寂の式典を揺るがす紙の迷宮――文化祭運営の断絶を繋ぎ合わせたクラウドの絆" loading="lazy" />
+
+    <article class="story-content">
+      <p>秋の気配が色濃く漂う、私立・聖海学院高等学校。文化祭を数日後に控えた職員室は、まるで戦場のような熱気に包まれていた。</p>
+<p>「……またか。また『最終版』の定義が変わってしまったのか」</p>
+<p>教務主任の佐藤先生は、机の上に積み上がった白紙に近い資料の山を前に、深くため息をついた。彼はこの学校で二十五年以上、数多の行事を統括してきた重鎮だ。しかし、近年の文化祭の複雑化——特に生徒たちの自由な発想による「動的なプログラム」の増加は、彼の長年培ってきた「紙による管理」の限界を露呈させていた。</p>
+<p>文化祭では、各教室や展示エリアの進行スケジュールが分単位で刻まれている。しかし、あるクラスの演目が機材トラブルで変更されれば、それに連動する次のクラスの開始時間がずれ、さらにその後の休憩時間や、食堂の混雑予測までが連鎖的に修正される。</p>
+<p>「佐藤先生、これ……三度目の『修正版』ですけど、さっき配布したのと内容が違いますね」</p>
+<p>若手教諭の坂本は、手に持ったA4サイズの紙を指さしながら困惑した表情を見せた。彼は理科担当で、入職二年目だが、趣味でネットワーク構築やシステム開発を嗜む「デジタルネイティブ」な青年だ。</p>
+<p>「すまない、坂本君。先ほどＢ棟の演劇部から急報が入って、進行表を書き直したんだ。今すぐ印刷して、各係の先生方に配り直してくれるかな」</p>
+<p>佐藤先生は眼鏡の奥の目を細め、申し訳なさそうに言った。彼のデスクには、すでに「最終版」「修正案」「最新（再）版」と手書きされた紙の束が乱雑に置かれていた。</p>
+<p>「……先生、これ、今のやり方だと間に合いませんよ。職員室のコピー機は行列で埋まっていますし、配り終える頃にはまた別の場所で変更が出るかもしれません」</p>
+<p>坂本は苦笑しながらも、佐藤先生の「生徒たちの最高の舞台を見せたい」という熱意を汲み取っていた。佐藤先生は、文化祭の成功のために、自ら汗をかいて動いている。ただ、そのための「手段」が旧来のままなだけで、彼の教育への情熱は誰よりも純粋なものだった。</p>
+<p>坂本は一歩前に出た。</p>
+<p>「先生、一度だけ私に預けてくれませんか。この『紙の迷宮』を、一瞬で整理する仕組みを作ってみせます」</p>
+<p>佐藤先生は少し驚いた表情を見せたが、切羽詰まった状況もあり、坂本に白けた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>坂本の作業は、驚くほど迅速で、かつ論理的だった。彼はまず、職員室の共有PCを開き、Google Workspaceのアカウントを立ち上げた。</p>
+<p>「先生、これを見てください。今から『動く進行表』を作ります」</p>
+<p>坂本はGoogleカレンダーと、Googleスプレッドシートを連携させるための土台を作り始めた。</p>
+<p>「まず、このカレンダーを『文化祭運営用共有カレンダー』として定義します。ここには主要なイベントのタイムラインを流し込みます。そして重要なのは、これ自体が単なる予定表ではなく、『情報の中心地』になることです」</p>
+<p>坂本はキーボードを叩きながら解説した。</p>
+<p>「先生、今までの問題は『誰がどの版を見ているか分からない』ことでした。紙だと、配った瞬間にそれは『過去の情報』になります。でもクラウドなら、更新した瞬間に全員の画面が変わります」</p>
+<p>彼はGoogleカレンダー上でイベントを作成し、それぞれの項目にリンクを貼り付けていった。さらに、スプレッドシート側では「リアルタイム共有ホワイトボード」としての役割を持たせるための数式と整形を行った。</p>
+<p>「ここで使うのが『クラウド通知自動化』の考え方です。例えば、Ｂ棟の演劇部が変更を報告したら、このスプレッドシートの特定のセルを更新するだけで、カレンダー上の予定が連動して書き換わるようにします」</p>
+<p>佐藤先生は、若手の背中越しに映る画面を凝視した。<br />
+「……それだけで、配り直す必要がないのか？」</p>
+<p>「はい。さらに、スマホで確認できるQRコードも生成します。係の先生方や、最前線の生徒たちには、このQRコードを提示します。彼らは自分のスマホで、常に『最新の正解』にアクセスできるようになります」</p>
+<p>坂本はGoogle Apps Script（GAS）をわずかに使い、特定の項目が更新された際に、運営スタッフのグループチャットへ自動で通知が飛ぶ仕組みまで組み込んだ。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>文化祭当日。<br />
+　午前中の演目終了後、予期せぬ機材故障が発生した。Ｂ棟の舞台裏は騒然となり、進行の変更を余儀なくされた。</p>
+<p>これまでは、佐藤先生が慌てて電話をかけ、職員室で紙を書き直し、ランナーを走らせて各所に配るという「自転車操業」のような対応だった。しかし、今日は違った。</p>
+<p>坂本はタブレットを操作し、スプレッドシートの「緊急変更欄」に修正内容を入力した。その瞬間、運営スタッフ全員のスマートフォンに「【緊急】Ｂ棟スケジュール変更」という通知が届いた。</p>
+<p>佐藤先生は職員室のモニターを見つめていた。<br />
+「……変わったな」</p>
+<p>モニター上のカレンダーは、坂本の手によって書き換えられた瞬間に、予定の色が変わっていた。<br />
+「QRコードを読み取った係の先生方も、自分の端末で最新の時間を確認している。佐藤先生、見てください。あちらの誘導スタッフも、次へ動くタイミングを正しく把握していますよ」</p>
+<p>坂本が指さした先では、混乱することなくスムーズに次の演目への誘導が行われていた。</p>
+<p>夕刻、すべてのプログラムが無事に終了した。<br />
+　疲れ果てた佐藤先生は、職員室の椅子に深く腰掛けた。机の上には、もう「修正案」の紙の束は置かれていなかった。</p>
+<p>佐藤先生は隣に立つ坂本を見上げ、静かに微笑んだ。</p>
+<p>「坂本君、ありがとう。私の二十五年間の経験が、君の技術によって『加速』したような気分だ。……技術はただの道具だが、それをどう使うかで、守れるものが変わるということを今日、身をもって教わったよ」</p>
+<p>坂本は少し照れくさそうに笑い、頭を下げた。<br />
+「いえ、先生。先生がずっと大切にしてきた『生徒たちのための舞台』を守りたかっただけです。技術は、先生の熱意を届けるための架け橋に過ぎませんから」</p>
+<p>窓の外では、文化祭の余韻を残す秋の夜風が吹き抜けていた。二人の教員の間には、世代を超えた信頼と、新しい時代の幕開けを予感させる静かな共鳴があった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>本編では、アナログな「紙の配布」による情報伝達の限界を、クラウド技術を用いて解決するプロセスを描きました。以下に主要な技術ポイントを解説します。</p>
+<ol>
+<li>
+<p><strong>Googleカレンダー 共有カレンダーとリアルタイム更新</strong><br />
+   従来、行事予定は「印刷した紙」や「固定された掲示板」で管理されていました。これらは一度出力されると、変更が発生した際に「誰が最新版を持っているか」を把握することが極めて困難になります。<br />
+   Googleカレンダーの共有機能を利用することで、特定のURL（または共有権限）を持つ全員に対して、常に同じ「正解」を提示できます。修正は一箇所で行うだけで全ユーザーに即時反映されるため、情報格差によるミスを防ぐことができます。</p>
+</li>
+<li>
+<p><strong>クラウド通知自動化とQRコードの活用</strong><br />
+   坂本先生が行った手法の一つに、情報の「プッシュ型」への転換があります。<br />
+   - <strong>QRコード</strong>: 職員や生徒がわざわざ特定のURLを打ち込む手間を省き、瞬時に共有カレンダーや進行表へアクセスさせるための入り口です。<br />
+   - <strong>通知の自動化</strong>: Google Apps Script (GAS) 等を用いることで、「スプレッドシートのA列が書き換わったらLINEやチャットツールに通知する」といった仕組みを構築できます。これにより、情報の更新を「待つ」のではなく「届く」状態に変えることが可能です。</p>
+</li>
+<li>
+<p><strong>校務DXにおける「シングル・ソース・オブ・トゥルース（真実の単一源泉）」</strong><br />
+   今回の解決策の核心は、情報を一つの場所（クラウド上のシートやカレンダー）に集約し、そこから派生するすべての確認手段をそのデータに紐付けることです。これを「シングル・ソース・オブ・トゥルース」と呼びます。紙のコピーを増やすのではなく、データの参照先を統一することで、人的ミスを構造的に排除するアプローチです。</p>
+</li>
+</ol>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>学校現場での校務DXを推進するにあたり、以下の公的ガイドラインや公式ヘルプは非常に有用なリソースとなります。</p>
+<ul>
+<li>
+<p><strong>デジタル庁：教育（教育DX・校務の負担軽減）</strong><br />
+<a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a><br />
+  教育現場におけるデジタルトランスフォーメーションの基本方針や、教員の業務負担軽減に関する施策を確認できます。</p>
+</li>
+<li>
+<p><strong>文部科学省：教育の情報化の推進</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm</a><br />
+   GIGAスクール構想を含む、学校におけるICT活用の推進方針に関する公式資料です。</p>
+</li>
+<li>
+<p><strong>Google カレンダー ヘルプ：新しいカレンダーを作成する</strong><br />
+<a href="https://support.google.com/calendar/answer/37082?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/calendar/answer/37082?hl=ja</a><br />
+  特定のプロジェクトや行事ごとに共有カレンダーを管理するための基本的な操作手順です。</p>
+</li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep104-a04.html">← 前の作品：#104 情報の奔流と、静止する思考の地平</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

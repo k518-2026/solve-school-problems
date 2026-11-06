@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-06T19:54:24.222506+09:00",
-  "total_posted": 104,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-06T19:58:44.498519+09:00",
+  "total_posted": 105,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1223,6 +1223,17 @@
       "category": "授業設計・認知心理学",
       "file_path": "content/2026-11-06_pattern_a_a04_情報の奔流と、静止する思考の地平.md",
       "timestamp": "2026-11-06T19:54:24.222506+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂の式典を揺るがす紙の迷宮――文化祭運営の断絶を繋ぎ合わせたクラウドの絆",
+      "pattern": "B",
+      "topic_id": "B06",
+      "category": "イベント運営・クラウド連携",
+      "file_path": "content/2026-11-06_pattern_b_b06_静寂の式典を揺るがす紙の迷宮_文化祭運営の断絶を繋ぎ合わせたクラウドの絆.md",
+      "timestamp": "2026-11-06T19:58:44.498519+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

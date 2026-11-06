@@ -1,5 +1,18 @@
 [
   {
+    "no": 105,
+    "story_id": "ep105-b06",
+    "topic_id": "B06",
+    "pattern": "B",
+    "title": "静寂の式典を揺るがす紙の迷宮――文化祭運営の断絶を繋ぎ合わせたクラウドの絆",
+    "category": "イベント運営・クラウド連携",
+    "keywords": "Google カレンダー 共有カレンダー / リアルタイム更新ホワイトボード / クラウド通知自動化 / QRコードによる保護者・職員向けライブタイムテーブル",
+    "has_image": true,
+    "url": "stories/ep105-b06.html",
+    "image": "assets/images/ep105-b06.png",
+    "char_count": 3939
+  },
+  {
     "no": 104,
     "story_id": "ep104-a04",
     "topic_id": "A04",
