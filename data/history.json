@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-10T11:52:47.573897+09:00",
-  "total_posted": 105,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-10T20:09:10.331569+09:00",
+  "total_posted": 107,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -319,9 +319,7 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-10-29T09:18:10.310427+09:00",
-      "blogger_repost_ep": 22,
-      "wp_posted_at": "2026-11-07T09:15:25.188150+09:00",
-      "wp_repost_ep": 22
+      "blogger_repost_ep": 22
     },
     {
       "title": "夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論",
@@ -332,11 +330,7 @@
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-07T09:15:08.353902+09:00",
-      "blogger_repost_ep": 23,
-      "wp_posted_at": "2026-11-10T11:52:47.573897+09:00",
-      "wp_repost_ep": 23
+      "status": "publish"
     },
     {
       "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
@@ -347,9 +341,7 @@
       "timestamp": "2026-10-04T03:23:30.402661+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-08T08:52:08.578349+09:00",
-      "blogger_repost_ep": 24
+      "status": "publish"
     },
     {
       "title": "デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤",
@@ -360,9 +352,7 @@
       "timestamp": "2026-10-04T11:49:25.812912+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-09T08:57:05.194800+09:00",
-      "blogger_repost_ep": 25
+      "status": "publish"
     },
     {
       "title": "赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路",
@@ -373,9 +363,7 @@
       "timestamp": "2026-10-04T22:58:57.575426+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-10T11:52:29.868630+09:00",
-      "blogger_repost_ep": 26
+      "status": "publish"
     },
     {
       "title": "紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解",
@@ -1249,8 +1237,30 @@
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
+    },
+    {
+      "title": "デジタル情報の奔流と著作権の砦――ＧＩＡ（教育情報化）の断崖に立つ校長の決断",
+      "pattern": "C",
+      "topic_id": "C07",
+      "category": "学校法制・著作権法・教材利用",
+      "file_path": "content/2026-11-10_pattern_c_c07_デジタル情報の奔流と著作権の砦_ＧＩＡ（教育情報化）の断崖に立つ校長の決断.md",
+      "timestamp": "2026-11-10T20:05:14.470849+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "不協和音の種子を拾い上げる――行動の背後にある『切実な声』の翻訳",
+      "pattern": "A",
+      "topic_id": "A05",
+      "category": "特別支援・インクルーシブ教育",
+      "file_path": "content/2026-11-10_pattern_a_a05_不協和音の種子を拾い上げる_行動の背後にある『切実な声』の翻訳.md",
+      "timestamp": "2026-11-10T20:09:10.331569+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 27,
-  "wp_repost_next_ep": 24
+  "blogger_repost_next_ep": 23,
+  "wp_repost_next_ep": 22
 }

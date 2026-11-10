@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **105** 話（うち挿絵付き **105** 話 / 最終更新: 2026-11-10 11:52 JST）
+- **収録作品数**: 全 **107** 話（うち挿絵付き **107** 話 / 最終更新: 2026-11-10 20:09 JST）
 
 ---
 
@@ -18,6 +18,8 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 107 | 📘 A: 教育学・心理学 | `A05` | **[不協和音の種子を拾い上げる――行動の背後にある『切実な声』の翻訳](https://k518-2026.github.io/solve-school-problems/stories/ep107-a05.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep107-a05.html) | [📄原稿](<content/2026-11-10_pattern_a_a05_不協和音の種子を拾い上げる_行動の背後にある『切実な声』の翻訳.md>) | [🎨挿絵](<content/2026-11-10_pattern_a_a05_不協和音の種子を拾い上げる_行動の背後にある『切実な声』の翻訳.png>) | 特別支援・インクルーシブ教育 | 3,813字 |
+| 106 | ⚖️ C: 学校法制・法務 | `C07` | **[デジタル情報の奔流と著作権の砦――ＧＩＡ（教育情報化）の断崖に立つ校長の決断](https://k518-2026.github.io/solve-school-problems/stories/ep106-c07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep106-c07.html) | [📄原稿](<content/2026-11-10_pattern_c_c07_デジタル情報の奔流と著作権の砦_ＧＩＡ（教育情報化）の断崖に立つ校長の決断.md>) | [🎨挿絵](<content/2026-11-10_pattern_c_c07_デジタル情報の奔流と著作権の砦_ＧＩＡ（教育情報化）の断崖に立つ校長の決断.png>) | 学校法制・著作権法・教材利用 | 4,141字 |
 | 105 | 💻 B: 校務DX・ICT | `B06` | **[静寂の式典を揺るがす紙の迷宮――文化祭運営の断絶を繋ぎ合わせたクラウドの絆](https://k518-2026.github.io/solve-school-problems/stories/ep105-b06.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep105-b06.html) | [📄原稿](<content/2026-11-06_pattern_b_b06_静寂の式典を揺るがす紙の迷宮_文化祭運営の断絶を繋ぎ合わせたクラウドの絆.md>) | [🎨挿絵](<content/2026-11-06_pattern_b_b06_静寂の式典を揺るがす紙の迷宮_文化祭運営の断絶を繋ぎ合わせたクラウドの絆.png>) | イベント運営・クラウド連携 | 3,939字 |
 | 104 | 📘 A: 教育学・心理学 | `A04` | **[情報の奔流と、静止する思考の地平](https://k518-2026.github.io/solve-school-problems/stories/ep104-a04.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep104-a04.html) | [📄原稿](<content/2026-11-06_pattern_a_a04_情報の奔流と、静止する思考の地平.md>) | [🎨挿絵](<content/2026-11-06_pattern_a_a04_情報の奔流と、静止する思考の地平.png>) | 授業設計・認知心理学 | 4,174字 |
 | 103 | ⚖️ C: 学校法制・法務 | `C06` | **[熱波の聖域と安全の天秤――予見可能性の境界に立つ決断](https://k518-2026.github.io/solve-school-problems/stories/ep103-c06.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep103-c06.html) | [📄原稿](<content/2026-11-06_pattern_c_c06_熱波の聖域と安全の天秤_予見可能性の境界に立つ決断.md>) | [🎨挿絵](<content/2026-11-06_pattern_c_c06_熱波の聖域と安全の天秤_予見可能性の境界に立つ決断.png>) | 学校法制・学校安全・国家賠償 | 3,420字 |
