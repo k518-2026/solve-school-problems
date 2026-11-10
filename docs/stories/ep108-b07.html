@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>土砂降りの静寂とワンクリックの導火線――吹奏楽部を救ったクラウドの防波堤 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #108 ・ [B07] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">土砂降りの静寂とワンクリックの導火線――吹奏楽部を救ったクラウドの防波堤</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>部活動・コミュニケーション自動化（学校・保護者間連絡システム / Google フォーム出欠確認 / メール一斉配信自動化 / リアルタイム回答確認ダッシュボード）</div>
+      <div><strong>👥 登場人物：</strong>野球部顧問・松井先生（教職29年目） × 若手副顧問・神田先生（教職2年目・英語）</div>
+      <div><strong>💡 解決フレームワーク：</strong>学校連絡アプリおよびGoogleフォームによるワンクリック一斉配信と既読・出欠確認システム</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep108-b07.png" alt="土砂降りの静寂とワンクリックの導火線――吹奏楽部を救ったクラウドの防波堤" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外は、鉛色の雲が低く垂れ込め、湿った風が校舎の壁を叩いていた。<br />
+　午後三時。私立・青葉高等学校の吹奏楽部顧問である佐伯先生は、職員室のデスクで眉間に深い皺を刻んでいた。教職三十年、数多の生徒を見守ってきた彼にとって、この「土砂降りの予報」は単なる天候の変化ではなかった。</p>
+<p>「……困ったな。明日の合同演奏会に向けた屋外練習、このままの雨なら中止せざるを得ない」<br />
+　佐伯先生は重々しい声で呟き、手元の名簿を睨んだ。指導方針として「生徒には自律を促すこと」を掲げている彼は、安易に電話をかけ回すことを好まなかったが、この状況では避けられない。しかし、部員の保護者数は百人を超える。一人ひとりに電話をかけ、練習中止の旨と代替案を伝える作業は、彼一人の肩にはあまりにも重い。</p>
+<p>「佐伯先生、お疲れのようです。……あ、これ、少しだけ手伝わせてください」<br />
+　背後から声をかけたのは、新しく赴任したばかりの若手教員、高橋先生だった。彼は英語教師でありながら、趣味でシステム構築に没頭しているという噂の持ちたる者だ。</p>
+<p>佐伯先生は老眼鏡を押し上げ、苦笑しながら振り返った。「高橋先生か。すまないね、少し頭を抱えていた。明日の練習中止の連絡なんだが、保護者の皆さんに正確に伝えるには電話が一番確実なのだが……この人数を一人で回るのは、正直言って限界がある」</p>
+<p>「電話もいいですが、今は『情報の同時到達』と『到達確認』の両立が必要です」<br />
+　高橋先生はそう言うと、自分のノートパソコンを開き、素早くキーボードを叩き始めた。<br />
+　「佐伯先生の教育への情熱は尊敬しています。生徒たちへの配慮も完璧です。ただ、事務的な『伝達』という壁に、先生の大切な時間が奪われているのがもったいないんです」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>高橋先生の指先が画面上を踊る。彼はGoogle Workspaceの管理権限を使い、瞬く間に「緊急連絡用フォーム」を構築していった。<br />
+　「これを見てください。まず、保護者の皆さんのスマホに届くのは、このURLが含まれた通知だけです」</p>
+<p>高橋先生は画面を佐伯先生の方へ向けた。そこには、簡潔な文言と、大きなボタンが配置されたGoogleフォームのプレビューが表示されていた。<br />
+　「ここに『練習中止の旨』と『代替のオンライン指導への参加可否』を記載しました。保護者がこれをクリックするだけで、『確認しました』という意思表示がシステム側に飛ぶんです」</p>
+<p>佐伯先生は画面を覗き込み、そのシンプルさに驚いた。「……ボタンを押すだけでいいのか？ それだけです？」</p>
+<p>「はい。さらに、このフォームの回答はリアルタイムでこのダッシュボードに集約されます」<br />
+　高橋先生が示したのは、スプレッドシートと連動した管理画面だった。誰が確認済みで、誰がまだ未確認なのかが一目で色分けされて表示されている。<br />
+　「これなら、先生は電話を一本もかけずに、誰に連絡が届いていないかを一瞬で把握できます。そして、このフォームから得た回答をもとに、自動で『確認済みの方へのリマインドメール』を送信するスクリプトも仕込んでおきました」</p>
+<p>「……自動で、だと？」<br />
+　佐伯先生の目が輝いた。<br />
+　「そうです。Google Apps Script（GAS）を使っています。フォームに回答が入った瞬間、システムがそれを検知し、あらかじめ登録された保護者リストと照合します。未回答の方には、一定時間後に自動で『まだ確認が取れていません』という通知を飛ばす。先生は、このダッシュボードを見守るだけでいいんです」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>それから一時間後。<br />
+　佐伯先生のスマートフォンに、次々と通知が届き始めた。しかし、それはかつてのような「電話の嵐」ではなかった。<br />
+　保護者たちから届くのは、「確認しました」「承知いたしました」というGoogleフォームへの回答通知と、アプリを通じた短いメッセージだった。</p>
+<p>佐伯先生は職員室の椅子に深く腰掛け、高橋先生と並んでモニターを見つめた。<br />
+　「……すごいな。これまでの数時間は、電話をかけるだけで終わっていただろう。それが今、一瞬で終わった」<br />
+　佐伯先生の声には、感嘆の色が混じっていた。</p>
+<p>「技術は、先生の『想い』を届けるための手段に過ぎません」<br />
+　高橋先生は穏やかに微笑んだ。「先生が保護者一人ひとりと向き合いたいという気持ちはそのままに、事務的な手続きだけを機械に任せる。それによって生まれた時間は、生徒たちとの対話や、練習計画の再編に充てられるはずです」</p>
+<p>佐伯先生は窓の外を見た。雨は依然として激しく降っているが、職員室の空気は先ほどとは見違えるほど穏やかになっていた。<br />
+　「高橋先生、君の技術は……いや、君の『知恵』に救われたよ。ありがとう」</p>
+<p>佐伯先生は再び老眼鏡を押し上げた。その手元には、かつてのように山積みの電話リストではなく、整然と整理されたデジタルな情報の海があった。<br />
+　ICTという名の新しい「杖」を手に入れた彼の手元で、次なる教育への歩みが静かに、しかし力強く再開された。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、<strong>「Google フォーム」</strong>と<strong>「Google Apps Script (GAS)」</strong>を組み合わせた校務DXの仕組みが登場しました。ITに詳しくない方でも理解できるよう、ポイントを絞って解説します。</p>
+<ol>
+<li>
+<p><strong>Google フォームによる受付窓口の自動化</strong><br />
+   従来、中止連絡は「電話」や「一斉メール」で行われてきましたが、これらには「相手が読んだかどうか」を把握する手段がありませんでした。Google フォームを使うことで、「回答（＝確認）」というアクションを保護者から受け取ることができます。これにより、情報の「送信」と「受領の確認」を一つの仕組みで完結させることが可能になります。</p>
+</li>
+<li>
+<p><strong>リアルタイム・ダッシュボード</strong><br />
+   Google フォームの回答はスプレッドシートに自動集計されます。これに「条件付き書式」という設定を加えることで、未回答の項目を赤く光らせるなど、視覚的に「誰に連絡が届いていないか」を一瞬で把握できる管理画面（ダッシュボード）を作成できます。</p>
+</li>
+<li>
+<p><strong>Google Apps Script (GAS) による自動化</strong><br />
+   GASはGoogleのツール上で動くプログラミング言語です。これを使うことで、「フォームに回答があったら、特定の条件の人にだけメールを送る」「一定時間経っても未回答の人にリマインドを送る」といった、本来なら人間が手作業で行わなければならない「判断と実行」を自動化できます。</p>
+</li>
+<li>
+<p><strong>ネットワークの視点：情報の同期</strong><br />
+   このシステムの利点はクラウド（インターネット上のサーバー）を利用することです。学校のPCだけでなく、保護者のスマートフォンからでもアクセスでき、かつデータの更新が瞬時に全デバイスに反映されます。これにより、「誰がいつ確認したか」という情報の不一致を防ぐことができます。</p>
+</li>
+</ol>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>文部科学省およびデジタル庁が推進する「校務DX」や「GIGAスクール構想」に関連する、公式なガイドラインやヘルプページを以下に示します。学校現場でこれらのツールを導入・運用する際の指針としてご活用ください。</p>
+<ul>
+<li>文部科学省：学校と保護者等間における連絡手段のデジタル化の推進について<br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html</a></li>
+<li>デジタル庁：教育（教育DX・学校連絡のデジタル化）<br />
+<a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a></li>
+<li>Google ドキュメント エディタ ヘルプ：Google フォームの回答を表示、管理する<br />
+<a href="https://support.google.com/docs/answer/2839588?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/answer/2839588?hl=ja</a></li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep107-a05.html">← 前の作品：#107 不協和音の種子を拾い上げる</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,5 +1,18 @@
 [
   {
+    "no": 108,
+    "story_id": "ep108-b07",
+    "topic_id": "B07",
+    "pattern": "B",
+    "title": "土砂降りの静寂とワンクリックの導火線――吹奏楽部を救ったクラウドの防波堤",
+    "category": "部活動・コミュニケーション自動化",
+    "keywords": "学校・保護者間連絡システム / Google フォーム出欠確認 / メール一斉配信自動化 / リアルタイム回答確認ダッシュボード",
+    "has_image": true,
+    "url": "stories/ep108-b07.html",
+    "image": "assets/images/ep108-b07.png",
+    "char_count": 3411
+  },
+  {
     "no": 107,
     "story_id": "ep107-a05",
     "topic_id": "A05",

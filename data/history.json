@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-10T20:09:10.331569+09:00",
-  "total_posted": 107,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-10T20:12:47.458399+09:00",
+  "total_posted": 108,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1256,6 +1256,17 @@
       "category": "特別支援・インクルーシブ教育",
       "file_path": "content/2026-11-10_pattern_a_a05_不協和音の種子を拾い上げる_行動の背後にある『切実な声』の翻訳.md",
       "timestamp": "2026-11-10T20:09:10.331569+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "土砂降りの静寂とワンクリックの導火線――吹奏楽部を救ったクラウドの防波堤",
+      "pattern": "B",
+      "topic_id": "B07",
+      "category": "部活動・コミュニケーション自動化",
+      "file_path": "content/2026-11-10_pattern_b_b07_土砂降りの静寂とワンクリックの導火線_吹奏楽部を救ったクラウドの防波堤.md",
+      "timestamp": "2026-11-10T20:12:47.458399+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
