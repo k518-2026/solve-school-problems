@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **108** 話（うち挿絵付き **108** 話 / 最終更新: 2026-11-12 10:59 JST）
+- **収録作品数**: 全 **110** 話（うち挿絵付き **110** 話 / 最終更新: 2026-11-12 18:38 JST）
 
 ---
 
@@ -18,6 +18,8 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 110 | 📘 A: 教育学・心理学 | `A06` | **[透き通らない水面と、編み直される関係の結び目](https://k518-2026.github.io/solve-school-problems/stories/ep110-a06.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep110-a06.html) | [📄原稿](<content/2026-11-12_pattern_a_a06_透き通らない水面と、編み直される関係の結び目.md>) | [🎨挿絵](<content/2026-11-12_pattern_a_a06_透き通らない水面と、編み直される関係の結び目.png>) | 人間関係・生徒指導 | 3,604字 |
+| 109 | ⚖️ C: 学校法制・法務 | `C08` | **[実質的平等の地平――合理的配慮の峻烈なる責務と校長の決断](https://k518-2026.github.io/solve-school-problems/stories/ep109-c08.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep109-c08.html) | [📄原稿](<content/2026-11-12_pattern_c_c08_実質的平等の地平_合理的配慮の峻烈なる責務と校長の決断.md>) | [🎨挿絵](<content/2026-11-12_pattern_c_c08_実質的平等の地平_合理的配慮の峻烈なる責務と校長の決断.png>) | 学校法制・合理的配慮・障害者差別解消法 | 3,618字 |
 | 108 | 💻 B: 校務DX・ICT | `B07` | **[土砂降りの静寂とワンクリックの導火線――吹奏楽部を救ったクラウドの防波堤](https://k518-2026.github.io/solve-school-problems/stories/ep108-b07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep108-b07.html) | [📄原稿](<content/2026-11-10_pattern_b_b07_土砂降りの静寂とワンクリックの導火線_吹奏楽部を救ったクラウドの防波堤.md>) | [🎨挿絵](<content/2026-11-10_pattern_b_b07_土砂降りの静寂とワンクリックの導火線_吹奏楽部を救ったクラウドの防波堤.png>) | 部活動・コミュニケーション自動化 | 3,411字 |
 | 107 | 📘 A: 教育学・心理学 | `A05` | **[不協和音の種子を拾い上げる――行動の背後にある『切実な声』の翻訳](https://k518-2026.github.io/solve-school-problems/stories/ep107-a05.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep107-a05.html) | [📄原稿](<content/2026-11-10_pattern_a_a05_不協和音の種子を拾い上げる_行動の背後にある『切実な声』の翻訳.md>) | [🎨挿絵](<content/2026-11-10_pattern_a_a05_不協和音の種子を拾い上げる_行動の背後にある『切実な声』の翻訳.png>) | 特別支援・インクルーシブ教育 | 3,813字 |
 | 106 | ⚖️ C: 学校法制・法務 | `C07` | **[デジタル情報の奔流と著作権の砦――ＧＩＡ（教育情報化）の断崖に立つ校長の決断](https://k518-2026.github.io/solve-school-problems/stories/ep106-c07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep106-c07.html) | [📄原稿](<content/2026-11-10_pattern_c_c07_デジタル情報の奔流と著作権の砦_ＧＩＡ（教育情報化）の断崖に立つ校長の決断.md>) | [🎨挿絵](<content/2026-11-10_pattern_c_c07_デジタル情報の奔流と著作権の砦_ＧＩＡ（教育情報化）の断崖に立つ校長の決断.png>) | 学校法制・著作権法・教材利用 | 4,141字 |

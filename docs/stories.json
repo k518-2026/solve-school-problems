@@ -1,5 +1,31 @@
 [
   {
+    "no": 110,
+    "story_id": "ep110-a06",
+    "topic_id": "A06",
+    "pattern": "A",
+    "title": "透き通らない水面と、編み直される関係の結び目",
+    "category": "人間関係・生徒指導",
+    "keywords": "関係性の回復と共感の場の設計 / 関係的攻撃性（Relational Aggression）の理解 / 修復的対話（Restorative Practices）",
+    "has_image": true,
+    "url": "stories/ep110-a06.html",
+    "image": "assets/images/ep110-a06.png",
+    "char_count": 3604
+  },
+  {
+    "no": 109,
+    "story_id": "ep109-c08",
+    "topic_id": "C08",
+    "pattern": "C",
+    "title": "実質的平等の地平――合理的配慮の峻烈なる責務と校長の決断",
+    "category": "学校法制・合理的配慮・障害者差別解消法",
+    "keywords": "障害を理由とする差別の解消の推進に関する法律第7条・第8条 / 教育基本法第4条 / 発達障害者支援法第8条",
+    "has_image": true,
+    "url": "stories/ep109-c08.html",
+    "image": "assets/images/ep109-c08.png",
+    "char_count": 3618
+  },
+  {
     "no": 108,
     "story_id": "ep108-b07",
     "topic_id": "B07",
