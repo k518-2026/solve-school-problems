@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>重なる影を拭い去るための光――「空き」を支配するリソース管理の静かな革命 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #120 ・ [B11] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">重なる影を拭い去るための光――「空き」を支配するリソース管理の静かな革命</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>特別教室予約・備品貸出DX（Google カレンダー リソース管理 / 重複予約の自動拒否ロジック / 1人1台端末からの即時予約確認 / 備品貸出ステータス管理）</div>
+      <div><strong>👥 登場人物：</strong>庶務主任・浜口先生（教職29年目） × 若手教諭・篠原先生（教職3年目・理科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>Google カレンダーの「リソース（会議室・備品）予約機能」とQRコード台帳による重複予約の完全自動ブロック</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep120-b11.png" alt="重なる影を拭い去るための光――「空き」を支配するリソース管理の静かな革命" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外では、運動場の土を蹴り上げる生徒たちの怒鳴り声が響いている。しかし、職員室の片隅にある「特別教室・備品予約表」の前では、別の種類の怒号に近い困惑が渦巻いていた。</p>
+<p>「ちょっと待ってください！　この時間は理科の実験室を予約したはずなんです！」<br />
+「いや、先に来て書き込んだのは私です。予備のプロジェクターもセットで確保しましたよ」</p>
+<p>二人の教員が、壁に掲げられた巨大な紙の台帳を指差し、激しい議論を交わしている。台帳は、数ヶ月分の予約が鉛筆の文字でびっしりと書き込まれ、上から重ねられた修正の跡で判読不能な箇所も多い。<br />
+　浜口は、深く刻まれた眉間の皺をさらに深くした。教職二十九年目。彼はこれまで、この「紙の文化」を守り抜いてきた自負があった。しかし、生徒数が増え、ICT活用が進むにつれ、予約の密度は限界に達していた。</p>
+<p>「……申し訳ありません。私の確認不足です」<br />
+　浜口は苦笑しながらも、反対側の教員の顔を覗き込んだ。「でも、これでは授業の準備ができません。どちらかが譲るか、あるいは……」</p>
+<p>「……いや、浜口先生。ここです。この『紙の台帳』の限界、私にもわかります」<br />
+　背後から声をかけたのは、理科科の若手教諭、篠原だった。彼は手に持ったタブレット端末をそっと差し出した。</p>
+<p>「篠原先生、お疲れ様です。今、少し揉めていてね。この紙の台帳は、誰かが書けば成立するけれど、『誰がいつ書いたか』の履歴も『同時に二人が書くこと』の防止もできない。結局、現場でぶつかって初めて気づく。それが今の弊害なんです」<br />
+　浜口は、手元にある使い古された修正テープを手に取りながら、嘆息した。</p>
+<p>「いい解決策がありますよ。今日からこの『紙』を廃止しましょう」<br />
+　篠原は自信に満ちた表情で言った。「それも単に『オンラインで入力する』だけではありません。システム側で『ダブルブッキング』を物理的に不可能にする仕組みを導入します」</p>
+<p>浜口は眼鏡の縁を押し上げた。「デジタル化、というのは聞いたことがあるが……。具体的にどういうことかね？」</p>
+<p>「Google Workspaceの『リソース予約機能』を使います。これを使うと、理科室や体育館といった『場所』、あるいはプロジェクターのような『備品』をそれぞれ独立したリソースとして定義できます」<br />
+　篠原はタブレットの画面を操作しながら説明を続けた。</p>
+<p>「例えば、理科室Ａを一つのリソースとして登録します。先生方がカレンダー上で予約を入れる際、このリソースを選択して時間を確保する。そうすると、システム側が自動的に『その時間にその場所は既に埋まっている』と判断し、二重の予約自体を受け付けないようにするんです」</p>
+<p>「……自動で拒否するのか？」<br />
+　浜口は身を乗り出した。</p>
+<p>「そうです。先生方がカレンダーに予定を入れようとした瞬間、システムが『利用不可』と判定します。紙のように、誰かが書き込んで気づかないという事態は起こりません。さらに、備品についても同じです。『プロジェクターA』をリソースとして登録しておけば、貸出状況もリアルタイムで可視化されます」</p>
+<p>篠原は次の一手を示した。<br />
+「そして、現場の利便性を高めるために『QRコード台帳』を導入します。各教室の入り口や備品保管庫に、予約専用のQRコードを掲示します。先生方がスマホやタブレットでそれをスキャンすれば、すぐに予約画面へ飛び、現在の空き状況を一目で確認できる。わざわざ職員室まで走って紙を見に来る必要もありません」</p>
+<p>浜口はしばらく黙って、篠原が見せる滑らかな操作画面を見つめていた。<br />
+「……なるほど。私が今まで『確認』という名の地道な労力でカバーしてきたことを、ネットワークの仕組みとクラウドのロジックに肩代わりさせるということか」</p>
+<p>「その通りです、浜口先生。これは単なる手間の削減ではありません。先生方が本来集中すべき『生徒との向き合い』のための時間を、事務的な衝突から守るための防衛策なんです」<br />
+　篠原の言葉には、技術への誇り以上に、同僚への敬意が籠っていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>一週間後。<br />
+　職員室の壁から、あの巨大な紙の台帳は取り外されていた。代わりに掲げられているのは、数枚のQRコードが印刷された清潔なプレートだ。</p>
+<p>「あ、これ、理科室Ａの予約ですね」<br />
+　別の教員が、自分のスマートフォンをかざして呟いた。画面には、次の時間枠が既に「予約済み」としてグレーアウトされているのが見えた。</p>
+<p>「これなら、授業の直前に『あ、予約取れてない！』と慌てることもありませんね」<br />
+　その様子を、浜口は満足げに見守っていた。</p>
+<p>放課後、浜口は篠原のデスクを訪れた。<br />
+「篠原先生、素晴らしい仕事だ。おかげで今日の午後は、一件の予約トラブルもなかったよ」</p>
+<p>篠原は照れくさそうに笑った。<br />
+「いえ、浜口先生がこれまで現場の苦労を正確に伝えてくださったからこそ、必要な機能に絞ることができました。技術はあくまで手段です。目的は、先生方の負担を減らすことですから」</p>
+<p>浜口は頷き、自分のタブレットを操作した。<br />
+「次は、備品貸出のステータス管理も自動化したいと考えている。篠原先生、また相談に乗ってもらおうか」</p>
+<p>窓の外では、夕暮れの光が校庭を黄金色に染めていた。<br />
+　紙の残像が消えた職員室には、以前よりも静かで、しかし確かな「次への準備」のための余白が生まれていた。それは、技術と知恵が手を取り合ったことで生まれた、新しい時代の学校の風景だった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>本編では、従来アナログで行われていた「教室予約・備品貸出」を、Google Workspaceの機能を活用してDX（デジタルトランスフォーメーション）化するプロセスを描きました。以下に主要な技術ポイントを解説します。</p>
+<p><strong>1. Google カレンダーの「リソース」機能とは？</strong><br />
+通常、カレンダーは自分の予定を入れるためのものですが、企業や学校で導入されるGoogle Workspaceには「リソース（会議室・備品）」という管理機能があります。これを使うと、「理科室A」「プロジェクターB」といったモノ自体をカレンダー上に登録できます。<br />
+- <strong>メリット</strong>: 誰かが予約を入れた際、システム側が「その場所は既に埋まっている」と判断するため、物理的に二重予約（ダブルブッキング）が発生しません。</p>
+<p><strong>2. QRコードによる利便性の向上</strong><br />
+「予約システムを作っただけでは使われない」という課題を解決するのがQRコードです。<br />
+- <strong>仕組み</strong>: 各教室のドアや備品棚に固有のURLに飛ぶQRコードを掲示します。先生方は自分の端末でスキャンするだけで、即座にそのリソースの空き状況を確認・予約することができ、職員室まで移動する手間を削減します。</p>
+<p><strong>3. クラウド化と「ゼロトラスト」への意識</strong><br />
+今回の解決策は、校内のサーバーにデータを保存するのではなく、Googleのクラウド上で完結させています。これにより、複数の端末から同時にアクセスしてもデータの整合性が保たれます。また、文部科学省が推進する「校務DX」の方向性として、個人の端末（1人1台端末）を活用しながらも、セキュリティを確保したクラウド連携は非常に重要な要素です。</p>
+<p><strong>4. 持続可能な働き方改革への視点</strong><br />
+単なる「便利なツールを入れる」ことではなく、「誰が、どのリソースを、いつ使うか」という情報をデジタル化して共通認識にすること自体が、学校運営の透明性を高めます。これにより、教員間のコミュニケーションロス（「あ、予約取れてましたか？」という確認作業）を最小限に抑えることが可能になります。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>以下は、日本の学校現場で校務DXを進める際に参照すべき公的機関の資料および公式ヘルプです。</p>
+<ul>
+<li>
+<p><strong>文部科学省：教育の情報化の推進</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm</a><br />
+  （GIGAスクール構想の動向や、教育現場におけるICT活用の基本方針を確認できます）</p>
+</li>
+<li>
+<p><strong>デジタル庁：教育（校務DXの推進）</strong><br />
+<a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a><br />
+  （行政・教育分野におけるDX推進の全体像や、標準化の動きについて把握できます）</p>
+</li>
+<li>
+<p><strong>Google カレンダー ヘルプ：新しいカレンダーを作成する</strong><br />
+<a href="https://support.google.com/calendar/answer/37082?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/calendar/answer/37082?hl=ja</a><br />
+  （共有カレンダーの作成や、リソース管理の基礎的な操作を確認できる公式マニュアルです）</p>
+</li>
+<li>
+<p><strong>Google Workspace 管理者ヘルプ：リソースを予約する</strong><br />
+  （※管理者が「会議室」や「備品」のリソースを追加・設定するための具体的な手順が確認できます。学校のGoogle Workspaceアカウントを管理している担当者向けです）</p>
+</li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep119-a10.html">← 前の作品：#119 色彩の迷宮を抜けるための羅針盤</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

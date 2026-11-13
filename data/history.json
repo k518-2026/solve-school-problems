@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-13T18:35:19.641312+09:00",
-  "total_posted": 119,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-13T18:38:55.988041+09:00",
+  "total_posted": 120,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1388,6 +1388,17 @@
       "category": "学習科学・メタ認知",
       "file_path": "content/2026-11-13_pattern_a_a10_色彩の迷宮を抜けるための羅針盤_『整える』という罠から『呼び出す』勇気へ.md",
       "timestamp": "2026-11-13T18:35:19.641312+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "重なる影を拭い去るための光――「空き」を支配するリソース管理の静かな革命",
+      "pattern": "B",
+      "topic_id": "B11",
+      "category": "特別教室予約・備品貸出DX",
+      "file_path": "content/2026-11-13_pattern_b_b11_重なる影を拭い去るための光_「空き」を支配するリソース管理の静かな革命.md",
+      "timestamp": "2026-11-13T18:38:55.988041+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

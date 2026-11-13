@@ -1,5 +1,18 @@
 [
   {
+    "no": 120,
+    "story_id": "ep120-b11",
+    "topic_id": "B11",
+    "pattern": "B",
+    "title": "重なる影を拭い去るための光――「空き」を支配するリソース管理の静かな革命",
+    "category": "特別教室予約・備品貸出DX",
+    "keywords": "Google カレンダー リソース管理 / 重複予約の自動拒否ロジック / 1人1台端末からの即時予約確認 / 備品貸出ステータス管理",
+    "has_image": true,
+    "url": "stories/ep120-b11.html",
+    "image": "assets/images/ep120-b11.png",
+    "char_count": 3821
+  },
+  {
     "no": 119,
     "story_id": "ep119-a10",
     "topic_id": "A10",

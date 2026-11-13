@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **119** 話（うち挿絵付き **119** 話 / 最終更新: 2026-11-13 18:35 JST）
+- **収録作品数**: 全 **120** 話（うち挿絵付き **120** 話 / 最終更新: 2026-11-13 18:38 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 120 | 💻 B: 校務DX・ICT | `B11` | **[重なる影を拭い去るための光――「空き」を支配するリソース管理の静かな革命](https://k518-2026.github.io/solve-school-problems/stories/ep120-b11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep120-b11.html) | [📄原稿](<content/2026-11-13_pattern_b_b11_重なる影を拭い去るための光_「空き」を支配するリソース管理の静かな革命.md>) | [🎨挿絵](<content/2026-11-13_pattern_b_b11_重なる影を拭い去るための光_「空き」を支配するリソース管理の静かな革命.png>) | 特別教室予約・備品貸出DX | 3,821字 |
 | 119 | 📘 A: 教育学・心理学 | `A10` | **[色彩の迷宮を抜けるための羅針盤――『整える』という罠から『呼び出す』勇気へ](https://k518-2026.github.io/solve-school-problems/stories/ep119-a10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep119-a10.html) | [📄原稿](<content/2026-11-13_pattern_a_a10_色彩の迷宮を抜けるための羅針盤_『整える』という罠から『呼び出す』勇気へ.md>) | [🎨挿絵](<content/2026-11-13_pattern_a_a10_色彩の迷宮を抜けるための羅針盤_『整える』という罠から『呼び出す』勇気へ.png>) | 学習科学・メタ認知 | 3,904字 |
 | 118 | ⚖️ C: 学校法制・法務 | `C11` | **[公衆衛生の防壁と行政の峻烈――出席停止命令の正当性を巡る法理](https://k518-2026.github.io/solve-school-problems/stories/ep118-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep118-c11.html) | [📄原稿](<content/2026-11-13_pattern_c_c11_公衆衛生の防壁と行政の峻烈_出席停止命令の正当性を巡る法理.md>) | [🎨挿絵](<content/2026-11-13_pattern_c_c11_公衆衛生の防壁と行政の峻烈_出席停止命令の正当性を巡る法理.png>) | 学校法制・感染症と出席停止・臨時休業 | 3,271字 |
 | 117 | 💻 B: 校務DX・ICT | `B10` | **[薄氷の境界線を可視化する――感染症の波を読み解く動的ダッシュボードの守護](https://k518-2026.github.io/solve-school-problems/stories/ep117-b10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep117-b10.html) | [📄原稿](<content/2026-11-13_pattern_b_b10_薄氷の境界線を可視化する_感染症の波を読み解く動的ダッシュボードの守護.md>) | [🎨挿絵](<content/2026-11-13_pattern_b_b10_薄氷の境界線を可視化する_感染症の波を読み解く動的ダッシュボードの守護.png>) | 保健室DX・健康観察集計 | 3,743字 |
