@@ -1,5 +1,18 @@
 [
   {
+    "no": 119,
+    "story_id": "ep119-a10",
+    "topic_id": "A10",
+    "pattern": "A",
+    "title": "色彩の迷宮を抜けるための羅針盤――『整える』という罠から『呼び出す』勇気へ",
+    "category": "学習科学・メタ認知",
+    "keywords": "自己調整学習の3段階（予見・遂行・省察） / メタ認知的モニタリング / 再読・蛍光ペン引きの錯覚 vs 想起練習",
+    "has_image": true,
+    "url": "stories/ep119-a10.html",
+    "image": "assets/images/ep119-a10.png",
+    "char_count": 3904
+  },
+  {
     "no": 118,
     "story_id": "ep118-c11",
     "topic_id": "C11",

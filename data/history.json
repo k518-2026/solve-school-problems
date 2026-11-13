@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-13T18:31:38.251892+09:00",
-  "total_posted": 118,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-13T18:35:19.641312+09:00",
+  "total_posted": 119,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1377,6 +1377,17 @@
       "category": "学校法制・感染症と出席停止・臨時休業",
       "file_path": "content/2026-11-13_pattern_c_c11_公衆衛生の防壁と行政の峻烈_出席停止命令の正当性を巡る法理.md",
       "timestamp": "2026-11-13T18:31:38.251892+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "色彩の迷宮を抜けるための羅針盤――『整える』という罠から『呼び出す』勇気へ",
+      "pattern": "A",
+      "topic_id": "A10",
+      "category": "学習科学・メタ認知",
+      "file_path": "content/2026-11-13_pattern_a_a10_色彩の迷宮を抜けるための羅針盤_『整える』という罠から『呼び出す』勇気へ.md",
+      "timestamp": "2026-11-13T18:35:19.641312+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
