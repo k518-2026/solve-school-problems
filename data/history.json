@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-13T11:32:36.843828+09:00",
-  "total_posted": 117,
+  "last_pattern": "C",
+  "last_run_at": "2026-11-13T18:31:38.251892+09:00",
+  "total_posted": 118,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1366,6 +1366,17 @@
       "category": "保健室DX・健康観察集計",
       "file_path": "content/2026-11-13_pattern_b_b10_薄氷の境界線を可視化する_感染症の波を読み解く動的ダッシュボードの守護.md",
       "timestamp": "2026-11-13T11:32:36.843828+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "公衆衛生の防壁と行政の峻烈――出席停止命令の正当性を巡る法理",
+      "pattern": "C",
+      "topic_id": "C11",
+      "category": "学校法制・感染症と出席停止・臨時休業",
+      "file_path": "content/2026-11-13_pattern_c_c11_公衆衛生の防壁と行政の峻烈_出席停止命令の正当性を巡る法理.md",
+      "timestamp": "2026-11-13T18:31:38.251892+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
