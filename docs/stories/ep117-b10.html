@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>薄氷の境界線を可視化する――感染症の波を読み解く動的ダッシュボードの守護 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #117 ・ [B10] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">薄氷の境界線を可視化する――感染症の波を読み解く動的ダッシュボードの守護</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>保健室DX・健康観察集計（スプレッドシート COUNTIFS / ピボットテーブル / 条件付き書式による感染拡大ヒートマップ / リアルタイム集計グラフ / 教育委員会報告様式の自動生成）</div>
+      <div><strong>👥 登場人物：</strong>養護教諭・小山内先生（教職25年目） × 若手教諭・五十嵐先生（教職2年目・情報担当）</div>
+      <div><strong>💡 解決フレームワーク：</strong>クラウド出欠・健康観察ダッシュボード（ピボットテーブル・COUNTIFS関数）と学級閉鎖基準アラートのリアルタイム可視化</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep117-b10.png" alt="薄氷の境界線を可視化する――感染症の波を読み解く動的ダッシュボードの守護" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外では、どんよりとした冬の雲が低く垂れ込めていた。市立桜ヶ丘中学校の保健室には、独特の消毒液の匂いと、朝の喧騒の余韻が漂っている。</p>
+<p>「……はぁ、またこれね」</p>
+<p>養護教諭の佐伯先生は、机の上に積み上がった山のような紙の束を前に、深くため息をついた。教職歴20年を超える彼女の指先は、長年の献身によって細く、しかし正確な動きを保っている。しかし、今この瞬間の彼女を苦しめているのは、生徒たちの健康を守るという本来の使命ではなく、それを「証明」するための煩雑な事務作業だった。</p>
+<p>インフルエンザの流行期。各クラスから回収された「健康観察カード」は、まるで雪崩のように保健室へ運び込まれる。欠席者、早退者、そして体調不良の訴え。佐伯先生は一つひとつを手に取り、電卓を叩きながら、教育委員会に提出するための「感染症発生状況報告書」を埋めていく。</p>
+<p>「昨日は3年A組から4人、2年B組から2人……。あ、この子は午後から早退ね」</p>
+<p>彼女は老眼鏡を指先で押し上げながら、手書きのグラフにペンを走らせる。クラスごとに色分けし、どこで感染が拡大しているか、どの学級が「学級閉鎖」の基準に近いかを判断するためのヒートマップも、すべてはこの手作業によるものだった。</p>
+<p>そこへ、ドアが控えめにノックされた。</p>
+<p>「佐伯先生、お疲れのところすみません。さっきの『感染症報告』の件ですが……」</p>
+<p>入ってきたのは、情報担当の若手教諭、瀬戸田先生だった。彼はまだ教職2年目だが、持ち前の技術への好奇心と、現場を支えたいという熱意で周囲から信頼を得ている。</p>
+<p>佐伯先生は苦笑しながら、山積みの紙を見せた。<br />
+「瀬戸田先生、これを見て。毎朝のこの集計とグラフ作成だけで、自分の時間がほとんど削られてしまうの。生徒たちの顔を見る前に、数字を追うことになってしまって……」</p>
+<p>瀬戸田先生は、机の上の風景をじっと見つめた。彼は佐伯先生がどれほど丁寧に、一人一人の状況を正確に把握しようとしているかを知っている。彼女の仕事は単なる事務ではない。子供たちの健康という「命の安全」を守るための重要な監視活動なのだ。</p>
+<p>「……これ、全部自動で『見える』ようにしませんか？」</p>
+<p>瀬戸田先生の声には、確信に近い熱がこもっていた。彼はタブレットを手に取り、佐伯先生の隣に立った。</p>
+<p>「今、紙でやっていることは、実はデータの『蓄積』と『可視化』という素晴らしい工程なんです。ただ、その手段がアナログすぎるだけです。例えば、生徒たちがタブレットから自分の体調を報告する仕組みを作れば、この集計は一瞬で終わります」</p>
+<p>佐伯先生は眉をひそめた。「でも、セキュリティはどうするの？ 個人情報の扱いも厳しくて……」</p>
+<p>「そこは私が責任を持って設計します。Google Workspaceの権限設定を使い、特定のクラスだけが見られるように制限をかけます。それから、集計自体はスプレッドシートに任せましょう。COUNTIFS関数を使えば、条件に一致する人数を瞬時に抽出できます」</p>
+<p>瀬戸田先生は手際よく画面を操作し始めた。<br />
+「ただの集計ではありませんよ。佐伯先生が一番気にされている『学級閉鎖の予兆』。それをリアルタイムで色が変わるヒートマップにするんです。特定のクラスで欠席者が一定数を超えたら、ダッシュボードに赤いアラートが出るようにします」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>一週間後。<br />
+　保健室には、以前のような「紙の山」はなかった。代わりに、壁に設置されたモニターには、鮮やかな色彩で構成された「健康観察ダッシュボード」が映し出されていた。</p>
+<p>生徒たちは、各々の教室からタブレットを手に取り、毎朝の健康チェックを行う。ボタンを数回タップするだけで、彼らの体調データはクラウド上のスプレッドシートへと送信される。</p>
+<p>「……すごいわね。これなら、私が一人一人を追いかけなくても、全体像がすぐにわかる」</p>
+<p>佐伯先生は、モニターに映る動的なグラフを見つめていた。<br />
+　画面上では、各クラスの欠席状況が数値として集計され、ピボットテーブルによって自動的に整理されている。さらに、特定の学級において欠席者数が基準値に近づくと、そのエリアだけが「オレンジ」から「赤」へと変化する条件付き書式が適用されていた。</p>
+<p>「瀬戸田先生、この『アラート』の仕組み、本当に動くのね」</p>
+<p>瀬戸田先生は微笑んで答えた。<br />
+「はい。COUNTIFS関数で『欠席者数』をリアルタイムにカウントし、それが規定数を超えた瞬間に色が変わるように設定しています。教育委員会への報告用グラフも、このデータからワンクリックで生成されるようにGAS（Google Apps Script）を組んでおきました」</p>
+<p>佐伯先生は、驚きとともに、それ以上の喜びを感じていた。<br />
+　これまでは、紙をめくり、電卓を叩き、ペンを走らせることで「見えていた」もの。しかし今は、技術の力によって、より正確に、より迅速に、そして何より「余裕を持って」見ることができるようになったのだ。</p>
+<p>「これで、私はもっと生徒たちのと、じっくり向き合える時間を作れるわ」</p>
+<p>彼女の声は少し震えていた。それは疲れからではなく、自分の仕事がより良いものへ進化したことへの感動によるものだった。</p>
+<p>「佐伯先生の『見守る眼』を、デジタルが加速させる。それが私の目標です」</p>
+<p>瀬戸田先生は静かに言った。<br />
+　若手の技術と、ベテランの知恵。二つの力が重なり合ったとき、学校という場所はより安全で、より温かい空間へと変貌していった。</p>
+<p>窓の外の雲はまだ厚いままだったが、保健室の中には、新しい時代の光が灯っていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、アナログな「健康観察」をデジタル化し、迅速な意思決定を支援する「校務DX」の仕組みを描きました。以下に登場した主要な技術を解説します。</p>
+<p><strong>1. Google スプレッドシートとCOUNTIFS関数</strong><br />
+スプレッドシートは、データの蓄積場所です。<strong>COUNTIFS関数</strong>は、「条件に一致するセルの個数」を数える関数です。例えば「学年が3年」かつ「状態が欠席」という2つの条件を満たす生徒の数を自動でカウントします。これにより、手動での集計作業を完全に排除できます。</p>
+<p><strong>2. ピボットテーブル</strong><br />
+膨大なデータ（全校生徒の体調記録）から、「クラスごと」「学年ごと」といった特定の切り口で瞬時に集計表を作成する機能です。関数を一つずつ書く必要がなく、データの構造を動的に把握するのに非常に強力なツールです。</p>
+<p><strong>3. 条件付き書式によるヒートマップ</strong><br />
+「数値が〇〇以上ならセルを赤くする」というルールを設定する機能です。これを活用することで、特定のクラスで感染症が拡大している状況を視覚的に（ヒートマップとして）表現でき、教員の直感的な判断を助けます。</p>
+<p><strong>4. Google Apps Script (GAS)</strong><br />
+Google Workspace上で動作するJavaScriptベースのスクリプト言語です。今回の物語では「ワンクリックでの報告書生成」に使用しました。例えば、「ボタンを押した瞬間にスプレッドシートのデータをグラフ化し、PDFとして保存する」といった一連の事務作業を自動化するプログラムを書くことができます。</p>
+<p><strong>5. クラウド出欠とゼロトラストの視点</strong><br />
+校務DXにおいて重要なのは「誰がどこからアクセスできるか」の制御です。Google Workspaceを活用することで、学級ごとに閲覧権限を細かく設定でき、情報の機密性を保ちながらリアルタイムな共有を実現できます。これは文科省が進める「校務DX」の基盤となる考え方です。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>学校現場での校務DX推進や、具体的なツール活用については以下の公的資料・公式ヘルプを参考にしてください。</p>
+<ul>
+<li>文部科学省：学校と保護者等間における連絡手段のデジタル化の推進について<br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html</a></li>
+<li>デジタル庁：教育（教育DX・データ利活用）に関する方針<br />
+<a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a></li>
+<li>Google ドキュメント エディタ ヘルプ（スプレッドシートの基本操作）<br />
+<a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a></li>
+<li>Google Workspace 管理者ヘルプ（権限管理とセキュリティについて）<br />
+<a href="https://support.google.com/aadmin/" target="_blank" rel="noopener noreferrer">https://support.google.com/aadmin/</a></li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep116-a09.html">← 前の作品：#116 砂時計の粒と、見えざる足跡</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

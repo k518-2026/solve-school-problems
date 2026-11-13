@@ -1,7 +1,7 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-13T10:25:32.871511+09:00",
-  "total_posted": 111,
+  "last_run_at": "2026-11-13T11:32:36.843828+09:00",
+  "total_posted": 117,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -319,9 +319,7 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-10-29T09:18:10.310427+09:00",
-      "blogger_repost_ep": 22,
-      "wp_posted_at": "2026-11-13T10:25:32.871511+09:00",
-      "wp_repost_ep": 22
+      "blogger_repost_ep": 22
     },
     {
       "title": "夜の電話と対話の地平――保護者の不信を解くコミュニケーション理論",
@@ -332,9 +330,7 @@
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-13T10:24:59.564892+09:00",
-      "blogger_repost_ep": 23
+      "status": "publish"
     },
     {
       "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
@@ -1304,6 +1300,72 @@
       "category": "ペーパーレス・バッチ印刷自動化",
       "file_path": "content/2026-11-12_pattern_b_b08_重なる紙の残像を越えて_複合機ジョブ制御とクラウドが紡ぐ「余白」の物語.md",
       "timestamp": "2026-11-12T18:42:41.574377+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静謐なる労働の聖域――「献身」の呪縛を解く校長の決断",
+      "pattern": "C",
+      "topic_id": "C09",
+      "category": "学校法制・働き方改革・給特法",
+      "file_path": "content/2026-11-13_pattern_c_c09_静謐なる労働の聖域_「献身」の呪縛を解く校長の決断.md",
+      "timestamp": "2026-11-13T11:14:35.564128+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "境界のさざなみ――見えない規範が教室を侵食する時",
+      "pattern": "A",
+      "topic_id": "A08",
+      "category": "学級崩壊予防・教育社会学",
+      "file_path": "content/2026-11-13_pattern_a_a08_境界のさざなみ_見えない規範が教室を侵食する時.md",
+      "timestamp": "2026-11-13T11:18:28.029489+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "重なる影を解き放つ数式の旋律――三者面談の迷宮を駆け抜けるアルゴリズムの光",
+      "pattern": "B",
+      "topic_id": "B09",
+      "category": "三者面談・日程調整自動化",
+      "file_path": "content/2026-11-13_pattern_b_b09_重なる影を解き放つ数式の旋律_三者面談の迷宮を駆け抜けるアルゴリズムの光.md",
+      "timestamp": "2026-11-13T11:22:00.879889+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "断絶の境界と生命の護り――エピペンを握る手の震えと法の防壁",
+      "pattern": "C",
+      "topic_id": "C10",
+      "category": "学校法制・学校給食・アレルギー事故防止",
+      "file_path": "content/2026-11-13_pattern_c_c10_断絶の境界と生命の護り_エピペンを握る手の震えと法の防壁.md",
+      "timestamp": "2026-11-13T11:25:40.808666+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "砂時計の粒と、見えざる足跡――『点』を繋ぐための対話的アセスメント",
+      "pattern": "A",
+      "topic_id": "A09",
+      "category": "教育評価・形成的アセスメント",
+      "file_path": "content/2026-11-13_pattern_a_a09_砂時計の粒と、見えざる足跡_『点』を繋ぐための対話的アセスメント.md",
+      "timestamp": "2026-11-13T11:29:05.946213+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "薄氷の境界線を可視化する――感染症の波を読み解く動的ダッシュボードの守護",
+      "pattern": "B",
+      "topic_id": "B10",
+      "category": "保健室DX・健康観察集計",
+      "file_path": "content/2026-11-13_pattern_b_b10_薄氷の境界線を可視化する_感染症の波を読み解く動的ダッシュボードの守護.md",
+      "timestamp": "2026-11-13T11:32:36.843828+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

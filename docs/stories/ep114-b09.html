@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>重なる影を解き放つ数式の旋律――三者面談の迷宮を駆け抜けるアルゴリズムの光 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #114 ・ [B09] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">重なる影を解き放つ数式の旋律――三者面談の迷宮を駆け抜けるアルゴリズムの光</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>三者面談・日程調整自動化（Google フォーム希望収集 / QUERY / FILTER / XLOOKUP 関数 / Google Apps Script 自動重複検知 / カレンダー自動登録）</div>
+      <div><strong>👥 登場人物：</strong>教務主任・田辺先生（教職27年目） × 若手教諭・三浦先生（教職3年目・数学科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>Google フォーム ＋ スプレッドシート（QUERY / FILTER / XLOOKUP関数）とGASによる兄弟枠自動照合・日程割当アルゴリズム</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep114-b09.png" alt="重なる影を解き放つ数式の旋律――三者面談の迷宮を駆け抜けるアルゴリズムの光" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外では、夕闇が校庭の銀杏の木を飲み込もうとしていた。放課後の職員室には、蛍光灯の微かな唸りだけが響いている。しかし、その静寂を切り裂くのは、田辺教務主任の重いため息だった。</p>
+<p>「……また、ここからやり直しですか」</p>
+<p>田辺は、デスクの上に山積みになった色とりどりの紙の調査票を見つめ、眼鏡のブリッジを押し上げた。彼の前には、まるで複雑なテトリスのブロックがひっくり返ったような光景が広がっている。全校生徒の三者面談に向けた希望日時だ。</p>
+<p>特に厄介なのは、兄弟姉妹が異なるクラスに在籍している家庭だ。例えば、長男がAクラス、次男がCクラスの場合、両方の保護者が同時に面談を受けたいと希望すれば、二つの時間枠を同時に確保しなければならない。しかし、担任のスケジュールは限られている。</p>
+<p>「田辺先生、まだ終わらないんですか？」</p>
+<p>声をかけたのは、数学科の三浦だった。教職3年目の彼は、若手らしい活発な動きで田辺の傍らに立った。</p>
+<p>「三浦先生、見てください。この『兄弟枠』の調整が難しくて……。Aクラスの田中さんの次男と、Cクラスの田中さんの長男。保護者が『両方同時に』と希望しているのに、Cクラスの担任がその時間に他の面談を入れてしまっている。これを回避するために、あっちの時間をずらすと、今度は別のクラスと重なる。まるで終わりのないパズルのようです」</p>
+<p>田辺の声には、長年の教職生活で培われた「生徒への誠実さ」ゆえの苦悩が滲んでいた。彼は、保護者の利便性を最優先に考え、一軒一軒の手書きの要望を丁寧に読み取ろうとしていた。しかし、その「誠実さ」が、彼自身の睡眠時間を削り、職員室の灯を夜通し点灯させる原因となっていた。</p>
+<p>三浦は山積みの紙をじっと見つめた。<br />
+「……これ、手作業でパズルを解くのは限界がありますね。先生、この『制約条件』をすべてデータとして整理し直してみませんか？」</p>
+<p>田辺は眉をひそめた。「データ？　すでにこれだけ紙に書いてあるじゃないですか」</p>
+<p>「いいえ、今の状態は『情報の孤立』です。紙の上の情報は、書き換えるたびに他の情報との整合性を確認するコストが発生しています。これをクラウド上に集約し、アルゴリズムに判定させれば、人間は『最終的な確認』だけに集中できます」</p>
+<p>三浦は自分のノートパソコンを開き、キーボードを叩き始めた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>翌朝、三浦は田辺をパソコンの前に座らせた。画面には、Googleスプレッドシートの整然としたセルが並んでいた。</p>
+<p>「まず、すべての希望調査票をGoogleフォームで収集するように変えました。これにより、『誰が、いつ、どのクラスの兄弟と』希望しているかが一瞬で構造化されます」</p>
+<p>三浦はマウスで特定の列を指した。<br />
+「ここを見てください。この関数を使っています。<code>XLOOKUP</code>で兄弟関係のフラグを自動判定し、さらに<code>QUERY</code>関数を使って、『重複が発生している枠』だけをリアルタイムで抽出するようにしています」</p>
+<p>田辺は目を凝らした。画面上では、赤くハイライトされたセルが数箇所だけ点滅していた。<br />
+「……これだけで、どこが衝突しているか分かるのですか？」</p>
+<p>「はい。さらに、私が書いたGoogle Apps Script（GAS）が裏で動いています」<br />
+　三浦は誇らしげに、しかし謙虚な表情で続けた。<br />
+「このスクリプトは、兄弟枠の重複を検知した際、自動的に『空いている最短の代替枠』を計算します。例えば、AクラスとCクラスの両方の担任が空いている時間帯を探し出し、それを候補としてリストアップするんです。先生は、このリストを見て『この時間にしましょう』と保護者に連絡するだけで良くなります」</p>
+<p>田辺は画面を指さした。「このスクリプトというのは……魔法のようなものですか？」</p>
+<p>「魔法ではありません。論理の積み重ねです。先生がこれまで、数時間かけて紙を動かして見つけていた『最適解』を、コンピュータに計算させているだけです」<br />
+　三浦の言葉には、技術への誇りだけでなく、田辺の苦労に対する深い敬意が含まれていた。</p>
+<p>田辺はしばらく黙って画面を見つめていた。やがて、彼はゆっくりと頷いた。<br />
+「……三浦先生。私は、生徒や保護者一人ひとりの想いを大切にしたい一心で、この紙の山と格闘していました。でも、技術の力で『誠実さ』を支えることができるのなら、それは素晴らしいことだ。これなら、私はもっと生徒と向き合う時間を作れる」</p>
+<p>三浦は笑顔で応えた。「そのためにDXがあるんです。先生の教育的な知恵に、私の技術を掛け合わせれば、学校はもっと良くなります」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>一週間後。<br />
+　職員室には、以前のような重苦しい空気はなかった。田辺はタブレットを手に取り、三浦が構築したダッシュボードを確認していた。</p>
+<p>「素晴らしい。これで全クラスの調整が完了しました。兄弟枠の重複もすべて解消されていますね」</p>
+<p>田辺は、かつて徹夜で向き合っていた紙の山を思い出した。あの時、彼は自分の意志の弱さを責めていた。しかし今は、三浦のコードが紡ぐ「数式の旋律」によって、複雑な制約条件が鮮やかに整理されている。</p>
+<p>「三浦先生、次はこれを次年度も使えるように『マニュアル』にまとめてくれませんか？　あなたの技術を、この学校の共通資産にしたいんだ」</p>
+<p>田辺の言葉に、三浦は背筋を伸ばした。<br />
+「もちろんです。次世代の校務DXとして、持続可能な仕組みを一緒に作っていきましょう」</p>
+<p>窓の外では、次の季節を待つように静かな風が吹き抜けていた。技術と情熱が手を取り合った職員室には、新しい時代の夜明けのような温かな光が満ちていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、アナログな「紙のパズル」を、Google Workspaceとスクリプトを組み合わせることでデジタルな自動判定へと転換するプロセスを描きました。</p>
+<ol>
+<li>
+<p><strong>Google フォームとスプレッドシートの連携</strong><br />
+   紙の調査票は「データの孤立」を引き起こします。Google フォームを使用することで、保護者の回答は即座に構造化されたデータとしてスプレッドシートに蓄積されます。これにより、「誰が」「どこに」という情報へのアクセス速度が劇的に向上します。</p>
+</li>
+<li>
+<p><strong>XLOOKUP関数とQUERY関数の活用</strong><br />
+   - <code>XLOOKUP</code>: 特定のキー（例：児童番号や保護者名）を元に、別の表から情報を引っ張ってくる関数です。「この子は兄弟がいるか？」という判定を一瞬で行うために使用します。<br />
+   - <code>QUERY</code>: スプレッドシート内でSQLに近い高度な抽出を行う関数です。「重複が発生している行だけを表示せよ」といった複雑な条件指定を自動化できます。</p>
+</li>
+<li>
+<p><strong>Google Apps Script (GAS) による自動処理</strong><br />
+   GASは、スプレッドシートの操作を自動化するJavaScriptベースのスクリプトです。今回のケースでは、「兄弟枠の競合」という複雑なアルゴリズム（複数の担任の空き時間を突き合わせる処理）を記述することで、人間が行う「パズル」の工程をプログラムに代替させました。</p>
+</li>
+<li>
+<p><strong>次世代校務DXの視点</strong><br />
+   単に「今の作業を楽にする」だけでなく、データをクラウド上で一元管理することで、次年度への引継ぎや、学校全体の動態把握（ダッシュボード活用）へと繋げることが重要です。これは文部科学省が推進する「校務DX」の核心であり、教員が本来の業務である「生徒との対話」に集中するための環境整備です。</p>
+</li>
+</ol>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<ul>
+<li><strong>Google フォームの回答を表示、管理する</strong><br />
+<a href="https://support.google.com/docs/answer/2839588?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/answer/2839588?hl=ja</a></li>
+<li><strong>Google スプレッドシートの関数リスト</strong><br />
+<a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a></li>
+<li><strong>デジタル庁：教育（校務DXと業務効率化）に関する方針</strong><br />
+<a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a></li>
+<li><strong>文部科学省：GIGAスクール構想に関する資料</strong><br />
+  （※最新の動向については文部科学省の「GIGAスクール構想第2期」等のキーワードで検索を推奨します）</li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep113-a08.html">← 前の作品：#113 境界のさざなみ</a>
+      <a class="pager-btn" href="ep115-c10.html">次の作品：#115 断絶の境界と生命の護り →</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>
