@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-14T09:59:14.855909+09:00",
+  "last_run_at": "2026-11-14T09:59:29.868502+09:00",
   "total_posted": 120,
   "posts": [
     {
@@ -343,7 +343,9 @@
       "timestamp": "2026-10-04T03:23:30.402661+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish"
+      "status": "publish",
+      "blogger_posted_at": "2026-11-14T09:59:29.868502+09:00",
+      "blogger_repost_ep": 24
     },
     {
       "title": "デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤",
@@ -1406,6 +1408,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 24,
+  "blogger_repost_next_ep": 25,
   "wp_repost_next_ep": 24
 }
