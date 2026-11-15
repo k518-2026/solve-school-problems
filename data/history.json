@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-15T11:04:01.301884+09:00",
-  "total_posted": 122,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-15T11:07:49.695984+09:00",
+  "total_posted": 123,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1421,6 +1421,17 @@
       "category": "教育心理学・自己効力感",
       "file_path": "content/2026-11-15_pattern_a_a11_静寂のなかで、小さな『足跡』を数える.md",
       "timestamp": "2026-11-15T11:04:01.301884+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "羅針盤のデジタルな鼓動――修学旅行の迷宮を繋ぐクラウドの絆",
+      "pattern": "B",
+      "topic_id": "B18",
+      "category": "校外学習・しおり＆緊急連絡DX",
+      "file_path": "content/2026-11-15_pattern_b_b18_羅針盤のデジタルな鼓動_修学旅行の迷宮を繋ぐクラウドの絆.md",
+      "timestamp": "2026-11-15T11:07:49.695984+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

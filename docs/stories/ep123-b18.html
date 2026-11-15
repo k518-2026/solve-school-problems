@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>羅針盤のデジタルな鼓動――修学旅行の迷宮を繋ぐクラウドの絆 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #123 ・ [B18] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">羅針盤のデジタルな鼓動――修学旅行の迷宮を繋ぐクラウドの絆</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>校外学習・しおり＆緊急連絡DX（時間計算・予算自動集計シート / プルダウン入力規則による駅名・見学先選択 / フォームによる班別現在地・健康報告 / 本部リアルタイム進捗一覧）</div>
+      <div><strong>👥 登場人物：</strong>学年主任・横山先生（教職28年目） × 若手教諭・鳴瀬先生（教職3年目・社会科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>スプレッドシート共同作成による予算・時間自動計算テンプレートと、1人1台端末を活用したチェックポイント到着報告システム</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep123-b18.png" alt="羅針盤のデジタルな鼓動――修学旅行の迷宮を繋ぐクラウドの絆" loading="lazy" />
+
+    <article class="story-content">
+      <p>職員室の片隅で、重苦しい溜息が漏れた。<br />
+　教諭歴二十八年、学年主任を務める佐藤先生は、机の上に積み上げられた山のような「班別行動計画書」を前に、眉間に深い皺を刻んでいた。窓の外には、来週に控えた修学旅行への高揚感に沸く生徒たちの姿が見えるが、教員室の空気はそれとは対照的に張り詰めていた。</p>
+<p>「これだけ枚数があると、一つ一つの計算ミスを見落とすわけにはいかないんだよ……」<br />
+　佐藤先生は老眼鏡を押し上げながら、手元の電卓を叩く。生徒たちが手書きで提出した計画書には、乗り換え時間の誤差や、各施設の拝観料の合算間違いが散見された。特に予算の管理は、一円の狂いも許されない。担任たちが必死に検算しているが、その作業だけで数日を費やしているのが現状だった。</p>
+<p>さらに追い打ちをかけるのは、当日の安全確保だ。<br />
+「当日は公衆電話からの連絡に頼るしかないからね。迷子が出たり、予定より大幅に遅れたりした時、本部がどれだけ混乱するか……。一軒一軒の居場所を把握するだけで精一杯になるだろう」</p>
+<p>佐藤先生の苦悩を背後から見守っていたのは、社会科の若手教諭、高橋先生だった。教職三年目。彼は端末を手に持ち、佐藤先生の机の横にそっと立った。<br />
+「佐藤先生、もしよろしければ、この『紙の迷宮』を少しだけデジタルで整理するお手伝いをさせていただけませんか？」</p>
+<p>佐藤先生は顔を上げた。「高橋先生か。いや、気持ちは嬉しいが、これだけの量じゃあ……」<br />
+「いえ、やり方を変えるんです。ただの電子化ではありません。データの『自動連携』です」</p>
+<p>高橋先生は自分の端末を操作しながら、淡々と、しかし情熱を持って語り始めた。<br />
+「今、担任の先生方が電卓で叩いている予算や時間の計算。これ、すべてスプレッドシートに組み込んだテンプレートに入れれば、一瞬で終わります。駅名や見学先を選べば、あらかじめ設定した単価と移動時間が自動で反映されるようにするんです」</p>
+<p>佐藤先生は怪訝な顔をした。「自動で？ でも、生徒たちが書く内容がバラバラなんだよ」<br />
+「そこを『プルダウン入力』で解決します。選択肢を固定することで、入力ミスを物理的に防ぎつつ、データとして正しく集計できるようにします。例えば、『〇〇駅への移動時間』という項目に手書きの数字を入れるのではなく、リストから選んでもらう。そうすれば、全体の予算やタイムスケジュールは、一箇所を修正するだけで全班に反映されます」</p>
+<p>高橋先生は、自身の端末で作成したプロトタイプを見せた。<br />
+「見てください。ここに入力した瞬間、右側のグラフと合計金額が動きます。これなら担任の先生方の検算作業は、最後に『正しいか』を確認するだけになります」</p>
+<p>佐藤先生は画面を凝視した。手書きの文字を一つずつ読み取り、電卓のボタンを押すという労働から解放される瞬間。その快感に、彼の目がわずかに見開かれた。<br />
+「……これは、劇的に変わるな」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>しかし、高橋先生の提案は予算管理だけでは終わらなかった。彼はさらに、当日の連絡体制についても切り込んだ。</p>
+<p>「当日、公衆電話を待ち続けるのは非常に危険です。今の生徒たちは皆、一人一台端末を持っています。それを利用して『チェックポイント報告システム』を構築しましょう」</p>
+<p>佐藤先生は少し身構えた。「セキュリティの問題はどうするんだ？ 外出先での通信は……」<br />
+「そこは学校のネットワークポリシーに則りつつ、特定のフォームを活用します。班が特定の場所（例：〇〇駅、〇〇美術館）に到着した際、端末からQRコードをスキャンするか、指定のURLを開いて『到着』ボタンを押すだけです。それだけで、本部のダッシュボードにリアルタイムで位置情報と健康状態が表示されるようになります」</p>
+<p>高橋先生はホワイトボードに図解を書き込み始めた。<br />
+「各班には個別のIDを発行します。彼らが報告した瞬間、本部のモニターには『A班：到着済・異常なし』というステータスが更新される。もし遅延が発生すれば、その瞬間にアラートが出る仕組みです。電話を待つのではなく、こちらから状況を把握し、必要な時だけ声をかける。これで、本部スタッフの負担は極限まで減らせます」</p>
+<p>佐藤先生は、高橋先生の描くネットワーク構成図を見つめた。そこには単なる便利さだけでなく、生徒たちの安全を守るための緻密な設計思想が流れていた。<br />
+「君は……ただ効率を求めているだけじゃないんだな。生徒たちと、現場の先生方の『安心』を守ろうとしているんだ」</p>
+<p>高橋先生は少し照れくさそうに笑った。「はい。佐藤先生のようなベテランの先生方が積み上げてきた教育的な知恵や、安全へのこだわりを、技術で支えたいんです。古いやり方を否定するのではなく、それを『加速』させたいんです」</p>
+<p>佐藤先生は深く頷いた。<br />
+「頼むよ、高橋先生。君のその『羅針盤』を、我々の修学旅行に組み込んでくれ」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>一週間後、修学旅行当日。<br />
+　本部のモニターには、色とりどりのアイコンが整然と並んでいた。地図上を動く小さな点は、生徒たちの「今」を映し出している。<br />
+「あ、B班が移動を開始しましたね」<br />
+「C班の到着報告が入りました。順調です」</p>
+<p>佐藤先生は、以前のような焦燥感を感じることはなかった。電話機を耳に当てる代わりに、彼はモニターを見つめながら、生徒たちの安全を確信していた。<br />
+　一方で、担任の先生たちも顔を上げることができた。予算やスケジュールの確認に追われることなく、目の前の生徒たちの表情や、彼らが見ている景色に集中することができている。</p>
+<p>高橋先生は少し離れた場所で、タブレットを見つめながら微笑んでいた。<br />
+　技術は、人の情熱を邪魔するためのものではない。人の想いを、より遠くまで届けるための架け橋なのだ。</p>
+<p>夕暮れ時、無事に全員が無事の地へ戻った報告が入った瞬間、佐藤先生は高橋先生に歩み寄り、肩を叩いた。<br />
+「ありがとう、高橋先生。君の技術のおかげで、今日は本当に『良い』修学旅行になったよ」</p>
+<p>若手教員の指先から紡ぎ出されたデジタルな羅針盤は、学校という現場の温かな絆を、より確かなものへと導いた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<h3>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</h3>
+<p>今回の物語では、アナログな管理業務をクラウド技術とネットワークの知見で刷新する「校務DX」の核心的な手法が登場しました。以下にその主要技術を解説します。</p>
+<p><strong>1. スプレッドシートによる自動計算テンプレートとプルダウン入力規則</strong><br />
+これまで手書きや電卓で行っていた作業は、Googleスプレッドシート等の表計算ソフトに集約することで一気通貫のデータ化が可能になります。<br />
+- <strong>プルダウン入力（データの制約）</strong>: 「駅名」や「見学先」を自由記述にすると、表記ゆれ（例：「新宿」と「新宿駅」）が発生し、合計計算が狂う原因になります。これを「プルダウン（ドロップダウンリスト）」から選択させることで、データの整合性を保ちます。<br />
+- <strong>自動集計</strong>: ひとつのセルに単価や移動時間を紐付けておけば、項目を選択するだけで合計金額や到着予定時間が自動更新されます。これにより、一箇所の修正が全データに反映される「シングル・ソース・オブ・トゥルース（信頼できる唯一の情報源）」を実現できます。</p>
+<p><strong>2. チェックポイント報告システムとリアルタイムダッシュボード</strong><br />
+「1人1台端末」を活用し、生徒自身が自分の居場所を報告する仕組みです。<br />
+- <strong>Google フォームの活用</strong>: 各班に専用のURLまたはQRコードを配布します。生徒が「到着ボタン」を押すと、その回答は即座にスプレッドシートに蓄積されます。<br />
+- <strong>リアルタイム進捗一覧</strong>: スプレッドシートのデータを元に、条件付き書式やグラフを用いることで、「遅延している班」や「特定のエリアに滞留している班」を視覚的に把握できるダッシュボードを作成します。これにより、本部側は「電話を待つ」受動的な姿勢から「状況を把握する」能動的な管理へとシフトできます。</p>
+<p><strong>3. ネットワークとセキュリティの視点（次世代校務DX）</strong><br />
+今回の解決策は、単なるツールの導入ではなく「データの連携」に重点を置いています。<br />
+- <strong>クラウド化による共有</strong>: 担任ごとに個別のファイルを持つのではなく、共通のクラウド空間で管理することで、「誰がいつ、どこを見ているか」を透明化し、情報の齟齬をなくします。<br />
+- <strong>ゼロトラストへの意識</strong>: 校外での利用を想定する場合、学内LANに閉じたネットワークだけでなく、ID認証や適切な権限管理に基づいたクラウドサービス（Google Workspace等）を活用することで、安全かつ柔軟な校務DXが可能になります。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<h3>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</h3>
+<ul>
+<li><strong>文部科学省：教育の情報化の推進</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm</a></li>
+<li><strong>文部科学省：教育情報セキュリティの確保</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a></li>
+<li><strong>Google Workspace ヘルプ：Google フォームの回答を表示、管理する</strong><br />
+<a href="https://support.google.com/docs/answer/2839588?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/answer/2839588?hl=ja</a></li>
+<li><strong>Google Workspace ヘルプ：スプレッドシートのプルダウンリストの作成（データ入力規則）</strong></li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep122-a11.html">← 前の作品：#122 静寂のなかで、小さな『足跡』を数える</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

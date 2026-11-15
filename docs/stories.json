@@ -1,5 +1,18 @@
 [
   {
+    "no": 123,
+    "story_id": "ep123-b18",
+    "topic_id": "B18",
+    "pattern": "B",
+    "title": "羅針盤のデジタルな鼓動――修学旅行の迷宮を繋ぐクラウドの絆",
+    "category": "校外学習・しおり＆緊急連絡DX",
+    "keywords": "時間計算・予算自動集計シート / プルダウン入力規則による駅名・見学先選択 / フォームによる班別現在地・健康報告 / 本部リアルタイム進捗一覧",
+    "has_image": true,
+    "url": "stories/ep123-b18.html",
+    "image": "assets/images/ep123-b18.png",
+    "char_count": 4060
+  },
+  {
     "no": 122,
     "story_id": "ep122-a11",
     "topic_id": "A11",
