@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **120** 話（うち挿絵付き **120** 話 / 最終更新: 2026-11-15 09:09 JST）
+- **収録作品数**: 全 **122** 話（うち挿絵付き **122** 話 / 最終更新: 2026-11-15 11:04 JST）
 
 ---
 
@@ -18,6 +18,8 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 122 | 📘 A: 教育学・心理学 | `A11` | **[静寂のなかで、小さな『足跡』を数える](https://k518-2026.github.io/solve-school-problems/stories/ep122-a11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep122-a11.html) | [📄原稿](<content/2026-11-15_pattern_a_a11_静寂のなかで、小さな『足跡』を数える.md>) | [🎨挿絵](<content/2026-11-15_pattern_a_a11_静寂のなかで、小さな『足跡』を数える.png>) | 教育心理学・自己効力感 | 3,612字 |
+| 121 | ⚖️ C: 学校法制・法務 | `C18` | **[法の峻烈なる防壁と未成年者の庇護――デジタル空間に潜む暴力への決断](https://k518-2026.github.io/solve-school-problems/stories/ep121-c18.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep121-c18.html) | [📄原稿](<content/2026-11-15_pattern_c_c18_法の峻烈なる防壁と未成年者の庇護_デジタル空間に潜む暴力への決断.md>) | [🎨挿絵](<content/2026-11-15_pattern_c_c18_法の峻烈なる防壁と未成年者の庇護_デジタル空間に潜む暴力への決断.png>) | 学校法制・非行問題と警察・児童相談所連携 | 3,489字 |
 | 120 | 💻 B: 校務DX・ICT | `B11` | **[重なる影を拭い去るための光――「空き」を支配するリソース管理の静かな革命](https://k518-2026.github.io/solve-school-problems/stories/ep120-b11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep120-b11.html) | [📄原稿](<content/2026-11-13_pattern_b_b11_重なる影を拭い去るための光_「空き」を支配するリソース管理の静かな革命.md>) | [🎨挿絵](<content/2026-11-13_pattern_b_b11_重なる影を拭い去るための光_「空き」を支配するリソース管理の静かな革命.png>) | 特別教室予約・備品貸出DX | 3,821字 |
 | 119 | 📘 A: 教育学・心理学 | `A10` | **[色彩の迷宮を抜けるための羅針盤――『整える』という罠から『呼び出す』勇気へ](https://k518-2026.github.io/solve-school-problems/stories/ep119-a10.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep119-a10.html) | [📄原稿](<content/2026-11-13_pattern_a_a10_色彩の迷宮を抜けるための羅針盤_『整える』という罠から『呼び出す』勇気へ.md>) | [🎨挿絵](<content/2026-11-13_pattern_a_a10_色彩の迷宮を抜けるための羅針盤_『整える』という罠から『呼び出す』勇気へ.png>) | 学習科学・メタ認知 | 3,904字 |
 | 118 | ⚖️ C: 学校法制・法務 | `C11` | **[公衆衛生の防壁と行政の峻烈――出席停止命令の正当性を巡る法理](https://k518-2026.github.io/solve-school-problems/stories/ep118-c11.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep118-c11.html) | [📄原稿](<content/2026-11-13_pattern_c_c11_公衆衛生の防壁と行政の峻烈_出席停止命令の正当性を巡る法理.md>) | [🎨挿絵](<content/2026-11-13_pattern_c_c11_公衆衛生の防壁と行政の峻烈_出席停止命令の正当性を巡る法理.png>) | 学校法制・感染症と出席停止・臨時休業 | 3,271字 |

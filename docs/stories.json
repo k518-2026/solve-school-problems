@@ -1,5 +1,31 @@
 [
   {
+    "no": 122,
+    "story_id": "ep122-a11",
+    "topic_id": "A11",
+    "pattern": "A",
+    "title": "静寂のなかで、小さな『足跡』を数える",
+    "category": "教育心理学・自己効力感",
+    "keywords": "自己効力感の4源泉 / スモールステップによる達成体験（Mastery Experiences） / 身近なロールモデルの代理体験",
+    "has_image": true,
+    "url": "stories/ep122-a11.html",
+    "image": "assets/images/ep122-a11.png",
+    "char_count": 3612
+  },
+  {
+    "no": 121,
+    "story_id": "ep121-c18",
+    "topic_id": "C18",
+    "pattern": "C",
+    "title": "法の峻烈なる防壁と未成年者の庇護――デジタル空間に潜む暴力への決断",
+    "category": "学校法制・非行問題と警察・児童相談所連携",
+    "keywords": "少年法第1条 / いじめ防止対策推進法第23条第6項（警察への通報・連携） / 児童福祉法第25条",
+    "has_image": true,
+    "url": "stories/ep121-c18.html",
+    "image": "assets/images/ep121-c18.png",
+    "char_count": 3489
+  },
+  {
     "no": 120,
     "story_id": "ep120-b11",
     "topic_id": "B11",

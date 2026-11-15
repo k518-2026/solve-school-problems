@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-15T09:09:25.834723+09:00",
-  "total_posted": 120,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-15T11:04:01.301884+09:00",
+  "total_posted": 122,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -330,9 +330,7 @@
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "wp_posted_at": "2026-11-14T09:59:14.855909+09:00",
-      "wp_repost_ep": 23
+      "status": "publish"
     },
     {
       "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
@@ -343,11 +341,7 @@
       "timestamp": "2026-10-04T03:23:30.402661+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-14T09:59:29.868502+09:00",
-      "blogger_repost_ep": 24,
-      "wp_posted_at": "2026-11-15T09:09:25.834723+09:00",
-      "wp_repost_ep": 24
+      "status": "publish"
     },
     {
       "title": "デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤",
@@ -358,9 +352,7 @@
       "timestamp": "2026-10-04T11:49:25.812912+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-15T09:08:44.658807+09:00",
-      "blogger_repost_ep": 25
+      "status": "publish"
     },
     {
       "title": "赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路",
@@ -1410,8 +1402,30 @@
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
+    },
+    {
+      "title": "法の峻烈なる防壁と未成年者の庇護――デジタル空間に潜む暴力への決断",
+      "pattern": "C",
+      "topic_id": "C18",
+      "category": "学校法制・非行問題と警察・児童相談所連携",
+      "file_path": "content/2026-11-15_pattern_c_c18_法の峻烈なる防壁と未成年者の庇護_デジタル空間に潜む暴力への決断.md",
+      "timestamp": "2026-11-15T11:00:28.531094+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂のなかで、小さな『足跡』を数える",
+      "pattern": "A",
+      "topic_id": "A11",
+      "category": "教育心理学・自己効力感",
+      "file_path": "content/2026-11-15_pattern_a_a11_静寂のなかで、小さな『足跡』を数える.md",
+      "timestamp": "2026-11-15T11:04:01.301884+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 26,
-  "wp_repost_next_ep": 25
+  "blogger_repost_next_ep": 24,
+  "wp_repost_next_ep": 23
 }
