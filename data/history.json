@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-16T20:01:43.521197+09:00",
-  "total_posted": 125,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-16T20:05:34.868146+09:00",
+  "total_posted": 126,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1454,6 +1454,17 @@
       "category": "保護者対応・教育哲学",
       "file_path": "content/2026-11-16_pattern_a_a07_共鳴する意志の調律_『支配』を脱し、対話の地平を拓くための哲学.md",
       "timestamp": "2026-11-16T20:01:43.521197+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "沈黙の防波堤と開かれた門――一通のメールが守り抜いた信頼の境界",
+      "pattern": "B",
+      "topic_id": "B12",
+      "category": "情報セキュリティ・誤送信防止",
+      "file_path": "content/2026-11-16_pattern_b_b12_沈黙の防波堤と開かれた門_一通のメールが守り抜いた信頼の境界.md",
+      "timestamp": "2026-11-16T20:05:34.868146+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
