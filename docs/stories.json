@@ -1,5 +1,31 @@
 [
   {
+    "no": 125,
+    "story_id": "ep125-a07",
+    "topic_id": "A07",
+    "pattern": "A",
+    "title": "共鳴する意志の調律――『支配』を脱し、対話の地平を拓くための哲学",
+    "category": "保護者対応・教育哲学",
+    "keywords": "戦略的行為から対話的合意形成への転換 / 妥当性要求（真理性・正当性・誠実性） / 親と学校のパートナーシップ構築",
+    "has_image": true,
+    "url": "stories/ep125-a07.html",
+    "image": "assets/images/ep125-a07.png",
+    "char_count": 3489
+  },
+  {
+    "no": 124,
+    "story_id": "ep124-c04",
+    "topic_id": "C04",
+    "pattern": "C",
+    "title": "聖域の静寂と情報の境界――私的空間に流出した児童の肖像を護る法理",
+    "category": "学校法制・公務員倫理・情報管理",
+    "keywords": "地方公務員法第32条・第33条・第34条 / 教育公務員特例法 / 個人情報の保護に関する法律 / 教育情報セキュリティポリシーに関するガイドライン",
+    "has_image": true,
+    "url": "stories/ep124-c04.html",
+    "image": "assets/images/ep124-c04.png",
+    "char_count": 3168
+  },
+  {
     "no": 123,
     "story_id": "ep123-b18",
     "topic_id": "B18",
