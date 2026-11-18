@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-18T16:28:04.898748+09:00",
-  "total_posted": 128,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-18T16:31:57.733152+09:00",
+  "total_posted": 129,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1487,6 +1487,17 @@
       "category": "探究学習・教育哲学",
       "file_path": "content/2026-11-18_pattern_a_a12_鏡像の迷宮を抜けるための足跡_模倣の海から『真の問い』へ導く航路.md",
       "timestamp": "2026-11-18T16:28:04.898748+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "一筆の重みとデータの静寂――「真実の源泉」が紡ぐ表彰状の革命",
+      "pattern": "B",
+      "topic_id": "B19",
+      "category": "賞状・通知文の差し込み印刷DX",
+      "file_path": "content/2026-11-18_pattern_b_b19_一筆の重みとデータの静寂_「真実の源泉」が紡ぐ表彰状の革命.md",
+      "timestamp": "2026-11-18T16:31:57.733152+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

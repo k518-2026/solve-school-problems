@@ -1,5 +1,18 @@
 [
   {
+    "no": 129,
+    "story_id": "ep129-b19",
+    "topic_id": "B19",
+    "pattern": "B",
+    "title": "一筆の重みとデータの静寂――「真実の源泉」が紡ぐ表彰状の革命",
+    "category": "賞状・通知文の差し込み印刷DX",
+    "keywords": "Single Source of Truth（単一マスター名簿） / 差し込み印刷・テンプレート置換スクリプト / 外字・異体字のUnicode管理 / PDF一括出力とプレビュー検証",
+    "has_image": true,
+    "url": "stories/ep129-b19.html",
+    "image": "assets/images/ep129-b19.png",
+    "char_count": 4149
+  },
+  {
     "no": 128,
     "story_id": "ep128-a12",
     "topic_id": "A12",

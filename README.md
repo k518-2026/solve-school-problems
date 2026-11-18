@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **128** 話（うち挿絵付き **128** 話 / 最終更新: 2026-11-18 16:28 JST）
+- **収録作品数**: 全 **129** 話（うち挿絵付き **129** 話 / 最終更新: 2026-11-18 16:31 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 129 | 💻 B: 校務DX・ICT | `B19` | **[一筆の重みとデータの静寂――「真実の源泉」が紡ぐ表彰状の革命](https://k518-2026.github.io/solve-school-problems/stories/ep129-b19.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep129-b19.html) | [📄原稿](<content/2026-11-18_pattern_b_b19_一筆の重みとデータの静寂_「真実の源泉」が紡ぐ表彰状の革命.md>) | [🎨挿絵](<content/2026-11-18_pattern_b_b19_一筆の重みとデータの静寂_「真実の源泉」が紡ぐ表彰状の革命.png>) | 賞状・通知文の差し込み印刷DX | 4,149字 |
 | 128 | 📘 A: 教育学・心理学 | `A12` | **[鏡像の迷宮を抜けるための足跡 ― 模倣の海から『真の問い』へ導く航路](https://k518-2026.github.io/solve-school-problems/stories/ep128-a12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep128-a12.html) | [📄原稿](<content/2026-11-18_pattern_a_a12_鏡像の迷宮を抜けるための足跡_模倣の海から『真の問い』へ導く航路.md>) | [🎨挿絵](<content/2026-11-18_pattern_a_a12_鏡像の迷宮を抜けるための足跡_模倣の海から『真の問い』へ導く航路.png>) | 探究学習・教育哲学 | 4,279字 |
 | 127 | ⚖️ C: 学校法制・法務 | `C12` | **[静かなるレンズの叛逆――肖像権の境界線と保護の責務](https://k518-2026.github.io/solve-school-problems/stories/ep127-c12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep127-c12.html) | [📄原稿](<content/2026-11-18_pattern_c_c12_静かなるレンズの叛逆_肖像権の境界線と保護の責務.md>) | [🎨挿絵](<content/2026-11-18_pattern_c_c12_静かなるレンズの叛逆_肖像権の境界線と保護の責務.png>) | 学校法制・個人情報保護・肖像権 | 3,359字 |
 | 126 | 💻 B: 校務DX・ICT | `B12` | **[沈黙の防波堤と開かれた門――一通のメールが守り抜いた信頼の境界](https://k518-2026.github.io/solve-school-problems/stories/ep126-b12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep126-b12.html) | [📄原稿](<content/2026-11-16_pattern_b_b12_沈黙の防波堤と開かれた門_一通のメールが守り抜いた信頼の境界.md>) | [🎨挿絵](<content/2026-11-16_pattern_b_b12_沈黙の防波堤と開かれた門_一通のメールが守り抜いた信頼の境界.png>) | 情報セキュリティ・誤送信防止 | 4,273字 |

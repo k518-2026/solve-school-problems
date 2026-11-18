@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>一筆の重みとデータの静寂――「真実の源泉」が紡ぐ表彰状の革命 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #129 ・ [B19] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">一筆の重みとデータの静寂――「真実の源泉」が紡ぐ表彰状の革命</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>賞状・通知文の差し込み印刷DX（Single Source of Truth（単一マスター名簿） / 差し込み印刷・テンプレート置換スクリプト / 外字・異体字のUnicode管理 / PDF一括出力とプレビュー検証）</div>
+      <div><strong>👥 登場人物：</strong>総務主任・平田先生（教職29年目） × 若手教諭・望月先生（教職3年目・情報担当）</div>
+      <div><strong>💡 解決フレームワーク：</strong>名簿マスターデータ（単一情報源：Single Source of Truth）からの差し込み印刷（Mail Merge）およびGASドキュメント自動生成</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep129-b19.png" alt="一筆の重みとデータの静寂――「真実の源泉」が紡ぐ表彰状の革命" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外では、初夏の陽光が校庭の桜の残滓を白く照らしていた。しかし、市立第二中学校の職員室には、それとは対照的な重苦しい空気が漂っていた。<br />
+「……またか。この『高木君』の名字、旧字体だっけ？ それとも、この漢字のバランスが微妙に違うのか……」<br />
+　総務主任の佐伯先生は、手元の紙面を凝視しながら、眉間に深い皺を刻んでいた。教職32年。数え切れないほどの式典を支えてきた彼にとって、表彰状や通知文の作成は、生徒への敬意を形にする神聖な儀式であった。しかし、その「神聖な儀式」が、近年の生徒数の増加と事務の細分化によって、過酷な手作業の山へと変貌していた。<br />
+　机の上には、数百枚ものWordファイルが重なり合っている。それぞれが個別のファイルとして保存され、名前や生年月日、学年を一つずつ手入力で書き換える作業。一箇所の打ち間違いが、式典の最前列で生徒に渡される証書の信頼性を損なう。その恐怖が、佐伯先生を何度も「やり直し」の地獄へと突き落としていた。<br />
+「先生、まだ終わらないんですか？ あと、三〇枚くらい残ってますよね」<br />
+　若手教員の望月先生が、心配そうに声をかけた。彼は情報担当として着任してから、この「手入力の迷宮」に囚われている先輩たちの姿を見るたび、胸を締め付けられるような思いを抱いていた。</p>
+<p>「ああ、望月先生。すまないね、これだけ枚数があると、どうしても集中力が切れてしまう。特にこの『異体字』の問題は厄介でね。一つ間違えるだけで、保護者の方への信頼を損ねてしまうから」<br />
+　佐伯先生は老眼鏡を押し上げ、ため息をついた。その手元にあるWordファイルは、前任者が作った「手動修正用」のテンプレートだ。生徒の名前が変わるたびに、誰かがファイルを開き、名前を打ち替え、上書き保存する。この「情報の断片化」こそが、現場を疲弊させている真の原因だった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>望月先生は、自分のデスクに戻り、ノートパソコンを開いた。<br />
+（このままでは、佐伯先生の貴重な時間がすべて事務作業に溶けてしまう……）<br />
+　彼はまず、学校の共有ドライブにある「生徒名簿マスター」を呼び出した。これが「Single Source of Truth（単一の真実の源泉）」となるべきデータだ。しかし、現状ではこの名簿と、印刷用のWordファイルの内容が同期されていない。<br />
+　望月先生は、Google Workspaceを活用した解決策を思い描いた。<br />
+　まず、スプレッドシート上の名簿データを整理する。そこには生徒の氏名、正確なUnicodeに基づく異体字、保護者連絡先、そして学籍番号が含まれている。これらすべてを一箇所に集約し、ここだけを正しく更新すれば、すべての書類が自動で更新される仕組みを作る。<br />
+　彼はGoogle Apps Script（GAS）を立ち上げた。<br />
+「よし、まずはテンプレートの置換ロジックからだ」<br />
+　彼はスクリプトを書き進める。単に名前を置き換えるだけではない。印刷時に発生しやすい「文字化け」を防ぐため、Unicodeの管理を徹底し、さらにPDFとして一括出力する際のプレビュー検証機能まで盛り込んだ。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>翌日の放課後、佐伯先生は再び机に向かっていた。その横に、望月先生が静かに立った。<br />
+「先生、少しだけお時間をよろしいでしょうか。……この『手入力の迷宮』を、今日で終わらせてみませんか」<br />
+　望月先生は画面を指さした。そこには、整然と並んだスプレッドシートと、実行ボタン一つで動くスクリプトのコードがあった。<br />
+「えっ、どういうことだい？」<br />
+　佐伯先生が驚いて顔を上げた。<br />
+「『単一の源泉』という考え方を使います。先生、このスプレッドシートの名簿だけを正解だと決めます。ここに名前を正しく入力すれば、あとは魔法のように、すべての表彰状や通知文が自動で生成される仕組みです」<br />
+　望月先生は丁寧に操作を実演した。<br />
+「例えば、この『高木君』の名字の旧字体ですね。ここを修正すると……見てください、Wordのテンプレートではなく、クラウド上のデータが更新され、一瞬で全件のPDFが出来上がります」<br />
+　佐伯先生は目を見開いた。望月先生が操作するたびに、画面上では次々と正確な文字を含む書類が生成されていく。<br />
+「……これなら、打ち間違いの心配がないのか」<br />
+「はい。さらに、GAS（Google Apps Script）を使えば、一人の生徒の名前が変わったときに、それが通知文にも表彰状にも反映されるようになります。情報の『分断』を無くすことで、先生の『確認の手間』という最大のストレスを取り除きます」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>作業は驚異的なスピードで進んだ。<br />
+　佐伯先生は、これまで数時間かかっていた「名字の確認」と「手入力」の工程が、わずか数分のデータ照合に置き換わるのを目の当たりにした。<br />
+「すごい……。まるで、背中を押してくれる魔法の杖を手に入れたような気分だよ」<br />
+　佐伯先生は感嘆の声を漏らした。それだけではない。望月先生が用意した仕組みには、次世代の校務DXを見据えた「持続可能性」が含まれていた。<br />
+「先生、これは単なる時短ではありません。学校の『データ標準化』への第一歩です」<br />
+　望月先生は真剣な眼差しで続けた。<br />
+「今は個別のファイルを作っていますが、今後はクラウド上でデータを一元管理し、必要に応じてダッシュボードで進捗を確認する。そうすることで、次年度の担当者が変わっても、誰も困らない仕組みを構築したいんです」<br />
+　佐伯先生は、若手の技術に対する感銘だけでなく、その背景にある「次世代への配慮」に深く心を動かされた。<br />
+「私の時代は、地道な手作業こそが誠実さの証だと思っていた。でも、君の言う通り、正確なデータを正しく共有することこそが、今の時代の子どもたちを守り、先生たちの笑顔を守るための『誠実さ』なのかもしれないね」</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>数日後、式典の準備は完璧に整った。<br />
+　佐伯先生の手元には、もう「やり直し」の山はない。代わりにあったのは、一分の隙もない正確なPDF群と、それを見守る穏やかな笑顔だった。<br />
+「望月先生、ありがとう。君の技術のおかげで、私はようやく『事務』ではなく、『教育』に集中できる時間が戻ってきたよ」<br />
+　佐伯先生は、誇らしげに、しかし謙虚にそう言って、若手教員と握手を交わした。<br />
+　職員室の窓の外では、夏の光がさらに輝きを増していた。デジタルという名の新しい筆を手に、彼らは次なる教育の未来へと歩みを進めていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<h3>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</h3>
+<p>今回の物語では、煩雑な「手動の差し込み印刷」を、最新の校務DX技術を用いて解決しました。重要なポイントを3つに分けて解説します。</p>
+<p><strong>1. Single Source of Truth（単一の真実の源泉）</strong><br />
+これはデータ管理における最重要コンセプトです。「生徒の名前はどこにあるのか？」という問いに対し、「このスプレッドシートだけが正解である」と定義することです。Wordファイルごとに名前を書き換えるのではなく、マスターデータ（名簿）を一つだけ正しく保ち、他のすべての書類はそのデータを参照するだけの「器（テンプレート）」にする。これにより、情報の不一致や、修正漏れといった人的ミスを根本から防ぐことができます。</p>
+<p><strong>2. Google Apps Script (GAS) との連携</strong><br />
+GASはGoogle Workspace上で動くプログラミング言語です。今回の解決策では、スプレッドシートに入力された生徒データを読み取り、あらかじめ用意したWordやGoogleドキュメントのテンプレートの特定の場所（「{{氏名}}」など）を自動で書き換える処理を行いました。これにより、数百枚のファイルを手動で開く必要がなくなり、ワンクリックで全件の生成が可能になります。</p>
+<p><strong>3. Unicode管理と異体字への対応</strong><br />
+学校現場で特に問題となるのが「旧字体」や「異体字」です。これらはコンピュータ上では「Unicode」という番号で管理されています。単に似た漢字を入力するのではなく、マスターデータ自体に正しいUnicodeを反映させることで、印刷時の文字化けや、微妙な形の違いによるミスを防ぎます。PDFとして一括出力する前にプレビューを行う工程を入れることで、最終的な「証書」としての品質を担保しています。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<h3>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</h3>
+<p>学校現場で校務DXを進める際に役立つ、国内の公的資料および公式ヘルプです。</p>
+<ul>
+<li><strong>デジタル庁：教育におけるデータ標準化について</strong><br />
+<a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a></li>
+<li><strong>Google ドキュメント エディタ ヘルプ（差し込み印刷や自動化の基礎）</strong><br />
+<a href="https://support.google.com/docs/" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/</a></li>
+<li><strong>Google スプレッドシートの関数リスト（XLOOKUPなどのデータ照合に活用）</strong><br />
+<a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a></li>
+<li><strong>Microsoft サポート：XLOOKUP 関数（Excelでのデータ照合の基本）</strong><br />
+<a href="https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" target="_blank" rel="noopener noreferrer">https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929</a></li>
+<li><strong>文部科学省：GIGAスクール構想 第2期に向けた校務DXの推進</strong><br />
+  （※最新の動向については、文科省の「教育DX推進」関連ページを適宜参照してください）</li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep128-a12.html">← 前の作品：#128 鏡像の迷宮を抜けるための足跡 ― 模倣の海から『真の問い』へ導く航路</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>
