@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-17T12:05:44.011435+09:00",
+  "last_run_at": "2026-11-18T11:33:32.766580+09:00",
   "total_posted": 126,
   "posts": [
     {
@@ -356,7 +356,9 @@
       "timestamp": "2026-10-04T11:49:25.812912+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish"
+      "status": "publish",
+      "blogger_posted_at": "2026-11-18T11:33:32.766580+09:00",
+      "blogger_repost_ep": 25
     },
     {
       "title": "赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路",
@@ -1474,6 +1476,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 25,
+  "blogger_repost_next_ep": 26,
   "wp_repost_next_ep": 24
 }
