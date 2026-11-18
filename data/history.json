@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-18T11:33:32.766580+09:00",
-  "total_posted": 126,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-18T16:28:04.898748+09:00",
+  "total_posted": 128,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -330,9 +330,7 @@
       "timestamp": "2026-10-03T23:59:01.037614+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "wp_posted_at": "2026-11-17T12:05:44.011435+09:00",
-      "wp_repost_ep": 23
+      "status": "publish"
     },
     {
       "title": "紙煙る印刷室の脱出劇――複合機ジョブ制御とクラウド配信が拓く放課後の青空",
@@ -343,9 +341,7 @@
       "timestamp": "2026-10-04T03:23:30.402661+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-17T12:05:33.809781+09:00",
-      "blogger_repost_ep": 24
+      "status": "publish"
     },
     {
       "title": "デジタルに灯る法の光――校長が挑む著作権法三十五条の防波堤",
@@ -356,9 +352,7 @@
       "timestamp": "2026-10-04T11:49:25.812912+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish",
-      "blogger_posted_at": "2026-11-18T11:33:32.766580+09:00",
-      "blogger_repost_ep": 25
+      "status": "publish"
     },
     {
       "title": "赤いインクの沈黙と小さな舵――形成的評価が拓く学びの航路",
@@ -1474,8 +1468,30 @@
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
+    },
+    {
+      "title": "静かなるレンズの叛逆――肖像権の境界線と保護の責務",
+      "pattern": "C",
+      "topic_id": "C12",
+      "category": "学校法制・個人情報保護・肖像権",
+      "file_path": "content/2026-11-18_pattern_c_c12_静かなるレンズの叛逆_肖像権の境界線と保護の責務.md",
+      "timestamp": "2026-11-18T16:24:09.771174+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "鏡像の迷宮を抜けるための足跡 ― 模倣の海から『真の問い』へ導く航路",
+      "pattern": "A",
+      "topic_id": "A12",
+      "category": "探究学習・教育哲学",
+      "file_path": "content/2026-11-18_pattern_a_a12_鏡像の迷宮を抜けるための足跡_模倣の海から『真の問い』へ導く航路.md",
+      "timestamp": "2026-11-18T16:28:04.898748+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 26,
-  "wp_repost_next_ep": 24
+  "blogger_repost_next_ep": 24,
+  "wp_repost_next_ep": 23
 }

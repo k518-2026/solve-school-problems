@@ -1,5 +1,31 @@
 [
   {
+    "no": 128,
+    "story_id": "ep128-a12",
+    "topic_id": "A12",
+    "pattern": "A",
+    "title": "鏡像の迷宮を抜けるための足跡 ― 模倣の海から『真の問い』へ導く航路",
+    "category": "探究学習・教育哲学",
+    "keywords": "問題解決学習と五段階思考 / Doing by Learning（なすことによって学ぶ） / 本質的な問い（Essential Questions）の設計",
+    "has_image": true,
+    "url": "stories/ep128-a12.html",
+    "image": "assets/images/ep128-a12.png",
+    "char_count": 4279
+  },
+  {
+    "no": 127,
+    "story_id": "ep127-c12",
+    "topic_id": "C12",
+    "pattern": "C",
+    "title": "静かなるレンズの叛逆――肖像権の境界線と保護の責務",
+    "category": "学校法制・個人情報保護・肖像権",
+    "keywords": "個人情報の保護に関する法律 / 地方公務員法第34条（守秘義務） / 肖像権・プライバシー権（判例法理）",
+    "has_image": true,
+    "url": "stories/ep127-c12.html",
+    "image": "assets/images/ep127-c12.png",
+    "char_count": 3359
+  },
+  {
     "no": 126,
     "story_id": "ep126-b12",
     "topic_id": "B12",

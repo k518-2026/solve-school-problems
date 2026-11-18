@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **126** 話（うち挿絵付き **126** 話 / 最終更新: 2026-11-18 11:33 JST）
+- **収録作品数**: 全 **128** 話（うち挿絵付き **128** 話 / 最終更新: 2026-11-18 16:28 JST）
 
 ---
 
@@ -18,6 +18,8 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 128 | 📘 A: 教育学・心理学 | `A12` | **[鏡像の迷宮を抜けるための足跡 ― 模倣の海から『真の問い』へ導く航路](https://k518-2026.github.io/solve-school-problems/stories/ep128-a12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep128-a12.html) | [📄原稿](<content/2026-11-18_pattern_a_a12_鏡像の迷宮を抜けるための足跡_模倣の海から『真の問い』へ導く航路.md>) | [🎨挿絵](<content/2026-11-18_pattern_a_a12_鏡像の迷宮を抜けるための足跡_模倣の海から『真の問い』へ導く航路.png>) | 探究学習・教育哲学 | 4,279字 |
+| 127 | ⚖️ C: 学校法制・法務 | `C12` | **[静かなるレンズの叛逆――肖像権の境界線と保護の責務](https://k518-2026.github.io/solve-school-problems/stories/ep127-c12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep127-c12.html) | [📄原稿](<content/2026-11-18_pattern_c_c12_静かなるレンズの叛逆_肖像権の境界線と保護の責務.md>) | [🎨挿絵](<content/2026-11-18_pattern_c_c12_静かなるレンズの叛逆_肖像権の境界線と保護の責務.png>) | 学校法制・個人情報保護・肖像権 | 3,359字 |
 | 126 | 💻 B: 校務DX・ICT | `B12` | **[沈黙の防波堤と開かれた門――一通のメールが守り抜いた信頼の境界](https://k518-2026.github.io/solve-school-problems/stories/ep126-b12.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep126-b12.html) | [📄原稿](<content/2026-11-16_pattern_b_b12_沈黙の防波堤と開かれた門_一通のメールが守り抜いた信頼の境界.md>) | [🎨挿絵](<content/2026-11-16_pattern_b_b12_沈黙の防波堤と開かれた門_一通のメールが守り抜いた信頼の境界.png>) | 情報セキュリティ・誤送信防止 | 4,273字 |
 | 125 | 📘 A: 教育学・心理学 | `A07` | **[共鳴する意志の調律――『支配』を脱し、対話の地平を拓くための哲学](https://k518-2026.github.io/solve-school-problems/stories/ep125-a07.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep125-a07.html) | [📄原稿](<content/2026-11-16_pattern_a_a07_共鳴する意志の調律_『支配』を脱し、対話の地平を拓くための哲学.md>) | [🎨挿絵](<content/2026-11-16_pattern_a_a07_共鳴する意志の調律_『支配』を脱し、対話の地平を拓くための哲学.png>) | 保護者対応・教育哲学 | 3,489字 |
 | 124 | ⚖️ C: 学校法制・法務 | `C04` | **[聖域の静寂と情報の境界――私的空間に流出した児童の肖像を護る法理](https://k518-2026.github.io/solve-school-problems/stories/ep124-c04.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep124-c04.html) | [📄原稿](<content/2026-11-16_pattern_c_c04_聖域の静寂と情報の境界_私的空間に流出した児童の肖像を護る法理.md>) | [🎨挿絵](<content/2026-11-16_pattern_c_c04_聖域の静寂と情報の境界_私的空間に流出した児童の肖像を護る法理.png>) | 学校法制・公務員倫理・情報管理 | 3,168字 |
