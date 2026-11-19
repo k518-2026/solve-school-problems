@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-19T22:38:59.106068+09:00",
-  "total_posted": 130,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-19T22:42:37.566630+09:00",
+  "total_posted": 131,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1511,6 +1511,17 @@
       "category": "学校法制・日本国憲法・無償原則と私費負担",
       "file_path": "content/2026-11-19_pattern_c_c13_憲法の静謐なる守護_義務教育の無償と教育の質を巡る断層.md",
       "timestamp": "2026-11-19T22:38:59.106068+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "沈黙の防壁を溶かす「間違い」の再定義 ― 教室に流れる空気の解像度を変える",
+      "pattern": "A",
+      "topic_id": "A13",
+      "category": "学級経営・心理的安全性",
+      "file_path": "content/2026-11-19_pattern_a_a13_沈黙の防壁を溶かす「間違い」の再定義_教室に流れる空気の解像度を変える.md",
+      "timestamp": "2026-11-19T22:42:37.566630+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
