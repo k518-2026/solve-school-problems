@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>重なり合う赤ペンを、瞬時に色づく正答の地図へ――放課後の沈黙を破る熱量と数式の光 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #132 ・ [B14] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">重なり合う赤ペンを、瞬時に色づく正答の地図へ――放課後の沈黙を破る熱量と数式の光</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>授業ICT・リアルタイム小テスト（Google フォーム自動採点モード / 正答率・誤答パターンのリアルタイム可視化 / 正規表現による記述解答の表記ゆれ許容判定 / 成績一覧への自動転記）</div>
+      <div><strong>👥 登場人物：</strong>ベテラン教諭・古川先生（教職26年目・社会科） × 若手教諭・相沢先生（教職2年目・英語科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>Google フォームの「テスト機能（自動採点・解説フィードバック）」とスプレッドシート連携による誤答率ヒートマップ即時生成</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep132-b14.png" alt="重なり合う赤ペンを、瞬時に色づく正答の地図へ――放課後の沈黙を破る熱量と数式の光" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外では、夕闇がゆっくりと校庭を飲み込んでいた。中学校の職員室には、いくつかのデスクから漏れ出る蛍光灯の光だけが、頼りなく浮かんでいる。<br />
+「……はぁ。今日も、あと少しか」<br />
+　地理担当の佐伯先生（教職28年目）は、深く椅子に背中を預け、重い溜息をついた。机の上には、山のように積み上げられた紙の小テストが散乱している。<br />
+　毎時間の授業の最後に、生徒たちの理解度を確認するために実施する「ミニ・チェック」。40人の生徒が5クラス分、毎日200枚以上の答案が放課後の彼を待っている。一つひとつの回答を赤ペンで採点し、それを個別の名簿に転記して、次回の指導の優先順位を決める。それが佐伯先生の「授業への誠実さ」の証だったが、最近はその誠実さが、彼自身の睡眠時間を削り取る刃となっていた。<br />
+　特に今日は、複雑な地政学の概念を問う問題が含まれていたため、採点の難易度も高く、手元はさらに疲弊していた。</p>
+<p>「佐伯先生、まだお仕事ですか？」<br />
+　静かな声をかけてきたのは、英語科の若手教諭、瀬戸先生だった。入職2年目の彼は、常に最新のガジェットやクラウドツールを使いこなしていることで知られた。<br />
+「ああ、瀬戸先生。すまないね、まだこれの山と格闘しているんだ」<br />
+　佐伯先生は老眼鏡をずらし、山積みの紙を指差した。<br />
+「これだよ。生徒たちがどこでつまずいているかを知りたいだけなのに、この『転記』と『採点』という物理的な作業に、放課後のすべてが奪われてしまうんだ」</p>
+<p>瀬戸先生はゆっくりと佐伯先生のデスクへ歩み寄り、その山を見た。<br />
+「……これだけの量、手作業でやるのは本当に過酷ですよね。でも、先生の『生徒一人ひとりのつまずきを逃したくない』という熱意は、僕も尊敬しています」<br />
+　瀬戸先生は、自分のノートパソコンを開いた。<br />
+「実は、僕も以前、同じような悩みを持っていたんです。でも、最近のGoogle Workspaceの機能と少しの工夫で、この作業のほとんどを自動化できることに気づきました。もしよろしければ、今ここで少しだけ見せてもいいですか？」</p>
+<p>佐伯先生は少しだけ眉をひそめた。「いや、今の時間で新しいことを覚える余裕は……」<br />
+「いえ、覚える必要はありません。ただ、結果を見るだけです」<br />
+　瀬戸先生は優しく微笑み、画面を操作し始めた。</p>
+<p>瀬戸先生が示したのは、Google フォームの「テスト機能」を活用したシステムだった。<br />
+　彼はまず、佐伯先生に自分のスマホを取り出した。<br />
+「先生、このQRコードをスキャンしてみてください」<br />
+　佐伯先生が読み取ると、画面には地理の小テストが表示された。<br />
+「これは、先生が授業で出している問題と同じものです。生徒たちがこれを使って回答すると、自動的に採点が行われます。さらに、私が少し手を加えた『スプレッドシート』と連携させることで、先生が今苦労されている『名簿への転記』も完全に不要になります」</p>
+<p>瀬戸先生は画面を操作しながら解説を始めた。<br />
+「まず、Google フォームのテストモードを使えば、正解・不正解の判定は一瞬です。特に、記述式の問題については、『正規表現』という仕組みを使って、表記のゆれを許容するように設定しています。例えば『日本海』と答えた生徒が『にほんかい』とひらがなで書いても、システムが賢く判断して正解として扱うようにしているんです」</p>
+<p>佐伯先生は、画面に映し出されたスプレッドシートに目を奪われた。<br />
+「これは……私の名簿だね？」<br />
+「はい。生徒たちが回答を送信した瞬間、このシートに点数が自動で入ります。そして、ここを見てください」<br />
+　瀬戸先生が指さしたのは、特定のセルに色が塗られた「ヒートマップ」だった。<br />
+「これが、私が組んだダッシュボードです。どの設問に対して、どのクラスの生徒が多く間違えたかが一目でわかるようになっています。赤い色がついている場所は、明日の授業で重点的に解説すべきポイントです。先生はもう、赤ペンを走らせる必要はありません。この色を見るだけでいいんです」</p>
+<p>佐伯先生は呆然と画面を見つめた。<br />
+「……自動で、これだけ正確に分析してくれるのか。私が数時間かけて判別しようとしていたことが、瞬時に可視化されている……」<br />
+「ええ。さらに、生徒一人ひとりへのフィードバックも、フォームの機能を使って『正解した人にはこの解説、間違えた人にはこのヒント』と自動で送ることも可能です。先生は、そのフィードバックを元に、生徒と対話するだけになればいいんです」</p>
+<p>瀬戸先生は、佐伯先生の山積みの紙を見つめて言った。<br />
+「DXというのは、単に『楽をする』ことではありません。先生が本来やりたかった『生徒との対話』や『授業の改善』のために、本来必要のない作業を技術の力で削り取る。それが私の考える校務DXです」</p>
+<p>佐伯先生は、しばらく沈黙した。そして、ゆっくりと顔を上げ、隣に立つ若手教諭を見つめた。その目には、驚きとともに深い感銘の色が宿っていた。<br />
+「……瀬戸先生。君の技術は、まるで魔法のようだ。私の『誠実さ』が、これほどまでに鮮やかな『地図』に変えられるとは思いもしなかったよ」</p>
+<p>佐伯先生は、山積みの紙を一度見渡し、それから再び瀬戸先生の画面を見た。<br />
+「明日からの授業、この『地図』を一緒に作らせてもらおうか。……君の技術を、私の授業のために貸してくれないか？」<br />
+　瀬戸先生は、これ以上ないほど晴れやかな笑顔で頷いた。</p>
+<p>翌日の放課後、職員室には以前のような重苦しい沈黙はなかった。<br />
+　佐伯先生は、自分のデスクに座り、生徒たちが回答したデータの反映を待っていた。画面上では、いくつかのセルが次々と色を変え、クラス全体の理解度がリアルタイムで動き出している。</p>
+<p>「見てくれ、瀬戸先生。この問題、Cクラスの半分以上が赤くなっている。明日はここから話を始めよう」<br />
+　佐伯先生は、以前のように疲弊した表情ではなく、新しい地図を手に入れた探検家のような、晴れやかな顔で言った。<br />
+　窓の外には、昨日よりもずっと明るい星が輝き始めていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、Google Workspaceを中心とした「校務DX」の具体的な手法を導入しました。ITに詳しくない先生方でも取り組めるポイントを整理します。</p>
+<ol>
+<li>
+<p><strong>Google フォームの「テスト機能」と自動採点</strong><br />
+   Google フォームには、単なるアンケートではなく「テスト（クイズ）」として作成するモードがあります。これを使うと、正解を設定した上で、生徒が回答した瞬間に自動で採点が行われます。これにより、採点という物理的な作業をゼロにすることが可能です。</p>
+</li>
+<li>
+<p><strong>正規表現による表記ゆれの許容</strong><br />
+   記述式の解答では、「漢字かひらがなか」「スペースの有無」などで不当に不正解になることがあります。「正規表現（Regular Expression）」という高度な検索・判定ルールを使うことで、「日本海」と「にほんかい」の両方を正解として判定するような柔軟な設定が可能になります。</p>
+</li>
+<li>
+<p><strong>スプレッドシート連携とヒートマップ</strong><br />
+   フォームの回答は自動的にGoogle スプレッドシートへ集約されます。このデータの「条件付き書式」という機能を使うことで、誤答率が高いセルを自動的に赤く塗る（ヒートマップ化）ことができます。これにより、教員は数百枚の答案を眺めることなく、クラス全体の弱点を瞬時に把握できます。</p>
+</li>
+<li>
+<p><strong>次世代校務DXへの視点</strong><br />
+   文部科学省が推進する「GIGAスクール構想第2期」では、学習用端末だけでなく、教員の業務効率化（校務DX）も重要な柱です。単発のツール導入で終わるのではなく、クラウド上でデータを統合し、「生徒の学力データ」を「指導の改善」へ直結させるダッシュボード活用こそが、持続可能な学校運営の鍵となります。</p>
+</li>
+</ol>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>■Google公式ヘルプ<br />
+- Google フォームの回答を表示、管理する: <a href="https://support.google.com/docs/answer/2839588?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/answer/2839588?hl=ja</a><br />
+- Google スプレッドシートの正規表現関数: <a href="https://support.google.com/docs/answer/3098244?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/answer/3098244?hl=ja</a></p>
+<p>■文部科学省・公的資料<br />
+- 文部科学省：教育の情報化の推進（GIGAスクール構想関連）: <a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm</a><br />
+- デジタル庁：地方公共団体におけるDX推進（教育機関への示唆を含む）: <a href="https://www.digital.go.jp/" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/</a></p>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep131-a13.html">← 前の作品：#131 沈黙の防壁を溶かす「間違い」の再定義 ― 教室に流れる空気の解像度を変える</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

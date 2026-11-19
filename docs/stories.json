@@ -1,5 +1,18 @@
 [
   {
+    "no": 132,
+    "story_id": "ep132-b14",
+    "topic_id": "B14",
+    "pattern": "B",
+    "title": "重なり合う赤ペンを、瞬時に色づく正答の地図へ――放課後の沈黙を破る熱量と数式の光",
+    "category": "授業ICT・リアルタイム小テスト",
+    "keywords": "Google フォーム自動採点モード / 正答率・誤答パターンのリアルタイム可視化 / 正規表現による記述解答の表記ゆれ許容判定 / 成績一覧への自動転記",
+    "has_image": true,
+    "url": "stories/ep132-b14.html",
+    "image": "assets/images/ep132-b14.png",
+    "char_count": 3743
+  },
+  {
     "no": 131,
     "story_id": "ep131-a13",
     "topic_id": "A13",

@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-19T22:42:37.566630+09:00",
-  "total_posted": 131,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-19T22:46:15.538795+09:00",
+  "total_posted": 132,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1522,6 +1522,17 @@
       "category": "学級経営・心理的安全性",
       "file_path": "content/2026-11-19_pattern_a_a13_沈黙の防壁を溶かす「間違い」の再定義_教室に流れる空気の解像度を変える.md",
       "timestamp": "2026-11-19T22:42:37.566630+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "重なり合う赤ペンを、瞬時に色づく正答の地図へ――放課後の沈黙を破る熱量と数式の光",
+      "pattern": "B",
+      "topic_id": "B14",
+      "category": "授業ICT・リアルタイム小テスト",
+      "file_path": "content/2026-11-19_pattern_b_b14_重なり合う赤ペンを、瞬時に色づく正答の地図へ_放課後の沈黙を破る熱量と数式の光.md",
+      "timestamp": "2026-11-19T22:46:15.538795+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
