@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-21T10:41:49.815702+09:00",
-  "total_posted": 132,
+  "last_pattern": "C",
+  "last_run_at": "2026-11-21T23:24:58.202683+09:00",
+  "total_posted": 133,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1541,6 +1541,17 @@
       "category": "授業ICT・リアルタイム小テスト",
       "file_path": "content/2026-11-19_pattern_b_b14_重なり合う赤ペンを、瞬時に色づく正答の地図へ_放課後の沈黙を破る熱量と数式の光.md",
       "timestamp": "2026-11-19T22:46:15.538795+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "予見の地平と監督の責務――廊下の衝突に潜む法の均衡",
+      "pattern": "C",
+      "topic_id": "C14",
+      "category": "学校法制・学校事故・生徒間トラブルと民法責任",
+      "file_path": "content/2026-11-21_pattern_c_c14_予見の地平と監督の責務_廊下の衝突に潜む法の均衡.md",
+      "timestamp": "2026-11-21T23:24:58.202683+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
