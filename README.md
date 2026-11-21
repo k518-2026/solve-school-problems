@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **133** 話（うち挿絵付き **133** 話 / 最終更新: 2026-11-21 23:24 JST）
+- **収録作品数**: 全 **134** 話（うち挿絵付き **134** 話 / 最終更新: 2026-11-21 23:29 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 134 | 📘 A: 教育学・心理学 | `A15` | **[階層の砂時計を壊すための設計――多層的な『入り口』が拓く共鳴の教室](https://k518-2026.github.io/solve-school-problems/stories/ep134-a15.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep134-a15.html) | [📄原稿](<content/2026-11-21_pattern_a_a15_階層の砂時計を壊すための設計_多層的な『入り口』が拓く共鳴の教室.md>) | [🎨挿絵](<content/2026-11-21_pattern_a_a15_階層の砂時計を壊すための設計_多層的な『入り口』が拓く共鳴の教室.png>) | インクルーシブ教育・UDL | 4,688字 |
 | 133 | ⚖️ C: 学校法制・法務 | `C14` | **[予見の地平と監督の責務――廊下の衝突に潜む法の均衡](https://k518-2026.github.io/solve-school-problems/stories/ep133-c14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep133-c14.html) | [📄原稿](<content/2026-11-21_pattern_c_c14_予見の地平と監督の責務_廊下の衝突に潜む法の均衡.md>) | [🎨挿絵](<content/2026-11-21_pattern_c_c14_予見の地平と監督の責務_廊下の衝突に潜む法の均衡.png>) | 学校法制・学校事故・生徒間トラブルと民法責任 | 3,393字 |
 | 132 | 💻 B: 校務DX・ICT | `B14` | **[重なり合う赤ペンを、瞬時に色づく正答の地図へ――放課後の沈黙を破る熱量と数式の光](https://k518-2026.github.io/solve-school-problems/stories/ep132-b14.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep132-b14.html) | [📄原稿](<content/2026-11-19_pattern_b_b14_重なり合う赤ペンを、瞬時に色づく正答の地図へ_放課後の沈黙を破る熱量と数式の光.md>) | [🎨挿絵](<content/2026-11-19_pattern_b_b14_重なり合う赤ペンを、瞬時に色づく正答の地図へ_放課後の沈黙を破る熱量と数式の光.png>) | 授業ICT・リアルタイム小テスト | 3,743字 |
 | 131 | 📘 A: 教育学・心理学 | `A13` | **[沈黙の防壁を溶かす「間違い」の再定義 ― 教室に流れる空気の解像度を変える](https://k518-2026.github.io/solve-school-problems/stories/ep131-a13.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep131-a13.html) | [📄原稿](<content/2026-11-19_pattern_a_a13_沈黙の防壁を溶かす「間違い」の再定義_教室に流れる空気の解像度を変える.md>) | [🎨挿絵](<content/2026-11-19_pattern_a_a13_沈黙の防壁を溶かす「間違い」の再定義_教室に流れる空気の解像度を変える.png>) | 学級経営・心理的安全性 | 3,742字 |

@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-21T23:24:58.202683+09:00",
-  "total_posted": 133,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-21T23:29:03.645156+09:00",
+  "total_posted": 134,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1552,6 +1552,17 @@
       "category": "学校法制・学校事故・生徒間トラブルと民法責任",
       "file_path": "content/2026-11-21_pattern_c_c14_予見の地平と監督の責務_廊下の衝突に潜む法の均衡.md",
       "timestamp": "2026-11-21T23:24:58.202683+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "階層の砂時計を壊すための設計――多層的な『入り口』が拓く共鳴の教室",
+      "pattern": "A",
+      "topic_id": "A15",
+      "category": "インクルーシブ教育・UDL",
+      "file_path": "content/2026-11-21_pattern_a_a15_階層の砂時計を壊すための設計_多層的な『入り口』が拓く共鳴の教室.md",
+      "timestamp": "2026-11-21T23:29:03.645156+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

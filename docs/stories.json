@@ -1,5 +1,18 @@
 [
   {
+    "no": 134,
+    "story_id": "ep134-a15",
+    "topic_id": "A15",
+    "pattern": "A",
+    "title": "階層の砂時計を壊すための設計――多層的な『入り口』が拓く共鳴の教室",
+    "category": "インクルーシブ教育・UDL",
+    "keywords": "提示（理解）の複数の手段 / 行動と表出の複数の手段 / 取り組み（動機づけ）の複数の手段",
+    "has_image": true,
+    "url": "stories/ep134-a15.html",
+    "image": "assets/images/ep134-a15.png",
+    "char_count": 4688
+  },
+  {
     "no": 133,
     "story_id": "ep133-c14",
     "topic_id": "C14",
