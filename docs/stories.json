@@ -1,5 +1,18 @@
 [
   {
+    "no": 135,
+    "story_id": "ep135-b15",
+    "topic_id": "B15",
+    "pattern": "B",
+    "title": "積層する紙の記憶を解き放つ――共有ドキュメントが紡ぐ「対話」の再定義",
+    "category": "職員会議・ペーパーレス議事録",
+    "keywords": "クラウド共同編集（Google ドキュメント） / 事前コメント機能による会議時間短縮 / 見出しアウトライン構造化 / 閲覧権限とアーカイブ検索",
+    "has_image": true,
+    "url": "stories/ep135-b15.html",
+    "image": "assets/images/ep135-b15.png",
+    "char_count": 3614
+  },
+  {
     "no": 134,
     "story_id": "ep134-a15",
     "topic_id": "A15",

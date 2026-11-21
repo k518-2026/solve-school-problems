@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-21T23:29:03.645156+09:00",
-  "total_posted": 134,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-21T23:32:44.328350+09:00",
+  "total_posted": 135,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1563,6 +1563,17 @@
       "category": "インクルーシブ教育・UDL",
       "file_path": "content/2026-11-21_pattern_a_a15_階層の砂時計を壊すための設計_多層的な『入り口』が拓く共鳴の教室.md",
       "timestamp": "2026-11-21T23:29:03.645156+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "積層する紙の記憶を解き放つ――共有ドキュメントが紡ぐ「対話」の再定義",
+      "pattern": "B",
+      "topic_id": "B15",
+      "category": "職員会議・ペーパーレス議事録",
+      "file_path": "content/2026-11-21_pattern_b_b15_積層する紙の記憶を解き放つ_共有ドキュメントが紡ぐ「対話」の再定義.md",
+      "timestamp": "2026-11-21T23:32:44.328350+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
