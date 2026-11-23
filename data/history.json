@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-23T10:05:04.507375+09:00",
+  "last_run_at": "2026-11-23T10:05:47.011559+09:00",
   "total_posted": 135,
   "posts": [
     {
@@ -375,7 +375,9 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-11-21T10:41:49.815702+09:00",
-      "blogger_repost_ep": 26
+      "blogger_repost_ep": 26,
+      "wp_posted_at": "2026-11-23T10:05:47.011559+09:00",
+      "wp_repost_ep": 26
     },
     {
       "title": "紙吹雪のパズルにサヨナラを――三者面談の重複を解き明かす「数式とGAS」の最適解",
@@ -1584,5 +1586,5 @@
     }
   ],
   "blogger_repost_next_ep": 28,
-  "wp_repost_next_ep": 26
+  "wp_repost_next_ep": 27
 }
