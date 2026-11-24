@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-24T13:55:53.046851+09:00",
+  "last_run_at": "2026-11-24T13:56:17.947604+09:00",
   "total_posted": 138,
   "posts": [
     {
@@ -390,7 +390,9 @@
       "sent_to_blogger": true,
       "status": "publish",
       "blogger_posted_at": "2026-11-23T10:05:04.507375+09:00",
-      "blogger_repost_ep": 27
+      "blogger_repost_ep": 27,
+      "wp_posted_at": "2026-11-24T13:56:17.947604+09:00",
+      "wp_repost_ep": 27
     },
     {
       "title": "平等という名の障壁を越えて：実質的平等のための合理的配慮",
@@ -1621,5 +1623,5 @@
     }
   ],
   "blogger_repost_next_ep": 29,
-  "wp_repost_next_ep": 27
+  "wp_repost_next_ep": 28
 }
