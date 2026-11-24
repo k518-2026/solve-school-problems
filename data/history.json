@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-24T12:16:11.262507+09:00",
-  "total_posted": 136,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-24T12:19:45.199147+09:00",
+  "total_posted": 137,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1591,6 +1591,17 @@
       "category": "学校法制・教育課程編成権と学習指導要領",
       "file_path": "content/2026-11-24_pattern_c_c15_規範の礎と教育の誠実_標準授業時数の峻烈なる境界を護る決断.md",
       "timestamp": "2026-11-24T12:16:11.262507+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "灰色の火花を鎮めるための『余白』――感情の波に潜む思考の地図",
+      "pattern": "A",
+      "topic_id": "A16",
+      "category": "生徒指導・アンガーマネジメント",
+      "file_path": "content/2026-11-24_pattern_a_a16_灰色の火花を鎮めるための『余白』_感情の波に潜む思考の地図.md",
+      "timestamp": "2026-11-24T12:19:45.199147+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
