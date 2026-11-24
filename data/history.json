@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-24T12:23:34.618414+09:00",
+  "last_run_at": "2026-11-24T13:55:53.046851+09:00",
   "total_posted": 138,
   "posts": [
     {
@@ -401,7 +401,9 @@
       "timestamp": "2026-10-05T08:56:28.397630+09:00",
       "sent_to_wp": true,
       "sent_to_blogger": true,
-      "status": "publish"
+      "status": "publish",
+      "blogger_posted_at": "2026-11-24T13:55:53.046851+09:00",
+      "blogger_repost_ep": 28
     },
     {
       "title": "色彩の迷宮と、記憶の深淵へ",
@@ -1618,6 +1620,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 28,
+  "blogger_repost_next_ep": 29,
   "wp_repost_next_ep": 27
 }
