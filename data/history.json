@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-24T12:19:45.199147+09:00",
-  "total_posted": 137,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-24T12:23:34.618414+09:00",
+  "total_posted": 138,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1602,6 +1602,17 @@
       "category": "生徒指導・アンガーマネジメント",
       "file_path": "content/2026-11-24_pattern_a_a16_灰色の火花を鎮めるための『余白』_感情の波に潜む思考の地図.md",
       "timestamp": "2026-11-24T12:19:45.199147+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "見えない壁の正体を暴く――「繋がらない」の迷宮を解き明かす診断の光",
+      "pattern": "B",
+      "topic_id": "B16",
+      "category": "校内ネットワーク・DNS/プロキシ診断",
+      "file_path": "content/2026-11-24_pattern_b_b16_見えない壁の正体を暴く_「繋がらない」の迷宮を解き明かす診断の光.md",
+      "timestamp": "2026-11-24T12:23:34.618414+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

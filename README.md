@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **137** 話（うち挿絵付き **137** 話 / 最終更新: 2026-11-24 12:19 JST）
+- **収録作品数**: 全 **138** 話（うち挿絵付き **138** 話 / 最終更新: 2026-11-24 12:23 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 138 | 💻 B: 校務DX・ICT | `B16` | **[見えない壁の正体を暴く――「繋がらない」の迷宮を解き明かす診断の光](https://k518-2026.github.io/solve-school-problems/stories/ep138-b16.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep138-b16.html) | [📄原稿](<content/2026-11-24_pattern_b_b16_見えない壁の正体を暴く_「繋がらない」の迷宮を解き明かす診断の光.md>) | [🎨挿絵](<content/2026-11-24_pattern_b_b16_見えない壁の正体を暴く_「繋がらない」の迷宮を解き明かす診断の光.png>) | 校内ネットワーク・DNS/プロキシ診断 | 4,384字 |
 | 137 | 📘 A: 教育学・心理学 | `A16` | **[灰色の火花を鎮めるための『余白』――感情の波に潜む思考の地図](https://k518-2026.github.io/solve-school-problems/stories/ep137-a16.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep137-a16.html) | [📄原稿](<content/2026-11-24_pattern_a_a16_灰色の火花を鎮めるための『余白』_感情の波に潜む思考の地図.md>) | [🎨挿絵](<content/2026-11-24_pattern_a_a16_灰色の火花を鎮めるための『余白』_感情の波に潜む思考の地図.png>) | 生徒指導・アンガーマネジメント | 3,704字 |
 | 136 | ⚖️ C: 学校法制・法務 | `C15` | **[規範の礎と教育の誠実――標準授業時数の峻烈なる境界を護る決断](https://k518-2026.github.io/solve-school-problems/stories/ep136-c15.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep136-c15.html) | [📄原稿](<content/2026-11-24_pattern_c_c15_規範の礎と教育の誠実_標準授業時数の峻烈なる境界を護る決断.md>) | [🎨挿絵](<content/2026-11-24_pattern_c_c15_規範の礎と教育の誠実_標準授業時数の峻烈なる境界を護る決断.png>) | 学校法制・教育課程編成権と学習指導要領 | 3,513字 |
 | 135 | 💻 B: 校務DX・ICT | `B15` | **[積層する紙の記憶を解き放つ――共有ドキュメントが紡ぐ「対話」の再定義](https://k518-2026.github.io/solve-school-problems/stories/ep135-b15.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep135-b15.html) | [📄原稿](<content/2026-11-21_pattern_b_b15_積層する紙の記憶を解き放つ_共有ドキュメントが紡ぐ「対話」の再定義.md>) | [🎨挿絵](<content/2026-11-21_pattern_b_b15_積層する紙の記憶を解き放つ_共有ドキュメントが紡ぐ「対話」の再定義.png>) | 職員会議・ペーパーレス議事録 | 3,614字 |

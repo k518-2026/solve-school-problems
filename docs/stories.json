@@ -1,5 +1,18 @@
 [
   {
+    "no": 138,
+    "story_id": "ep138-b16",
+    "topic_id": "B16",
+    "pattern": "B",
+    "title": "見えない壁の正体を暴く――「繋がらない」の迷宮を解き明かす診断の光",
+    "category": "校内ネットワーク・DNS/プロキシ診断",
+    "keywords": "OSI参照モデルに基づく障害切り分け / DNS名前解決とキャッシュ確認 / 教育委員会プロキシ・フィルタリング設定 / 同時接続セッション数の制御",
+    "has_image": true,
+    "url": "stories/ep138-b16.html",
+    "image": "assets/images/ep138-b16.png",
+    "char_count": 4384
+  },
+  {
     "no": 137,
     "story_id": "ep137-a16",
     "topic_id": "A16",

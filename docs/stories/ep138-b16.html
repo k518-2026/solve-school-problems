@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>見えない壁の正体を暴く――「繋がらない」の迷宮を解き明かす診断の光 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #138 ・ [B16] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">見えない壁の正体を暴く――「繋がらない」の迷宮を解き明かす診断の光</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>校内ネットワーク・DNS/プロキシ診断（OSI参照モデルに基づく障害切り分け / DNS名前解決とキャッシュ確認 / 教育委員会プロキシ・フィルタリング設定 / 同時接続セッション数の制御）</div>
+      <div><strong>👥 登場人物：</strong>年配教諭・大塚先生（教職27年目・視聴覚主任） × 若手教諭・日向先生（教職4年目・情報科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>ネットワーク層ごとの切り分け診断（Ping / DNS名前解決 / Webフィルタリング・プロキシのホワイトリスト制御 / CDNキャッシュ）</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep138-b16.png" alt="見えない壁の正体を暴く――「繋がらない」の迷宮を解き明かす診断の光" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外では、初夏の陽光が中学校の校庭を白く照らしていた。しかし、３年Ｂ組の教室の空気は、それとは対照的に険悪なものに包まれていた。</p>
+<p>「……先生、また『ページが表示できません』って出ちゃいます」<br />
+　生徒の一人が、手元のタブレットを見つめながら困惑した声を上げた。<br />
+　総合学習の時間。生徒たちは、地元の特産品を活かしたビジネスプランを立案するため、特定の調査用Webサイトにアクセスしようとしていた。しかし、画面に表示されるのは無慈悲なエラーメッセージだけだ。</p>
+<p>「ええっ、また！？ さっきまでは見られたじゃないの」<br />
+　別の生徒が声を荒らげる。教壇では、視聴覚主任を務める大塚先生が眉間に深い皺を刻んでいた。彼は長年、学校の行事や映像制作を支えてきたベテランだ。しかし、近年の急激なデジタル化、特に「GIGAスクール構想」による一斉導入以降、ネットワークの挙動については常に「不可解な壁」を感じていた。</p>
+<p>「えーっと、みんな落ち着いて。今、先生が確認するから……」<br />
+　大塚先生は、慌てて教卓の横にあるLANポートの配線を点検し始めた。彼は必死の形相でケーブルを抜き差ししている。<br />
+「よし、もう一度挿すぞ……あ、これだ。あ、でも全然違う。他のサイトは見れるのに、この調査サイトだけが……」<br />
+　大塚先生の手はわずかに震えていた。彼は生徒たちの熱意を誰よりも知っている。このプロジェクトは彼らにとっての大きな挑戦であり、技術的なトラブルでその火を消したくはなかった。しかし、原因が特定できないことが、彼の焦りを煽っていた。</p>
+<p>「……大塚先生、お疲れのところすみません。少し手伝わせてください」<br />
+　教室の後方から声をかけたのは、情報科の若手教員、日向先生だった。彼は手にタブレットを持ち、穏やかながらも確信に満ちた表情で歩み寄った。</p>
+<p>「あ、日向先生……。いや、なんですかね。さっきまで動いていたのに、急にこのサイトだけ開けなくなったんです。他のGoogleのページやYouTubeは見れるんですよ。故障なのか、それともみんなの端末のせいなのか……」<br />
+　大塚先生は老眼鏡を押し上げながら、苦心の表情で答えた。</p>
+<p>「いいえ、端末の故障ではありませんよ。おそらく、ネットワークの『層』のどこかで、特定の通信だけが遮断されている可能性が高いです」<br />
+　日向先生はそう言うと、自分のタブレットを開き、数秒でコマンドを入力し始めた。</p>
+<p>「層……？ ネットワークの構造のことですか？」<br />
+「はい。インターネットという巨大な道の中に、いくつかのチェックポイントがあるんです。大塚先生が今、ケーブルを抜き差しして確認されているのは『物理的な道』の状態ですが、問題はもっと先の『案内標識』や『門番』にあるかもしれません」</p>
+<p>日向先生は、教室の隅にあるWi-Fiルーターの近くへ移動した。<br />
+「まずは切り分けから始めましょう。大塚先生、この生徒さんのタブレットで、『Ping』というコマンドを打ってみてもらえますか？ 指定のサイトのIPアドレスに対してです」<br />
+「ピン……？ 私はそんなの知らないよ」<br />
+「大丈夫です、私が打ちますね。あ、今、こちらの端末から特定のURLに対してPingを打ちました。結果は『Request Timeout（タイムアウト）』です。しかし、Googleのドメインに対しては正常に応答が返ってきています」</p>
+<p>日向先生の指が正確に動き、画面上の数値を解析していく。<br />
+「ここからが重要です。特定のサイトだけが開けない場合、原因は大きく分けて三つあります。一つ目は『DNSの名前解決』。つまり、URLをIPアドレスに変換する電話帳機能の不備。二つ目は『Webフィルタリング』。教育委員会や学校で設定しているプロキシサーバーによる遮断。そして三つ目は『CDN（コンテンツ配信ネットワーク）』のキャッシュの問題です」</p>
+<p>日向先生は、自分の端末からプロキシサーバーの設定を確認し、同時にコマンドラインで「nslookup」を実行した。<br />
+「……あ、見つけました。原因はDNSの名前解決ではありませんね。名前は正しく変換されています。それなら、このサイトが特定の海外サーバーや、新しいサブドメインを使用していることによる『ホワイトリスト』の漏れです」</p>
+<p>「ホワイトリスト……？」<br />
+　大塚先生が聞き返すと、日向先生は頷いた。<br />
+「はい。学校のネットワークにはセキュリティのためにプロキシサーバーを通ります。そこでは『許可されたサイト以外は見せない』という門番の役割を果たすんです。今回、この調査サイトが最近システムを更新して、新しいURL構造に変わったため、門番が『あ、これは知らないサイトだ！ 通さない！』と判断してしまったんですね」</p>
+<p>日向先生はさらに続けた。<br />
+「大塚先生、今から私が教育委員会の管理システムにアクセスして、このサイトの新しいドメインをホワイトリストに追加します。それだけで解決するはずです。物理的なケーブルをいじる必要はありませんよ」</p>
+<p>数分後、日向先生がタブレットを操作し終えた。<br />
+「終わりました。大塚先生、もう一度生徒さんに確認してもらえますか？」</p>
+<p>大塚先生が教卓に戻り、生徒のタブレットを指さした。<br />
+「みんな、もう一度開いてみてごらん」<br />
+　生徒たちが一斉に画面をタップする。すると、数秒の待機の後、期待していた調査サイトのトップページが鮮やかに表示された。</p>
+<p>「うわあ！ 開いた！！」<br />
+　教室が歓声に包まれた。生徒たちの顔にパッと笑顔が戻る。</p>
+<p>「……すごいな」<br />
+　大塚先生は呆然としながら、日向先生を見た。<br />
+「私はまさか、あんなに苦労していた原因がたった一つの設定だったなんて思わなかったよ。君の知識、まるで魔法みたいだ」</p>
+<p>「いえ、魔法ではありませんよ」<br />
+　日向先生は謙遜しながら笑った。<br />
+「大塚先生がいつも生徒さんのために動いてくださっているからこそ、技術でそれを支えたいと思っているんです。次は、このサイトだけでなく、他のよく使う教材もまとめてチェックして、自動的にホワイトリストに反映されるような管理表を一緒に作りましょう。そうすれば、次からはこんな大騒ぎにならなくて済みますよ」</p>
+<p>大塚先生は深く頷き、初めて日向先生の肩を叩いた。<br />
+「ああ、頼むよ。君のような若手の知恵を借りて、この学校をもっと便利にしていきたい。教えてくれ、その『魔法』のやり方を」</p>
+<p>窓の外には、依然として初夏の陽光が降り注いでいた。しかし、教室内の空気は先ほどとは全く違う、達成感と連帯感に満ちたものへと変わっていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、学校現場で頻繁に発生する「特定のサイトだけが開けない」というトラブルに対する、ネットワーク層に基づいた切り分け手法を解説しています。</p>
+<p><strong>1. OSI参照モデルに基づく障害切り分けとは</strong><br />
+ネットワークの通信は、物理的な接続からアプリケーションの表示まで、いくつかの層（レイヤー）を経て行われます。トラブルが発生した際、「どこで止まっているか」を特定することが解決への近道です。<br />
+- <strong>物理層（L1）</strong>: ケーブルは抜けていないか？ Wi-Fiの電波は届いているか？（大塚先生が行っていた確認）<br />
+- <strong>ネットワーク層（L3）</strong>: IPアドレス間の通信は通るか？（Pingコマンドで確認）<br />
+- <strong>アプリケーション層（L7）</strong>: ブラウザの設定、プロキシサーバー、DNSなどは正しく動いているか？</p>
+<p><strong>2. Pingと名前解決（DNS）の仕組み</strong><br />
+- <strong>Ping</strong>: 特定のIPアドレスに対して「そこに誰かいますか？」という信号を送り、応答があるかを確認する最も基本的な診断です。<br />
+- <strong>DNSの名前解決</strong>: 私たちが入力する「google.com」などのURLを、コンピュータが理解できる「IPアドレス（例：142.250...）」に変換する仕組みです。もし「名前はわかるが、中身が見れない」のであれば、DNSではなくその先のフィルタリングが原因と特定できます。</p>
+<p><strong>3. 教育現場におけるプロキシ・Webフィルタリング</strong><br />
+学校ネットワークではセキュリティ確保のため、すべての通信を「プロキシサーバー」という中継地点を通すことが一般的です。このサーバーには「ホワイトリスト（許可リスト）」があり、ここに登録されていないサイトへのアクセスを遮断します。<br />
+今回のように「以前は見れたのに見れなくなった」というケースでは、<strong>対象Webサイト側がシステムの更新等でドメイン（URLの一部）を変更したこと</strong>が原因であることが非常に多いです。</p>
+<p><strong>4. 実践的な解決フロー</strong><br />
+1.  <strong>範囲の特定</strong>: 全てのサイトが見れないのか、特定のサイトだけか？<br />
+2.  <strong>Ping診断</strong>: 該当サイトのIPアドレスに対して応答があるか確認する。<br />
+3.  <strong>DNS確認</strong>: URLからIPアドレスが正しく取得できているか確認する。<br />
+4.  <strong>フィルタリング確認</strong>: 学校のプロキシ設定で、最新のドメインが許可されているかを確認し、必要に応じて更新する。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>学校現場におけるネットワーク管理やセキュリティに関する公式資料は、以下のリンクから確認いただけます。</p>
+<ul>
+<li>
+<p><strong>総務省：教育分野における情報通信技術の利活用</strong><br />
+<a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/" target="_blank" rel="noopener noreferrer">https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/</a><br />
+  （教育ICT活用の全体方針や、ネットワーク環境整備に関する指針が確認できます）</p>
+</li>
+<li>
+<p><strong>文部科学省：高等学校情報科「情報Ⅰ」教員研修用教材（情報通信ネットワーク）</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00017.html</a><br />
+  （ネットワークの基礎知識や、OSI参照モデルの概念について学習に活用できる資料です）</p>
+</li>
+<li>
+<p><strong>文部科学省：教育情報セキュリティの確保</strong><br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a><br />
+  （安全な校内ネットワーク構築と、プロキシやフィルタリングの重要性についてのガイドラインです）</p>
+</li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep137-a16.html">← 前の作品：#137 灰色の火花を鎮めるための『余白』</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>
