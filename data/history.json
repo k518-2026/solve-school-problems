@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-23T10:05:47.011559+09:00",
-  "total_posted": 135,
+  "last_pattern": "C",
+  "last_run_at": "2026-11-24T12:16:11.262507+09:00",
+  "total_posted": 136,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1580,6 +1580,17 @@
       "category": "職員会議・ペーパーレス議事録",
       "file_path": "content/2026-11-21_pattern_b_b15_積層する紙の記憶を解き放つ_共有ドキュメントが紡ぐ「対話」の再定義.md",
       "timestamp": "2026-11-21T23:32:44.328350+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "規範の礎と教育の誠実――標準授業時数の峻烈なる境界を護る決断",
+      "pattern": "C",
+      "topic_id": "C15",
+      "category": "学校法制・教育課程編成権と学習指導要領",
+      "file_path": "content/2026-11-24_pattern_c_c15_規範の礎と教育の誠実_標準授業時数の峻烈なる境界を護る決断.md",
+      "timestamp": "2026-11-24T12:16:11.262507+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
