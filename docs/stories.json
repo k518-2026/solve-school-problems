@@ -1,5 +1,18 @@
 [
   {
+    "no": 141,
+    "story_id": "ep141-b17",
+    "topic_id": "B17",
+    "pattern": "B",
+    "title": "静寂の棚に灯るコードの鼓動――理科備品とQRコードが編み直す「教育の余白」",
+    "category": "図書室・教材在庫管理DX",
+    "keywords": "QRコード自動生成（IMAGE関数） / タブレットカメラによる高速チェックイン / 貸出ステータス自動更新（GAS） / 棚卸し集計自動化",
+    "has_image": true,
+    "url": "stories/ep141-b17.html",
+    "image": "assets/images/ep141-b17.png",
+    "char_count": 3496
+  },
+  {
     "no": 140,
     "story_id": "ep140-a17",
     "topic_id": "A17",

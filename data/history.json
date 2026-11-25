@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-25T20:17:51.625274+09:00",
-  "total_posted": 140,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-25T20:21:19.666203+09:00",
+  "total_posted": 141,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1640,6 +1640,17 @@
       "category": "キャリア教育・青年心理学",
       "file_path": "content/2026-11-25_pattern_a_a17_漂流する地図と、偶然という名の羅針盤_静かな拒絶の裏にある『可能性』への畏怖.md",
       "timestamp": "2026-11-25T20:17:51.625274+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂の棚に灯るコードの鼓動――理科備品とQRコードが編み直す「教育の余白」",
+      "pattern": "B",
+      "topic_id": "B17",
+      "category": "図書室・教材在庫管理DX",
+      "file_path": "content/2026-11-25_pattern_b_b17_静寂の棚に灯るコードの鼓動_理科備品とQRコードが編み直す「教育の余白」.md",
+      "timestamp": "2026-11-25T20:21:19.666203+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

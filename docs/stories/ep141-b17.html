@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>静寂の棚に灯るコードの鼓動――理科備品とQRコードが編み直す「教育の余白」 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #141 ・ [B17] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">静寂の棚に灯るコードの鼓動――理科備品とQRコードが編み直す「教育の余白」</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>図書室・教材在庫管理DX（QRコード自動生成（IMAGE関数） / タブレットカメラによる高速チェックイン / 貸出ステータス自動更新（GAS） / 棚卸し集計自動化）</div>
+      <div><strong>👥 登場人物：</strong>図書主任・秋山先生（教職25年目） × 若手教諭・瀬戸先生（教職2年目・技術科）</div>
+      <div><strong>💡 解決フレームワーク：</strong>バーコード/QRコード読み取り ＋ スプレッドシート在庫台帳による3秒貸出・未返却リマインド自動化</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep141-b17.png" alt="静寂の棚に灯るコードの鼓動――理科備品とQRコードが編み直す「教育の余白」" loading="lazy" />
+
+    <article class="story-content">
+      <p>放課後の理科準備室は、埃の匂いと薬品の微かな刺激が混じり合った独特の静寂に包まれていた。しかし、その静寂を破るように、秋山先生は重いため息を漏らした。</p>
+<p>「また、見当たらない……」</p>
+<p>教職二十五年。この学校の理科準備室と備品管理を支えてきた秋山先生は、机の上に広げられた「貸出・返却台帳」を見つめていた。そこには、昨年度の棚卸しで判明した「紛失」の文字がいくつも並んでいる。<br />
+　特に問題なのは、各学級に貸し出している理科実験器具のセットだ。顕微鏡や電子天秤、そして高価な化学薬品のセット。これらは教育活動に不可欠だが、紙のノートで「誰が・いつ・どのクラスに」持っていったかを管理するのには限界があった。</p>
+<p>「あ、秋山先生。まだお仕事ですか？」</p>
+<p>扉が開き、若手教諭の瀬戸先生が入ってきた。技術科を担当する彼は、常に最新のタブレットを携え、どこか軽やかな足取りで歩く。</p>
+<p>「瀬戸先生、お疲れ様。……実はね、この備品管理の件で頭を抱えていてね。毎年度末になると、全教室を回って『これ、誰か使ってる？』と聞き回るだけで三日もかかるんだ。紙の台帳だと、貸し出した瞬間の記録が正確に残らなくて。生徒たちが良かれと思って持ち出した先で、結局どこにあるか分からなくなる」</p>
+<p>秋山先生は老眼鏡を押し上げ、乱れた台帳のページを指さした。<br />
+　瀬戸先生は一歩近づき、その台帳をじっくりと眺めた。</p>
+<p>「なるほど……。紙だと『現在の状態』がリアルタイムで反映されないから、情報の断絶が起きるんですね」</p>
+<p>瀬戸先生は少しだけ微笑み、自分のタブレットを取り出した。</p>
+<p>「秋山先生、これ、技術の力で『自動で動く台帳』に変えられませんか？ 先生の手間を減らすことが、結果として生徒たちの活動を守ることにも繋がると思うんです」</p>
+<p>秋山先生は眉をひそめた。「自動で動く台帳？ それは具体的にどういうことかね。私はプログラミングなんて一度もやったことがないよ」</p>
+<p>「大丈夫です。仕組みさえ整えてしまえば、あとは『スキャンするだけ』です。私が全部構築しますから、先生にはこのシステムを『使う』だけでいいんです」</p>
+<p>瀬戸先生はそう言って、翌日の放課後から準備に取り掛かった。<br />
+　彼はまず、Google Workspaceを活用したクラウド型の在庫管理台帳を作成した。これまでの「紙のノート」というローカルな情報を、誰もがアクセスできるデジタル空間へ移行する。</p>
+<p>瀬戸先生はスプレッドシートを立ち上げ、列を構成した。「備品ID」「名称」「現在のステータス（貸出中・在庫あり）」「貸出先クラス」「最終更新日時」……。<br />
+「ここが肝心なんです。Google Apps Script（GAS）を使って、特定の条件を満たしたときに自動で通知を送るようにします」</p>
+<p>瀬戸先生はキーボードを叩きながら説明を続けた。<br />
+「例えば、貸出期間が過ぎているのに返却されていない場合、担任の先生に『備品がまだ教室にあるようです』と自動でリマインドメールを送る仕組みです。これなら秋山先生がわざわざ聞き回る必要はありません」</p>
+<p>さらに、瀬戸先生は理科準備室の備品一つひとつに、「QRコード」を貼り付けた。<br />
+「このコードをタブレットのカメラで読み取るだけで、スプレッドシートの該当する項目へ『貸出中』と書き込まれるようにします。IMAGE関数を使って、スプレッドシート上でQRコードを自動生成するので、管理も楽ですよ」</p>
+<p>数日後、システムが完成した。<br />
+　秋山先生は瀬戸先生に、実際に動く仕組みを見せてもらった。</p>
+<p>「これ……本当に一瞬で終わるのか？」</p>
+<p>秋山先生の問いに対し、瀬戸先生はタブレットをかざした。<br />
+　顕微鏡のラベルにあるQRコードをスキャンする。その瞬間、画面上のスプレッドシートが「在庫あり」から「3年A組 貸出中」へと書き換わった。</p>
+<p>「はい。たったの三秒です。そして、このデータはクラウドにあるので、先生が職員室にいながらでも、どのクラスに何があるか一目で分かります」</p>
+<p>秋山先生は画面を凝視した。それまで数時間かけて行っていた「台帳と現実の照合」が、指先一つで完了する様子に、驚きを隠せなかった。<br />
+「……すごいな。私の時代には、こんな魔法のような道具はなかった。これなら、生徒たちとの対話に集中する時間がもっと作れる」</p>
+<p>瀬戸先生は頷いた。「秋山先生の『教育への情熱』があるからこそ、このツールは価値を持つんです。技術はあくまで、先生の負担を減らし、生徒たちのために使える時間を増やすための手段ですから」</p>
+<p>それから一ヶ月。<br />
+　年度末の棚卸しがやってきた。<br />
+　秋山先生は以前のように全教室を走り回ることはなかった。彼は職員室のデスクで、タブレットを開いた。</p>
+<p>「瀬戸先生、見てくれ。ほとんどの備品が正しく把握できている。この数点だけ『返却未確認』となっているけれど、これは自動リマインドによって担任の先生から連絡が入った。すぐに回収できたよ」</p>
+<p>秋山先生は満足げに笑い、QRコードの付いた顕微鏡を手に取った。<br />
+「ありがとう、瀬戸先生。君の技術のおかげで、私は今、安心して『次年度の授業計画』を練ることができるよ」</p>
+<p>理科準備室には、以前よりもずっと穏やかな静寂が戻っていた。それは情報の迷宮から解放された者が享受する、質の高い「余白」の時間だった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>本作品では、学校現場における「物理的な在庫管理」を「クラウド上の動的データ」へと変換するDXの基礎を解説しています。</p>
+<p><strong>1. QRコードとスプレッドシートの連携</strong><br />
+従来の紙の台帳は「情報の書き込み」だけが可能でしたが、QRコードとGoogleスプレッドシートを組み合わせることで、「情報の更新」を瞬時に行うことが可能になります。QRコードには特定のURLや識別IDを埋め込み、それを読み取ることで、どの備品を操作しているかをシステムに認識させます。</p>
+<p><strong>2. IMAGE関数によるQRコードの自動生成</strong><br />
+Googleスプレッドシートの<code>IMAGE</code>関数を使用すると、セル内に画像を表示できます。これを活用して、備品マスターリスト（IDと名称の一覧）から自動的にQRコードを生成することで、管理者が一つひとつ手動で発行する手間を省き、一括管理を実現します。</p>
+<p><strong>3. Google Apps Script (GAS) による自動化</strong><br />
+GASはGoogle Workspace上で動作するプログラミング言語です。今回の物語では以下の機能を担っています。<br />
+- <strong>ステータス更新</strong>: QRコード読み取りと連動し、スプレッドシートの「貸出状況」を書き換える。<br />
+- <strong>リマインド通知</strong>: 「現在日時」と「返却予定日」を比較し、期限を過ぎたものがある場合に自動でメールやチャット通知を送る。<br />
+これにより、教員が「確認作業」という事務作業から解放され、「指導」という本来の業務に集中できる環境を構築します。</p>
+<p><strong>4. クラウド化による情報共有の高度化（校務DXの視点）</strong><br />
+紙の台帳は「その場所」に行かないと見ることができませんが、クラウド化（Google Workspace等）により、教務主任や学年主任など、関係者がリアルタイムで同じ在庫状況を把握できるようになります。これは文部科学省が推進する「校務DX」の核心である「データの共通基盤化」に直結する考え方です。</p>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<ul>
+<li>デジタル庁. 教育（校務DXの推進）: <a href="https://www.digital.go.jp/policies/education" target="_blank" rel="noopener noreferrer">https://www.digital.go.jp/policies/education</a></li>
+<li>文部科学省. 教育の情報化の推進: <a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm</a></li>
+<li>Google ドキュメント エディタ ヘルプ: <a href="https://support.google.com/documenteditor" target="_blank" rel="noopener noreferrer">https://support.google.com/documenteditor</a></li>
+<li>Google スプレッドシートの関数リスト: <a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">https://support.google.com/docs/table/25273?hl=ja</a></li>
+</ul>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep140-a17.html">← 前の作品：#140 漂流する地図と、偶然という名の羅針盤 ― 静かな拒絶の裏にある『可能性』への畏怖</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>
