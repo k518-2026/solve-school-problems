@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-25T20:13:56.172213+09:00",
-  "total_posted": 139,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-25T20:17:51.625274+09:00",
+  "total_posted": 140,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1629,6 +1629,17 @@
       "category": "学校法制・免許法・無免許授業の防止",
       "file_path": "content/2026-11-25_pattern_c_c16_資格の聖域と実務の断層_免許状主義の矜持を問う校長の決断.md",
       "timestamp": "2026-11-25T20:13:56.172213+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "漂流する地図と、偶然という名の羅針盤 ― 静かな拒絶の裏にある『可能性』への畏怖",
+      "pattern": "A",
+      "topic_id": "A17",
+      "category": "キャリア教育・青年心理学",
+      "file_path": "content/2026-11-25_pattern_a_a17_漂流する地図と、偶然という名の羅針盤_静かな拒絶の裏にある『可能性』への畏怖.md",
+      "timestamp": "2026-11-25T20:17:51.625274+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

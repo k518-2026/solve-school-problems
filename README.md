@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **139** 話（うち挿絵付き **139** 話 / 最終更新: 2026-11-25 20:13 JST）
+- **収録作品数**: 全 **140** 話（うち挿絵付き **140** 話 / 最終更新: 2026-11-25 20:17 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 140 | 📘 A: 教育学・心理学 | `A17` | **[漂流する地図と、偶然という名の羅針盤 ― 静かな拒絶の裏にある『可能性』への畏怖](https://k518-2026.github.io/solve-school-problems/stories/ep140-a17.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep140-a17.html) | [📄原稿](<content/2026-11-25_pattern_a_a17_漂流する地図と、偶然という名の羅針盤_静かな拒絶の裏にある『可能性』への畏怖.md>) | [🎨挿絵](<content/2026-11-25_pattern_a_a17_漂流する地図と、偶然という名の羅針盤_静かな拒絶の裏にある『可能性』への畏怖.png>) | キャリア教育・青年心理学 | 4,421字 |
 | 139 | ⚖️ C: 学校法制・法務 | `C16` | **[資格の聖域と実務の断層――免許状主義の矜持を問う校長の決断](https://k518-2026.github.io/solve-school-problems/stories/ep139-c16.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep139-c16.html) | [📄原稿](<content/2026-11-25_pattern_c_c16_資格の聖域と実務の断層_免許状主義の矜持を問う校長の決断.md>) | [🎨挿絵](<content/2026-11-25_pattern_c_c16_資格の聖域と実務の断層_免許状主義の矜持を問う校長の決断.png>) | 学校法制・免許法・無免許授業の防止 | 3,353字 |
 | 138 | 💻 B: 校務DX・ICT | `B16` | **[見えない壁の正体を暴く――「繋がらない」の迷宮を解き明かす診断の光](https://k518-2026.github.io/solve-school-problems/stories/ep138-b16.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep138-b16.html) | [📄原稿](<content/2026-11-24_pattern_b_b16_見えない壁の正体を暴く_「繋がらない」の迷宮を解き明かす診断の光.md>) | [🎨挿絵](<content/2026-11-24_pattern_b_b16_見えない壁の正体を暴く_「繋がらない」の迷宮を解き明かす診断の光.png>) | 校内ネットワーク・DNS/プロキシ診断 | 4,384字 |
 | 137 | 📘 A: 教育学・心理学 | `A16` | **[灰色の火花を鎮めるための『余白』――感情の波に潜む思考の地図](https://k518-2026.github.io/solve-school-problems/stories/ep137-a16.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep137-a16.html) | [📄原稿](<content/2026-11-24_pattern_a_a16_灰色の火花を鎮めるための『余白』_感情の波に潜む思考の地図.md>) | [🎨挿絵](<content/2026-11-24_pattern_a_a16_灰色の火花を鎮めるための『余白』_感情の波に潜む思考の地図.png>) | 生徒指導・アンガーマネジメント | 3,704字 |
