@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-25T12:42:18.930061+09:00",
-  "total_posted": 138,
+  "last_pattern": "C",
+  "last_run_at": "2026-11-25T20:13:56.172213+09:00",
+  "total_posted": 139,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1618,6 +1618,17 @@
       "category": "校内ネットワーク・DNS/プロキシ診断",
       "file_path": "content/2026-11-24_pattern_b_b16_見えない壁の正体を暴く_「繋がらない」の迷宮を解き明かす診断の光.md",
       "timestamp": "2026-11-24T12:23:34.618414+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "資格の聖域と実務の断層――免許状主義の矜持を問う校長の決断",
+      "pattern": "C",
+      "topic_id": "C16",
+      "category": "学校法制・免許法・無免許授業の防止",
+      "file_path": "content/2026-11-25_pattern_c_c16_資格の聖域と実務の断層_免許状主義の矜持を問う校長の決断.md",
+      "timestamp": "2026-11-25T20:13:56.172213+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
