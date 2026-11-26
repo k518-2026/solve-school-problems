@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-26T13:08:03.576118+09:00",
-  "total_posted": 142,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-26T13:12:12.986772+09:00",
+  "total_posted": 143,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1665,6 +1665,17 @@
       "category": "学校法制・防災と指定避難所運営",
       "file_path": "content/2026-11-26_pattern_c_c17_灰燼の境界と聖域の守護_災害下における児童引き渡しと公共性の法理.md",
       "timestamp": "2026-11-26T13:08:03.576118+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "見えない壁の瓦解――「当たり前」を揺らす認知の地殻変動",
+      "pattern": "A",
+      "topic_id": "A18",
+      "category": "授業改善・概念変化理論",
+      "file_path": "content/2026-11-26_pattern_a_a18_見えない壁の瓦解_「当たり前」を揺らす認知の地殻変動.md",
+      "timestamp": "2026-11-26T13:12:12.986772+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

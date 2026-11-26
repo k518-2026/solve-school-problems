@@ -1,5 +1,18 @@
 [
   {
+    "no": 143,
+    "story_id": "ep143-a18",
+    "topic_id": "A18",
+    "pattern": "A",
+    "title": "見えない壁の瓦解――「当たり前」を揺らす認知の地殻変動",
+    "category": "授業改善・概念変化理論",
+    "keywords": "素朴概念（誤概念）の顕在化 / 予測・観察・説明（POE: Predict-Observe-Explain） / 既存スキーマの再構成と納得可能性",
+    "has_image": true,
+    "url": "stories/ep143-a18.html",
+    "image": "assets/images/ep143-a18.png",
+    "char_count": 4601
+  },
+  {
     "no": 142,
     "story_id": "ep142-c17",
     "topic_id": "C17",
