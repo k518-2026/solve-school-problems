@@ -476,6 +476,13 @@ def main():
 
     # Mode: Batch-generate N stories + illustrations into content/ and docs/
     if args.stock_count > 0:
+        try:
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+            history_mgr.history_data = history_mgr._load_history()
+            history_mgr.catalog_data = history_mgr._load_catalog()
+        except Exception:
+            pass
+
         from src.site_builder import build_github_pages
         generated_files: List[Path] = []
         sim_pattern = history_mgr.history_data.get("last_pattern")

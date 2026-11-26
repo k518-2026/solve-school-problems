@@ -27,18 +27,43 @@ class HistoryManager:
 
     def _load_history(self) -> Dict[str, Any]:
         """Loads execution history from JSON file or initializes defaults."""
+        data: Dict[str, Any] = {}
         if self.history_path.exists():
             try:
                 with open(self.history_path, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                    data = json.load(f)
             except Exception as e:
                 logger.warning(f"Failed to read {self.history_path}: {e}. Initializing empty history.")
-        return {
-            "last_pattern": None,
-            "last_run_at": None,
-            "total_posted": 0,
-            "posts": []
-        }
+
+        if not data:
+            data = {
+                "last_pattern": None,
+                "last_run_at": None,
+                "total_posted": 0,
+                "posts": []
+            }
+
+        # Guard against repost counter reset/rollback: ensure next_ep is strictly > highest recorded repost_ep
+        posts = data.get("posts", [])
+        max_bg_ep = max([p.get("blogger_repost_ep", 0) for p in posts if p.get("blogger_repost_ep") is not None] or [0])
+        curr_bg_ep = data.get("blogger_repost_next_ep", 1)
+        if max_bg_ep >= curr_bg_ep:
+            logger.warning(
+                f"Self-healing: blogger_repost_next_ep ({curr_bg_ep}) was <= max posted ({max_bg_ep}). "
+                f"Advancing blogger_repost_next_ep to {max_bg_ep + 1} to prevent duplicate Blogger posts."
+            )
+            data["blogger_repost_next_ep"] = max_bg_ep + 1
+
+        max_wp_ep = max([p.get("wp_repost_ep", 0) for p in posts if p.get("wp_repost_ep") is not None] or [0])
+        curr_wp_ep = data.get("wp_repost_next_ep", 1)
+        if max_wp_ep >= curr_wp_ep:
+            logger.warning(
+                f"Self-healing: wp_repost_next_ep ({curr_wp_ep}) was <= max posted ({max_wp_ep}). "
+                f"Advancing wp_repost_next_ep to {max_wp_ep + 1} to prevent duplicate WordPress posts."
+            )
+            data["wp_repost_next_ep"] = max_wp_ep + 1
+
+        return data
 
     def _load_catalog(self) -> Dict[str, Any]:
         """Loads topic catalog."""
@@ -246,7 +271,9 @@ class HistoryManager:
         """Counts how many stories remain in the #01-sequential queue for WordPress."""
         from src.site_builder import collect_all_stories
         stories = collect_all_stories(self)
-        next_ep = self.history_data.get("wp_repost_next_ep", 1)
+        posts = self.history_data.get("posts", [])
+        max_wp_ep = max([p.get("wp_repost_ep", 0) for p in posts if p.get("wp_repost_ep") is not None] or [0])
+        next_ep = max(self.history_data.get("wp_repost_next_ep", 1), max_wp_ep + 1)
         return max(0, len(stories) - (next_ep - 1))
 
     def get_next_wp_stock_post(
@@ -283,7 +310,9 @@ class HistoryManager:
                         "sent_to_wp": False,
                     }
 
-        target_ep = self.history_data.get("wp_repost_next_ep", 1)
+        posts = self.history_data.get("posts", [])
+        max_wp_ep = max([p.get("wp_repost_ep", 0) for p in posts if p.get("wp_repost_ep") is not None] or [0])
+        target_ep = max(self.history_data.get("wp_repost_next_ep", 1), max_wp_ep + 1)
         for s in stories:
             if s["no"] == target_ep:
                 return {
@@ -332,7 +361,9 @@ class HistoryManager:
         """Counts how many stories remain in the #01-sequential queue for Blogger."""
         from src.site_builder import collect_all_stories
         stories = collect_all_stories(self)
-        next_ep = self.history_data.get("blogger_repost_next_ep", 1)
+        posts = self.history_data.get("posts", [])
+        max_bg_ep = max([p.get("blogger_repost_ep", 0) for p in posts if p.get("blogger_repost_ep") is not None] or [0])
+        next_ep = max(self.history_data.get("blogger_repost_next_ep", 1), max_bg_ep + 1)
         return max(0, len(stories) - (next_ep - 1))
 
     def get_next_blogger_stock_post(
@@ -369,7 +400,9 @@ class HistoryManager:
                         "sent_to_blogger": False,
                     }
 
-        target_ep = self.history_data.get("blogger_repost_next_ep", 1)
+        posts = self.history_data.get("posts", [])
+        max_bg_ep = max([p.get("blogger_repost_ep", 0) for p in posts if p.get("blogger_repost_ep") is not None] or [0])
+        target_ep = max(self.history_data.get("blogger_repost_next_ep", 1), max_bg_ep + 1)
         for s in stories:
             if s["no"] == target_ep:
                 return {
