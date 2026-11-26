@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-25T20:21:19.666203+09:00",
+  "last_run_at": "2026-11-26T12:00:16.253180+09:00",
   "total_posted": 141,
   "posts": [
     {
@@ -432,7 +432,8 @@
       "sent_to_blogger": true,
       "status": "publish",
       "wp_posted_at": "2026-10-08T08:59:45.900289+09:00",
-      "blogger_posted_at": "2026-10-08T08:59:45.900289+09:00"
+      "blogger_posted_at": "2026-11-26T12:00:16.253180+09:00",
+      "blogger_repost_ep": 30
     },
     {
       "title": "静かなる法令の盾――聖域と労働の境界線",
@@ -1656,6 +1657,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 30,
+  "blogger_repost_next_ep": 31,
   "wp_repost_next_ep": 28
 }
