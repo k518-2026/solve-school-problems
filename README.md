@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **143** 話（うち挿絵付き **143** 話 / 最終更新: 2026-11-26 13:12 JST）
+- **収録作品数**: 全 **144** 話（うち挿絵付き **144** 話 / 最終更新: 2026-11-26 13:15 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 144 | 💻 B: 校務DX・ICT | `B20` | **[断絶する記憶の糸を紡ぐ光――共有ドライブと命名規則が創り出す『継承』の系譜](https://k518-2026.github.io/solve-school-problems/stories/ep144-b20.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep144-b20.html) | [📄原稿](<content/2026-11-26_pattern_b_b20_断絶する記憶の糸を紡ぐ光_共有ドライブと命名規則が創り出す『継承』の系譜.md>) | [🎨挿絵](<content/2026-11-26_pattern_b_b20_断絶する記憶の糸を紡ぐ光_共有ドライブと命名規則が創り出す『継承』の系譜.png>) | 年度末引き継ぎ・ナレッジ管理DX | 3,991字 |
 | 143 | 📘 A: 教育学・心理学 | `A18` | **[見えない壁の瓦解――「当たり前」を揺らす認知の地殻変動](https://k518-2026.github.io/solve-school-problems/stories/ep143-a18.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep143-a18.html) | [📄原稿](<content/2026-11-26_pattern_a_a18_見えない壁の瓦解_「当たり前」を揺らす認知の地殻変動.md>) | [🎨挿絵](<content/2026-11-26_pattern_a_a18_見えない壁の瓦解_「当たり前」を揺らす認知の地殻変動.png>) | 授業改善・概念変化理論 | 4,601字 |
 | 142 | ⚖️ C: 学校法制・法務 | `C17` | **[灰燼の境界と聖域の守護――災害下における児童引き渡しと公共性の法理](https://k518-2026.github.io/solve-school-problems/stories/ep142-c17.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep142-c17.html) | [📄原稿](<content/2026-11-26_pattern_c_c17_灰燼の境界と聖域の守護_災害下における児童引き渡しと公共性の法理.md>) | [🎨挿絵](<content/2026-11-26_pattern_c_c17_灰燼の境界と聖域の守護_災害下における児童引き渡しと公共性の法理.png>) | 学校法制・防災と指定避難所運営 | 3,153字 |
 | 141 | 💻 B: 校務DX・ICT | `B17` | **[静寂の棚に灯るコードの鼓動――理科備品とQRコードが編み直す「教育の余白」](https://k518-2026.github.io/solve-school-problems/stories/ep141-b17.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep141-b17.html) | [📄原稿](<content/2026-11-25_pattern_b_b17_静寂の棚に灯るコードの鼓動_理科備品とQRコードが編み直す「教育の余白」.md>) | [🎨挿絵](<content/2026-11-25_pattern_b_b17_静寂の棚に灯るコードの鼓動_理科備品とQRコードが編み直す「教育の余白」.png>) | 図書室・教材在庫管理DX | 3,496字 |

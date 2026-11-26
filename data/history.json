@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-26T13:12:12.986772+09:00",
-  "total_posted": 143,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-26T13:15:57.152990+09:00",
+  "total_posted": 144,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1676,6 +1676,17 @@
       "category": "授業改善・概念変化理論",
       "file_path": "content/2026-11-26_pattern_a_a18_見えない壁の瓦解_「当たり前」を揺らす認知の地殻変動.md",
       "timestamp": "2026-11-26T13:12:12.986772+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "断絶する記憶の糸を紡ぐ光――共有ドライブと命名規則が創り出す『継承』の系譜",
+      "pattern": "B",
+      "topic_id": "B20",
+      "category": "年度末引き継ぎ・ナレッジ管理DX",
+      "file_path": "content/2026-11-26_pattern_b_b20_断絶する記憶の糸を紡ぐ光_共有ドライブと命名規則が創り出す『継承』の系譜.md",
+      "timestamp": "2026-11-26T13:15:57.152990+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

@@ -1,5 +1,18 @@
 [
   {
+    "no": 144,
+    "story_id": "ep144-b20",
+    "topic_id": "B20",
+    "pattern": "B",
+    "title": "断絶する記憶の糸を紡ぐ光――共有ドライブと命名規則が創り出す『継承』の系譜",
+    "category": "年度末引き継ぎ・ナレッジ管理DX",
+    "keywords": "共有ドライブ（組織所有ファイル）への移行 / ファイル命名規則（ISO 8601日付＋案件名） / 校内ポータルサイトによるマニュアル一元化 / アクセス権限の年度更新設計",
+    "has_image": true,
+    "url": "stories/ep144-b20.html",
+    "image": "assets/images/ep144-b20.png",
+    "char_count": 3991
+  },
+  {
     "no": 143,
     "story_id": "ep143-a18",
     "topic_id": "A18",
