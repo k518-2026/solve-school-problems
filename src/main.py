@@ -445,6 +445,12 @@ def main():
 
         all_stories = collect_all_stories(history_mgr)
         targets = [s for s in reversed(all_stories) if not s["has_image"] or args.force]
+        if args.file:
+            target_name = Path(args.file).name.lower()
+            targets = [s for s in targets if s["md_path"].name.lower() == target_name]
+        elif args.topic_id:
+            tid_norm = args.topic_id.strip().lower()
+            targets = [s for s in targets if s["topic_id"].lower() == tid_norm][:1]
         if args.stock_count and args.stock_count > 0 and not args.force:
             targets = targets[:args.stock_count]
         logger.info(f"[Generate-Images] Found {len(targets)} story/stories needing illustrations.")
