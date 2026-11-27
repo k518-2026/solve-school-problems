@@ -482,8 +482,8 @@ def main():
     if args.stock_count > 0:
         try:
             git_env = {**os.environ, "GIT_EDITOR": "true"}
-        subprocess.run(["git", "fetch", "origin", "main"], check=False, env=git_env)
-        subprocess.run(["git", "merge", "--no-edit", "-X", "ours", "origin/main"], check=False, env=git_env)
+            subprocess.run(["git", "fetch", "origin", "main"], check=False, env=git_env)
+            subprocess.run(["git", "merge", "--no-edit", "-X", "ours", "origin/main"], check=False, env=git_env)
             history_mgr.history_data = history_mgr._load_history()
             history_mgr.catalog_data = history_mgr._load_catalog()
         except Exception:
