@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-27T22:28:20.948815+09:00",
-  "total_posted": 145,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-27T22:31:56.021625+09:00",
+  "total_posted": 146,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1703,6 +1703,17 @@
       "category": "学校法制・政治的中立性と宗教的配慮",
       "file_path": "content/2026-11-27_pattern_c_c19_聖域の均衡_主権者の萌芽と信仰の自由が交差する法理.md",
       "timestamp": "2026-11-27T22:28:20.948815+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "凪の海に浮かぶ小さな舟――『予期せぬ静止』を解くための距離感",
+      "pattern": "A",
+      "topic_id": "A19",
+      "category": "不登校支援・システムズアプローチ",
+      "file_path": "content/2026-11-27_pattern_a_a19_凪の海に浮かぶ小さな舟_『予期せぬ静止』を解くための距離感.md",
+      "timestamp": "2026-11-27T22:31:56.021625+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

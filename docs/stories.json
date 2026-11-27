@@ -1,5 +1,18 @@
 [
   {
+    "no": 146,
+    "story_id": "ep146-a19",
+    "topic_id": "A19",
+    "pattern": "A",
+    "title": "凪の海に浮かぶ小さな舟――『予期せぬ静止』を解くための距離感",
+    "category": "不登校支援・システムズアプローチ",
+    "keywords": "例外探し（Exception Finding）とスケーリング・クエスチョン / 悪循環の切断（Do Something Different） / 小さな変化の承認と安心基地（Secure Base）",
+    "has_image": true,
+    "url": "stories/ep146-a19.html",
+    "image": "assets/images/ep146-a19.png",
+    "char_count": 3501
+  },
+  {
     "no": 145,
     "story_id": "ep145-c19",
     "topic_id": "C19",

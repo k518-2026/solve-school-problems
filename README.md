@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **145** 話（うち挿絵付き **145** 話 / 最終更新: 2026-11-27 22:28 JST）
+- **収録作品数**: 全 **146** 話（うち挿絵付き **146** 話 / 最終更新: 2026-11-27 22:31 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 146 | 📘 A: 教育学・心理学 | `A19` | **[凪の海に浮かぶ小さな舟――『予期せぬ静止』を解くための距離感](https://k518-2026.github.io/solve-school-problems/stories/ep146-a19.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep146-a19.html) | [📄原稿](<content/2026-11-27_pattern_a_a19_凪の海に浮かぶ小さな舟_『予期せぬ静止』を解くための距離感.md>) | [🎨挿絵](<content/2026-11-27_pattern_a_a19_凪の海に浮かぶ小さな舟_『予期せぬ静止』を解くための距離感.png>) | 不登校支援・システムズアプローチ | 3,501字 |
 | 145 | ⚖️ C: 学校法制・法務 | `C19` | **[聖域の均衡――主権者の萌芽と信仰の自由が交差する法理](https://k518-2026.github.io/solve-school-problems/stories/ep145-c19.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep145-c19.html) | [📄原稿](<content/2026-11-27_pattern_c_c19_聖域の均衡_主権者の萌芽と信仰の自由が交差する法理.md>) | [🎨挿絵](<content/2026-11-27_pattern_c_c19_聖域の均衡_主権者の萌芽と信仰の自由が交差する法理.png>) | 学校法制・政治的中立性と宗教的配慮 | 3,297字 |
 | 144 | 💻 B: 校務DX・ICT | `B20` | **[断絶する記憶の糸を紡ぐ光――共有ドライブと命名規則が創り出す『継承』の系譜](https://k518-2026.github.io/solve-school-problems/stories/ep144-b20.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep144-b20.html) | [📄原稿](<content/2026-11-26_pattern_b_b20_断絶する記憶の糸を紡ぐ光_共有ドライブと命名規則が創り出す『継承』の系譜.md>) | [🎨挿絵](<content/2026-11-26_pattern_b_b20_断絶する記憶の糸を紡ぐ光_共有ドライブと命名規則が創り出す『継承』の系譜.png>) | 年度末引き継ぎ・ナレッジ管理DX | 3,991字 |
 | 143 | 📘 A: 教育学・心理学 | `A18` | **[見えない壁の瓦解――「当たり前」を揺らす認知の地殻変動](https://k518-2026.github.io/solve-school-problems/stories/ep143-a18.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep143-a18.html) | [📄原稿](<content/2026-11-26_pattern_a_a18_見えない壁の瓦解_「当たり前」を揺らす認知の地殻変動.md>) | [🎨挿絵](<content/2026-11-26_pattern_a_a18_見えない壁の瓦解_「当たり前」を揺らす認知の地殻変動.png>) | 授業改善・概念変化理論 | 4,601字 |
