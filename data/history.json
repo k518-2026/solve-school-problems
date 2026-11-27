@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-27T22:31:56.021625+09:00",
-  "total_posted": 146,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-27T22:35:50.533664+09:00",
+  "total_posted": 147,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1714,6 +1714,17 @@
       "category": "不登校支援・システムズアプローチ",
       "file_path": "content/2026-11-27_pattern_a_a19_凪の海に浮かぶ小さな舟_『予期せぬ静止』を解くための距離感.md",
       "timestamp": "2026-11-27T22:31:56.021625+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "静寂を破る自動の調べ――成績評価の迷宮から奪還した「教育の余白」",
+      "pattern": "B",
+      "topic_id": "B01",
+      "category": "校務自動化・スプレッドシート/GAS",
+      "file_path": "content/2026-11-27_pattern_b_b01_静寂を破る自動の調べ_成績評価の迷宮から奪還した「教育の余白」.md",
+      "timestamp": "2026-11-27T22:35:50.533664+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

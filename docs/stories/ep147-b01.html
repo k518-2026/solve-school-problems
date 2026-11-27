@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>静寂を破る自動の調べ――成績評価の迷宮から奪還した「教育の余白」 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #147 ・ [B01] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">静寂を破る自動の調べ――成績評価の迷宮から奪還した「教育の余白」</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>校務自動化・スプレッドシート/GAS（Google Apps Script (GAS) / XLOOKUP / FILTER 関数 / 条件付き書式による異常値ハイライト / データ入力規則）</div>
+      <div><strong>👥 登場人物：</strong>年配教諭・大山先生（教職28年目・教務主任） × 若手教諭・水野先生（教職3年目・情報担当）</div>
+      <div><strong>💡 解決フレームワーク：</strong>Google Apps Script (GAS) と ARRAYFORMULA / VLOOKUP / XLOOKUP による自動集計とバリデーションマクロ</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep147-b01.png" alt="静寂を破る自動の調べ――成績評価の迷宮から奪還した「教育の余白」" loading="lazy" />
+
+    <article class="story-content">
+      <p>放課後の職員室には、重苦しい沈黙と、規則的な電卓の打鍵音だけが響いていた。<br />
+　窓の外はすっかり暗くなり、街灯の光が校庭の銀杏の木を青白く照らし出している。その静寂を切り裂くように、数秒おきに「カチッ、カチッ」と硬質な音が鳴り響いた。</p>
+<p>教務主任の大山は、机の上の古い電卓に指を這わせながら、眉間に深い皺を刻んでいた。視線は分厚い成績評価票と、手書きのメモが散乱する巨大なエクセルシートの間を往復している。<br />
+「……この子の、実技評価と平常点の合算、あと欠席日数の調整……」<br />
+　大山は掠れた声で呟き、老眼鏡を押し上げた。彼の眼球は充血し、肩の筋肉は極度の緊張で硬く強張っている。教職28年。彼はこれまで数多くの生徒を見送り、彼らの成長を支えてきた。しかし、今この瞬間、目の前の「数字」という名の壁に、自分の精神と体力が削り取られていくのを感じていた。</p>
+<p>学期末の成績一覧表作成。それは教員にとって最も重要でありながら、最も事務的な負担が重い業務の一つだ。300人分の評価を正確に転記し、計算ミスをゼロにする。一つでも間違えれば、生徒の努力が不当に評価されるかもしれない。その責任感こそが、大山をこの深夜まで机に縛り付けていた。</p>
+<p>「……あ、大山先生。まだお仕事中ですか？」<br />
+　背後から控えめな声がした。若手教員の水野だ。彼は情報担当として、最近は校内のWi-Fi環境の整備や端末管理に奔走している。<br />
+「ああ、水野君か。すまないね、まだ終わらないんだ。この件、実はちょっと手作業の限界を感じていてね……」<br />
+　大山は自嘲気味に笑い、肩を落とした。</p>
+<p>水野はゆっくりと近づき、大山の机の上に広げられた「迷宮」を覗き込んだ。複雑な数式、条件付きで変動する加点項目、そして手入力による転記ミスを防ぐための細かなチェック作業。<br />
+「……これは、かなり複雑なロジックですね」<br />
+　水野は感嘆の声を漏らした。彼は大山の苦労を単なる「事務作業」とは見ていなかった。そこには、一人ひとりの生徒を公平に評価しようとする大山先生の深い教育的知恵が、血の通った数字として積み重なっていることを理解していたからだ。</p>
+<p>水野は椅子を引き寄せ、静かに問いかけた。<br />
+「先生、もしこの『計算』と『転記』の工程を、一度だけ正しく定義すれば、あとはシステムに任せられるとしたら、どう思われますか？」<br />
+「システム……？　いや、私はプログラミングなんて……」<br />
+　大山は戸惑ったように首を振った。しかし、水野は穏やかに微笑んだ。</p>
+<p>「先生がこれまで築き上げてきた『評価のルール』を、私がデジタルな言葉に翻訳するだけです。先生の知恵を、Google Apps Script（GAS）という仕組みを使って自動化しましょう」<br />
+　水野は自身のノートパソコンを開いた。画面には、整然としたコードとスプレッドシートの構造が現れる。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>「いいですか、先生。まず、この『成績データ』と『出席管理表』を別々のシートとして定義します」<br />
+　水野は画面を指し示しながら説明を始めた。<br />
+「ここで大事なのは、手入力での転記を一切排除することです。XLOOKUP関数を使えば、生徒の名前や出席番号をキーにして、必要な数値を一瞬で別のシートへ呼び出せます」</p>
+<p>大山は画面を凝視した。<br />
+「ただの関数だけでは、計算ミスを防げないのではないか？」<br />
+「おっしゃる通りです。だからこそGASの出番です」<br />
+　水野の指がキーボードの上を踊り始めた。</p>
+<p>「このスクリプトを実行すると、例えば『欠席日数が規定を超えた場合』や『合計点が異常な範囲に跳ねた場合』に、自動でセルを赤く染めるだけでなく、ログとしてエラーメッセージを吐き出します。そして、ARRAYFORMULAを使えば、新しい生徒を追加した際にも、数式をコピーすることなく自動的に計算範囲が拡張されます」</p>
+<p>大山は、水野の言葉を一つひとつ咀嚼するように聞いていた。<br />
+「つまり……私が『この子はこう評価すべきだ』と決めたルールを、君がコードに書き込んでくれるということか？」<br />
+「その通りです。先生の頭の中にある『正解』を、私が自動で動く仕組みへと変換します」</p>
+<p>水野は黙々とコードを打ち込みながら、時折大山に確認を取った。<br />
+「この場合、実技評価の重み付けは30%でいいですか？」<br />
+「ああ、その通りだ」<br />
+「では、この条件でバリデーション（妥当性確認）を組み込みますね」</p>
+<p>数十分の作業の後、水野はエンターキーを叩いた。<br />
+　画面上のスプレッドシートが、まるで魔法がかかったかのように一変した。バラバラだったデータが瞬く間に統合され、300人分の評価が一列に、正確な数値を持って整列していく。</p>
+<p>「……えっ」<br />
+　大山は絶句した。<br />
+　電卓を叩き続け、一人の生徒の計算に数分を費やしていた作業が、ものの数秒で完了したのだ。しかも、隣のセルには自動的に計算結果が表示され、エラーの可能性がある箇所だけが鮮やかな赤色でハイライトされている。</p>
+<p>「これ……本当に全部終わったのか？」<br />
+　大山の声は震えていた。<br />
+「はい。そして、ここから先は先生が『評価内容』を吟味するだけです。計算ミスというノイズに邪魔されることはもうありません」<br />
+　水野は誇らしげに、しかし謙虚な表情で言った。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>翌朝、職員室には穏やかな空気が流れていた。<br />
+　大山はいつもの席に座り、コーヒーを一口啜りながら、昨夜の成果を確認していた。<br />
+「水野君、ありがとう。おかげで昨夜は……いや、昨日は驚いたよ」<br />
+　大山は笑った。彼の目は昨日よりもずっと輝き、肩の重みも取れたように見えた。</p>
+<p>「いえ、先生のルールが明確だったからこそ、スムーズに実装できました。先生が長年積み重ねてきた評価の知恵を、技術で加速させる。それが私の役割です」<br />
+　水野は控えめに答えた。<br />
+「君の技術は、ただの『効率化』ではないな。これは、私たちが生徒と向き合うための『時間』を取り戻すためのものだ」</p>
+<p>大山は頷き、窓の外を見た。<br />
+　かつて彼を苦しめた「数字の迷宮」は、若手教員の技術によって鮮やかな地図へと書き換えられた。それは単なる事務作業の削減ではない。教育者が本来集中すべき「子供たちの成長を見守る時間」を取り戻すための革命だった。</p>
+<p>大山はスプレッドシートを閉じ、次の生徒の指導案に目を向けた。<br />
+　そこには、昨日まで彼を追い詰めていた数字の影はなく、ただ一人の子供への熱い想いだけが残っていた。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、校務における「転記ミス」と「計算負荷」という、多くの学校現場が抱える課題を、Google Apps Script (GAS) とスプレッドシートの高度な関数を組み合わせて解決しました。以下にその技術的ポイントを解説します。</p>
+<p><strong>1. XLOOKUP関数によるデータの自動統合</strong><br />
+従来、別々のリスト（出席簿と成績表など）から数値を手動で写す作業は、転記ミスや行のズレを引き起こす最大の要因です。XLOOKUP関数は、指定したキー（生徒番号など）を元に、別のシートから瞬時に値を検索して抽出します。VLOOKUPよりも柔軟で、データの並び順に左右されないため、校務データ管理において非常に強力なツールとなります。</p>
+<p><strong>2. ARRAYFORMULAによる動的範囲への対応</strong><br />
+通常、数式は各セルにコピーする必要がありますが、ARRAYFORMULAを使用すると、一つの数式だけで列全体（あるいは範囲全体）の計算を自動化できます。これにより、新しい生徒を追加した際に「数式のコピー忘れ」による計算漏れを防ぐことができます。</p>
+<p><strong>3. Google Apps Script (GAS) によるバリデーションと自動化</strong><br />
+関数だけでは対応しきれない複雑な条件（例：「特定の条件を満たさない場合に警告を出す」「ボタン一つで特定の範囲をリセットする」など）は、GASで実装します。GASはGoogle Workspace上で動くJavaScriptベースのスクリプト言語です。<br />
+今回の解決策では、データ入力規則と組み合わせることで、「異常な数値（例：合計点が100点を超える、またはマイナスになる）」を検知した際に即座に特定する仕組みを構築しました。</p>
+<p><strong>4. 持続可能な校務DXへの視点</strong><br />
+単に「今ある作業を自動化する」だけでなく、データをクラウド上で一元管理（Google Workspaceの活用）することで、教員間での情報の齟齬を防ぎ、かつセキュリティを確保しながら共有する体制が重要です。「誰がいつ更新したか」というバージョン管理ができることも、校務DXにおける大きな利点です。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p><a href="https://support.microsoft.com/ja-jp/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" target="_blank" rel="noopener noreferrer">Microsoft Support (2024). XLOOKUP 関数 – Microsoft サポート.</a></p>
+<p><a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer">文部科学省 (2021). 教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）.</a></p>
+<p><a href="https://support.google.com/docs/table/25273?hl=ja" target="_blank" rel="noopener noreferrer">Google ドキュメント エディタ ヘルプ. Google スプレッドシートの関数リスト.</a></p>
+<p><a href="https://www.mext.go.jp/" target="_blank" rel="noopener noreferrer">文部科学省 (2024). GIGAスクール構想第2期に向けた校務DX推進方針（関連資料）.</a>（※最新の動向は文科省公式サイトにて随時更新されるため、最新の「校務DX」に関するキーワードで検索を推奨します）</p>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep146-a19.html">← 前の作品：#146 凪の海に浮かぶ小さな舟</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>
