@@ -96,7 +96,9 @@ def git_sync_and_push(generated_files: List[Path], logger: logging.Logger) -> bo
             return True
         msg = f"feat(pages): Add {len(generated_files)} Solve School Problems asset(s) via Mac mini M4 & update GitHub Pages"
         subprocess.run(["git", "commit", "-m", msg], check=True)
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+        git_env = {**os.environ, "GIT_EDITOR": "true"}
+        subprocess.run(["git", "fetch", "origin", "main"], check=False, env=git_env)
+        subprocess.run(["git", "merge", "--no-edit", "-X", "ours", "origin/main"], check=False, env=git_env)
         subprocess.run(["git", "push", "origin", "HEAD:main"], check=True)
         logger.info("Successfully pushed stories, illustrations & GitHub Pages to GitHub!")
         return True
@@ -129,7 +131,9 @@ def replenish_stock_if_needed(
     from src.site_builder import build_github_pages, collect_all_stories
 
     try:
-        subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+        git_env = {**os.environ, "GIT_EDITOR": "true"}
+        subprocess.run(["git", "fetch", "origin", "main"], check=False, env=git_env)
+        subprocess.run(["git", "merge", "--no-edit", "-X", "ours", "origin/main"], check=False, env=git_env)
         history_mgr.history_data = history_mgr._load_history()
         history_mgr.catalog_data = history_mgr._load_catalog()
     except Exception:
@@ -477,7 +481,9 @@ def main():
     # Mode: Batch-generate N stories + illustrations into content/ and docs/
     if args.stock_count > 0:
         try:
-            subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=False)
+            git_env = {**os.environ, "GIT_EDITOR": "true"}
+        subprocess.run(["git", "fetch", "origin", "main"], check=False, env=git_env)
+        subprocess.run(["git", "merge", "--no-edit", "-X", "ours", "origin/main"], check=False, env=git_env)
             history_mgr.history_data = history_mgr._load_history()
             history_mgr.catalog_data = history_mgr._load_catalog()
         except Exception:
