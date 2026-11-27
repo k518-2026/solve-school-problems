@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-26T13:15:57.152990+09:00",
+  "last_run_at": "2026-11-27T12:09:22.201744+09:00",
   "total_posted": 144,
   "posts": [
     {
@@ -447,8 +447,10 @@
       "file_path": "content/2026-10-06_pattern_c_c09_静かなる法令の盾_聖域と労働の境界線.md",
       "timestamp": "2026-10-06T21:05:00.420235+09:00",
       "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
+      "sent_to_blogger": true,
+      "status": "publish",
+      "blogger_posted_at": "2026-11-27T12:09:22.201744+09:00",
+      "blogger_repost_ep": 31
     },
     {
       "title": "震える指先と、小さな「できた」の堆積",
@@ -1694,6 +1696,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 31,
+  "blogger_repost_next_ep": 32,
   "wp_repost_next_ep": 29
 }
