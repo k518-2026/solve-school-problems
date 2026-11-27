@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-27T12:09:47.808195+09:00",
-  "total_posted": 144,
+  "last_pattern": "C",
+  "last_run_at": "2026-11-27T22:28:20.948815+09:00",
+  "total_posted": 145,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1692,6 +1692,17 @@
       "category": "年度末引き継ぎ・ナレッジ管理DX",
       "file_path": "content/2026-11-26_pattern_b_b20_断絶する記憶の糸を紡ぐ光_共有ドライブと命名規則が創り出す『継承』の系譜.md",
       "timestamp": "2026-11-26T13:15:57.152990+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "聖域の均衡――主権者の萌芽と信仰の自由が交差する法理",
+      "pattern": "C",
+      "topic_id": "C19",
+      "category": "学校法制・政治的中立性と宗教的配慮",
+      "file_path": "content/2026-11-27_pattern_c_c19_聖域の均衡_主権者の萌芽と信仰の自由が交差する法理.md",
+      "timestamp": "2026-11-27T22:28:20.948815+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"

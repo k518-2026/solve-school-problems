@@ -1,5 +1,18 @@
 [
   {
+    "no": 145,
+    "story_id": "ep145-c19",
+    "topic_id": "C19",
+    "pattern": "C",
+    "title": "聖域の均衡――主権者の萌芽と信仰の自由が交差する法理",
+    "category": "学校法制・政治的中立性と宗教的配慮",
+    "keywords": "教育基本法第14条（政治教育）・第15条（宗教教育） / 日本国憲法第20条（信教の自由） / 学校教育法",
+    "has_image": true,
+    "url": "stories/ep145-c19.html",
+    "image": "assets/images/ep145-c19.png",
+    "char_count": 3297
+  },
+  {
     "no": 144,
     "story_id": "ep144-b20",
     "topic_id": "B20",
