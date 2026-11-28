@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-27T22:35:50.533664+09:00",
-  "total_posted": 147,
+  "last_pattern": "C",
+  "last_run_at": "2026-11-28T10:07:32.622251+09:00",
+  "total_posted": 148,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1725,6 +1725,17 @@
       "category": "校務自動化・スプレッドシート/GAS",
       "file_path": "content/2026-11-27_pattern_b_b01_静寂を破る自動の調べ_成績評価の迷宮から奪還した「教育の余白」.md",
       "timestamp": "2026-11-27T22:35:50.533664+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "自治の熱情と統治の聖域――コミュニティ・スクールの境界線に立つ校長の決断",
+      "pattern": "C",
+      "topic_id": "C20",
+      "category": "学校法制・学校運営協議会（コミュニティ・スクール）と校長の権限",
+      "file_path": "content/2026-11-28_pattern_c_c20_自治の熱情と統治の聖域_コミュニティ・スクールの境界線に立つ校長の決断.md",
+      "timestamp": "2026-11-28T10:07:32.622251+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
