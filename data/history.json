@@ -1,7 +1,7 @@
 {
-  "last_pattern": "B",
-  "last_run_at": "2026-11-28T11:55:22.494478+09:00",
-  "total_posted": 150,
+  "last_pattern": "C",
+  "last_run_at": "2026-11-28T19:00:06.988042+09:00",
+  "total_posted": 151,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1761,6 +1761,17 @@
       "category": "ネットワーク・インフラ改善",
       "file_path": "content/2026-11-28_pattern_b_b02_見えない壁の共鳴を調律する_公開授業の断絶を救った周波数帯の戦略.md",
       "timestamp": "2026-11-28T10:15:07.684489+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "身体の自由と安全の均衡――緊急避難としての介入と法の理路",
+      "pattern": "C",
+      "topic_id": "C02",
+      "category": "学校法制・教員懲戒・指導",
+      "file_path": "content/2026-11-28_pattern_c_c02_身体の自由と安全の均衡_緊急避難としての介入と法の理路.md",
+      "timestamp": "2026-11-28T19:00:06.988042+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
