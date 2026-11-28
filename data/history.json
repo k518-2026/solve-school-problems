@@ -1,7 +1,7 @@
 {
-  "last_pattern": "C",
-  "last_run_at": "2026-11-28T10:07:32.622251+09:00",
-  "total_posted": 148,
+  "last_pattern": "A",
+  "last_run_at": "2026-11-28T10:11:21.466316+09:00",
+  "total_posted": 149,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1736,6 +1736,17 @@
       "category": "学校法制・学校運営協議会（コミュニティ・スクール）と校長の権限",
       "file_path": "content/2026-11-28_pattern_c_c20_自治の熱情と統治の聖域_コミュニティ・スクールの境界線に立つ校長の決断.md",
       "timestamp": "2026-11-28T10:07:32.622251+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "旋律の裂け目と、奉仕の祈り――統率の在り方を見つめ直すための対話",
+      "pattern": "A",
+      "topic_id": "A20",
+      "category": "部活動・リーダーシップ理論",
+      "file_path": "content/2026-11-28_pattern_a_a20_旋律の裂け目と、奉仕の祈り_統率の在り方を見つめ直すための対話.md",
+      "timestamp": "2026-11-28T10:11:21.466316+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
