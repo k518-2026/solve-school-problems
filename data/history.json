@@ -1,6 +1,6 @@
 {
   "last_pattern": "B",
-  "last_run_at": "2026-11-28T10:15:07.684489+09:00",
+  "last_run_at": "2026-11-28T11:55:11.045262+09:00",
   "total_posted": 150,
   "posts": [
     {
@@ -461,8 +461,10 @@
       "file_path": "content/2026-10-07_pattern_a_a11_震える指先と、小さな「できた」の堆積.md",
       "timestamp": "2026-10-07T23:52:28.439638+09:00",
       "sent_to_wp": false,
-      "sent_to_blogger": false,
-      "status": "github_pages"
+      "sent_to_blogger": true,
+      "status": "publish",
+      "blogger_posted_at": "2026-11-28T11:55:11.045262+09:00",
+      "blogger_repost_ep": 32
     },
     {
       "title": "聖域の境界線――給食室の静寂と、エピペンを握る手の震え",
@@ -1763,6 +1765,6 @@
       "status": "github_pages"
     }
   ],
-  "blogger_repost_next_ep": 32,
+  "blogger_repost_next_ep": 33,
   "wp_repost_next_ep": 30
 }
