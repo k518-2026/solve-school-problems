@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>見えない壁の共鳴を調律する――公開授業の断絶を救った周波数帯の戦略 | 学校のモヤモヤを解決する教育・校務DX・学校法制小説図書館</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="reader-nav">
+    <a href="../index.html">← 作品一覧（Solve School Problems 図書館トップ）へ戻る</a>
+    <div class="reader-controls">
+      <button class="btn-toggle" onclick="setFontSize('15.5px')">文字 小</button>
+      <button class="btn-toggle" onclick="setFontSize('17.5px')">文字 中</button>
+      <button class="btn-toggle" onclick="setFontSize('20px')">文字 大</button>
+      <button class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 ダーク表示</button>
+    </div>
+  </nav>
+
+  <main class="reader-container">
+    <div class="site-badge">EPISODE #150 ・ [B02] 💻 パターンB：校務DX・ICT・ネットワーク</div>
+    <h1 class="story-header-title">見えない壁の共鳴を調律する――公開授業の断絶を救った周波数帯の戦略</h1>
+
+    <div class="story-meta-box">
+      <div><strong>🏷️ カテゴリ・領域：</strong>ネットワーク・インフラ改善（Wi-Fi 6 (802.11ax) / DFS (動的周波数選択) 回避 / チャネルボンディングと電波干渉対策 / DHCPリース時間とIPアドレス管理）</div>
+      <div><strong>👥 登場人物：</strong>副校長・佐々木先生（教職30年目） × 若手教諭・藤堂先生（教職4年目・理科・ネットワーク愛好家）</div>
+      <div><strong>💡 解決フレームワーク：</strong>Wi-Fi周波数帯（2.4GHz帯の混雑 vs 5GHz DFS帯・6GHz帯）のトラフィック分離とAPチャネル設計・バンドステアリング</div>
+    </div>
+
+    <img class="story-hero-image" src="../assets/images/ep150-b02.png" alt="見えない壁の共鳴を調律する――公開授業の断絶を救った周波数帯の戦略" loading="lazy" />
+
+    <article class="story-content">
+      <p>窓の外には、初夏の陽光を浴びて輝く校庭が見える。しかし、三階の理科準備室にいる佐々木副校長は、その景色を眺める余裕など一秒もなかった。<br />
+「……まただ。なぜ、この教室だけが……」<br />
+　佐々木は額の汗を拭いながら、壁際に設置されたネットワークルーターのコンセントを何度も抜き差しした。手元のタブレット端末は、沈黙のまま真っ黒な画面を晒している。</p>
+<p>現在、隣の教室では中学二年生に向けた「動植物の生態と環境変化」の公開授業が行われている。生徒四十人が一斉にタブレットを開き、高精細な動画教材を再生した瞬間、教室内の通信環境は文字通り「全滅」した。<br />
+　これまで何度も繰り返されてきたトラブルだ。授業が最高潮に盛り上がる場面で、映像が止まり、生徒たちの顔に困惑が広がる。それは教育者としての情熱を削り取るような、無力感の象徴だった。</p>
+<p>「副校長、お疲れのところ申し訳ありません！」<br />
+　扉を勢いよく開けて入ってきたのは、理科科の若手教諭、藤堂だった。彼はまだ教職四年目だが、学校のICT環境整備に異常なまでの熱意を持つことで知られている。</p>
+<p>「藤堂先生……。見ての通りです。動画を再生した瞬間、接続が切れてしまう。ルーターの再起動も試しましたが、すぐにまた落ちるんです」<br />
+　佐々木は苦渋の表情で答えた。彼は三十年もの間、この学校の運営を支えてきた。教育現場の良し悪しは積み重ねた経験で判断するが、この「見えない電波の壁」だけはどうしても経験では突破できなかった。</p>
+<p>藤堂はすぐに端末を手に取り、教室へと駆け出した。佐々木もそれに続く。<br />
+　教室に入ると、生徒たちは困り果てた表情で立ち尽くしていた。教壇に立つ担当教師は、指示を出したいものの、教材が表示されないことに焦りを見せている。</p>
+<p>藤堂は教卓の脇に膝をつき、端末の設定画面とネットワークアナライザーのアプリを操作し始めた。彼の指先は迷いなく動く。<br />
+「……なるほど。原因は『帯域の飽和』と『干渉』の複合的な問題ですね」<br />
+　藤堂は短く呟いた。</p>
+<p>「干渉、ですか？」<br />
+　佐々木が問いかけると、藤堂は画面を指さした。<br />
+「はい。現在、この教室のWi-Fiは2.4GHz帯を主に使用していますが、ここには電子レンジや近隣のBluetooth機器など、同じ周波数を使うものが溢れています。さらに、生徒全員が一斉に高画質の動画をリクエストしたことで、チャネルがパンクしてしまったんです」</p>
+<p>藤堂はタブレットを操作しながら、技術的な解説を織り交ぜて説明を続けた。<br />
+「特に問題なのは、ルーターの『バンドステアリング』の設定です。自動で最適な周波数に振り分ける機能ですが、今はこの教室の環境では、あえて5GHz帯の中でも『DFS（動的周波数選択）』の帯域を避けてしまっている可能性があります」</p>
+<p>藤堂は職員室に戻り、管理用コンソールにログインした。<br />
+「副校長、これからは『帯域の分離』と『チャネル設計の見直し』を行います。単にルーターを再起動するのではなく、交通整理をするイメージです」</p>
+<p>藤堂の手によって、ネットワークの設定が書き換えられていく。<br />
+　彼はまず、Wi-Fi 6（802.11ax）の特性を最大限活かすために、5GHz帯のチャネルボンディングを最適化し、特定の教室に割り当てるトラフィックを制御した。<br />
+「ここでのポイントは『DFS』です。気象レーダーなどとの干渉を避けるための自動切替機能ですが、学校環境ではこれが原因で通信が不安定になることが多々あります。今回は、あえて安定した固定チャネルを確保しつつ、生徒の端末には5GHz帯の特定の帯域を優先的に割り振るよう設定します」</p>
+<p>さらに彼は、DHCPリース時間の調整とIPアドレスの管理についても触れた。<br />
+「一斉に接続する際、古いIPの解放が間に合わずに競合が起きている形跡があります。これを整理して、スムーズなハンドシェイクが行われるようにします」</p>
+<p>設定変更を終え、藤堂は再び教室へと向かった。<br />
+　「準備はいいですか？」<br />
+　藤堂の合図とともに、生徒たちは再び動画再生ボタンを押した。</p>
+<p>一秒、二秒。<br />
+　静寂の中に、映像が滑らかに動き出した。<br />
+　40人の端末から同時に流れる自然界の音と美しい映像。生徒たちの顔に「おぉーっ」という歓喜の声が広がる。教壇の教師も、ようやく安堵の表情を浮かべ、授業を再開した。</p>
+<p>見学していた佐々木副校長は、その光景を見て深く息を吐いた。<br />
+「……藤堂先生。今の解決、ただの『直し』ではないですね」<br />
+　佐々木は老眼鏡を押し上げ、感心したように言った。<br />
+「技術を使って、生徒たちの『学びの熱量』を守った。あなたの技術は、単なる効率化のためだけにあるのではないようですね」</p>
+<p>藤堂は少し照れくさそうに笑い、頭を下げた。<br />
+「いえ、副校長。私がやりたかったのは、先生方が教育に専念できる環境を作ることです。技術はあくまで『道具』ですから。先生方の知恵や熱意を邪魔する壁を取り払うことが、私の役割です」</p>
+<p>授業が終わった後、二人は職員室で温かい茶を飲みながら、次世代の校務DXについて語り合った。<br />
+「これからはクラウド化やゼロトラストセキュリティも重要になってくるでしょうね」と佐々木は言った。「でも、今日のように『現場の壁』を技術で鮮やかに取り払う快感は、何物にも代えがたいものだ。藤堂先生、これからも頼りにしていますよ」</p>
+<p>若手の情熱とベテランの知恵。二人の信頼関係の上に、新しい学校の風景が静かに構築されていった。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【作中技術・ITネットワークのやさしい解説（Technical Commentary）】</p>
+<p>今回の物語では、学校現場で起こりやすい「Wi-Fiの切断」という問題に対し、ネットワーク工学の視点からいくつかの重要な概念を用いて解決を行いました。ITに詳しくない方でもわかるように解説します。</p>
+<p><strong>1. 2.4GHz帯と5GHz帯の違い（周波数帯の混雑）</strong><br />
+Wi-Fiには主に「2.4GHz」と「5GHz」という二つの通り道があります。<br />
+・<strong>2.4GHz帯</strong>: 遠くまで届きやすく壁も通り抜けますが、電子レンジやBluetoothなど他の家電とも同じ周波数を使うため、非常に混雑しやすい「渋滞の激しい道路」です。<br />
+・<strong>5GHz帯</strong>: 障害物には弱いのち、電波の通り道が多く、高速通信に適しています。学校ではこの帯域を積極的に活用することが推奨されます。</p>
+<p><strong>2. DFS（動的周波数選択）とチャネル設計</strong><br />
+5GHz帯の中には、気象レーダーなどの公的な信号と干渉しないように「空けておくこと」が決まっているエリアがあります。これをDFS帯域と呼びます。ルーターが自動でこのエリアを検知すると、通信を一時中断したり、別の場所へ逃げたりすることがあります。<br />
+授業中に動画を一斉に再生すると、通信量が急増し、ルーターが「あ、ここはレーダーと干渉するかも？」と誤認したり、あるいは空いているチャネルを見つけられずにパニックを起こしたりすることがあります。藤堂先生はこれを「固定の安定した通り道」を確保することで解決しました。</p>
+<p><strong>3. Wi-Fi 6 (802.11ax) とバンドステアリング</strong><br />
+Wi-Fi 6は最新の規格で、一度に多くの端末がつながっても処理能力が高いのが特徴です。また、「バンドステアリング」という機能は、ルーターが「君は空いている5GHzに行きなさい」「君は2.4GHzがいいね」と自動で振り分ける機能です。しかし、学校のような特殊な環境では、この「自動」が裏目に出て、全員を混雑する道路に押し込めてしまうことがあります。これを手動で正しく制御（トラフィック分離）することがDXの鍵となります。</p>
+<p><strong>4. DHCPリース時間とIPアドレス管理</strong><br />
+端末がネットワークに繋がる際、ルーターから「あなたの住所はここね」という番号（IPアドレス）を割り振ります。これが「DHCP」です。短時間に大量の端末が接続すると、古い番号がまだ使われていると勘違いして新しい番号が配れなくなることがあります。適切な管理を行うことで、スムーズな接続を実現します。</p>
+<div class="scene-divider">✦ ✦ ✦</div>
+<p>【引用・参考文献（Technical References &amp; Domestic Guidelines）】</p>
+<p>学校現場でのネットワーク整備や校務DXを進める上で、以下の公的資料は非常に重要です。</p>
+<p>・文部科学省：教育の情報化の推進（GIGAスクール構想・校内通信環境整備）<br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/index.htm</a></p>
+<p>・総務省：教育分野における情報通信技術の利活用<br />
+<a href="https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/" target="_blank" rel="noopener noreferrer">https://www.soumu.go.jp/main_sosiki/joho_tsusin/kyouiku_joho-ka/</a></p>
+<p>・文部科学省：教育情報セキュリティの確保（教育情報セキュリティポリシーに関するガイドライン）<br />
+<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm" target="_blank" rel="noopener noreferrer">https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/1397369.htm</a></p>
+<p>・Google Workspace for Education 公式ヘルプ（校務DXの基礎として）<br />
+<a href="https://support.google.com/a/users" target="_blank" rel="noopener noreferrer">https://support.google.com/a/users</a></p>
+    </article>
+
+    <div class="story-pager">
+      <a class="pager-btn" href="ep149-a20.html">← 前の作品：#149 旋律の裂け目と、奉仕の祈り</a>
+      <span></span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>学校のモヤモヤを解決する『教育学 × 校務DX × 学校法制』小説図書館 — Powered by Local LLM (Ollama) &amp; FLUX.2 on Mac mini M4</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const curr = root.getAttribute('data-theme') || 'light';
+      const next = curr === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('ssp_theme', next);
+      document.getElementById('themeBtn').textContent = next === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+    }
+    function setFontSize(size) {
+      document.documentElement.style.setProperty('--reader-font-size', size);
+      localStorage.setItem('ssp_font_size', size);
+    }
+    (function initPrefs() {
+      const savedTheme = localStorage.getItem('ssp_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️ ライト表示' : '🌙 ダーク表示';
+      }
+      const savedSize = localStorage.getItem('ssp_font_size');
+      if (savedSize) {
+        document.documentElement.style.setProperty('--reader-font-size', savedSize);
+      }
+    })();
+  </script>
+</body>
+</html>

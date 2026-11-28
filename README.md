@@ -10,7 +10,7 @@
 
 - **執筆・挿絵生成（完全ローカルAI）**: プライマリ `rtx5060lp`（Ollama `shosetsu`）＆ セカンダリ `sff7020`（LM Studio `google/gemma-4-26b-a4b-qat`）の交互執筆 ＋ Mac mini M4 `kenomac-mini`（Draw Things `FLUX.2 [klein] 9B`）による挿絵生成
 - **外部生成AI API不使用・毎朝配信（Blogger 05:33 / WordPress 05:38）**: 外部の商用生成AI APIは一切使用せず、ローカルAI（Ollama `shosetsu` & Draw Things `FLUX.2 [klein] 9B`）で作成して GitHub Pages に蓄積し、毎朝 05:33 JST に Blogger、05:38 JST に WordPress へ1日1本ずつ利用規約・コンテンツポリシーを遵守して自動配信しています。
-- **収録作品数**: 全 **149** 話（うち挿絵付き **149** 話 / 最終更新: 2026-11-28 10:11 JST）
+- **収録作品数**: 全 **150** 話（うち挿絵付き **150** 話 / 最終更新: 2026-11-28 10:15 JST）
 
 ---
 
@@ -18,6 +18,7 @@
 
 | No. | パターン | ID | タイトル | Webページで読む | 原稿 (Markdown) | 挿絵 | カテゴリ・テーマ | 文字数 |
 |:---:|:---:|:---:|:---|:---:|:---:|:---:|:---|---:|
+| 150 | 💻 B: 校務DX・ICT | `B02` | **[見えない壁の共鳴を調律する――公開授業の断絶を救った周波数帯の戦略](https://k518-2026.github.io/solve-school-problems/stories/ep150-b02.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep150-b02.html) | [📄原稿](<content/2026-11-28_pattern_b_b02_見えない壁の共鳴を調律する_公開授業の断絶を救った周波数帯の戦略.md>) | [🎨挿絵](<content/2026-11-28_pattern_b_b02_見えない壁の共鳴を調律する_公開授業の断絶を救った周波数帯の戦略.png>) | ネットワーク・インフラ改善 | 3,943字 |
 | 149 | 📘 A: 教育学・心理学 | `A20` | **[旋律の裂け目と、奉仕の祈り――統率の在り方を見つめ直すための対話](https://k518-2026.github.io/solve-school-problems/stories/ep149-a20.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep149-a20.html) | [📄原稿](<content/2026-11-28_pattern_a_a20_旋律の裂け目と、奉仕の祈り_統率の在り方を見つめ直すための対話.md>) | [🎨挿絵](<content/2026-11-28_pattern_a_a20_旋律の裂け目と、奉仕の祈り_統率の在り方を見つめ直すための対話.png>) | 部活動・リーダーシップ理論 | 3,908字 |
 | 148 | ⚖️ C: 学校法制・法務 | `C20` | **[自治の熱情と統治の聖域――コミュニティ・スクールの境界線に立つ校長の決断](https://k518-2026.github.io/solve-school-problems/stories/ep148-c20.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep148-c20.html) | [📄原稿](<content/2026-11-28_pattern_c_c20_自治の熱情と統治の聖域_コミュニティ・スクールの境界線に立つ校長の決断.md>) | [🎨挿絵](<content/2026-11-28_pattern_c_c20_自治の熱情と統治の聖域_コミュニティ・スクールの境界線に立つ校長の決断.png>) | 学校法制・学校運営協議会（コミュニティ・スクール）と校長の権限 | 3,936字 |
 | 147 | 💻 B: 校務DX・ICT | `B01` | **[静寂を破る自動の調べ――成績評価の迷宮から奪還した「教育の余白」](https://k518-2026.github.io/solve-school-problems/stories/ep147-b01.html)** | [🌐Web版](https://k518-2026.github.io/solve-school-problems/stories/ep147-b01.html) | [📄原稿](<content/2026-11-27_pattern_b_b01_静寂を破る自動の調べ_成績評価の迷宮から奪還した「教育の余白」.md>) | [🎨挿絵](<content/2026-11-27_pattern_b_b01_静寂を破る自動の調べ_成績評価の迷宮から奪還した「教育の余白」.png>) | 校務自動化・スプレッドシート/GAS | 4,009字 |

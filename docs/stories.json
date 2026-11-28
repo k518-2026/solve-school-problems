@@ -1,5 +1,18 @@
 [
   {
+    "no": 150,
+    "story_id": "ep150-b02",
+    "topic_id": "B02",
+    "pattern": "B",
+    "title": "見えない壁の共鳴を調律する――公開授業の断絶を救った周波数帯の戦略",
+    "category": "ネットワーク・インフラ改善",
+    "keywords": "Wi-Fi 6 (802.11ax) / DFS (動的周波数選択) 回避 / チャネルボンディングと電波干渉対策 / DHCPリース時間とIPアドレス管理",
+    "has_image": true,
+    "url": "stories/ep150-b02.html",
+    "image": "assets/images/ep150-b02.png",
+    "char_count": 3943
+  },
+  {
     "no": 149,
     "story_id": "ep149-a20",
     "topic_id": "A20",

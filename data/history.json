@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-28T10:11:21.466316+09:00",
-  "total_posted": 149,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-28T10:15:07.684489+09:00",
+  "total_posted": 150,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1747,6 +1747,17 @@
       "category": "部活動・リーダーシップ理論",
       "file_path": "content/2026-11-28_pattern_a_a20_旋律の裂け目と、奉仕の祈り_統率の在り方を見つめ直すための対話.md",
       "timestamp": "2026-11-28T10:11:21.466316+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "見えない壁の共鳴を調律する――公開授業の断絶を救った周波数帯の戦略",
+      "pattern": "B",
+      "topic_id": "B02",
+      "category": "ネットワーク・インフラ改善",
+      "file_path": "content/2026-11-28_pattern_b_b02_見えない壁の共鳴を調律する_公開授業の断絶を救った周波数帯の戦略.md",
+      "timestamp": "2026-11-28T10:15:07.684489+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
