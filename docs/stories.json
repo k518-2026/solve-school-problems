@@ -1,5 +1,18 @@
 [
   {
+    "no": 153,
+    "story_id": "ep153-b03",
+    "topic_id": "B03",
+    "pattern": "B",
+    "title": "砂の海に沈む声を掬い上げる――Pythonが紡ぐ500通の祈りへの地図",
+    "category": "データ処理・Python/テキスト処理",
+    "keywords": "Google フォーム集計 / Python (Pandas, OpenPyXL) / 日本語形態素解析 / キーワード出現頻度・可視化",
+    "has_image": true,
+    "url": "stories/ep153-b03.html",
+    "image": "assets/images/ep153-b03.png",
+    "char_count": 4167
+  },
+  {
     "no": 152,
     "story_id": "ep152-a01",
     "topic_id": "A01",

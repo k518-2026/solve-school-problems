@@ -1,7 +1,7 @@
 {
-  "last_pattern": "A",
-  "last_run_at": "2026-11-28T19:04:08.126469+09:00",
-  "total_posted": 152,
+  "last_pattern": "B",
+  "last_run_at": "2026-11-28T19:07:54.443857+09:00",
+  "total_posted": 153,
   "posts": [
     {
       "title": "教室の沈黙と自己決定――新米教員が学ぶ内発的動機づけの理論",
@@ -1783,6 +1783,17 @@
       "category": "学級経営・内発的動機づけ",
       "file_path": "content/2026-11-28_pattern_a_a01_凍てついた静寂の解凍_「正しさ」の檻から、自ら動く意志への転換.md",
       "timestamp": "2026-11-28T19:04:08.126469+09:00",
+      "sent_to_wp": false,
+      "sent_to_blogger": false,
+      "status": "github_pages"
+    },
+    {
+      "title": "砂の海に沈む声を掬い上げる――Pythonが紡ぐ500通の祈りへの地図",
+      "pattern": "B",
+      "topic_id": "B03",
+      "category": "データ処理・Python/テキスト処理",
+      "file_path": "content/2026-11-28_pattern_b_b03_砂の海に沈む声を掬い上げる_Pythonが紡ぐ500通の祈りへの地図.md",
+      "timestamp": "2026-11-28T19:07:54.443857+09:00",
       "sent_to_wp": false,
       "sent_to_blogger": false,
       "status": "github_pages"
